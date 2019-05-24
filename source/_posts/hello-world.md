@@ -721,9 +721,102 @@ backup:
 hexo b 
 
 ```
+### 微博图床失效问题
+```javascript
+打开/themes/next/layout/_partials/head.swig文件,添加一行代码：<meta name="referrer" content="no-referrer" />,具体如下所示：
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="referrer" content="no-referrer" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="{{ theme.android_chrome_color }}">
+https://xuezheng-wei.com/posts/d970820/
+```
+### Travis CI 自动部署
+```javascript
+新建hexo分支
+添加 .travis.yml 在博客源文件根目录下并上传:
+language: node_js
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm install hexo-cli -g
+
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
+
+script:
+  - hexo clean
+  - hexo generate
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "username"
+  - git config user.email "useremail"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+
+branches:
+  only:
+    - hexo
+env:
+ global:
+   - GH_REF: github.com/username/username.github.io.git
+   
+ （三）配置GitHub Access Token：
+ 
+ GitHub 主页 ——> Settings ——> Developer Settings ——> Personal access tokens ——> Generate new token
+ 
+ （四）Travis CI 设置：
+ 
+    （1）登录 https://travis-ci.org/ 网站用 github 授权登录；
+    （2）登录后在个人主页选择你需要 CI 的仓库；
+    （3）点击你选择的 hexo 博客的仓库进行配置；
+    （4）在 Travis 仓库配置界面 setting 里面对环境变量 Environment Variables 进行 token 配置；
+ 
+ （五）撰写文章并 push 到 github pages：
+ 
+ 每次写完文章，只需要执行下面的命令，其余部分会自动完成部署。https://xuezheng-wei.com/posts/8a945b8a/
+ git add .
+ git commit -m "updated docs"
+ git push origin hexo
+  
+   
+```
+### 博客备份
+```javascript
+$ git init //git初始化
+$ git add . //git 文件添加
+$ git commit -m "init" //git 提交
+$ git pull origin hexo //pull到hexo分支
+$ git push origin hexo //push到hexo分支
+博客恢复
+（一）配置 ssh 连接 Github
+$ cd ~/.ssh 或cd .ssh //检查本机是否有ssh key设置
+$ cd ~  //若没有 ssh ，则切换当前路径在 ”~” 下
+$ ssh-keygen -t rsa -C "user@example.com" //引号内为自己邮箱，三个回车后生成ssh key;添加id_rsa.pub内容到Github;
+$ git config --global user.name “your_username”  //设置用户名
+$ git config --global user.email “your_registered_github_Email”  //设置邮箱地址(建议用注册giuhub的邮箱)
+$ ssh -T git@github.com //测试ssh key是否设置成功
+（二）安装 Node.js；Git；Hexo；
+$ git clone -b hexo git@github.com:user/user.github.io.git  //将Github中hexo分支clone到本地
+$ cd user.github.io //切换到hexo目录下
+$ npm install hexo
+$ npm install 
+$ npm install hexo *** //安装需要的插件：feed;deployer;abbrlink;sitemap;pdf;nofollow;baidu-url-submit等
+$ hexo g -d //测试能否正常编译上传
+https://xuezheng-wei.com/posts/45a0debd/
+```
 [新写文章文档](https://hexo.io/zh-cn/docs/writing.html)
 
 ### 资源
+[动动手指，NexT主题与Hexo更搭哦（基础篇）](http://www.arao.me/2015/hexo-next-theme-optimize-base/)
+
 [Next 主题增加新的第三方评论系统 utterance](https://www.njphper.com/posts/a4cd94b2.html)
 
 [Github Pages部署教程](https://juejin.im/post/5b14b2f06fb9a01e5e3d3121)
