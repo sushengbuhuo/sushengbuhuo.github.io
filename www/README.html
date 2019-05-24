@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>README--- 饥人谷</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab, jirengu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/reveal.css">
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/theme/league.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="http://cdn.jirengu.com/ppt-cli/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides align-center">
+			<section data-tag="h1"><h1>server-mock</h1>
+<p>Start a web server, and mock data. Inspired by Express.</p>
+</section><section data-tag="h2"><h2>Installation</h2>
+<pre><code>npm install -g server-mock
+</code></pre>
+</section><section data-tag="down"><section data-tag="h2"><h2>Usage</h2>
+</section><section data-tag="h3"><h3>Run as a static server</h3>
+<pre><code>server start
+# or
+mock start
+# or
+server open
+</code></pre>
+</section><section data-tag="h3"><h3>Mock data</h3>
+<ol>
+<li>create a router.js file in current folder</li>
+<li>edit router.js file</li>
+</ol>
+<pre><code class="language-javascript">app.get(&apos;/hello&apos;, function(req, res) {
+  res.send({
+    status: 0,
+    msg: &quot;hello hunger valley&quot;
+  })
+});
+</code></pre>
+<ol start="3">
+<li>in your index.html</li>
+</ol>
+<pre><code class="language-javascript"> $.get(&apos;/hello&apos;).done(function(ret){
+  	console.log(ret);
+  });
+</code></pre>
+<p>You can run <code>server init</code> to create example files such as router.js and index.html, and run <code>server start</code> to test your server.</p>
+<p>Your can refer to http://expressjs.com/en/guide/routing.html to see more usage of router.</p>
+<p>More usage</p>
+<pre><code>server start --port 3000         
+server start --public public    
+server start --views views    
+server start --tpl ejs        
+server start --tpl ejs --port 3003
+
+</code></pre>
+</section></section>
+			</div>
+
+		</div>
+
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/head.min.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/reveal.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/lib/classList.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/highlight/highlight.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/zoom-js/zoom.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/notes/notes.js"></script>
+		<script src="http://cdn.jirengu.com/ppt-cli/js/plugin/other/plugin.js"></script>
+
+		
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    runScript(event.currentSlide);
+			} );
+
+			hljs.initHighlightingOnLoad();
+
+			function runScript(section){
+				var scriptStr = section.getAttribute('data-script');
+				if(scriptStr){
+					scriptStr = decodeURIComponent(scriptStr);
+					var tag = document.createElement('script');
+					tag.innerHTML = scriptStr;
+					document.head.appendChild(tag);
+				}
+
+			}
+		</script>
+
+	</body>
+</html>
