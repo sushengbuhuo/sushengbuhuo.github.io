@@ -261,6 +261,18 @@ php -S localhost:8080 -t ./public
 
 php artisan serve --port=8080
 ```
+### MySQL 频繁出错 Packets out of order. Expected 1 received 111. Packet size
+```javascript
+在swoole start函数前创建了mysql连接, 那么后续所有的worker以及task多个子进程都是使用一开始主进程的这个数据库连接。如果有多个子进程同时使用该连接与数据库通信(进程切换)，那么就可能因为通信协议时序的不正确导致mysql出现异常。
+解决方案:
+
+在swoole start函数前注销mysql连接, DB::disconnect();
+相关文章:
+
+1.Server中对象的4层生命周期 https://wiki.swoole.com/wiki/page/354.html
+2.是否可以共用1个redis或mysql连接 https://wiki.swoole.com/wiki/page/325.html
+https://learnku.com/articles/28953
+```
 [基于swoole实现的微信机器人](https://github.com/kcloze/swoole-bot)
 
 [ swoole 协程之旅](https://learnku.com/articles/28112#topnav)
