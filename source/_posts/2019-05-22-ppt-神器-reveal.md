@@ -2,6 +2,8 @@
 title: ppt 神器 reveal
 date: 2019-05-22 11:47:22
 tags:
+- ppt
+- 公众号
 ---
 
 ppt相信大家都用过，不过程序员使用的PPT是可以在网页上用的，比如 reveal

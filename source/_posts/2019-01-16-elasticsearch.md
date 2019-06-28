@@ -174,3 +174,5 @@ curl -H 'Content-Type: application/json'  -XGET 'localhost:9200/_analyze?pretty'
 [一文上手 Elasticsearch常用可视化管理工具](https://mp.weixin.qq.com/s/BE8LrpviJNXGV41bhzGFTw)
 
 [Laravel 下 Elasticsearch 使用](https://learnku.com/articles/25179#topnav)
+
+[CentOS 7.6 安装 Elasticsearch 7.2](https://learnku.com/articles/30389)

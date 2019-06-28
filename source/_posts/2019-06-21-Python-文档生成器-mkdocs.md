@@ -2,6 +2,8 @@
 title: Python 文档生成器 mkdocs
 date: 2019-06-21 21:18:23
 tags:
+- Python
+- 公众号
 ---
 mkdocs 是一个基于Python 对 Markdown 非常友好的文档生成器，[中文文档地址](https://markdown-docs-zh.readthedocs.io/zh_CN/latest/)
 

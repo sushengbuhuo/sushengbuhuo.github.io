@@ -2,6 +2,7 @@
 title: 命令行工具之 speedtest 测试网速
 date: 2019-05-22 11:50:48
 tags:
+- 公众号
 ---
 
 介绍一个专业的网络测速工具speedtest [https://www.speedtest.net/](https://www.speedtest.net/)，国内有对应站点 [http://www.speedtest.cn/](http://www.speedtest.cn/)

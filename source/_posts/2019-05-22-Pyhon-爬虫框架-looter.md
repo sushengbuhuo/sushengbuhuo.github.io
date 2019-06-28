@@ -2,6 +2,8 @@
 title: Pyhon 爬虫框架 looter
 date: 2019-05-22 11:52:54
 tags:
+- python
+- 公众号
 ---
 
 知名的pyspider，scrapy就不说了，今天说说这个 looter
