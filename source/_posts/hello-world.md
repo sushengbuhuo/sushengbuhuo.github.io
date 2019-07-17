@@ -812,6 +812,12 @@ $ npm install hexo *** //安装需要的插件：feed;deployer;abbrlink;sitemap;
 $ hexo g -d //测试能否正常编译上传
 https://xuezheng-wei.com/posts/45a0debd/
 ```
+### 图片防盗链
+```javascript
+<meta name="referrer" content="never" /> ​​​​
+Next 主题只需要在 themes/next/layout/_partials/head/custom-head.swig 中添加上面一行内容即可
+https://michael728.github.io/2019/05/19/hexo-blog-full-note/
+```
 [新写文章文档](https://hexo.io/zh-cn/docs/writing.html)
 
 ### 资源
@@ -882,3 +888,10 @@ https://xuezheng-wei.com/posts/45a0debd/
 [hexo博客添加标签功能](https://swoole.app/2016/07/23/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD/)
 
 [第三方评论系统 utterance](https://www.njphper.com/posts/a4cd94b2.html)
+
+[ Hexo + Github Pages 搭建博客并优化 Next 主题教程](https://michael728.github.io/2019/05/19/hexo-blog-full-note/)
+
+
+
+
+
