@@ -891,7 +891,7 @@ https://michael728.github.io/2019/05/19/hexo-blog-full-note/
 
 [ Hexo + Github Pages 搭建博客并优化 Next 主题教程](https://michael728.github.io/2019/05/19/hexo-blog-full-note/)
 
-
+[博客看板娘](https://live2d.fghrsh.net/demo/1.4.2/autoload.html)
 
 
 

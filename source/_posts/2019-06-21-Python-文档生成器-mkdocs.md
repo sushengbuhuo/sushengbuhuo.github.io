@@ -204,6 +204,7 @@ INFO    -  Your documentation should shortly be available at: https://sushengbuh
 
  
 ### 资源
+[GitHub + Travis + Mkdocs 搭建文档库](https://learnku.com/articles/32279)
 [Python 中文数据结构和算法教程](https://github.com/PegasusWang/python_data_structures_and_algorithms)
 [类似gitbook生成文档工具](https://docsify.js.org/#/zh-cn/deploy)
 [Python Web 入坑指南](https://python-web-guide.readthedocs.io/zh/latest/)
