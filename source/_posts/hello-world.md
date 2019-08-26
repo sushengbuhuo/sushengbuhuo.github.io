@@ -818,9 +818,45 @@ https://xuezheng-wei.com/posts/45a0debd/
 Next 主题只需要在 themes/next/layout/_partials/head/custom-head.swig 中添加上面一行内容即可
 https://michael728.github.io/2019/05/19/hexo-blog-full-note/
 ```
+### 文章加密
+```javascript
+打开themes->next->layout->_partials->head.swig文件,在以下位置插入这样一段代码：
+<script>
+    (function () {
+        if ('{{ page.password }}') {
+            if (prompt('请输入文章密码') !== '{{ page.password }}') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+在文章上写成类似这样
+---
+title: {{ title }}
+date: {{ date }}
+tags:
+description: 
+copyright: 
+categories:
+password: password
+---
+
+但是通过curl工具浏览网页是直接显示网页源代码就可以看到密码
+curl -L http://
+可以使用https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md 这个插件加密
+https://www.jianshu.com/p/44e211829447 
+```
 [新写文章文档](https://hexo.io/zh-cn/docs/writing.html)
 
 ### 资源
+[next主题模板一些配置](https://duanruilong.github.io/blog/2018/05/05/next%E4%B8%BB%E9%A2%98%E6%A8%A1%E6%9D%BF%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/)
+
 [动动手指，NexT主题与Hexo更搭哦（基础篇）](http://www.arao.me/2015/hexo-next-theme-optimize-base/)
 
 [Next 主题增加新的第三方评论系统 utterance](https://www.njphper.com/posts/a4cd94b2.html)
