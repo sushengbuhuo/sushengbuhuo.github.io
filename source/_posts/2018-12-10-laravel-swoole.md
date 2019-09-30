@@ -343,6 +343,8 @@ https://learnku.com/articles/28953
 
 [opcache 的统计功能](https://github.com/rlerdorf/opcache-status)
 
+[基于 Swoole 开发的 MySQL 数据库连接池SMProxy ](https://learnku.com/articles/34475)
+
 [laravel 优化](https://www.v2ex.com/t/398902)
 
 [国内使用 laravel ](https://lax.v2ex.com/t/357983?p=1)

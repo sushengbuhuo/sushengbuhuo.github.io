@@ -855,6 +855,11 @@ https://www.jianshu.com/p/44e211829447
 [新写文章文档](https://hexo.io/zh-cn/docs/writing.html)
 
 ### 资源
+[至简的 hexo 主题](https://github.com/8090Lambert/hexo-theme-easy)
+
+
+[开源的工具 HexoClient （跨平台的哦）]( https://www.mspring.org/2018/11/29/HexoClient%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9/)
+
 [next主题模板一些配置](https://duanruilong.github.io/blog/2018/05/05/next%E4%B8%BB%E9%A2%98%E6%A8%A1%E6%9D%BF%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/)
 
 [动动手指，NexT主题与Hexo更搭哦（基础篇）](http://www.arao.me/2015/hexo-next-theme-optimize-base/)
@@ -868,6 +873,8 @@ https://www.jianshu.com/p/44e211829447
 [打造个性超赞博客Hexo+NexT+GitHubPages的超深度优化](https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#附上我的-custom-styl)
 
 [用Github+Hexo搭建你的个人博客：美化篇](https://www.makcyun.top/hexo02.html)
+
+[hexo干货系列](http://tengj.top/2016/02/20/hexoTotal/)
 
 [hexo文档](https://hexo.io/docs/)
 
