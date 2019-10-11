@@ -879,6 +879,30 @@ On branch master
 
 访问  https://sushengbuhuo.gitee.io
 
+git checkout -b hexo
+λ git branch
+  hexo
+* master
+
+d:\code\hexo\blog (master)
+λ git remote add gitee git@gitee.com:sushengbuhuo/sushengbuhuo.git
+
+d:\code\hexo\blog (master)
+λ git remote -v
+gitee   git@gitee.com:sushengbuhuo/sushengbuhuo.git (fetch)
+gitee   git@gitee.com:sushengbuhuo/sushengbuhuo.git (push)
+github  git@sushengbuhuo.github.com:sushengbuhuo/sushengbuhuo.github.io.git (fetch)
+github  git@sushengbuhuo.github.com:sushengbuhuo/sushengbuhuo.github.io.git (push)
+λ git push gitee hexo
+Counting objects: 580, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (541/541), done.
+Writing objects: 100% (580/580), 2.21 MiB | 2.77 MiB/s, done.
+Total 580 (delta 33), reused 0 (delta 0)
+remote: Resolving deltas: 100% (33/33), done.
+remote: Powered By Gitee.com
+To gitee.com:sushengbuhuo/sushengbuhuo.git
+ * [new branch]      hexo -> hexo
 ```
 [新写文章文档](https://hexo.io/zh-cn/docs/writing.html)
 
