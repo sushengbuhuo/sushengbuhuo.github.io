@@ -107,4 +107,5 @@ utterance:
 backup:
   type: git
   repository:
+    gitee: git@gitee.com:sushengbuhuo/sushengbuhuo.git,backup
     github: git@sushengbuhuo.github.com:sushengbuhuo/sushengbuhuo.github.io.git,backup
