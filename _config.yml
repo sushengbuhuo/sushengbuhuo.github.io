@@ -83,7 +83,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@sushengbuhuo.github.com:sushengbuhuo/sushengbuhuo.github.io.git
+  repository:
+    gitee: git@gitee.com:sushengbuhuo/sushengbuhuo.git
+    github: git@sushengbuhuo.github.com:sushengbuhuo/sushengbuhuo.github.io.git
   branch: master
 
 since: 2018
