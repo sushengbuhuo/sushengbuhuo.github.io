@@ -852,6 +852,34 @@ curl -L http://
 可以使用https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md 这个插件加密
 https://www.jianshu.com/p/44e211829447 
 ```
+
+### 推送到gitee
+```javascript
+创建项目 https://gitee.com/sushengbuhuo/sushengbuhuo  注意和GitHub不一样，项目名不是sushengbuhuo.gitee.io
+vi _config.yml
+
+deploy:
+  type: git
+  repository:
+    gitee: git@gitee.com:sushengbuhuo/sushengbuhuo.git
+    github: git@sushengbuhuo.github.com:sushengbuhuo/sushengbuhuo.github.io.git
+  branch: master
+
+hexo d 
+
+[master f11b6ad] Site updated: 2019-10-11 16:37:34
+ 235 files changed, 248 insertions(+), 246 deletions(-)
+remote: Powered By Gitee.com
+Branch master set up to track remote branch master from git@gitee.com:sushengbuhuo/sushengbuhuo.git.
+To gitee.com:sushengbuhuo/sushengbuhuo.git
+ + 538b9d3...f11b6ad HEAD -> master (forced update)
+On branch master
+
+部署完后需要https://gitee.com/sushengbuhuo/sushengbuhuo/pages 自己手动更新部署。
+
+访问  https://sushengbuhuo.gitee.io
+
+```
 [新写文章文档](https://hexo.io/zh-cn/docs/writing.html)
 
 ### 资源
