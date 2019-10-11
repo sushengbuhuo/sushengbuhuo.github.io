@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="代码,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="编辑网页1document.designMode = &quot;on&quot; Console中的技巧12345chrome会帮你buffer 5个你查看过的DOM对象，你可以直接在Console中用 $0, $1, $2, $3, $4来访问。你还可以使用像jQuery那样的语法来获得DOM对象，如：$(&quot;#mydiv&quot;)你还可使用 $$(&quot;.class&quot;) 来选择所有满足条件的DOM对象。你可以使用 getE">
+<meta name="keywords" content="代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端代码收集">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/前端代码收集/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="编辑网页1document.designMode = &quot;on&quot; Console中的技巧12345chrome会帮你buffer 5个你查看过的DOM对象，你可以直接在Console中用 $0, $1, $2, $3, $4来访问。你还可以使用像jQuery那样的语法来获得DOM对象，如：$(&quot;#mydiv&quot;)你还可使用 $$(&quot;.class&quot;) 来选择所有满足条件的DOM对象。你可以使用 getE">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-24T02:03:45.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端代码收集">
+<meta name="twitter:description" content="编辑网页1document.designMode = &quot;on&quot; Console中的技巧12345chrome会帮你buffer 5个你查看过的DOM对象，你可以直接在Console中用 $0, $1, $2, $3, $4来访问。你还可以使用像jQuery那样的语法来获得DOM对象，如：$(&quot;#mydiv&quot;)你还可使用 $$(&quot;.class&quot;) 来选择所有满足条件的DOM对象。你可以使用 getE">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/21/前端代码收集/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>前端代码收集 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/前端代码收集/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端代码收集</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-21T19:17:58+08:00">
+                2019-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="编辑网页"><a href="#编辑网页" class="headerlink" title="编辑网页"></a>编辑网页</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.designMode = <span class="string">"on"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Console中的技巧"><a href="#Console中的技巧" class="headerlink" title="Console中的技巧"></a>Console中的技巧</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chrome会帮你buffer <span class="number">5</span>个你查看过的DOM对象，你可以直接在Console中用 $<span class="number">0</span>, $<span class="number">1</span>, $<span class="number">2</span>, $<span class="number">3</span>, $<span class="number">4</span>来访问。</span><br><span class="line">你还可以使用像jQuery那样的语法来获得DOM对象，如：$(<span class="string">"#mydiv"</span>)</span><br><span class="line">你还可使用 $$(<span class="string">".class"</span>) 来选择所有满足条件的DOM对象。</span><br><span class="line">你可以使用 getEventListeners($(<span class="string">"selector"</span>)) 来查看某个DOM对象上的事件</span><br><span class="line">还可以使用 monitorEvents($(<span class="string">"selector"</span>)) 来监控相关的事件</span><br></pre></td></tr></table></figure>
+<h3 id="将内容复制到剪贴板"><a href="#将内容复制到剪贴板" class="headerlink" title="将内容复制到剪贴板"></a>将内容复制到剪贴板</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=<span class="string">"demoInput"</span> value=<span class="string">"hello world"</span>&gt;</span><br><span class="line">&lt;button id=<span class="string">"btn"</span>&gt;点我复制&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const btn = document.querySelector('#btn')</span></span><br><span class="line"><span class="regexp">btn.addEventListener('click', () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">  const input = document.querySelector('#demoInput')</span></span><br><span class="line"><span class="regexp">  input.select()</span></span><br><span class="line"><span class="regexp">  if (document.execCommand('copy')) &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制成功')</span></span><br><span class="line"><span class="regexp">  &#125; else &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制失败')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br><span class="line"><span class="regexp">const btn = document.querySelector('#btn')</span></span><br><span class="line"><span class="regexp">btn.addEventListener('click', () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">  const input = document.createElement('input')</span></span><br><span class="line"><span class="regexp">  document.body.appendChild(input)</span></span><br><span class="line"><span class="regexp">  input.setAttribute('value', '复制我')</span></span><br><span class="line"><span class="regexp">  input.select()</span></span><br><span class="line"><span class="regexp">  if (document.execCommand('copy')) &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制成功')</span></span><br><span class="line"><span class="regexp">  &#125; else &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制失败')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  document.body.removeChild(input)</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">https:/</span><span class="regexp">/blog.mutoe.com/</span><span class="number">2019</span>/copy-content-to-clipboard-<span class="keyword">in</span>-javascript/</span><br></pre></td></tr></table></figure>
+<h3 id="微信分享"><a href="#微信分享" class="headerlink" title="微信分享"></a>微信分享</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shareLinkUlr = location.href.split(<span class="string">"#"</span>)[<span class="number">0</span>]; <span class="comment">// 获取当前的url 去掉 # 之后的部分</span></span><br><span class="line">shareLinkUlr = shareLinkUlr.replace(<span class="regexp">/\&amp;/g</span>, <span class="string">'%26'</span>); <span class="comment">// 将 &amp; 替换成 %26</span></span><br><span class="line"><span class="keyword">var</span> shareImgUrl = <span class="string">'http://www.abc.com/images/logo300.jpg'</span>; <span class="comment">// 分享的图片地址</span></span><br><span class="line"><span class="comment">// 获取 config 的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getjssdkconfig</span>(<span class="params">apis,debug,json,link</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//console.log(apis);</span></span><br><span class="line">    <span class="comment">//console.log(debug);</span></span><br><span class="line">    <span class="comment">//console.log(json);</span></span><br><span class="line">    <span class="comment">//console.log(link);</span></span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    <span class="keyword">var</span> url = <span class="string">'http://www.abc.com/qxj_jssdkconfig'</span>; <span class="comment">// 这个就是easywechat生成的参数</span></span><br><span class="line">    <span class="keyword">var</span> data = <span class="string">"apis="</span>+apis+<span class="string">"&amp;debug="</span>+debug+<span class="string">"&amp;json="</span>+json+<span class="string">"&amp;url="</span>+link; <span class="comment">// 拼接 get 参数</span></span><br><span class="line">    xhr.open(<span class="string">'GET'</span>,url+<span class="string">"?"</span>+data);</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.readyState===<span class="number">4</span> &amp;&amp; (xhr.status &gt;=<span class="number">200</span> &amp;&amp; xhr.status &lt;=<span class="number">300</span>))&#123;</span><br><span class="line">            <span class="comment">// 获取 config 之后，进行一些操作</span></span><br><span class="line">            <span class="comment">// 需要进行 JSON.parse 获取对象</span></span><br><span class="line">            configJsSDKAndDoSomething(<span class="built_in">JSON</span>.parse(xhr.responseText));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.send();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取config 之后进行的操作</span></span><br><span class="line"><span class="comment">// 因为是使用 ajax 进行config内容，这个方法是在上面运行的</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">configJsSDKAndDoSomething</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">    wx.config(config);</span><br><span class="line">    wx.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 其他的一些操作</span></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//不是wifi环境下提示</span></span><br><span class="line">        wx.getNetworkType(&#123;</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> networkType = res.networkType; <span class="comment">// 返回网络类型2g，3g，4g，wifi</span></span><br><span class="line">                <span class="keyword">if</span>(networkType!=<span class="string">"wifi"</span>)&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"当前你网络环境为"</span>+networkType+<span class="string">""</span>);                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.error(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareTimeline(&#123;</span><br><span class="line">        title: <span class="string">''</span>, <span class="comment">// 分享标题</span></span><br><span class="line">        link: location.href, <span class="comment">// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致</span></span><br><span class="line">        imgUrl:shareImgUrl, <span class="comment">// 分享图标</span></span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">'分享成功'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareAppMessage(&#123;</span><br><span class="line">        title: <span class="string">''</span>, <span class="comment">// 分享标题</span></span><br><span class="line">        desc: <span class="string">''</span>, <span class="comment">// 分享描述</span></span><br><span class="line">        link: location.href, <span class="comment">// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致</span></span><br><span class="line">        imgUrl: shareImgUrl, <span class="comment">// 分享图标</span></span><br><span class="line">        type: <span class="string">'link'</span>, <span class="comment">// 分享类型,music、video或link，不填默认为link</span></span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line">        cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 页面加载完之后进行操作</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 注意这里的参数</span></span><br><span class="line">    <span class="comment">// apis 使用的参数是 字符串的拼接 这个是和 php 的方法中的处理相对应的</span></span><br><span class="line">    getjssdkconfig(<span class="string">"checkJsApi,onMenuShareTimeline,onMenuShareAppMessage,onMenuShareQQ,onMenuShareWeibo,onMenuShareQZone,hideMenuItems,showMenuItems,hideAllNonBaseMenuItem,showAllNonBaseMenuItem,translateVoice,startRecord,stopRecord,onVoiceRecordEnd,playVoice,onVoicePlayEnd,pauseVoice,stopVoice,uploadVoice,downloadVoice,chooseImage,previewImage,uploadImage,downloadImage,getNetworkType,openLocation,getLocation,hideOptionMenu,showOptionMenu,closeWindow,scanQRCode,chooseWXPay,openProductSpecificView,addCard,chooseCard,openCard"</span>,<span class="literal">false</span>,<span class="literal">false</span>,shareLinkUlr);</span><br><span class="line">&#125;);</span><br><span class="line">https:<span class="comment">//learnku.com/laravel/t/30886</span></span><br></pre></td></tr></table></figure>
+<h3 id="支付宝转账恶搞"><a href="#支付宝转账恶搞" class="headerlink" title="支付宝转账恶搞"></a>支付宝转账恶搞</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">/** 支付宝恶搞 **/</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inc</span>(<span class="params">el</span>) </span>&#123; <span class="comment">// 更新金额数字</span></span><br><span class="line">        el.innerHTML = el.innerHTML.replace(<span class="regexp">/\d+/</span>, <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> +a + rnd(<span class="number">9</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">rnd</span>(<span class="params">n</span>) </span>&#123; <span class="comment">// 1-n 随机数https://www.cnblogs.com/52cik/p/js-alipay-jokes.html</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.random() * n | <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">joke</span>(<span class="params">el</span>) </span>&#123; <span class="comment">// 随机增加</span></span><br><span class="line">        inc(el);</span><br><span class="line">        setTimeout(joke, rnd(<span class="number">1e3</span>), el);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> amount = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"amount"</span>);</span><br><span class="line"></span><br><span class="line">    joke(amount[<span class="number">0</span>]); <span class="comment">// 账户余额 随机增加</span></span><br><span class="line">    joke(amount[<span class="number">1</span>]); <span class="comment">// 余额宝 随机增加</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h3 id="奇葩字符（不可见字符）"><a href="#奇葩字符（不可见字符）" class="headerlink" title="奇葩字符（不可见字符）"></a>奇葩字符（不可见字符）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> é 字符，他的 unicode 是 \u00e9, 但是也可以用 <span class="string">'e'</span> + <span class="string">'\u0301'</span> 实现 <span class="string">"é"</span> 前者 length 是 <span class="number">1</span>，后者 length 是 <span class="number">2</span>。</span><br><span class="line"><span class="string">'\u0301'</span> 在这里起到了语调符的作用，然后我就丧心病狂的  <span class="string">'e'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0301'</span>);  </span><br><span class="line"></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0310'</span>);  <span class="comment">// "呵呵̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u031D'</span>);             <span class="comment">// "呵呵̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0E47'</span>);                          <span class="comment">// "呵呵็็็็็็็็็็็็็็็็็็็"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0e49'</span>);                                       <span class="comment">// "呵呵้้้้้้้้้้้้้้้้้้้"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0598'</span>);        <span class="comment">// "呵呵֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘"</span></span><br><span class="line"></span><br><span class="line">也可以这么玩...</span><br><span class="line"></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0310'</span>)+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0598'</span>)+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0e49'</span>);  <span class="comment">// "呵呵้้้้้้้้้้้้้้้้้้้̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘"</span></span><br><span class="line">http:<span class="comment">//www.fileformat.info/info/unicode/category/Mn/list.htm  </span></span><br><span class="line">这里详细的列出了每个编码以及对应的意思，还有图片展现。https:<span class="comment">//www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html#!comments</span></span><br></pre></td></tr></table></figure>
+<h3 id="Chrome-监听-console-打开"><a href="#Chrome-监听-console-打开" class="headerlink" title="Chrome 监听 console 打开"></a>Chrome 监听 console 打开</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/x/</span>;</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(re);</span><br><span class="line"></span><br><span class="line">re.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'第 '</span> + (++i) + <span class="string">' 次打开控制台'</span>;<span class="comment">//https://www.52cik.com/2016/04/27/chrome-console-open.html</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="操作之神奇的-date"><a href="#操作之神奇的-date" class="headerlink" title="操作之神奇的 date"></a>操作之神奇的 date</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取月份天数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMonthDayCount</span>(<span class="params">year, month</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(year, month, <span class="number">0</span>).getDate();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getMonthDayCount(<span class="number">2017</span>, <span class="number">10</span>)); <span class="comment">// 31</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAllMonthDayCount</span>(<span class="params">year</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> days = [<span class="number">31</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(year, <span class="number">2</span>, <span class="number">0</span>).getDate(), <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>];</span><br><span class="line">  <span class="keyword">return</span> days;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getAllMonthDayCount(<span class="number">2016</span>));<span class="comment">// [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLeapYear</span>(<span class="params">year</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (year % <span class="number">4</span> == <span class="number">0</span>) &amp;&amp; (year % <span class="number">100</span> != <span class="number">0</span> || year % <span class="number">400</span> == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLeapYear</span>(<span class="params">year</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(year, <span class="number">2</span>, <span class="number">0</span>).getDate() === <span class="number">29</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log([</span><br><span class="line">  isLeapYear(<span class="number">2000</span>),</span><br><span class="line">  isLeapYear(<span class="number">2016</span>),</span><br><span class="line">  isLeapYear(<span class="number">2017</span>),</span><br><span class="line">  isLeapYear(<span class="number">2018</span>)</span><br><span class="line">]); <span class="comment">// [ true, true, false, false ]</span></span><br><span class="line"><span class="comment">// 10天后是几月几号</span></span><br><span class="line"><span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2016-12-25'</span>);</span><br><span class="line">dt.setDate(dt.getDate() + <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dt.toLocaleDateString()); <span class="comment">// 2017/1/4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 10天前是几月几号https://www.52cik.com/2017/10/11/js-date-month.html</span></span><br><span class="line"><span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2017-01-04'</span>);</span><br><span class="line">dt.setDate(dt.getDate() - <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dt.toLocaleDateString()); <span class="comment">// 2016/12/25</span></span><br></pre></td></tr></table></figure>
+<h3 id="日期是否是连续"><a href="#日期是否是连续" class="headerlink" title="日期是否是连续"></a>日期是否是连续</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> days = [</span><br><span class="line">  <span class="string">'2016-02-28'</span>,</span><br><span class="line">  <span class="string">'2016-02-29'</span>, <span class="comment">// 闰月</span></span><br><span class="line">  <span class="string">'2016-03-01'</span>, <span class="comment">// 跨月</span></span><br><span class="line">  <span class="string">'2016-03-02'</span>,</span><br><span class="line">  <span class="string">'2016-03-03'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先排序，然后转时间戳</span></span><br><span class="line"><span class="keyword">let</span> _days = days.sort().map(<span class="function">(<span class="params">d, i</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(d)</span><br><span class="line">  dt.setDate(dt.getDate() + <span class="number">4</span> - i) <span class="comment">// 处理为相同日期</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> +dt</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 比较时间戳是否一致</span></span><br><span class="line"><span class="built_in">console</span>.log(</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">1</span>] &amp;&amp;</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">2</span>] &amp;&amp;</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">3</span>] &amp;&amp;</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">4</span>]</span><br><span class="line">)</span><br><span class="line"><span class="keyword">let</span> days = [</span><br><span class="line">  <span class="string">'2016-02-28 12:00:00'</span>,</span><br><span class="line">  <span class="string">'2016-02-29 12:00:01'</span>, <span class="comment">// 闰月</span></span><br><span class="line">  <span class="string">'2016-03-01 12:00:02'</span>, <span class="comment">// 跨月</span></span><br><span class="line">  <span class="string">'2016-03-02 12:00:03'</span>,</span><br><span class="line">  <span class="string">'2016-03-03 12:00:04'</span>,</span><br><span class="line">  <span class="string">'2016-03-04 12:00:04'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(continueDays(days))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">continueDays</span>(<span class="params">arr_days</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 先排序，然后转时间戳</span></span><br><span class="line">  <span class="keyword">let</span> days = arr_days.sort().map(<span class="function">(<span class="params">d, i</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(d)</span><br><span class="line">    dt.setDate(dt.getDate() + <span class="number">4</span> - i) <span class="comment">// 处理为相同日期</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 抹去 时 分 秒 毫秒</span></span><br><span class="line">    dt.setHours(<span class="number">0</span>)</span><br><span class="line">    dt.setMinutes(<span class="number">0</span>)</span><br><span class="line">    dt.setSeconds(<span class="number">0</span>)</span><br><span class="line">    dt.setMilliseconds(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> +dt</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> ret = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  days.forEach(<span class="function"><span class="params">d</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (days[<span class="number">0</span>] !== d) &#123;</span><br><span class="line">      ret = <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ret</span><br><span class="line">&#125;https:<span class="comment">//www.52cik.com/2016/07/10/consecutive-dates.html</span></span><br></pre></td></tr></table></figure>
+<h3 id="跨域代理工具"><a href="#跨域代理工具" class="headerlink" title="跨域代理工具"></a>跨域代理工具</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bing每日分享接口 </span><br><span class="line">http:<span class="comment">//cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1</span></span><br><span class="line">        http:<span class="comment">//www.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;mkt=zh-CN</span></span><br><span class="line">        直接在浏览器打开是如下的json,要拿到的就是url，直接在一个页面用js获取存在跨域问题，可以用代理工具 https:<span class="comment">//jsonp.afeld.me/ 我用的是第二个方法,把上面的api输入，</span></span><br><span class="line">        </span><br><span class="line">        点击go得到一个经过代理后的api，如下</span><br><span class="line">         </span><br><span class="line">        https:<span class="comment">//jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1</span></span><br><span class="line">https:<span class="comment">//codepen.io/fazero/pen/KzooBZ  https://blog.fazero.me/2016/04/14/js-get-bing-photo/</span></span><br></pre></td></tr></table></figure>
+<h3 id="网易云音乐刷听歌量"><a href="#网易云音乐刷听歌量" class="headerlink" title="网易云音乐刷听歌量"></a>网易云音乐刷听歌量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="string">'document.getElementsByClassName("nxt")[0].click();console.log("Play OJBK. Next")'</span>,<span class="number">90000</span>);</span><br><span class="line">https:<span class="comment">//www.mmuaa.com/post/cd44019a0e569d64.html</span></span><br></pre></td></tr></table></figure>
+<h3 id="emoji"><a href="#emoji" class="headerlink" title="emoji"></a>emoji</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript 字符串编码使用 UTF-16 https://gist.github.com/justjavac/a5aa1c0d0d111cf19e852037f4c483db</span></span><br><span class="line"><span class="string">"💩"</span>.length === <span class="number">2</span>;</span><br><span class="line"><span class="string">"💩"</span> === <span class="string">"\u&#123;1F4A9&#125;"</span>;    <span class="comment">// es6</span></span><br><span class="line"><span class="string">"💩"</span> === <span class="string">"\uD83D\uDCA9"</span>; <span class="comment">// es5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 同一个编码可能使用不同的码位</span></span><br><span class="line"><span class="string">"ò"</span> === <span class="string">"ò"</span>;       <span class="comment">// ❎</span></span><br><span class="line"><span class="string">"ò"</span> === <span class="string">"\xF2"</span>;    <span class="comment">// ✅</span></span><br><span class="line"><span class="string">"ò"</span> === <span class="string">"o\u0300"</span>; <span class="comment">// ✅</span></span><br><span class="line"><span class="string">"o\u0300"</span>.normalize(<span class="string">"NFC"</span>) === <span class="string">"\xF2"</span>; <span class="comment">// ✅ es6 提供了 normalize 函数</span></span><br><span class="line"></span><br><span class="line"><span class="string">"👨‍👩‍👧‍👦"</span>.length === <span class="number">11</span>;</span><br><span class="line"><span class="string">"👨‍👩‍👧‍👦"</span> === <span class="string">"\u&#123;1F468&#125;\u200D\u&#123;1F469&#125;\u200D\u&#123;1F467&#125;\u200D\u&#123;1F466&#125;"</span>;</span><br><span class="line"><span class="string">"👨"</span> === <span class="string">"\u&#123;1F468&#125;"</span>;</span><br><span class="line"><span class="string">"👩"</span> === <span class="string">"\u&#123;1F469&#125;"</span>;</span><br><span class="line"><span class="string">"👧"</span> === <span class="string">"\u&#123;1F467&#125;"</span>;</span><br><span class="line"><span class="string">"👦"</span> === <span class="string">"\u&#123;1F466&#125;"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="本地存储websql"><a href="#本地存储websql" class="headerlink" title="本地存储websql"></a>本地存储websql</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">openDatabase：这个方法使用现有的数据库或者新建的数据库创建一个数据库对象。</span><br><span class="line">transaction：这个方法让我们能够控制一个事务，以及基于这种情况执行提交或者回滚。</span><br><span class="line">executeSql：这个方法用于执行实际的 SQL 查询。</span><br><span class="line">首先要想使用 WebSQL 首先得判断浏览器是否支持</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">window</span>.openDatabase)</span><br><span class="line">&#123;</span><br><span class="line">    alert(<span class="string">'您的浏览器不支持 WebSQL'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">打开数据库</span></span><br><span class="line"><span class="regexp">var db = window.openDatabase(dbname, version, dbdesc, dbsize,function() &#123;&#125;);</span></span><br><span class="line"><span class="regexp">openDatabase 方法中一共包括了 5 个参数,分别为数据库名、版本号、描述、数据库大小、创建回调。其中创建回调可以省略</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">例如创建 王者荣耀数据库</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">var db = openDatabase('wucai', '1.0', '王者荣耀数据库', 1024 * 1024);</span></span><br><span class="line"><span class="regexp">事务操作</span></span><br><span class="line"><span class="regexp">使用 transaction 对事务进行处理、执行提交、回滚操作</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">transaction(callback, errorCallback, successCallback); </span></span><br><span class="line"><span class="regexp">创建数据表</span></span><br><span class="line"><span class="regexp">db.transaction(function (tx) &#123;</span></span><br><span class="line"><span class="regexp">     tx.executeSql('CREATE TABLE IF NOT EXISTS heros (id unique, name, hp_max, mp_max, role_main)');</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">插入数据</span></span><br><span class="line"><span class="regexp">db.transaction(function (tx) &#123;</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10000, "夏侯惇", 7350, 1746, " 坦克 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10001, "钟无艳", 7000, 1760, " 战士 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10002, "张飞", 8341, 100, " 坦克 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10003, "牛魔", 8476, 1926, " 坦克 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10004, "吕布", 7344, 0, " 战士 ")');</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">查找数据</span></span><br><span class="line"><span class="regexp">db.transaction(function (tx) &#123;</span></span><br><span class="line"><span class="regexp">    tx.executeSql('SELECT * FROM heros', [], function (tx, data) &#123;</span></span><br><span class="line"><span class="regexp">    var len = data.rows.length;</span></span><br><span class="line"><span class="regexp">    console.log('查找到：' +len +'条记录');</span></span><br><span class="line"><span class="regexp">    console.log(data.rows);</span></span><br><span class="line"><span class="regexp">    &#125;);</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">https:/</span><span class="regexp">/laravelcode.cn/</span>posts/<span class="number">99</span>/simple-use-<span class="keyword">of</span>-websql</span><br></pre></td></tr></table></figure>
+<p>简单直接的 Javascript 开发环境 <a href="http://lixiaolai.com/2016/07/31/makecs-simplest-js-dev-environment/" target="_blank" rel="noopener">http://lixiaolai.com/2016/07/31/makecs-simplest-js-dev-environment/</a></p>
+<p>前后端都开源的h5快速制作平台，类似于开源版本的易企秀、人人秀，可以通过拖拽的形式，快速生成H5，前端和后端都已经开源了，而且在持续迭代中 <a href="https://github.com/ly525/luban-h5" target="_blank" rel="noopener">https://github.com/ly525/luban-h5</a></p>
+<p> alert xss <a href="https://alf.nu/alert1" target="_blank" rel="noopener">https://alf.nu/alert1</a></p>
+<p><a href="https://github.com/fising/big-file-uploader" target="_blank" rel="noopener">通过文件分片解决大文件上传</a></p>
+<p><a href="https://learnku.com/articles/31533" target="_blank" rel="noopener">JS 数据结构</a></p>
+<p><a href="https://coolshell.cn/articles/17634.html" target="_blank" rel="noopener">CHROME开发者工具的小技巧</a></p>
+<p><a href="https://juejin.im/post/5af53823f265da0b75282b0f#heading-11" target="_blank" rel="noopener">chrome开发者工具各种骚技巧</a></p>
+<p><a href="https://neuqzxy.github.io/2017/11/16/webpack%E7%AC%94%E8%AE%B0-%E6%9C%8D%E5%8A%A1%E5%8F%8A%E7%83%AD%E6%9B%B4%E6%96%B0/" target="_blank" rel="noopener">webpack笔记-服务及热更新</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/28937831" target="_blank" rel="noopener">JavaScript编程黑科技</a></p>
+<p><a href="https://learnku.com/docs/writing-docs/typography/3957" target="_blank" rel="noopener">中文文案排版规范</a></p>
+<p><a href="https://github.com/pushmetop/30-seconds-for-everyday" target="_blank" rel="noopener">前端每日 30 秒</a></p>
+<p><a href="https://zhangslob.github.io/2018/12/21/Chrome%E6%96%AD%E7%82%B9JS%E5%AF%BB%E6%89%BE%E6%B7%98%E5%AE%9D%E7%AD%BE%E5%90%8Dsign/" target="_blank" rel="noopener">Chrome断点JS寻找淘宝签名sign</a></p>
+<p><a href="https://recordrtc.org/" target="_blank" rel="noopener">HTML 实现采集拍照功能</a></p>
+<p><a href="http://nullpointer.pw/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E8%B8%A9%E5%9D%91%E4%B9%8B%E6%97%85.html" target="_blank" rel="noopener">微信分享踩坑之旅</a></p>
+<p><a href="http://cuihuan.net/2019/05/12/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" target="_blank" rel="noopener">字符编码那些事儿</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/代码/" rel="tag"># 代码</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/13/github-精选项目收集/" rel="next" title="github 精选项目收集">
+                <i class="fa fa-chevron-left"></i> github 精选项目收集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/22/那些你可能不知道的浏览器奇技淫巧/" rel="prev" title="那些你可能不知道的浏览器奇技淫巧">
+                那些你可能不知道的浏览器奇技淫巧 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑网页"><span class="nav-number">1.</span> <span class="nav-text">编辑网页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Console中的技巧"><span class="nav-number">2.</span> <span class="nav-text">Console中的技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将内容复制到剪贴板"><span class="nav-number">3.</span> <span class="nav-text">将内容复制到剪贴板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信分享"><span class="nav-number">4.</span> <span class="nav-text">微信分享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支付宝转账恶搞"><span class="nav-number">5.</span> <span class="nav-text">支付宝转账恶搞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#奇葩字符（不可见字符）"><span class="nav-number">6.</span> <span class="nav-text">奇葩字符（不可见字符）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chrome-监听-console-打开"><span class="nav-number">7.</span> <span class="nav-text">Chrome 监听 console 打开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作之神奇的-date"><span class="nav-number">8.</span> <span class="nav-text">操作之神奇的 date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期是否是连续"><span class="nav-number">9.</span> <span class="nav-text">日期是否是连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域代理工具"><span class="nav-number">10.</span> <span class="nav-text">跨域代理工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网易云音乐刷听歌量"><span class="nav-number">11.</span> <span class="nav-text">网易云音乐刷听歌量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emoji"><span class="nav-number">12.</span> <span class="nav-text">emoji</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地存储websql"><span class="nav-number">13.</span> <span class="nav-text">本地存储websql</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

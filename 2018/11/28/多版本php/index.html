@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="php,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="安装nginx123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687yum list | grep nginxyum -y">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多版本php">
+<meta property="og:url" content="http://yoursite.com/2018/11/28/多版本php/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="安装nginx123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687yum list | grep nginxyum -y">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-12T12:25:41.870Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多版本php">
+<meta name="twitter:description" content="安装nginx123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687yum list | grep nginxyum -y">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/28/多版本php/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>多版本php | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/多版本php/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">多版本php</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T14:02:54+08:00">
+                2018-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  7.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  42 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">yum list | grep nginx</span><br><span class="line">yum -y install nginx</span><br><span class="line">iptables -F</span><br><span class="line">setenforce <span class="number">0</span></span><br><span class="line">systemctl start nginx</span><br><span class="line">#自己编译</span><br><span class="line">## 下载nginx安装包，版本根据自己需求自己替换</span><br><span class="line">wget http:<span class="comment">//nginx.org/download/nginx-1.10.3.tar.gz</span></span><br><span class="line"></span><br><span class="line">## 解压缩</span><br><span class="line">tar -xvf nginx<span class="number">-1.10</span><span class="number">.3</span>.tar.gz</span><br><span class="line"></span><br><span class="line">## 进入解压后的目录</span><br><span class="line">cd nginx<span class="number">-1.10</span><span class="number">.3</span></span><br><span class="line"></span><br><span class="line">## 安装nginx所需功能</span><br><span class="line">yum install -y pcre-devel openssl openssl-devel</span><br><span class="line"></span><br><span class="line">## 配置信息，--prefix为安装文件的目录</span><br><span class="line">./configure --prefix=<span class="regexp">/usr/</span>local/nginx --<span class="keyword">with</span>-http_ssl_module --<span class="keyword">with</span>-http_realip_module --<span class="keyword">with</span>-http_addition_module --<span class="keyword">with</span>-http_sub_module --<span class="keyword">with</span>-http_dav_module --<span class="keyword">with</span>-http_flv_module --<span class="keyword">with</span>-http_mp4_module --<span class="keyword">with</span>-http_gunzip_module --<span class="keyword">with</span>-http_gzip_static_module --<span class="keyword">with</span>-http_random_index_module --<span class="keyword">with</span>-http_secure_link_module --<span class="keyword">with</span>-http_stub_status_module --<span class="keyword">with</span>-http_auth_request_module --<span class="keyword">with</span>-threads --<span class="keyword">with</span>-stream --<span class="keyword">with</span>-stream_ssl_module --<span class="keyword">with</span>-http_slice_module --<span class="keyword">with</span>-mail --<span class="keyword">with</span>-mail_ssl_module --<span class="keyword">with</span>-file-aio --<span class="keyword">with</span>-http_v2_module --<span class="keyword">with</span>-ipv6 --<span class="keyword">with</span>-pcre</span><br><span class="line"></span><br><span class="line">## 编译和安装</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line">## 将nginx加入到systemctl中</span><br><span class="line">vi /usr/lib/systemd/system/nginx.service</span><br><span class="line"></span><br><span class="line">## 配置信息</span><br><span class="line">[Unit]</span><br><span class="line">Description=nginx.service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=<span class="regexp">/usr/</span>local/nginx/sbin/nginx</span><br><span class="line">ExecReload=<span class="regexp">/usr/</span>local/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=<span class="regexp">/usr/</span>local/nginx/sbin/nginx -s stop</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">## 更改/etc/profile文件</span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line">## 配置信息，在文件末尾加入下面语句，多个环境变量用:隔开</span><br><span class="line"><span class="keyword">export</span> PATH=$PATH:<span class="regexp">/usr/</span>local/nginx/sbin</span><br><span class="line">## 每次配置nginx后检查是否配置成功</span><br><span class="line">nginx -t</span><br><span class="line"></span><br><span class="line">## 重启nginx</span><br><span class="line">nginx -s reload</span><br><span class="line"></span><br><span class="line">## systemctl命令</span><br><span class="line">## 开机启动</span><br><span class="line">systemctl enable *.service</span><br><span class="line">## 取消开机启动</span><br><span class="line">systemctl disable *.service</span><br><span class="line">## 启动</span><br><span class="line">systemctl start *.service</span><br><span class="line">## 停止</span><br><span class="line">systemctl stop *.service</span><br><span class="line">## 1 若 nginx 启动成功，但浏览器无法访问，关闭防火墙，或开启相应端口</span><br><span class="line">## 关闭防火墙</span><br><span class="line">service firewalld stop</span><br><span class="line">firewall-cmd --zone=public --add-port=<span class="number">80</span>/tcp --permanent</span><br><span class="line">#需要重启防火墙生效 很重要</span><br><span class="line">service firewalld restart</span><br><span class="line"># or </span><br><span class="line">service firewalld stop</span><br><span class="line">service firewalld start</span><br><span class="line"></span><br><span class="line">Fast-CGI 模块是 Nginx 的一个模块，用于与 Fast-CGI 程序通信。</span><br><span class="line"></span><br><span class="line">一般PHP-FPM进程占用<span class="number">20</span>~<span class="number">30</span>m左右的内存就按<span class="number">30</span>m算</span><br><span class="line"></span><br><span class="line">物理内存 / <span class="number">30</span>M</span><br><span class="line">如果单机不仅仅跑了PHP-FPM，建议留一半给PHP</span><br><span class="line"></span><br><span class="line">物理内存 / <span class="number">2</span> / <span class="number">30</span>M</span><br><span class="line">PHP-FPM = PHP FastCGI Process Manager，用于启动并管理 PHP 进程且提供 Fast-CGI 接口，能够和 Nginx 的 Fast-CGI 模块通信。</span><br><span class="line"></span><br><span class="line">避免泛解析  总有些人会把域名解析错地址或者是恶意解析到你的服务器上。对于这种人必须严惩</span><br><span class="line">       </span><br><span class="line">       server &#123;</span><br><span class="line">           listen       <span class="number">80</span>  default_server;</span><br><span class="line">           server_name  _;</span><br><span class="line">           <span class="keyword">return</span>       <span class="number">403</span>;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装php7"><a href="#安装php7" class="headerlink" title="安装php7"></a>安装php7</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh https:<span class="comment">//mirror.webtatic.com/yum/el7/webtatic-release.rpm</span></span><br><span class="line">yum list | grep php</span><br><span class="line">yum -y install mod_php70w php70w-cli php70w-fpm php70w-common php70w-devel</span><br><span class="line">systemctl restart nginx</span><br><span class="line">systemctl start php-fpm</span><br></pre></td></tr></table></figure>
+<h3 id="安装PHP7-2"><a href="#安装PHP7-2" class="headerlink" title="安装PHP7.2"></a>安装PHP7.2</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下载php的安装文件</span></span><br><span class="line">wget http:<span class="comment">//cn2.php.net/distributions/php-7.2.3.tar.gz</span></span><br><span class="line"><span class="comment">//解压</span></span><br><span class="line">tar zxvf php<span class="number">-7.2</span><span class="number">.3</span>.tar.gz</span><br><span class="line"><span class="comment">//进入解压后的目录</span></span><br><span class="line">cd php<span class="number">-7.2</span><span class="number">.3</span></span><br><span class="line"><span class="comment">//配置安装参数</span></span><br><span class="line">./configure --enable-fpm --prefix=<span class="regexp">/usr/</span>local/php</span><br><span class="line"><span class="comment">//编译安装</span></span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line">/bin/sh /root/php<span class="number">-7.2</span><span class="number">.3</span>/libtool --silent --preserve-dup-deps --mode=compile cc -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/fileinfo/libmagic -Iext/fileinfo/ -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/fileinfo/ -DPHP_ATOM_INC -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/include -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/main -I/root/php<span class="number">-7.2</span><span class="number">.3</span> -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/date/lib -I/usr/include/libxml2 -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/sqlite3/libsqlite -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/TSRM -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/Zend    -I/usr/include -g -O2 -fvisibility=hidden -DZEND_SIGNALS   -c /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/fileinfo/fileinfo.c -o ext/fileinfo/fileinfo.lo</span><br><span class="line">/bin/sh /root/php<span class="number">-7.2</span><span class="number">.3</span>/libtool --silent --preserve-dup-deps --mode=compile cc -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/fileinfo/libmagic -Iext/fileinfo/ -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/fileinfo/ -DPHP_ATOM_INC -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/include -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/main -I/root/php<span class="number">-7.2</span><span class="number">.3</span> -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/date/lib -I/usr/include/libxml2 -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/sqlite3/libsqlite -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/TSRM -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/Zend    -I/usr/include -g -O2 -fvisibility=hidden -DZEND_SIGNALS   -c /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/fileinfo/libmagic/apprentice.c -o ext/fileinfo/libmagic/apprentice.lo</span><br><span class="line">cc: internal compiler error: Killed (program cc1)</span><br><span class="line">Please submit a full bug report,</span><br><span class="line"><span class="keyword">with</span> preprocessed source <span class="keyword">if</span> appropriate.</span><br><span class="line">See &lt;http:<span class="comment">//bugzilla.redhat.com/bugzilla&gt; for instructions.</span></span><br><span class="line">make: *** [ext/fileinfo/libmagic/apprentice.lo] <span class="built_in">Error</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">找到问题了,大体上是因为内存不足,临时使用交换分区来解决吧</span><br><span class="line"></span><br><span class="line">sudo dd <span class="keyword">if</span>=<span class="regexp">/dev/</span>zero <span class="keyword">of</span>=<span class="regexp">/swapfile bs=64M count=16</span></span><br><span class="line"><span class="regexp">sudo mkswap /</span>swapfile</span><br><span class="line">sudo swapon /swapfile</span><br><span class="line"></span><br><span class="line">编译完成，可以取消交换分区：</span><br><span class="line"></span><br><span class="line">sudo swapoff /swapfile</span><br><span class="line">sudo rm /swapfile</span><br><span class="line"></span><br><span class="line">错误 ： configure: error: libxml2 not found. Please check your libxml2 installation</span><br><span class="line">yum install -y libxml2 libxml2-devel</span><br><span class="line"></span><br><span class="line">cp php.ini-development /usr/local/php/lib/php.ini</span><br><span class="line">cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf</span><br><span class="line">cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf</span><br><span class="line"></span><br><span class="line">[root@VM_0_14_centos swoole-src]# lsof -i:9000</span><br><span class="line">COMMAND     PID USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME</span><br><span class="line">docker-pr <span class="number">30650</span> root    <span class="number">4</span>u  IPv6 <span class="number">1319116</span>      <span class="number">0</span>t0  TCP *:cslistener (LISTEN)</span><br><span class="line">vi /usr/local/php/etc/php-fpm.d/www.conf</span><br><span class="line">listen=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9005</span></span><br><span class="line">[root@VM_0_14_centos shadowsocks-php]# ps axu|grep fpm</span><br><span class="line">root       <span class="number">575</span>  <span class="number">0.0</span>  <span class="number">0.0</span>   <span class="number">4616</span>     <span class="number">8</span> ?        Ss   Nov12   <span class="number">0</span>:<span class="number">00</span> /bin/sh -c /usr/bin/php-fpm</span><br><span class="line">root       <span class="number">653</span>  <span class="number">0.0</span>  <span class="number">0.0</span>  <span class="number">18364</span>     <span class="number">0</span> ?        S    Nov12   <span class="number">0</span>:<span class="number">00</span> bash /usr/bin/php-fpm</span><br><span class="line">root       <span class="number">654</span>  <span class="number">0.0</span>  <span class="number">0.0</span> <span class="number">515736</span>   <span class="number">960</span> ?        Ss   Nov12   <span class="number">1</span>:<span class="number">52</span> php-fpm: master process (<span class="regexp">/etc/</span>php/<span class="number">7.2</span>/fpm/php-fpm.conf)</span><br><span class="line"><span class="number">33</span>        <span class="number">2156</span>  <span class="number">0.0</span>  <span class="number">0.2</span> <span class="number">380220</span>  <span class="number">4840</span> ?        S    Nov08   <span class="number">0</span>:<span class="number">05</span> php-fpm: pool www</span><br><span class="line"><span class="number">33</span>       <span class="number">10893</span>  <span class="number">0.0</span>  <span class="number">0.2</span> <span class="number">380220</span>  <span class="number">4836</span> ?        S    Nov16   <span class="number">0</span>:<span class="number">04</span> php-fpm: pool www</span><br><span class="line">root     <span class="number">12044</span>  <span class="number">0.0</span>  <span class="number">0.2</span> <span class="number">150952</span>  <span class="number">4380</span> ?        Ss   Nov28   <span class="number">0</span>:<span class="number">26</span> php-fpm: master process (<span class="regexp">/usr/</span>local/php/etc/php-fpm.conf)</span><br><span class="line">nobody   <span class="number">12045</span>  <span class="number">0.0</span>  <span class="number">0.2</span> <span class="number">153100</span>  <span class="number">4536</span> ?        S    Nov28   <span class="number">0</span>:<span class="number">00</span> php-fpm: pool www</span><br><span class="line">nobody   <span class="number">12046</span>  <span class="number">0.0</span>  <span class="number">0.2</span> <span class="number">153100</span>  <span class="number">4292</span> ?        S    Nov28   <span class="number">0</span>:<span class="number">00</span> php-fpm: pool www</span><br><span class="line">[root@VM_0_14_centos shadowsocks-php]# lsof -i:9005</span><br><span class="line">COMMAND   PID   USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME</span><br><span class="line">php-fpm <span class="number">12044</span>   root    <span class="number">7</span>u  IPv4 <span class="number">24140471</span>      <span class="number">0</span>t0  TCP VM_0_14_centos:<span class="number">9005</span> (LISTEN)</span><br><span class="line">php-fpm <span class="number">12045</span> nobody    <span class="number">0</span>u  IPv4 <span class="number">24140471</span>      <span class="number">0</span>t0  TCP VM_0_14_centos:<span class="number">9005</span> (LISTEN)</span><br><span class="line">php-fpm <span class="number">12046</span> nobody    <span class="number">0</span>u  IPv4 <span class="number">24140471</span>      <span class="number">0</span>t0  TCP VM_0_14_centos:<span class="number">9005</span> (LISTEN)</span><br><span class="line">#/usr/local/php/sbin/php-fpm</span><br><span class="line">#重启fpm</span><br><span class="line"># cat fpm_restart.sh</span><br><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line">PIDS=<span class="string">`ps aux | grep fpm | grep php | awk '&#123;print $2&#125;'`</span></span><br><span class="line"><span class="keyword">for</span> PID <span class="keyword">in</span> $PIDS</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        kill <span class="number">-9</span> $PID</span><br><span class="line">done</span><br><span class="line">/usr/local/php/sbin/php-fpm</span><br><span class="line"></span><br><span class="line">#vi /etc/nginx/nginx.conf</span><br><span class="line">root         /usr/share/nginx/html;</span><br><span class="line">location ~* \.php$ &#123;</span><br><span class="line">    fastcgi_index   index.php;</span><br><span class="line">    fastcgi_pass    <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span>;</span><br><span class="line">    include         fastcgi_params;</span><br><span class="line">    fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;</span><br><span class="line">    fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;</span><br><span class="line">&#125;</span><br><span class="line">#service nginx restart</span><br><span class="line">[root@VM_0_14_centos php-7.2.3]# mv /usr/bin/php /usr/bin/php7</span><br><span class="line">[root@VM_0_14_centos php-7.2.3]# php7 -v</span><br><span class="line">PHP <span class="number">7.0</span><span class="number">.32</span> (cli) (built: Sep <span class="number">15</span> <span class="number">2018</span> <span class="number">07</span>:<span class="number">54</span>:<span class="number">46</span>) ( NTS )</span><br><span class="line">Copyright (c) <span class="number">1997</span><span class="number">-2017</span> The PHP Group</span><br><span class="line">Zend Engine v3<span class="number">.0</span><span class="number">.0</span>, Copyright (c) <span class="number">1998</span><span class="number">-2017</span> Zend Technologies</span><br><span class="line">    <span class="keyword">with</span> Zend OPcache v7<span class="number">.0</span><span class="number">.32</span>, Copyright (c) <span class="number">1999</span><span class="number">-2017</span>, by Zend Technologies</span><br><span class="line">[root@VM_0_14_centos php-7.2.3]# ln -s /usr/local/php/bin/php /usr/bin/php</span><br><span class="line">[root@VM_0_14_centos php-7.2.3]# php -v</span><br><span class="line">PHP <span class="number">7.2</span><span class="number">.3</span> (cli) (built: Nov <span class="number">28</span> <span class="number">2018</span> <span class="number">12</span>:<span class="number">05</span>:<span class="number">00</span>) ( NTS )</span><br><span class="line">Copyright (c) <span class="number">1997</span><span class="number">-2018</span> The PHP Group</span><br><span class="line">Zend Engine v3<span class="number">.2</span><span class="number">.0</span>, Copyright (c) <span class="number">1998</span><span class="number">-2018</span> Zend Technologies</span><br></pre></td></tr></table></figure>
+<h3 id="php-fpm管理器添加到systemctl系统服务中"><a href="#php-fpm管理器添加到systemctl系统服务中" class="headerlink" title="php-fpm管理器添加到systemctl系统服务中"></a>php-fpm管理器添加到systemctl系统服务中</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">## 编辑文件</span><br><span class="line">vi /usr/lib/systemd/system/php-fpm.service</span><br><span class="line"></span><br><span class="line">## 配置内容</span><br><span class="line">[Unit]</span><br><span class="line">Description=The PHP FastCGI Process Manager</span><br><span class="line">After=syslog.target network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">PIDFile=<span class="regexp">/run/</span>php-fpm.pid</span><br><span class="line">ExecStart=<span class="regexp">/usr/</span>local/php7/sbin/php-fpm --nodaemonize --fpm-config /usr/local/php7/etc/php-fpm.conf</span><br><span class="line">ExecReload=<span class="regexp">/bin/</span>kill -USR2 $MAINPID</span><br><span class="line">ExecStop=<span class="regexp">/bin/</span>kill -SIGINT $MAINPID</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">$MAINPID 是特殊环境变量，表示主进程,比如这里 php-fpm 的主进程为 <span class="number">7</span>，$MAINPID 就为 <span class="number">7</span></span><br><span class="line">## 开机运行服务</span><br><span class="line">systemctl enable php-fpm.service</span><br><span class="line"></span><br><span class="line">## 取消开机运行</span><br><span class="line">systemctl disable php-fpm.service</span><br><span class="line"></span><br><span class="line">## 启动服务</span><br><span class="line">systemctl start php-fpm.service</span><br><span class="line"></span><br><span class="line">## 停止服务</span><br><span class="line">systemctl stop php-fpm.service</span><br><span class="line"></span><br><span class="line">## 重启服务</span><br><span class="line">systemctl restart php-fpm.service</span><br><span class="line"></span><br><span class="line">## 重新加载服务配置文件</span><br><span class="line">systemctl reload php-fpm.service</span><br><span class="line"></span><br><span class="line">## 查询服务运行状态</span><br><span class="line">systemctl status php-fpm.service</span><br><span class="line"></span><br><span class="line">## 显示启动失败的服务</span><br><span class="line">systemctl --failed</span><br><span class="line">firewall-cmd --zone=public --add-port=xx/tcp --permanent</span><br><span class="line">#需要重启生效 很重要</span><br></pre></td></tr></table></figure>
+<h3 id="安装swoole"><a href="#安装swoole" class="headerlink" title="安装swoole"></a>安装swoole</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_14_centos html]# cat /etc/redhat-release</span><br><span class="line">CentOS Linux release <span class="number">7.2</span><span class="number">.1511</span> (Core)</span><br><span class="line">[root@VM_0_14_centos html]# pecl install swoole</span><br><span class="line">Could not download <span class="keyword">from</span> <span class="string">"http://pecl.php.net/get/swoole-4.2.7.tgz"</span>, cannot download <span class="string">"pecl/swoole"</span> (File http:<span class="comment">//pecl.php.net:80/get/swoole-4.2.7.tgz not valid (received: HTTP/1.0 500 Internal Server Error</span></span><br><span class="line">))</span><br><span class="line"><span class="built_in">Error</span>: cannot download <span class="string">"pecl/swoole"</span></span><br><span class="line">Download failed</span><br><span class="line">install failed</span><br><span class="line"></span><br><span class="line">#git clone https://github.com/swoole/swoole-src</span><br><span class="line">#cd swoole-src</span><br><span class="line">#phpize </span><br><span class="line">#./configure</span><br><span class="line">checking <span class="keyword">for</span> gcc... no</span><br><span class="line">checking <span class="keyword">for</span> cc... no</span><br><span class="line">checking <span class="keyword">for</span> cl.exe... no</span><br><span class="line">configure.sh:error:no acceptable C compiler found <span class="keyword">in</span> $PATH</span><br><span class="line">See <span class="string">'config.log'</span> <span class="keyword">for</span> more details</span><br><span class="line">#yum install glibc-headers gcc-c++</span><br><span class="line">#yum -y install gcc</span><br><span class="line">#./configure --with-php-config=/usr/local/php/bin/php-config</span><br><span class="line">checking how to run the C++ preprocessor... /lib/cpp</span><br><span class="line">configure: error: C++ preprocessor <span class="string">"/lib/cpp"</span> fails sanity check</span><br><span class="line">See <span class="string">`config.log' for more details.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Build complete.</span></span><br><span class="line"><span class="string">Don't forget to run 'make test'.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Installing shared extensions:     /usr/lib64/php/modules/</span></span><br><span class="line"><span class="string">Installing header files:          /usr/include/php/</span></span><br><span class="line"><span class="string">#make &amp;&amp; make install</span></span><br><span class="line"><span class="string">#vi /etc/php.ini</span></span><br><span class="line"><span class="string">extension= /usr/lib64/php/modules/swoole.so</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos swoole-src]# php -m</span></span><br><span class="line"><span class="string">PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so' (tried: /usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so (/usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so: undefined symbol: spl_ce_Countable), /usr/local/php/lib/php/extensions/no-debug-non-zts-20170718//usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so.so (/usr/local/php/lib/php/extensions/no-debug-non-zts-20170718//usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Warning: PHP Startup: Unable to load dynamic library '/usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so' (tried: /usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so (/usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so: undefined symbol: spl_ce_Countable), /usr/local/php/lib/php/extensions/no-debug-non-zts-20170718//usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so.so (/usr/local/php/lib/php/extensions/no-debug-non-zts-20170718//usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/swoole.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">请检测编译swoole.so使用的PHP版本，和运行的是否一致https://github.com/swoole/swoole-src/issues/1441</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos swoole-src]# /usr/local/php/bin/phpize</span></span><br><span class="line"><span class="string">Configuring for:</span></span><br><span class="line"><span class="string">PHP Api Version:         20170718</span></span><br><span class="line"><span class="string">Zend Module Api No:      20170718</span></span><br><span class="line"><span class="string">Zend Extension Api No:   320170718</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装其他扩展"><a href="#安装其他扩展" class="headerlink" title="安装其他扩展"></a>安装其他扩展</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br></pre></td><td class="code"><pre><span class="line">看到一个php的ss项目 https:<span class="comment">//github.com/walkor/shadowsocks-php ，需要安装pcntl</span></span><br><span class="line">#进入PHP源码目录</span><br><span class="line">cd /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl</span><br><span class="line">ll</span><br><span class="line">drwxrwxr-x  <span class="number">4</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> bcmath</span><br><span class="line">drwxrwxr-x  <span class="number">3</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> bz2</span><br><span class="line">drwxrwxr-x  <span class="number">3</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> calendar</span><br><span class="line">drwxrwxr-x  <span class="number">3</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> com_dotnet</span><br><span class="line">drwxrwxr-x  <span class="number">4</span> root root  <span class="number">4096</span> Nov <span class="number">28</span> <span class="number">11</span>:<span class="number">27</span> ctype</span><br><span class="line">drwxrwxr-x  <span class="number">3</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> curl</span><br><span class="line">drwxrwxr-x  <span class="number">5</span> root root  <span class="number">4096</span> Nov <span class="number">28</span> <span class="number">11</span>:<span class="number">24</span> date</span><br><span class="line">drwxrwxr-x  <span class="number">6</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> dba</span><br><span class="line">drwxrwxr-x  <span class="number">5</span> root root  <span class="number">4096</span> Nov <span class="number">28</span> <span class="number">11</span>:<span class="number">27</span> dom</span><br><span class="line">drwxrwxr-x  <span class="number">4</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> enchant</span><br><span class="line">drwxrwxr-x  <span class="number">3</span> root root  <span class="number">4096</span> Feb <span class="number">28</span>  <span class="number">2018</span> exif</span><br><span class="line">[root@VM_0_14_centos pcntl]# /usr/local/php/bin/phpize</span><br><span class="line">Configuring <span class="keyword">for</span>:</span><br><span class="line">PHP Api Version:         <span class="number">20170718</span></span><br><span class="line">Zend Module Api No:      <span class="number">20170718</span></span><br><span class="line">Zend Extension Api No:   <span class="number">320170718</span></span><br><span class="line">[root@VM_0_14_centos pcntl]# ./configure --with-php-config=/usr/local/php/bin/php-config</span><br><span class="line">checking <span class="keyword">for</span> grep that handles long lines and -e... /usr/bin/grep</span><br><span class="line">checking <span class="keyword">for</span> egrep... /usr/bin/grep -E</span><br><span class="line">checking <span class="keyword">for</span> a sed that does not truncate output... /usr/bin/sed</span><br><span class="line">checking <span class="keyword">for</span> cc... cc</span><br><span class="line">checking whether the C compiler works... yes</span><br><span class="line">checking <span class="keyword">for</span> C compiler <span class="keyword">default</span> output file name... a.out</span><br><span class="line">checking <span class="keyword">for</span> suffix <span class="keyword">of</span> executables...</span><br><span class="line">checking whether we are cross compiling... no</span><br><span class="line">checking <span class="keyword">for</span> suffix <span class="keyword">of</span> object files... o</span><br><span class="line">checking whether we are using the GNU C compiler... yes</span><br><span class="line">[root@VM_0_14_centos pcntl]# make &amp;&amp; make install</span><br><span class="line">/bin/sh /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/libtool --mode=compile cc -DHAVE_STRUCT_SIGINFO_T -I. -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -DPHP_ATOM_INC -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/include -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/main -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -I/usr/local/php/include/php -I/usr/local/php/include/php/main -I/usr/local/php/include/php/TSRM -I/usr/local/php/include/php/Zend -I/usr/local/php/include/php/ext -I/usr/local/php/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/pcntl.c -o pcntl.lo</span><br><span class="line">mkdir .libs</span><br><span class="line"> cc -DHAVE_STRUCT_SIGINFO_T -I. -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -DPHP_ATOM_INC -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/include -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/main -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -I/usr/local/php/include/php -I/usr/local/php/include/php/main -I/usr/local/php/include/php/TSRM -I/usr/local/php/include/php/Zend -I/usr/local/php/include/php/ext -I/usr/local/php/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/pcntl.c  -fPIC -DPIC -o .libs/pcntl.o</span><br><span class="line">/bin/sh /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/libtool --mode=compile cc -DHAVE_STRUCT_SIGINFO_T -I. -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -DPHP_ATOM_INC -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/include -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/main -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -I/usr/local/php/include/php -I/usr/local/php/include/php/main -I/usr/local/php/include/php/TSRM -I/usr/local/php/include/php/Zend -I/usr/local/php/include/php/ext -I/usr/local/php/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/php_signal.c -o php_signal.lo</span><br><span class="line"> cc -DHAVE_STRUCT_SIGINFO_T -I. -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -DPHP_ATOM_INC -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/include -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/main -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -I/usr/local/php/include/php -I/usr/local/php/include/php/main -I/usr/local/php/include/php/TSRM -I/usr/local/php/include/php/Zend -I/usr/local/php/include/php/ext -I/usr/local/php/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/php_signal.c  -fPIC -DPIC -o .libs/php_signal.o</span><br><span class="line">/bin/sh /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/libtool --mode=link cc -DPHP_ATOM_INC -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/include -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/main -I/root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl -I/usr/local/php/include/php -I/usr/local/php/include/php/main -I/usr/local/php/include/php/TSRM -I/usr/local/php/include/php/Zend -I/usr/local/php/include/php/ext -I/usr/local/php/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -o pcntl.la -<span class="keyword">export</span>-dynamic -avoid-version -prefer-pic -<span class="built_in">module</span> -rpath /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/modules  pcntl.lo php_signal.lo</span><br><span class="line">cc -shared  .libs/pcntl.o .libs/php_signal.o   -Wl,-soname -Wl,pcntl.so -o .libs/pcntl.so</span><br><span class="line">creating pcntl.la</span><br><span class="line">(cd .libs &amp;&amp; rm -f pcntl.la &amp;&amp; ln -s ../pcntl.la pcntl.la)</span><br><span class="line">/bin/sh /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/libtool --mode=install cp ./pcntl.la /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/modules</span><br><span class="line">cp ./.libs/pcntl.so /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/modules/pcntl.so</span><br><span class="line">cp ./.libs/pcntl.lai /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/modules/pcntl.la</span><br><span class="line">PATH=<span class="string">"$PATH:/sbin"</span> ldconfig -n /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/modules</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Libraries have been installed <span class="keyword">in</span>:</span><br><span class="line">   /root/php<span class="number">-7.2</span><span class="number">.3</span>/ext/pcntl/modules</span><br><span class="line"></span><br><span class="line">If you ever happen to want to link against installed libraries</span><br><span class="line"><span class="keyword">in</span> a given directory, LIBDIR, you must either use libtool, and</span><br><span class="line">specify the full pathname <span class="keyword">of</span> the library, or use the <span class="string">`-LLIBDIR'</span></span><br><span class="line"><span class="string">flag during linking and do at least one of the following:</span></span><br><span class="line"><span class="string">   - add LIBDIR to the `</span>LD_LIBRARY_PATH<span class="string">' environment variable</span></span><br><span class="line"><span class="string">     during execution</span></span><br><span class="line"><span class="string">   - add LIBDIR to the `LD_RUN_PATH'</span> environment variable</span><br><span class="line">     during linking</span><br><span class="line">   - use the <span class="string">`-Wl,--rpath -Wl,LIBDIR' linker flag</span></span><br><span class="line"><span class="string">   - have your system administrator add LIBDIR to `</span>/etc/ld.so.conf<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">See any operating system documentation about shared libraries for</span></span><br><span class="line"><span class="string">more information, such as the ld(1) and ld.so(8) manual pages.</span></span><br><span class="line"><span class="string">----------------------------------------------------------------------</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Build complete.</span></span><br><span class="line"><span class="string">Don'</span>t forget to run <span class="string">'make test'</span>.</span><br><span class="line"></span><br><span class="line">Installing shared extensions:     <span class="regexp">/usr/</span>local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span>/</span><br><span class="line">[root@VM_0_14_centos pcntl]# vi /usr/local/php/lib/php.ini</span><br><span class="line">extension=<span class="regexp">/usr/</span>local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span>/pcntl.so</span><br><span class="line">[root@VM_0_14_centos pcntl]# php -m|grep pcntl</span><br><span class="line">pcntl</span><br><span class="line"></span><br><span class="line">#git clone https://github.com/walkor/shadowsocks-php</span><br><span class="line">#cd shadowsocks-php</span><br><span class="line">#[root@VM_0_14_centos shadowsocks-php]# php start.php start -d</span><br><span class="line"> PHP Warning:  require_once(<span class="regexp">/root/</span>shadowsocks-php/Workerman/Autoloader.php): failed to open stream: No such file or directory <span class="keyword">in</span> /root/shadowsocks-php/start.php on line <span class="number">24</span></span><br><span class="line"> </span><br><span class="line"> Warning: require_once(<span class="regexp">/root/</span>shadowsocks-php/Workerman/Autoloader.php): failed to open stream: No such file or directory <span class="keyword">in</span> /root/shadowsocks-php/start.php on line <span class="number">24</span></span><br><span class="line"> PHP Fatal error:  require_once(): Failed opening required <span class="string">'/root/shadowsocks-php/Workerman/Autoloader.php'</span> (include_path=<span class="string">'.:/usr/local/php/lib/php'</span>) <span class="keyword">in</span> /root/shadowsocks-php/start.php on line <span class="number">24</span></span><br><span class="line"> </span><br><span class="line"> Fatal error: require_once(): Failed opening required <span class="string">'/root/shadowsocks-php/Workerman/Autoloader.php'</span> (include_path=<span class="string">'.:/usr/local/php/lib/php'</span>) <span class="keyword">in</span> /root/shadowsocks-php/start.php on line <span class="number">24</span></span><br><span class="line"> [root@VM_0_14_centos shadowsocks-php]# cd Workerman/</span><br><span class="line"> [root@VM_0_14_centos Workerman]# ll</span><br><span class="line"> total <span class="number">0</span></span><br><span class="line"> [root@VM_0_14_centos shadowsocks-php]# rm -rf Workerman/</span><br><span class="line"> [root@VM_0_14_centos shadowsocks-php]# git clone https://github.com/walkor/Workerman</span><br><span class="line"> Cloning into <span class="string">'Workerman'</span>...</span><br><span class="line"> remote: Enumerating objects: <span class="number">15</span>, done.</span><br><span class="line"> remote: Counting objects: <span class="number">100</span>% (<span class="number">15</span>/<span class="number">15</span>), done.</span><br><span class="line"> remote: Compressing objects: <span class="number">100</span>% (<span class="number">15</span>/<span class="number">15</span>), done.</span><br><span class="line"> remote: Total <span class="number">5947</span> (delta <span class="number">5</span>), reused <span class="number">1</span> (delta <span class="number">0</span>), pack-reused <span class="number">5932</span></span><br><span class="line"> Receiving objects: <span class="number">100</span>% (<span class="number">5947</span>/<span class="number">5947</span>), <span class="number">2.14</span> MiB | <span class="number">713.00</span> KiB/s, done.</span><br><span class="line"> Resolving deltas: <span class="number">100</span>% (<span class="number">3415</span>/<span class="number">3415</span>), done.</span><br><span class="line"> [root@VM_0_14_centos shadowsocks-php]# php start.php start -d</span><br><span class="line"> Workerman[start.php] start <span class="keyword">in</span> DAEMON mode</span><br><span class="line"> ------------------------------------------- WORKERMAN -------------------------------------------</span><br><span class="line"> Workerman version:<span class="number">3.5</span><span class="number">.16</span>          PHP version:<span class="number">7.2</span><span class="number">.3</span></span><br><span class="line"> -------------------------------------------- WORKERS --------------------------------------------</span><br><span class="line"> proto   user            worker                listen               processes    status</span><br><span class="line"> tcp     root            shadowsocks-server    tcp:<span class="comment">//0.0.0.0:443    12            [OK]</span></span><br><span class="line"> udp     root            shadowsocks-server    udp:<span class="comment">//0.0.0.0:443    12            [OK]</span></span><br><span class="line"> -------------------------------------------------------------------------------------------------</span><br><span class="line"> Input <span class="string">"php start.php stop"</span> to stop. Start success.</span><br><span class="line"># tail -f workerman.log</span><br><span class="line"><span class="number">2018</span><span class="number">-12</span><span class="number">-10</span> <span class="number">14</span>:<span class="number">04</span>:<span class="number">56</span> pid:<span class="number">2596</span> Worker[<span class="number">2596</span>] process terminated</span><br><span class="line"><span class="number">2018</span><span class="number">-12</span><span class="number">-10</span> <span class="number">14</span>:<span class="number">04</span>:<span class="number">56</span> pid:<span class="number">32505</span> worker[shadowsocks-server:<span class="number">2596</span>] exit <span class="keyword">with</span> status <span class="number">64000</span></span><br><span class="line"><span class="number">2018</span><span class="number">-12</span><span class="number">-10</span> <span class="number">14</span>:<span class="number">04</span>:<span class="number">56</span> pid:<span class="number">2595</span> <span class="built_in">Error</span>: Call to <span class="literal">undefined</span> <span class="function"><span class="keyword">function</span> <span class="title">openssl_random_pseudo_bytes</span>(<span class="params"></span>) <span class="title">in</span> /<span class="title">root</span>/<span class="title">shadowsocks</span>-<span class="title">php</span>/<span class="title">Applications</span>/<span class="title">Shadowsocks</span>/<span class="title">Encryptor</span>.<span class="title">php</span>:65</span></span><br><span class="line"><span class="function"><span class="title">Stack</span> <span class="title">trace</span>:</span></span><br><span class="line"><span class="function">#0 /<span class="title">root</span>/<span class="title">shadowsocks</span>-<span class="title">php</span>/<span class="title">Applications</span>/<span class="title">Shadowsocks</span>/<span class="title">server</span>.<span class="title">php</span>(<span class="params"><span class="number">53</span></span>): <span class="title">Encryptor</span>-&gt;<span class="title">__construct</span>(<span class="params"><span class="string">'susheng'</span>, <span class="string">'aes-256-cfb'</span></span>)</span></span><br><span class="line">#1 [internal function]: &#123;closure&#125;(Object(Workerman\Connection\TcpConnection))</span><br><span class="line">#2 /root/shadowsocks-php/Workerman/Worker.php(2388): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection))</span><br><span class="line">#3 [internal function]: Workerman\Worker-&gt;acceptConnection(Resource id #15)</span><br><span class="line">#4 /root/shadowsocks-php/Workerman/Events/Select.php(294): call_user_func_array(Array, Array)</span><br><span class="line">#5 /root/shadowsocks-php/Workerman/Worker.php(2321): Workerman\Events\Select-&gt;loop()</span><br><span class="line">#6 /root/shadowsocks-php/Workerman/Worker.php(1452): Workerman\Worker-&gt;run()</span><br><span class="line">#7 /root/shadowsocks-php/Workerman/Worker.php(1282): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))</span><br><span class="line">#8 /root/shadowsocks-php/Workerman/Worker.php(1256): Workerman\Worker::forkWorkersForLinux()</span><br><span class="line">#9 /root/shadowsocks-php/Workerman/Worker.php(1586): Workerman\Worker::forkWorkers()</span><br><span class="line">#10 /root/shadowsocks-php/Workerman/Worker.php(1535): Workerman\Worker::monitorWorkersForLinux()</span><br><span class="line">#11 /root/shadowsocks-php/Workerman/Worker.php(509): Workerman\Worker::monitorWorkers()</span><br><span class="line">#12 /root/shadowsocks-php/start.php(32): Workerman\Worker::runAll()</span><br><span class="line">#13 &#123;main&#125;</span><br><span class="line"><span class="number">2018</span><span class="number">-12</span><span class="number">-10</span> <span class="number">14</span>:<span class="number">04</span>:<span class="number">56</span> pid:<span class="number">2595</span> Worker[<span class="number">2595</span>] process terminated</span><br><span class="line"><span class="number">2018</span><span class="number">-12</span><span class="number">-10</span> <span class="number">14</span>:<span class="number">04</span>:<span class="number">56</span> pid:<span class="number">32505</span> worker[shadowsocks-server:<span class="number">2595</span>] exit <span class="keyword">with</span> status <span class="number">64000</span></span><br><span class="line">[root@VM_0_14_centos shadowsocks-php]# cd /root/php-7.2.3/ext/openssl/</span><br><span class="line">[root@VM_0_14_centos openssl]# /usr/local/php/bin/phpize</span><br><span class="line">Cannot find config.m4.</span><br><span class="line">Make sure that you run <span class="string">'/usr/local/php/bin/phpize'</span> <span class="keyword">in</span> the top level source directory <span class="keyword">of</span> the <span class="built_in">module</span></span><br><span class="line">#mv config0.m4 config.m4</span><br><span class="line">#/usr/local/php/bin/phpize</span><br><span class="line">#./configure --with-php-config=/usr/local/php/bin/php-config</span><br><span class="line">如果此步报Cannot find OpenSSL<span class="string">'s &lt;evp.h&gt; 的错误执行以下命令：</span></span><br><span class="line"><span class="string">    yum install openssl openssl-devel</span></span><br><span class="line"><span class="string">    ln -s /usr/lib64/libssl.so /usr/lib/</span></span><br><span class="line"><span class="string">#make &amp;&amp; make install</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos openssl]# vi /usr/local/php/lib/php.ini</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos openssl]# php -m|grep open</span></span><br><span class="line"><span class="string">openssl</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos shadowsocks-php]# php start.php status</span></span><br><span class="line"><span class="string">Workerman[start.php] status</span></span><br><span class="line"><span class="string">----------------------------------------------GLOBAL STATUS----------------------------------------------------</span></span><br><span class="line"><span class="string">Workerman version:3.5.16          PHP version:7.2.3</span></span><br><span class="line"><span class="string">start time:2018-12-10 14:56:01   run 0 days 0 hours</span></span><br><span class="line"><span class="string">load average: 0.12, 0, 0         event-loop:\Workerman\Events\Select</span></span><br><span class="line"><span class="string">2 workers       24 processes</span></span><br><span class="line"><span class="string">worker_name        exit_status      exit_count</span></span><br><span class="line"><span class="string">shadowsocks-server 0                0</span></span><br><span class="line"><span class="string">shadowsocks-server 0                0</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos shadowsocks-php]# php start.php connections</span></span><br><span class="line"><span class="string">Workerman[start.php] connections</span></span><br><span class="line"><span class="string">--------------------------------------------------------------------- WORKERMAN CONNECTION STATUS --------------------------------------------------------------------------------</span></span><br><span class="line"><span class="string">PID      Worker          CID       Trans   Protocol        ipv4   ipv6   Recv-Q       Send-Q       Bytes-R      Bytes-W       Status</span></span><br><span class="line"><span class="string">    Local Address          Foreign Address</span></span><br><span class="line"><span class="string">11140    shadowsocks-..  1         tcp     tcp              1      0     0B           0B           20.4KB       5.9KB         ESTABLISHED</span></span><br><span class="line"><span class="string">#cd /root/php7-2.3/ext/curl</span></span><br><span class="line"><span class="string">#./configure --with-php-config=/usr/local/php/bin/php-config</span></span><br><span class="line"><span class="string">configure: WARNING: You will need re2c 0.13.4 or later if you want to regenerate PHP parsers.</span></span><br><span class="line"><span class="string">checking for gawk... gawk</span></span><br><span class="line"><span class="string">checking for cURL support... yes, shared</span></span><br><span class="line"><span class="string">checking for pkg-config... /usr/bin/pkg-config</span></span><br><span class="line"><span class="string">checking for libcurl.pc... using default path</span></span><br><span class="line"><span class="string">checking for cURL 7.10.5 or greater... configure: error: cURL version 7.10.5 or later is required to compile php with cURL support</span></span><br><span class="line"><span class="string">curl: try '</span>curl --help<span class="string">' or '</span>curl --manual<span class="string">' for more information</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos curl]# curl -V</span></span><br><span class="line"><span class="string">curl 7.29.0 (x86_64-redhat-linux-gnu) libcurl/7.29.0 NSS/3.36 zlib/1.2.7 libidn/1.28 libssh2/1.4.3</span></span><br><span class="line"><span class="string">Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp scp sftp smtp smtps telnet tftp</span></span><br><span class="line"><span class="string">Features: AsynchDNS GSS-Negotiate IDN IPv6 Largefile NTLM NTLM_WB SSL libz unix-sockets</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos curl]# yum install curl-devel</span></span><br><span class="line"><span class="string">Loaded plugins: fastestmirror, langpacks</span></span><br><span class="line"><span class="string">Repository epel is listed more than once in the configuration</span></span><br><span class="line"><span class="string">carlwgeorge-ripgrep                                                                                               | 3.0 kB  00:00:00</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">docker-ce-stable</span></span><br><span class="line"><span class="string">#./configure --with-php-config=/usr/local/php/bin/php-config</span></span><br><span class="line"><span class="string">#make &amp;&amp; make install</span></span><br><span class="line"><span class="string">#nginx集群配置 https://github.com/Gopusher/gateway</span></span><br><span class="line"><span class="string">upstream websocket &#123;</span></span><br><span class="line"><span class="string">    server 192.168.3.165:8900 weight=1;</span></span><br><span class="line"><span class="string">    server 192.168.3.165:8902 weight=1;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">server &#123;</span></span><br><span class="line"><span class="string">    listen 8910;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    server_name www.chat.com$;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    location / &#123;</span></span><br><span class="line"><span class="string">        proxy_pass http://websocket;</span></span><br><span class="line"><span class="string">        proxy_http_version 1.1;</span></span><br><span class="line"><span class="string">        proxy_set_header Upgrade $http_upgrade;</span></span><br><span class="line"><span class="string">        proxy_set_header Connection "upgrade";</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">安装MySQLi</span></span><br><span class="line"><span class="string">#cd /root/php-7.23/ext</span></span><br><span class="line"><span class="string">#cd mysqli</span></span><br><span class="line"><span class="string">#phpize</span></span><br><span class="line"><span class="string">#./configure --with-php-config=/usr/local/php/bin/php-config --with-mysql=mysqlnd</span></span><br><span class="line"><span class="string">configure: creating ./config.status</span></span><br><span class="line"><span class="string">config.status: creating config.h</span></span><br><span class="line"><span class="string">config.status: config.h is unchanged</span></span><br><span class="line"><span class="string">configure: WARNING: unrecognized options: --with-mysql</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos mysqli]# ./configure --with-php-config=/usr/local/php/bin/php-config --with-mysqli=mysqlnd</span></span><br><span class="line"><span class="string">creating libtool</span></span><br><span class="line"><span class="string">appending configuration tag "CXX" to libtool</span></span><br><span class="line"><span class="string">configure: creating ./config.status</span></span><br><span class="line"><span class="string">config.status: creating config.h</span></span><br><span class="line"><span class="string">config.status: config.h is unchanged</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos mysqli]# make &amp;&amp; make install</span></span><br><span class="line"><span class="string">In file included from /root/php-7.2.3/ext/mysqli/mysqli.c:34:0:</span></span><br><span class="line"><span class="string">/root/php-7.2.3/ext/mysqli/php_mysqli_structs.h:42:33: fatal error: ext/mysqlnd/mysqlnd.h: No such file or directory</span></span><br><span class="line"><span class="string"> #include "ext/mysqlnd/mysqlnd.h"</span></span><br><span class="line"><span class="string">                                 ^</span></span><br><span class="line"><span class="string">compilation terminated.</span></span><br><span class="line"><span class="string">make: *** [mysqli.lo] Error 1</span></span><br><span class="line"><span class="string">#mkdir -p mysqli/ext</span></span><br><span class="line"><span class="string">#cp -r mysqlnd mysqli/ext</span></span><br><span class="line"><span class="string">#cd mysqli</span></span><br><span class="line"><span class="string">#</span></span><br><span class="line"><span class="string">#make &amp;&amp; make install</span></span><br><span class="line"><span class="string">Build complete.</span></span><br><span class="line"><span class="string">Don'</span>t forget to run <span class="string">'make test'</span>.</span><br><span class="line"></span><br><span class="line">Installing shared extensions:     <span class="regexp">/usr/</span>local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span>/</span><br><span class="line">Installing header files:          <span class="regexp">/usr/</span>local/php/include/php/</span><br></pre></td></tr></table></figure>
+<h3 id="HTTPS配置"><a href="#HTTPS配置" class="headerlink" title="HTTPS配置"></a>HTTPS配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://www.omybug.com/2016/11/02/Nginx%E4%B8%8BHTTPS%E9%85%8D%E7%BD%AE/</span></span><br><span class="line">server&#123;</span><br><span class="line">	listen <span class="number">80</span>;</span><br><span class="line">	server_name www.xxxx.com;</span><br><span class="line">	rewrite ^ https:<span class="comment">//$server_name$request_uri? permanent;</span></span><br><span class="line">&#125;</span><br><span class="line">server&#123;</span><br><span class="line">    listen <span class="number">443</span>;</span><br><span class="line">	ssl on; </span><br><span class="line">    ssl_certificate  /home/cert/xxxx.crt;</span><br><span class="line">    ssl_certificate_key  /home/cert/xxxx.key.unsecure;</span><br><span class="line">    server_name www.xxxx.com;</span><br><span class="line">    index index.php index.html;</span><br><span class="line">    root  /data/www/xxxx/;</span><br><span class="line">	ssl_certificate /data/soft/ssl/xxxx.crt;</span><br><span class="line">	ssl_certificate_key /data/soft/ssl/xxxx.key.unsecure;</span><br><span class="line"></span><br><span class="line">    #include other.conf;</span><br><span class="line">    error_page   <span class="number">404</span>   /<span class="number">404.</span>html;</span><br><span class="line">        </span><br><span class="line">	include enable-php.conf;</span><br><span class="line">	</span><br><span class="line">	location /</span><br><span class="line">        &#123;</span><br><span class="line">            try_files $uri $uri/ <span class="regexp">/index.php?$query_string;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$</span></span><br><span class="line"><span class="regexp">        &#123;</span></span><br><span class="line"><span class="regexp">            expires      30d;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        location ~ .*\.(js|css)?$</span></span><br><span class="line"><span class="regexp">        &#123;</span></span><br><span class="line"><span class="regexp">            expires      12h;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        location ~ /</span>\.</span><br><span class="line">        &#123;</span><br><span class="line">            deny all;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        access_log  /home/wwwlogs/xxxx.log;</span><br><span class="line">    &#125;</span><br><span class="line">    openssl rsa -<span class="keyword">in</span> xxxx.key -out xxxx.key.unsecure</span><br></pre></td></tr></table></figure>
+<h3 id="php-rdkafka"><a href="#php-rdkafka" class="headerlink" title="php rdkafka"></a>php rdkafka</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//arnaud-lb.github.io/php-rdkafka/phpdoc/rdkafka.installation.manual.html</span></span><br><span class="line">[root@VM_0_14_centos test]# git clone https://github.com/arnaud-lb/php-rdkafka.git</span><br><span class="line">[root@VM_0_14_centos test]# cd ~</span><br><span class="line">[root@VM_0_14_centos ~]# git clone https://github.com/arnaud-lb/php-rdkafka.git</span><br><span class="line">Cloning into <span class="string">'php-rdkafka'</span>...</span><br><span class="line">remote: Enumerating objects: <span class="number">4</span>, done.</span><br><span class="line">remote: Counting objects: <span class="number">100</span>% (<span class="number">4</span>/<span class="number">4</span>), done.</span><br><span class="line">remote: Compressing objects: <span class="number">100</span>% (<span class="number">4</span>/<span class="number">4</span>), done.</span><br><span class="line">remote: Total <span class="number">1231</span> (delta <span class="number">0</span>), reused <span class="number">1</span> (delta <span class="number">0</span>), pack-reused <span class="number">1227</span></span><br><span class="line">Receiving objects: <span class="number">100</span>% (<span class="number">1231</span>/<span class="number">1231</span>), <span class="number">401.61</span> KiB | <span class="number">250.00</span> KiB/s, done.</span><br><span class="line">Resolving deltas: <span class="number">100</span>% (<span class="number">838</span>/<span class="number">838</span>), done.</span><br><span class="line">[root@VM_0_14_centos ~]# cd php-rdkafka/</span><br><span class="line">[root@VM_0_14_centos php-rdkafka]# /usr/local/php/bin/phpize</span><br><span class="line">Configuring <span class="keyword">for</span>:</span><br><span class="line">PHP Api Version:         <span class="number">20170718</span></span><br><span class="line">Zend Module Api No:      <span class="number">20170718</span></span><br><span class="line">Zend Extension Api No:   <span class="number">320170718</span></span><br><span class="line">[root@VM_0_14_centos php-rdkafka]# ./configure --with-php-config=/usr/local/php/bin/php-config</span><br><span class="line">checking <span class="keyword">for</span> grep that handles long lines and -e... /usr/bin/grep</span><br><span class="line">checking <span class="keyword">for</span> egrep... /usr/bin/grep -E</span><br><span class="line">checking <span class="keyword">for</span> a sed that does not truncate output... /usr/bin/sed</span><br><span class="line">checking <span class="keyword">for</span> cc... cc</span><br><span class="line">checking whether the C compiler works... yes</span><br><span class="line">checking <span class="keyword">for</span> C compiler <span class="keyword">default</span> output file name... a.out</span><br><span class="line">checking <span class="keyword">for</span> suffix <span class="keyword">of</span> executables...</span><br><span class="line">checking whether we are cross compiling... no</span><br><span class="line">checking <span class="keyword">for</span> suffix <span class="keyword">of</span> object files... o</span><br><span class="line">checking whether we are using the GNU C compiler... yes</span><br><span class="line">checking whether cc accepts -g... yes</span><br><span class="line">checking <span class="keyword">for</span> cc option to accept ISO C89... none needed</span><br><span class="line">checking how to run the C preprocessor... cc -E</span><br><span class="line">checking <span class="keyword">for</span> icc... no</span><br><span class="line">checking <span class="keyword">for</span> suncc... no</span><br><span class="line">checking whether cc understands -c and -o together... yes</span><br><span class="line">checking <span class="keyword">for</span> system library directory... lib</span><br><span class="line">checking <span class="keyword">if</span> compiler supports -R... no</span><br><span class="line">checking <span class="keyword">if</span> compiler supports -Wl,-rpath,... yes</span><br><span class="line">checking build system type... x86_64-unknown-linux-gnu</span><br><span class="line">checking host system type... x86_64-unknown-linux-gnu</span><br><span class="line">checking target system type... x86_64-unknown-linux-gnu</span><br><span class="line">checking <span class="keyword">for</span> PHP prefix... /usr/local/php</span><br><span class="line">checking <span class="keyword">for</span> PHP includes... -I/usr/local/php/include/php -I/usr/local/php/include/php/main -I/usr/local/php/include/php/TSRM -I/usr/local/php/include/php/Zend -I/usr/local/php/include/php/ext -I/usr/local/php/include/php/ext/date/lib</span><br><span class="line">checking <span class="keyword">for</span> PHP extension directory... /usr/local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span></span><br><span class="line">checking <span class="keyword">for</span> PHP installed headers prefix... /usr/local/php/include/php</span><br><span class="line">checking <span class="keyword">if</span> debug is enabled... no</span><br><span class="line">checking <span class="keyword">if</span> zts is enabled... no</span><br><span class="line">checking <span class="keyword">for</span> re2c... no</span><br><span class="line">configure: WARNING: You will need re2c <span class="number">0.13</span><span class="number">.4</span> or later <span class="keyword">if</span> you want to regenerate PHP parsers.</span><br><span class="line">checking <span class="keyword">for</span> gawk... gawk</span><br><span class="line">checking <span class="keyword">for</span> rdkafka support... yes, shared</span><br><span class="line">checking <span class="keyword">for</span> librdkafka/rdkafka.h<span class="string">" in default path... not found</span></span><br><span class="line"><span class="string">configure: error: Please reinstall the rdkafka distribution</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos php-rdkafka]# yum -y install re2c</span></span><br><span class="line"><span class="string">或者</span></span><br><span class="line"><span class="string">wget https://sourceforge.net/projects/re2c/files/0.16/re2c-0.16.tar.gz</span></span><br><span class="line"><span class="string">tar zxf re2c-0.16.tar.gz &amp;&amp; cd re2c-0.16</span></span><br><span class="line"><span class="string">./configure</span></span><br><span class="line"><span class="string">make &amp;&amp; make install</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">[root@VM_0_14_centos php-rdkafka]# ./configure --with-php-config=/usr/local/php/bin/php-config</span></span><br><span class="line"><span class="string">checking for PHP extension directory... /usr/local/php/lib/php/extensions/no-debug-non-zts-20170718</span></span><br><span class="line"><span class="string">checking for PHP installed headers prefix... /usr/local/php/include/php</span></span><br><span class="line"><span class="string">checking if debug is enabled... no</span></span><br><span class="line"><span class="string">checking if zts is enabled... no</span></span><br><span class="line"><span class="string">checking for re2c... re2c</span></span><br><span class="line"><span class="string">checking for re2c version... 0.14.3 (ok)</span></span><br><span class="line"><span class="string">checking for gawk... gawk</span></span><br><span class="line"><span class="string">checking for rdkafka support... yes, shared</span></span><br><span class="line"><span class="string">checking for librdkafka/rdkafka.h"</span> <span class="keyword">in</span> <span class="keyword">default</span> path... not found</span><br><span class="line">configure: error: Please reinstall the rdkafka distribution</span><br><span class="line">$ git clone https:<span class="comment">//github.com/edenhill/librdkafka.git</span></span><br><span class="line">$ cd librdkafka</span><br><span class="line">$ ./configure</span><br><span class="line">$ make &amp;&amp; make install</span><br><span class="line">$cd ../php-rdkafka</span><br><span class="line">$./configure --<span class="keyword">with</span>-php-config=<span class="regexp">/usr/</span>local/php/bin/php-config</span><br><span class="line">$make all -j <span class="number">5</span> &amp;&amp; make install</span><br><span class="line">Installing shared extensions:     <span class="regexp">/usr/</span>local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span>/</span><br><span class="line">[root@VM_0_14_centos php-rdkafka]# php -i | grep extension_dir</span><br><span class="line">extension_dir =&gt; <span class="regexp">/usr/</span>local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span> =&gt; <span class="regexp">/usr/</span>local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span></span><br><span class="line">sqlite3.extension_dir =&gt; no value =&gt; no value</span><br><span class="line">[root@VM_0_14_centos php-rdkafka]# php --ini</span><br><span class="line">Configuration File (php.ini) Path: <span class="regexp">/usr/</span>local/php/lib</span><br><span class="line">Loaded Configuration File:         <span class="regexp">/usr/</span>local/php/lib/php.ini</span><br><span class="line">Scan <span class="keyword">for</span> additional .ini files <span class="keyword">in</span>: (none)</span><br><span class="line">Additional .ini files parsed:      (none)</span><br><span class="line">[root@VM_0_14_centos php-rdkafka]# vi /usr/local/php/lib/php.ini</span><br><span class="line">[root@VM_0_14_centos php-rdkafka]# php -m|grep rd</span><br><span class="line"></span><br><span class="line">rdkafka</span><br><span class="line">检测扩展是否安装成功</span><br><span class="line"></span><br><span class="line">在命令行中运行</span><br><span class="line">php7 -r <span class="string">" new RdKafka\Conf();"</span> 如果没有报错说明安装成功了</span><br></pre></td></tr></table></figure>
+<h3 id="查错方法"><a href="#查错方法" class="headerlink" title="查错方法"></a>查错方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">xhprof 生成图片失败，使用的代码</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">xhprof_generate_image_by_dot</span>(<span class="params">$dot_script, $type</span>) </span>&#123;</span><br><span class="line">  $descriptorspec = array(</span><br><span class="line">       <span class="comment">// stdin is a pipe that the child will read from</span></span><br><span class="line">       <span class="number">0</span> =&gt; array(<span class="string">"pipe"</span>, <span class="string">"r"</span>),</span><br><span class="line">       <span class="comment">// stdout is a pipe that the child will write to</span></span><br><span class="line">       <span class="number">1</span> =&gt; array(<span class="string">"pipe"</span>, <span class="string">"w"</span>),</span><br><span class="line">       <span class="comment">// stderr is a pipe that the child will write to</span></span><br><span class="line">       <span class="number">2</span> =&gt; array(<span class="string">"pipe"</span>, <span class="string">"w"</span>)</span><br><span class="line">       );</span><br><span class="line"></span><br><span class="line">  $cmd = <span class="string">" dot -T"</span>.$type;</span><br><span class="line"></span><br><span class="line">  $process = proc_open( $cmd, $descriptorspec, $pipes, sys_get_temp_dir(), array( <span class="string">'PATH'</span> =&gt; getenv( <span class="string">'PATH'</span> ) ) );</span><br><span class="line">  <span class="keyword">if</span> (is_resource($process)) &#123;</span><br><span class="line">    fwrite($pipes[<span class="number">0</span>], $dot_script);</span><br><span class="line">    fclose($pipes[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    $output = stream_get_contents($pipes[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    $err = stream_get_contents($pipes[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">if</span> (!empty($err)) &#123;</span><br><span class="line">      print <span class="string">"failed to execute cmd: \"$cmd\". stderr: `$err'\n"</span>;</span><br><span class="line">      exit;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fclose($pipes[<span class="number">2</span>]);</span><br><span class="line">    fclose($pipes[<span class="number">1</span>]);</span><br><span class="line">    proc_close($process);</span><br><span class="line">    <span class="keyword">return</span> $output;</span><br><span class="line">  &#125;</span><br><span class="line">  print <span class="string">"failed to execute cmd \"$cmd\""</span>;</span><br><span class="line">  exit();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">[root@VM_0_14_centos incubator-superset]# php --ini</span><br><span class="line">Configuration File (php.ini) Path: <span class="regexp">/usr/</span>local/php/lib</span><br><span class="line">Loaded Configuration File:         <span class="regexp">/usr/</span>local/php/lib/php.ini</span><br><span class="line">Scan <span class="keyword">for</span> additional .ini files <span class="keyword">in</span>: (none)</span><br><span class="line">Additional .ini files parsed:      (none)</span><br><span class="line">#cat /usr/local/php/lib/php.ini|grep error|grep -v ';'</span><br><span class="line">error_reporting = E_ALL</span><br><span class="line">display_errors = On</span><br><span class="line">display_startup_errors = On</span><br><span class="line">log_errors = On</span><br><span class="line">error_log=<span class="string">"/usr/local/php/error.log"</span></span><br><span class="line">log_errors_max_len = <span class="number">1024</span></span><br><span class="line">ignore_repeated_errors = Off</span><br><span class="line">html_errors = On</span><br><span class="line">#tail -f /usr/local/php/error.log</span><br><span class="line">[root@VM_0_14_centos incubator-superset]# ps aux|grep fpm</span><br><span class="line">root       <span class="number">408</span>  <span class="number">0.0</span>  <span class="number">0.0</span> <span class="number">112704</span>   <span class="number">968</span> pts/<span class="number">3</span>    S+   <span class="number">11</span>:<span class="number">17</span>   <span class="number">0</span>:<span class="number">00</span> grep --color=auto fpm</span><br><span class="line">root       <span class="number">575</span>  <span class="number">0.0</span>  <span class="number">0.0</span>   <span class="number">4616</span>     <span class="number">8</span> ?        Ss   Nov12   <span class="number">0</span>:<span class="number">00</span> /bin/sh -c /usr/bin/php-fpm</span><br><span class="line">root       <span class="number">653</span>  <span class="number">0.0</span>  <span class="number">0.0</span>  <span class="number">18364</span>     <span class="number">0</span> ?        S    Nov12   <span class="number">0</span>:<span class="number">00</span> bash /usr/bin/php-fpm</span><br><span class="line">root       <span class="number">654</span>  <span class="number">0.0</span>  <span class="number">0.0</span> <span class="number">515736</span>   <span class="number">280</span> ?        Ss   Nov12   <span class="number">2</span>:<span class="number">26</span> php-fpm: master process (<span class="regexp">/etc/</span>php/<span class="number">7.2</span>/fpm/php-fpm.conf)</span><br><span class="line"><span class="number">33</span>        <span class="number">2156</span>  <span class="number">0.0</span>  <span class="number">0.1</span> <span class="number">380220</span>  <span class="number">3604</span> ?        S    Nov08   <span class="number">0</span>:<span class="number">06</span> php-fpm: pool www</span><br><span class="line"><span class="number">33</span>       <span class="number">10893</span>  <span class="number">0.0</span>  <span class="number">0.1</span> <span class="number">380220</span>  <span class="number">3488</span> ?        S    Nov16   <span class="number">0</span>:<span class="number">05</span> php-fpm: pool www</span><br><span class="line">#cat /etc/php/7.2/fpm/php-fpm.conf</span><br><span class="line">[global]</span><br><span class="line">pid = <span class="keyword">var</span>/run/php-fpm.pid</span><br><span class="line">error_log = <span class="keyword">var</span>/logs/php-fpm.log</span><br><span class="line">process_control_timeout = <span class="number">0</span></span><br><span class="line">daemonize = yes</span><br><span class="line">rlimit_files = <span class="number">65535</span></span><br><span class="line">rlimit_core = <span class="number">10240</span></span><br><span class="line">events.mechanism = epoll</span><br><span class="line">include = conf.d<span class="comment">/*.conf</span></span><br><span class="line"><span class="comment">#tail -f /etc/php/7.2/fpm/var/logs/php-fpm.log</span></span><br><span class="line"><span class="comment">#cat /etc/php/7.2/fpm/conf.d/www.conf |grep error</span></span><br><span class="line"><span class="comment"># ps aux|grep nginx</span></span><br><span class="line"><span class="comment">suping3  10898  0.0  0.0 103252   860 pts/8    S+   11:20   0:00 grep nginx</span></span><br><span class="line"><span class="comment">root     11493  0.0  0.2 137460 29168 ?        Ss   03:50   0:00 nginx: master process /usr/local/sbin/nginx -c /usr/local/etc/nginx.conf</span></span><br><span class="line"><span class="comment">www      11494  0.0  0.3 143744 37448 ?        S    03:50   0:03 nginx: worker process                       </span></span><br><span class="line"><span class="comment">www      11496  0.0  0.3 143744 37444 ?        S    03:50   0:04 nginx: worker process                       </span></span><br><span class="line"><span class="comment">#cat  /usr/local/etc/nginx.conf</span></span><br><span class="line"><span class="comment">        index index.html index.shtml index.php /index.php;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        include nginx.fastcgi_params;</span></span><br><span class="line"><span class="comment">        include nginx.uwsgi_params;</span></span><br><span class="line"><span class="comment">        include vhost.d/*.conf;</span></span><br><span class="line"><span class="comment">[suping3@hathor69 ~]$ cat  /usr/local/etc/vhost.d/www.conf</span></span><br><span class="line"><span class="comment">server &#123;</span></span><br><span class="line"><span class="comment">        listen 80 ;</span></span><br><span class="line"><span class="comment">        root /data1/www/htdocs;</span></span><br><span class="line"><span class="comment">        server_name test.com ;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        access_log /data1/www/logs/all_items_http_log main;</span></span><br><span class="line"><span class="comment">        error_log /data1/www/logs/error_log;</span></span><br><span class="line"><span class="comment">        access_log /data1/www/logs/access_log main;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#tail -f   /data1/www/logs/error_log</span></span><br><span class="line"><span class="comment">2018/12/20 11:01:00 [error] 11510#0: *591810 FastCGI sent in stderr: "PHP message: Warning: Must specify directory location for XHProf runs. Trying /tmp as default. You can either pass the directory location as an argument to the constructor for XHProfRuns_Default() or set xhprof.output_dir ini param.</span></span><br><span class="line"><span class="comment">PHP message: PHP Warning:  proc_close() has been disabled for security reasons in /data1/www/htdocs/public/xhprof/xhprof_lib/utils/callgraph_utils.php on line 127" while reading response header from upstream, client: 10.235.51.37, server: test.com, request: "GET /public/xhprof/xhprof_html/callgraph.php?run=5c1a16bf8dc14&amp;source=laravel HTTP/1.1", upstream: "fastcgi://127.0.0.1:9149", host: "test.com"</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#cat /usr/local/php/lib/php.ini|grep disable|grep -v ';'</span></span><br><span class="line"><span class="comment">disable_functions = phpinfo,system,exec,shell_exec,proc_close,passthru,show_source</span></span><br><span class="line"><span class="comment">disable_classes =</span></span><br><span class="line"><span class="comment">打开proc_close函数就好了</span></span><br></pre></td></tr></table></figure>
+<h3 id="中国大陆地区需要配置镜像"><a href="#中国大陆地区需要配置镜像" class="headerlink" title="中国大陆地区需要配置镜像"></a>中国大陆地区需要配置镜像</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">IS_MAINLAND_CHINA=$(curl -s https:<span class="comment">//api.ip.sb/geoip | grep China)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"$IS_MAINLAND_CHINA"</span> ];then</span><br><span class="line">  composer config -g repo.packagist composer https:<span class="comment">//packagist.laravel-china.org</span></span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">[root@VM_0_14_centos ~]# curl https://api.ip.sb/geoip</span><br><span class="line">&#123;<span class="string">"offset"</span>:<span class="string">"8"</span>,<span class="string">"longitude"</span>:<span class="number">116.3883</span>,<span class="string">"timezone"</span>:<span class="string">"Asia\/Harbin"</span>,<span class="string">"latitude"</span>:<span class="number">39.9289</span>,<span class="string">"area_code"</span>:<span class="string">"0"</span>,<span class="string">"region"</span>:<span class="string">"Beijing"</span>,<span class="string">"dma_code"</span>:<span class="string">"0"</span>,<span class="string">"organization"</span>:<span class="string">"AS45090 Shenzhen Tencent Computer Systems Company Limited"</span>,<span class="string">"country"</span>:<span class="string">"China"</span>,<span class="string">"ip"</span>:<span class="string">"118.24.158.116"</span>,<span class="string">"country_code3"</span>:<span class="string">"CHN"</span>,<span class="string">"continent_code"</span>:<span class="string">"AS"</span>,<span class="string">"country_code"</span>:<span class="string">"CN"</span>,<span class="string">"region_code"</span>:<span class="string">"22"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="webhook自动部署"><a href="#webhook自动部署" class="headerlink" title="webhook自动部署"></a>webhook自动部署</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//laravel-china.org/articles/5012/gitlab-webhooks-implements-automated-server-project-deployment</span></span><br><span class="line">https:<span class="comment">//laravel-china.org/articles/15949</span></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line">一直按回车键直到结束。系统会在~<span class="regexp">/.ssh 目录中生成 id_rsa和id_rsa.pub，即密钥id_rsa和公钥id_rsa.pub。</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">向GitHub添加秘钥 点击 New SSH key 按钮 https:/</span><span class="regexp">/github.com/</span>settings/keys ，添加上面生成的 id_rsa.pub 公钥内容</span><br><span class="line">#git clone git@github.com:sushengbuhuo/autoload_demo.git</span><br><span class="line">#chown -R nodbody:nobody autoload_demo</span><br><span class="line">[root@VM_0_14_centos autoload_demo]# ssh -T git@github.com</span><br><span class="line">Warning: Permanently added the RSA host key <span class="keyword">for</span> IP address <span class="string">'52.74.223.119'</span> to the list <span class="keyword">of</span> known hosts.</span><br><span class="line">Hi sushengbuhuo/autoload_demo! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="string">进入项目https://github.com/sushengbuhuo/autoload_demo/settings/hooks设置Payload URL和Secret</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#vi webhook.php</span></span><br><span class="line"><span class="string">&lt;?php</span></span><br><span class="line"><span class="string">// GitHub Webhook Secret.</span></span><br><span class="line"><span class="string">// GitHub项目 Settings/Webhooks 中的 Secret</span></span><br><span class="line"><span class="string">$secret = "token";</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Path to your respostory on your server.</span></span><br><span class="line"><span class="string">// e.g. "/var/www/respostory"</span></span><br><span class="line"><span class="string">// 项目地址</span></span><br><span class="line"><span class="string">$path = "/usr/share/nginx/html/autoload_demo/";</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Headers deliveried from GitHub</span></span><br><span class="line"><span class="string">$signature = $_SERVER['</span>HTTP_X_HUB_SIGNATURE<span class="string">'];</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">if ($signature) &#123;</span></span><br><span class="line"><span class="string">  $hash = "sha1=".hash_hmac('</span>sha1<span class="string">', file_get_contents("php://input"), $secret);</span></span><br><span class="line"><span class="string">  if (strcmp($signature, $hash) == 0) &#123;</span></span><br><span class="line"><span class="string">    echo shell_exec("cd &#123;$path&#125; &amp;&amp; /usr/bin/git reset --hard origin/master &amp;&amp; /usr/bin/git clean -f &amp;&amp; /usr/bin/git pull 2&gt;&amp;1");</span></span><br><span class="line"><span class="string">    exit();</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">#git commit -am "2019"</span></span><br><span class="line"><span class="string">#git push origin master</span></span><br><span class="line"><span class="string">权限配置</span></span><br><span class="line"><span class="string">$ sudo ps aux | grep php</span></span><br><span class="line"><span class="string">www      22131  0.0  0.2  42872 23096 ?        S    02:13   0:03 nginx: worker process</span></span><br><span class="line"><span class="string">www      22132  0.0  0.2  42900 23352 ?        S    02:13   0:01 nginx: worker process</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">$sudo ps aux | grep php-fpm</span></span><br><span class="line"><span class="string">www      22347  0.0  0.1 163832  9008 ?        S    02:13   0:00 php-fpm: pool www</span></span><br><span class="line"><span class="string">$ sudo chown -R www:www /mnt/www/project</span></span><br></pre></td></tr></table></figure>
+<h3 id="sftp"><a href="#sftp" class="headerlink" title="sftp"></a>sftp</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">groupadd sftp</span><br><span class="line">useradd -g sftp -s /sbin/nologin -M sftpUser</span><br><span class="line">passwd sftpUser</span><br><span class="line">chown root:sftp /home/wwwroot</span><br><span class="line">chmod <span class="number">755</span> /home/wwwroot</span><br><span class="line">sudo chown www:sftp -R /home/wwwroot/<span class="keyword">default</span></span><br><span class="line"> chmod <span class="number">775</span> -R /home/wwwroot/<span class="keyword">default</span></span><br><span class="line"> vim /etc/ssh/sshd_config</span><br><span class="line"> Subsystem   sftp    internal-sftp</span><br><span class="line"> Match Group sftp   #限制的用户组</span><br><span class="line"> ChrootDirectory /home/wwwroot  #根目录</span><br><span class="line"> ForceCommand internal-sftp</span><br><span class="line"> AllowTcpForwarding no</span><br><span class="line"> X11Forwarding no</span><br><span class="line">  sshd -t</span><br><span class="line">  systemctl restart sshd</span><br><span class="line">  sftp -P <span class="number">2222</span> sftpUser@<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+<h3 id="多-Laravel-项目配置"><a href="#多-Laravel-项目配置" class="headerlink" title="多 Laravel 项目配置"></a>多 Laravel 项目配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">    access_log  /dev/<span class="literal">null</span>;</span><br><span class="line">    include mime.types;</span><br><span class="line">    default_type application/octet-stream;</span><br><span class="line"></span><br><span class="line">    sendfile on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout <span class="number">120</span>;</span><br><span class="line"></span><br><span class="line">    client_header_buffer_size <span class="number">256</span>k;</span><br><span class="line">    large_client_header_buffers <span class="number">4</span> <span class="number">256</span>k;</span><br><span class="line">    client_max_body_size <span class="number">200</span>M;</span><br><span class="line">    client_body_buffer_size <span class="number">512</span>k;</span><br><span class="line"></span><br><span class="line">    map $host $dir &#123;</span><br><span class="line">        ~^(.*)$ /Home/user/laravel/$<span class="number">1</span>/public;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen <span class="number">80</span>;</span><br><span class="line">        listen <span class="number">443</span> ssl http2;</span><br><span class="line">        ssl_certificate /home/ssl.crt;</span><br><span class="line">        ssl_certificate_key /home/ssl.key;</span><br><span class="line"></span><br><span class="line">        server_name  _;</span><br><span class="line">        root $dir;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            index index.html index.htm index.php;</span><br><span class="line">            try_files $uri $uri/ <span class="regexp">/index.php?$query_string;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        location ~ \.php$ &#123;</span></span><br><span class="line"><span class="regexp">            try_files $uri =404;</span></span><br><span class="line"><span class="regexp">            fastcgi_split_path_info ^(.+\.php)(/</span>.+)$;</span><br><span class="line">            fastcgi_pass <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span>;</span><br><span class="line">            fastcgi_index index.php;</span><br><span class="line">            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; </span><br><span class="line">            fastcgi_param  QUERY_STRING       $query_string;</span><br><span class="line">            include        fastcgi_params;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location = <span class="regexp">/debug &#123;</span></span><br><span class="line"><span class="regexp">            default_type text/</span>plain;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">200</span> $dir;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">        location = <span class="regexp">/50x.html &#123;</span></span><br><span class="line"><span class="regexp">            root   html;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">在 /</span>etc/hosts 中, 添加如下</span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> a.site.com</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> b.site.com</span><br><span class="line">然后</span><br><span class="line"></span><br><span class="line">/Home/user/laravel/a.site.com/ 部署 a.site.com 的项目</span><br><span class="line">/Home/user/laravel/b.site.com/ 部署 b.site.com 的项目</span><br><span class="line">重点在那个 map 指令上. 具体用法大家自己看文档去吧</span><br></pre></td></tr></table></figure>
+<h3 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/php/extension/openssl</span><br><span class="line">运行phpize命令</span><br><span class="line">运行 ./configure --<span class="keyword">with</span>-php-config=<span class="regexp">/usr/</span>local/php/bin/php-config命令</span><br><span class="line">运行make &amp; make install</span><br><span class="line">如果报错pcntl.lo<span class="string">' is not a valid libtool object或者其他类似not a valid libtool object的错误</span></span><br><span class="line"><span class="string">运行make clean</span></span><br><span class="line"><span class="string">make install执行成功之后会产生一个.so文件，记住这个文件的位置</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">phpize可能会出现以下错误</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Cannot find config.m4. </span></span><br><span class="line"><span class="string">Make sure that you run '</span>/opt/local/bin/phpize<span class="string">' in the top level source directory of the module</span></span><br><span class="line"><span class="string">将config0.m4改名为config.m4或者直接·cp config0.m4 config.m4就可以解决</span></span><br><span class="line"><span class="string">在php.ini配置文件中添加以下内容</span></span><br><span class="line"><span class="string">#我的.so文件统一放在/usr/local/lib/php/extension目录下</span></span><br><span class="line"><span class="string">extension_dir="/usr/local/lib/php/extension"</span></span><br><span class="line"><span class="string">extension=openssl.so</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">找到php-fpm master进程 https://learnku.com/articles/24557</span></span><br><span class="line"><span class="string">ps aux | grep php-fpm</span></span><br><span class="line"><span class="string">root      2367  0.0  0.5 212856  5764 ?        Ss   Feb22   0:03 php-fpm: master process (/usr/local/php/etc/php-fpm.conf)</span></span><br><span class="line"><span class="string">www-data  2368  0.0  0.5 214940  5680 ?        S    Feb22   0:00 php-fpm: pool www</span></span><br><span class="line"><span class="string">www-data  2369  0.0  0.5 214940  5680 ?        S    Feb22   0:00 php-fpm: pool www</span></span><br><span class="line"><span class="string">root     13193  0.0  0.0 110276   900 pts/0    R+   23:15   0:00 grep --color=auto php-fpm</span></span><br><span class="line"><span class="string">pid是2367</span></span><br><span class="line"><span class="string">重启这个进程</span></span><br><span class="line"><span class="string"> kill -USR2 2367 </span></span><br><span class="line"><span class="string">INT, TERM 立刻终止</span></span><br><span class="line"><span class="string">QUIT 平滑终止</span></span><br><span class="line"><span class="string">USR1 重新打开日志文件</span></span><br><span class="line"><span class="string">USR2 平滑重载所有worker进程并重新载入配置和二进制模块</span></span><br></pre></td></tr></table></figure>
+<h3 id="升级-PHP7"><a href="#升级-PHP7" class="headerlink" title="升级 PHP7"></a>升级 PHP7</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">利用 PHPCS和PHPCompatibility 对项目进行PHP7的编码规范检测。</span><br><span class="line"></span><br><span class="line"><span class="comment">//PHPCS和PHPCompatibility安装和使用流程</span></span><br><span class="line">mkdir /tmp/php_codesniffer </span><br><span class="line">curl -s http:<span class="comment">//getcomposer.org/installer | php </span></span><br><span class="line">./composer.phar config -g repo.packagist composer https:<span class="comment">//packagist.phpcomposer.com </span></span><br><span class="line">./composer.phar selfupdate </span><br><span class="line">./composer.phar <span class="built_in">require</span> <span class="string">"squizlabs/php_codesniffer=*"</span> </span><br><span class="line">cd /tmp/PHPCompatibility </span><br><span class="line">git clone https:<span class="comment">//github.com/wimg/PHPCompatibility.git </span></span><br><span class="line">/tmp/PHPCompatibility/vendor/bin/phpcs --config-set installed_paths /tmp/PHPCompatibility/PHPCompatibility/ </span><br><span class="line">/tmp/PHPCompatibility/vendor/bin/phpcs -i </span><br><span class="line">/tmp/PHPCompatibility/vendor/bin/phpcs --standard=PHPCompatibility --report-file=<span class="regexp">/tmp/</span>check_php7_report [项目路径] </span><br><span class="line">之后就可以根据生成的报表<span class="string">'/tmp/check_php7_report'</span>，逐条对项目代码进行处理了。</span><br><span class="line">调用过的接口使用脚本分别在PHP5<span class="number">.6</span>和PHP7的环境下重新调用获取返回值，把两次的返回值md5加密后进行对比</span><br><span class="line"></span><br><span class="line">有了方案后处理起来并不难，按照预期应该是一致的，但是确实存在问题了</span><br><span class="line">php7的json_encode处理float类型会出现溢出的现象</span><br><span class="line"></span><br><span class="line">php5<span class="number">.6</span>:[<span class="number">6.28</span>] </span><br><span class="line">&gt;&gt;&gt; json_encode(<span class="number">6.28</span>)</span><br><span class="line">=&gt; <span class="string">"6.28"</span></span><br><span class="line">php7:[<span class="number">6.2800000000000002</span>] </span><br><span class="line">&gt;&gt;&gt; json_encode(<span class="number">6.28</span>)</span><br><span class="line">=&gt; <span class="string">"6.2800000000000002"</span></span><br><span class="line">解决方案：修改php.ini中serialize_precision 到<span class="number">17</span>以下，自测php7恢复正常</span><br></pre></td></tr></table></figure>
+<p><a href="https://learnku.com/articles/29662" target="_blank" rel="noopener"> PHP 项目基础运行环境搭建</a></p>
+<p><a href="https://learnku.com/articles/24709#reply82258" target="_blank" rel="noopener">升级 PHP7 过程记录</a></p>
+<p><a href="https://mp.weixin.qq.com/s/vHkxYfpuiAteMNSrpNWdsw" target="_blank" rel="noopener">Nginx 极简教程</a></p>
+<p><a href="http://nginxconfig.io/" target="_blank" rel="noopener">生成NGINX配置文件</a></p>
+<p><a href="https://laravel-china.org/articles/21832?#reply77056" target="_blank" rel="noopener">git 使用</a></p>
+<p><a href="https://www.houdunren.com/edu/topic/24" target="_blank" rel="noopener">Homestead 最佳PHP开发环境</a></p>
+<p><a href="https://www.houdunren.com/edu/topic/28" target="_blank" rel="noopener">Composer 简明教程</a></p>
+<p><a href="https://www.jianshu.com/p/f13402d5217e" target="_blank" rel="noopener">CentOS下多版本PHP配置</a></p>
+<p><a href="https://juejin.im/post/5aad1dd16fb9a028d140e014" target="_blank" rel="noopener">CentOs 同时使用多个php版本 </a></p>
+<p><a href="https://segmentfault.com/q/1010000017024334" target="_blank" rel="noopener">php 安装swoole错误</a></p>
+<p><a href="https://segmentfault.com/a/1190000013816800" target="_blank" rel="noopener">全新centos系统下源码安装php+nginx</a></p>
+<p><a href="https://laravel-china.org/articles/18338" target="_blank" rel="noopener">Ubuntu 16.04 环境安装部署</a></p>
+<p><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html" target="_blank" rel="noopener">无字母数字webshell之提高篇</a></p>
+<p><a href="http://0day5.com/archives/4016/" target="_blank" rel="noopener">preg_replace引发的phpmyadmin(4.3.0-4.6.2)命令执行漏洞</a></p>
+<p><a href="https://github.com/onebig32/swoole" target="_blank" rel="noopener">swoole聊天室</a></p>
+<p><a href="https://github.com/lukedever/php-chatroom" target="_blank" rel="noopener">php chatroom</a></p>
+<p><a href="https://laravel-china.org/articles/17377" target="_blank" rel="noopener">yum安装lnmp</a></p>
+<p><a href="https://leetcode-cn.com/problemset/all/" target="_blank" rel="noopener">leetcode</a></p>
+<p><a href="https://www.imooc.com/learn/696" target="_blank" rel="noopener">从零开始打造自己的PHP框架</a></p>
+<p><a href="https://laravel-china.org/articles/21392" target="_blank" rel="noopener">Ubuntu 安装 PHP 和 Composer</a></p>
+<p><a href="https://laravel-china.org/articles/21439" target="_blank" rel="noopener">CentOS 下手动编译 nginx 以及相关配置</a></p>
+<p><a href="https://arnaud-lb.github.io/php-rdkafka/phpdoc/rdkafka.installation.manual.html" target="_blank" rel="noopener">Manually Installing the extension rdkafka</a></p>
+<p><a href="https://github.com/summerblue/laravel-ubuntu-init" target="_blank" rel="noopener">LNMP 安装脚本</a></p>
+<p><a href="https://segmentfault.com/a/1190000016310618" target="_blank" rel="noopener">PHP 使用 Kafka 安装拾遗</a></p>
+<p><a href="https://github.com/codcodog/Blog/issues/44" target="_blank" rel="noopener">五天学会一种web开发框架</a></p>
+<p><a href="https://learnku.com/articles/13772/with-so-many-lnmp-do-you-really-understand-the-interaction-between-n-and-p" target="_blank" rel="noopener">用了那么多 LNMP, 你真的了解 N 与 P 交互吗</a></p>
+<p><a href="https://opstrip.com/2017/05/31/Deploying-php71-and-opening-MySQL-extension-on-CentOS7/" target="_blank" rel="noopener">CentOS7中部署php7.1及开启MySQL扩展</a></p>
+<p><a href="http://www.syyong.com/php/Php5-5-upgrade-to-php7-2.html" target="_blank" rel="noopener">php5.5 升级到 php7.2</a></p>
+<p><a href="https://learnku.com/articles/19823" target="_blank" rel="noopener">Ubuntu18.04 桌面版 搭建 LNMP 环境</a></p>
+<p><a href="https://blog.fastrun.cn/2018/12/12/1-80/" target="_blank" rel="noopener">狂撸一款PHP现代化框架</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/26/浅谈php设计模式/" rel="next" title="浅谈php设计模式">
+                <i class="fa fa-chevron-left"></i> 浅谈php设计模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/28/命令行工具收集/" rel="prev" title="npm命令行工具收集">
+                npm命令行工具收集 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装nginx"><span class="nav-number">1.</span> <span class="nav-text">安装nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装php7"><span class="nav-number">2.</span> <span class="nav-text">安装php7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装PHP7-2"><span class="nav-number">3.</span> <span class="nav-text">安装PHP7.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-fpm管理器添加到systemctl系统服务中"><span class="nav-number">4.</span> <span class="nav-text">php-fpm管理器添加到systemctl系统服务中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装swoole"><span class="nav-number">5.</span> <span class="nav-text">安装swoole</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装其他扩展"><span class="nav-number">6.</span> <span class="nav-text">安装其他扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS配置"><span class="nav-number">7.</span> <span class="nav-text">HTTPS配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-rdkafka"><span class="nav-number">8.</span> <span class="nav-text">php rdkafka</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查错方法"><span class="nav-number">9.</span> <span class="nav-text">查错方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中国大陆地区需要配置镜像"><span class="nav-number">10.</span> <span class="nav-text">中国大陆地区需要配置镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webhook自动部署"><span class="nav-number">11.</span> <span class="nav-text">webhook自动部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sftp"><span class="nav-number">12.</span> <span class="nav-text">sftp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多-Laravel-项目配置"><span class="nav-number">13.</span> <span class="nav-text">多 Laravel 项目配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装openssl"><span class="nav-number">14.</span> <span class="nav-text">安装openssl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级-PHP7"><span class="nav-number">15.</span> <span class="nav-text">升级 PHP7</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

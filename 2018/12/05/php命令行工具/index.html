@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="php,命令行,工具,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="composer镜像composer全局安装的命令路径 C:\Users\xxx\AppData\Roaming\Composer\vendor\bin1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666">
+<meta name="keywords" content="php,命令行,工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php命令行工具">
+<meta property="og:url" content="http://yoursite.com/2018/12/05/php命令行工具/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="composer镜像composer全局安装的命令路径 C:\Users\xxx\AppData\Roaming\Composer\vendor\bin1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-10T11:32:27.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php命令行工具">
+<meta name="twitter:description" content="composer镜像composer全局安装的命令路径 C:\Users\xxx\AppData\Roaming\Composer\vendor\bin1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/05/php命令行工具/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>php命令行工具 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/php命令行工具/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">php命令行工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T21:00:44+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="composer镜像"><a href="#composer镜像" class="headerlink" title="composer镜像"></a>composer镜像</h3><p>composer全局安装的命令路径 C:\Users\xxx\AppData\Roaming\Composer\vendor\bin<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">composer global <span class="built_in">require</span> slince/composer-registry-manager</span><br><span class="line">$ composer repo:ls</span><br><span class="line">   composer       https:<span class="comment">//packagist.org</span></span><br><span class="line">   phpcomposer    https:<span class="comment">//packagist.phpcomposer.com</span></span><br><span class="line">   composer-proxy https:<span class="comment">//packagist.composer-proxy.org</span></span><br><span class="line"> * laravel-china  https:<span class="comment">//packagist.laravel-china.org</span></span><br><span class="line">   cnpkg          https:<span class="comment">//php.cnpkg.org</span></span><br><span class="line">composer repo:use laravel-china</span><br><span class="line">composer <span class="built_in">require</span> 安装的时候可能会把.git目录也下载了，因为木有php-zip扩展，所以使用的git clone 来下载，默认是wget</span><br><span class="line"></span><br><span class="line">要列出所有已安装的包及其版本号和说明，只需使用 show:</span><br><span class="line"></span><br><span class="line">composer show</span><br><span class="line">有时候把这些信息用依赖关系树的形式查看会更容易理解， 可以通过 --tree or -t 参数:</span><br><span class="line"></span><br><span class="line">composer show -t</span><br><span class="line">如果要筛选返回的包，可以使用通配符传递一个额外的字符串参数 *:</span><br><span class="line">composer show -t</span><br><span class="line">acacha/admin-lte-template-laravel <span class="number">1.0</span><span class="number">.5</span> AdminLTE template applied to Laravel Scaffolding</span><br><span class="line">├──illuminate/<span class="built_in">console</span> ~<span class="number">5.0</span></span><br><span class="line">├──illuminate/support ~<span class="number">5.0</span></span><br><span class="line">└──php &gt;=<span class="number">5.4</span><span class="number">.0</span></span><br><span class="line">baum/baum <span class="number">1.1</span><span class="number">.1</span> Baum is an implementation <span class="keyword">of</span> the Nested <span class="built_in">Set</span> pattern <span class="keyword">for</span> Eloquent models.</span><br><span class="line">├──illuminate/<span class="built_in">console</span> <span class="number">5.</span>*</span><br><span class="line">├──illuminate/database <span class="number">5.</span>*</span><br><span class="line">├──illuminate/events <span class="number">5.</span>*</span><br><span class="line">├──illuminate/filesystem <span class="number">5.</span>*</span><br><span class="line">├──illuminate/support <span class="number">5.</span>*</span><br><span class="line">└──php &gt;=<span class="number">5.4</span><span class="number">.0</span></span><br><span class="line">cloudmario/scs dev-master PHP SDK <span class="keyword">for</span> 新浪云存储</span><br><span class="line">└──php &gt;=<span class="number">5.2</span><span class="number">.0</span></span><br><span class="line">firephp/firephp-core v0<span class="number">.4</span><span class="number">.0</span> Traditional FirePHPCore library <span class="keyword">for</span> sending PHP variables to the browser.</span><br><span class="line">guzzlehttp/guzzle <span class="number">5.3</span><span class="number">.1</span> Guzzle is a PHP HTTP client library and framework <span class="keyword">for</span> building RESTful web service clients</span><br><span class="line">├──guzzlehttp/ringphp ^<span class="number">1.1</span></span><br><span class="line">│  ├──guzzlehttp/streams ~<span class="number">3.0</span></span><br><span class="line">│  │  └──php &gt;=<span class="number">5.4</span><span class="number">.0</span></span><br><span class="line">│  ├──php &gt;=<span class="number">5.4</span><span class="number">.0</span></span><br><span class="line">│  └──react/promise ~<span class="number">2.0</span></span><br><span class="line">│     └──php &gt;=<span class="number">5.4</span><span class="number">.0</span></span><br><span class="line">└──php &gt;=<span class="number">5.4</span><span class="number">.0</span></span><br><span class="line">jenssegers/mongodb v2<span class="number">.1</span><span class="number">.9</span> A MongoDB based Eloquent model and Query builder <span class="keyword">for</span> Laravel <span class="number">4</span></span><br><span class="line">├──illuminate/container ^<span class="number">5.0</span></span><br><span class="line">├──illuminate/database ^<span class="number">5.0</span></span><br><span class="line">├──illuminate/events ^<span class="number">5.0</span></span><br><span class="line">├──illuminate/support ^<span class="number">5.0</span></span><br><span class="line">└──php &gt;=<span class="number">5.4</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">composer show <span class="string">'symfony/*'</span></span><br><span class="line">如果要查看有关特定包的信息，需要完整包名:</span><br><span class="line"></span><br><span class="line">$ composer show laravel/framework</span><br><span class="line">name     : laravel/framework</span><br><span class="line">descrip. : The Laravel Framework.</span><br><span class="line">keywords : framework, laravel</span><br><span class="line">versions : * v5<span class="number">.0</span><span class="number">.16</span></span><br><span class="line">type     : library</span><br><span class="line">license  : MIT License (MIT) (OSI approved) https:<span class="comment">//spdx.org/licenses/MIT.html#licenseText</span></span><br><span class="line">source   : [git] https:<span class="comment">//github.com/laravel/framework.git 861a1e78c84dca82fe4bd85d00349c52304eea77</span></span><br><span class="line">dist     : [zip] https:<span class="comment">//api.github.com/repos/laravel/framework/zipball/861a1e78c84dca82fe4bd85d00349c52304eea77 861a1e78c84dca82fe4bd85d00349c52304eea77</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果您想知道安装特定软件包的原因，可以使用 why 命令来确定哪些依赖项需要它：</span><br><span class="line"></span><br><span class="line">composer why vlucas/phpdotenv</span><br><span class="line">composer why vlucas/phpdotenv -t</span><br><span class="line"></span><br><span class="line">使用 --verbose 或 -v 参数来查看本地修改的软件包和文件：</span><br><span class="line"></span><br><span class="line">composer status -v</span><br><span class="line"></span><br><span class="line">$ composer licenses</span><br><span class="line">Name: laravel/laravel</span><br><span class="line">Version: dev-dev_wzp</span><br><span class="line">Licenses: MIT</span><br><span class="line">Dependencies:</span><br><span class="line"></span><br><span class="line">Name                                   Version             License</span><br><span class="line">acacha/admin-lte-template-laravel      <span class="number">1.0</span><span class="number">.5</span>               MIT</span><br><span class="line">bacon/bacon-qr-code                    <span class="number">1.0</span><span class="number">.1</span>               BSD<span class="number">-2</span>-Clause</span><br><span class="line">baum/baum                              <span class="number">1.1</span><span class="number">.1</span>               MIT</span><br><span class="line">classpreloader/classpreloader          <span class="number">1.2</span><span class="number">.0</span>               MIT</span><br><span class="line">cloudmario/scs                         dev-master <span class="number">5294387</span>  MIT</span><br><span class="line"></span><br><span class="line">检测一下已安装的包，哪些有可以升级的。这可以使用 outdated 命令。</span><br><span class="line"></span><br><span class="line">composer outdated</span><br><span class="line">acacha/admin-lte-template-laravel     <span class="number">1.0</span><span class="number">.5</span>              <span class="number">6.0</span></span><br><span class="line">bacon/bacon-qr-code                   <span class="number">1.0</span><span class="number">.1</span>              <span class="number">2.0</span><span class="number">.0</span></span><br><span class="line">classpreloader/classpreloader         <span class="number">1.2</span><span class="number">.0</span>              <span class="number">3.2</span><span class="number">.0</span></span><br><span class="line">cloudmario/scs                        dev-master <span class="number">5294387</span> dev-master <span class="number">4610269</span></span><br><span class="line">danielstjules/stringy                 <span class="number">1.9</span><span class="number">.0</span>              <span class="number">3.1</span><span class="number">.0</span></span><br><span class="line">doctrine/inflector                    v1<span class="number">.0</span><span class="number">.1</span>             v1<span class="number">.3</span><span class="number">.0</span></span><br><span class="line">doctrine/instantiator                 <span class="number">1.0</span><span class="number">.5</span>              <span class="number">1.2</span><span class="number">.0</span></span><br><span class="line">evenement/evenement                   v2<span class="number">.0</span><span class="number">.0</span>             v3<span class="number">.0</span><span class="number">.1</span></span><br><span class="line">guzzlehttp/guzzle                     <span class="number">5.3</span><span class="number">.1</span>              <span class="number">6.3</span><span class="number">.3</span></span><br><span class="line">guzzlehttp/psr7                       <span class="number">1.3</span><span class="number">.1</span>              <span class="number">1.5</span><span class="number">.2</span></span><br><span class="line"></span><br><span class="line">Laravel 最近发布了一个新的 <span class="number">5.8</span> 版本的框架；我们可以使用 why-not 命令检查任何阻止我们更新 laravel/framework 包的包：</span><br><span class="line"></span><br><span class="line">composer why-not laravel/framework <span class="number">5.8</span></span><br><span class="line"></span><br><span class="line">如果您想知道安装特定软件包的原因，可以使用 why 命令来确定哪些依赖项需要它：</span><br><span class="line"></span><br><span class="line">composer why vlucas/phpdotenv</span><br><span class="line">laravel/framework  v5<span class="number">.0</span><span class="number">.16</span>  requires  vlucas/phpdotenv (~<span class="number">1.0</span>)</span><br><span class="line">https:<span class="comment">//learnku.com/laravel/t/28678</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="多线程下载composer"><a href="#多线程下载composer" class="headerlink" title="多线程下载composer"></a>多线程下载composer</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">国内源搭配多线程下载composer</span><br><span class="line">composer global <span class="built_in">require</span> hirak/prestissimo</span><br><span class="line">composer create-project laravel/laravel laravel1 --no-progress --profile --prefer-dist</span><br><span class="line">https:<span class="comment">//github.com/hirak/prestissimo</span></span><br></pre></td></tr></table></figure>
+<h3 id="httpstat"><a href="#httpstat" class="headerlink" title="httpstat"></a>httpstat</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/talhasch/php-httpstat</span></span><br><span class="line">$ cd php-httpstat</span><br><span class="line">$ cp httpstat.php /usr/local/bin/httpstat</span><br><span class="line">$ chmod +x /usr/local/bin/httpstat</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">$ httpstat http:<span class="comment">//www.google.com</span></span><br></pre></td></tr></table></figure>
+<h3 id="PHP-静态代码分析phan"><a href="#PHP-静态代码分析phan" class="headerlink" title="PHP 静态代码分析phan"></a>PHP 静态代码分析phan</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//laravel-china.org/topics/19011 https://github.com/nunomaduro/larastan https://laravel-china.org/topics/20768</span></span><br><span class="line"></span><br><span class="line">git clone https:<span class="comment">//github.com/nikic/php-ast</span></span><br><span class="line">cd php-ast/</span><br><span class="line">phpize</span><br><span class="line">sudo ./configure --<span class="keyword">with</span>-php-config=<span class="regexp">/php7/</span>bin/php-config --enable-ast</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br><span class="line">php7 --ini</span><br><span class="line">vi /etc/php.ini </span><br><span class="line">extension = ast.so</span><br><span class="line"># 就能看到扩展啦</span><br><span class="line">php -m | grep ast</span><br><span class="line">curl -sS https:<span class="comment">//getcomposer.org/installer | php7</span></span><br><span class="line">mkdir test</span><br><span class="line">cd test</span><br><span class="line">which php</span><br><span class="line">$ composer config -g repo.packagist composer https:<span class="comment">//packagist.laravel-china.org</span></span><br><span class="line"></span><br><span class="line">php7 /usr/bin/composer <span class="built_in">require</span> --dev <span class="string">"phan/phan:1.x"</span></span><br><span class="line">vi src/a.php</span><br><span class="line">   </span><br><span class="line">   &lt;?php</span><br><span class="line">   </span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line">       public <span class="function"><span class="keyword">function</span> <span class="title">a1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> $<span class="keyword">this</span>-&gt;a2(<span class="number">1</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * @param array $b</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * @return int</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       private <span class="function"><span class="keyword">function</span> <span class="title">a2</span>(<span class="params">$b</span>)</span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> $b + <span class="number">1</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   写个shell脚本 vi test.sh </span><br><span class="line">   </span><br><span class="line">   #!<span class="regexp">/bin/</span>bash</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       echo -e -n <span class="string">"\033[01;35m[YUNQI] \033[01;31m"</span></span><br><span class="line">       echo $@</span><br><span class="line">       echo -e -n <span class="string">"\033[00m"</span></span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   Color_Text()</span><br><span class="line">   &#123;</span><br><span class="line">     echo -e <span class="string">" \e[0;$2m$1\e[0m"</span></span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   Echo_Red()</span><br><span class="line">   &#123;</span><br><span class="line">     echo $(Color_Text <span class="string">"$1"</span> <span class="string">"31"</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   Echo_Green()</span><br><span class="line">   &#123;</span><br><span class="line">     echo $(Color_Text <span class="string">"$1"</span> <span class="string">"32"</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   Echo_Yellow()</span><br><span class="line">   &#123;</span><br><span class="line">     echo $(Color_Text <span class="string">"$1"</span> <span class="string">"33"</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   : &gt; file.list</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">for</span> file <span class="keyword">in</span> $(ls src<span class="comment">/*)</span></span><br><span class="line"><span class="comment">   do</span></span><br><span class="line"><span class="comment">     echo $file &gt;&gt; file.list</span></span><br><span class="line"><span class="comment">   done</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   Echo_Green "file list:\n"</span></span><br><span class="line"><span class="comment">   Echo_Green "========================\n"</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   cat file.list</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   Echo_Green "========================\n"</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   Echo_Yellow "Phan run\n"</span></span><br><span class="line"><span class="comment">   Echo_Yellow "========================\n"</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   ./vendor/bin/phan -f file.list -o res.out</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   Echo_Yellow "========================\n"</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   Echo_Red "error log\n"</span></span><br><span class="line"><span class="comment">   Echo_Red "========================\n"</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   cat res.out</span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   Echo_Red "========================\n"</span></span><br><span class="line"><span class="comment">   #https://mengkang.net/1356.html </span></span><br><span class="line"><span class="comment">   [root@localhost ast]# sh test.sh</span></span><br><span class="line"><span class="comment">   file list:</span></span><br><span class="line"><span class="comment">   ========================</span></span><br><span class="line"><span class="comment">   src/a.php</span></span><br><span class="line"><span class="comment">   ========================</span></span><br><span class="line"><span class="comment">   Phan run</span></span><br><span class="line"><span class="comment">   ========================</span></span><br><span class="line"><span class="comment">   PHP Warning:  Unsupported declare 'strict_types' in /ast/vendor/phan/phan/src/phan.php on line 1</span></span><br><span class="line"><span class="comment">   PHP Parse error:  syntax error, unexpected T_FUNCTION, expecting T_PAAMAYIM_NEKUDOTAYIM in /ast/vendor/phan/phan/src/phan.php on line 29</span></span><br><span class="line"><span class="comment">   ========================</span></span><br><span class="line"><span class="comment">   error log</span></span><br><span class="line"><span class="comment">   ========================</span></span><br><span class="line"><span class="comment">   cat: res.out: No such file or directory</span></span><br><span class="line"><span class="comment">   ========================</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   </span></span><br><span class="line"><span class="comment">   [root@localhost ast]# vi vendor/bin/phan</span></span><br><span class="line"><span class="comment">   #!/usr/bin/env php7</span></span><br><span class="line"><span class="comment">   &lt;?php require_once __DIR__ . '/src/phan.php';</span></span><br><span class="line"><span class="comment">  # 安装</span></span><br><span class="line"><span class="comment">  composer require --dev nunomaduro/larastan</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  # 分析代码</span></span><br><span class="line"><span class="comment">  php artisan code:analyse</span></span><br><span class="line"><span class="comment">  而 code:analyse 命令有些参数可以帮助你自定义分析过程。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  # 默认为 5。0 表示最宽松，7 表示最严格。</span></span><br><span class="line"><span class="comment">  php artisan code:analyse --level=[0-7]</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  # 分析指定的路径。</span></span><br><span class="line"><span class="comment">  php artisan code:analyse --paths="modules,app,domain" </span></span><br><span class="line"><span class="comment">   安装的时候如果出现提示 Your requirements could not be resolved to an installable set of packages.</span></span><br><span class="line"><span class="comment">   改用以下的命令安装</span></span><br><span class="line"><span class="comment">   先执行 composer update</span></span><br><span class="line"><span class="comment">   再执行 composer require nunomaduro/larastan --update-with-all-dependencies</span></span><br></pre></td></tr></table></figure>
+<h3 id="phpcs"><a href="#phpcs" class="headerlink" title="phpcs"></a>phpcs</h3><h3 id="命令行音乐搜索下载器"><a href="#命令行音乐搜索下载器" class="headerlink" title="命令行音乐搜索下载器"></a>命令行音乐搜索下载器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ composer global <span class="built_in">require</span> guanguans/music-php</span><br><span class="line">$ ./path/music-php</span><br><span class="line">https:<span class="comment">//github.com/guanguans/music-php</span></span><br></pre></td></tr></table></figure>
+<h3 id="phpmd"><a href="#phpmd" class="headerlink" title="phpmd"></a>phpmd</h3><h3 id="语法检测"><a href="#语法检测" class="headerlink" title="语法检测"></a>语法检测</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="built_in">require</span> overtrue/phplint --dev -vvv</span><br><span class="line">$ ./vendor/bin/phplint ./ --exclude=vendor</span><br><span class="line">$ ./vendor/bin/phplint</span><br></pre></td></tr></table></figure>
+<h3 id="psysh"><a href="#psysh" class="headerlink" title="psysh"></a>psysh</h3><h3 id="管理缓存"><a href="#管理缓存" class="headerlink" title="管理缓存"></a>管理缓存</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//learnku.com/articles/26314</span></span><br><span class="line">$ curl -sO http:<span class="comment">//gordalina.github.io/cachetool/downloads/cachetool.phar</span></span><br><span class="line"></span><br><span class="line">$ chmod +x cachetool.phar</span><br><span class="line"></span><br><span class="line">$ php cachetool.phar opcache:reset --fcgi</span><br></pre></td></tr></table></figure>
+<h3 id="php7cc语法检测"><a href="#php7cc语法检测" class="headerlink" title="php7cc语法检测"></a>php7cc语法检测</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://github.com/sstalle/php7cc/releases</span></span><br><span class="line">composer global <span class="built_in">require</span> sstalle/php7cc</span><br><span class="line"><span class="keyword">export</span> PATH=<span class="string">"$PATH:$HOME/.config/composer/vendor/bin"</span></span><br><span class="line">php7cc /path/to/my/file.php</span><br><span class="line">php7cc /path/to/my/directory/</span><br><span class="line">php7cc --level=error /path/to/my/directory/ &gt; error.txt</span><br></pre></td></tr></table></figure>
+<h3 id="spike"><a href="#spike" class="headerlink" title="spike"></a>spike</h3><h3 id="phpcbf"><a href="#phpcbf" class="headerlink" title="phpcbf"></a>phpcbf</h3><h3 id="加速composer开启多线程安装下载"><a href="#加速composer开启多线程安装下载" class="headerlink" title="加速composer开启多线程安装下载"></a>加速composer开启多线程安装下载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ composer global <span class="built_in">require</span> hirak/prestissimo</span><br><span class="line">$ composer global remove hirak/prestissimo</span><br><span class="line">$ composer create-project laravel/laravel laravel1 --no-progress --profile --prefer-dist</span><br></pre></td></tr></table></figure>
+<h3 id="包构建工具package-builder"><a href="#包构建工具package-builder" class="headerlink" title="包构建工具package-builder"></a>包构建工具package-builder</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line">安装工具</span><br><span class="line"></span><br><span class="line">$ composer global <span class="built_in">require</span> <span class="string">'overtrue/package-builder'</span> --prefer-source</span><br><span class="line">创建项目</span><br><span class="line"></span><br><span class="line">$ package-builder build [目标目录]</span><br><span class="line">$ package-builder build ./weather</span><br><span class="line"># 然后按提示操作即可</span><br><span class="line"># 包名：xkeyi/weather</span><br><span class="line"># 命名空间：Xkeyi\Weather </span><br><span class="line"># 描述：A weather SDK</span><br><span class="line">接下来我们需要在 composer.json 中声明包自动加载的命名空间，进入项目目录，执行命令：composer dump-autoload</span><br></pre></td></tr></table></figure>
+<h3 id="pecl"><a href="#pecl" class="headerlink" title="pecl"></a>pecl</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pecl install swoole 默认是按照最新版的，如果有你的环境php不是最新，那需要按照PHP版本去安装</span><br><span class="line">安装PHP是<span class="number">7.1</span>版本的swoole</span><br><span class="line">pecl -d php_suffix=<span class="number">7.1</span> install swoole<span class="number">-1.9</span><span class="number">.23</span></span><br><span class="line">pecl channel-update pecl.php.net</span><br></pre></td></tr></table></figure>
+<h3 id="经纬度行政区域查询"><a href="#经纬度行政区域查询" class="headerlink" title="经纬度行政区域查询"></a>经纬度行政区域查询</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">curl <span class="string">"http://116.196.105.215:1234/gis?auth_user=freevip&amp;latitude=39.880655&amp;longitude=116.354386"</span></span><br><span class="line">&#123;<span class="string">"error"</span>:<span class="number">0</span>,<span class="string">"msg"</span>:<span class="string">"成功"</span>,<span class="string">"data"</span>:&#123;<span class="string">"country"</span>:<span class="string">"CHN"</span>,<span class="string">"en0"</span>:<span class="string">""</span>,<span class="string">"en1"</span>:<span class="string">""</span>,<span class="string">"en2"</span>:<span class="string">""</span>,<span class="string">"en3"</span>:<span class="string">""</span>,<span class="string">"zh0"</span>:<span class="string">"中国"</span>,<span class="string">"zh1"</span>:<span class="string">"北京市"</span>,<span class="string">"zh2"</span>:<span class="string">""</span>,<span class="string">"zh3"</span>:<span class="string">"西城区"</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="格式化-SQL"><a href="#格式化-SQL" class="headerlink" title="格式化 SQL"></a>格式化 SQL</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">composer global <span class="built_in">require</span> jdorn/sql-formatter</span><br><span class="line"></span><br><span class="line">sql-formatter <span class="string">"SELECT SOME QUERY;"</span> <span class="comment">// 直接格式化</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"></span><br><span class="line">echo <span class="string">"SELECT SOME QUERY;"</span> | sql-formatter <span class="comment">// 使用管道，更适合较大量的 SQL 语句</span></span><br></pre></td></tr></table></figure>
+<h3 id="将-PHP-应用快速打包为-PHAR"><a href="#将-PHP-应用快速打包为-PHAR" class="headerlink" title="将 PHP 应用快速打包为 PHAR"></a>将 PHP 应用快速打包为 PHAR</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="built_in">require</span> humbug/box</span><br><span class="line">vendor/bin/box compile </span><br><span class="line">[root@VM_0_14_centos blog]# vendor/bin/box compile</span><br><span class="line"></span><br><span class="line">    ____</span><br><span class="line">   / __ )____  _  __</span><br><span class="line">  / __  / __ \| |<span class="regexp">/_/</span></span><br><span class="line"> / <span class="regexp">/_/</span> / <span class="regexp">/_/</span> /&gt;  &lt;</span><br><span class="line">/_____/\____/_/|_|</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Box version 3.4.0@4eeb285</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> // Loading without a configuration file.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In Assertion.php line 2550:</span><br><span class="line"></span><br><span class="line">  File "/usr/share/nginx/html/blog/index.php" was expected to exist.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">compile [-c|--config CONFIG] [--debug] [--no-parallel] [--no-restart] [--dev] [--no-config] [--with-docker] [-d|--working-dir WORKING-DIR]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> [ERROR] The configuration file is invalid.</span><br><span class="line">[root@VM_0_14_centos blog]# touch index.php</span><br><span class="line">[root@VM_0_14_centos blog]# vendor/bin/box compile</span><br><span class="line"></span><br><span class="line">    ____</span><br><span class="line">   / __ )____  _  __</span><br><span class="line">  / __  / __ \| |/_/</span><br><span class="line"> / /_/ / /_/ /&gt;  &lt;</span><br><span class="line">/_____/\____/_/|_|</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Box version 3.4.0@4eeb285</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> // Loading without a configuration file.</span><br><span class="line"></span><br><span class="line">🔨  Building the PHAR "/usr/share/nginx/html/blog/index.phar"</span><br><span class="line"></span><br><span class="line">? No compactor to register</span><br><span class="line">? Adding main file: /usr/share/nginx/html/blog/index.php</span><br><span class="line">? Adding requirements checker</span><br><span class="line">? Adding binary files</span><br><span class="line">    &gt; No file found</span><br><span class="line">? Auto-discover files? Yes</span><br><span class="line">? Adding files</span><br><span class="line">    &gt; 4828 file(s)</span><br><span class="line">? Generating new stub</span><br><span class="line">  - Using shebang line: #!/usr/bin/env php</span><br><span class="line">  - Using banner:</span><br><span class="line">    &gt; Generated by Humbug Box 3.4.0@4eeb285.</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; @link https://github.com/humbug/box</span><br><span class="line">? Dumping the Composer autoloader</span><br><span class="line">? Removing the Composer dump artefacts</span><br><span class="line">? No compression</span><br><span class="line">? Setting file permissions to 0755</span><br><span class="line">* Done.</span><br><span class="line"></span><br><span class="line">No recommendation found.</span><br><span class="line">No warning found.</span><br><span class="line"></span><br><span class="line"> // PHAR: 4865 files (24.51MB)</span><br><span class="line"> // You can inspect the generated PHAR with the "info" command.</span><br><span class="line"></span><br><span class="line"> // Memory usage: 83.76MB (peak: 85.63MB), time: 109.71s</span><br></pre></td></tr></table></figure>
+<h3 id="phptrace"><a href="#phptrace" class="headerlink" title="phptrace"></a>phptrace</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="comment">//github.com/Qihoo360/phptrace/archive/v1.0.1-beta.tar.gz</span></span><br><span class="line">tar -zxvf v1<span class="number">.0</span><span class="number">.1</span>-beta.tar.gz</span><br><span class="line">cd phptrace<span class="number">-1.0</span><span class="number">.1</span>-beta/extension</span><br><span class="line">/usr/local/php/bin/phpize</span><br><span class="line">./configure --<span class="keyword">with</span>-php-config=<span class="regexp">/usr/</span>local/php/bin/php-config</span><br><span class="line">make</span><br><span class="line">make install-all</span><br><span class="line">See any operating system documentation about shared libraries <span class="keyword">for</span></span><br><span class="line">more information, such <span class="keyword">as</span> the ld(<span class="number">1</span>) and ld.so(<span class="number">8</span>) manual pages.</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Installing shared extensions:     <span class="regexp">/usr/</span>local/php/lib/php/extensions/no-debug-non-zts<span class="number">-20170718</span>/</span><br><span class="line">Installing PHP Trace binary:      <span class="regexp">/usr/</span>local/php/bin/</span><br><span class="line">[root@VM_0_14_centos extension]# php --ini</span><br><span class="line">Configuration File (php.ini) Path: <span class="regexp">/usr/</span>local/php/lib</span><br><span class="line">Loaded Configuration File:         <span class="regexp">/usr/</span>local/php/lib/php.ini</span><br><span class="line">Scan <span class="keyword">for</span> additional .ini files <span class="keyword">in</span>: (none)</span><br><span class="line">Additional .ini files parsed:      (none)</span><br><span class="line">vi /usr/local/php/lib/php.ini</span><br><span class="line">extension = trace.so</span><br><span class="line"> /usr/local/php/bin/phptrace -p <span class="number">19248</span></span><br></pre></td></tr></table></figure>
+<h3 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; <span class="number">3</span>; $i ++) &#123;</span><br><span class="line">    echo $i . PHP_EOL;</span><br><span class="line">    <span class="keyword">if</span> ($i == <span class="number">2</span>) &#123;</span><br><span class="line">        $j = $i + <span class="number">1</span>;</span><br><span class="line">        var_dump($j);</span><br><span class="line">    &#125;</span><br><span class="line">    sleep(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">gdb php</span><br><span class="line">(gdb)run index.php</span><br><span class="line">...</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">int(<span class="number">3</span>)</span><br><span class="line">[Inferior <span class="number">1</span> (process <span class="number">577</span>) exited normally]</span><br></pre></td></tr></table></figure>
+<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">curl -x <span class="number">123.45</span><span class="number">.67</span><span class="number">.89</span>:<span class="number">1080</span> -o page.html http:<span class="comment">//www.yahoo.com 使用代理访问</span></span><br><span class="line">添加 --data 或 -D 后面跟传递的参数，再加网址，即可发送POST请求</span><br><span class="line"></span><br><span class="line">curl -D <span class="string">"name=jack&amp;age=22"</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8899</span>/post</span><br><span class="line">如果要对数据内容做编码处理，可使用 –data-urlencode 参数</span><br><span class="line"></span><br><span class="line">curl -D <span class="string">"name=jack jason&amp;age=22"</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8899</span>/post</span><br><span class="line">curl --e http:<span class="comment">//www.example.com http://www.example.com</span></span><br><span class="line">用curl通过dict协议去查字典</span><br><span class="line">curl dict:<span class="comment">//dict.org/d:computer</span></span><br><span class="line">ftp下载上传</span><br><span class="line">curl -u name:passwd ftp:<span class="comment">//ip:port/path/file</span></span><br><span class="line"></span><br><span class="line">curl -T localfile -u name:passwd ftp:<span class="comment">//upload_site:port/path/</span></span><br></pre></td></tr></table></figure>
+<h3 id="代码检查工具"><a href="#代码检查工具" class="headerlink" title="代码检查工具"></a>代码检查工具</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="built_in">require</span> --dev bamarni/composer-bin-plugin</span><br><span class="line"></span><br><span class="line">composer   <span class="built_in">require</span> nunomaduro/phpinsights</span><br><span class="line"># Mac &amp; Linux</span><br><span class="line">./vendor/bin/phpinsights</span><br><span class="line"></span><br><span class="line"># Windows</span><br><span class="line">.\vendor\bin\phpinsights.bat</span><br></pre></td></tr></table></figure>
+<h3 id="格式化并高亮-SQL-语句"><a href="#格式化并高亮-SQL-语句" class="headerlink" title="格式化并高亮 SQL 语句"></a>格式化并高亮 SQL 语句</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">composer global <span class="built_in">require</span> jdorn/sql-formatter</span><br><span class="line"></span><br><span class="line">sql-formatter <span class="string">"SELECT SOME QUERY;"</span> <span class="comment">// 直接格式化</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"></span><br><span class="line">echo <span class="string">"SELECT SOME QUERY;"</span> | sql-formatter <span class="comment">// 使用管道，更适合较大量的 SQL 语句</span></span><br><span class="line">&lt;?php</span><br><span class="line">require_once(<span class="string">'SqlFormatter.php'</span>);</span><br><span class="line"></span><br><span class="line">$query = <span class="string">"SELECT count(*),`Column1`,`Testing`, `Testing Three` FROM `Table1`</span></span><br><span class="line"><span class="string">    WHERE Column1 = 'testing' AND ( (`Column2` = `Column3` OR Column4 &gt;= NOW()) )</span></span><br><span class="line"><span class="string">    GROUP BY Column1 ORDER BY Column3 DESC LIMIT 5,10"</span>;</span><br><span class="line"></span><br><span class="line">echo SqlFormatter::format($query);</span><br><span class="line">echo SqlFormatter::format($query, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">https:<span class="comment">//wi1dcard.cn/posts/format-sql-statements-in-php/</span></span><br></pre></td></tr></table></figure>
+<h3 id="命令行翻译器"><a href="#命令行翻译器" class="headerlink" title="命令行翻译器"></a>命令行翻译器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">全局安装</span><br><span class="line"></span><br><span class="line">$  composer global <span class="built_in">require</span>  jonasyeah/client-translator</span><br><span class="line">     <span class="number">1</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-archived$2edb7b4fbca3e9f5a61bfdda69582a5e3843b748dd030acf2ec34104f65c6d17.json</span></span><br><span class="line">    <span class="number">2</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-2013$09a8bafcb621ca7068e4068038ea0cccc1f8be98ec5c91bdcfe8fcc4261cbc95.json</span></span><br><span class="line">    <span class="number">3</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-2014$0a5ce8b24ddb8417ea7288cb02cf77a82ca7f2f4103fff9065cbe8d22747bad0.json</span></span><br><span class="line">    <span class="number">4</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-2019-01$a8369df8eeb94ae1e149a7ed59354b065e6eb83af6f3b2ee29cc9d09035a969f.json</span></span><br><span class="line">    <span class="number">5</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-latest$7f7119f65482d6cbae99422a9801b81a24b7b884e2d8254b2372c51f2af27ae2.json</span></span><br><span class="line">    <span class="number">6</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-2019-04$c8b07c6782c00960fd236b08f48725c5c63c02a34cc0d60144badfcc9789dc6b.json</span></span><br><span class="line">    <span class="number">7</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-2018-10$0da5af3cd329f65ef465075887d27aa728a28f442dec760d1af99aacf149716a.json</span></span><br><span class="line">    <span class="number">8</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-2015$adc4766494fc221443b709dd44d317db9120916304aa4735f2b90702aa2a9e1f.json</span></span><br><span class="line">    <span class="number">9</span>/<span class="number">11</span>:       https:<span class="comment">//packagist.laravel-china.org/p/provider-2017$7f82673b6f8e5f027fba0ad586d772ed67d614dd3273c3989a09ec53dea9b04d.json</span></span><br><span class="line">    <span class="number">10</span>/<span class="number">11</span>:      https:<span class="comment">//packagist.laravel-china.org/p/provider-2016$3df5b457dc3441e50b8f9c6d69a85e1eaefd2cc0627a60c8059bc8e060a19b5c.json</span></span><br><span class="line">    <span class="number">11</span>/<span class="number">11</span>:      https:<span class="comment">//packagist.laravel-china.org/p/provider-2018$911c1fd07a11e2ab44e3423d541ce06e7b9df93c3ebbd5adee02fb9a696c0357.json</span></span><br><span class="line">    Finished: success: <span class="number">11</span>, <span class="attr">skipped</span>: <span class="number">0</span>, <span class="attr">failure</span>: <span class="number">0</span>, <span class="attr">total</span>: <span class="number">11</span></span><br><span class="line">Using version ^<span class="number">1.0</span> <span class="keyword">for</span> jonasyeah/client-translator</span><br><span class="line">./composer.json has been updated</span><br><span class="line">Loading composer repositories <span class="keyword">with</span> package information</span><br><span class="line">Updating dependencies (including <span class="built_in">require</span>-dev)</span><br><span class="line">    <span class="number">1</span>/<span class="number">2</span>:        https:<span class="comment">//dl.laravel-china.org/jonasyeah/translator/c653dd16f8a57c5d9d0cb8d782277b336623b9e3.zip</span></span><br><span class="line">    <span class="number">2</span>/<span class="number">2</span>:        https:<span class="comment">//dl.laravel-china.org/jonasyeah/client-translator/1d4e897bbcf8cd8895ef1252bc7fe7f35287c0a5.zip</span></span><br><span class="line">    Finished: success: <span class="number">2</span>, <span class="attr">skipped</span>: <span class="number">0</span>, <span class="attr">failure</span>: <span class="number">0</span>, <span class="attr">total</span>: <span class="number">2</span></span><br><span class="line">Package operations: <span class="number">2</span> installs, <span class="number">0</span> updates, <span class="number">0</span> removals</span><br><span class="line">  - Installing jonasyeah/translator (v1<span class="number">.0</span><span class="number">.0</span>): Loading <span class="keyword">from</span> cache</span><br><span class="line">  - Installing jonasyeah/client-translator (v1<span class="number">.0</span><span class="number">.1</span>): Loading <span class="keyword">from</span> cache</span><br><span class="line">Writing lock file</span><br><span class="line">Generating autoload files</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">$ tsl -h</span><br><span class="line"></span><br><span class="line"> ______  ____    ____  ____   _____ _       ____  ______   ___   ____</span><br><span class="line">|      ||    \  /    ||    \ / ___/| |     <span class="regexp">/    ||      | /</span>   \ |    \</span><br><span class="line">|      ||  D  )|  o  ||  _  (   \_ | |    |  o  ||      ||     ||  D  )</span><br><span class="line">|_|  |_||    <span class="regexp">/ |     ||  |  |\__  || |___ |     ||_|  |_||  O  ||    /</span></span><br><span class="line">  |  |  |    \ |  _  ||  |  |<span class="regexp">/  \ ||     ||  _  |  |  |  |     ||    \</span></span><br><span class="line"><span class="regexp">  |  |  |  .  \|  |  ||  |  |\    ||     ||  |  |  |  |  |     ||  .  \</span></span><br><span class="line"><span class="regexp">  |__|  |__|\_||__|__||__|__| \___||_____||__|__|  |__|   \___/</span> |__|\_|</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">php ./tsl <span class="string">'to translate statment'</span> -f baidu,youdao</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">$ tsl 爱</span><br><span class="line">Translated Successfully</span><br><span class="line">来源:     youdao</span><br><span class="line">长句翻译: love</span><br><span class="line">单词翻译: love,like,affection</span><br><span class="line"></span><br><span class="line">当前目录安装</span><br><span class="line"></span><br><span class="line">$ composer create-project jonasrepo/client-translator</span><br><span class="line">使用</span><br><span class="line"></span><br><span class="line">$ ./path/client-translator/tsl <span class="string">"今天天气不错"</span></span><br><span class="line">$ ./path/client-translator/tsl <span class="string">"今天天气不错"</span>  -f youdao,baidu</span><br><span class="line"></span><br><span class="line">which tsl </span><br><span class="line">/c/Users/xxx/AppData/Roaming/Composer/vendor/bin/tsl</span><br><span class="line">cat tsl </span><br><span class="line"><span class="meta">#!/usr/bin/env sh</span></span><br><span class="line"></span><br><span class="line">dir=$(cd <span class="string">"$&#123;0%[/\\]*&#125;"</span> &gt; <span class="regexp">/dev/</span><span class="literal">null</span>; cd <span class="string">"../jonasyeah/client-translator"</span> &amp;&amp; pwd)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -d /proc/cygdrive ] &amp;&amp; [[ $(which php) == $(readlink -n /proc/cygdrive)<span class="comment">/* ]]; then</span></span><br><span class="line"><span class="comment">   # We are in Cgywin using Windows php, so the path must be translated</span></span><br><span class="line"><span class="comment">   dir=$(cygpath -m "$dir");</span></span><br><span class="line"><span class="comment">fi</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">"$&#123;dir&#125;/tsl" "$@"</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">https://learnku.com/articles/30640</span></span><br></pre></td></tr></table></figure>
+<h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">腾讯   https:<span class="comment">//mirrors.cloud.tencent.com/composer/</span></span><br><span class="line">composer config -g repos.packagist composer https:<span class="comment">//mirrors.cloud.tencent.com/composer/</span></span><br><span class="line">华为https:<span class="comment">//mirrors.huaweicloud.com/</span></span><br><span class="line">阿里云 https:<span class="comment">//mirrors.aliyun.com/composer/index.html</span></span><br><span class="line">composer config -g repo.packagist composer https:<span class="comment">//mirrors.aliyun.com/composer/</span></span><br><span class="line">composer config -g --unset repos.packagist</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/ChinaBygones/PHP-DouyinRobot" target="_blank" rel="noopener">PHP抖音机器人</a></p>
+<p><a href="http://www.syyong.com/php/Using-strace-GDB-and-tcpdump-debugging-tools-in-PHP.html" target="_blank" rel="noopener">php 中使用 strace、gdb、tcpdump 调试工具</a></p>
+<p><a href="https://laravel-china.org/articles/22230" target="_blank" rel="noopener">PHP 中格式化并高亮 SQL 语句</a></p>
+<p><a href="http://www.syyong.com/php/Why-is-int-faster-than-intval.html" target="_blank" rel="noopener">为什么 (int) 快于 intval?</a></p>
+<p><a href="https://laravel-china.org/articles/22370" target="_blank" rel="noopener">将 PHP 应用快速打包为 PHAR</a></p>
+<p><a href="https://github.com/wuxu92/PHP7-Reference-cn" target="_blank" rel="noopener">PHP 7的新特性</a></p>
+<p><a href="http://coderlt.coding.me/2016/03/22/mac-command-curl/" target="_blank" rel="noopener">MAC之http命令行工具curl</a></p>
+<p><a href="https://segmentfault.com/a/1190000012641373" target="_blank" rel="noopener"> PHP实现订单的延时处理</a></p>
+<p><a href="https://github.com/appzcoder/30-seconds-of-php-code" target="_blank" rel="noopener">30-seconds-of-php-code</a></p>
+<p><a href="https://poser.pugx.org/" target="_blank" rel="noopener">composer图标</a></p>
+<p><a href="https://www.fanhaobai.com/2018/09/process-php-multiprocess-server.html" target="_blank" rel="noopener">用PHP玩转进程之二 — 多进程PHPServer</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/命令行/" rel="tag"># 命令行</a>
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/04/开发中遇到的问题整理/" rel="next" title="开发中遇到的问题整理">
+                <i class="fa fa-chevron-left"></i> 开发中遇到的问题整理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/10/laravel-swoole/" rel="prev" title="laravel swoole">
+                laravel swoole <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#composer镜像"><span class="nav-number">1.</span> <span class="nav-text">composer镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程下载composer"><span class="nav-number">2.</span> <span class="nav-text">多线程下载composer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#httpstat"><span class="nav-number">3.</span> <span class="nav-text">httpstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP-静态代码分析phan"><span class="nav-number">4.</span> <span class="nav-text">PHP 静态代码分析phan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phpcs"><span class="nav-number">5.</span> <span class="nav-text">phpcs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行音乐搜索下载器"><span class="nav-number">6.</span> <span class="nav-text">命令行音乐搜索下载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phpmd"><span class="nav-number">7.</span> <span class="nav-text">phpmd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法检测"><span class="nav-number">8.</span> <span class="nav-text">语法检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#psysh"><span class="nav-number">9.</span> <span class="nav-text">psysh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理缓存"><span class="nav-number">10.</span> <span class="nav-text">管理缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php7cc语法检测"><span class="nav-number">11.</span> <span class="nav-text">php7cc语法检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spike"><span class="nav-number">12.</span> <span class="nav-text">spike</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phpcbf"><span class="nav-number">13.</span> <span class="nav-text">phpcbf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加速composer开启多线程安装下载"><span class="nav-number">14.</span> <span class="nav-text">加速composer开启多线程安装下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包构建工具package-builder"><span class="nav-number">15.</span> <span class="nav-text">包构建工具package-builder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pecl"><span class="nav-number">16.</span> <span class="nav-text">pecl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经纬度行政区域查询"><span class="nav-number">17.</span> <span class="nav-text">经纬度行政区域查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化-SQL"><span class="nav-number">18.</span> <span class="nav-text">格式化 SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-PHP-应用快速打包为-PHAR"><span class="nav-number">19.</span> <span class="nav-text">将 PHP 应用快速打包为 PHAR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phptrace"><span class="nav-number">20.</span> <span class="nav-text">phptrace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gdb"><span class="nav-number">21.</span> <span class="nav-text">gdb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl"><span class="nav-number">22.</span> <span class="nav-text">curl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码检查工具"><span class="nav-number">23.</span> <span class="nav-text">代码检查工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化并高亮-SQL-语句"><span class="nav-number">24.</span> <span class="nav-text">格式化并高亮 SQL 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行翻译器"><span class="nav-number">25.</span> <span class="nav-text">命令行翻译器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像"><span class="nav-number">26.</span> <span class="nav-text">镜像</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

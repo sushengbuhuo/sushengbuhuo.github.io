@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="laravel,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文使用版本为laravel5.5 cache get12345678public function cache()    &amp;#123;    	$c=\Cache::get(&apos;app&apos;);    	if(!$c) &amp;#123;    		\Cache::put(&apos;app&apos;, &apos;cache&apos;, 1);    	&amp;#125;    	dump($c);//cache    &amp;#125; config">
+<meta name="keywords" content="laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="laravel cache facade">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/laravel-cache-facade/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="本文使用版本为laravel5.5 cache get12345678public function cache()    &amp;#123;    	$c=\Cache::get(&apos;app&apos;);    	if(!$c) &amp;#123;    		\Cache::put(&apos;app&apos;, &apos;cache&apos;, 1);    	&amp;#125;    	dump($c);//cache    &amp;#125; config">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-30T03:17:47.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="laravel cache facade">
+<meta name="twitter:description" content="本文使用版本为laravel5.5 cache get12345678public function cache()    &amp;#123;    	$c=\Cache::get(&apos;app&apos;);    	if(!$c) &amp;#123;    		\Cache::put(&apos;app&apos;, &apos;cache&apos;, 1);    	&amp;#125;    	dump($c);//cache    &amp;#125; config">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/08/laravel-cache-facade/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>laravel cache facade | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/laravel-cache-facade/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">laravel cache facade</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-08T14:03:46+08:00">
+                2019-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文使用版本为laravel5.5</p>
+<h3 id="cache-get"><a href="#cache-get" class="headerlink" title="cache get"></a>cache get</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">cache</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	$c=\Cache::get(<span class="string">'app'</span>);</span><br><span class="line">    	<span class="keyword">if</span>(!$c) &#123;</span><br><span class="line">    		\Cache::put(<span class="string">'app'</span>, <span class="string">'cache'</span>, <span class="number">1</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	dump($c);<span class="comment">//cache</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="config-app-php"><a href="#config-app-php" class="headerlink" title="config/app.php"></a>config/app.php</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'aliases'</span> =&gt; [</span><br><span class="line"></span><br><span class="line">       <span class="string">'App'</span> =&gt; Illuminate\Support\Facades\App::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">       '<span class="title">Artisan</span>' </span>=&gt; Illuminate\Support\Facades\Artisan::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">       '<span class="title">Auth</span>' </span>=&gt; Illuminate\Support\Facades\Auth::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">       '<span class="title">Blade</span>' </span>=&gt; Illuminate\Support\Facades\Blade::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">       '<span class="title">Broadcast</span>' </span>=&gt; Illuminate\Support\Facades\Broadcast::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">       '<span class="title">Bus</span>' </span>=&gt; Illuminate\Support\Facades\Bus::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">       '<span class="title">Cache</span>' </span>=&gt; Illuminate\Support\Facades\Cache::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">       </span></span><br><span class="line">       ]</span><br></pre></td></tr></table></figure>
+<p>使用cache实际调用的是<code>Illuminate\Support\Facades\Cache</code>,这个映射是如何做的？</p>
+<h3 id="public-index-php"><a href="#public-index-php" class="headerlink" title="public/index.php"></a>public/index.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$response = $kernel-&gt;handle(</span><br><span class="line">$request = Illuminate\Http\Request::capture()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="bootstarp-app-php"><a href="#bootstarp-app-php" class="headerlink" title="bootstarp/app.php"></a>bootstarp/app.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$app-&gt;singleton(</span><br><span class="line">    Illuminate\Contracts\Http\Kernel::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line">    App\Http\Kernel::class</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="app-http-kernel-php"><a href="#app-http-kernel-php" class="headerlink" title="app/http/kernel.php"></a>app/http/kernel.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use Illuminate\Foundation\Http\Kernel <span class="keyword">as</span> HttpKernel;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Kernel</span> <span class="keyword">extends</span> <span class="title">HttpKernel</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Illuminate-Foundation-Http-Kernel-php"><a href="#Illuminate-Foundation-Http-Kernel-php" class="headerlink" title="Illuminate/Foundation/Http/Kernel.php"></a>Illuminate/Foundation/Http/Kernel.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params">$request</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        $request-&gt;enableHttpMethodParameterOverride();</span><br><span class="line">        $response = $<span class="keyword">this</span>-&gt;sendRequestThroughRouter($request);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception $e) &#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;reportException($e);</span><br><span class="line"></span><br><span class="line">        $response = $<span class="keyword">this</span>-&gt;renderException($request, $e);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Throwable $e) &#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;reportException($e = <span class="keyword">new</span> FatalThrowableError($e));</span><br><span class="line"></span><br><span class="line">        $response = $<span class="keyword">this</span>-&gt;renderException($request, $e);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $<span class="keyword">this</span>-&gt;app[<span class="string">'events'</span>]-&gt;dispatch(</span><br><span class="line">        <span class="keyword">new</span> Events\RequestHandled($request, $response)</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $response;</span><br><span class="line">&#125;</span><br><span class="line">protected <span class="function"><span class="keyword">function</span> <span class="title">sendRequestThroughRouter</span>(<span class="params">$request</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;app-&gt;instance(<span class="string">'request'</span>, $request);</span><br><span class="line"></span><br><span class="line">        Facade::clearResolvedInstance(<span class="string">'request'</span>);</span><br><span class="line"></span><br><span class="line">        $<span class="keyword">this</span>-&gt;bootstrap();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">new</span> Pipeline($<span class="keyword">this</span>-&gt;app))</span><br><span class="line">                    -&gt;send($request)</span><br><span class="line">                    -&gt;through($<span class="keyword">this</span>-&gt;app-&gt;shouldSkipMiddleware() ? [] : $<span class="keyword">this</span>-&gt;middleware)</span><br><span class="line">                    -&gt;then($<span class="keyword">this</span>-&gt;dispatchToRouter());</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">bootstrap</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (! $<span class="keyword">this</span>-&gt;app-&gt;hasBeenBootstrapped()) &#123;</span><br><span class="line">            $<span class="keyword">this</span>-&gt;app-&gt;bootstrapWith($<span class="keyword">this</span>-&gt;bootstrappers());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Illuminate-Foundation-Application-php"><a href="#Illuminate-Foundation-Application-php" class="headerlink" title="Illuminate/Foundation/Application.php"></a>Illuminate/Foundation/Application.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">bootstrapWith</span>(<span class="params">array $bootstrappers</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;hasBeenBootstrapped = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        foreach ($bootstrappers <span class="keyword">as</span> $bootstrapper) &#123;</span><br><span class="line">            $<span class="keyword">this</span>[<span class="string">'events'</span>]-&gt;fire(<span class="string">'bootstrapping: '</span>.$bootstrapper, [$<span class="keyword">this</span>]);</span><br><span class="line"></span><br><span class="line">            $<span class="keyword">this</span>-&gt;make($bootstrapper)-&gt;bootstrap($<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">            $<span class="keyword">this</span>[<span class="string">'events'</span>]-&gt;fire(<span class="string">'bootstrapped: '</span>.$bootstrapper, [$<span class="keyword">this</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Illuminate-Foundation-Bootstrap-RegisterFacades-php"><a href="#Illuminate-Foundation-Bootstrap-RegisterFacades-php" class="headerlink" title="Illuminate/Foundation/Bootstrap/RegisterFacades.php"></a>Illuminate/Foundation/Bootstrap/RegisterFacades.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">bootstrap</span>(<span class="params">Application $app</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Facade::clearResolvedInstances();</span><br><span class="line"></span><br><span class="line">        Facade::setFacadeApplication($app);</span><br><span class="line"><span class="comment">//将config/app.php 里的aliases数组里面的Facades类设置别名</span></span><br><span class="line">        AliasLoader::getInstance(array_merge(</span><br><span class="line">            $app-&gt;make(<span class="string">'config'</span>)-&gt;get(<span class="string">'app.aliases'</span>, []),</span><br><span class="line">            $app-&gt;make(PackageManifest::<span class="class"><span class="keyword">class</span>)-&gt;<span class="title">aliases</span>()</span></span><br><span class="line"><span class="class">        ))-&gt;<span class="title">register</span>()</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Illuminate-Foundation-AliasLoader-php"><a href="#Illuminate-Foundation-AliasLoader-php" class="headerlink" title="Illuminate/Foundation/AliasLoader.php"></a>Illuminate/Foundation/AliasLoader.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">load</span>(<span class="params">$alias</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">static</span>::$facadeNamespace &amp;&amp; strpos($alias, <span class="attr">static</span>::$facadeNamespace) === <span class="number">0</span>) &#123;</span><br><span class="line">            $<span class="keyword">this</span>-&gt;loadFacade($alias);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// $alias来自于config/app.php中aliases数组 </span></span><br><span class="line">        <span class="keyword">if</span> (isset($<span class="keyword">this</span>-&gt;aliases[$alias])) &#123;</span><br><span class="line">            <span class="comment">//'Route' =&gt; Illuminate\Support\Facades\Route::class,</span></span><br><span class="line">            <span class="comment">// class_alias 为一个类创建别名</span></span><br><span class="line">            <span class="keyword">return</span> class_alias($<span class="keyword">this</span>-&gt;aliases[$alias], $alias);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Illuminate-Support-Facades-Cache-php"><a href="#Illuminate-Support-Facades-Cache-php" class="headerlink" title="Illuminate/Support/Facades/Cache.php"></a>Illuminate/Support/Facades/Cache.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cache</span> <span class="keyword">extends</span> <span class="title">Facade</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Get the registered name of the component.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @return string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    protected <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getFacadeAccessor</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'cache'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Illuminate-Support-Facades-Facade-php"><a href="#Illuminate-Support-Facades-Facade-php" class="headerlink" title="Illuminate/Support/Facades/Facade.php"></a>Illuminate/Support/Facades/Facade.php</h3><p>这个文件没有get set ，只有__callStatic<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">__callStatic</span>(<span class="params">$method, $args</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $instance = <span class="keyword">static</span>::getFacadeRoot();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (! $instance) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">'A facade root has not been set.'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> $instance-&gt;$method(...$args);</span><br><span class="line">    &#125;</span><br><span class="line">   public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getFacadeRoot</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">static</span>::resolveFacadeInstance(<span class="keyword">static</span>::getFacadeAccessor());</span><br><span class="line">    &#125; </span><br><span class="line">     protected <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">resolveFacadeInstance</span>(<span class="params">$name</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    <span class="comment">//这里$name为cache</span></span><br><span class="line">        <span class="keyword">if</span> (is_object($name)) &#123;</span><br><span class="line">            <span class="keyword">return</span> $name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isset(<span class="keyword">static</span>::$resolvedInstance[$name])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">static</span>::$resolvedInstance[$name];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//$app是容器对象，实现了ArrayAccess接口，最终调用的还是容器的make方法</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">static</span>::$resolvedInstance[$name] = <span class="keyword">static</span>::$app[$name];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Illuminate-Container-Container-php"><a href="#Illuminate-Container-Container-php" class="headerlink" title="Illuminate\Container\Container.php"></a>Illuminate\Container\Container.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params">$abstract, array $parameters = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $<span class="keyword">this</span>-&gt;resolve($abstract, $parameters);</span><br><span class="line">    &#125;</span><br><span class="line">    protected <span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">$abstract, $parameters = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $abstract = $<span class="keyword">this</span>-&gt;getAlias($abstract);</span><br><span class="line"></span><br><span class="line">        $needsContextualBuild = ! empty($parameters) || ! is_null(</span><br><span class="line">            $<span class="keyword">this</span>-&gt;getContextualConcrete($abstract)</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If an instance of the type is currently being managed as a singleton we'll</span></span><br><span class="line">        <span class="comment">// just return an existing instance instead of instantiating new instances</span></span><br><span class="line">        <span class="comment">// so the developer can keep using the same objects instance every time.</span></span><br><span class="line">        <span class="keyword">if</span> (isset($<span class="keyword">this</span>-&gt;instances[$abstract]) &amp;&amp; ! $needsContextualBuild) &#123;</span><br><span class="line">            <span class="keyword">return</span> $<span class="keyword">this</span>-&gt;instances[$abstract];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $<span class="keyword">this</span>-&gt;<span class="keyword">with</span>[] = $parameters;</span><br><span class="line"></span><br><span class="line">        $concrete = $<span class="keyword">this</span>-&gt;getConcrete($abstract);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// We're ready to instantiate an instance of the concrete type registered for</span></span><br><span class="line">        <span class="comment">// the binding. This will instantiate the types, as well as resolve any of</span></span><br><span class="line">        <span class="comment">// its "nested" dependencies recursively until all have gotten resolved.</span></span><br><span class="line">        <span class="keyword">if</span> ($<span class="keyword">this</span>-&gt;isBuildable($concrete, $abstract)) &#123;</span><br><span class="line">            $object = $<span class="keyword">this</span>-&gt;build($concrete);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $object = $<span class="keyword">this</span>-&gt;make($concrete);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If we defined any extenders for this type, we'll need to spin through them</span></span><br><span class="line">        <span class="comment">// and apply them to the object being built. This allows for the extension</span></span><br><span class="line">        <span class="comment">// of services, such as changing configuration or decorating the object.</span></span><br><span class="line">        foreach ($<span class="keyword">this</span>-&gt;getExtenders($abstract) <span class="keyword">as</span> $extender) &#123;</span><br><span class="line">            $object = $extender($object, $<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If the requested type is registered as a singleton we'll want to cache off</span></span><br><span class="line">        <span class="comment">// the instances in "memory" so we can return it later without creating an</span></span><br><span class="line">        <span class="comment">// entirely new instance of an object on each subsequent request for it.</span></span><br><span class="line">        <span class="keyword">if</span> ($<span class="keyword">this</span>-&gt;isShared($abstract) &amp;&amp; ! $needsContextualBuild) &#123;</span><br><span class="line">            $<span class="keyword">this</span>-&gt;instances[$abstract] = $object;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $<span class="keyword">this</span>-&gt;fireResolvingCallbacks($abstract, $object);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Before returning, we will also set the resolved flag to "true" and pop off</span></span><br><span class="line">        <span class="comment">// the parameter overrides for this build. After those two things are done</span></span><br><span class="line">        <span class="comment">// we will be ready to return back the fully constructed class instance.</span></span><br><span class="line">        $<span class="keyword">this</span>-&gt;resolved[$abstract] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        array_pop($<span class="keyword">this</span>-&gt;<span class="keyword">with</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> $object;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Illuminate-Cache-CacheServiceProvider-php"><a href="#Illuminate-Cache-CacheServiceProvider-php" class="headerlink" title="Illuminate/Cache/CacheServiceProvider.php"></a>Illuminate/Cache/CacheServiceProvider.php</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       $<span class="keyword">this</span>-&gt;app-&gt;singleton(<span class="string">'cache'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$app</span>) </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">new</span> CacheManager($app);</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">       $<span class="keyword">this</span>-&gt;app-&gt;singleton(<span class="string">'cache.store'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$app</span>) </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> $app[<span class="string">'cache'</span>]-&gt;driver();</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">       $<span class="keyword">this</span>-&gt;app-&gt;singleton(<span class="string">'memcached.connector'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">new</span> MemcachedConnector;</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="get-set"><a href="#get-set" class="headerlink" title="get set"></a>get set</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$instance-&gt;$method(...$args)</span><br><span class="line"></span><br><span class="line">由于 PHP 可以处理 WEB 和 CLI 两种接口请求，所以 Laravel 就得需要设计 HttpKernel 和 ConsoleKernel 来处理这两种。</span><br><span class="line">实际上，Laravel 刚刚启动时先启动容器对象 Application，然后加载配置、通过 ServiceProvider 往容器对象里填充一些对象为接下来处理请求做准备，但是真正干活的是 Kernel(HttpKernel 或 ConsoleKernel)，Application 会把活转给 Kernel 来干。$output = Kernel::handle($input)：对于 WEB 请求，输入时 Request，输出是 Response；对于 CLI，输入是 argument + option 命令行变量构成的 Input 对象，输出则是展示在终端的 Output 对象。</span><br><span class="line">所以，依赖注入(IoC 容器) 是 Laravel 的基石，真正干活的是 Kernel。https:<span class="comment">//laravel-china.org/articles/20507</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://laravel-china.org/articles/21985" target="_blank" rel="noopener">Facades 原理 (代码执行流程分析)</a></p>
+<p><a href="https://laravel-china.org/articles/20802#5db9fd" target="_blank" rel="noopener">Laravel 源码阅读之二：Illuminate\Foundation\Application 类初始化分析</a></p>
+<p><a href="https://laravel-china.org/articles/7037/laravel-queue-analysis-of-message-queue-tasks-and-distribution-source-code#9a853c" target="_blank" rel="noopener">Laravel Queue——消息队列任务与分发源码剖析</a></p>
+<p> <a href="https://laravel-china.org/articles/6189/laravel-service-provider-detailed-concept" target="_blank" rel="noopener">Laravel Service Provider 概念详解</a></p>
+<p> <a href="https://github.com/kevinyan815/Learning_Laravel_Kernel" target="_blank" rel="noopener">Laravel核心代码学习</a></p>
+<p> <a href="https://laravel-china.org/articles/19878" target="_blank" rel="noopener">Laravel 启动流程分析 (代码全流程)</a></p>
+<p><a href="https://laravel-china.org/articles/19785#3170db" target="_blank" rel="noopener">生命周期 5 管道流分析</a></p>
+<p><a href="https://laravel-china.org/articles/22617?#reply79267" target="_blank" rel="noopener">Laravel 5.7 嵌套集基础教程</a></p>
+<p><a href="https://www.jianshu.com/p/8ea43b1a83df" target="_blank" rel="noopener">laravel-mysql读写分离</a></p>
+<p><a href="https://github.com/huanghua581/FATA" target="_blank" rel="noopener">Laravel 框架涉及的各种软件理念和工具</a></p>
+<p><a href="https://blog.gxxsite.com/lumen-advance-database-interaction/" target="_blank" rel="noopener">Lumen 进阶之数据库交互</a></p>
+<p><a href="https://www.v2ex.com/t/434082" target="_blank" rel="noopener">Laravel 开发 RESTful API 的心得</a></p>
+<p><a href="https://learnku.com/articles/20528" target="_blank" rel="noopener">深入研究 larvael 源码第三天</a></p>
+<p><a href="https://segmentfault.com/a/1190000010787709" target="_blank" rel="noopener">Laravel队列实现原理解决问题记录</a></p>
+<p><a href="https://www.0php.net/posts/Laravel-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%A7%A3%E6%9E%90.html" target="_blank" rel="noopener">LARAVEL 生命周期解析</a></p>
+<p><a href="https://learnku.com/laravel/t/17508" target="_blank" rel="noopener">搭建 Laravel 运行环境线上 LNMP</a></p>
+<p><a href="https://learnku.com/articles/12555/laravel-source-code-reading-guide-reflection-and-dependency-injection-for-class-php" target="_blank" rel="noopener">Laravel 源码阅读指南 – PHP 类的反射和依赖注入</a></p>
+<p><a href="https://learnku.com/laravel/t/24767" target="_blank" rel="noopener">自动化测试：六个值得参考的 Laravel 开源项目</a></p>
+<p><a href="https://learnku.com/articles/17830" target="_blank" rel="noopener">Laravel 源码阅读指南 – Contracts 契约</a></p>
+<p><a href="https://learnku.com/laravel/wikis/7227" target="_blank" rel="noopener">Laravel 入门指南</a></p>
+<p><a href="https://learnku.com/articles/19876" target="_blank" rel="noopener">Laravel Eloquent 提示和技巧</a></p>
+<p><a href="https://learnku.com/articles/25066" target="_blank" rel="noopener">laravel Elasticsearch 实现简单搜索</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/laravel/" rel="tag"># laravel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/07/mysql片段收集/" rel="next" title="mysql片段收集">
+                <i class="fa fa-chevron-left"></i> mysql片段收集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/08/git-笔记/" rel="prev" title="git 笔记">
+                git 笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#cache-get"><span class="nav-number">1.</span> <span class="nav-text">cache get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-app-php"><span class="nav-number">2.</span> <span class="nav-text">config/app.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#public-index-php"><span class="nav-number">3.</span> <span class="nav-text">public/index.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bootstarp-app-php"><span class="nav-number">4.</span> <span class="nav-text">bootstarp/app.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#app-http-kernel-php"><span class="nav-number">5.</span> <span class="nav-text">app/http/kernel.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Foundation-Http-Kernel-php"><span class="nav-number">6.</span> <span class="nav-text">Illuminate/Foundation/Http/Kernel.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Foundation-Application-php"><span class="nav-number">7.</span> <span class="nav-text">Illuminate/Foundation/Application.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Foundation-Bootstrap-RegisterFacades-php"><span class="nav-number">8.</span> <span class="nav-text">Illuminate/Foundation/Bootstrap/RegisterFacades.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Foundation-AliasLoader-php"><span class="nav-number">9.</span> <span class="nav-text">Illuminate/Foundation/AliasLoader.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Support-Facades-Cache-php"><span class="nav-number">10.</span> <span class="nav-text">Illuminate/Support/Facades/Cache.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Support-Facades-Facade-php"><span class="nav-number">11.</span> <span class="nav-text">Illuminate/Support/Facades/Facade.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Container-Container-php"><span class="nav-number">12.</span> <span class="nav-text">Illuminate\Container\Container.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Illuminate-Cache-CacheServiceProvider-php"><span class="nav-number">13.</span> <span class="nav-text">Illuminate/Cache/CacheServiceProvider.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-set"><span class="nav-number">14.</span> <span class="nav-text">get set</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

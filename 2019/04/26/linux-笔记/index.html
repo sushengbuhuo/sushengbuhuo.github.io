@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="linux,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="磁盘空间不足12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758df命令查看当前计算器磁盘空闲情况 df -a 从根目录下开始使用du命令查找出空间占用最大的文件  du -sh /*命令一路追查 [root@test-os testus">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux 笔记">
+<meta property="og:url" content="http://yoursite.com/2019/04/26/linux-笔记/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="磁盘空间不足12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758df命令查看当前计算器磁盘空闲情况 df -a 从根目录下开始使用du命令查找出空间占用最大的文件  du -sh /*命令一路追查 [root@test-os testus">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-29T11:56:36.860Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux 笔记">
+<meta name="twitter:description" content="磁盘空间不足12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758df命令查看当前计算器磁盘空闲情况 df -a 从根目录下开始使用du命令查找出空间占用最大的文件  du -sh /*命令一路追查 [root@test-os testus">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/26/linux-笔记/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>linux 笔记 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/linux-笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">linux 笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-26T16:54:15+08:00">
+                2019-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  25 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="磁盘空间不足"><a href="#磁盘空间不足" class="headerlink" title="磁盘空间不足"></a>磁盘空间不足</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">df命令查看当前计算器磁盘空闲情况</span><br><span class="line"> df -a</span><br><span class="line"> 从根目录下开始使用du命令查找出空间占用最大的文件</span><br><span class="line">  du -sh <span class="comment">/*命令一路追查</span></span><br><span class="line"><span class="comment"> [root@test-os testuser]# df -h   ###物理磁盘空间 查看所有block使用情况</span></span><br><span class="line"><span class="comment"> Filesystem      Size  Used Avail Use% Mounted on</span></span><br><span class="line"><span class="comment"> /dev/sda3       8.8G  8.8G     0 100% /</span></span><br><span class="line"><span class="comment"> tmpfs           931M     0  931M   0% /dev/shm</span></span><br><span class="line"><span class="comment"> /dev/sda1       190M   40M  141M  22% /boot</span></span><br><span class="line"><span class="comment"> [root@test-os testuser]# du -sh /usr/* |grep G  ###查找大文件</span></span><br><span class="line"><span class="comment"> 7.3G    /usr/local</span></span><br><span class="line"><span class="comment"> [root@test-os testuser]# du -sh /usr/local/* |grep G</span></span><br><span class="line"><span class="comment"> 7.3G    /usr/local/bin</span></span><br><span class="line"><span class="comment"> [root@test-os testuser]# du -sh /usr/local/bin/* |grep G</span></span><br><span class="line"><span class="comment"> 7.3G    /usr/local/bin/1g</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> [root@test-os testuser]# rm -f /usr/local/bin/1g  ###删除大文件</span></span><br><span class="line"><span class="comment">有些文件删除时还被其它进程占用，此时文件并未真正删除，只是标记为 deleted，只有进程结束后才会将文件真正从磁盘中清除。</span></span><br><span class="line"><span class="comment"> [root@test-os ~]# lsof |grep deleted </span></span><br><span class="line"><span class="comment"> rsyslogd   1250      root    1w      REG                8,3 4888889358     140789 /var/log/messages (deleted)</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> [root@test-os ~]# #lsof 显示出系统中被打开的文件 </span></span><br><span class="line"><span class="comment"> [root@test-os ~]# #第一列 软件/服务的名称</span></span><br><span class="line"><span class="comment"> [root@test-os ~]# #第八列 文件的大小 </span></span><br><span class="line"><span class="comment"> [root@test-os ~]# #第10列 文件的名字</span></span><br><span class="line"><span class="comment"> [root@test-os ~]# #第11列 标记（硬链接数为0 进程调用数不为零 就会有 delete)</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> ####重启对应的服务 释放磁盘空间 </span></span><br><span class="line"><span class="comment"> [root@test-os ~]# /etc/init.d/rsyslog restart </span></span><br><span class="line"><span class="comment"> --------------------- </span></span><br><span class="line"><span class="comment"> [root@test-os ~]# df -h</span></span><br><span class="line"><span class="comment"> Filesystem      Size  Used Avail Use% Mounted on</span></span><br><span class="line"><span class="comment"> /dev/sda3       8.8G  1.5G  6.9G  18% /</span></span><br><span class="line"><span class="comment"> tmpfs           931M     0  931M   0% /dev/shm</span></span><br><span class="line"><span class="comment"> /dev/sda1       190M   40M  141M  22% /boot</span></span><br><span class="line"><span class="comment"> /tmp/1m        1003K   19K  933K   2% /app/logs</span></span><br><span class="line"><span class="comment"> --------------------- </span></span><br><span class="line"><span class="comment"> # df -ih 节点磁盘空间</span></span><br><span class="line"><span class="comment"> Filesystem Inodes IUsed IFree IUse% Mounted on</span></span><br><span class="line"><span class="comment"> /dev/vda1 1.9M 299K 1.6M 17% /</span></span><br><span class="line"><span class="comment"> udev  123K 299 123K 1% /dev</span></span><br><span class="line"><span class="comment"> tmpfs  126K 249 125K 1% /run</span></span><br><span class="line"><span class="comment"> tmpfs  126K 4 126K 1% /run/lock</span></span><br><span class="line"><span class="comment"> tmpfs  126K 2 126K 1% /run/shm</span></span><br><span class="line"><span class="comment"> 可以看到，inode 区域只被占用了一小部分，还有大量的空间未使用，所以也不是 inode 区域被占满的问题。</span></span><br><span class="line"><span class="comment"> 查看哪个目录占用过大：</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> cd /;du  -sh ./* |sort -nr|more</span></span><br><span class="line"><span class="comment"> 发现 /var/spool/postfix/maildrop 这个目录占用了12G 多的空间</span></span><br><span class="line"><span class="comment"> 删除这个目录下的内容(通过管道的方式删除,避免参数过长导致无法执行)：</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment"> ls | xargs rm -f</span></span><br><span class="line"><span class="comment"> lsof test.log</span></span><br><span class="line"><span class="comment"> 这命令只能在文件被写入的时候才能显示内容，最后虽然得到了个进程号，但是因为写完进程就关闭了，所以还是查不到</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">    for i in /home/*; do echo $i; find $i |wc -l; done</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">    通过该命令可以查看每个用户home下inode的占用情况。如果某个目录下的inode很大，那就是问题所在了。</span></span><br></pre></td></tr></table></figure>
+<h3 id="git-push-报错-fatal-HttpRequestException-encountered"><a href="#git-push-报错-fatal-HttpRequestException-encountered" class="headerlink" title="git push 报错 fatal: HttpRequestException encountered."></a>git push 报错 fatal: HttpRequestException encountered.</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Github 禁用了TLS v1<span class="number">.0</span> and v1<span class="number">.1</span>，必须更新Windows的git凭证管理器</span><br><span class="line"></span><br><span class="line">https:<span class="comment">//github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/v1.18.2</span></span><br><span class="line"></span><br><span class="line">下载并安装后即可解决</span><br></pre></td></tr></table></figure>
+<h3 id="pip-install-失败"><a href="#pip-install-失败" class="headerlink" title="pip install 失败"></a>pip install 失败</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> pip install myqr</span><br><span class="line">Collecting myqr</span><br><span class="line">  Retrying (Retry(total=<span class="number">4</span>, connect=None, read=None, redirect=None, status=None)) after connection broken by <span class="string">'ProxyError('</span>Cannot connect to proxy.<span class="string">', NewConnectionError('</span>&lt;pip._vendor.urllib3.connection.VerifiedHTTPSConnection object at <span class="number">0x03B22330</span>&gt;: Failed to establish a <span class="keyword">new</span> connection: [WinError <span class="number">10061</span>] 由于目</span><br><span class="line">标计算机积极拒绝，无法连接。<span class="string">'))'</span>: <span class="regexp">/simple/my</span>qr/</span><br><span class="line">打开Internet选项，选择连接–局域网设置  全部取消勾选，问题解决</span><br><span class="line">https:<span class="comment">//blog.csdn.net/u010784236/article/details/51820284</span></span><br></pre></td></tr></table></figure>
+<h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ echo <span class="string">'this is a test'</span> | awk <span class="string">'&#123;print $0&#125;'</span></span><br><span class="line">$ awk -F <span class="string">':'</span> <span class="string">'&#123; print $1 &#125;'</span> demo.txt</span><br><span class="line">$(NF<span class="number">-1</span>) 代表倒数第二个字段。</span><br><span class="line"> </span><br><span class="line">$ awk -F <span class="string">':'</span> <span class="string">'&#123;print $1, $(NF-1)&#125;'</span> demo.txt</span><br><span class="line"> NR 表示当前处理的是第几行。</span><br><span class="line"> </span><br><span class="line">$ awk -F <span class="string">':'</span> <span class="string">'&#123;print NR ") " $1&#125;'</span> demo.txt</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123; print toupper($1) &#125;'</span> demo.txt</span><br><span class="line">awk -F ':' '/usr/ &#123;print $1&#125;' demo.txt #awk ‘条件 动作’ 文件名  print 命令前面是一个正则表达式，只输出包含 usr 的行</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'NR % 2 == 1 &#123;print $1&#125;'</span> demo.txt 输出奇数行</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;if ($1 &gt; "m") print $1&#125;'</span> demo.txt</span><br><span class="line">$ awk -F <span class="string">':'</span> <span class="string">'&#123;if ($1 &gt; "m") print $1; else print "---"&#125;'</span> demo.txt</span><br></pre></td></tr></table></figure>
+<h3 id="批量删除-DS-Store-文件"><a href="#批量删除-DS-Store-文件" class="headerlink" title="批量删除 .DS_Store 文件"></a>批量删除 .DS_Store 文件</h3><p><code>find /home/path -name &quot;.DS_Store&quot; -type f -delete</code></p>
+<h3 id="查看硬盘及内存空间"><a href="#查看硬盘及内存空间" class="headerlink" title="查看硬盘及内存空间"></a>查看硬盘及内存空间</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"># 查看内存及swap大小</span><br><span class="line">free -m</span><br><span class="line"># 查看当前文件夹下所有文件大小（包括子文件夹）</span><br><span class="line">du -sh</span><br><span class="line"># 查看指定文件夹下所有文件大小</span><br><span class="line">du -h /tmp</span><br><span class="line"># 查看tmp目录(包含子目录)的大小</span><br><span class="line">du -ah /tmp</span><br><span class="line"></span><br><span class="line"># 查看指定文件夹大小</span><br><span class="line">du -hs ftp</span><br><span class="line"># 查看磁盘剩余空间</span><br><span class="line">df -hl</span><br><span class="line"># 查看每个根路径的分区大小</span><br><span class="line">df -h</span><br><span class="line"># 返回该目录的大小</span><br><span class="line">du -sh [目录名]</span><br><span class="line"># 返回该文件夹总M数</span><br><span class="line">du -sm [文件夹]</span><br></pre></td></tr></table></figure>
+<h3 id="统计文件或目录的个数"><a href="#统计文件或目录的个数" class="headerlink" title="统计文件或目录的个数"></a>统计文件或目录的个数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 统计文件夹下文件的个数</span><br><span class="line">ls -l | grep <span class="string">'^-'</span> | wc -l</span><br><span class="line"># 统计文件夹下目录的个数</span><br><span class="line">ls -l | grep <span class="string">'^d'</span> | wc -l</span><br><span class="line"># 统计文件夹下文件的个数(包括子文件夹里的)</span><br><span class="line">ls -lR | grep <span class="string">'^-'</span> | wc -l</span><br><span class="line"># 统计文件夹下目录的个数(包括子文件夹里的)</span><br><span class="line">ls -lR | grep <span class="string">'^d'</span> | wc -l</span><br><span class="line"># 统计/var/www目录下的所有py文件</span><br><span class="line">ls -l /<span class="keyword">var</span>/www | grep py | wc -l</span><br><span class="line"># 统计/var/www目录下(包括子文件夹里的)的所有py文件</span><br><span class="line">ls -lR /<span class="keyword">var</span>/www | grep py | wc -l</span><br></pre></td></tr></table></figure>
+<h3 id="查看CPU和内存占用"><a href="#查看CPU和内存占用" class="headerlink" title="查看CPU和内存占用"></a>查看CPU和内存占用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># CPU占用最多的前10个进程： </span><br><span class="line">ps auxw|head <span class="number">-1</span>;ps auxw|sort -rn -k3|head <span class="number">-10</span> </span><br><span class="line"># 内存消耗最多的前10个进程 </span><br><span class="line">ps auxw|head <span class="number">-1</span>;ps auxw|sort -rn -k4|head <span class="number">-10</span> </span><br><span class="line"># 虚拟内存使用最多的前10个进程 </span><br><span class="line">ps auxw|head <span class="number">-1</span>;ps auxw|sort -rn -k5|head <span class="number">-10</span></span><br><span class="line"> 按内存占用对进程排序</span><br><span class="line">ps auxw --sort=rss</span><br><span class="line"># 按CPU占用对进程排序</span><br><span class="line">ps auxw --sort=%cpu</span><br><span class="line"></span><br><span class="line">查看所有运行的进程</span><br><span class="line">ps -A</span><br></pre></td></tr></table></figure>
+<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">强制指定本地端口</span><br><span class="line">curl --local-port <span class="number">51</span> http:<span class="comment">//web.example.com</span></span><br><span class="line"></span><br><span class="line"># 查看连接的详细信息</span><br><span class="line"># --trace-time 跟踪/详细输出时，添加时间戳</span><br><span class="line">curl -Sv --trace-time http:<span class="comment">//web.example.com</span></span><br></pre></td></tr></table></figure>
+<h3 id="连接你服务器-top10-用户端的-IP-地址"><a href="#连接你服务器-top10-用户端的-IP-地址" class="headerlink" title="连接你服务器 top10 用户端的 IP 地址"></a>连接你服务器 top10 用户端的 IP 地址</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nat | awk <span class="string">'&#123;print $5&#125;'</span> | awk -F <span class="string">':'</span> <span class="string">'&#123;print $1&#125;'</span> | sort | uniq -c | sort -rn | head -n <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h3 id="最常用的10个命令"><a href="#最常用的10个命令" class="headerlink" title="最常用的10个命令"></a>最常用的10个命令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .bash_history | sort | uniq -c | sort -rn | head -n <span class="number">10</span> (or cat .zhistory | sort | uniq -c | sort -rn | head -n <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">alias nis=<span class="string">"npm install --save "</span></span><br><span class="line">alias svim=<span class="string">'sudo vim'</span></span><br><span class="line">alias mkcd=<span class="string">'foo()&#123; mkdir -p "$1"; cd "$1" &#125;; foo '</span></span><br><span class="line">alias install=<span class="string">'sudo apt get install'</span></span><br><span class="line">alias update=<span class="string">'sudo apt-get update; sudo apt-get upgrade'</span></span><br><span class="line">alias ..=<span class="string">"cd .."</span></span><br><span class="line">alias ...=<span class="string">"cd ..; cd .."</span></span><br><span class="line">alias www=<span class="string">'python -m SimpleHTTPServer 8000'</span></span><br><span class="line">alias sock5=<span class="string">'ssh -D 8080 -q -C -N -f user@your.server'</span></span><br></pre></td></tr></table></figure>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//www.openss7.org/repos/tarballs/strx25-0.9.2.1.ta</span></span><br><span class="line">$ wget -b http:<span class="comment">//www.openss7.org/repos/tarballs/strx25-0.9.2.1.tar.bz2</span></span><br><span class="line">Continuing <span class="keyword">in</span> background, pid <span class="number">1984.</span></span><br><span class="line">Output will be written to <span class="string">`wget-log'.</span></span><br><span class="line"><span class="string">wget -i download-file-list.txt</span></span><br></pre></td></tr></table></figure>
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --add-port=<span class="number">60001</span>/udp --permanent</span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line">#之后检查新的防火墙规则</span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"></span><br><span class="line"><span class="comment">//临时关闭防火墙,重启后会重新自动打开</span></span><br><span class="line">systemctl restart firewalld</span><br><span class="line"><span class="comment">//检查防火墙状态</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"><span class="comment">//Disable firewall</span></span><br><span class="line">systemctl disable firewalld</span><br><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl status firewalld</span><br><span class="line"><span class="comment">//Enable firewall</span></span><br><span class="line">systemctl enable firewalld</span><br><span class="line">systemctl start firewalld</span><br><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure>
+<h3 id="显示-Path-环境变量"><a href="#显示-Path-环境变量" class="headerlink" title="显示 Path 环境变量"></a>显示 Path 环境变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> $ echo $PATH | tr : \\n</span><br><span class="line">/data2/node-v6<span class="number">.11</span><span class="number">.0</span>-linux-x64<span class="comment">//bin</span></span><br><span class="line">/usr/bin</span><br><span class="line">/bin</span><br><span class="line">/usr/sbin</span><br><span class="line">/sbin</span><br><span class="line">/usr/local/bin</span><br><span class="line">/usr/local/sbin</span><br><span class="line">/data0/opt/python27/bin</span><br></pre></td></tr></table></figure>
+<h3 id="判断字符串包含"><a href="#判断字符串包含" class="headerlink" title="判断字符串包含"></a>判断字符串包含</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [[ $tar =~ tar.gz ]];then echo <span class="string">"包含"</span>;fi</span><br></pre></td></tr></table></figure>
+<h3 id="快速修改后缀名字"><a href="#快速修改后缀名字" class="headerlink" title="快速修改后缀名字"></a>快速修改后缀名字</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ll</span><br><span class="line">CentOS-base.repo.repo.bak</span><br><span class="line">epel.repo.repo.bak</span><br><span class="line"></span><br><span class="line">ls *.bak|awk -F. <span class="string">'&#123;print $1&#125;'</span>|xargs -t -i mv &#123;&#125;.repo.repo.bak &#123;&#125;.repo</span><br></pre></td></tr></table></figure>
+<h3 id="数值排序"><a href="#数值排序" class="headerlink" title="数值排序"></a>数值排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort -t <span class="string">":"</span> -k <span class="number">3</span> -n /etc/passwd</span><br></pre></td></tr></table></figure>
+<h3 id="清理httpd服务日志超过3天的内容"><a href="#清理httpd服务日志超过3天的内容" class="headerlink" title="清理httpd服务日志超过3天的内容"></a>清理httpd服务日志超过3天的内容</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="number">5</span> * * * <span class="regexp">/usr/</span>bin/find /<span class="keyword">var</span>/log/httpd/ -type f -mtime +<span class="number">3</span> -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<h3 id="awk获取json"><a href="#awk获取json" class="headerlink" title="awk获取json"></a>awk获取json</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>: <span class="string">"michael"</span>, <span class="string">"sex"</span>: <span class="string">"male"</span>, <span class="string">"pkg_url"</span>: <span class="string">"www.github.com"</span>, <span class="string">"number"</span>: <span class="string">"888"</span>&#125;</span><br><span class="line"></span><br><span class="line">pkg_url=$(echo $env | awk -F <span class="string">"pkg_url\": \""</span> <span class="string">'&#123;print $2&#125;'</span> | awk -F <span class="string">"\","</span> <span class="string">'&#123;print $1&#125;'</span>)</span><br><span class="line">echo $pkg_url</span><br><span class="line">www.github.com</span><br></pre></td></tr></table></figure>
+<h3 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">查看 CPU 的型号</span><br><span class="line"></span><br><span class="line"> cat /proc/cpuinfo | grep <span class="string">'model name'</span> | sort | uniq</span><br><span class="line">查看 CPU 颗数</span><br><span class="line"></span><br><span class="line">实际 Server 中插槽上的 CPU 个数，物理 cpu 数量，可以数不重复的 physical id 个数。</span><br><span class="line"></span><br><span class="line">cat /proc/cpuinfo | grep <span class="string">'physical id'</span> | sort | uniq | wc -l</span><br><span class="line">查看 CPU 核数</span><br><span class="line"></span><br><span class="line">一颗 CPU 上面能处理数据的芯片组的数量。</span><br><span class="line"></span><br><span class="line">cat /proc/cpuinfo |grep <span class="string">"cores"</span>|uniq|awk <span class="string">'&#123;print $4&#125;'</span></span><br><span class="line">top 命令查询出来的就是逻辑 CPU 的数量。</span><br><span class="line"></span><br><span class="line">cat /proc/cpuinfo |grep <span class="string">"processor"</span>|wc -l</span><br><span class="line">https:<span class="comment">//learnku.com/articles/32681</span></span><br></pre></td></tr></table></figure>
+<h3 id="查看系统负载"><a href="#查看系统负载" class="headerlink" title="查看系统负载"></a>查看系统负载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line">$ uptime\</span><br><span class="line"><span class="number">16</span>:<span class="number">33</span>:<span class="number">56</span> up <span class="number">69</span> days,  <span class="number">5</span>:<span class="number">10</span>,  <span class="number">1</span> user,  load average: <span class="number">0.14</span>, <span class="number">0.24</span>, <span class="number">0.29</span></span><br><span class="line">以上信息的解析如下：</span><br><span class="line"></span><br><span class="line"><span class="number">16</span>:<span class="number">33</span>:<span class="number">56</span> : 当前时间</span><br><span class="line">up <span class="number">69</span> days, <span class="number">5</span>:<span class="number">10</span> : 系统运行了 <span class="number">69</span> 天 <span class="number">5</span> 小时 <span class="number">10</span> 分</span><br><span class="line"><span class="number">1</span> user : 当前有 <span class="number">1</span> 个用户登录了系统 load average: <span class="number">0.14</span>, <span class="number">0.24</span>, <span class="number">0.29</span> : 系统在过去 <span class="number">1</span> 分钟内，<span class="number">5</span> 分钟内，<span class="number">15</span> 分钟内的平均负载</span><br><span class="line">load average: <span class="number">0.14</span>, <span class="number">0.24</span>, <span class="number">0.29</span> : 系统在过去 <span class="number">1</span> 分钟内，<span class="number">5</span> 分钟内，<span class="number">15</span> 分钟内的平均负载</span><br><span class="line">平均负载解析</span><br><span class="line"></span><br><span class="line">查看逻辑 CPU 核心数：</span><br><span class="line"></span><br><span class="line">$ grep <span class="string">'model name'</span> /proc/cpuinfo | wc -l\</span><br><span class="line"><span class="number">1</span>\</span><br><span class="line">运行结果表示，有 <span class="number">1</span> 个逻辑 CPU 核心。以 <span class="number">1</span> 个 CPU 核心为例，假设 CPU 每分钟最多处理 <span class="number">100</span> 个进程 –</span><br><span class="line"></span><br><span class="line">load=<span class="number">0</span>，没有进程需要 CPU</span><br><span class="line">load=<span class="number">0.5</span>，CPU 处理了 <span class="number">50</span> 个进程</span><br><span class="line">load=<span class="number">1</span>, CPU 处理了 <span class="number">100</span> 个进程，这时 CPU 已被占满，但系统还是能顺畅运作的</span><br><span class="line">load=<span class="number">1.5</span>, CPU 处理了 <span class="number">100</span> 个进程，还有 <span class="number">50</span> 个进程正在排除等着 CPU 处理，这时，CPU 已经超负荷工作了</span><br><span class="line">为了系统顺畅运行，load 值最好不要超过 <span class="number">1.0</span>，这样就没有进程需要等待了，所有进程都能第一时间得到处理。\</span><br><span class="line">很显然，<span class="number">1.0</span> 是一个关键值，超过这个值，系统就不在最佳状态了。 一般 <span class="number">0.7</span> 是一个比较理想的值。\</span><br><span class="line">另外，load 值的健康状态还跟系统 CPU 核心数相关，如果 CPU 核心数为 <span class="number">2</span>，那么 load 值健康值应该为 <span class="number">2</span>，以此类推。 \</span><br><span class="line">评价系统的负载一般采用 <span class="number">15</span> 分钟内的那个平均负载值。</span><br><span class="line"></span><br><span class="line">二、w 命令</span><br><span class="line"></span><br><span class="line">$ w\</span><br><span class="line"> <span class="number">17</span>:<span class="number">47</span>:<span class="number">40</span> up <span class="number">69</span> days,  <span class="number">6</span>:<span class="number">24</span>,  <span class="number">1</span> user,  load average: <span class="number">0.46</span>, <span class="number">0.26</span>, <span class="number">0.25</span>\</span><br><span class="line">USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT\</span><br><span class="line">lvinkim  pts/<span class="number">0</span>    <span class="number">14.18</span><span class="number">.144</span><span class="number">.2</span>      <span class="number">15</span>:<span class="number">55</span>    <span class="number">0.00</span>s  <span class="number">0.02</span>s  <span class="number">0.00</span>s w</span><br><span class="line">第 <span class="number">1</span> 行：与 uptime 一相同。 \</span><br><span class="line">第 <span class="number">2</span> 行以下，当前登录用户的列表。</span><br><span class="line"></span><br><span class="line">三、top 命令</span><br><span class="line"></span><br><span class="line">$ top\</span><br><span class="line">top - <span class="number">17</span>:<span class="number">51</span>:<span class="number">23</span> up <span class="number">69</span> days,  <span class="number">6</span>:<span class="number">28</span>,  <span class="number">1</span> user,  load average: <span class="number">0.31</span>, <span class="number">0.30</span>, <span class="number">0.26</span>\</span><br><span class="line">Tasks:  <span class="number">99</span> total,   <span class="number">1</span> running,  <span class="number">98</span> sleeping,   <span class="number">0</span> stopped,   <span class="number">0</span> zombie\</span><br><span class="line">Cpu(s):  <span class="number">2.3</span>%us,  <span class="number">0.2</span>%sy,  <span class="number">0.0</span>%ni, <span class="number">97.4</span>%id,  <span class="number">0.0</span>%wa,  <span class="number">0.0</span>%hi,  <span class="number">0.0</span>%si,  <span class="number">0.0</span>%st\</span><br><span class="line">Mem:   <span class="number">1922244</span>k total,  <span class="number">1737480</span>k used,   <span class="number">184764</span>k free,   <span class="number">208576</span>k buffers\</span><br><span class="line">Swap:        <span class="number">0</span>k total,        <span class="number">0</span>k used,        <span class="number">0</span>k free,   <span class="number">466732</span>k cached\</span><br><span class="line">\</span><br><span class="line">  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                \</span><br><span class="line">    <span class="number">1</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">19232</span> <span class="number">1004</span>  <span class="number">708</span> S  <span class="number">0.0</span>  <span class="number">0.1</span>   <span class="number">0</span>:<span class="number">01.17</span> init                                                                    \</span><br><span class="line">    <span class="number">2</span> root      <span class="number">20</span>   <span class="number">0</span>     <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span> S  <span class="number">0.0</span>  <span class="number">0.0</span>   <span class="number">0</span>:<span class="number">00.01</span> kthreadd                                                                \</span><br><span class="line">...</span><br><span class="line">第 <span class="number">1</span> 行：与 uptime 一相同。</span><br><span class="line"></span><br><span class="line">第 <span class="number">2</span> 行：进程数信息。</span><br><span class="line"></span><br><span class="line">Tasks: <span class="number">99</span> total : 总共有 <span class="number">99</span> 个进程</span><br><span class="line"><span class="number">1</span> running : <span class="number">1</span> 个进程正在占用 CPU</span><br><span class="line"><span class="number">98</span> sleeping : <span class="number">98</span> 个睡眠进程</span><br><span class="line"><span class="number">0</span> stopped : <span class="number">0</span> 个停止的进程</span><br><span class="line"><span class="number">0</span> zombie : <span class="number">0</span> 个僵尸进程</span><br><span class="line">第 <span class="number">3</span> 行 : CPU 使用率</span><br><span class="line"></span><br><span class="line">us (user): 非 nice 用户进程占用 CPU 的比率</span><br><span class="line">sy (system): 内核、内核进程占用 CPU 的比率</span><br><span class="line">ni (nice): 用户进程空间内改变过优先级的进程占用 CPU 比率</span><br><span class="line">id (idle): CPU 空闲比率，如果系统缓慢而这个值很高，说明系统慢的原因不是 CPU 负载高</span><br><span class="line">wa (iowait): CPU 等待执行 I/O 操作的时间比率，该指标可以用来排查磁盘 I/O 的问题，通常结合 wa 和 id 判断</span><br><span class="line">hi (Hardware IRQ): CPU 处理硬件中断所占时间的比率</span><br><span class="line">si (Software Interrupts): CPU 处理软件中断所占时间的比率</span><br><span class="line">st (steal): 流逝的时间，虚拟机中的其他任务所占 CPU 时间的比率</span><br><span class="line">需要注意的一些情形：</span><br><span class="line"></span><br><span class="line">用户进程 us 占比高，I/O 操作 wa 低：说明系统缓慢的原因在于进程占用大量 CPU，通常还会伴有教低的空闲比率 id，说明 CPU 空转时间很少。</span><br><span class="line">I/O 操作 wa 低，空闲比率 id 高：可以排除 CPU 资源瓶颈的可能。</span><br><span class="line">I/O 操作 wa 高：说明 I/O 占用了大量的 CPU 时间，需要检查交换空间的使用，交换空间位于磁盘上，性能远低于内存，当内存耗尽开始使用交换空间时，将会给性能带来严重影响，所以对于性能要求较高的服务器，一般建议关闭交换空间。另一方面，如果内存充足，但 wa 很高，说明需要检查哪个进程占用了大量的 I/O 资源。</span><br><span class="line">更多负载情形，可在实际中灵活判断。</span><br><span class="line"></span><br><span class="line">四、iostat 命令</span><br><span class="line"></span><br><span class="line">iostat 命令可以查看系统分区的 IO 使用情况</span><br><span class="line"></span><br><span class="line">$ iostat \</span><br><span class="line">Linux <span class="number">2.6</span><span class="number">.32</span><span class="number">-573.22</span><span class="number">.1</span>.el6.x86_64 (sgs02)   <span class="number">01</span>/<span class="number">20</span>/<span class="number">2017</span>     _x86_64_   (<span class="number">1</span> CPU)\</span><br><span class="line">\</span><br><span class="line">avg-cpu:  %user   %nice %system %iowait  %steal   %idle\</span><br><span class="line">           <span class="number">2.29</span>    <span class="number">0.00</span>    <span class="number">0.25</span>    <span class="number">0.04</span>    <span class="number">0.00</span>   <span class="number">97.41</span>\</span><br><span class="line">\</span><br><span class="line">Device:            tps   Blk_read/s   Blk_wrtn/s   Blk_read   Blk_wrtn\</span><br><span class="line">vda               <span class="number">1.15</span>         <span class="number">3.48</span>        <span class="number">21.88</span>   <span class="number">21016084</span>  <span class="number">131997520</span></span><br><span class="line">一些值得注意的 IO 指标 :</span><br><span class="line"></span><br><span class="line">Device : 磁盘名称</span><br><span class="line">tps : 每秒 I/O 传输请求量</span><br><span class="line">Blk_read/s : 每秒读取多少块，查看块大小可参考命令 tune2fs</span><br><span class="line">Blk_wrtn/s : 每秒写取多少块</span><br><span class="line">Blk_read : 一共读了多少块</span><br><span class="line">–Blk_wrtn : 一共写了多少块</span><br><span class="line">五、iotop 命令</span><br><span class="line"></span><br><span class="line">iotop 命令类似于 top 命令，但是显示的是各个进程的 I/O 情况，对于定位 I/O 操作较重的进程有比较大的作用。\</span><br><span class="line"></span><br><span class="line"># iotop\</span><br><span class="line">Total DISK READ: <span class="number">0.00</span> B/s | Total DISK WRITE: <span class="number">774.52</span> K/s\</span><br><span class="line">  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN     IO&gt;    COMMAND                                                                \</span><br><span class="line">  <span class="number">272</span> be/<span class="number">3</span> root        <span class="number">0.00</span> B/s    <span class="number">0.00</span> B/s  <span class="number">0.00</span> %  <span class="number">4.86</span> % [jbd2/vda1<span class="number">-8</span>]\</span><br><span class="line"> <span class="number">9072</span> be/<span class="number">4</span> mysql       <span class="number">0.00</span> B/s  <span class="number">268.71</span> K/s  <span class="number">0.00</span> %  <span class="number">0.00</span> % mysqld\</span><br><span class="line"> <span class="number">5058</span> be/<span class="number">4</span> lvinkim     <span class="number">0.00</span> B/s    <span class="number">3.95</span> K/s  <span class="number">0.00</span> %  <span class="number">0.00</span> % php-fpm: pool www\</span><br><span class="line">    <span class="number">1</span> be/<span class="number">4</span> root        <span class="number">0.00</span> B/s    <span class="number">0.00</span> B/s  <span class="number">0.00</span> %  <span class="number">0.00</span> % init</span><br><span class="line">可以看到不同任务的读写强度。</span><br><span class="line"></span><br><span class="line">六、sysstat 工具</span><br><span class="line"></span><br><span class="line">很多时候当检测到或者知道历史的高负载状况时，可能需要回放历史监控数据，这时 sar 命令就派上用场了，sar 命令同样来自 sysstat 工具包，可以记录系统的 CPU 负载、I/O 状况和内存使用记录，便于历史数据的回放。</span><br><span class="line"></span><br><span class="line">sysstat 的配置文件在 /etc/sysconfig/sysstat 文件，历史日志的存放位置为 /<span class="keyword">var</span>/log/sa\</span><br><span class="line">统计信息都是每 <span class="number">10</span> 分钟记录一次，每天的 <span class="number">23</span>:<span class="number">59</span> 会分割统计文件，这些操作的频率都在 /etc/cron.d/sysstat 文件配置。\</span><br><span class="line"></span><br><span class="line">七、sar 命令</span><br><span class="line"></span><br><span class="line">使用 sar 命令查看当天 CPU 使用：</span><br><span class="line"></span><br><span class="line">$ sar\</span><br><span class="line">Linux <span class="number">2.6</span><span class="number">.32</span><span class="number">-431.23</span><span class="number">.3</span>.el6.x86_64 (szs01)   <span class="number">01</span>/<span class="number">20</span>/<span class="number">2017</span>     _x86_64_   (<span class="number">1</span> CPU)\</span><br><span class="line">\</span><br><span class="line"><span class="number">10</span>:<span class="number">50</span>:<span class="number">01</span> AM     CPU     %user     %nice   %system   %iowait    %steal     %idle\</span><br><span class="line"><span class="number">11</span>:<span class="number">00</span>:<span class="number">01</span> AM     all      <span class="number">0.45</span>      <span class="number">0.00</span>      <span class="number">0.22</span>      <span class="number">0.40</span>      <span class="number">0.00</span>     <span class="number">98.93</span>\</span><br><span class="line">Average:        all      <span class="number">0.45</span>      <span class="number">0.00</span>      <span class="number">0.22</span>      <span class="number">0.40</span>      <span class="number">0.00</span>     <span class="number">98.93</span></span><br><span class="line">使用 sar 命令查看当天内存使用：</span><br><span class="line"></span><br><span class="line">$ sar -r\</span><br><span class="line">Linux <span class="number">2.6</span><span class="number">.32</span><span class="number">-431.23</span><span class="number">.3</span>.el6.x86_64 (szs01)   <span class="number">01</span>/<span class="number">20</span>/<span class="number">2017</span>     _x86_64_   (<span class="number">1</span> CPU)\</span><br><span class="line">\</span><br><span class="line"><span class="number">10</span>:<span class="number">50</span>:<span class="number">01</span> AM kbmemfree kbmemused  %memused kbbuffers  kbcached  kbcommit   %commit\</span><br><span class="line"><span class="number">11</span>:<span class="number">00</span>:<span class="number">01</span> AM     <span class="number">41292</span>    <span class="number">459180</span>     <span class="number">91.75</span>     <span class="number">44072</span>    <span class="number">164620</span>    <span class="number">822392</span>    <span class="number">164.32</span>\</span><br><span class="line">Average:        <span class="number">41292</span>    <span class="number">459180</span>     <span class="number">91.75</span>     <span class="number">44072</span>    <span class="number">164620</span>    <span class="number">822392</span>    <span class="number">164.32</span></span><br><span class="line">使用 sar 命令查看当天 IO 统计记录：</span><br><span class="line"></span><br><span class="line">$ sar -b\</span><br><span class="line">Linux <span class="number">2.6</span><span class="number">.32</span><span class="number">-431.23</span><span class="number">.3</span>.el6.x86_64 (szs01)   <span class="number">01</span>/<span class="number">20</span>/<span class="number">2017</span>     _x86_64_   (<span class="number">1</span> CPU)\</span><br><span class="line">\</span><br><span class="line"><span class="number">10</span>:<span class="number">50</span>:<span class="number">01</span> AM       tps      rtps      wtps   bread/s   bwrtn/s\</span><br><span class="line"><span class="number">11</span>:<span class="number">00</span>:<span class="number">01</span> AM      <span class="number">3.31</span>      <span class="number">2.14</span>      <span class="number">1.17</span>     <span class="number">37.18</span>     <span class="number">16.84</span>\</span><br><span class="line">Average:         <span class="number">3.31</span>      <span class="number">2.14</span>      <span class="number">1.17</span>     <span class="number">37.18</span>     <span class="number">16.84</span></span><br><span class="line">https:<span class="comment">//learnku.com/articles/31718</span></span><br></pre></td></tr></table></figure>
+<h3 id="秘钥登录"><a href="#秘钥登录" class="headerlink" title="秘钥登录"></a>秘钥登录</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">'youxiang@aliyun.com'</span></span><br><span class="line">scp -P &lt;端口号&gt; ~<span class="regexp">/.ssh/i</span>d_rsa.pub &lt;用户名&gt;@&lt;ip地址&gt;:<span class="regexp">/home/i</span>d_rsa.pub</span><br><span class="line">cat /home/id_rsa.pub &gt;&gt; ~<span class="regexp">/.ssh/</span>authorized_keys</span><br><span class="line"></span><br><span class="line">如果在 家目录 没有 .ssh 目录或 authorized_keys 文件，可以创建一下，并授予 authorized_keys 文件 <span class="number">600</span> 权限</span><br><span class="line">ssh root@<span class="number">114.11</span><span class="number">.11</span><span class="number">.111</span></span><br><span class="line">vi ~<span class="regexp">/.ssh/</span>config</span><br><span class="line"></span><br><span class="line">Host            jd            #自定义别名</span><br><span class="line">HostName        114.11.11.110         #替换为你的ssh服务器ip或domain</span><br><span class="line">Port            22             #ssh服务器端口，默认为22</span><br><span class="line">User            root             #ssh服务器用户名</span><br><span class="line">IdentityFile    ~/.ssh/id_rsa    #第一个步骤生成的公钥文件对应的私钥文件</span><br><span class="line">此时就可以使用 ssh jd 进行登录</span><br><span class="line">cd /etc/ssh/</span><br><span class="line"></span><br><span class="line">修改 SSH 的配置文件 vi sshd_config</span><br><span class="line"></span><br><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile      .ssh/authorized_keys</span><br><span class="line">#AuthorizedKeysCommand none</span><br><span class="line">#AuthorizedKeysCommandRunAs nobody</span><br><span class="line"></span><br><span class="line">#默认PasswordAuthentication 为yes,即允许密码登录，改为no后，禁止密码登录</span><br><span class="line">PasswordAuthentication no </span><br><span class="line">重启 ssh 服务</span><br><span class="line"></span><br><span class="line">systemctl restart sshd.service</span><br><span class="line">https:<span class="comment">//learnku.com/articles/30438</span></span><br></pre></td></tr></table></figure>
+<h3 id="生成二维码"><a href="#生成二维码" class="headerlink" title="生成二维码"></a>生成二维码</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">第一种方法： qrencode</span><br><span class="line">#安装，记得加epel yum源</span><br><span class="line">[root@localhost ~]# yum install libpng libpng-devel qrencode -y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#格式</span><br><span class="line">Usage: qrencode [OPTION]... [STRING]</span><br><span class="line">OPTIONS：</span><br><span class="line">-o：输出的二维码文件名。如test.png。需要以.png结尾。-表示输出到控制台。</span><br><span class="line">-s：指定图片大小。默认为<span class="number">3</span>个像素。</span><br><span class="line">-t：指定产生的图片类型。默认为PNG。可以是PNG/ANSI/ANSI256/ASCIIi/UTF8等。如果需要输出到控制台，可以用ANSI、ANSI256等</span><br><span class="line">STRING：可以是text、url等</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#使用</span><br><span class="line">注：输出的二维码图片大小取决于，内容的多少，且不能换行</span><br><span class="line"></span><br><span class="line"># 将“http://jinchuang.org”网址转换为二维码并保存在qrcode.png图片中</span><br><span class="line">[root@localhost ~]# qrencode -o qrcode.png "http://jinchuang.org"</span><br><span class="line"></span><br><span class="line"># 在终端下无法查看png图片，所以可以使用ANSI生成</span><br><span class="line">[root@localhost ~]# echo "your input words" | qrencode -o - -t ANSI</span><br><span class="line"></span><br><span class="line"># 也可以将需要转换的文字保存为xx.txt文件，之后再转换</span><br><span class="line">[root@localhost ~]# cat xx.txt | qrencode -o - -t ANSI</span><br><span class="line"></span><br><span class="line">第二种方法：</span><br><span class="line">[root@localhost ~]# printf "http://jinchuang.org" | curl -F-=\&lt;- qrenco.de</span><br></pre></td></tr></table></figure>
+<h3 id="es-Kibana"><a href="#es-Kibana" class="headerlink" title="es Kibana"></a>es Kibana</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[root@localhost ~]# cd /source</span><br><span class="line">[root@localhost source]# wget https://artifacts.elastic.co/downloads/kibana/kibana-5.6.0-linux-x86_64.tar.gz</span><br><span class="line">[root@localhost source]# tar xf kibana-5.6.0-linux-x86_64.tar.gz  -C /elk/</span><br><span class="line">[root@localhost source]# cd /elk/</span><br><span class="line">[root@localhost elk]# mv kibana-5.6.0-linux-x86_64/ kibana</span><br><span class="line"></span><br><span class="line">#修改配置文件</span><br><span class="line">[root@localhost elk]# vim kibana/config/kibana.yml</span><br><span class="line">server.port: <span class="number">5601</span></span><br><span class="line">server.host: <span class="string">"0.0.0.0"</span></span><br><span class="line">elasticsearch.url: <span class="string">"http://127.0.0.1:9200"</span></span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">[root@localhost elk]# /elk/kibana/bin/kibana &amp;</span><br><span class="line">[<span class="number">1</span>] <span class="number">31948</span></span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.064</span>] [info][status][plugin:kibana@<span class="number">5.6</span><span class="number">.0</span>] Status changed <span class="keyword">from</span> uninitialized to green - Ready</span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.149</span>] [info][status][plugin:elasticsearch@<span class="number">5.6</span><span class="number">.0</span>] Status changed <span class="keyword">from</span> uninitialized to yellow - Waiting <span class="keyword">for</span> Elasticsearch</span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.190</span>] [info][status][plugin:<span class="built_in">console</span>@<span class="number">5.6</span><span class="number">.0</span>] Status changed <span class="keyword">from</span> uninitialized to green - Ready</span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.235</span>] [info][status][plugin:metrics@<span class="number">5.6</span><span class="number">.0</span>] Status changed <span class="keyword">from</span> uninitialized to green - Ready</span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.435</span>] [info][status][plugin:timelion@<span class="number">5.6</span><span class="number">.0</span>] Status changed <span class="keyword">from</span> uninitialized to green - Ready</span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.447</span>] [info][status][plugin:elasticsearch@<span class="number">5.6</span><span class="number">.0</span>] Status changed <span class="keyword">from</span> yellow to green - Kibana index ready</span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.449</span>] [info][listening] Server running at http:<span class="comment">//0.0.0.0:5601</span></span><br><span class="line">  log   [<span class="number">05</span>:<span class="number">53</span>:<span class="number">04.452</span>] [info][status][ui settings] Status changed <span class="keyword">from</span> uninitialized to green - Ready</span><br><span class="line"></span><br><span class="line">#查看进程和端口</span><br><span class="line">[root@localhost elk]# ps -ef|grep kibana</span><br><span class="line">root     <span class="number">31948</span> <span class="number">31038</span> <span class="number">12</span> <span class="number">13</span>:<span class="number">52</span> pts/<span class="number">3</span>    <span class="number">00</span>:<span class="number">00</span>:<span class="number">04</span> /elk/kibana/bin/../node/bin/node --no-warnings /elk/kibana/bin/../src/cli</span><br><span class="line"></span><br><span class="line">[root@localhost elk]# netstat -lntp </span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    </span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">9100</span>            <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:*               LISTEN      <span class="number">28361</span>/grunt         </span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">22</span>              <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:*               LISTEN      <span class="number">14146</span>/sshd      </span><br><span class="line"></span><br><span class="line">https:<span class="comment">//me.jinchuang.org/archives/319.html</span></span><br></pre></td></tr></table></figure>
+<h3 id="随机数生成"><a href="#随机数生成" class="headerlink" title="随机数生成"></a>随机数生成</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)  echo $(($RANDOM))          通过系统环境变量</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>)  echo $RANDOM | md5sum|cut -c <span class="number">1</span><span class="number">-8</span></span><br><span class="line"></span><br><span class="line">(<span class="number">3</span>)  openssl rand -base64 <span class="number">65</span>         openssl产生随机数</span><br><span class="line"></span><br><span class="line">(<span class="number">4</span>)  date +%s%N          通过时间获取随机数</span><br><span class="line"></span><br><span class="line">(<span class="number">5</span>)  head /dev/urandom |cksum            设备随机数</span><br><span class="line"></span><br><span class="line">(<span class="number">6</span>)  cat /proc/sys/kernel/random/uuid           uuid随机数</span><br><span class="line"></span><br><span class="line">(<span class="number">7</span>)  mkpasswd -l <span class="number">12</span> -d <span class="number">5</span>             expect随机数，需要安装expect</span><br></pre></td></tr></table></figure>
+<h3 id="Elasticsearch-在-docker-和-CentOS-下的安装教程"><a href="#Elasticsearch-在-docker-和-CentOS-下的安装教程" class="headerlink" title="Elasticsearch 在 docker 和 CentOS 下的安装教程"></a>Elasticsearch 在 docker 和 CentOS 下的安装教程</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull docker.elastic.co/elasticsearch/elasticsearch:<span class="number">7.3</span><span class="number">.1</span></span><br><span class="line"></span><br><span class="line">sudo docker run -p <span class="number">9200</span>:<span class="number">9200</span> -p <span class="number">9300</span>:<span class="number">9300</span> -e <span class="string">"discovery.type=single-node"</span> docker.elastic.co/elasticsearch/elasticsearch:<span class="number">7.3</span><span class="number">.1</span></span><br><span class="line"></span><br><span class="line">sudo docker run -itd -p <span class="number">9200</span>:<span class="number">9200</span> -p <span class="number">9300</span>:<span class="number">9300</span> -e <span class="string">"discovery.type=single-node"</span> docker.elastic.co/elasticsearch/elasticsearch:<span class="number">7.3</span><span class="number">.1</span></span><br><span class="line">https:<span class="comment">//learnku.com/articles/33404</span></span><br></pre></td></tr></table></figure>
+<h3 id="wget-命令提示-“use-‘–no-check-certificate"><a href="#wget-命令提示-“use-‘–no-check-certificate" class="headerlink" title="wget 命令提示 “use ‘–no-check-certificate"></a>wget 命令提示 “use ‘–no-check-certificate</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">php -r <span class="string">"print_r(openssl_get_cert_locations());"</span></span><br><span class="line">可以看到证书的默认位置在 /etc/pki/tls/cert.pem，这是在安装 Apache 时自动生成的证书文件。如果你的目录里没有证书文件，使用下面的命令下载一个：</span><br><span class="line"></span><br><span class="line">$wget -c https:<span class="comment">//curl.haxx.se/ca/cacert.pem  /tmp --no-check-certificate</span></span><br><span class="line">因为我系统上本来就有一个证书文件了，为了不影响原来的，我将新的证书文件下载到 /tmp 目录中。然后设置以下环境变量，使证书只在当前会话生效：</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> SSL_CERT_FILE=<span class="regexp">/tmp/</span>cacert.pem</span><br><span class="line">https:<span class="comment">//learnku.com/articles/33549</span></span><br></pre></td></tr></table></figure>
+<h3 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">如果我们想在一台电脑上搭建各种开发环境：lnmp 环境，java 环境，nodejs，redis 集群，python 开发环境。显然，这些多的开发环境，如果集中在一台机器上构建，会让系统显得复杂，可能还会出现各种版本或依赖之间的不兼容。如果能将这些开发环境都独立开来，各个环境互相独立隔离，但又能互相通讯交互，相当于每个环境都是一个容器，这些容器可以独立提供服务，也能通信交互。</span><br><span class="line"></span><br><span class="line">docker 就是这样的容器技术。</span><br><span class="line"></span><br><span class="line">用官方术语描述 docker: Docker 是基于 Go 语言实现的开源容器项目，有效地将由单个操作系统管理的资源划分到孤立的组中，以更好地在孤立的组之间平衡有冲突的资源使用需求。</span><br><span class="line"></span><br><span class="line">通俗地理解：docker 能让你在一台物理机上构建出很多个轻量极的开发环境。</span><br><span class="line">https:<span class="comment">//learnku.com/articles/33670#reply108346</span></span><br></pre></td></tr></table></figure>
+<h3 id="xargs-命令"><a href="#xargs-命令" class="headerlink" title="xargs 命令"></a>xargs 命令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">echo命令就不接受管道传参。</span><br><span class="line"></span><br><span class="line">$ echo <span class="string">"hello world"</span> | echo</span><br><span class="line">xargs命令的作用，是将标准输入转为命令行参数</span><br><span class="line">$ echo <span class="string">"hello world"</span> | xargs echo</span><br><span class="line">hello world</span><br><span class="line">$ echo <span class="string">"one two three"</span> | xargs mkdir</span><br><span class="line"></span><br><span class="line">$ xargs</span><br><span class="line"># 等同于</span><br><span class="line">$ xargs echo</span><br><span class="line">-d参数可以更改分隔符。</span><br><span class="line"></span><br><span class="line">$ echo -e <span class="string">"a\tb\tc"</span> | xargs -d <span class="string">"\t"</span> echo</span><br><span class="line">a b c</span><br><span class="line"></span><br><span class="line">$ echo <span class="string">'one two three'</span> | xargs -p touch</span><br><span class="line">touch one two three ?...</span><br><span class="line">上面的命令执行以后，会打印出最终要执行的命令，让用户确认。用户输入y以后（大小写皆可），才会真正执行。</span><br><span class="line">xargs特别适合find命令。有些命令（比如rm）一旦参数过多会报错<span class="string">"参数列表过长"</span>，而无法执行，改用xargs就没有这个问题，因为它对每个参数执行一次命令。</span><br><span class="line"></span><br><span class="line">$ find . -name <span class="string">"*.txt"</span> | xargs grep <span class="string">"abc"</span></span><br><span class="line">上面命令找出所有 TXT 文件以后，对每个文件搜索一次是否包含字符串abc</span><br><span class="line">http:<span class="comment">//www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html</span></span><br></pre></td></tr></table></figure>
+<h3 id="禁用-eval-函数"><a href="#禁用-eval-函数" class="headerlink" title="禁用 eval 函数"></a>禁用 eval 函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 /etc/bashrc 里加入</span><br><span class="line">alias <span class="built_in">eval</span> = <span class="string">'echo'</span></span><br></pre></td></tr></table></figure>
+<h3 id="find-模拟-tree"><a href="#find-模拟-tree" class="headerlink" title="find 模拟 tree"></a>find 模拟 tree</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ find . -print | sed -e <span class="string">``</span><span class="string">'s;[^/]*/;|____;g;s;____|; |;g'</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://learnku.com/articles/33469" target="_blank" rel="noopener">初识 Shell</a></p>
+<p><a href="http://einverne.github.io/post/2019/01/html-to-pdf.html" target="_blank" rel="noopener">html 转 pdf 命令行工具 wkhtmltopdf </a></p>
+<p><a href="https://me.jinchuang.org/archives/301.html" target="_blank" rel="noopener">Centos7 搭建 Nextcloud个人网盘</a></p>
+<p><a href="https://github.com/mylxsw/growing-up/blob/master/doc/%E4%B8%89%E5%8D%81%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9ASED.md" target="_blank" rel="noopener">三十分钟学会sed</a></p>
+<p><a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">Linux工具快速教程</a></p>
+<p><a href="http://qinghua.github.io/sed/" target="_blank" rel="noopener">看例子学sed</a></p>
+<p><a href="https://michael728.github.io/2018/07/05/linux-useful-commands-in-work/" target="_blank" rel="noopener">工作中常用的 Linux 命令</a></p>
+<p><a href="https://michael728.github.io/2019/04/14/linux-useful-shell-commands-in-work/" target="_blank" rel="noopener">工作中常用的 Shell 命令及技巧</a></p>
+<p><a href="https://linux.hellocode.name/user-group.html" target="_blank" rel="noopener">PHPer 必知必会的 Linux 命令</a></p>
+<p><a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html#" target="_blank" rel="noopener">Linux工具快速教程</a></p>
+<p><a href="https://segmentfault.com/a/1190000016648034" target="_blank" rel="noopener">你可能不知道的shell技巧</a></p>
+<p><a href="https://neuqzxy.github.io/2017/07/08/wget%E7%9A%8415%E4%B8%AA%E9%9C%87%E6%92%BC%E7%9A%84%E4%BE%8B%E5%AD%90/" target="_blank" rel="noopener">wget的15个震撼的例子</a></p>
+<p><a href="https://www.restran.net/2015/10/19/linux-practice-notes/" target="_blank" rel="noopener">Linux 踩坑记</a></p>
+<p><a href="https://github.com/Nick233333/phper-linux-gitbook" target="_blank" rel="noopener">PHPer 必知必会的 Linux 命令</a></p>
+<p><a href="https://github.com/jlevy/the-art-of-command-line" target="_blank" rel="noopener">命令行的艺术</a></p>
+<p><a href="https://www.njphper.com/posts/680ebdf2.html" target="_blank" rel="noopener">Nginx 学习笔记时序图</a></p>
+<p><a href="https://learnku.com/articles/28500" target="_blank" rel="noopener">Windows 10 安装体验</a></p>
+<p><a href="https://coolshell.cn/articles/19219.html" target="_blank" rel="noopener">打造高效的工作环境 – SHELL 篇https://github.com/coolshellx/articles</a></p>
+<p><a href="https://michael728.github.io/2018/07/05/linux-useful-commands-in-work/" target="_blank" rel="noopener">工作中常用的 Linux 命令</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/27/laravel-笔记/" rel="next" title="laravel 笔记">
+                <i class="fa fa-chevron-left"></i> laravel 笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/08/微信相关/" rel="prev" title="微信相关">
+                微信相关 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘空间不足"><span class="nav-number">1.</span> <span class="nav-text">磁盘空间不足</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-push-报错-fatal-HttpRequestException-encountered"><span class="nav-number">2.</span> <span class="nav-text">git push 报错 fatal: HttpRequestException encountered.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip-install-失败"><span class="nav-number">3.</span> <span class="nav-text">pip install 失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk"><span class="nav-number">4.</span> <span class="nav-text">awk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量删除-DS-Store-文件"><span class="nav-number">5.</span> <span class="nav-text">批量删除 .DS_Store 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看硬盘及内存空间"><span class="nav-number">6.</span> <span class="nav-text">查看硬盘及内存空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计文件或目录的个数"><span class="nav-number">7.</span> <span class="nav-text">统计文件或目录的个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看CPU和内存占用"><span class="nav-number">8.</span> <span class="nav-text">查看CPU和内存占用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl"><span class="nav-number">9.</span> <span class="nav-text">curl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接你服务器-top10-用户端的-IP-地址"><span class="nav-number">10.</span> <span class="nav-text">连接你服务器 top10 用户端的 IP 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最常用的10个命令"><span class="nav-number">11.</span> <span class="nav-text">最常用的10个命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias"><span class="nav-number">12.</span> <span class="nav-text">alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wget"><span class="nav-number">13.</span> <span class="nav-text">wget</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙"><span class="nav-number">14.</span> <span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示-Path-环境变量"><span class="nav-number">15.</span> <span class="nav-text">显示 Path 环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断字符串包含"><span class="nav-number">16.</span> <span class="nav-text">判断字符串包含</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速修改后缀名字"><span class="nav-number">17.</span> <span class="nav-text">快速修改后缀名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值排序"><span class="nav-number">18.</span> <span class="nav-text">数值排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理httpd服务日志超过3天的内容"><span class="nav-number">19.</span> <span class="nav-text">清理httpd服务日志超过3天的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk获取json"><span class="nav-number">20.</span> <span class="nav-text">awk获取json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cpu"><span class="nav-number">21.</span> <span class="nav-text">cpu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看系统负载"><span class="nav-number">22.</span> <span class="nav-text">查看系统负载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#秘钥登录"><span class="nav-number">23.</span> <span class="nav-text">秘钥登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成二维码"><span class="nav-number">24.</span> <span class="nav-text">生成二维码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#es-Kibana"><span class="nav-number">25.</span> <span class="nav-text">es Kibana</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数生成"><span class="nav-number">26.</span> <span class="nav-text">随机数生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Elasticsearch-在-docker-和-CentOS-下的安装教程"><span class="nav-number">27.</span> <span class="nav-text">Elasticsearch 在 docker 和 CentOS 下的安装教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wget-命令提示-“use-‘–no-check-certificate"><span class="nav-number">28.</span> <span class="nav-text">wget 命令提示 “use ‘–no-check-certificate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker"><span class="nav-number">29.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xargs-命令"><span class="nav-number">30.</span> <span class="nav-text">xargs 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁用-eval-函数"><span class="nav-number">31.</span> <span class="nav-text">禁用 eval 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-模拟-tree"><span class="nav-number">32.</span> <span class="nav-text">find 模拟 tree</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

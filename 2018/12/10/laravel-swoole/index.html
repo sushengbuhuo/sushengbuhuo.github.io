@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="laravel,swoole,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="laravel 响应慢1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253https://laravel-china.org/topics/2550/the-speed-of-laravel-5-is-indeed-a-bit-slow-here-are-t">
+<meta name="keywords" content="laravel,swoole">
+<meta property="og:type" content="article">
+<meta property="og:title" content="laravel swoole">
+<meta property="og:url" content="http://yoursite.com/2018/12/10/laravel-swoole/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="laravel 响应慢1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253https://laravel-china.org/topics/2550/the-speed-of-laravel-5-is-indeed-a-bit-slow-here-are-t">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-26T11:42:18.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="laravel swoole">
+<meta name="twitter:description" content="laravel 响应慢1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253https://laravel-china.org/topics/2550/the-speed-of-laravel-5-is-indeed-a-bit-slow-here-are-t">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/10/laravel-swoole/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>laravel swoole | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/laravel-swoole/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">laravel swoole</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T15:03:09+08:00">
+                2018-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="laravel-响应慢"><a href="#laravel-响应慢" class="headerlink" title="laravel 响应慢"></a>laravel 响应慢</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//laravel-china.org/topics/2550/the-speed-of-laravel-5-is-indeed-a-bit-slow-here-are-the-results-of-the-oneapm-test</span></span><br><span class="line">https:<span class="comment">//laravel-china.org/topics/3583/laravel-performance-has-always-been-difficult-to-let-go-seek-guidance</span></span><br><span class="line">项目的可维护性，是相对更加重要的。用框架损耗一点性能，来换取开发效率、可维护性是值得。至于优化性能，手段很多，一般找到性能瓶颈对其优化即可，而性能瓶颈一般不会是在框架上。</span><br><span class="line">比如：用 Laravel 比用XX框架，框架多消耗了 <span class="number">50</span>ms。但是你发现流量上来后，瓶颈是在 IO 上（比如数据库，服务器硬盘，网络 IO）。假如可能是 mysql 数据库查询就慢了 <span class="number">1</span>s。这时候要引入缓存，就可以解决该阶段的问题。在实施方案时，发现用XX框架加缓存，代码写得乱七八糟，漏洞百出。而用 Laravel，花了很短的时间和精力就上了缓存功能，并且代码优雅，结构清晰，易于维护。</span><br><span class="line">那么，框架的优势就体现了。</span><br><span class="line"></span><br><span class="line">不要轻易、任性、随意添加各种各样的 package ，特别是需要添加 provicder 的那种，捡最需要的来。</span><br><span class="line">模型的 Observer 多的话，确实会影响框架启动速度，当前的项目有二三十个，影响<span class="number">10</span>~<span class="number">40</span>ms的启动速度（服务器配置不一样，影响不一样），这个没办法处理了。</span><br><span class="line">上面这两条是我的项目确实存在的问题，并且确实对哪怕一个 hello world 的简单输出也要有影响，但是很难处理掉的。</span><br><span class="line"></span><br><span class="line">其他的挺好的，laravel 对我们的项目的进度和开发的质量真的相比其它框架提高了很多。并且线上的 <span class="number">8</span>核<span class="number">16</span>G OPCache，影响不太大，项目现在有<span class="number">100</span>多个表，业务密集型的应用，速度满足我们的需要，大部分页面和接口 <span class="number">200</span>ms 以内。</span><br><span class="line"></span><br><span class="line">最后，SQL 一定要处理好，这个可能永远是你们项目性能最大的瓶颈。</span><br><span class="line"></span><br><span class="line">Laravel 的确是一个高效且优雅的框架，作为其重度使用者的我也觉得这个框架已经被神话了。如果你有足够的时间且理解你所开发的项目，真心推荐使用 Laravel 作为项目开发框架。但是，如果，就像我说的，如果你对项目做不到知根知底、PHP 基础不扎实、周期紧张、项目影响大，所有综合因素来判定后，慎重决定。如果你真的很希望使用且愿意为后果买单，像我这样愿意深入学习其优秀特性、思想，仔细阅读文档、源码，做到举一反三甚至能做到任意改造且升级自如，那么，你还会提出这种问题吗？</span><br><span class="line">php7 用了吗</span><br><span class="line">opcache 开了吗</span><br><span class="line">optimaize 了吗</span><br><span class="line">最有用的是 php7 opcache 然后 gzip </span><br><span class="line"></span><br><span class="line">先说内存的事，Java 和 Go 都有成熟的 GC，除非你开着全局变量并且一直往里塞东西，否则泄露不了内存，每个请求的 handler 是个闭包或者函数，只要不故意定义超过函数生命周期的变量，你不玩 off-heap 黑魔法，完全不会泄露内存。</span><br><span class="line"></span><br><span class="line">部署的话，php 和 python 差不多，比起 Java 和 Go 麻烦太多了，Go 最简单，就一个可执行文件，大部分情况下也不依赖什么运行库。Java 比起 go 稍微麻烦一点，就是需要先安装一个 JRE，然后也是一个 jar 包直接运行(现代 javaweb 一般内置了 tomcat 这类 webserver)，复杂一点就是把 war 扔到 tomcat 的 webapps 目录，它会自动重启。</span><br><span class="line"></span><br><span class="line">php 和 python 就麻烦很多了，用 pip/pear 安装扩展的时候经常会遇到 xxx.h 找不到，典型的比如 db 驱动。然后还必须前置一个 nginx 或者 apache，fastcgi 配起来还麻烦，不同框架配置方法不一样，还要提防 cgi 的 fixpath 问题。python 稍微好一些，uwsgi 比较简单，或者直接走 http 协议更简单。Java 和 Go 的最简单，把 <span class="keyword">static</span> 资源外的直接 proxy_pass 走就行了。</span><br><span class="line">PHP 光是把环境搭一遍都很麻烦。</span><br><span class="line"></span><br><span class="line">php7<span class="number">.1</span> 开始内置代码的 cache 了，改 php 文件是没用的，改完文件得重启 fpm 进程才能生效，这个应该是性能增强带来的副作用。在需要重启服务以后，php 的新版本手动部署，已经跟 java 或者 go 没有不同了。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果是关联数组：数组转对象可以直接用(object)()；对象转数组则要用get_object_vars()；</span><br><span class="line"></span><br><span class="line">如果是索引数组：数组转对象可以直接用(object)()；对象转数组直接用(array)()；</span><br><span class="line"></span><br><span class="line">觉得 php 部署简单的，我提个前几年遇到过好几次的场景，看看大家有没有好办法。</span><br><span class="line"></span><br><span class="line">几台服务器，无外网连接，系统有 rhel5 和 rhel6，还有 ubuntu12 和 <span class="number">14</span>，还有 windows <span class="number">32</span> 位和 <span class="number">64</span> 位都有，用到的数据库是 pgsql 和 db2，如何打包 php 程序过去部署？</span><br><span class="line"></span><br><span class="line">当时我的解法是，Java 给每个平台下载一个 JRE，应用打成 jar 包就好了，db 驱动也是 java 实现的，直接打进 jar 包里了，不依赖运行库。php 真的难倒了我，最后，我给每个平台下载了对应版本的 vmware，然后为 php 制作了虚拟机镜像，把兼容性工作交给了 vmware 去做。还好那些机器都有图形界面和 root 帐号，不然还得折腾无 gui 甚至无 root 的情况下怎么安装 vmware。</span><br><span class="line">http:<span class="comment">//php.net/manual/en/intro.opcache.php </span></span><br><span class="line"></span><br><span class="line">Laravel 慢不是什么地方出瓶颈了，而是 Laravel 这个框架本身就是瓶颈。</span><br><span class="line">优化点：</span><br><span class="line"><span class="number">1.</span> 重构 router，特别是你的路由比较多的时候，foreach 之后还要正则就是找不痛快；</span><br><span class="line"><span class="number">2.</span> 用 swoole 服务模式把需要重复初始化的地方抹平，只初始化一次，不过这个会进入普通 php 程序员不熟悉的领域，而且大部分业务逻辑以及第三方组件需要修改以适应服务模式；</span><br><span class="line"><span class="number">3.</span> 放弃 Laravel</span><br><span class="line">我用 lumen + php <span class="number">7.1</span> 测过，Laravel 的 echo time();</span><br><span class="line">在 i5 的机器上，<span class="number">2</span> 个路由的时候，QPS 能跑 <span class="number">5000</span> 左右。</span><br><span class="line">路由数量 <span class="number">100</span> 的时候，QPS 下降到 <span class="number">4000</span> 左右。</span><br><span class="line">路由数量 <span class="number">1000</span> 的时候，QPS 下降到 <span class="number">1100</span>+。</span><br><span class="line">如果用了 <span class="number">1000</span> 个正则做路由，我相信还会更慢。</span><br><span class="line"></span><br><span class="line">当我用 <span class="number">100</span> 路由，再开启 session 的时候，QPS 从 <span class="number">4000</span> 左右跌到了 <span class="number">1500</span>+，腰斩了有没有？随便再引入几条正则路由，再开几个 Middleware，那 QPS 估计就跟楼主那个一样了。</span><br></pre></td></tr></table></figure>
+<h3 id="修改器"><a href="#修改器" class="headerlink" title="修改器"></a>修改器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace App\Models;</span><br><span class="line"></span><br><span class="line">use Illuminate\Database\Eloquent\Model;</span><br><span class="line">use Carbon\Carbon;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Baby</span> <span class="keyword">extends</span> <span class="title">Model</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    protected $table = <span class="string">'baby'</span>;</span><br><span class="line">    protected $appends = [<span class="string">'age'</span>];</span><br><span class="line"></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">getAgeAttribute</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $date = <span class="keyword">new</span> Carbon($<span class="keyword">this</span>-&gt;birthday);</span><br><span class="line">        <span class="keyword">return</span> Carbon::now()-&gt;diffInYears($date);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> $baby-&gt;age;<span class="comment">//得到几岁 https://laravel-china.org/articles/21982</span></span><br></pre></td></tr></table></figure>
+<h3 id="Supervisor-管理-Laravel-队列"><a href="#Supervisor-管理-Laravel-队列" class="headerlink" title="Supervisor 管理 Laravel 队列"></a>Supervisor 管理 Laravel 队列</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install supervisor</span><br><span class="line">echo_supervisord_conf</span><br><span class="line">echo_supervisord_conf &gt; <span class="regexp">/etc/</span>supervisord.conf</span><br><span class="line">默认配置文件中的supervisord.sock、supervisord.log以及supervisord.pid是放在/tmp目录下，这个目录存放的是Linux中的临时文件，一旦被系统删除，就会提示unix:<span class="comment">///tmp/supervisor.sock no such file，所以我们要把这三个文件放到其他目录中保存。</span></span><br><span class="line">sudo chmod <span class="number">777</span> /<span class="keyword">var</span>/run</span><br><span class="line">sudo chmod <span class="number">777</span> /<span class="keyword">var</span>/log/supervisor</span><br><span class="line">supervisord -c /etc/supervisord.conf</span><br><span class="line">pgrep supervisord | xargs ps -u --pid</span><br><span class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</span><br><span class="line">root     <span class="number">13744</span>  <span class="number">0.0</span>  <span class="number">1.7</span> <span class="number">226320</span> <span class="number">17460</span> ?        Ss   <span class="number">1</span>月<span class="number">12</span>   <span class="number">0</span>:<span class="number">08</span> /bin/python /usr/bin/supervisord -c /etc/supervi</span><br><span class="line"></span><br><span class="line">[program:larashop-worker]  ;项目名称</span><br><span class="line">process_name=%(program_name)s_%(process_num)<span class="number">02</span>d</span><br><span class="line">command=php (填入你的artisan路径)/artisan queue:work redis --sleep=<span class="number">3</span> --tries=<span class="number">3</span>  ;需要启动的命令</span><br><span class="line">autostart=<span class="literal">true</span></span><br><span class="line">autorestart=<span class="literal">true</span></span><br><span class="line">user=root ;此处填入你运行WEB应用的用户</span><br><span class="line">numprocs=<span class="number">8</span>  ;进程数</span><br><span class="line">redirect_stderr=<span class="literal">true</span>  ;把 stderr 重定向到 stdout，默认 <span class="literal">false</span></span><br><span class="line">stdout_logfile=<span class="regexp">/var/</span>log/supervisor/larashop-queue.log  ;注意分配好日志文件夹权限</span><br><span class="line">supervisorctl reread  # 读取有更新（增加）的配置文件，不会启动新添加的程序</span><br><span class="line"></span><br><span class="line">supervisorctl update # 重启配置文件修改过的程序</span><br><span class="line"></span><br><span class="line">supervisorctl start larashop-worker:* # 启动 larashop-worker 程序</span><br><span class="line">supervisorctl status # 查看状态 如果在Laravel中修改了队列代码，需要重启Supervisor才能生效</span><br></pre></td></tr></table></figure>
+<h3 id="Swoole-与-Laravel-结合使用"><a href="#Swoole-与-Laravel-结合使用" class="headerlink" title="Swoole 与 Laravel 结合使用"></a>Swoole 与 Laravel 结合使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">修改php.ini，增加swoole.use_namespace=On开启。使用命名空间类名后，旧式的下划线风格类名将不可用。</span><br><span class="line">namespace App\Console\Commands;</span><br><span class="line"></span><br><span class="line">use Illuminate\Console\Command;</span><br><span class="line">use App\Repositories\PushRepository;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Push</span> <span class="keyword">extends</span> <span class="title">Command</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The name and signature of the console command.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @var string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    protected $signature = <span class="string">'push:start'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The console command description.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @var string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    protected $description = <span class="string">'推送服务启动命令'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * push处理推送任务的对象实例</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    protected $_repPush;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Create a new command instance.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param  DripEmailer  $drip</span></span><br><span class="line"><span class="comment">     * @return void</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params">PushRepository $repPush</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        parent::__construct();</span><br><span class="line">        $<span class="keyword">this</span>-&gt;_repPush = $repPush;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Execute the console command.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @return mixed</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      $<span class="keyword">this</span>-&gt;_repPush-&gt;start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 消息推送服务</span></span><br><span class="line"><span class="comment">  * @author: KongSeng &lt;643828892@qq.com&gt;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> namespace App\Repositories;</span><br><span class="line"> use \Swoole\Server;</span><br><span class="line"> use Config;</span><br><span class="line"> </span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">PushRepository</span> <span class="keyword">extends</span> <span class="title">BaseRepository</span></span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Swoole Server 服务</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   private $__serv = <span class="literal">null</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 构造函数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $<span class="keyword">this</span>-&gt;__initSwoole();</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 初始化swoole</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   private <span class="function"><span class="keyword">function</span> <span class="title">__initSwoole</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $host = Config::get(<span class="string">'swoole.host'</span>);</span><br><span class="line">     $port = Config::get(<span class="string">'swoole.port'</span>);</span><br><span class="line">     $setConf = Config::get(<span class="string">'swoole.set'</span>);</span><br><span class="line"> </span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv = <span class="keyword">new</span> Server($host,$port);</span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv-&gt;set($setConf);</span><br><span class="line"> </span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv-&gt;on(<span class="string">'receive'</span>, array($<span class="keyword">this</span>,<span class="string">'onReceive'</span>));</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 数据接收回调</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   public <span class="function"><span class="keyword">function</span> <span class="title">onReceive</span>(<span class="params">$serv, $fd, $from_id, $data</span>)</span>&#123;</span><br><span class="line">     $serv-&gt;send($fd,$data.<span class="string">"\r\n"</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 开启服务https://laravel-china.org/articles/22712</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   public <span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv-&gt;start();</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br><span class="line"> php artisan push:start</span><br></pre></td></tr></table></figure>
+<h3 id="Websocket-服务中使用-Swoole"><a href="#Websocket-服务中使用-Swoole" class="headerlink" title="Websocket 服务中使用 Swoole"></a>Websocket 服务中使用 Swoole</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$server = <span class="keyword">new</span> swoole_websocket_server(<span class="string">'php'</span>, <span class="number">9501</span>);</span><br><span class="line">$server-&gt;on(<span class="string">'start'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"Server has been started!\n"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;on(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server, $request</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"websocket: new connection, id: &#123;$request-&gt;fd&#125;\n"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server, $frame</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"websocket: &#123;$frame-&gt;fd&#125;:&#123;$frame-&gt;data&#125;,opcode:&#123;$frame-&gt;opcode&#125;,fin:&#123;$frame-&gt;finish&#125;\n"</span>;</span><br><span class="line">    $server-&gt;push($frame-&gt;fd, <span class="string">"Replying, you sent "</span> . $frame-&gt;data);</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server, $fd</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"websocket: connection with id &#123;$fd&#125; has been closed\n"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;start();</span><br></pre></td></tr></table></figure>
+<h3 id="Lumen-5-2-手动补回-artisan-serve-指令"><a href="#Lumen-5-2-手动补回-artisan-serve-指令" class="headerlink" title="Lumen 5.2 手动补回 artisan serve 指令"></a>Lumen 5.2 手动补回 artisan serve 指令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Lumen <span class="number">5.2</span> 版本之前，通过php artisan serve指令即可快速启动调试</span><br><span class="line">https:<span class="comment">//blog.gxxsite.com/lumen-php-artisan-serve-local-debug-solution/</span></span><br><span class="line">Lumen <span class="number">5.2</span> 简化了 artisan，把serve精简掉了，用以下代码可以快速启动：</span><br><span class="line"></span><br><span class="line">php -S localhost:<span class="number">8080</span> -t ./public</span><br><span class="line">但是习惯了还是 serve 顺手吧，补充的方法如下：</span><br><span class="line"></span><br><span class="line">通过composer安装lumen-artisan-serve：</span><br><span class="line"></span><br><span class="line"> composer <span class="built_in">require</span> mlntn/lumen-artisan-serve <span class="string">"~1"</span></span><br><span class="line">修改app/Console/Kernel.php文件扩展artisan命令</span><br><span class="line"></span><br><span class="line"> protected $commands = [</span><br><span class="line">     \Mlntn\Console\Commands\Serve::<span class="class"><span class="keyword">class</span></span></span><br><span class="line"> ];</span><br><span class="line">至此，serve指令又能用了：</span><br><span class="line"></span><br><span class="line">php artisan serve --port=<span class="number">8080</span></span><br></pre></td></tr></table></figure>
+<h3 id="MySQL-频繁出错-Packets-out-of-order-Expected-1-received-111-Packet-size"><a href="#MySQL-频繁出错-Packets-out-of-order-Expected-1-received-111-Packet-size" class="headerlink" title="MySQL 频繁出错 Packets out of order. Expected 1 received 111. Packet size"></a>MySQL 频繁出错 Packets out of order. Expected 1 received 111. Packet size</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在swoole start函数前创建了mysql连接, 那么后续所有的worker以及task多个子进程都是使用一开始主进程的这个数据库连接。如果有多个子进程同时使用该连接与数据库通信(进程切换)，那么就可能因为通信协议时序的不正确导致mysql出现异常。</span><br><span class="line">解决方案:</span><br><span class="line"></span><br><span class="line">在swoole start函数前注销mysql连接, <span class="attr">DB</span>::disconnect();</span><br><span class="line">相关文章:</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>Server中对象的<span class="number">4</span>层生命周期 https:<span class="comment">//wiki.swoole.com/wiki/page/354.html</span></span><br><span class="line"><span class="number">2.</span>是否可以共用<span class="number">1</span>个redis或mysql连接 https:<span class="comment">//wiki.swoole.com/wiki/page/325.html</span></span><br><span class="line">https:<span class="comment">//learnku.com/articles/28953</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/kcloze/swoole-bot" target="_blank" rel="noopener">基于swoole实现的微信机器人</a></p>
+<p><a href="https://learnku.com/articles/28112#topnav" target="_blank" rel="noopener"> swoole 协程之旅</a></p>
+<p><a href="https://github.com/wi1dcard/laravel-deployment" target="_blank" rel="noopener">轻松部署 Laravel 应用</a></p>
+<p><a href="https://github.com/summerblue/laravel-tutorial" target="_blank" rel="noopener">《Laravel 入门教程》</a></p>
+<p><a href="https://learnku.com/laravel/t/22245" target="_blank" rel="noopener">Swoole 是 PHP 中的 Node.js</a></p>
+<p><a href="https://laravel-china.org/articles/19945#a44a83" target="_blank" rel="noopener">-从生命周期看 Dingo API 是如何接管 Laravel 路由的</a></p>
+<p><a href="https://laravel-china.org/articles/22321#e655a4" target="_blank" rel="noopener">配置 Supervisor 管理 Laravel 队列</a></p>
+<p><a href="https://learnku.com/articles/28112" target="_blank" rel="noopener">swoole 协程之旅</a></p>
+<p><a href="https://www.goozp.com/article/64.html" target="_blank" rel="noopener">workerman实现服务间通讯</a></p>
+<p><a href="https://laravel-china.org/articles/7038/laravel-queue-source-analysis-of-message-queue-task-processor#efa8e7" target="_blank" rel="noopener">Laravel Queue——消息队列任务处理器源码剖析</a></p>
+<p><a href="https://laravel-china.org/articles/20802#5db9fd" target="_blank" rel="noopener">Laravel 源码阅读之二：Illuminate\Foundation\Application 类初始化分析</a></p>
+<p><a href="https://laravel-china.org/articles/20281#2020e7" target="_blank" rel="noopener">开源了一个小小的商城</a></p>
+<p><a href="https://github.com/lawoole/lawoole" target="_blank" rel="noopener">Laravel 和 Swoole 的高性能框架</a></p>
+<p><a href="https://laravel-china.org/articles/21358" target="_blank" rel="noopener">基于 swoole 的高性能 PHP 框架</a></p>
+<p><a href="https://laravel-china.org/articles/18801" target="_blank" rel="noopener"> Laravel 应用中的 Swoole 集成</a></p>
+<p><a href="https://github.com/walkor/workerman-chat" target="_blank" rel="noopener">聊天室系统</a></p>
+<p><a href="https://laravel-china.org/topics/17351" target="_blank" rel="noopener">不用三方包 给 Laravel 开启 Swoole</a></p>
+<p><a href="https://laravel-china.org/topics/20181" target="_blank" rel="noopener">基于 Laravel-swoole 开发部署的在线聊天室</a></p>
+<p><a href="https://github.com/blankqwq/stu_x" target="_blank" rel="noopener">一个线上提交作业的平台</a></p>
+<p><a href="https://github.com/louislivi/SMProxy" target="_blank" rel="noopener">使用数据库连接池提高性能</a></p>
+<p><a href="https://github.com/swooletw/laravel-swoole/wiki/4.-Installation" target="_blank" rel="noopener">laravel swoole</a></p>
+<p><a href="https://www.v2ex.com/t/371855" target="_blank" rel="noopener">为什么我不太想用 Laravel </a></p>
+<p><a href="https://www.v2ex.com/t/441162" target="_blank" rel="noopener"> laravel 寫 APP 接口</a></p>
+<p><a href="https://github.com/qianhuihuiji/notebook" target="_blank" rel="noopener">laracast 视频教程系列笔记</a></p>
+<p><a href="https://laravel-china.org/articles/19737" target="_blank" rel="noopener">我独自走进 Laravel5.5 的❤（八）</a></p>
+<p><a href="https://www.v2ex.com/t/478257" target="_blank" rel="noopener">Laravel面试</a></p>
+<p><a href="https://learnku.com/articles/20793#topnav" target="_blank" rel="noopener">Laravel，PHP 如何使用数据库连接池提高性能</a></p>
+<p><a href="https://laravel-china.org/articles/18062" target="_blank" rel="noopener">Swoole 源码分析</a></p>
+<p><a href="https://lvwenhan.com/laravel/432.html" target="_blank" rel="noopener">Laravel 5 系列入门教程</a></p>
+<p><a href="https://lax.v2ex.com/t/420124" target="_blank" rel="noopener">Laravel 到底能慢到什么程度</a></p>
+<p><a href="https://laravel-china.org/articles/18123" target="_blank" rel="noopener">使用 laragon 的 ngrok 功能在本地开发微信公众号</a></p>
+<p><a href="https://github.com/kenjis/php-framework-benchmark/blob/master/README.md" target="_blank" rel="noopener">php框架压测</a></p>
+<p><a href="https://www.v2ex.com/t/272328?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">Laravel 每个控制器都需要写个路由</a></p>
+<p><a href="http://www.dahouduan.com/2018/03/18/laravel-speed-up/" target="_blank" rel="noopener">Laravel 项目加速指南</a></p>
+<p><a href="https://github.com/rlerdorf/opcache-status" target="_blank" rel="noopener">opcache 的统计功能</a></p>
+<p><a href="https://learnku.com/articles/34475" target="_blank" rel="noopener">基于 Swoole 开发的 MySQL 数据库连接池SMProxy </a></p>
+<p><a href="https://www.v2ex.com/t/398902" target="_blank" rel="noopener">laravel 优化</a></p>
+<p><a href="https://lax.v2ex.com/t/357983?p=1" target="_blank" rel="noopener">国内使用 laravel </a></p>
+<p><a href="https://github.com/phwoolcon/phwoolcon/blob/master/README-zh.md" target="_blank" rel="noopener">phwoolcon</a></p>
+<p><a href="https://github.com/ydtg1993/admin" target="_blank" rel="noopener">laravel和Uikit开发的后台管理系统雏形 自带完整oauth授权管理模块</a></p>
+<p><a href="https://laravel-china.org/articles/20450?#reply77440" target="_blank" rel="noopener">Laravel HTML 导出 PDF 方案 -</a></p>
+<p><a href="https://laravel-china.org/articles/21048" target="_blank" rel="noopener">《2018年小米高级 PHP 工程师面试题（模拟考试卷）》答案解析 [ 未指定版本 ]</a></p>
+<p><a href="https://laravel-china.org/articles/21985?#reply77444" target="_blank" rel="noopener">laravel Facades 原理 (代码执行流程分析)</a></p>
+<p><a href="http://mysql.taobao.org/monthly/2017/11/09/" target="_blank" rel="noopener">MySQL · 最佳实践 · 分区表基本类型</a></p>
+<p><a href="https://laravel-china.org/articles/21993" target="_blank" rel="noopener">《2019年小米春季上海 PHP 实习生招聘面试题》部分答案解析 [ 千人千面 ]</a></p>
+<p><a href="https://laravel-china.org/docs/the-laravel-way/5.6" target="_blank" rel="noopener">Laravel 之道</a></p>
+<p><a href="https://github.com/woann/chat" target="_blank" rel="noopener">基于 laravelS 和 layim 的聊天系统</a></p>
+<p><a href="https://laravel-china.org/articles/20714" target="_blank" rel="noopener">PHP 高级工程面试题汇总</a></p>
+<p><a href="https://github.com/xiaohuilam/laravel/wiki" target="_blank" rel="noopener">Laravel 深入浅出指南</a></p>
+<p><a href="https://laravel-china.org/articles/21979" target="_blank" rel="noopener">基于 swoole 协程的 MySQL 连接池</a></p>
+<p><a href="https://laravel-china.org/articles/21966" target="_blank" rel="noopener">swoole 加速 Lumen5.7 Restful API 接口</a></p>
+<p><a href="https://github.com/SakyaVarro/laracasts-translation" target="_blank" rel="noopener">Laracasts 系列教程</a></p>
+<p><a href="https://github.com/kevinyan815/Learning_Laravel_Kernel" target="_blank" rel="noopener">Laravel核心代码学习</a></p>
+<p><a href="https://laravel-china.org/articles/19427" target="_blank" rel="noopener">laravel5.5 支付—— 支付宝</a></p>
+<p><a href="http://doc2.workerman.net/" target="_blank" rel="noopener">GatewayWorker 手册</a></p>
+<p><a href="https://github.com/cxp1539/laravel-core-learn" target="_blank" rel="noopener">Laravel 深入核心系列教程</a></p>
+<p><a href="https://www.v2ex.com/t/401168" target="_blank" rel="noopener">PHP 框架性能测试比较</a></p>
+<p><a href="https://www.v2ex.com/t/428497" target="_blank" rel="noopener">Swoole 加速 Laravel/Lumen</a></p>
+<p><a href="https://doc.swoft.org/master/zh-CN/quickstart/install.html" target="_blank" rel="noopener">swoft</a></p>
+<p><a href="https://learnku.com/articles/23935" target="_blank" rel="noopener">Laravel 源码阅读指南</a></p>
+<p><a href="https://learnku.com/articles/22094" target="_blank" rel="noopener">基于 laravelS 和 layim 的聊天系统</a></p>
+<p><a href="https://github.com/hhxsv5/laravel-s/blob/master/README-CN.md" target="_blank" rel="noopener">快速集成Swoole到Laravel lumen</a></p>
+<p><a href="https://laravel-china.org/articles/20816" target="_blank" rel="noopener">Laravel 源码阅读之一：Composer 自动加载分析</a></p>
+<p><a href="https://github.com/zhuqipeng/alfred-workflow" target="_blank" rel="noopener">Laravel 中文文档检索 Alfred Workflow</a></p>
+<p><a href="https://learnku.com/articles/24742#topnav" target="_blank" rel="noopener">基于 Laravel 框架开发的基础权限后台系统</a></p>
+<p><a href="https://learnku.com/articles/25179" target="_blank" rel="noopener">Laravel 下 Elasticsearch 使用</a></p>
+<p><a href="https://larecipe.binarytorch.com.my/docs/1.3/installation" target="_blank" rel="noopener">markdown文档</a></p>
+<p><a href="https://learnku.com/articles/20539" target="_blank" rel="noopener">基于 Laravel 框架的 rbac 后台管理系统</a></p>
+<p><a href="http://www.luckybird.me/laravel5%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E5%92%8C%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html" target="_blank" rel="noopener">Laravel5配置读写分离和源码分析</a></p>
+<p><a href="https://github.com/shisiying/webim" target="_blank" rel="noopener">Laravel-swoole 开发部署的在线聊天室</a></p>
+<p><a href="https://learnku.com/articles/28607" target="_blank" rel="noopener">PHP 与 Swoole 浅析与学习</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/laravel/" rel="tag"># laravel</a>
+          
+            <a href="/tags/swoole/" rel="tag"># swoole</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/05/php命令行工具/" rel="next" title="php命令行工具">
+                <i class="fa fa-chevron-left"></i> php命令行工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/12/有用的PHP项目收集/" rel="prev" title="有用的PHP项目收集">
+                有用的PHP项目收集 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#laravel-响应慢"><span class="nav-number">1.</span> <span class="nav-text">laravel 响应慢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改器"><span class="nav-number">2.</span> <span class="nav-text">修改器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Supervisor-管理-Laravel-队列"><span class="nav-number">3.</span> <span class="nav-text">Supervisor 管理 Laravel 队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swoole-与-Laravel-结合使用"><span class="nav-number">4.</span> <span class="nav-text">Swoole 与 Laravel 结合使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Websocket-服务中使用-Swoole"><span class="nav-number">5.</span> <span class="nav-text">Websocket 服务中使用 Swoole</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lumen-5-2-手动补回-artisan-serve-指令"><span class="nav-number">6.</span> <span class="nav-text">Lumen 5.2 手动补回 artisan serve 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-频繁出错-Packets-out-of-order-Expected-1-received-111-Packet-size"><span class="nav-number">7.</span> <span class="nav-text">MySQL 频繁出错 Packets out of order. Expected 1 received 111. Packet size</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

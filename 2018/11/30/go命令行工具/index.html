@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="命令行,工具,go,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="安装go12345678910111213141516171819202122232425yum install -y go[root@VM_0_14_centos shadowsocks]# go versiongo version go1.9.4 linux/amd64[root@VM_0_14_centos shadowsocks]# go envGOARCH=&quot;amd64&quot;GOBIN=&quot;&quot;">
+<meta name="keywords" content="命令行,工具,go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go命令行工具">
+<meta property="og:url" content="http://yoursite.com/2018/11/30/go命令行工具/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="安装go12345678910111213141516171819202122232425yum install -y go[root@VM_0_14_centos shadowsocks]# go versiongo version go1.9.4 linux/amd64[root@VM_0_14_centos shadowsocks]# go envGOARCH=&quot;amd64&quot;GOBIN=&quot;&quot;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-18T09:31:36.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="go命令行工具">
+<meta name="twitter:description" content="安装go12345678910111213141516171819202122232425yum install -y go[root@VM_0_14_centos shadowsocks]# go versiongo version go1.9.4 linux/amd64[root@VM_0_14_centos shadowsocks]# go envGOARCH=&quot;amd64&quot;GOBIN=&quot;&quot;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/30/go命令行工具/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>go命令行工具 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/go命令行工具/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">go命令行工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T20:19:23+08:00">
+                2018-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="安装go"><a href="#安装go" class="headerlink" title="安装go"></a>安装go</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">yum install -y go</span><br><span class="line">[root@VM_0_14_centos shadowsocks]# go version</span><br><span class="line">go version go1<span class="number">.9</span><span class="number">.4</span> linux/amd64</span><br><span class="line">[root@VM_0_14_centos shadowsocks]# go env</span><br><span class="line">GOARCH=<span class="string">"amd64"</span></span><br><span class="line">GOBIN=<span class="string">""</span></span><br><span class="line">GOEXE=<span class="string">""</span></span><br><span class="line">GOHOSTARCH=<span class="string">"amd64"</span></span><br><span class="line">GOHOSTOS=<span class="string">"linux"</span></span><br><span class="line">GOOS=<span class="string">"linux"</span></span><br><span class="line">GOPATH=<span class="string">"/root/go"</span></span><br><span class="line">GORACE=<span class="string">""</span></span><br><span class="line">GOROOT=<span class="string">"/usr/lib/golang"</span></span><br><span class="line">GOTOOLDIR=<span class="string">"/usr/lib/golang/pkg/tool/linux_amd64"</span></span><br><span class="line">GCCGO=<span class="string">"gccgo"</span></span><br><span class="line">CC=<span class="string">"gcc"</span></span><br><span class="line">GOGCCFLAGS=<span class="string">"-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build058581188=/tmp/go-build -gno-record-gcc-switches"</span></span><br><span class="line">CXX=<span class="string">"g++"</span></span><br><span class="line">CGO_ENABLED=<span class="string">"1"</span></span><br><span class="line">CGO_CFLAGS=<span class="string">"-g -O2"</span></span><br><span class="line">CGO_CPPFLAGS=<span class="string">""</span></span><br><span class="line">CGO_CXXFLAGS=<span class="string">"-g -O2"</span></span><br><span class="line">CGO_FFLAGS=<span class="string">"-g -O2"</span></span><br><span class="line">CGO_LDFLAGS=<span class="string">"-g -O2"</span></span><br><span class="line">PKG_CONFIG=<span class="string">"pkg-config"</span></span><br></pre></td></tr></table></figure>
+<h3 id="百度网盘客户端"><a href="#百度网盘客户端" class="headerlink" title="百度网盘客户端"></a>百度网盘客户端</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">go get -u https:<span class="comment">//github.com/iikira/BaiduPCS-Go</span></span><br><span class="line">BaiduPCS-Go update</span><br><span class="line"># 搜索根目录的文件</span><br><span class="line">BaiduPCS-Go search -path=<span class="regexp">/ 关键字</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"># 搜索当前工作目录的文件</span></span><br><span class="line"><span class="regexp">BaiduPCS-Go search 关键字</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"># 递归搜索当前工作目录的文件</span></span><br><span class="line"><span class="regexp">BaiduPCS-Go search -r 关键字</span></span><br></pre></td></tr></table></figure>
+<h3 id="简单图床-AUXPI"><a href="#简单图床-AUXPI" class="headerlink" title="简单图床 AUXPI"></a>简单图床 AUXPI</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src</span><br><span class="line">git clone git@github.com:aimerforreimu/AUXPI.git</span><br><span class="line">cd AUXPI/</span><br><span class="line">go get -u github.com/beego/bee</span><br><span class="line">$ bee run auxpi</span><br><span class="line">______</span><br><span class="line">| ___ \</span><br><span class="line">| |_/ <span class="regexp">/  ___   ___</span></span><br><span class="line"><span class="regexp">| ___ \ /</span> _ \ / _ \</span><br><span class="line">| |_/ <span class="regexp">/|  __/</span>|  __/</span><br><span class="line">\____/  \___| \___| v1<span class="number">.10</span><span class="number">.0</span></span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">08</span> INFO     ▶ <span class="number">0001</span> Using <span class="string">'auxpi'</span> <span class="keyword">as</span> <span class="string">'appname'</span></span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">08</span> INFO     ▶ <span class="number">0002</span> Initializing watcher...</span><br><span class="line">auxpi/routers</span><br><span class="line">auxpi</span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">25</span> SUCCESS  ▶ <span class="number">0003</span> Built Successfully!</span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">25</span> INFO     ▶ <span class="number">0004</span> Restarting <span class="string">'auxpi.exe'</span>...</span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">25</span> SUCCESS  ▶ <span class="number">0005</span> <span class="string">'./auxpi.exe'</span> is running...</span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">25.404</span> [I] [parser.go:<span class="number">96</span>]  generate router <span class="keyword">from</span> comments</span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">25.407</span> [I] [parser.go:<span class="number">96</span>]  generate router <span class="keyword">from</span> comments</span><br><span class="line"><span class="number">2018</span>/<span class="number">11</span>/<span class="number">08</span> <span class="number">19</span>:<span class="number">53</span>:<span class="number">25.460</span> [I] [asm_amd64.s:<span class="number">1333</span>]  http server Running on http:<span class="comment">//:2333</span></span><br></pre></td></tr></table></figure>
+<h3 id="基于终端的图形活动监视器"><a href="#基于终端的图形活动监视器" class="headerlink" title="基于终端的图形活动监视器"></a>基于终端的图形活动监视器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth <span class="number">1</span> https:<span class="comment">//github.com/cjbassi/gotop /tmp/gotop</span></span><br><span class="line">sh /tmp/gotop/scripts/download.sh</span><br><span class="line">mv gotop /usr/local/bin</span><br><span class="line">go get github.com/cjbassi/gotop</span><br><span class="line"># 直接执行</span><br><span class="line">gotop</span><br></pre></td></tr></table></figure>
+<h3 id="下载视频"><a href="#下载视频" class="headerlink" title="下载视频"></a>下载视频</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/iawia002/annie</span><br><span class="line">$ annie -i https:<span class="comment">//www.bilibili.com/video/av21877586 https://www.bilibili.com/video/av21990740</span></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     【莓机会了】甜到虐哭的<span class="number">13</span>集单集MAD「我现在什么都不想干,更不想看<span class="number">14</span>集」</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [<span class="keyword">default</span>]  -------------------</span><br><span class="line">     Quality:         高清 <span class="number">1080</span>P</span><br><span class="line">     Size:            <span class="number">51.88</span> MiB (<span class="number">54403767</span> Bytes)</span><br><span class="line">     # download with: annie -f default "URL"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     【莓救了】甜到虐哭！！！国家队单集MAD-当熟悉的bgm响起，眼泪从脸颊滑下</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [<span class="keyword">default</span>]  -------------------</span><br><span class="line">     Quality:         高清 <span class="number">1080</span>P</span><br><span class="line">     Size:            <span class="number">77.63</span> MiB (<span class="number">81404093</span> Bytes)</span><br><span class="line">     # download with: annie -f default "URL"</span><br></pre></td></tr></table></figure>
+<h3 id="跨平台的网络性能测量工具"><a href="#跨平台的网络性能测量工具" class="headerlink" title="跨平台的网络性能测量工具"></a>跨平台的网络性能测量工具</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/Microsoft/ethr</span><br><span class="line">[root@VM_0_14_centos ~]# /root/go/bin/ethr -s</span><br><span class="line">Listening on <span class="number">9991</span> <span class="keyword">for</span> control plane</span><br><span class="line">Listening on <span class="number">9996</span> <span class="keyword">for</span> TCP latency tests</span><br><span class="line">Listening on <span class="number">9998</span> <span class="keyword">for</span> TCP conn/s tests</span><br><span class="line">Listening on <span class="number">9999</span> <span class="keyword">for</span> TCP bandwidth tests</span><br><span class="line">Unable to start HTTP server, so HTTP tests cannot be run: listen tcp :<span class="number">8080</span>: bind: address already <span class="keyword">in</span> use</span><br></pre></td></tr></table></figure>
+<h3 id="海报生成器"><a href="#海报生成器" class="headerlink" title="海报生成器"></a>海报生成器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/qbhy/poster-generater.git</span></span><br><span class="line">cd poster-generater</span><br><span class="line">go build</span><br><span class="line"></span><br><span class="line">[root@VM_0_14_centos poster-generater]# ./poster-generater 7877</span><br><span class="line">[GIN-debug] [WARNING] Now Gin requires Go <span class="number">1.6</span> or later and Go <span class="number">1.7</span> will be required soon.</span><br><span class="line"></span><br><span class="line">[GIN-debug] [WARNING] Creating an Engine instance <span class="keyword">with</span> the Logger and Recovery middleware already attached.</span><br><span class="line"></span><br><span class="line">[GIN-debug] [WARNING] Running <span class="keyword">in</span> <span class="string">"debug"</span> mode. Switch to <span class="string">"release"</span> mode <span class="keyword">in</span> production.</span><br><span class="line"> - using env:   <span class="keyword">export</span> GIN_MODE=release</span><br><span class="line"> - using code:  gin.SetMode(gin.ReleaseMode)</span><br><span class="line"></span><br><span class="line">[GIN-debug] GET    /assets<span class="comment">/*filepath         --&gt; poster-generater/vendor/github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)</span></span><br><span class="line"><span class="comment">[GIN-debug] HEAD   /assets/*filepath         --&gt; poster-generater/vendor/github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)</span></span><br><span class="line"><span class="comment">[GIN-debug] POST   /poster                   --&gt; main.main.func1 (3 handlers)</span></span><br><span class="line"><span class="comment">[GIN-debug] Listening and serving HTTP on :7877</span></span><br><span class="line"><span class="comment">[GIN] 2018/12/19 - 11:48:03 | 404 |        1.05µs |   218.30.113.34 | GET      /</span></span><br></pre></td></tr></table></figure>
+<h3 id="HTTP-S-代理-用于抓包调试"><a href="#HTTP-S-代理-用于抓包调试" class="headerlink" title="HTTP(S)代理, 用于抓包调试"></a>HTTP(S)代理, 用于抓包调试</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mars -p <span class="number">8888</span>:<span class="number">8888</span> -p <span class="number">9999</span>:<span class="number">9999</span> -d ouqg/mars:<span class="number">1.0</span><span class="number">.0</span></span><br><span class="line">wget https:<span class="comment">//github.com/ouqiang/mars/releases</span></span><br><span class="line">解压压缩包</span><br><span class="line">启动: ./mars server</span><br><span class="line">访问代理: http:<span class="comment">//localhost:8888</span></span><br><span class="line">查看流量web页: http:<span class="comment">//localhost:9999, 客户端可扫描二维码下载根证书</span></span><br></pre></td></tr></table></figure>
+<h3 id="自助-Git-服务"><a href="#自助-Git-服务" class="headerlink" title="自助 Git 服务"></a>自助 Git 服务</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">sudo su - git</span><br><span class="line">cd ~</span><br><span class="line"># create a folder to install 'go'</span><br><span class="line">mkdir local</span><br><span class="line"># Download go (change go$VERSION.$OS-$ARCH.tar.gz to the latest release)</span><br><span class="line">wget https:<span class="comment">//storage.googleapis.com/golang/go$VERSION.$OS-$ARCH.tar.gz</span></span><br><span class="line"># expand it to ~/local</span><br><span class="line">tar -C /home/git/local -xzf go$VERSION.$OS-$ARCH.tar.gz</span><br><span class="line">sudo su - git</span><br><span class="line">cd ~</span><br><span class="line">echo <span class="string">'export GOROOT=$HOME/local/go'</span> &gt;&gt; $HOME/.bashrc</span><br><span class="line">echo <span class="string">'export GOPATH=$HOME/go'</span> &gt;&gt; $HOME/.bashrc</span><br><span class="line">echo <span class="string">'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'</span> &gt;&gt; $HOME/.bashrc</span><br><span class="line">source $HOME/.bashrc</span><br><span class="line"># 下载并安装依赖</span><br><span class="line">$ go get -u github.com/gogs/gogs</span><br><span class="line"></span><br><span class="line"># 构建主程序</span><br><span class="line">$ cd $GOPATH/src/github.com/gogs/gogs</span><br><span class="line">$ go build</span><br><span class="line"></span><br><span class="line">cd $GOPATH/src/github.com/gogs/gogs</span><br><span class="line">./gogs web -port <span class="number">3001</span> &amp;</span><br><span class="line"></span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [ WARN] Custom config <span class="string">'/root/go/src/github.com/gogs/gogs/custom/conf/app.ini'</span> not found, igng first time</span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [TRACE] Custom path: <span class="regexp">/root/g</span>o/src/github.com/gogs/gogs/custom</span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [TRACE] Log path: <span class="regexp">/root/g</span>o/src/github.com/gogs/gogs/log</span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [TRACE] Log Mode: Console (Trace)</span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [ INFO] Gogs <span class="number">0.11</span><span class="number">.85</span><span class="number">.1225</span></span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [ INFO] Cache Service Enabled</span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [ INFO] Session Service Enabled</span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">48</span> [ INFO] Run Mode: Development</span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">50</span> [ INFO] Listen: http:<span class="comment">//0.0.0.0:3000</span></span><br><span class="line"><span class="number">2019</span>/<span class="number">01</span>/<span class="number">23</span> <span class="number">14</span>:<span class="number">16</span>:<span class="number">50</span> [FATAL] [...rfave/cli/command.go:<span class="number">193</span> Run()] Failed to start server: listen tcp <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">3000</span>: use</span><br><span class="line">[root@VM_0_14_centos gogs]# lsof -i:3000</span><br><span class="line">COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME</span><br><span class="line">docker-pr <span class="number">3588</span> root    <span class="number">4</span>u  IPv6  <span class="number">29572</span>      <span class="number">0</span>t0  TCP *:hbci (LISTEN)</span><br><span class="line"></span><br><span class="line">修改端口 参考 https:<span class="comment">//gogs.io/docs/advanced/configuration_cheat_sheet.html</span></span><br><span class="line">touch custom/conf/app.ini</span><br><span class="line">vi app.ini</span><br><span class="line">[server]</span><br><span class="line"></span><br><span class="line">HTTP_PORT = <span class="number">6666</span></span><br><span class="line"></span><br><span class="line">nginx 反向代理 </span><br><span class="line">server &#123;</span><br><span class="line">    listen <span class="number">80</span>;</span><br><span class="line">    server_name git.crystalnetwork.us;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http:<span class="comment">//localhost:3001;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">访问</span><br><span class="line"> http:<span class="comment">//118.24.158.116:3001/  如果无法访问，可能是项目在root目录下的原因，重新设置gopath,重新go get和build</span></span><br><span class="line"> </span><br><span class="line"> λ shs root@<span class="number">118.24</span><span class="number">.158</span><span class="number">.116</span></span><br><span class="line"> PTY allocation request failed on channel <span class="number">0</span></span><br><span class="line"> Hi there, You<span class="string">'ve successfully authenticated, but Gogs does not provide shell access.</span></span><br><span class="line"><span class="string"> If this is unexpected, please log in with password and setup Gogs under another user.</span></span><br><span class="line"><span class="string"> Connection to 118.24.158.116 closed.</span></span><br><span class="line"><span class="string"> Mac平台下，进入~/.ssh目录，之前肯定有了一对密钥，公钥id_rsa.pub和私钥id_rsa。</span></span><br><span class="line"><span class="string"> 使用命令生成新的一对密钥，切记要命名跟原来的密钥不同，ssh-keygen -t rsa -f gogs_id_rsa -C "xiong-wei@hotmail.com"</span></span><br><span class="line"><span class="string"> 在.ssh目录中创建config文件，然后添加如下内容：</span></span><br><span class="line"><span class="string"> Host 118.24.158.116</span></span><br><span class="line"><span class="string"> IdentityFile ~/.ssh/gogs_id_rsa</span></span><br><span class="line"><span class="string"> IdentitiesOnly yes</span></span><br></pre></td></tr></table></figure>
+<h3 id="切换-Git-分支"><a href="#切换-Git-分支" class="headerlink" title="切换 Git 分支"></a>切换 Git 分支</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/royeo/git-checkout-branch</span><br><span class="line">如果你正在使用 GO1<span class="number">.11</span> Module，使用以下命令进行安装：</span><br><span class="line"></span><br><span class="line">GO111MODULE=off go get -u github.com/royeo/git-checkout-branch</span><br><span class="line">建议为 checkout-branch 设置别名，例如 cb，这样就可以直接使用 git cb 来进行分支切换。</span><br><span class="line"></span><br><span class="line">git config --global alias.cb checkout-branch</span><br><span class="line">帮助</span><br><span class="line"></span><br><span class="line">使用 git checkout-branch help 获取帮助信息。</span><br></pre></td></tr></table></figure>
+<h3 id="命令行压缩和解压"><a href="#命令行压缩和解压" class="headerlink" title="命令行压缩和解压"></a>命令行压缩和解压</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/mholt/archiver/cmd/arc</span><br><span class="line">$ arc archive test.tar.gz file1.txt images/file2.jpg folder/subfolder</span><br><span class="line">$ arc unarchive test.tar.gz</span><br><span class="line"></span><br><span class="line">$ arc ls caddy_dist.tar.gz</span><br><span class="line">drwxr-xr-x  matt    staff   <span class="number">0</span>       <span class="number">2018</span><span class="number">-09</span><span class="number">-19</span> <span class="number">15</span>:<span class="number">47</span>:<span class="number">18</span> <span class="number">-0600</span> MDT   dist/</span><br><span class="line">-rw-r--r--  matt    staff   <span class="number">6148</span>    <span class="number">2017</span><span class="number">-08</span><span class="number">-07</span> <span class="number">18</span>:<span class="number">34</span>:<span class="number">22</span> <span class="number">-0600</span> MDT   dist/.DS_Store</span><br><span class="line">-rw-r--r--  matt    staff   <span class="number">22481</span>   <span class="number">2018</span><span class="number">-09</span><span class="number">-19</span> <span class="number">15</span>:<span class="number">47</span>:<span class="number">18</span> <span class="number">-0600</span> MDT   dist/CHANGES.txt</span><br><span class="line">-rw-r--r--  matt    staff   <span class="number">17189</span>   <span class="number">2018</span><span class="number">-09</span><span class="number">-19</span> <span class="number">15</span>:<span class="number">47</span>:<span class="number">18</span> <span class="number">-0600</span> MDT   dist/EULA.txt</span><br><span class="line">-rw-r--r--  matt    staff   <span class="number">25261</span>   <span class="number">2016</span><span class="number">-03</span><span class="number">-07</span> <span class="number">16</span>:<span class="number">32</span>:<span class="number">00</span> <span class="number">-0700</span> MST   dist/LICENSES.txt</span><br><span class="line">-rw-r--r--  matt    staff   <span class="number">1017</span>    <span class="number">2018</span><span class="number">-09</span><span class="number">-19</span> <span class="number">15</span>:<span class="number">47</span>:<span class="number">18</span> <span class="number">-0600</span> MDT   dist/README.txt</span><br><span class="line">-rw-r--r--  matt    staff   <span class="number">288</span>     <span class="number">2016</span><span class="number">-03</span><span class="number">-21</span> <span class="number">11</span>:<span class="number">52</span>:<span class="number">38</span> <span class="number">-0600</span> MDT   dist/gitcookie.sh.enc</span><br></pre></td></tr></table></figure>
+<p><a href="https://learnku.com/golang/t/24715" target="_blank" rel="noopener">Golang 新手教程：入门速成指南</a></p>
+<p><a href="https://juejin.im/entry/5c00e5fce51d4550c76d9097?from=timeline&amp;isappinstalled=0" target="_blank" rel="noopener">go 语言优秀开源项目汇总</a></p>
+<p><a href="https://learnku.com/golang/t/24598" target="_blank" rel="noopener">使用 go 的 gin 和 gorm 框架来构建 RESTful API 微服务</a></p>
+<p><a href="https://github.com/syyongx/php2go" target="_blank" rel="noopener"> Golang 实现 PHP 常用内置函数</a></p>
+<p> <a href="https://blog.tedxiong.com/use_different_ssh_key_to_login_server_between_gogs_and_user.html" target="_blank" rel="noopener">golang学习笔记</a></p>
+<p><a href="https://blog.mynook.info/post/host-your-own-git-server-using-gogs/" target="_blank" rel="noopener">使用 Gogs 搭建自己的 Git 服务器</a></p>
+<p><a href="Go开源项目学习">Go开源项目学习</a></p>
+<p><a href="https://github.com/Unknwon/go-code-convention/blob/master/zh-CN/README.md" target="_blank" rel="noopener">go编码规范</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzUxNTEwNTg5Mg==&amp;mid=2247485265&amp;idx=1&amp;sn=05054770eb2146903c8756b695690626&amp;chksm=f9baf25acecd7b4c0a8239793cb3075e3de519868d567872a3f4e382042c1bd7c7e59ce3bf99&amp;token=135425060&amp;lang=zh_CN#rd" target="_blank" rel="noopener">自动生成Restful API文档</a></p>
+<p><a href="https://github.com/containous/traefik?utm_source=gold_browser_extension" target="_blank" rel="noopener">http代理工具</a></p>
+<p><a href="https://segmentfault.com/a/1190000017568794" target="_blank" rel="noopener">【Go学习笔记】2018-12-27</a></p>
+<p><a href="https://github.com/v2ray/v2ray-core?utm_source=gold_browser_extension" target="_blank" rel="noopener">ss代理</a></p>
+<p><a href="https://gogs.io/" target="_blank" rel="noopener">一款极易搭建的自助 Git 服务</a></p>
+<p><a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md" target="_blank" rel="noopener">go教程</a></p>
+<p><a href="https://github.com/fatedier/frp?utm_source=gold_browser_extension" target="_blank" rel="noopener">内网穿透的高性能的反向代理应用</a></p>
+<p><a href="https://github.com/prometheus/prometheus?utm_source=gold_browser_extension" target="_blank" rel="noopener">监控报警系统</a></p>
+<p><a href="https://github.com/CreatCodeBuild/go-tutorials" target="_blank" rel="noopener">初学者的 Go 语言教程</a></p>
+<p><a href="https://learnku.com/articles/23653" target="_blank" rel="noopener">一个简单高性能的 router</a></p>
+<p><a href="https://github.com/CreatCodeBuild/gogen" target="_blank" rel="noopener">Go 语言数据结构代码生成器</a></p>
+<p><a href="http://blog.wuxu92.com/notes-of-go-by-example/" target="_blank" rel="noopener">go-by-example</a></p>
+<p><a href="https://github.com/aliliin/Learn-golang" target="_blank" rel="noopener">go学习</a></p>
+<p><a href="https://github.com/ExinOne/ExinCore/blob/master/README_cn.md" target="_blank" rel="noopener">去中心化数字资产闪兑平台</a></p>
+<p><a href="https://learnku.com/articles/25133#topnav" target="_blank" rel="noopener">《 刻意学习 Golang 》</a></p>
+<p><a href="https://github.com/ffhelicopter/Go42" target="_blank" rel="noopener">《Go语言四十二章经》</a></p>
+<p><a href="https://www.imooc.com/learn/927" target="_blank" rel="noopener">搭建并行处理管道，感受GO语言魅力</a></p>
+<p><a href="https://goproxy.io/" target="_blank" rel="noopener">A global proxy for go modules</a></p>
+<p><a href="https://search.gocenter.io/stats" target="_blank" rel="noopener">The Central Go Modules Repository</a></p>
+<p><a href="https://xiaozhou.net/learn-the-command-line-tools-md-2018-10-11.html" target="_blank" rel="noopener">程序员内功系列–常用命令行工具</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/命令行/" rel="tag"># 命令行</a>
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+            <a href="/tags/go/" rel="tag"># go</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/Python命令行工具/" rel="next" title="Python命令行工具">
+                <i class="fa fa-chevron-left"></i> Python命令行工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/03/斐波那契数列/" rel="prev" title="斐波那契数列">
+                斐波那契数列 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装go"><span class="nav-number">1.</span> <span class="nav-text">安装go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度网盘客户端"><span class="nav-number">2.</span> <span class="nav-text">百度网盘客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单图床-AUXPI"><span class="nav-number">3.</span> <span class="nav-text">简单图床 AUXPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于终端的图形活动监视器"><span class="nav-number">4.</span> <span class="nav-text">基于终端的图形活动监视器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载视频"><span class="nav-number">5.</span> <span class="nav-text">下载视频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨平台的网络性能测量工具"><span class="nav-number">6.</span> <span class="nav-text">跨平台的网络性能测量工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#海报生成器"><span class="nav-number">7.</span> <span class="nav-text">海报生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-S-代理-用于抓包调试"><span class="nav-number">8.</span> <span class="nav-text">HTTP(S)代理, 用于抓包调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自助-Git-服务"><span class="nav-number">9.</span> <span class="nav-text">自助 Git 服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换-Git-分支"><span class="nav-number">10.</span> <span class="nav-text">切换 Git 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行压缩和解压"><span class="nav-number">11.</span> <span class="nav-text">命令行压缩和解压</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

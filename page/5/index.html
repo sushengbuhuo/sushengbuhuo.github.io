@@ -1,0 +1,2933 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="苏生不惑的博客">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="苏生不惑的博客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/5/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/微博认证成功了/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/微博认证成功了/" itemprop="url">微博认证成功了</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:13:44+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  416 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。</p>
+<p>端午节放假 3 天，可以好好睡一觉了。</p>
+<p>2012 年开始玩微博，至今 5 年了 ，5 年来几乎每天更新微博，这应该是我坚持最久的一件事。上周申请了微博认证，很快就通过了，哥也是有身份的人了，虽然并没有什么卵用。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-0f3a2ad5f3efcc45?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-610ae6ae8910f8e6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>5 年的微博见证着我在北京的种种。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-337edda1dbed5019?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>转发过很多鸡汤</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d8e6ad66fbb23005?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>历经”世界末日“</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-36e6500ed7f41a1d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a40e425b9eb4555f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-38c3a152ef891487?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-aa639b6903322af3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5e8b6aef09a61b44?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5fc375abc940a007?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>看过的电影</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-50dd932d7fa59d68?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>听过的歌</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-81bf007f4f3850a2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>下面就推荐 10 个有意思的微博博主吧</p>
+<p>0.@办公室小野 见识脑洞大开的吃货 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7422bafa0b6159b0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>1.@野食小哥 没胃口的时候看看他怎么吃的</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-facf47acfa08a587?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>2.@一生唐伯虎 致敬星爷</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-ad6e5e82a327b1b4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>3.@linux命令行精选网 各种有用的命令行</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e499cea66dac2b94?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>4.@网易云热评君 听歌看评论只服网易云音乐</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a4279c73140eeb4e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>5.@郊县天王老田 漫画式秀恩爱</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2a76dead2e5d407f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>6.@w巫木木 了解周杰伦最新动态</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-98e8326cdb101eae?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>7.@资源掌柜 没有你找不到的资源</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5f01ee0b0cdb522c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>8.@papi酱 吐槽能手奇女子</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-1bd2dd6dcd61cd62?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>9.@网路冷眼  了解最新技术动态</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-6933e16472ceabfa?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>以上是我关注中的 10 个比较有意思的微博博主，如果你也有关注的其他有意思的博主可以推荐给我，感谢，祝端午节快乐。</p>
+<p>最近余额宝年收益破万 4 了，目前放了 8 万左右，可惜个人上限为 25 万，这是我唯一的理财方式了，今后可能需要其他的理财产品。不知道还有什么更高安全收益的理财产品推荐，可以给我留言交流。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4e2f6ce0736fbe6a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/网易云音乐那些扎心评论/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/网易云音乐那些扎心评论/" itemprop="url">网易云音乐那些扎心评论</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:12:03+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。</p>
+<p>所谓“一入网易深似海，从此其他音乐 APP 是路人”，在网易云音乐不仅仅是听歌，看评论也是一种乐趣，今天就推荐那些网易云音乐扎心评论，有些还被留在杭州地铁上，好想去杭州坐地铁感受下。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c97cb666130271fd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-919682f06775c661?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-463dd994e22e4655?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-18ffa0fa3b5fbca9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-776fbe68dcc1264f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>截止目前网易云音乐评论最高的歌曲来自杰伦的那首灵魂歌曲《晴天》，评论数已突破 147 万，而且每天在新增，有网友整理了个评论过 5 万的歌单 <a href="http://music.163.com/#/playlist?id=455717860" target="_blank" rel="noopener">http://music.163.com/#/playlist?id=455717860</a> ，赶紧收藏起来吧。</p>
+<h3 id="周杰伦《晴天》-http-music-163-com-song-id-186016"><a href="#周杰伦《晴天》-http-music-163-com-song-id-186016" class="headerlink" title="周杰伦《晴天》 http://music.163.com/#/song?id=186016"></a>周杰伦《晴天》 <a href="http://music.163.com/#/song?id=186016" target="_blank" rel="noopener">http://music.163.com/#/song?id=186016</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">1.</span>  <span class="string">`现在想来  我们这波第一批老去的90后还是挺幸运的`</span> </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>  <span class="string">`在我们最好的年龄遇到了最好的华语乐坛（周杰伦巅峰  林俊杰 SHE 潘玮柏  蔡依林…）`</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>  <span class="string">`遇到了巅峰的星爷  遇到了最好的西科东艾北卡南麦  动画城陪我们成长`</span> </span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>  <span class="string">`周杰伦陪我们成熟  我们看着星爷老去  见证科比退役`</span> </span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>  <span class="string">`或许我们不是最好的一代  但一定是最精彩的一代`</span></span><br></pre></td></tr></table></figure>
+<h3 id="信乐团《离歌》-http-music-163-com-song-id-387592"><a href="#信乐团《离歌》-http-music-163-com-song-id-387592" class="headerlink" title="信乐团《离歌》 http://music.163.com/#/song?id=387592"></a>信乐团《离歌》 <a href="http://music.163.com/#/song?id=387592" target="_blank" rel="noopener">http://music.163.com/#/song?id=387592</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `第一个喜欢的姑娘在ktv跟她男票接的初吻，在我面前。那是我这辈子唯一一次把这首歌唱上去。`</span><br></pre></td></tr></table></figure>
+<h3 id="王菲《匆匆那年》http-music-163-com-song-id-29713754"><a href="#王菲《匆匆那年》http-music-163-com-song-id-29713754" class="headerlink" title="王菲《匆匆那年》http://music.163.com/#/song?id=29713754"></a>王菲《匆匆那年》<a href="http://music.163.com/#/song?id=29713754" target="_blank" rel="noopener">http://music.163.com/#/song?id=29713754</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.  `我已经变成了厚脸皮随意听荤段子的女生，可是想起你的时候，还是想穿一次白裙子给你看。`</span><br></pre></td></tr></table></figure>
+<h3 id="陈奕迅《好友不见》-http-music-163-com-song-id-65538"><a href="#陈奕迅《好友不见》-http-music-163-com-song-id-65538" class="headerlink" title="陈奕迅《好友不见》 http://music.163.com/#/song?id=65538"></a>陈奕迅《好友不见》 <a href="http://music.163.com/#/song?id=65538" target="_blank" rel="noopener">http://music.163.com/#/song?id=65538</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `这是我今年参加的第三次相亲。一坐下来妈妈便开始讲起对面那女孩的种种优点来，`</span><br><span class="line"></span><br><span class="line">2.  `中心思想就是我必须娶她回家当老婆。我妈妈讲完，对方的妈妈又开始向她女儿夸起我来.`</span><br><span class="line"></span><br><span class="line">3.  `半个钟头过后两位妈妈才互相打了一个眼色离开餐桌把我们两人单独留下.`</span><br><span class="line"></span><br><span class="line">4.  `我和她静静对视了一分钟,“好久不见。”她先开口道`</span><br></pre></td></tr></table></figure>
+<h3 id="鹿先森乐队《春风十里》http-music-163-com-song-id-38576323"><a href="#鹿先森乐队《春风十里》http-music-163-com-song-id-38576323" class="headerlink" title="鹿先森乐队《春风十里》http://music.163.com/#/song?id=38576323"></a>鹿先森乐队《春风十里》<a href="http://music.163.com/#/song?id=38576323" target="_blank" rel="noopener">http://music.163.com/#/song?id=38576323</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `春风十里  五十里  一百里  体测八百米  海底两万里  德芙巧克力  香草味八喜  可可布朗尼` </span><br><span class="line"></span><br><span class="line">2.  `榴莲菠萝蜜  芝士玉米粒  鸡汁土豆泥  黑椒牛里脊  黄焖辣子鸡  红烧排骨酱醋鱼  不如你  全都不如你`</span><br></pre></td></tr></table></figure>
+<h3 id="陈绮贞《我喜欢上你的时内心活动》http-music-163-com-song-id-471403427"><a href="#陈绮贞《我喜欢上你的时内心活动》http-music-163-com-song-id-471403427" class="headerlink" title="陈绮贞《我喜欢上你的时内心活动》http://music.163.com/#/song?id=471403427"></a>陈绮贞《我喜欢上你的时内心活动》<a href="http://music.163.com/#/song?id=471403427" target="_blank" rel="noopener">http://music.163.com/#/song?id=471403427</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.  `跟我走吧  忐忑给你  情书给你  不眠的夜给你  四月的清晨给你  雪糕的第一口给你` </span><br><span class="line"></span><br><span class="line">2.  `海底捞最后一颗鱼丸给你  手给你  怀抱给你  车票给你  跋涉给你  等待给你` </span><br><span class="line"></span><br><span class="line">3.  `钥匙给你  家给你  一腔孤勇和余生六十年  全都给你`</span><br></pre></td></tr></table></figure>
+<h3 id="刘若英-《一辈子孤单》http-music-163-com-song-id-25949863"><a href="#刘若英-《一辈子孤单》http-music-163-com-song-id-25949863" class="headerlink" title="刘若英 《一辈子孤单》http://music.163.com/#/song?id=25949863"></a>刘若英 《一辈子孤单》<a href="http://music.163.com/#/song?id=25949863" target="_blank" rel="noopener">http://music.163.com/#/song?id=25949863</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `刘若英在演唱会上问粉丝我真的会一直孤单嘛？结果奶茶现在孩子都有了。我想问我的幸福在哪？`</span><br></pre></td></tr></table></figure>
+<h3 id="好妹妹乐队《你曾是少年》http-music-163-com-song-id-26427663"><a href="#好妹妹乐队《你曾是少年》http-music-163-com-song-id-26427663" class="headerlink" title="好妹妹乐队《你曾是少年》http://music.163.com/#/song?id=26427663"></a>好妹妹乐队《你曾是少年》<a href="http://music.163.com/#/song?id=26427663" target="_blank" rel="noopener">http://music.163.com/#/song?id=26427663</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `某天，你无端想起一个人，她曾让你对明天有所期许，但是却完全没有出现在你的明天里。`</span><br><span class="line"></span><br><span class="line">2.  `我曾是个少年，但时光悄无声息的流逝，就像今天不知不觉的飘了几片雪花而我却什么也不知。`</span><br></pre></td></tr></table></figure>
+<h3 id="薛之谦《你还要我怎样》http-music-163-com-song-id-27955653"><a href="#薛之谦《你还要我怎样》http-music-163-com-song-id-27955653" class="headerlink" title="薛之谦《你还要我怎样》http://music.163.com/#/song?id=27955653"></a>薛之谦《你还要我怎样》<a href="http://music.163.com/#/song?id=27955653" target="_blank" rel="noopener">http://music.163.com/#/song?id=27955653</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `听了很多遍也没有经心，下的时候也是因为一些啼笑皆非的理由，`</span><br><span class="line"></span><br><span class="line">2.  `只是昨天在自习室背书的时候觉得旋律很合适，就单曲循环了起来，`</span><br><span class="line"></span><br><span class="line">3.  `直到听到那一句【有一天晚上  梦一场  你白发苍苍  说带我流浪  我还是没犹豫  就随你去天堂  】`</span><br><span class="line"></span><br><span class="line">4.  `一个激灵抓起手机仔仔细细的看歌词，趴在没有人的自习室痛哭出声。`</span><br></pre></td></tr></table></figure>
+<h3 id="莫文蔚《他不爱我》http-music-163-com-song-id-276995"><a href="#莫文蔚《他不爱我》http-music-163-com-song-id-276995" class="headerlink" title="莫文蔚《他不爱我》http://music.163.com/#/song?id=276995"></a>莫文蔚《他不爱我》<a href="http://music.163.com/#/song?id=276995" target="_blank" rel="noopener">http://music.163.com/#/song?id=276995</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `小时候刮奖刮出“谢”字还不扔，非要把“谢谢惠顾”都刮的干干净净才舍得放手，和后来太多的事一模一样。`</span><br></pre></td></tr></table></figure>
+<h3 id="谢安琪《钟无艳》http-music-163-com-song-id-308353"><a href="#谢安琪《钟无艳》http-music-163-com-song-id-308353" class="headerlink" title="谢安琪《钟无艳》http://music.163.com/#/song?id=308353"></a>谢安琪《钟无艳》<a href="http://music.163.com/#/song?id=308353" target="_blank" rel="noopener">http://music.163.com/#/song?id=308353</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.  `无人问我粥可温  无人与我立黄昏`</span><br></pre></td></tr></table></figure>
+<h3 id="杨千嬅《再见二丁目》http-music-163-com-song-id-316938"><a href="#杨千嬅《再见二丁目》http-music-163-com-song-id-316938" class="headerlink" title="杨千嬅《再见二丁目》http://music.163.com/#/song?id=316938"></a>杨千嬅《再见二丁目》<a href="http://music.163.com/#/song?id=316938" target="_blank" rel="noopener">http://music.163.com/#/song?id=316938</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `林夕把最好的词给了杨千嬅，把情感的凝练给了王菲，把对生活情感的领悟哲理给了陈奕迅`</span><br></pre></td></tr></table></figure>
+<h3 id="庄心妍《以后的以后》http-music-163-com-song-id-27676089"><a href="#庄心妍《以后的以后》http-music-163-com-song-id-27676089" class="headerlink" title="庄心妍《以后的以后》http://music.163.com/#/song?id=27676089"></a>庄心妍《以后的以后》<a href="http://music.163.com/#/song?id=27676089" target="_blank" rel="noopener">http://music.163.com/#/song?id=27676089</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `你结婚的时候也请寄一张请帖给我吧，我见过你所有的样子，还想看看你最后不属于我的样子`</span><br></pre></td></tr></table></figure>
+<h3 id="张悬《喜欢》http-music-163-com-song-id-326719"><a href="#张悬《喜欢》http-music-163-com-song-id-326719" class="headerlink" title="张悬《喜欢》http://music.163.com/#/song?id=326719"></a>张悬《喜欢》<a href="http://music.163.com/#/song?id=326719" target="_blank" rel="noopener">http://music.163.com/#/song?id=326719</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `喜欢就去表白，大不了连朋友都做不成，做朋友又有什么用，我又不缺朋友，我缺你。`</span><br></pre></td></tr></table></figure>
+<h3 id="金玟岐《岁月神偷》"><a href="#金玟岐《岁月神偷》" class="headerlink" title="金玟岐《岁月神偷》"></a>金玟岐《岁月神偷》</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `为了找到她的网易云账号我一个一个她可能会用的id都搜过  终于让我找到了` </span><br><span class="line"></span><br><span class="line">2.  `从里面找了她经常听的一首歌  不知道她会不会看评论  我想就算她喜欢看评论` </span><br><span class="line"></span><br><span class="line">3.  `也看不到我这条了吧。`</span><br></pre></td></tr></table></figure>
+<h3 id="Misha-Mishenko《Vakning-að-elska》http-music-163-com-song-id-26224540"><a href="#Misha-Mishenko《Vakning-að-elska》http-music-163-com-song-id-26224540" class="headerlink" title="Misha Mishenko《Vakning að elska》http://music.163.com/#/song?id=26224540"></a>Misha Mishenko《Vakning að elska》<a href="http://music.163.com/#/song?id=26224540" target="_blank" rel="noopener">http://music.163.com/#/song?id=26224540</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `无人与我立黄昏，无人问我粥可温，无人与我捻熄灯，无人共我书半生，无人陪我夜已深，`</span><br><span class="line"></span><br><span class="line">2.  `无人与我把酒分，无人拭我相思泪，无人梦我与前尘，无人陪我顾星辰，无人醒我茶已冷，`</span><br><span class="line"></span><br><span class="line">3.  `无人听我述衷肠，无人解我心头梦，无人拘我言中泪，无人愁我独行路，回首向来萧瑟处，`</span><br><span class="line"></span><br><span class="line">4.  `无人等在灯火阑珊处。` </span><br><span class="line"></span><br><span class="line">7.  `残阳与我立黄昏，阿婆问我粥可温。飞蛾与我捻熄灯，笔砚共我书半生。孤月陪我夜已深，`</span><br><span class="line"></span><br><span class="line">8.  `往事与我把酒分。春风拭我相思泪，睡梦与我恋前尘。微风陪我顾星辰，案几知我茶已冷。`</span><br><span class="line"></span><br><span class="line">9.  `归燕听我诉衷肠，暗香解我心头梦。素衣拘我言中泪，竹杖伴我独行路。回首向来萧瑟处，`</span><br><span class="line"></span><br><span class="line">10.  `那人却在灯火阑珊处。`</span><br></pre></td></tr></table></figure>
+<h3 id="林忆莲《词不达意》http-music-163-com-song-id-255858"><a href="#林忆莲《词不达意》http-music-163-com-song-id-255858" class="headerlink" title="林忆莲《词不达意》http://music.163.com/#/song?id=255858"></a>林忆莲《词不达意》<a href="http://music.163.com/#/song?id=255858" target="_blank" rel="noopener">http://music.163.com/#/song?id=255858</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `每次看这里的评论，总感觉像是在看一段街头采访视频，每个人都匆匆忙忙，`</span><br><span class="line"></span><br><span class="line">2.  `只是在镜头前留下自己的两三句话，但总让我仿佛看到了他们的青春，遗憾，喜乐，成长。`</span><br><span class="line"></span><br><span class="line">3.  `步履不停的人也总想找个与世隔绝的角落悄悄地吐露心声，静静地缅怀追忆，睁开眼我们又是赶路人。`</span><br></pre></td></tr></table></figure>
+<h3 id="程璧《我想和你虚度时光》http-music-163-com-song-id-30706318"><a href="#程璧《我想和你虚度时光》http-music-163-com-song-id-30706318" class="headerlink" title="程璧《我想和你虚度时光》http://music.163.com/#/song?id=30706318"></a>程璧《我想和你虚度时光》<a href="http://music.163.com/#/song?id=30706318" target="_blank" rel="noopener">http://music.163.com/#/song?id=30706318</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `我们从此不刷牙洗脸，不走亲访友，不交养老保险，我们在海边有座房子，室徒四壁，一个床垫子，`</span><br><span class="line"></span><br><span class="line">2.  `几瓶福佳白啤，几本黄色小说，在烛光下，在海浪里，光腚跳舞，弹琴做爱，虚度时光，直到死去。`</span><br></pre></td></tr></table></figure>
+<h3 id="周传雄《黄昏》http-music-163-com-song-id-190072"><a href="#周传雄《黄昏》http-music-163-com-song-id-190072" class="headerlink" title="周传雄《黄昏》http://music.163.com/#/song?id=190072"></a>周传雄《黄昏》<a href="http://music.163.com/#/song?id=190072" target="_blank" rel="noopener">http://music.163.com/#/song?id=190072</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `对这首歌一直有特别的感觉。那时候大街小巷都在循环播放它，幼身的自己正在从所在的城市，`</span><br><span class="line"></span><br><span class="line">2.  `穿越到另一个城市的海边，阴沉的海风，涌动的波涛，黑色的沙滩，记忆的童年，`</span><br><span class="line"></span><br><span class="line">3.  `那时候哪里有什么情伤，不知道为什么，也会觉得，整个城市里的人好像都在抽泣。`</span><br></pre></td></tr></table></figure>
+<h3 id="陈奕迅《陪你度过漫长岁月》http-music-163-com-song-id-35403523"><a href="#陈奕迅《陪你度过漫长岁月》http-music-163-com-song-id-35403523" class="headerlink" title="陈奕迅《陪你度过漫长岁月》http://music.163.com/#/song?id=35403523"></a>陈奕迅《陪你度过漫长岁月》<a href="http://music.163.com/#/song?id=35403523" target="_blank" rel="noopener">http://music.163.com/#/song?id=35403523</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `认识九年多，我在武汉，她在深圳，我们隔着1000多公里的两座城市。`</span><br><span class="line"></span><br><span class="line">2.  `因为直飞深圳太贵，选择了飞广州，再搭高铁去深圳。打了出粗车，坐了机场大巴，换乘了一路的地铁，`</span><br><span class="line"></span><br><span class="line">3.  `终于在下午五点半到了她公司楼下，看到她发现我突然出现在她公司楼下的表情。好像一切都值了。`</span><br><span class="line"></span><br><span class="line">4.  `我们应该会结婚吧，陪着你渡过漫长岁月。`</span><br></pre></td></tr></table></figure>
+<h3 id="ps：最近转发微博又中奖了（我为什么说又呢），是一件极客T恤"><a href="#ps：最近转发微博又中奖了（我为什么说又呢），是一件极客T恤" class="headerlink" title="ps：最近转发微博又中奖了（我为什么说又呢），是一件极客T恤"></a>ps：最近转发微博又中奖了（我为什么说又呢），是一件极客T恤</h3><p><img src="https://upload-images.jianshu.io/upload_images/17817191-ff3034100fd2f959?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>pps: 今天我爸又打电话催我：什么这么大的人还不结婚，还让不让我们好好过了，老家的地都快征完了，每个人能分十多万，我们家就 3 个人，难道我不想结婚，我也很绝望啊。。。</p>
+<p>每篇文章推荐一个工具：将你的微博，微信朋友圈出版成书，微信书<a href="https://weixinshu.com/" target="_blank" rel="noopener">https://weixinshu.com/</a> 出书啦 <a href="http://www.chushu.la/" target="_blank" rel="noopener">http://www.chushu.la/</a> 她们都有微博和公众号，关注即可。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-81f6e4416d141d67?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>The End</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/微博备份/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/微博备份/" itemprop="url">微博备份</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:09:02+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  988 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。<br>玩微博 5 年了，至今发布微博 66747 条，前几天微博突然挂了，而且最近微博管控越来越严格了，为了安全把我的 5 年微博备份下，使用的工具是一个 chrome 插件 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-31d86e4d0f89789b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-840803c8c8522b55?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>具体使用教程见这条微博 <a href="http://weibo.com/1869328492/F9cR9okDK?type=comment#_rnd1498388083394" target="_blank" rel="noopener">http://weibo.com/1869328492/F9cR9okDK?type=comment#_rnd1498388083394</a> 扩展见微盘 <a href="http://vdisk.weibo.com/s/x5GuwUhlGH/1498206615" target="_blank" rel="noopener">http://vdisk.weibo.com/s/x5GuwUhlGH/1498206615</a> 由于 chrome 扩展安装需要翻(fan)墙(qiang)，所以作者提供的是 crx 文件，下载后拖到扩展里就可以安装 感谢作者@Easy</p>
+<p>一、下载后，拖入chrome扩展页安装。</p>
+<p>二、点击工具图标进入操作页面，微信扫码登录。这时注意一下，先打开weibo.com登录你的微博。这里登录后，下面一步weibo.cn时会自动登录，因为weibo.cn的登录很麻烦，所以这里要先登录。</p>
+<p>三、会看到【点我测试我的微博网络】，点它，打开weibo.cn。返回工具页面，点【登录后点此继续】。这里要注意一下，在打开的weibo.cn页面，下拉到最底下，看到条数，点开，设置20。点预览，后点保存设置。返回工具页面，再点【全量备份】。微博越多速度越慢。如果你发现数字不动了，点一下图标，即可开新页，会看到可以继续，</p>
+<p>四、完成后，会自动进入预览效果页面。会有一个下载按钮。点下载即可。</p>
+<p>五、会得到一个压缩包，解压后，就是N个html文件，这就是把你的微博备份了。</p>
+<p>下载后的文件打开若有乱码，则更新浏览器。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-fb46a68d5b039e27?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"> </p>
+<p>从早上 9 点就开始备份了，然后我的微博数实在太大了， 共 66741 条 6675 页微博需要备份，预计需要 166 分钟，作者都惊呆了，鬼知道我都发了些什么微博。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-67b9033855e22bc5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-f190ca7fbf413be2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e2cff78bafc765b9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-16ba9fed891acfa7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e2815558f34efd09?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>最后还是微信上@easy 直接帮我导出了，感谢。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-91f9adbd635099ae?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>作者还给懂PHP的同学提供两个微贝的增强脚本，解压后放到那堆html 同级目录，运行 php json.php 会把feed数据提取到json目录，运行 php img.php 可以把页面中的图片备份到本地并替换链接。<a href="http://vdisk.weibo.com/s/x5GuwUhQQ_/1498322627" target="_blank" rel="noopener">http://vdisk.weibo.com/s/x5GuwUhQQ_/1498322627</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br></pre></td><td class="code"><pre><span class="line">$ cat json.php</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">foreach( glob(  <span class="string">'*.html'</span> ) <span class="keyword">as</span> $k =&gt; $htmlfile )</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">        echo <span class="string">"File $htmlfile ..."</span>;</span><br><span class="line"></span><br><span class="line">        $reg = <span class="string">'/this\.feeds\s+=\s+(.+?)\&#125;\s+,\s+1000/is'</span>;</span><br><span class="line"></span><br><span class="line">        $content = file_get_contents( $htmlfile );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>( preg_match( $reg , $content , $out ) )</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>($data = json_decode( trim($out[<span class="number">1</span>]) , <span class="number">1</span> ))</span><br><span class="line"></span><br><span class="line">                &#123;</span><br><span class="line"></span><br><span class="line">                        @mkdir( <span class="string">'json/'</span>, <span class="number">0777</span> , <span class="literal">true</span>  );</span><br><span class="line"></span><br><span class="line">                        $jsonfile = <span class="string">'json/'</span>  . basename( $htmlfile ) . <span class="string">'.json'</span>;</span><br><span class="line"></span><br><span class="line">                        file_put_contents( $jsonfile , trim($out[<span class="number">1</span>]) );</span><br><span class="line"></span><br><span class="line">                        echo <span class="string">"done.\r\n"</span>;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line"></span><br><span class="line">                        echo <span class="string">"error.\r\n"</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo <span class="string">"ALL Done."</span>;</span><br><span class="line"></span><br><span class="line">$ cat img.php</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">foreach( glob(  <span class="string">'*.html'</span> ) <span class="keyword">as</span> $k =&gt; $htmlfile )</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">        echo <span class="string">"File: $htmlfile \r\n"</span>;</span><br><span class="line"></span><br><span class="line">        $reg = <span class="string">'/this\.feeds\s+=\s+(.+?)\&#125;\s+,\s+1000/is'</span>;</span><br><span class="line"></span><br><span class="line">        $content = file_get_contents( $htmlfile );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>( preg_match( $reg , $content , $out ) )</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>($data = json_decode( trim($out[<span class="number">1</span>]) , <span class="number">1</span> ))</span><br><span class="line"></span><br><span class="line">                &#123;</span><br><span class="line"></span><br><span class="line">                        foreach ( $data <span class="keyword">as</span> $kkk =&gt; $item )</span><br><span class="line"></span><br><span class="line">                        &#123;</span><br><span class="line"></span><br><span class="line">                                $keys = array();</span><br><span class="line"></span><br><span class="line">                                $keys[] = <span class="string">'pic_url'</span>;</span><br><span class="line"></span><br><span class="line">                                <span class="comment">//$keys[] = 'oripic_url';</span></span><br><span class="line"></span><br><span class="line">                                $keys[] = <span class="string">'rt_pic_url'</span>;</span><br><span class="line"></span><br><span class="line">                                <span class="comment">//$keys[] = 'rt_oripic_url';</span></span><br><span class="line"></span><br><span class="line">                                foreach( $keys <span class="keyword">as</span> $key )</span><br><span class="line"></span><br><span class="line">                                &#123;</span><br><span class="line"></span><br><span class="line">                                        <span class="keyword">if</span>( strlen( $item[$key] ) &gt; <span class="number">0</span> &amp;&amp; (substr</span><br><span class="line"></span><br><span class="line">( $item[$key] , <span class="number">0</span> , <span class="number">7</span> ) == <span class="string">'http://'</span> || substr( $item[$key] , <span class="number">0</span> , <span class="number">8</span> ) == <span class="string">'https:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//'</span> ) )</span><br><span class="line"></span><br><span class="line">                                        &#123;</span><br><span class="line"></span><br><span class="line">                                                $info = explode( <span class="string">'.'</span> , basename(</span><br><span class="line"></span><br><span class="line"> $item[$key] ));</span><br><span class="line"></span><br><span class="line">                                                $ext = end( $info );</span><br><span class="line"></span><br><span class="line">                                                <span class="keyword">if</span>( !in_array(  $ext , array( <span class="string">'p</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">ng'</span> , <span class="string">'jpg'</span> , <span class="string">'jpeg'</span> , <span class="string">'gif'</span> ) ) )</span><br><span class="line"></span><br><span class="line">                                                &#123;</span><br><span class="line"></span><br><span class="line">                                                        $ext = <span class="string">'jpg'</span>;</span><br><span class="line"></span><br><span class="line">                                                &#125;</span><br><span class="line"></span><br><span class="line">                                                @mkdir( <span class="string">'img/'</span> . $k . <span class="string">'/'</span> , <span class="number">0777</span></span><br><span class="line"></span><br><span class="line"> , <span class="literal">true</span>  );</span><br><span class="line"></span><br><span class="line">                                                $newfile = <span class="string">'img/'</span> . $k . <span class="string">'/'</span> . $</span><br><span class="line"></span><br><span class="line">item[<span class="string">'cid'</span>] . <span class="string">'.'</span>.$key.<span class="string">'.'</span> .$ext;</span><br><span class="line"></span><br><span class="line">                                                echo <span class="string">"Image: "</span> . $item[$key] . <span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">\r\n"</span> ;</span><br><span class="line"></span><br><span class="line">                                                <span class="keyword">if</span>( copy( $item[$key] , $newfile</span><br><span class="line"></span><br><span class="line"> ) )</span><br><span class="line"></span><br><span class="line">                                                &#123;</span><br><span class="line"></span><br><span class="line">                                                        $data[$kkk][$key] = $<span class="keyword">new</span></span><br><span class="line"></span><br><span class="line">file;</span><br><span class="line"></span><br><span class="line">                                                        <span class="comment">// 处理原图</span></span><br><span class="line"></span><br><span class="line">                                                        <span class="keyword">if</span>( $key == <span class="string">'rt_pic_url'</span></span><br><span class="line"></span><br><span class="line"> )</span><br><span class="line"></span><br><span class="line">                                                        &#123;</span><br><span class="line"></span><br><span class="line">                                                                $new_ofile = <span class="string">'im</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">g/'</span> . $k . <span class="string">'/'</span> . $item[<span class="string">'cid'</span>] . <span class="string">'.'</span>.$key.<span class="string">'.rtori.'</span> .$ext;</span><br><span class="line"></span><br><span class="line">                                                                $nurl = str_repl</span><br><span class="line"></span><br><span class="line">ace( <span class="string">'/wap180/'</span> , <span class="string">'/large/'</span>,  $item[$key] );</span><br><span class="line"></span><br><span class="line">                                                                echo <span class="string">"Image: "</span> .</span><br><span class="line"></span><br><span class="line"> $nurl . <span class="string">"\r\n"</span> ;</span><br><span class="line"></span><br><span class="line">                                                                <span class="keyword">if</span>( copy( $nurl</span><br><span class="line"></span><br><span class="line">, $new_ofile ) )</span><br><span class="line"></span><br><span class="line">                                                                        $data[$k</span><br><span class="line"></span><br><span class="line">kk][<span class="string">'rt_oripic_url'</span>] = $new_ofile;</span><br><span class="line"></span><br><span class="line">                                                        &#125;</span><br><span class="line"></span><br><span class="line">                                                        <span class="comment">// 处理原图</span></span><br><span class="line"></span><br><span class="line">                                                        <span class="keyword">if</span>( $key == <span class="string">'pic_url'</span> )</span><br><span class="line"></span><br><span class="line">                                                        &#123;</span><br><span class="line"></span><br><span class="line">                                                                $new_ofile = <span class="string">'im</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">g/'</span> . $k . <span class="string">'/'</span> . $item[<span class="string">'cid'</span>] . <span class="string">'.'</span>.$key.<span class="string">'.ori.'</span> .$ext;</span><br><span class="line"></span><br><span class="line">                                                                $nurl = str_repl</span><br><span class="line"></span><br><span class="line">ace( <span class="string">'/wap180/'</span> , <span class="string">'/large/'</span>,  $item[$key] );</span><br><span class="line"></span><br><span class="line">                                                                echo <span class="string">"Image: "</span> .</span><br><span class="line"></span><br><span class="line"> $nurl . <span class="string">"\r\n"</span> ;</span><br><span class="line"></span><br><span class="line">                                                                <span class="keyword">if</span>( copy( $nurl</span><br><span class="line"></span><br><span class="line">, $new_ofile ) )</span><br><span class="line"></span><br><span class="line">                                                                        $data[$k</span><br><span class="line"></span><br><span class="line">kk][<span class="string">'oripic_url'</span>] = $new_ofile;</span><br><span class="line"></span><br><span class="line">                                                        &#125;</span><br><span class="line"></span><br><span class="line">                                                        echo <span class="string">"...done\r\n"</span>;</span><br><span class="line"></span><br><span class="line">                                                &#125;</span><br><span class="line"></span><br><span class="line">                                                <span class="keyword">else</span></span><br><span class="line"></span><br><span class="line">                                                &#123;</span><br><span class="line"></span><br><span class="line">                                                        echo <span class="string">"...error \r\n"</span>;</span><br><span class="line"></span><br><span class="line">                                                &#125;</span><br><span class="line"></span><br><span class="line">                                                echo <span class="string">"@Page $k \r\n"</span>;</span><br><span class="line"></span><br><span class="line">                                        &#125;</span><br><span class="line"></span><br><span class="line">                                &#125;</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        $content = str_replace( $out[<span class="number">1</span>] , json_encode( $data ) ,</span><br><span class="line"></span><br><span class="line"> $content );</span><br><span class="line"></span><br><span class="line">                        file_put_contents( $htmlfile , $content );</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo <span class="string">"All Done!"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>最后导出目录下 92 MB，130 个 HTML 文件</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-8710b4265070a3af?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5fccdc9d65f53a2c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>最后推荐几个好用的 chrome 插件 <a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/category/extensions?hl=zh-CN</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9540d2be9a11fd32?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-881095e91cb65fd7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>不过安装 chrome 扩展，你懂的，在墙外，所以需要用软件，比如最常用的 ss,教程见 <a href="http://www.iyingsuo.com/help.html" target="_blank" rel="noopener">http://www.iyingsuo.com/help.html</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-380ba448a97e72c7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>油猴脚本Violent monkey <a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 安装这个脚本后访问指定的网址就可以了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-feff8a76a80f732c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/北京的雨/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/北京的雨/" itemprop="url">北京的雨</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:06:34+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。<br>又一次成了落汤鸡，不记得第几次了。</p>
+<p>今天早上出门的时候还天空一片晴朗，我戴着耳机，听网易云音乐里 许巍 唱着：</p>
+<blockquote>
+<p>我那总沉默的朋友</p>
+<p>你让我感觉到力量</p>
+<p>曾在我心中的伤口</p>
+<p>如过眼的云烟</p>
+<p>初次 感觉</p>
+<p>心就像天空般晴朗</p>
+<p>初次 感觉</p>
+<p>心就像天空般晴朗</p>
+<p>啦……啦……啦……</p>
+</blockquote>
+<p>本来今天没什么事，最近也没什么事，每天 10 点前到公司，打开电脑，输入密码，我的电脑平常都不关机的，主要每次开机要启动服务器，打开好几个浏览器，打开编辑器，PHPstorm，连 vpn ，命令行等等，好麻烦，所以就每周五下班关机一次。</p>
+<p>上午基本没什么事干，刷刷微博，看看 QQ 群，聊聊微信群，看看公众号，基本快到 11 点半了，出去走动下，到 11 点 50 准备吃饭了。吃完饭睡一个小时，下午 2 点正式开始工作了，今天就统计了些数据，导出excel，发邮件和短信。导出用的 <a href="https://packagist.org/packages/maatwebsite/excel" target="_blank" rel="noopener">https://packagist.org/packages/maatwebsite/excel</a> 这个 laravel composer 包，使用挺方便的，看代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// http://www.maatwebsite.nl/laravel-excel/docs/export`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`$data = array(`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`array('data1',  'data2'),`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`array('data3',  'data4')`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`);`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`Excel::create('Filename',  function($excel) use($data)  &#123;`</span></span><br><span class="line"></span><br><span class="line">  <span class="string">`$excel-&gt;sheet('Sheetname',  function($sheet) use($data)  &#123;`</span></span><br><span class="line"></span><br><span class="line">  <span class="string">`$sheet-&gt;fromArray($data);`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`&#125;);`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`&#125;)-&gt;store('xls', storage_path('excel/exports'))-&gt;export('xls');`</span></span><br></pre></td></tr></table></figure>
+<p>然后到 6 点半准备去吃饭的时候 pm 说要改个东西。他以为挺简单的，结果我一看，卧槽，简单你妹啊（我没有说出来，如果他看我的眼神应该会明白的），公司的代码涉及几个项目，好几个代码仓库，需要改动其他同事负责的代码，那是公司观看直播的核心代码，一个方法几千行，没错，几千行代码，那一个个if else 一个个 foreach，看得我头大，我真不敢动，生怕改出问题，然后问了下同事（本来想让他帮忙改，人家有孩子了，这个点了得回去带孩子，好吧），需要改哪些地方，逻辑怎么处理，然后就整到 9 点了，我也是服了pm，麻烦下次有事提前说行不。</p>
+<p>出地铁的时候就发现暴雨了，记得上次也是这样，看看当时的微博。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4717cc2c741dc3de?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>一堆人挤在地铁口，都没带伞，叫车也不好叫，而且我住的地方离地铁也不远，就是有点绕，好不容易等到雨小了，赶紧冲出去一路小跑，这里我不得不吐槽北京那破排水系统，每次暴雨，路上的积水都可以划船了，然后不小心一脚下去，鞋子湿了，好吧，到家再换吧，结果路上一辆车飞过，路边的水飞溅，这下全身湿了，真忍不住爆出口，光顾着自己，开车也没素质，如同地铁里那些不戴耳机看电影电视剧的， fuck 。</p>
+<p>回到家发现早上出门忘记关阳台的门了，经过暴雨洗礼都进水了，还好电脑没事，这一天真让人无 fuck 可说。</p>
+<p>记得 2012 年刚来北京那会，住在北京大学附近的颐和园路东口的城中村，那里虽然靠着地铁 4 号线，圆明园，北大，清华，然而我同 8 个人住在一个屋子里，有一次也是暴雨，没带伞，身上没钱，那会也没有微信支付宝，然后一个人就这样淋着雨走回去，走着走着都分不清眼泪和雨水了。</p>
+<p>北京待了这么多年了，我真的越来越不喜欢这个城市了。</p>
+<p>就在我写这篇文章的时候四川又地震了（08 年大地震过去近 10 年了），相比而言今天这点破事根本不值一提，祝福四川平安。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7cb55043512d0c76?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>好了，快零点了，听首歌睡觉吧。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/周杰伦出道16年精选/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/周杰伦出道16年精选/" itemprop="url">周杰伦出道16年精选</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:04:22+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  765 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。<br>偶然在微博看到周杰伦出道16年精选73首歌的视频，地址<a href="http://weibo.com/tv/v/EcAmx4z11?from=music" target="_blank" rel="noopener">http://weibo.com/tv/v/EcAmx4z11?from=music</a>  顿时让无数人开始怀旧，那是一代人的青春啊，如果要在那么多经典歌曲里找一首配今天的文，那便是《晴天》了。那条微博转发已过万，里面73首歌我几乎可以从头唱到尾，我曾经也是追星一族，哈哈。</p>
+<p>看完视频后我就想下载到电脑，可以时不时拿来怀旧下，视频是由秒拍录制的，播放的是一个swf文件，地址<a href="http://wscdn.miaopai.com/splayer2.2.0.swf?scid=GcezAtC7sRC6~1S3GXxLkA__&amp;token=&amp;autopause=false&amp;fromweibo=false" target="_blank" rel="noopener">http://wscdn.miaopai.com/splayer2.2.0.swf?scid=GcezAtC7sRC6~1S3GXxLkA__&amp;token=&amp;autopause=false&amp;fromweibo=false</a> ，于是开始用python下载视频，源代码：<a href="https://gist.github.com/zhiyue/f49c8e951d5339b9b0c763f0ce8e1a6e" target="_blank" rel="noopener">https://gist.github.com/zhiyue/f49c8e951d5339b9b0c763f0ce8e1a6e</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers = &#123;    </span><br><span class="line"><span class="string">"Accept"</span>: <span class="string">"*/*"</span>,    </span><br><span class="line"><span class="string">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, sdch"</span>,   </span><br><span class="line"> <span class="string">"Accept-Language"</span>: <span class="string">"zh-CN,zh;q=0.8,en;q=0.6"</span>,    </span><br><span class="line"> <span class="string">"Connection"</span>: <span class="string">"keep-alive"</span>,    </span><br><span class="line"> <span class="string">"Host"</span>: <span class="string">"api.miaopai.com"</span>,    </span><br><span class="line"> <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"</span></span><br><span class="line">                  <span class="string">" Chrome/50.0.2661.102 Safari/537.36"</span>,   </span><br><span class="line">  <span class="string">"X-Requested-With"</span>: <span class="string">"ShockwaveFlash/23.0.0.166"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def get_mp4_addr(base_url):</span><br><span class="line">    api_url = <span class="string">'http://api.miaopai.com/m/v2_channel.json'</span></span><br><span class="line">    rs = urllib.parse.urlparse(base_url)</span><br><span class="line">    q = urllib.parse.parse_qs(rs.query)</span><br><span class="line">    scid = q[<span class="string">'scid'</span>][<span class="number">0</span>]</span><br><span class="line">    params = &#123;        </span><br><span class="line">      <span class="string">'fillType'</span>: <span class="string">'259'</span>,       </span><br><span class="line">       <span class="string">'scid'</span>: scid,        </span><br><span class="line">       <span class="string">'vend'</span>: <span class="string">'miaopai'</span></span><br><span class="line">    &#125;</span><br><span class="line">    headers[<span class="string">'Referer'</span>] = base_url</span><br><span class="line">    r = requests.get(api_url, params=params, headers=headers)   </span><br><span class="line">    #获取到的json结构为</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">    'status': 200,</span></span><br><span class="line"><span class="string">    'msg': 'OK',</span></span><br><span class="line"><span class="string">    'result': &#123;</span></span><br><span class="line"><span class="string">        'category_info': [</span></span><br><span class="line"><span class="string">            </span></span><br><span class="line"><span class="string">        ],</span></span><br><span class="line"><span class="string">        'liveStatus': 0,</span></span><br><span class="line"><span class="string">        'otherinfo': &#123;</span></span><br><span class="line"><span class="string">            'othertype': 3,</span></span><br><span class="line"><span class="string">            'weiboId': '2709577332',</span></span><br><span class="line"><span class="string">            'url': 'http: //weibo.com/2709577332',</span></span><br><span class="line"><span class="string">            'weiboNick': 'Happy张江',</span></span><br><span class="line"><span class="string">            'mark1': '@Happy张江',</span></span><br><span class="line"><span class="string">            'mark2': 'weibo.com/2709577332',</span></span><br><span class="line"><span class="string">            'vend': 'miaopai'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'ext': &#123;</span></span><br><span class="line"><span class="string">            'h': 358,</span></span><br><span class="line"><span class="string">            'lengthNice': '29: 11',</span></span><br><span class="line"><span class="string">            'location': '',</span></span><br><span class="line"><span class="string">            'owner': &#123;</span></span><br><span class="line"><span class="string">                'icon': 'http: //tp1.sinaimg.cn/2709577332/180/40022299983/0',</span></span><br><span class="line"><span class="string">                'loginName': 'paike_ex1p1ji8gr',</span></span><br><span class="line"><span class="string">                'signed_info': '',</span></span><br><span class="line"><span class="string">                'status': 1086,</span></span><br><span class="line"><span class="string">                'top_num': 0,</span></span><br><span class="line"><span class="string">                'suid': 'P7Z0CNbUcrTke~V0',</span></span><br><span class="line"><span class="string">                'v': True,</span></span><br><span class="line"><span class="string">                'info': '',</span></span><br><span class="line"><span class="string">                'nick': 'Happy张江',</span></span><br><span class="line"><span class="string">                'gold': 0,</span></span><br><span class="line"><span class="string">                'talent_signed': 0,</span></span><br><span class="line"><span class="string">                'talent_v': 1,</span></span><br><span class="line"><span class="string">                'oldIcon': 'http: //tp1.sinaimg.cn/2709577332/180/40022299983/0',</span></span><br><span class="line"><span class="string">                'org_v': 0,</span></span><br><span class="line"><span class="string">                'talent_name': '知名博主'</span></span><br><span class="line"><span class="string">            &#125;,</span></span><br><span class="line"><span class="string">            'finishTime': 1476280433842,</span></span><br><span class="line"><span class="string">            'length': 1751,</span></span><br><span class="line"><span class="string">            'finishTimeNice': '10-12',</span></span><br><span class="line"><span class="string">            'ft': '#周杰伦#出道16年精选73首歌，从青涩的小男生到幸福的爸爸，音乐风格也有很多创新，你是否从第一首开始可以跟着哼到最后！',</span></span><br><span class="line"><span class="string">            'status': 30,</span></span><br><span class="line"><span class="string">            't': '#周杰伦#出道16年精选73首歌，从青涩的小男生到幸福的爸爸，音乐风格也有很多创新，你是否从第一首开始可以跟着哼到最后！',</span></span><br><span class="line"><span class="string">            'w': 640</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'pic': &#123;</span></span><br><span class="line"><span class="string">            'm': '_m.jpg',</span></span><br><span class="line"><span class="string">            's': '_s.jpg',</span></span><br><span class="line"><span class="string">            'base': 'http: //dlqncdn.miaopai.com/stream/GcezAtC7sRC6~1S3GXxLkA__'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'type': 16,</span></span><br><span class="line"><span class="string">        'ad': &#123;</span></span><br><span class="line"><span class="string">            'video': '',</span></span><br><span class="line"><span class="string">            'url': '',</span></span><br><span class="line"><span class="string">            'pic': ''</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'stream': &#123;</span></span><br><span class="line"><span class="string">            'ver': 'miaopai',</span></span><br><span class="line"><span class="string">            'sign': 'ssig=6d6e2196b6d1e33d196e5744fa90979b&amp;time_stamp=1476532658459',</span></span><br><span class="line"><span class="string">            'ios': 'mp4miaopai',</span></span><br><span class="line"><span class="string">            'base': 'http: //gslb.miaopai.com/stream/GcezAtC7sRC6~1S3GXxLkA__.mp4?vend=miaopai&amp;',</span></span><br><span class="line"><span class="string">            'vend': 'miaopai',</span></span><br><span class="line"><span class="string">            'and': 'mp4'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'place_top': 0,</span></span><br><span class="line"><span class="string">        'scid': 'GcezAtC7sRC6~1S3GXxLkA__',</span></span><br><span class="line"><span class="string">        'ext2': &#123;</span></span><br><span class="line"><span class="string">            'isPub': 2,</span></span><br><span class="line"><span class="string">            'length': 1751,</span></span><br><span class="line"><span class="string">            'createTimeNice': '10-12',</span></span><br><span class="line"><span class="string">            'createTime': 1476279232807,</span></span><br><span class="line"><span class="string">            'guid': 0,</span></span><br><span class="line"><span class="string">            'vend': 'miaopai'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'topicinfo': [</span></span><br><span class="line"><span class="string">            '周杰伦'</span></span><br><span class="line"><span class="string">        ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    msg = r.json()[<span class="string">'msg'</span>]</span><br><span class="line">    result = r.json()[<span class="string">'result'</span>]</span><br><span class="line">    file_name = result[<span class="string">'ext'</span>][<span class="string">'ft'</span>]    </span><br><span class="line">    <span class="keyword">if</span> msg == <span class="string">'OK'</span>:</span><br><span class="line">        stream_type = result[<span class="string">'stream'</span>][<span class="string">'and'</span>]</span><br><span class="line">        base = result[<span class="string">'stream'</span>][<span class="string">'base'</span>]</span><br><span class="line">        sign_str = result[<span class="string">'stream'</span>][<span class="string">'sign'</span>]</span><br><span class="line">        mp4_addr = <span class="string">'%s?%s&amp;f=/%s.%s'</span> % (base, sign_str, scid, stream_type)        </span><br><span class="line">        <span class="keyword">return</span> mp4_addr, <span class="string">'%s.%s'</span> % (file_name, stream_type)</span><br><span class="line"></span><br><span class="line">def download_video(mp4_addr, file_name):</span><br><span class="line">    r = requests.get(mp4_addr, stream=True)    </span><br><span class="line">    <span class="keyword">if</span> r.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">with</span> open(file_name, <span class="string">'wb'</span>) <span class="keyword">as</span> f:            </span><br><span class="line">           <span class="keyword">for</span> chunk <span class="keyword">in</span> r.iter_content(chunk_size=<span class="number">4096</span>):               </span><br><span class="line">               <span class="keyword">if</span> chunk:</span><br><span class="line">                    f.write(chunk)</span><br><span class="line">               </span><br><span class="line">    <span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:   </span><br><span class="line">        #如果想下载其他视频，只要替换这个链接即可</span><br><span class="line">        url = <span class="string">'http://wscdn.miaopai.com/splayer2.2.0.swf?scid=GcezAtC7sRC6~1S3GXxLkA__&amp;token=&amp;autopause=false&amp;fromweibo=false'</span></span><br><span class="line">        mp4_addr, file_name = get_mp4_addr(url)</span><br><span class="line">        download_video(mp4_addr, file_name)</span><br></pre></td></tr></table></figure></p>
+<p>最后我把视频上传到百度网盘了，想要的小伙伴自己下载吧，地址<a href="http://pan.baidu.com/s/1eRAllJk" target="_blank" rel="noopener">http://pan.baidu.com/s/1eRAllJk</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/我的2016年/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/我的2016年/" itemprop="url">我的2016年</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:00:08+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。<br>现在是2016年12月31日20点，我在北京，指缝太宽，时间太瘦，悄悄从指缝间溜走，一年真的要过去了。 微博，微信上看到不少人在总结自己的2016，如小道消息公众号这篇16位读者的2016年，值得看看 <a href="http://mp.weixin.qq.com/s/iQerUx6yfsqo7RwWQPkYvQ" target="_blank" rel="noopener">http://mp.weixin.qq.com/s/iQerUx6yfsqo7RwWQPkYvQ</a> 还有微博上大网红 papi酱 做的2016大事件视频<a href="http://weibo.com/2714280233/Eowpl07VL" target="_blank" rel="noopener">http://weibo.com/2714280233/Eowpl07VL</a></p>
+<p>2016年开始更新公众号，目前写了20篇左右。也看了几部电影《叶问3》《老炮》《从你的全世界路过》《28岁未成年》。还有记录自己的网易音乐 <a href="http://music.163.com/#/my/m/music/playlist?id=406121360" target="_blank" rel="noopener">http://music.163.com/#/my/m/music/playlist?id=406121360</a> 借着公众号，也回顾下我的2016。其实微博相册是一种更好的记录，有兴趣也可以看看<a href="http://photo.weibo.com/2717930601/talbum/index#!/mode/1/page/1" target="_blank" rel="noopener">http://photo.weibo.com/2717930601/talbum/index#!/mode/1/page/1</a></p>
+<p>还记得2016年年初的时候定了个小目标<a href="http://weibo.com/2717930601/Dbpg3xzx4" target="_blank" rel="noopener">http://weibo.com/2717930601/Dbpg3xzx4</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-3fc545edbabba49f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>很遗憾，第一个目标并木有实现。年初的时候遇见一个合适的妹子，然而由于各种缘由失之交臂，这是一个标准的文艺女青年(她的公众号:蓝胖子写字)，爱旅行有才华，敢爱敢拼,祝福她 2017 心有所属。</p>
+<p>第二个关于技术方面，golang 只是安装入门了下，因为实际工作中并没有用到，今年要加强实践了。python 是更深入了，之前发布的几篇公众号文章也是基于python。人生苦短，python必备。php 和 javascript 因为在工作中用到，所以是日趋进步，这个可以在 <a href="https://segmentfault.com/u/sushengbuhuo" target="_blank" rel="noopener">https://segmentfault.com/u/sushengbuhuo</a> 上看到我的记录。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-3684d283b0280f53?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>第三个关于在sf社区的声望，很可惜，目前10.8k，由于前2个季度没有勤快答题及更新博客，离12k还有点距离，不过1月份就可以完成的。sf是我最喜欢的纯技术社区了，几乎每天回复问题，看别人的回复，还有各种经典文章，系列博文，今年的博客也没写几篇，明年也要加强。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a9231097b86ca866?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-b8b77cae5b578850?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>第四个关于看10本书，很遗憾，今年一本书都没看完，尽管已经买了不少书了，真是惭愧，也许是太浮躁了，没法静下心来，今年努力把 python实践 看完。</p>
+<p>第五个关于更新微博，这个我做到了，看截图，目前我的微博数63269，年初的时候刚3万，光2016年就发布了3万多条微博，平均每天90条左右，这是我坚持最长久的一件事，我都佩服我自己了。同时微信朋友圈更新了100篇，相比微博就太少了。更新那么多微博，大多是技术方面的，其实我并没有都看完，就当一个记录，下次有问题的时候可以直接在微博搜索到。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-1326278829f0bfea?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-6527f7349a6fa56a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>第六个关于存钱，年初定了5万的目标，结果超了7万，这并不是一个段子。 因为我每个月的花费记录都在支付宝记账上，从2014年起每天记账，坚持了3年。</p>
+<p>第七个关于看演唱会，感谢好友@马华麟 的票，7月2号在北京工体看了场《致青春》演唱会，现场听了老狼的《同桌的你》，还有为了宣传电影《致青春，原来你也在这里》的刘亦菲也来了。见微博地址<a href="http://weibo.com/2717930601/DCY6ShT0Z" target="_blank" rel="noopener">http://weibo.com/2717930601/DCY6ShT0Z</a> 之前一直听喜马拉雅主播@夏雨嫣 的节目，正好年初的时候举办了次线下活动(<a href="http://weibo.com/2717930601/DckHEEMsx)，见到了她本人，很温和的妹子，因为爱好播音利用业余时间学习录制节目，每一期节目很用心的制作，经常忙到凌晨一两点，目前在喜马也算一红人，祝福她2017" target="_blank" rel="noopener">http://weibo.com/2717930601/DckHEEMsx)，见到了她本人，很温和的妹子，因为爱好播音利用业余时间学习录制节目，每一期节目很用心的制作，经常忙到凌晨一两点，目前在喜马也算一红人，祝福她2017</a> 成功脱单。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d4d3932a4bb86856?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>第八个关于工作，这一年加薪了，很开心，团队人员增加了，和小伙伴合作也很愉快。年会的时候还中奖了<a href="http://weibo.com/2717930601/DeuVSBk17" target="_blank" rel="noopener">http://weibo.com/2717930601/DeuVSBk17</a> 目前公司用的 laravel 开发框架，折腾不少，也算对这个框架更加熟悉。 4月份的时候团建，去了趟天津盘山，许久不爬山了，不过爬山对我来说是小case了，以后还得多运动。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d8777cc395071816?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>第九个关于熬夜，很遗憾，几乎每天凌晨以后睡觉，但没有超过1点。</p>
+<p>第十个关于房子，10月份国庆的时候回了趟家，家里的房子已经装修好入住了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-99ecc5e96534e42b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4990cd9c26e20143?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-38d8db54e6ce596d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>尽管小目标没有都实现，但梦想总是要有的，万一实现了呢，所以也定下2017的计划：</p>
+<ol>
+<li><p>都说先成家后立业，那就找一个能彼此成就的她成家吧。</p>
+</li>
+<li><p>坚持更新微博和公众号。</p>
+</li>
+<li><p>segmentfault 声望累计到18K。</p>
+</li>
+<li><p>看一场演唱会或一次旅行。</p>
+</li>
+<li><p>攒钱，为买房准备。</p>
+</li>
+<li><p>多运动锻炼，杜绝熬夜。</p>
+</li>
+<li><p>继续深入php  python ，学习 golang 到可用阶段。</p>
+</li>
+<li><p>加薪升职。</p>
+</li>
+</ol>
+<p>ps：友情提醒，Copyright 写死的小伙伴，又到了一年一次更新的时候了，建议用 php 的 date(‘Y’) 以后再也不用手动改啦。</p>
+<p>pps：即将步入2017，感谢关注这个公众号的你们，简单直接点，给大家送红包了，本公众号回复 2017新年快乐 获取。</p>
+<p>最后以知乎上的一个回复来总结2016大事件:</p>
+<blockquote>
+<p>一年又将尽，春晚恐词穷。 此文致冯巩，此韵致黄宏。 首当洪荒力，奥运泥石流。 天朝绝凶虎，帝国破坏龙。 越界超级丹，身体被掏空。 夜光聊剧本，绿野摄仙踪。 河海有夏露，西北有马蓉。 校花关不住，校草独茕茕。 一人饮酒醉，抚掌如撩妹。 世界那么大，回家洗洗睡。 哎哟小公举，嘿咻老污龟。 在座说诸位，不是针对谁。 司机发快车，友谊沉小船。 问你怕不怕，说他翻就翻。 动如暴漫脸，静若葛优瘫。 厉害我的哥，你咋不上天？ 天上核武器，局座因果律。 恍然若三体，面壁有大计。 陨石炸航母，酸雨去武装。 海带反潜艇，雾霾防激光。 生活岂苟且，有诗有远方。 人皆奉网红，我独为网黄。 天下假猪套，人间新狗粮。 一脸甩懵逼，猝然不及防。 城市套路深，我欲回农村。 香菇太蓝瘦，蜜汁不清真。 一亿小目标，九旬大新闻。 深情留不住，套路得人心。 年年有金句，白驹如过隙。 当时与语人，及今谁复记？ 吃瓜一时快，事了拂衣去。 唯有虹桥姐，初心终不易。</p>
+</blockquote>
+<p>想起冯小刚电影《甲方乙方》最后那句“1997年过去了，我很怀念它”。那是我们每个人努力实现、苦甜交加、荒诞但又迷人的梦想。 现在2016也要过去了，我也怀念它。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2d926aaf347e301e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>每篇文章推荐一个工具：2016互联网期末考试，看看你及格吗 <a href="http://poll2016.sspai.com/?from=timeline" target="_blank" rel="noopener">http://poll2016.sspai.com/?from=timeline</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/买书一时爽，看书如抽丝/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/买书一时爽，看书如抽丝/" itemprop="url">买书一时爽，看书如抽丝</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T19:57:07+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  901 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。</p>
+<p>又到周五，公众号也许久未更新了，现在正好来写写，明天周末好好休息，这几天太累了。</p>
+<p>此刻正在听喜马拉雅的《晚上十点》直播，直播地址<a href="http://liveroom.ximalaya.com/live/10320" target="_blank" rel="noopener">http://liveroom.ximalaya.com/live/10320</a> 我手机上装的 APP 不过 20 个左右，喜马拉雅是我比较喜欢的 APP，每天上班路上会听听。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5caf499c5a74e0cf?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>这次五一回了趟家，火车上无聊看了本书《程序是怎样跑起来的》，从计算机的内部结构开始讲起，以图配文的形式详细讲解了二进制、内存、数据压缩、源文件和可执行文件、操作系统和应用程序的关系、汇编语言、硬件控制方法等内容，还是比较有趣的，原来代码的执行过程是这样的：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-16b2f4799bbd1e1b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-6ca7143d8b6cb1e7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>程序是指令和数据的组合，如c语言的printf(‘hello world’),printf 是执行，hello world 是数据。</p>
+<p>cpu能识别和执行的语言只有机器语言，使用java，Python编写的语言，最后都会转换为机器语言。磁盘上写的程序被复制到内存才能运行，根据程序指令进行数据运算，并控制计算机的就是cpu。</p>
+<p>数据是用二进制数表示的，因为集成电路上的电压只有两种状态，正好用0和1来表示，于是有了二进制，位，字节等。</p>
+<p>计算机进行小数运算时出错，比如 for 循环 100 次累加 0.1 也得不到 10，这是因,0.1 不能完整用二进制来表示，就像 100 / 3 等于33.333333333…，无限循环个3，所以要避免出错有两个途径：</p>
+<p>如果不在乎精度，可以进行截取；</p>
+<p>循环 100 次加 1 然后除以 10 就可以了。</p>
+<p>javascript 中console.log(0.1+0.2) 不等于0.3，而是 0.30000000000000004，也是基于浮点数不能完整用二进制来表示的缘故，而且大多数语言都是如此，有个网站 0.30000000000000004.com 可以看到。</p>
+<p>平常处理支付牵涉钱，数据库一般用 decimal 来存，也可以参考微信支付用分来处理，1 块钱等于 100 分，这样就不用担心编程语言中浮点数精度问题而导致钱数对不上。</p>
+<p>这本书还讲了许多，还没看完，不过还是有收获的。这是今年看的第一本书，想起来真是惭愧，互联网时代，真是难得静下心来好好看一本书了，所谓：买书一时爽，看书如抽丝。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7ebe653f9ccdcc9a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>这是家里的书，许多书还未翻看，再也找不回当年上大学时看 当年明月 的七部《明朝那些事儿》那种激情。</p>
+<p>回家听我爸说老家的地和山都要被征完了，现在都建工业区了，以后可以再建大点的新房子，然后出租给附近工厂上班的，发展真是快啊。卖地的钱有几千万了，按人头来分，每人能分几万吧，钱是不多，不过好多人就开始急着结婚，生孩子了，人多分得多嘛，然后我爸来催我，哎，不说这个了，幸福冷暖自知。</p>
+<p>这次又陪小朋友（外甥）看了会《喜洋洋》，每次回去小孩都喜欢看，这就是童年乐趣吧。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-6581ed335180868d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>每篇文章推荐一个工具：视频下载工具 <a href="http://v.atob.site/" target="_blank" rel="noopener">http://v.atob.site/</a> ，支持微博，秒拍，腾讯等，bilibili 的话推荐 <a href="http://www.jijidown.com" target="_blank" rel="noopener">http://www.jijidown.com</a> 更全的有硕鼠 <a href="http://www.flvcd.com/" target="_blank" rel="noopener">http://www.flvcd.com/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/如何免费在线听周杰伦的歌曲/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/如何免费在线听周杰伦的歌曲/" itemprop="url">如何免费在线听周杰伦的歌曲</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T15:14:12+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我平常用网易云来听音乐 <a href="http://music.163.com/" target="_blank" rel="noopener">http://music.163.com/</a> ，网易云除了歌好听，评论更有故事。</p>
+<p>之前已经写过网易云音乐了，有兴趣看看之前的文章<a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p>可惜周杰伦的大部分歌曲网易没有版权，还好我保存了一份杰伦所有的歌曲，如果你也想收藏的话公众号回复 <code>周杰伦</code> 获取。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-325df84a8cceef93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>那首评论过百万的神曲《晴天》已经变成灰色。<a href="https://music.163.com/#/song?id=186016" target="_blank" rel="noopener">https://music.163.com/#/song?id=186016</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-b97b59639929a4ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-14e439051aadfd20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这首歌的版权在QQ音乐<a href="https://y.qq.com/n/yqq/song/0039MnYb0qxYhV.html" target="_blank" rel="noopener">https://y.qq.com/n/yqq/song/0039MnYb0qxYhV.html</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-6a67e0b6c4322613.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>而另外有些歌在虾米才有版权可以播放，所以你听一首歌的话可能需要到3个网站找，比较麻烦，这里推荐几个聚合网易，QQ，虾米，酷狗等音乐网站的工具/网站。</p>
+<h3 id="listen1"><a href="#listen1" class="headerlink" title="listen1"></a>listen1</h3><p>Listen 1可以搜索和播放来自网易云音乐，虾米，QQ音乐，酷狗音乐，酷我音乐网站的歌曲，让你的曲库更全面。<a href="http://listen1.github.io/listen1/" target="_blank" rel="noopener">http://listen1.github.io/listen1/</a></p>
+<p>它提供了Chrome插件版，win桌面版（直接exe安装），mac桌面版，Linux桌面版，我下载的是Chrome插件版，关于插件我之前也写过一篇<a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
+<p>安装后使用的界面是这样的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-659c825a87620eb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>它集合了网易云音乐，虾米音乐，QQ音乐，酷狗音乐，酷我音乐，哔哩哔哩，咪咕音乐这几个网站的音乐资源，可以说很齐全了，比如搜索《再见二丁目》，点击就可以直接播放了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-69b49508cfe362b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="音乐聚合搜索"><a href="#音乐聚合搜索" class="headerlink" title="音乐聚合搜索"></a>音乐聚合搜索</h3><p>这种聚合搜索不限定某个网站，谷歌搜索下有很多这样的网站，如果其中某个网站挂了，换一个就是了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-22807ed2a802753e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如第一个<a href="http://www.gequdaquan.net/gqss/" target="_blank" rel="noopener">http://www.gequdaquan.net/gqss/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-58b4115f91f269ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>直接搜索就好。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a9bb391f048ec3bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜索结果中第3个<a href="https://music.8ziyuan.com/" target="_blank" rel="noopener">https://music.8ziyuan.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c240fbb95f9c0a24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这种网站是基于开源程序搭建的，开源地址 <a href="https://github.com/maicong/music/，" target="_blank" rel="noopener">https://github.com/maicong/music/，</a> 如果你会代码并有自己服务器的话也可以建一个这样的音乐聚合网站。</p>
+<p>这里说下这个网站，可以直接免费在线听周杰伦歌曲，还能下载，不知道这个网站能存在多久，先收藏吧。<br><a href="http://tool.liumingye.cn/music/?type=migu&amp;name=%E5%91%A8%E6%9D%B0%E4%BC%A6" target="_blank" rel="noopener">http://tool.liumingye.cn/music/?type=migu&amp;name=%E5%91%A8%E6%9D%B0%E4%BC%A6</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d399c3105f3e31ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="音乐下载"><a href="#音乐下载" class="headerlink" title="音乐下载"></a>音乐下载</h3><p>上面的聚合网站也可以直接下载歌曲，不过也有人开发了这样的下载工具，比如Music-Downloader ，这是一款简单的音乐下载（播放）器， 功能有歌曲搜索、歌单读取、在线播放、歌曲下载（包括付费音乐），下载地址 <a href="https://github.com/messoer/Music-Downloader/releases/download/1.4.2/MusicDownloader.zip" target="_blank" rel="noopener">https://github.com/messoer/Music-Downloader/releases/download/1.4.2/MusicDownloader.zip</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-13ba8ef4fde88e52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-19781e3d036fafe0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然我更喜欢用命令行来下载，详细见之前的文章 <a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p>比如下载五月天的专辑《自传》，直接<code>music-get https://y.qq.com/n/yqq/album/002fRO0N4FftzY.html</code><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c50a453e2f5a0dae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><p>全网音乐免费下载工具<a href="https://music.sonimei.cn/" target="_blank" rel="noopener">https://music.sonimei.cn/</a> <a href="https://music.sonimei.cn/yinyue/" target="_blank" rel="noopener">https://music.sonimei.cn/yinyue/</a><br>网易云音乐、QQ音乐一键下载工具<a href="https://github.com/winterssy/music-get" target="_blank" rel="noopener">https://github.com/winterssy/music-get</a><br>一个现代音乐播放器 <a href="https://github.com/PeterDing/chord" target="_blank" rel="noopener">https://github.com/PeterDing/chord</a><br>多站合一音乐搜索解决方案 <a href="https://github.com/maicong/music/" target="_blank" rel="noopener">https://github.com/maicong/music/</a><br>网易云音乐nodejs api：<a href="https://github.com/Binaryify/NeteaseCloudMusicApi" target="_blank" rel="noopener">https://github.com/Binaryify/NeteaseCloudMusicApi</a><br>一个可以播放“任意”音乐的播放器<a href="https://github.com/feeluown/FeelUOwn" target="_blank" rel="noopener">https://github.com/feeluown/FeelUOwn</a><br>chrome插件：声海盗，下载在线音乐插件，支持豆瓣，虾米，QQ音乐，网易云音乐等<a href="https://github.com/seekerlee/SoundPirate" target="_blank" rel="noopener">https://github.com/seekerlee/SoundPirate</a><br>如何愉快使用网易云音乐，解锁变灰歌曲！<a href="https://github.com/nondanee/UnblockNeteaseMusic" target="_blank" rel="noopener">https://github.com/nondanee/UnblockNeteaseMusic</a><br>一款简单的音乐下载（播放）器 功能：歌曲搜索、歌单读取、在线播放、歌曲下载（包括付费音乐） ​​​​ <a href="https://github.com/messoer/Music-Downloader/releases" target="_blank" rel="noopener">https://github.com/messoer/Music-Downloader/releases</a> <a href="https://github.com/sevenJia/music" target="_blank" rel="noopener">https://github.com/sevenJia/music</a><br>Vue 全家桶高仿网易云音乐 mac 客户端版 <a href="https://github.com/sl1673495/vue-netease-music" target="_blank" rel="noopener">https://github.com/sl1673495/vue-netease-music</a><br>qq 音乐解析网站 <a href="http://www.66it.top/" target="_blank" rel="noopener">http://www.66it.top/</a></p>
+<p>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_3AeNahwbs8c3UJ0is1t4A" target="_blank" rel="noopener">如何在电脑上登陆多个微信</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qyFvOgHf1mXwPKO0tQwUyg" target="_blank" rel="noopener">如何提取公积金 9 天到账</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/5InOxKmi9eXk33G_8N3byQ" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/博客推荐/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/23/博客推荐/" itemprop="url">博客推荐</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-23T17:01:47+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  214 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://alpha2016.github.io/about/" target="_blank" rel="noopener">何晓东PHP开发工程师</a></p>
+<p><a href="http://cuihuan.net/" target="_blank" rel="noopener">靠谱崔小拽</a></p>
+<p><a href="https://lbjheiheihei.xyz/about.html" target="_blank" rel="noopener">伪君子</a></p>
+<p><a href="https://www.yoby123.cn/" target="_blank" rel="noopener">小白的分享</a></p>
+<p><a href="https://www.cnblogs.com/52fhy/" target="_blank" rel="noopener">飞鸿影的博客</a></p>
+<p>   <a href="https://tingtalk.me/" target="_blank" rel="noopener">庭说</a> </p>
+<p><a href="https://blog.nightteam.cn/" target="_blank" rel="noopener">夜幕</a></p>
+<p><a href="http://blog.xiayf.cn/archives.html" target="_blank" rel="noopener">黑白</a></p>
+<p><a href="https://post.zz173.com/detail/hfu17Yn_YpMY9TlVNTqv8w.html" target="_blank" rel="noopener">青枫浦</a></p>
+<p><a href="https://lbjheiheihei.xyz/archives.html" target="_blank" rel="noopener">伪君子的梦呓</a></p>
+<p><a href="https://me.jinchuang.org/archives/301.html" target="_blank" rel="noopener">靳闯博客</a></p>
+<p><a href="https://93nv.com/archives/category/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7" target="_blank" rel="noopener">痴海日报</a></p>
+<p><a href="http://www.golang365.com/#/" target="_blank" rel="noopener">天行九歌</a></p>
+<p><a href="http://einverne.github.io/post/2019/01/html-to-pdf.html" target="_blank" rel="noopener">每天学习一个命令</a></p>
+<p><a href="https://haoruijie.art/archives/page/3/" target="_blank" rel="noopener">彩虹马厩laravel</a></p>
+<p><a href="https://godruoyi.com/posts/About-godruoyi" target="_blank" rel="noopener">godruoyi php</a></p>
+<p><a href="https://www.awaimai.com/about" target="_blank" rel="noopener">歪麦博客</a></p>
+<p><a href="https://hoxis.github.io/archives/" target="_blank" rel="noopener">不正经程序员</a></p>
+<p><a href="http://www.54php.cn/default/about" target="_blank" rel="noopener">编程浪子</a></p>
+<p><a href="https://tianyong90.com/" target="_blank" rel="noopener">larvel田写</a></p>
+<p><a href="http://efonfighting.imwork.net/" target="_blank" rel="noopener">一番码客 </a></p>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>plaidCTF两道web题目writeup <a href="http://blog.wonderkun.cc/2019/04/15/plaidCTF%E4%B8%A4%E9%81%93web%E9%A2%98%E7%9B%AEwriteup/" target="_blank" rel="noopener">http://blog.wonderkun.cc/2019/04/15/plaidCTF%E4%B8%A4%E9%81%93web%E9%A2%98%E7%9B%AEwriteup/</a><br>ctf <a href="https://www.yof3ng.xyz/" target="_blank" rel="noopener">https://www.yof3ng.xyz/</a><br>PHP中的危险函数和伪协议<a href="https://anemone.top/php-PHP%E4%B8%AD%E7%9A%84%E5%8D%B1%E9%99%A9%E5%87%BD%E6%95%B0%E5%92%8C%E4%BC%AA%E5%8D%8F%E8%AE%AE/" target="_blank" rel="noopener">https://anemone.top/php-PHP%E4%B8%AD%E7%9A%84%E5%8D%B1%E9%99%A9%E5%87%BD%E6%95%B0%E5%92%8C%E4%BC%AA%E5%8D%8F%E8%AE%AE/</a><br>基于 electron-vue 开发了一个美图搜罗器<a href="https://github.com/Licoy/girls-reptile/releases" target="_blank" rel="noopener">https://github.com/Licoy/girls-reptile/releases</a></p>
+<p>拍片哥-红色导航网站网址-福利导航 <a href="https://bbs.918dxs.com/topics/3772/lan-se-dao-hang" target="_blank" rel="noopener">https://bbs.918dxs.com/topics/3772/lan-se-dao-hang</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/如何在豆瓣租房小组快速找到满意的房子/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/19/如何在豆瓣租房小组快速找到满意的房子/" itemprop="url">如何在豆瓣租房小组快速找到满意的房子</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T20:22:35+08:00">
+                2019-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这几天忙着找房子，没怎么更新公众号，新浪本来是提供人才公寓的，可惜我错过了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b87755ef9af0f05f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在大城市租房真的是一把辛酸泪，至今不知道搬家多少次了，今天就分享下我在北京租房找房的经历，或许对你找房子（不限于北京）有点借鉴作用。</p>
+<p>先说说租房的坑。</p>
+<h3 id="不要租隔断"><a href="#不要租隔断" class="headerlink" title="不要租隔断"></a>不要租隔断</h3><p>去年开始北京开始全力打击群租隔断，微博上可以看到不少被拆的案例 <a href="https://weibo.com/6046360157/HEHMAipBj?refer_flag=1001030103" target="_blank" rel="noopener">https://weibo.com/6046360157/HEHMAipBj?refer_flag=1001030103</a>_ ，所以为了安全，还是不要图便宜，宁愿多花点钱住个次卧或者主卧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8eb7f913b4ea1c33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-20916ef57cece598.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="远离长租公寓"><a href="#远离长租公寓" class="headerlink" title="远离长租公寓"></a>远离长租公寓</h3><p>Google搜索下 长租公寓 跑路 可以看到很多人被坑的案例。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a6fd6775260e6a83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这种公寓用你的的个人信息去 p2p 分期贷款，你以为和公寓签的是租房合同，实际上却是贷款合同，一旦公寓跑路，房子被房东收回，你还得接着还贷款，更可恶的是可能影响了你的个人征信，对你以后买房什么的造成不可估量的影响。</p>
+<p> 36kr和观察者就曾报道过<br>一位中介深喉的讲述：长租公寓可以繁荣，也可以让上万人无家可归<a href="https://36kr.com/p/5167950.html" target="_blank" rel="noopener">https://36kr.com/p/5167950.html</a><br>长租公寓：含笑埋的雷，跪着也要爆完<a href="https://36kr.com/p/5157879.html?from=guess" target="_blank" rel="noopener">https://36kr.com/p/5157879.html?from=guess</a><br>长租公寓租房贷引争议：交完押金才发现背了贷款 <a href="https://www.guancha.cn/economy/2018_08_22_469220.shtml" target="_blank" rel="noopener">https://www.guancha.cn/economy/2018_08_22_469220.shtml</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-f39024c74f980174.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>所以千万要小心，我只说了2个坑，可能还有其他更大的坑，大家也可以分享下自己租房遇到过的坑。</p>
+<p>说完了坑然后说说怎么找到自己满意的房子。</p>
+<h3 id="链家自如"><a href="#链家自如" class="headerlink" title="链家自如"></a>链家自如</h3><p>这2个比较靠谱和方便，当然也比较贵了，如果你不缺钱的话直接选这2个就行，下面不用看了。</p>
+<h3 id="豆瓣租房小组"><a href="#豆瓣租房小组" class="headerlink" title="豆瓣租房小组"></a>豆瓣租房小组</h3><p>豆瓣电影大家都知道，其实豆瓣上还可以租房的，上面有许多租房信息，更新非常快。<br>去年豆瓣还发布了自己的<a href="https://mp.weixin.qq.com/s/vz6-hqwHnIdQXhvQK9EtLA" target="_blank" rel="noopener">豆瓣租房小程序</a>    <a href="https://www.douban.com/note/667954828/" target="_blank" rel="noopener">https://www.douban.com/note/667954828/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d82498637e86d971.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>然而不知为何今年4月4号却下线了，这是<a href="https://mp.weixin.qq.com/s/Fl3fnX64HbVxjVAQ8v2jeQ" target="_blank" rel="noopener">下线公告</a>，不过好在还有豆瓣小组，进入豆瓣小组搜索租房就可以看到各个城市的小组。<a href="https://www.douban.com/group/search?cat=1019&amp;q=%E7%A7%9F%E6%88%BF" target="_blank" rel="noopener">https://www.douban.com/group/search?cat=1019&amp;q=%E7%A7%9F%E6%88%BF</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-8f1129ab72a9b28e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>比如北京的话推荐这几个小组 <a href="https://www.douban.com/group/625354/" target="_blank" rel="noopener">https://www.douban.com/group/625354/</a>，<a href="https://www.douban.com/group/625354/?ref=sidebar" target="_blank" rel="noopener">https://www.douban.com/group/625354/?ref=sidebar</a><br>豆瓣上合租比较多，而且不要中介费 ，如果能找到人一起合租是最好的了。</p>
+<p>但是豆瓣小组的帖子更新非常快，而且没有搜索功能，如果一页一页的翻，真的会累死人，所以还是得靠搜索引擎，关于搜索引擎的使用技巧，我之前写过一篇文章，强烈建议你看看<br> <a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p>我住在回龙观地铁附近，所以就直接搜索 site:douban.com 回龙观合租，时间选择一周内，因为太久的信息已经失效了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-28dfddddcd3a4c4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>进入第三个链接 <a href="https://www.douban.com/group/topic/146110587/" target="_blank" rel="noopener">https://www.douban.com/group/topic/146110587/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-6041820d9832bc68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>对方没有提供手机号，而是微信，搜索下微信号，发现对方只发过2个豆瓣帖子，可以肯定不是中介。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7414536ff882160e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>于是我加了对方微信，第二天就直接过去了，房子还不错，可惜离地铁有点远，而且附近没有超市，吃饭也麻烦，于是放弃了。</p>
+<p>继续往下翻，看到这个帖子<a href="https://www.douban.com/group/topic/147579647/" target="_blank" rel="noopener">https://www.douban.com/group/topic/147579647/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-2028afe02f686c12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>直接搜索对方手机号，有7页搜索记录，不同时间发布那么多租房信息，百分百中介，告辞。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8b4f146597f4d554.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>继续搜，看到这个帖子，对方也只提供微信号，搜索了下只有几条记录，先加微信。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-271d5ec37d0904d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>过去后看了下房子，房子是他和房东直接租的，离地铁比较近，附近有商场，吃饭什么的也方便，好，交押金先定了。</p>
+<p>看豆瓣帖子总结就是：<br>描述写了一大堆，价格也不写还要求电话联系，放弃。<br>照片拍得不错，房间非常整齐，搜索下图片发现很多地方见过，放弃。<br>搜索对方微信或者手机号，一大堆租房信息，放弃。</p>
+<p>最后还是感谢豆瓣让我找到了满意的房子。</p>
+<h3 id="水木社区"><a href="#水木社区" class="headerlink" title="水木社区"></a>水木社区</h3><p>这是个比较小众的社区，所以进入的中介也少，上面有不少房东发布的房源。<a href="http://www.newsmth.net/nForum/#!board/HouseRent" target="_blank" rel="noopener">http://www.newsmth.net/nForum/#!board/HouseRent</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d4e2efd2ce303d69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="u租"><a href="#u租" class="headerlink" title="u租"></a>u租</h3><p>网址 <a href="http://bj.yurixu.com/manage/beijing.php#" target="_blank" rel="noopener">http://bj.yurixu.com/manage/beijing.php#</a>  因为豆瓣的搜索效率很低，这个网站集合了豆瓣，水木社区和北邮人上的租房信息，可以根据地区和地铁线路搜索，可惜目前只支持北京和上海。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6fbb8ef5dfba7610.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>搜索关键词和筛选比直接用豆瓣高效多了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-efc4625eb898a46d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微博搜索"><a href="#微博搜索" class="headerlink" title="微博搜索"></a>微博搜索</h3><p>微博上有很多租房话题，可以搜索自己对应城市的话题 <a href="https://weibo.com/p/100808e57bb364ea5d7b996e05bedf032aab52/super_index" target="_blank" rel="noopener">https://weibo.com/p/100808e57bb364ea5d7b996e05bedf032aab52/super_index</a><br> ，比如我在的北京，回龙观地铁附近。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-f81ed838464e9dcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-f8f5db835ffcedb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>看到合适的房子直接微博联系对方就可以了，不过还是得小心黑中介。</p>
+<h3 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h3><p>第一个是六六直租，原英文名称zuber，覆盖了北京、上海、广州、深圳、杭州等多个热门城市,可惜他们网页版不提供联系方式<a href="https://mobile.zuber.im/search/rent，只有上小程序和APP" target="_blank" rel="noopener">https://mobile.zuber.im/search/rent，只有上小程序和APP</a> <a href="http://app.zuber.im/" target="_blank" rel="noopener">http://app.zuber.im/</a> 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-49fc1a30dafe1e40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>第二个是暖房小程序，网址<a href="https://nuan.io/hello-wechat" target="_blank" rel="noopener">https://nuan.io/hello-wechat</a>  ，上面有地铁找房，公司找房，避坑指南，我搜了下效果还可以。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5af5f2b68af1fa2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="简单租房"><a href="#简单租房" class="headerlink" title="简单租房"></a>简单租房</h3><p>这个网站自动爬取豆瓣房源，自己设置关键字，当豆瓣出现相关租房信息，及时推送到你的微信 <a href="http://house.jiandan.live/" target="_blank" rel="noopener">http://house.jiandan.live/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-385ee2dc130300ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="地图搜租房"><a href="#地图搜租房" class="headerlink" title="地图搜租房"></a>地图搜租房</h3><p>这是个人开发的一款找房工具， 作者博客<a href="https://woyaozufang.live/2022/06/04/house-map-move/#more" target="_blank" rel="noopener">https://woyaozufang.live/2022/06/04/house-map-move/#more</a>  地址<a href="https://house-map.cn/#/" target="_blank" rel="noopener">https://house-map.cn/#/</a><br>它支持的平台列表如下：<br>Zuber、豆瓣小组、贝壳租房、豆瓣租房、上海互助租房、CCB 建融家园、58 公寓、蘑菇租房、拼室友、房多多、房天下、嗨住租房、自如、v2ex、巴乐兔租房、安居客租房等，可以说很齐全了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-82fa2046a49930a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-aea306106cd39c77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后说个题外话，租房怎么提取公积金，租房是可以提取公积金的，联系hr向公司提交公积金联名卡和身份证，办理每月 1500 的租房公积金，三个月发一次，也就是每个季度取4500 ，直接打到你的公积金联名卡，我之前的公司也是这样取的，后来到了新浪用的买房提取，有兴趣可以看我之前的文章<a href="https://mp.weixin.qq.com/s/qyFvOgHf1mXwPKO0tQwUyg" target="_blank" rel="noopener">如何提取公积金 9 天到账</a></p>
+<h3 id="租房帖子"><a href="#租房帖子" class="headerlink" title="租房帖子"></a>租房帖子</h3><p>8012 北上广深租房不靠谱指南<a href="https://www.v2ex.com/t/506525" target="_blank" rel="noopener">https://www.v2ex.com/t/506525</a><br> <a href="http://zy2071.com/Fun/FindH/#/Homecontent" target="_blank" rel="noopener">http://zy2071.com/Fun/FindH/#/Homecontent</a><br>在北京租房到底要花多少钱？我们整理了一份5000字的攻略 <a href="https://36kr.com/p/5089137" target="_blank" rel="noopener">https://36kr.com/p/5089137</a><br>一位离职中介教你如何在北京租房子 <a href="https://www.jianshu.com/p/0bc163b6f5df" target="_blank" rel="noopener">https://www.jianshu.com/p/0bc163b6f5df</a><br>租房经历总结<a href="http://blog.leanote.com/post/jixn/%E7%A7%9F%E6%88%BF%E5%AD%90" target="_blank" rel="noopener">http://blog.leanote.com/post/jixn/%E7%A7%9F%E6%88%BF%E5%AD%90</a><br><a href="https://sharevideo.cn/?from=groupmessage&amp;isappinstalled=0#/" target="_blank" rel="noopener">https://sharevideo.cn/?from=groupmessage&amp;isappinstalled=0#/</a><br> <a href="http://evilmorty.site/" target="_blank" rel="noopener">豆瓣租房精选</a><br><a href="https://zhuanlan.zhihu.com/p/57698438" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57698438</a><br><a href="https://zhuanlan.zhihu.com/p/26647130" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26647130</a><br><a href="https://www.zhihu.com/question/20741403/answer/364419886" target="_blank" rel="noopener">https://www.zhihu.com/question/20741403/answer/364419886</a><br><a href="https://www.zhihu.com/question/307959368" target="_blank" rel="noopener">有什么事是你租房以后才知道的</a><br><a href="https://www.zhihu.com/question/20741403/answers/updated?page=2" target="_blank" rel="noopener">https://www.zhihu.com/question/20741403/answers/updated?page=2</a><br><a href="https://www.zhihu.com/question/307959368" target="_blank" rel="noopener">https://www.zhihu.com/question/307959368</a><br><a href="https://zhuanlan.zhihu.com/p/26647130" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26647130</a><br><a href="https://www.zhihu.com/question/19988480" target="_blank" rel="noopener">https://www.zhihu.com/question/19988480</a><br><a href="https://zhuanlan.zhihu.com/p/25557696" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/25557696</a><br><a href="https://mobile.zuber.im/search/rent" target="_blank" rel="noopener">https://mobile.zuber.im/search/rent</a><br><a href="https://www.zhihu.com/question/39078225" target="_blank" rel="noopener">https://www.zhihu.com/question/39078225</a><br>北京房东直租群<a href="https://www.wenjuan.com/s/7jiyMj/" target="_blank" rel="noopener">https://www.wenjuan.com/s/7jiyMj/</a><br><a href="https://jinshuju.net/f/J64fx0" target="_blank" rel="noopener">https://jinshuju.net/f/J64fx0</a> 密码: faith<br>逃离北上广<a href="https://jinnrry.github.io/getAwayBSG/post/all.html?v=1.0" target="_blank" rel="noopener">https://jinnrry.github.io/getAwayBSG/post/all.html?v=1.0</a></p>
+<p> 推荐阅读：</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_3AeNahwbs8c3UJ0is1t4A" target="_blank" rel="noopener">如何在电脑上登陆多个微信</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qyFvOgHf1mXwPKO0tQwUyg" target="_blank" rel="noopener">如何提取公积金 9 天到账</a></p>
+<p><a href="https://mp.weixin.qq.com/s/TuJIqv5wv27avFKG8zmJUQ" target="_blank" rel="noopener">我是如何用 Markdown 写公众号文章的</a></p>
+<p><a href="https://mp.weixin.qq.com/s/mI5kubVY2t5jwJ9ub7A1iA" target="_blank" rel="noopener">我在新浪的一天工作日常</a></p>
+<p> <a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共426.4k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>
