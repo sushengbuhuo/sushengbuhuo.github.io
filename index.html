@@ -285,6 +285,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/12/php-单元测试/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/12/php-单元测试/" itemprop="url">php 单元测试</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-12T16:03:31+08:00">
+                2019-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  408 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">新建一个单元测试</span><br><span class="line"></span><br><span class="line">php artisan make:test ReplyTest --unit</span><br><span class="line">单独执行某个测试</span><br><span class="line"></span><br><span class="line"> phpunit tests/Unit/ReplyTest.php</span><br><span class="line">单独执行某个测试中的函数</span><br><span class="line"></span><br><span class="line">phpunit --filter a_thread_has_a_creator</span><br><span class="line">带上测试环境变量进行测试就不需要 CsrfToken</span><br><span class="line"></span><br><span class="line">APP_ENV=testing phpunit --filter an_authenticated_user_may_participate_in_forum_threads</span><br><span class="line"></span><br><span class="line">APP_ENV=testing phpunit</span><br></pre></td></tr></table></figure>
+<h3 id="测试类例子"><a href="#测试类例子" class="headerlink" title="测试类例子"></a>测试类例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCase</span> <span class="keyword">extends</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">TestCase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * Creates the application.</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * @return \Illuminate\Foundation\Application</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	public <span class="function"><span class="keyword">function</span> <span class="title">createApplication</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		$app = <span class="built_in">require</span> __DIR__.<span class="string">'/../bootstrap/app.php'</span>;</span><br><span class="line"></span><br><span class="line">		$app-&gt;make(<span class="string">'Illuminate\Contracts\Console\Kernel'</span>)-&gt;bootstrap();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> $app;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">testSomethingIsTrue</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;assertTrue(<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">你可以从终端机执行phpunit 命令来执行应用程序的所有测试。</span><br><span class="line"></span><br><span class="line">$response = $<span class="keyword">this</span>-&gt;call(<span class="string">'GET'</span>, <span class="string">'user/profile'</span>);</span><br><span class="line"></span><br><span class="line">$response = $<span class="keyword">this</span>-&gt;call($method, $uri, $parameters,  $cookies, $files, $server, $content);</span><br><span class="line">接着你可以检查Illuminate\Http\Response 对象：</span><br><span class="line"></span><br><span class="line">$<span class="keyword">this</span>-&gt;assertEquals(<span class="string">'Hello World'</span>, $response-&gt;getContent());</span><br><span class="line">从测试调用控制器</span><br><span class="line"></span><br><span class="line">你也可以从测试调用控制器：</span><br><span class="line"></span><br><span class="line">$response = $<span class="keyword">this</span>-&gt;action(<span class="string">'GET'</span>, <span class="string">'HomeController@index'</span>);</span><br><span class="line"></span><br><span class="line">$response = $<span class="keyword">this</span>-&gt;action(<span class="string">'GET'</span>, <span class="string">'UserController@profile'</span>, array(<span class="string">'user'</span> =&gt; <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="phpunit-xml"><a href="#phpunit-xml" class="headerlink" title="phpunit.xml"></a>phpunit.xml</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;phpunit backupGlobals=<span class="string">"false"</span></span><br><span class="line">         backupStaticAttributes=<span class="string">"false"</span></span><br><span class="line">         bootstrap=<span class="string">"bootstrap/autoload.php"</span></span><br><span class="line">         colors=<span class="string">"true"</span></span><br><span class="line">         convertErrorsToExceptions=<span class="string">"true"</span></span><br><span class="line">         convertNoticesToExceptions=<span class="string">"true"</span></span><br><span class="line">         convertWarningsToExceptions=<span class="string">"true"</span></span><br><span class="line">         processIsolation=<span class="string">"false"</span></span><br><span class="line">         stopOnFailure=<span class="string">"false"</span></span><br><span class="line">         syntaxCheck=<span class="string">"false"</span>&gt;</span><br><span class="line">    &lt;testsuites&gt;</span><br><span class="line">        &lt;testsuite name=<span class="string">"Application Test Suite"</span>&gt;</span><br><span class="line">            &lt;directory&gt;./tests/&lt;/directory&gt;</span><br><span class="line">        &lt;<span class="regexp">/testsuite&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>testsuites&gt;</span><br><span class="line">    &lt;php&gt;</span><br><span class="line">        &lt;env name=<span class="string">"APP_ENV"</span> value=<span class="string">"testing"</span>/&gt;</span><br><span class="line">        &lt;env name=<span class="string">"CACHE_DRIVER"</span> value=<span class="string">"array"</span>/&gt;</span><br><span class="line">        &lt;env name=<span class="string">"SESSION_DRIVER"</span> value=<span class="string">"array"</span>/&gt;</span><br><span class="line">        &lt;env name=<span class="string">"QUEUE_DRIVER"</span> value=<span class="string">"sync"</span>/&gt;</span><br><span class="line">    &lt;<span class="regexp">/php&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>phpunit&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="https://learnku.com/articles/17529" target="_blank" rel="noopener">Laravel 单元测试那些事</a></p>
+<p><a href="https://wiki.jikexueyuan.com/project/laravel/testing.html" target="_blank" rel="noopener">单元测试</a></p>
+<p><a href="https://iyaozhen.com/php-unit-test-mock-and-db-test.html" target="_blank" rel="noopener">PHP单元测试-mock和数据库测试</a></p>
+<p><a href="https://learnku.com/docs/laravel/5.8/testing/3937" target="_blank" rel="noopener">测试：入门指南</a></p>
+<p><a href="http://0x3f.org/post/unit-testing-standard-for-laravel-based-projects/" target="_blank" rel="noopener">基于Laravel的项目的单元测试规范</a></p>
+<p><a href="https://phpunit.readthedocs.io/zh_CN/latest/test-doubles.html" target="_blank" rel="noopener">phpunit文档</a></p>
+<p><a href="https://learnku.com/laravel/t/22814" target="_blank" rel="noopener">PHPUnit 入门教程</a></p>
+<p><a href="https://learnku.com/articles/24030" target="_blank" rel="noopener">PHP 单元测试覆盖率</a></p>
+<p><a href="https://learnku.com/articles/22072" target="_blank" rel="noopener">phpunit 快速入门</a></p>
+<p><a href="https://learnku.com/docs/phpunit-testing-laravel/1introduction-to-application-testing/2467" target="_blank" rel="noopener">测试简介</a></p>
+<p>使用 PHPUnit 进行单元和功能测试 <a href="https://www.jianshu.com/p/1c929f7fe7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/1c929f7fe7ed</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/09/公众号苏生不惑原创文章整理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1973,206 +2139,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/那些我常用的-Chrome-扩展/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/16/那些我常用的-Chrome-扩展/" itemprop="url">那些我常用的 Chrome 扩展</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T20:24:50+08:00">
-                2019-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.5k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Chrome仍然是目前最好的浏览器，每天用Chrome 必然少不了使用扩展来增强浏览器的功能，这里整理下我常用的Chrome 扩展。</p>
-<h3 id="油猴"><a href="#油猴" class="headerlink" title="油猴"></a>油猴</h3><p>这个简直神器，所以第一个推荐 <a href="https://www.tampermonkey.net/" target="_blank" rel="noopener">https://www.tampermonkey.net/</a> 下载后在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 这里安装对应的脚本。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6adf0aadf65e6fbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>常用的脚本比如百度网盘直链下载<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b7cb5eda1a10d0f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>全网VIP视频免费观看</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-b2f94d4075308365.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>之前已经写过<br> <a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a><br><a href="https://mp.weixin.qq.com/s/iluJYFYgT8bpMhrsxf0b5A" target="_blank" rel="noopener">Chrome 浏览器扩展神器暴力猴</a><br>下载地址 <a href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo</a></p>
-<h3 id="取字"><a href="#取字" class="headerlink" title="取字"></a>取字</h3><p>之前写过ocr <a href="https://mp.weixin.qq.com/s/CHb3gOMfGjwNjaznbv0R4g" target="_blank" rel="noopener">那些你可能不知道的 ocr 图片文字识别工具</a>，虽然有桌面版工具天若ocr，但在浏览器里还是用<code>取字</code>这个扩展方便<a href="http://willingstudio.com/#install" target="_blank" rel="noopener">http://willingstudio.com/#install</a>   ，它具有通识化场景的 OCR 识别功能浏览器插件，快速框选，可精确识别图片或者视频中的文本。</p>
-<p>它提供本地安装和Chrome应用商店安装<a href="https://chrome.google.com/webstore/detail/jmonhcfndjifnfldnaknlpgpfjlgpiig?from=http://willingstudio.com" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/jmonhcfndjifnfldnaknlpgpfjlgpiig?from=http://willingstudio.com</a> 安装方法上面也有，上不了Google推荐下面的方法。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e026322ce645c90c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> 使用效果如图：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-15a0fc4ec4265e66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-7ba1a80601a553fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="WEB前端助手"><a href="#WEB前端助手" class="headerlink" title="WEB前端助手"></a>WEB前端助手</h3><p>这个扩展包含多个独立小应用，比如：Json工具、代码美化、代码压缩、二维码、Postman、markdown、网页油猴、便签笔记、信息加密与解密、随机密码生成、Crontab等等！<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d7b8292e30dc79cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>扩展地址 <a href="https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN</a></p>
-<h3 id="listen1"><a href="#listen1" class="headerlink" title="listen1"></a>listen1</h3><p>Listen 1可以搜索和播放来自网易云音乐，虾米，QQ音乐，酷狗音乐，酷我音乐网站的歌曲，让你的曲库更全面，不用一个个找了。<a href="https://listen1.github.io/listen1/" target="_blank" rel="noopener">https://listen1.github.io/listen1/</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-eef4692e567c2a2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>之前也写过 <a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
-<h3 id="极简-Json-格式化"><a href="#极简-Json-格式化" class="headerlink" title="极简 Json 格式化"></a>极简 Json 格式化</h3><p>这个用来看json格式的接口最方便了，由<a href="https://atool.vip/#/" target="_blank" rel="noopener">https://atool.vip/#/</a>提供。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f325d2e123ce8112.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址 <a href="https://chrome.google.com/webstore/detail/%E6%9E%81%E7%AE%80-json-%E6%A0%BC%E5%BC%8F%E5%8C%96/fhlnfdmpnhhakjljpllkigcegcejpoec?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/%E6%9E%81%E7%AE%80-json-%E6%A0%BC%E5%BC%8F%E5%8C%96/fhlnfdmpnhhakjljpllkigcegcejpoec?hl=zh-CN</a></p>
-<h3 id="百度网盘助手"><a href="#百度网盘助手" class="headerlink" title="百度网盘助手"></a>百度网盘助手</h3><p>用来下载百度网盘的工具 增加高速下载按钮。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-23ca4429842e815a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址  <a href="https://github.com/high-speed-downloader/high-speed-downloader" target="_blank" rel="noopener">https://github.com/high-speed-downloader/high-speed-downloader</a></p>
-<h3 id="图片助手"><a href="#图片助手" class="headerlink" title="图片助手"></a>图片助手</h3><p>一款Chrome浏览器中用于嗅探、分析网页图片、图片筛选、下载等功能及收藏、检索、分享等在线服务的扩展程序，无论图片是使用flash载入还是动态载入的，扩展都能很好地应对，真正做到所见即所得 <a href="http://www.pullywood.com/ImageAssistant/" target="_blank" rel="noopener">http://www.pullywood.com/ImageAssistant/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-4f4c94288819118a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址<a href="https://chrome.google.com/webstore/detail/imageassistant-batch-imag/dbjbempljhcmhlfpfacalomonjpalpko" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/imageassistant-batch-imag/dbjbempljhcmhlfpfacalomonjpalpko</a></p>
-<h3 id="微博图床"><a href="#微博图床" class="headerlink" title="微博图床"></a>微博图床</h3><p>一个上传图片到微博并生成外链的 Chrome 浏览器扩展<a href="https://github.com/Semibold/Weibo-Picture-Store" target="_blank" rel="noopener">https://github.com/Semibold/Weibo-Picture-Store</a>，支持同步到微相册 ，需要浏览器登录微博。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-dd79a0d9e1c89cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址 <a href="https://chrome.google.com/webstore/detail/pinjkilghdfhnkibhcangnpmcpdpmehk" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/pinjkilghdfhnkibhcangnpmcpdpmehk</a></p>
-<h3 id="谷歌访问助手"><a href="#谷歌访问助手" class="headerlink" title="谷歌访问助手"></a>谷歌访问助手</h3><p>这个上谷歌必备<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e0c8dc4074b512e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址<a href="https://github.com/haotian-wang/google-access-helper/archive/master.zip" target="_blank" rel="noopener">https://github.com/haotian-wang/google-access-helper/archive/master.zip</a> 如果下载不了公众号回复 <code>谷歌</code> 获取</p>
-<h3 id="爱搜资源云盘助手"><a href="#爱搜资源云盘助手" class="headerlink" title="爱搜资源云盘助手"></a>爱搜资源云盘助手</h3><p>之前写过文章 <a href="https://mp.weixin.qq.com/s/MUIPj4OgSxAeRl5Hk-2tuw" target="_blank" rel="noopener">没有提取码怎么获取百度网盘资源？</a>，不用自己输入提取码。<a href="https://www.aisouziyuan.com/" target="_blank" rel="noopener">https://www.aisouziyuan.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-9c50d75dd07d538a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址 <a href="https://chrome.google.com/webstore/detail/%E7%88%B1%E6%90%9C%E8%B5%84%E6%BA%90%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B-%E7%A8%B3%E5%AE%9A%E7%89%88/mbklgpngoohbbagagdfoccaclpdhgihd?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/%E7%88%B1%E6%90%9C%E8%B5%84%E6%BA%90%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B-%E7%A8%B3%E5%AE%9A%E7%89%88/mbklgpngoohbbagagdfoccaclpdhgihd?hl=zh-CN</a></p>
-<h3 id="壹伴"><a href="#壹伴" class="headerlink" title="壹伴"></a>壹伴</h3><p>经常使用公众号推荐这个工具，数据统计，点赞率和留言率都显示出来。<a href="https://yiban.io/" target="_blank" rel="noopener">https://yiban.io/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-4bb00580415bb978.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址 <a href="https://chrome.google.com/webstore/detail/%E5%A3%B9%E4%BC%B4-%C2%B7-%E5%B0%8F%E6%8F%92%E4%BB%B6/ibefaeehajgcpooopoegkifhgecigeeg" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/%E5%A3%B9%E4%BC%B4-%C2%B7-%E5%B0%8F%E6%8F%92%E4%BB%B6/ibefaeehajgcpooopoegkifhgecigeeg</a></p>
-<h3 id="一键视频下载器"><a href="#一键视频下载器" class="headerlink" title="一键视频下载器"></a>一键视频下载器</h3><p>比如微博上的视频，点击按钮就能显示当前可以下载的视频，直接点击下载到本地。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-de4d190cdfd3d06f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下载地址 <a href="https://chrome.google.com/webstore/detail/one-click-video-downloade/bhepgcoaibmmehlmckhlmbdgcemhidcg" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/one-click-video-downloade/bhepgcoaibmmehlmckhlmbdgcemhidcg</a></p>
-<h3 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h3><p>co-trans-ext 是一个集搜狗翻译、百度翻译、谷歌翻译、有道翻译、金山词霸于一体的翻译扩展。各平台可随时切换，取长补短，更适合于阅读各领域的文档。不止于翻译，解析详细，更利于对各门语言的深入学习与理解。支持划词翻译和网页翻译。<br>下载后将crx后缀改为zip，然后拖到扩展中，除了翻译还提供发音，非常好用。<br> <img src="https://upload-images.jianshu.io/upload_images/17817191-62f9c2fe40fa8f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址：<a href="https://github.com/Coande/co-trans-ext" target="_blank" rel="noopener">https://github.com/Coande/co-trans-ext</a></p>
-<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p>它满足截图所有的需求，截取可见网页，选择区域，整个网页，录屏，捕获整个页面或任何部分，矩形，圆形，箭头，线条和文字，模糊敏感信息，一键上传分享注释。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7a49328c5baf176b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-4dcae7ed5ab8b479.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址<a href="https://chrome.google.com/webstore/detail/awesome-screenshot-screen/nlipoenfbbikpbjkfpfillcgkoblgpmj" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/awesome-screenshot-screen/nlipoenfbbikpbjkfpfillcgkoblgpmj</a></p>
-<h3 id="聊天"><a href="#聊天" class="headerlink" title="聊天"></a>聊天</h3><p>和浏览相同网页的人实时聊天，发弹幕！<a href="http://yiyechat.com/" target="_blank" rel="noopener">http://yiyechat.com/</a><br>该扩展可以在任意网页增加一个简洁的聊天盒，让您可以和浏览当前网站的其他用户聊天！</p>
-<p>这是百度页面的聊天<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a1f8b3bd1897ec60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>下载地址 <a href="https://chrome.google.com/webstore/detail/same-page/bldcellajihanglphncgjmceklbibjkk" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/same-page/bldcellajihanglphncgjmceklbibjkk</a></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>用Chrome学编程(如何用Chrome优雅装B) <a href="https://github.com/zhaoolee/ProgrammingWithChrome" target="_blank" rel="noopener">https://github.com/zhaoolee/ProgrammingWithChrome</a><br>Chrome插件英雄榜 <a href="https://zhaoolee.gitbooks.io/chrome/content/" target="_blank" rel="noopener">https://zhaoolee.gitbooks.io/chrome/content/</a><br>那些离不开的 Chrome 扩展插件<a href="https://michael728.github.io/2015/11/26/tools-chrome-extentions/" target="_blank" rel="noopener">https://michael728.github.io/2015/11/26/tools-chrome-extentions/</a></p>
-<p>你平常用了哪些不错的扩展，也欢迎评论给我推荐下。</p>
-<p>推荐阅读:</p>
-<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
-<p><a href="https://mp.weixin.qq.com/s/_3AeNahwbs8c3UJ0is1t4A" target="_blank" rel="noopener">如何在电脑上登陆多个微信</a></p>
-<p><a href="https://mp.weixin.qq.com/s/qyFvOgHf1mXwPKO0tQwUyg" target="_blank" rel="noopener">如何提取公积金 9 天到账</a></p>
-<p><a href="https://mp.weixin.qq.com/s/1omFkK5PPyeJEzUTagj9qg" target="_blank" rel="noopener">免费在线听周杰伦歌曲</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
-<p><a href="https://mp.weixin.qq.com/s/qNfuWjH54WHJtx4sEE5xwA" target="_blank" rel="noopener">10%+10% 不等于 0.2？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
-<p><a href="https://mp.weixin.qq.com/s/mI5kubVY2t5jwJ9ub7A1iA" target="_blank" rel="noopener">我的新浪工作日常</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2223,7 +2189,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-count">129</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2454,7 +2420,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共427.4k字</span>
+  <span class="post-count">博客全站共430.2k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
