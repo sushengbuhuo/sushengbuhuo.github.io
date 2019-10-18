@@ -285,6 +285,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/leetcode-题解/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/19/leetcode-题解/" itemprop="url">leetcode 题解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T15:15:39+08:00">
+                2019-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  494 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。</span><br><span class="line">给定 nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line">因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span></span><br><span class="line">所以返回 [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">twoSum</span>(<span class="params">$nums, $target</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!isset($nums[<span class="number">1</span>])) <span class="keyword">return</span>;</span><br><span class="line">        foreach ($nums <span class="keyword">as</span> $key =&gt; $num) &#123;</span><br><span class="line">            unset($nums[$key]);</span><br><span class="line">            $result = array_search($target - $num, $nums);</span><br><span class="line">            <span class="keyword">if</span> ($result !== <span class="literal">false</span>) <span class="keyword">return</span> [$key, $result];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param String $J</span></span><br><span class="line"><span class="comment">     * @param String $S</span></span><br><span class="line"><span class="comment">     * @return Integer  https://learnku.com/articles/27545</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">numJewelsInStones</span>(<span class="params">$j, $s</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        $jArr = str_split($j);</span><br><span class="line">        $sArr = str_split($s);</span><br><span class="line">        $i = <span class="number">0</span>;</span><br><span class="line">        foreach($sArr <span class="keyword">as</span> $sItem)&#123;</span><br><span class="line">            <span class="keyword">if</span>(in_array($sItem, $jArr))&#123;</span><br><span class="line">                $i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $i;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="在常数时间内检索到最小元素的栈"><a href="#在常数时间内检索到最小元素的栈" class="headerlink" title="在常数时间内检索到最小元素的栈"></a>在常数时间内检索到最小元素的栈</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">    protected $stack;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * initialize your data structure here.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;stack = [];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param Integer $x</span></span><br><span class="line"><span class="comment">     * @return NULL</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">$x</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;stack[] = $x;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @return NULL</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        array_pop($<span class="keyword">this</span>-&gt;stack);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @return Integer</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> end($<span class="keyword">this</span>-&gt;stack);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @return Integer</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getMin</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> min($<span class="keyword">this</span>-&gt;stack);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a>Reverse Integer</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="number">123</span></span><br><span class="line">输出: <span class="number">321</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">$x</span>) </span>&#123;</span><br><span class="line">        $result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (abs($x) &gt; <span class="number">9</span>) &#123;</span><br><span class="line">            $num = $x % <span class="number">10</span>;</span><br><span class="line">            $x = (int)($x / <span class="number">10</span>);</span><br><span class="line">            $result = $result * <span class="number">10</span> + $num;</span><br><span class="line">        &#125;</span><br><span class="line">        $result = $result * <span class="number">10</span> + $x;</span><br><span class="line">        <span class="keyword">if</span> (strlen(base_convert($result, <span class="number">10</span>, <span class="number">2</span>)) &gt; <span class="number">31</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> $result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="回文数"><a href="#回文数" class="headerlink" title="回文数"></a>回文数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="number">121</span></span><br><span class="line">输出: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">输入: <span class="number">-123</span></span><br><span class="line">输出: <span class="literal">false</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isPalindrome</span>(<span class="params">$x</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($x &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> ($x % <span class="number">10</span> === <span class="number">0</span> &amp;&amp; $x != <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        $reverse = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ($x &gt; $reverse) &#123;</span><br><span class="line">            $reverse = (int)($reverse * <span class="number">10</span> + $x % <span class="number">10</span>);</span><br><span class="line">            $x = (int)($x / <span class="number">10</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $x === $reverse || $x === (int)($reverse / <span class="number">10</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Remove-Linked-List-Elements"><a href="#Remove-Linked-List-Elements" class="headerlink" title="Remove Linked List Elements"></a>Remove Linked List Elements</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param ListNode $head</span></span><br><span class="line"><span class="comment">     * @param Integer $val</span></span><br><span class="line"><span class="comment">     * @return ListNode</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">removeElements</span>(<span class="params">$head, $val</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!$head)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        $data=$head;</span><br><span class="line">        <span class="keyword">while</span>($data-&gt;next)&#123;</span><br><span class="line">            <span class="keyword">if</span>($data-&gt;next-&gt;val==$val)&#123;</span><br><span class="line">                $data-&gt;next=$data-&gt;next-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                $data=$data-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $head-&gt;val==$val?$head-&gt;next:$head;      </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://lbjheiheihei.xyz/2018/08/23/CTF-2.html" target="_blank" rel="noopener">CTF 相关的内容</a></p>
+<p><a href="https://cgctf.nuptsast.com/challenges#Web" target="_blank" rel="noopener">ctf 挑战</a></p>
+<p><a href="http://cs-cjl.com/2016/06_23_leetcode_1_two_sum" target="_blank" rel="noopener">LeetCode 算法题 1. Two Sum</a></p>
+<p><a href="https://laravelacademy.org/post/19641.html" target="_blank" rel="noopener">Leetcode基础刷题之PHP解析(112. Path Sum)</a></p>
+<p><a href="https://learnku.com/articles/25478" target="_blank" rel="noopener">尝试 Leetcode https://github.com/icecho/leetcode</a></p>
+<p><a href="https://laravelacademy.org/tags/leetcode" target="_blank" rel="noopener">Leetcode之PHP版题目解析</a></p>
+<p><a href="https://leetcode-cn.com/" target="_blank" rel="noopener">leetcode中国</a></p>
+<p><a href="https://github.com/haoel/haoel.github.io" target="_blank" rel="noopener">科学上网</a></p>
+<p><a href="https://learnku.com/articles/25461#topnav" target="_blank" rel="noopener">挑战用 PHP 在 LeetCode 刷算法题</a></p>
+<p><a href="http://blessjing.cn/index.php/2019/03/31/arts-%E6%8C%91%E6%88%98%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%91%A8%EF%BC%89/" target="_blank" rel="noopener">ARTS 挑战</a></p>
+<p><a href="https://github.com/haoel/leetcode" target="_blank" rel="noopener">LEETCODE 编程训练</a></p>
+<p><a href="https://github.com/wuqinqiang/leetcode-php" target="_blank" rel="noopener">PHP 开始 leetcode 刷题时光</a></p>
+<p><a href="https://learnku.com/articles/29219" target="_blank" rel="noopener">Leetcode 二叉树题目集合</a></p>
+<p><a href="https://github.com/8090Lambert/Leetcode-Example" target="_blank" rel="noopener">Leetcode 全套题解</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/golang-学习笔记/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -881,7 +1052,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.1k 字
+                  4.2k 字
                 </span>
               
 
@@ -897,7 +1068,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  18 分钟
+                  19 分钟
                 </span>
               
             </div>
@@ -1010,6 +1181,9 @@
 <p><a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener">Git的奇技淫巧</a></p>
 <p><a href="https://qishaoxuan.github.io/css_tricks/" target="_blank" rel="noopener">css奇技淫巧</a></p>
 <p><a href="https://github.com/DoubleLabyrinth/Xmanager-keygen" target="_blank" rel="noopener">Xmanager Power Suit 安装</a></p>
+<p>闲鱼搜索 <a href="https://s.2.taobao.com/list/list.htm?q=%E5%85%B3%E9%94%AE%E8%AF%8D&amp;search_type=item&amp;app=shopsearch" target="_blank" rel="noopener">https://s.2.taobao.com/list/list.htm?q=%E5%85%B3%E9%94%AE%E8%AF%8D&amp;search_type=item&amp;app=shopsearch</a></p>
+<p>翻译工具 <a href="https://www.ltool.net/japanese-full-jenkaku-to-half-hankaku-converter-in-simplified-chinese.php" target="_blank" rel="noopener">https://www.ltool.net/japanese-full-jenkaku-to-half-hankaku-converter-in-simplified-chinese.php</a></p>
+<p>幕布精选」投稿指南 <a href="https://mubu.com/doc/rBSPqyZmqp" target="_blank" rel="noopener">https://mubu.com/doc/rBSPqyZmqp</a></p>
 
           
         
@@ -2190,170 +2364,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/php-sentry/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/15/php-sentry/" itemprop="url">php sentry</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-15T16:04:16+08:00">
-                2019-01-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  419 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>sentry 是一个</p>
-<h3 id="配置sentry"><a href="#配置sentry" class="headerlink" title="配置sentry"></a>配置sentry</h3><p>可以在sentry.io注册账号获取配置<a href="https://sentry.io/settings/sina-tl/sina/keys/" target="_blank" rel="noopener">https://sentry.io/settings/sina-tl/sina/keys/</a> ，如 <a href="http://root:root@127.0.0.1:1234/2" target="_blank" rel="noopener">http://root:root@127.0.0.1:1234/2</a><br>当然也可以自己搭建服务器，参考 <a href="https://laravel-china.org/articles/4285/build-your-own-sentry-service" target="_blank" rel="noopener">https://laravel-china.org/articles/4285/build-your-own-sentry-service</a></p>
-<h3 id="sentry扩展"><a href="#sentry扩展" class="headerlink" title="sentry扩展"></a>sentry扩展</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="built_in">require</span> <span class="string">"sentry/sentry"</span></span><br><span class="line">require_once APP_BASE_PATH.<span class="string">'/vendor/autoload.php'</span>;</span><br><span class="line">$client = <span class="keyword">new</span> \Raven_Client(<span class="string">'http://root:root@127.0.0.1:1234/2'</span>);</span><br><span class="line">$error_handler = <span class="keyword">new</span> \Raven_ErrorHandler($client);</span><br><span class="line">$error_handler-&gt;registerExceptionHandler();</span><br><span class="line">$error_handler-&gt;registerErrorHandler();</span><br><span class="line">$error_handler-&gt;registerShutdownFunction();</span><br><span class="line"> <span class="comment">//直接写日志</span></span><br><span class="line"> $client-&gt;captureMessage(<span class="string">'my log message'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="monolog日志写入Redis"><a href="#monolog日志写入Redis" class="headerlink" title="monolog日志写入Redis"></a>monolog日志写入Redis</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> composer <span class="built_in">require</span> <span class="string">"monolog/monolog: 1.18.0"</span></span><br><span class="line"> composer <span class="built_in">require</span> <span class="string">'predis/predis'</span></span><br><span class="line">use Monolog\Handler\RedisHandler;</span><br><span class="line">use Monolog\Formatter\JsonFormatter;</span><br><span class="line">use Monolog\Formatter\LineFormatter;</span><br><span class="line">use Monolog\Processor\MemoryPeakUsageProcessor;</span><br><span class="line">use Monolog\Processor\WebProcessor;</span><br><span class="line">use Monolog\Processor\IntrospectionProcessor;</span><br><span class="line">use Monolog\Handler\RavenHandler;</span><br><span class="line">use Monolog\Logger;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Monolog</span></span>&#123;</span><br><span class="line">    public $logger;</span><br><span class="line"></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params">$name</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;logger = <span class="keyword">new</span> Logger($name);</span><br><span class="line">        <span class="comment">//https://docs.sentry.io/clients/php/integrations/monolog/</span></span><br><span class="line">        $redis = <span class="keyword">new</span> \Predis\Client([</span><br><span class="line">            <span class="string">'scheme'</span> =&gt; <span class="string">'tcp'</span>,</span><br><span class="line">            <span class="string">'host'</span>   =&gt; <span class="string">'127.0.0.1'</span>,</span><br><span class="line">            <span class="string">'port'</span>   =&gt; <span class="number">6379</span>,</span><br><span class="line">            <span class="string">'read_write_timeout'</span> =&gt; <span class="number">0</span>,</span><br><span class="line">        ]);</span><br><span class="line">        $handler = <span class="keyword">new</span> RedisHandler($redis, <span class="string">"app:sentry"</span>, \Monolog\Logger::DEBUG);</span><br><span class="line">        $<span class="keyword">this</span>-&gt;logger-&gt;pushHandler($handler);</span><br><span class="line">        $handler-&gt;setFormatter(<span class="keyword">new</span> JsonFormatter(JsonFormatter::BATCH_MODE_NEWLINES, <span class="literal">true</span>));</span><br><span class="line">        $handler-&gt;pushProcessor(<span class="keyword">new</span> MemoryPeakUsageProcessor(<span class="literal">true</span>));</span><br><span class="line">        $handler-&gt;pushProcessor(<span class="keyword">new</span> IntrospectionProcessor());</span><br><span class="line">        $arr = [</span><br><span class="line">            <span class="string">'url'</span> =&gt; <span class="string">'REQUEST_URI'</span>,</span><br><span class="line">            <span class="string">'ip'</span> =&gt; <span class="string">'REMOTE_ADDR'</span>,</span><br><span class="line">            <span class="string">'http_method'</span> =&gt; <span class="string">'REQUEST_METHOD'</span>,</span><br><span class="line">            <span class="string">'query_string'</span> =&gt; <span class="string">'QUERY_STRING'</span>,</span><br><span class="line">            <span class="string">'cookies'</span> =&gt; <span class="string">'HTTP_COOKIE'</span>,</span><br><span class="line">            <span class="string">'host'</span> =&gt; <span class="string">'HTTP_HOST'</span>,</span><br><span class="line">            <span class="string">'referrer'</span> =&gt; <span class="string">'HTTP_REFERER'</span>,</span><br><span class="line">            <span class="string">'ua'</span> =&gt; <span class="string">'HTTP_USER_AGENT'</span>,</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">        $handler-&gt;pushProcessor(<span class="keyword">new</span> WebProcessor(<span class="literal">null</span>, $arr));</span><br><span class="line">        $<span class="keyword">this</span>-&gt;logger-&gt;addinfo(<span class="string">'applog'</span>,[<span class="string">'info'</span>=&gt;<span class="string">'test'</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="消费redis入sentry"><a href="#消费redis入sentry" class="headerlink" title="消费redis入sentry"></a>消费redis入sentry</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">use Raven_Client;</span><br><span class="line">use Monolog\Handler\RavenHandler;</span><br><span class="line">use Monolog\Formatter\LineFormatter;</span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            $redis = <span class="keyword">new</span> \Predis\Client([</span><br><span class="line">                        <span class="string">'scheme'</span> =&gt; <span class="string">'tcp'</span>,</span><br><span class="line">                        <span class="string">'host'</span>   =&gt; <span class="string">'127.0.0.1'</span>,</span><br><span class="line">                        <span class="string">'port'</span>   =&gt; <span class="number">6379</span>,</span><br><span class="line">                        <span class="string">'read_write_timeout'</span> =&gt; <span class="number">0</span>,</span><br><span class="line">                    ]);</span><br><span class="line">            $data = $redis-&gt;lpop(<span class="string">"app:sentry"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (empty($data)) &#123;</span><br><span class="line">                sleep(<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $data = json_decode($data, <span class="literal">true</span>);</span><br><span class="line">            $raven_client= <span class="keyword">new</span> Raven_Client(<span class="string">'http://root:root@127.0.0.1:1234/3'</span>,[</span><br><span class="line">                <span class="string">'extra'</span>=&gt;$data[<span class="string">'extra'</span>],</span><br><span class="line">                <span class="string">'tags'</span>=&gt;[]</span><br><span class="line">            ]);</span><br><span class="line">            $raven_hanlder=<span class="keyword">new</span> RavenHandler($raven_client);</span><br><span class="line"></span><br><span class="line">            $data[<span class="string">'extra'</span>] = [];</span><br><span class="line">            $r=$raven_hanlder-&gt;handle($data);</span><br><span class="line">            $raven_client-&gt;__destruct();</span><br></pre></td></tr></table></figure>
-<h3 id="查看错误日志"><a href="#查看错误日志" class="headerlink" title="查看错误日志"></a>查看错误日志</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//sentry.io/sina-tl/sina/issues/845243592/?query=is%3Aunresolved</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://juejin.im/post/5a992115f265da239f06d0d7" target="_blank" rel="noopener">php sentry</a></p>
-<p><a href="https://blog.ansheng.me/article/docker-sentry-django-email-dingtalk/" target="_blank" rel="noopener">Docker部署Sentry监控Django应用并使用email+钉钉通知</a></p>
-<p><a href="https://docs.sentry.io/clients/php/usage/" target="_blank" rel="noopener">php sentry usage</a></p>
-<p><a href="https://juejin.im/post/5b226cbe51882574d02f9f62" target="_blank" rel="noopener">搭建私有的前端监控服务: sentry</a></p>
-<p><a href="https://laravel-china.org/articles/4235/sentry-automation-exception-alert" target="_blank" rel="noopener">sentry异常提醒</a></p>
-<p><a href="https://laravel-china.org/articles/4295/centos6-install-python-based-on-sentry#reply22542" target="_blank" rel="noopener">CentOS6 基于 Python 安装 Sentry </a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2404,7 +2414,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2635,7 +2645,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共435.4k字</span>
+  <span class="post-count">博客全站共438.3k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");

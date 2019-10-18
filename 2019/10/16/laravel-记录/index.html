@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Laravel 网站不会被嵌入到其他站点中123456789101112131415161718192021222324252627282930313233343536373839404142434445HTTP 响应头部中，有一个字段，叫做 X-Frame-Options，该字段可以用来指示是否允许自己的网站被嵌入到其他网站的 &amp;lt;iframe&amp;gt; 或者 &amp;lt;object&amp;gt; 标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="laravel 记录">
+<meta property="og:url" content="http://yoursite.com/2019/10/16/laravel-记录/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="Laravel 网站不会被嵌入到其他站点中123456789101112131415161718192021222324252627282930313233343536373839404142434445HTTP 响应头部中，有一个字段，叫做 X-Frame-Options，该字段可以用来指示是否允许自己的网站被嵌入到其他网站的 &amp;lt;iframe&amp;gt; 或者 &amp;lt;object&amp;gt; 标">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-18T11:19:44.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="laravel 记录">
+<meta name="twitter:description" content="Laravel 网站不会被嵌入到其他站点中123456789101112131415161718192021222324252627282930313233343536373839404142434445HTTP 响应头部中，有一个字段，叫做 X-Frame-Options，该字段可以用来指示是否允许自己的网站被嵌入到其他网站的 &amp;lt;iframe&amp;gt; 或者 &amp;lt;object&amp;gt; 标">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/16/laravel-记录/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>laravel 记录 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/laravel-记录/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">laravel 记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-16T19:45:15+08:00">
+                2019-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Laravel-网站不会被嵌入到其他站点中"><a href="#Laravel-网站不会被嵌入到其他站点中" class="headerlink" title="Laravel 网站不会被嵌入到其他站点中"></a>Laravel 网站不会被嵌入到其他站点中</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">HTTP 响应头部中，有一个字段，叫做 X-Frame-Options，该字段可以用来指示是否允许自己的网站被嵌入到其他网站的 &lt;iframe&gt; 或者 &lt;object&gt; 标签中。该头部有三个值</span><br><span class="line"></span><br><span class="line">DENY - 始终不允许嵌入，即使是同一个域名</span><br><span class="line">SAMEORIGIN - 只能在相同域名中嵌入</span><br><span class="line">ALLOW-FROM uri - 设置允许的域</span><br><span class="line">通常，可以在 HTTP 代理中进行配置，比如 nginx</span><br><span class="line"></span><br><span class="line">add_header X-Frame-Options SAMEORIGIN;</span><br><span class="line">Laravel 自带了用来「只允许同域名嵌入」的中间件，我们只需要在 /app/Http/Kernel.php 中添加即可</span><br><span class="line"></span><br><span class="line"><span class="comment">// /app/Http/Kernel.php</span></span><br><span class="line">protected $middleware = [</span><br><span class="line">    \Illuminate\Http\Middleware\FrameGuard::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line">];</span><br><span class="line">该中间件的实现如下</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace Illuminate\Http\Middleware;</span><br><span class="line"></span><br><span class="line">use Closure;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FrameGuard</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Handle the given request and get the response.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param  \Illuminate\Http\Request  $request</span></span><br><span class="line"><span class="comment">     * @param  \Closure  $next</span></span><br><span class="line"><span class="comment">     * @return \Symfony\Component\HttpFoundation\Response</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params">$request, Closure $next</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $response = $next($request);</span><br><span class="line"></span><br><span class="line">        $response-&gt;headers-&gt;set(<span class="string">'X-Frame-Options'</span>, <span class="string">'SAMEORIGIN'</span>, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> $response;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">https:<span class="comment">//learnku.com/articles/35201</span></span><br><span class="line">https:<span class="comment">//securityheaders.com/</span></span><br><span class="line"></span><br><span class="line">可以直接扫描特定 URL 是否包含一些安全头信息。类似的头还有 X-Content-Type-Options、 Referrer-Policy、Feature-Policy 等。</span><br></pre></td></tr></table></figure>
+<h3 id="Uncaught-ReflectionException-Class-request-does-not-exist"><a href="#Uncaught-ReflectionException-Class-request-does-not-exist" class="headerlink" title="Uncaught ReflectionException: Class request does not exist"></a>Uncaught ReflectionException: Class request does not exist</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PHP Fatal error:  Uncaught ReflectionException: Class request does not exist <span class="keyword">in</span> /home/vagrant/learnku/vendor/laravel/framework/src/Illuminate/Container/Container.php:<span class="number">790</span></span><br><span class="line">Stack trace:</span><br><span class="line">在 App\Exceptions\Handler::report() 方法里，使用：</span><br><span class="line"></span><br><span class="line">dd($exception);</span><br></pre></td></tr></table></figure>
+<h3 id="Laravel-下-TNTSearch-jieba-PHP-实现中文全文搜索"><a href="#Laravel-下-TNTSearch-jieba-PHP-实现中文全文搜索" class="headerlink" title="Laravel 下 TNTSearch+jieba-PHP 实现中文全文搜索"></a>Laravel 下 TNTSearch+jieba-PHP 实现中文全文搜索</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">TNTSearch+jieba-php 这套组合可以在不依赖第三方的情况下实现中文全文搜索；</span><br><span class="line">composer <span class="built_in">require</span> vanry/laravel-scout-tntsearch</span><br><span class="line"><span class="string">'providers'</span> =&gt; [</span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * TNTSearch 全文搜索</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    Laravel\Scout\ScoutServiceProvider::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line">    Vanry\Scout\TNTSearchScoutServiceProvider::class,</span><br><span class="line">],</span><br><span class="line">composer <span class="built_in">require</span> fukuball/jieba-php</span><br><span class="line"></span><br><span class="line">php artisan vendor:publish --provider=<span class="string">"Laravel\Scout\ScoutServiceProvider"</span></span><br><span class="line"></span><br><span class="line">配置项 config/scout.php 中增加 tntsearch</span><br><span class="line"></span><br><span class="line"><span class="string">'tntsearch'</span> =&gt; [</span><br><span class="line">    <span class="string">'storage'</span> =&gt; storage_path(<span class="string">'indexes'</span>), <span class="comment">//必须有可写权限</span></span><br><span class="line">    <span class="string">'fuzziness'</span> =&gt; env(<span class="string">'TNTSEARCH_FUZZINESS'</span>, <span class="literal">false</span>),</span><br><span class="line">    <span class="string">'searchBoolean'</span> =&gt; env(<span class="string">'TNTSEARCH_BOOLEAN'</span>, <span class="literal">false</span>),</span><br><span class="line">    <span class="string">'asYouType'</span> =&gt; <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">'fuzzy'</span> =&gt; [</span><br><span class="line">        <span class="string">'prefix_length'</span> =&gt; <span class="number">2</span>,</span><br><span class="line">        <span class="string">'max_expansions'</span> =&gt; <span class="number">50</span>,</span><br><span class="line">        <span class="string">'distance'</span> =&gt; <span class="number">2</span>,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="string">'tokenizer'</span> =&gt; [</span><br><span class="line">        <span class="string">'driver'</span> =&gt; env(<span class="string">'TNTSEARCH_TOKENIZER'</span>, <span class="string">'default'</span>),</span><br><span class="line"></span><br><span class="line">        <span class="string">'jieba'</span> =&gt; [</span><br><span class="line">            <span class="string">'dict'</span> =&gt; <span class="string">'small'</span>,</span><br><span class="line">            <span class="comment">//'user_dict' =&gt; resource_path('dicts/mydict.txt'), //自定义词典路径</span></span><br><span class="line">        ],</span><br><span class="line"></span><br><span class="line">        <span class="string">'analysis'</span> =&gt; [</span><br><span class="line">            <span class="string">'result_type'</span> =&gt; <span class="number">2</span>,</span><br><span class="line">            <span class="string">'unit_word'</span> =&gt; <span class="literal">true</span>,</span><br><span class="line">            <span class="string">'differ_max'</span> =&gt; <span class="literal">true</span>,</span><br><span class="line">        ],</span><br><span class="line"></span><br><span class="line">        <span class="string">'scws'</span> =&gt; [</span><br><span class="line">            <span class="string">'charset'</span> =&gt; <span class="string">'utf-8'</span>,</span><br><span class="line">            <span class="string">'dict'</span> =&gt; <span class="string">'/usr/local/scws/etc/dict.utf8.xdb'</span>,</span><br><span class="line">            <span class="string">'rule'</span> =&gt; <span class="string">'/usr/local/scws/etc/rules.utf8.ini'</span>,</span><br><span class="line">            <span class="string">'multi'</span> =&gt; <span class="number">1</span>,</span><br><span class="line">            <span class="string">'ignore'</span> =&gt; <span class="literal">true</span>,</span><br><span class="line">            <span class="string">'duality'</span> =&gt; <span class="literal">false</span>,</span><br><span class="line">        ],</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="string">'stopwords'</span> =&gt; [</span><br><span class="line">        <span class="string">'的'</span>,</span><br><span class="line">        <span class="string">'了'</span>,</span><br><span class="line">        <span class="string">'而是'</span>,</span><br><span class="line">    ],</span><br><span class="line">],</span><br><span class="line"> env 增加配置项</span><br><span class="line"></span><br><span class="line">SCOUT_DRIVER=tntsearch</span><br><span class="line">TNTSEARCH_TOKENIZER=jieba</span><br><span class="line">namespace App\Models;</span><br><span class="line"></span><br><span class="line">use Illuminate\Database\Eloquent\Model;</span><br><span class="line">use Laravel\Scout\Searchable;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span> <span class="keyword">extends</span> <span class="title">Model</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    use Searchable;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 索引的字段</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @return array</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">toSearchableArray</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $<span class="keyword">this</span>-&gt;only(<span class="string">'id'</span>, <span class="string">'title'</span>, <span class="string">'content'</span>);</span><br><span class="line"></span><br><span class="line">       <span class="comment">// return $this-&gt;toArray();</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">生成索引：</span><br><span class="line"></span><br><span class="line">php artisan scout:<span class="keyword">import</span> <span class="string">"App\Model\Article"</span></span><br><span class="line">https:<span class="comment">//learnku.com/articles/27617#replies</span></span><br></pre></td></tr></table></figure>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">原理实现：有序集合从中间分为前后<span class="number">2</span>部分，当要查当数值等于中间值，直接返回；当要查询数值大于中间值，则说明要查询的数值在后半部分，那么继续二分后半部分；当要查询数值小于中间数值时，说明要查询的数值在前半部分，那么继续二分前半部分。（过滤掉一半数据查询）</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 递归实现</span></span><br><span class="line"><span class="comment">     * array $arr 有序数组</span></span><br><span class="line"><span class="comment">     * int $search 要查询的数字</span></span><br><span class="line"><span class="comment">     * int firstIndex 数组起始位置</span></span><br><span class="line"><span class="comment">     * int lastIndex 数组结束位置</span></span><br><span class="line"><span class="comment">     * @return </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">binarySearchRecursion</span>(<span class="params">array $arr, $search, $lastIndex, $firstIndex = <span class="number">0</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $len = count($arr);</span><br><span class="line">        <span class="keyword">if</span> ($len &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        $middle = intval(($firstIndex + $lastIndex) / <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span> ($search == $arr[$middle]) &#123;<span class="comment">//找到直接返回</span></span><br><span class="line">            <span class="keyword">return</span> $arr[$middle];</span><br><span class="line">        &#125; elseif ($search &gt; $arr[$middle]) &#123;<span class="comment">//去后面查，数组起始位置变为$middle + 1。</span></span><br><span class="line">            <span class="keyword">return</span> binarySearchRecursion($arr, $search, $middle + <span class="number">1</span>, $lastIndex);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;<span class="comment">//去前面查，数组结束位置为$middle - 1。</span></span><br><span class="line">            <span class="keyword">return</span> binarySearchRecursion($arr, $search, $firstIndex, $middle - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 递归实现</span></span><br><span class="line"><span class="comment">     * array $arr 有序数组</span></span><br><span class="line"><span class="comment">     * int $search 要查询的数字</span></span><br><span class="line"><span class="comment">     * @return </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">$arr, $search</span>)</span></span><br><span class="line"><span class="function">     </span>&#123;</span><br><span class="line">        $len = count($arr);</span><br><span class="line">        <span class="keyword">if</span> ($len &lt;= <span class="number">0</span> ) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        $firstIndex = <span class="number">0</span>;</span><br><span class="line">        $lastIndex = $len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>($firstIndex &lt;= $lastIndex) &#123;</span><br><span class="line">            $middle = intval(($firstIndex + $lastIndex) / <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">if</span> ($search == $arr[$middle]) &#123;<span class="comment">//出口</span></span><br><span class="line">                <span class="keyword">return</span> $arr[$middle];</span><br><span class="line">            &#125; elseif ($search &gt; $arr[$middle]) &#123;<span class="comment">//去后面查，数组起始位置变为$middle + 1。</span></span><br><span class="line">                $firstIndex = $middle + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;<span class="comment">//去前面查，数组结束位置为$middle - 1。</span></span><br><span class="line">                $lastIndex = $middle - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     https:<span class="comment">//learnku.com/articles/35240</span></span><br></pre></td></tr></table></figure>
+<h3 id="子孙树"><a href="#子孙树" class="headerlink" title="子孙树"></a>子孙树</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$arr = [</span><br><span class="line">    [<span class="string">'id'</span>=&gt;<span class="number">1</span>,<span class="string">'parent_id'</span>=&gt;<span class="number">0</span>,<span class="string">'type'</span>=&gt;<span class="number">5</span>],</span><br><span class="line">    [<span class="string">'id'</span>=&gt;<span class="number">2</span>,<span class="string">'parent_id'</span>=&gt;<span class="number">1</span>,<span class="string">'type'</span>=&gt;<span class="number">3</span>],</span><br><span class="line">    [<span class="string">'id'</span>=&gt;<span class="number">3</span>,<span class="string">'parent_id'</span>=&gt;<span class="number">0</span>,<span class="string">'type'</span>=&gt;<span class="number">1</span>],</span><br><span class="line">    [<span class="string">'id'</span>=&gt;<span class="number">4</span>,<span class="string">'parent_id'</span>=&gt;<span class="number">3</span>,<span class="string">'type'</span>=&gt;<span class="number">3</span>],</span><br><span class="line">];</span><br><span class="line">var_dump(getSubTree($arr));</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSubTree</span>(<span class="params">$data, $parent = <span class="string">'parent_id'</span>, $son = <span class="string">'id'</span>, $pid = <span class="number">0</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $tmp = [];</span><br><span class="line">        foreach ($data <span class="keyword">as</span> $key =&gt; $value) &#123;</span><br><span class="line">            <span class="keyword">if</span> ($value[$parent] == $pid) &#123;</span><br><span class="line">                $value[<span class="string">'child'</span>] = getSubTree($data, $parent, $son, $value[$son]);</span><br><span class="line">                $tmp[] = $value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    http:<span class="comment">//www.putyy.com/article/42</span></span><br></pre></td></tr></table></figure>
+<h3 id="Laravel-的设计哲学"><a href="#Laravel-的设计哲学" class="headerlink" title="Laravel 的设计哲学"></a>Laravel 的设计哲学</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $users = User::all();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> view(<span class="string">'users.index'</span>, compact(<span class="string">'users'</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">改为 &lt;?php</span><br><span class="line">   </span><br><span class="line">   namespace App\Repositories;</span><br><span class="line">   </span><br><span class="line">   use App\User;</span><br><span class="line">   </span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">DbUserRepository</span></span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line">       public <span class="function"><span class="keyword">function</span> <span class="title">all</span>(<span class="params"></span>): <span class="title">array</span></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> User::all()-&gt;toArray();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line">       private $users;</span><br><span class="line">   </span><br><span class="line">       public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"> </span>)</span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">           $<span class="keyword">this</span>-&gt;users = <span class="keyword">new</span> DbUserRepository;</span><br><span class="line">           <span class="comment">// $this-&gt;users = new RedisRepository;</span></span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       public <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">       </span>&#123;   </span><br><span class="line">           $users = $<span class="keyword">this</span>-&gt;users-&gt;all();</span><br><span class="line">           <span class="keyword">return</span> $users;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   依赖正转的不合理之处在哪里呢？位于高层的控制器依赖于具体的底层数据获取服务，当底层发生变动时，就需要对应的修改高层的内部结构。</span><br><span class="line">   </span><br><span class="line">   我们对依赖关系进一步分析，可知控制器关注的并不是具体如何获取数据，控制器关注的是「数据的可获取性」这一抽象。因此，我们应当将依赖关系进行反转，将对依赖的具体声明职责转移到外部，让控制器仅依赖于抽象层（数据的可获取性）。这种解决方式称之为 控制反转 或 依赖倒置。通过控制反转，高层不再依赖于具体的底层，仅仅是依赖于抽象层，高层和底层实现了解耦。</span><br><span class="line">   用接口来表示「数据的可获取性」这一抽象</span><br><span class="line">   </span><br><span class="line">   &lt;?php</span><br><span class="line">   </span><br><span class="line">   namespace App\Repositories;</span><br><span class="line">   </span><br><span class="line">   interface UserRepositoryInterface</span><br><span class="line">   &#123;</span><br><span class="line">       public <span class="function"><span class="keyword">function</span> <span class="title">all</span>(<span class="params"></span>): <span class="title">array</span>;</span></span><br><span class="line"><span class="function">   &#125;</span></span><br><span class="line"><span class="function">   <span class="title">UserController</span> 依赖的是「数据的可获取性」，不依赖于具体的实现</span></span><br><span class="line"><span class="function">   </span></span><br><span class="line"><span class="function">   <span class="title">class</span> <span class="title">UserController</span> <span class="title">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       private $users;</span><br><span class="line">   </span><br><span class="line">       public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params">UserRepositoryInterface $users</span>)</span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">           $<span class="keyword">this</span>-&gt;users = $users;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   具体的实现交给对应的仓库类即可</span><br><span class="line">   </span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">DbUserRepository</span> <span class="title">implements</span> <span class="title">UserRepositoryInterface</span> </span>&#123;&#125;</span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">RedisRepository</span> <span class="title">implements</span> <span class="title">UserRepositoryInterface</span> </span>&#123; &#125;</span><br><span class="line">   根据自己的需要注入对应的服务，这样就实现了依赖注入。</span><br><span class="line">   </span><br><span class="line">   $userRepository = <span class="keyword">new</span> DbUserRepository;</span><br><span class="line">   $userController = <span class="keyword">new</span> UserController($userRepository)</span><br><span class="line">   总的来说，依赖注入由四部分构成</span><br><span class="line">   </span><br><span class="line">   被使用的服务 - DbUserRepository 或者 RedisRepository 等</span><br><span class="line">   依赖某种服务的客户端 - UserController</span><br><span class="line">   声明客户端如何依赖服务的接口 - UserRepositoryInterface</span><br><span class="line">   依赖注入器，用于决定注入哪项服务给客户端</span><br><span class="line">   </span><br><span class="line">   一个简单的服务容器的实现</span><br><span class="line">   </span><br><span class="line">   namespace App\Services;</span><br><span class="line">   </span><br><span class="line">   use Exception;</span><br><span class="line">   </span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">Container</span> </span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line">       protected <span class="keyword">static</span> $container = [];</span><br><span class="line">   </span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * 绑定服务</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        * @param  服务名称 $name </span></span><br><span class="line"><span class="comment">        * @param  Callable $resolver</span></span><br><span class="line"><span class="comment">        * @return void</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">bind</span>(<span class="params">$name, Callable $resolver</span>)</span></span><br><span class="line"><span class="function">       </span>&#123;   </span><br><span class="line">           <span class="keyword">static</span>::$container[$name] = $resolver;</span><br><span class="line">       &#125;</span><br><span class="line">   </span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * 解析服务</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        * @param  服务名称 $name</span></span><br><span class="line"><span class="comment">        * @return mix</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params">$name</span>)</span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">           <span class="keyword">if</span>(isset(<span class="keyword">static</span>::$container[$name]))&#123;</span><br><span class="line">               $resolver = <span class="keyword">static</span>::$container[$name];</span><br><span class="line">               <span class="keyword">return</span> $resolver();</span><br><span class="line">           &#125;</span><br><span class="line">   </span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"不存在该绑定"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   </span><br><span class="line">   &#125;</span><br><span class="line">   绑定服务</span><br><span class="line">   </span><br><span class="line">   App\Services\Container::bind(<span class="string">'UserRepository'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> App\Repositories\DbUserRepository;</span><br><span class="line">   &#125;);</span><br><span class="line">   解析服务</span><br><span class="line">   </span><br><span class="line">   $userRepository = App\Services\Container::make(<span class="string">'UserRepository'</span>);</span><br><span class="line">   $userController = <span class="keyword">new</span> UserController($userRepository)</span><br><span class="line">   Laravel 的服务容器的功能则更加的强大，比如，可以将接口与具体的实现进行绑定，通常在 服务提供者 中使用服务容器来进行绑定</span><br><span class="line">   </span><br><span class="line">   public <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       $<span class="keyword">this</span>-&gt;app-&gt;singleton(UserRepositoryInterface::<span class="class"><span class="keyword">class</span>, <span class="title">function</span> ($<span class="title">app</span>) </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">new</span> UserRepository;</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="高并发业务场景下的秒杀解决方案"><a href="#高并发业务场景下的秒杀解决方案" class="headerlink" title="高并发业务场景下的秒杀解决方案"></a>高并发业务场景下的秒杀解决方案</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在秒杀前将商品的库存信息加入到 Redis 缓存中。如下格式:</span><br><span class="line">$redis-&gt;lpush(<span class="string">'商品id'</span>,<span class="number">1</span>);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 1.接受用户请求</span></span><br><span class="line"><span class="comment"> * 2.验证用户是否已经参与秒杀,商品是否存在</span></span><br><span class="line"><span class="comment"> * 3.根据商品id减少商品队列中的库存数量</span></span><br><span class="line"><span class="comment"> * 4.将用户的秒杀数据写入server层中,并返回秒杀数据对应的唯一key值</span></span><br><span class="line"><span class="comment"> * 5.用户点击下单,根据serve层中的缓存数据,生成订单数据并减少数据库商品的库存数据</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">$getParams = $_POST;</span><br><span class="line">$userId = $getParams[<span class="string">'userId'</span>];</span><br><span class="line">$goodsId = $getParams[<span class="string">'goodsId'</span>];</span><br><span class="line"></span><br><span class="line">$key = <span class="string">'goods:miaosha:'</span>;</span><br><span class="line">$userResult = $redis-&gt;get($key.$userId);</span><br><span class="line"><span class="keyword">if</span>($userResult)&#123;</span><br><span class="line">    $userResult = json_decode($userResult,<span class="literal">true</span>);</span><br><span class="line">    echo json_encode([<span class="string">'result'</span>=&gt;$userResult[<span class="string">'result'</span>],<span class="string">'key'</span>=&gt;$key.$userId]);<span class="comment">// 已经参与过秒杀了</span></span><br><span class="line">    die();</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    $goodqueue = <span class="string">'goods:queue:'</span>.$goodsId;</span><br><span class="line">    $result = $redis-&gt;lpop($goodqueue);<span class="comment">// 删除商品redis队列缓存</span></span><br><span class="line">    <span class="keyword">if</span>($result)&#123;</span><br><span class="line">        $data = json_encode([<span class="string">'result'</span>=&gt;<span class="string">'OK'</span>,<span class="string">'userId'</span>=&gt;$userId,<span class="string">'goodsId'</span>=&gt;$goodsId]);</span><br><span class="line">        $redis-&gt;set($key.$userId,$data);<span class="comment">// 将秒杀信息写入缓存中</span></span><br><span class="line">        echo json_encode([<span class="string">'result'</span>=&gt;<span class="string">'OK'</span>,<span class="string">'userId'</span>=&gt;$userId,<span class="string">'goodsId'</span>=&gt;$goodsId,<span class="string">'key'</span>=&gt;$key.$userId]);</span><br><span class="line">        die();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        echo json_encode([<span class="string">'result'</span>=&gt;<span class="string">'FAIL'</span>,<span class="string">'message'</span>=&gt;<span class="string">'商品不存在'</span>,<span class="string">'goodsId'</span>=&gt;$goodsId]);<span class="comment">// 商品库存不存在</span></span><br><span class="line">        die();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 用户下单界面</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> require_once __DIR__.<span class="string">'/redis_connect.php'</span>;</span><br><span class="line"> $key = $_GET[<span class="string">'key'</span>];</span><br><span class="line"> $data = $redis-&gt;get($key);</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 生成订单，订单入库</span></span><br><span class="line"><span class="comment">  *</span></span><br><span class="line"><span class="comment">  */</span>https:<span class="comment">//learnku.com/articles/35141</span></span><br><span class="line">redis list 可以批量插入数据，不一定每次都只插入一个值.</span><br><span class="line"></span><br><span class="line">$numberArr = range(<span class="number">1</span>,<span class="number">100</span>);  </span><br><span class="line"><span class="comment">//var_dump($numberArr);</span></span><br><span class="line">$redis-&gt;lPush(<span class="string">'goods:queue:5'</span>,...$numberArr); <span class="comment">// 可变参数</span></span><br></pre></td></tr></table></figure>
+<h3 id="PHP-开启-Opcache-后如何优雅地部署-PHP-代码"><a href="#PHP-开启-Opcache-后如何优雅地部署-PHP-代码" class="headerlink" title="PHP 开启 Opcache 后如何优雅地部署 PHP 代码"></a>PHP 开启 Opcache 后如何优雅地部署 PHP 代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">提交了代码并且部署了以后，线上代码依然是旧的。所以我执行了下</span><br><span class="line">/etc/init.d/php-fpm reload 就生效了。</span><br><span class="line">opcache_reset (); 但是注意了 这个函数是强制清楚所有 cache 所以 如果并发较高的系统 不能直接这么搞 还有就是 它有两个清除模式，cli 下只能清除 cli 的 cache fpm 的话 必须通过 fpm 请求方式清除才行</span><br><span class="line">https:<span class="comment">//github.com/gordalina/cachetool</span></span><br><span class="line">https:<span class="comment">//learnku.com/laravel/t/35142</span></span><br></pre></td></tr></table></figure>
+<p>### </p>
+<p><a href="https://learnku.com/articles/35101" target="_blank" rel="noopener">Laravel Authorization：支持 ACL、RBAC、ABAC 等模型的授权库</a></p>
+<p><a href="https://learnku.com/laravel/t/35080" target="_blank" rel="noopener">PSR-12 编码规范扩充</a></p>
+<p><a href="https://learnku.com/articles/30812" target="_blank" rel="noopener">Laravel 下 Elasticsearch/Algolia 全文搜索 使用案例</a></p>
+<p> <a href="https://learnku.com/articles/6207/lightweight-full-text-retrieval-engine-tntsearch-and-chinese-word-segmentation" target="_blank" rel="noopener">轻量级全文检索引擎 TNTSearch 和中文分词</a></p>
+<p><a href="https://baijunyao.com/article/154" target="_blank" rel="noopener">laravel下TNTSearch+jieba-php实现中文全文搜索</a></p>
+<p><a href="http://www.putyy.com/article/32" target="_blank" rel="noopener">postman使用记录</a></p>
+<p><a href="https://github.com/jianyan74/rageframe2" target="_blank" rel="noopener">免费开源的在线文档管理插件</a></p>
+<p><a href="https://gitee.com/leiyong3/laravel_blog" target="_blank" rel="noopener">诗词博客</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/15/那些在国内还能使用的谷歌产品/" rel="next" title="那些在国内还能使用的谷歌产品">
+                <i class="fa fa-chevron-left"></i> 那些在国内还能使用的谷歌产品
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Laravel-网站不会被嵌入到其他站点中"><span class="nav-number">1.</span> <span class="nav-text">Laravel 网站不会被嵌入到其他站点中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Uncaught-ReflectionException-Class-request-does-not-exist"><span class="nav-number">2.</span> <span class="nav-text">Uncaught ReflectionException: Class request does not exist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Laravel-下-TNTSearch-jieba-PHP-实现中文全文搜索"><span class="nav-number">3.</span> <span class="nav-text">Laravel 下 TNTSearch+jieba-PHP 实现中文全文搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分查找"><span class="nav-number">4.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子孙树"><span class="nav-number">5.</span> <span class="nav-text">子孙树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Laravel-的设计哲学"><span class="nav-number">6.</span> <span class="nav-text">Laravel 的设计哲学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高并发业务场景下的秒杀解决方案"><span class="nav-number">7.</span> <span class="nav-text">高并发业务场景下的秒杀解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP-开启-Opcache-后如何优雅地部署-PHP-代码"><span class="nav-number">8.</span> <span class="nav-text">PHP 开启 Opcache 后如何优雅地部署 PHP 代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共438.3k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

@@ -285,6 +285,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/php-sentry/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/15/php-sentry/" itemprop="url">php sentry</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-15T16:04:16+08:00">
+                2019-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  419 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>sentry 是一个</p>
+<h3 id="配置sentry"><a href="#配置sentry" class="headerlink" title="配置sentry"></a>配置sentry</h3><p>可以在sentry.io注册账号获取配置<a href="https://sentry.io/settings/sina-tl/sina/keys/" target="_blank" rel="noopener">https://sentry.io/settings/sina-tl/sina/keys/</a> ，如 <a href="http://root:root@127.0.0.1:1234/2" target="_blank" rel="noopener">http://root:root@127.0.0.1:1234/2</a><br>当然也可以自己搭建服务器，参考 <a href="https://laravel-china.org/articles/4285/build-your-own-sentry-service" target="_blank" rel="noopener">https://laravel-china.org/articles/4285/build-your-own-sentry-service</a></p>
+<h3 id="sentry扩展"><a href="#sentry扩展" class="headerlink" title="sentry扩展"></a>sentry扩展</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="built_in">require</span> <span class="string">"sentry/sentry"</span></span><br><span class="line">require_once APP_BASE_PATH.<span class="string">'/vendor/autoload.php'</span>;</span><br><span class="line">$client = <span class="keyword">new</span> \Raven_Client(<span class="string">'http://root:root@127.0.0.1:1234/2'</span>);</span><br><span class="line">$error_handler = <span class="keyword">new</span> \Raven_ErrorHandler($client);</span><br><span class="line">$error_handler-&gt;registerExceptionHandler();</span><br><span class="line">$error_handler-&gt;registerErrorHandler();</span><br><span class="line">$error_handler-&gt;registerShutdownFunction();</span><br><span class="line"> <span class="comment">//直接写日志</span></span><br><span class="line"> $client-&gt;captureMessage(<span class="string">'my log message'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="monolog日志写入Redis"><a href="#monolog日志写入Redis" class="headerlink" title="monolog日志写入Redis"></a>monolog日志写入Redis</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> composer <span class="built_in">require</span> <span class="string">"monolog/monolog: 1.18.0"</span></span><br><span class="line"> composer <span class="built_in">require</span> <span class="string">'predis/predis'</span></span><br><span class="line">use Monolog\Handler\RedisHandler;</span><br><span class="line">use Monolog\Formatter\JsonFormatter;</span><br><span class="line">use Monolog\Formatter\LineFormatter;</span><br><span class="line">use Monolog\Processor\MemoryPeakUsageProcessor;</span><br><span class="line">use Monolog\Processor\WebProcessor;</span><br><span class="line">use Monolog\Processor\IntrospectionProcessor;</span><br><span class="line">use Monolog\Handler\RavenHandler;</span><br><span class="line">use Monolog\Logger;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Monolog</span></span>&#123;</span><br><span class="line">    public $logger;</span><br><span class="line"></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params">$name</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>-&gt;logger = <span class="keyword">new</span> Logger($name);</span><br><span class="line">        <span class="comment">//https://docs.sentry.io/clients/php/integrations/monolog/</span></span><br><span class="line">        $redis = <span class="keyword">new</span> \Predis\Client([</span><br><span class="line">            <span class="string">'scheme'</span> =&gt; <span class="string">'tcp'</span>,</span><br><span class="line">            <span class="string">'host'</span>   =&gt; <span class="string">'127.0.0.1'</span>,</span><br><span class="line">            <span class="string">'port'</span>   =&gt; <span class="number">6379</span>,</span><br><span class="line">            <span class="string">'read_write_timeout'</span> =&gt; <span class="number">0</span>,</span><br><span class="line">        ]);</span><br><span class="line">        $handler = <span class="keyword">new</span> RedisHandler($redis, <span class="string">"app:sentry"</span>, \Monolog\Logger::DEBUG);</span><br><span class="line">        $<span class="keyword">this</span>-&gt;logger-&gt;pushHandler($handler);</span><br><span class="line">        $handler-&gt;setFormatter(<span class="keyword">new</span> JsonFormatter(JsonFormatter::BATCH_MODE_NEWLINES, <span class="literal">true</span>));</span><br><span class="line">        $handler-&gt;pushProcessor(<span class="keyword">new</span> MemoryPeakUsageProcessor(<span class="literal">true</span>));</span><br><span class="line">        $handler-&gt;pushProcessor(<span class="keyword">new</span> IntrospectionProcessor());</span><br><span class="line">        $arr = [</span><br><span class="line">            <span class="string">'url'</span> =&gt; <span class="string">'REQUEST_URI'</span>,</span><br><span class="line">            <span class="string">'ip'</span> =&gt; <span class="string">'REMOTE_ADDR'</span>,</span><br><span class="line">            <span class="string">'http_method'</span> =&gt; <span class="string">'REQUEST_METHOD'</span>,</span><br><span class="line">            <span class="string">'query_string'</span> =&gt; <span class="string">'QUERY_STRING'</span>,</span><br><span class="line">            <span class="string">'cookies'</span> =&gt; <span class="string">'HTTP_COOKIE'</span>,</span><br><span class="line">            <span class="string">'host'</span> =&gt; <span class="string">'HTTP_HOST'</span>,</span><br><span class="line">            <span class="string">'referrer'</span> =&gt; <span class="string">'HTTP_REFERER'</span>,</span><br><span class="line">            <span class="string">'ua'</span> =&gt; <span class="string">'HTTP_USER_AGENT'</span>,</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">        $handler-&gt;pushProcessor(<span class="keyword">new</span> WebProcessor(<span class="literal">null</span>, $arr));</span><br><span class="line">        $<span class="keyword">this</span>-&gt;logger-&gt;addinfo(<span class="string">'applog'</span>,[<span class="string">'info'</span>=&gt;<span class="string">'test'</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="消费redis入sentry"><a href="#消费redis入sentry" class="headerlink" title="消费redis入sentry"></a>消费redis入sentry</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">use Raven_Client;</span><br><span class="line">use Monolog\Handler\RavenHandler;</span><br><span class="line">use Monolog\Formatter\LineFormatter;</span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            $redis = <span class="keyword">new</span> \Predis\Client([</span><br><span class="line">                        <span class="string">'scheme'</span> =&gt; <span class="string">'tcp'</span>,</span><br><span class="line">                        <span class="string">'host'</span>   =&gt; <span class="string">'127.0.0.1'</span>,</span><br><span class="line">                        <span class="string">'port'</span>   =&gt; <span class="number">6379</span>,</span><br><span class="line">                        <span class="string">'read_write_timeout'</span> =&gt; <span class="number">0</span>,</span><br><span class="line">                    ]);</span><br><span class="line">            $data = $redis-&gt;lpop(<span class="string">"app:sentry"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (empty($data)) &#123;</span><br><span class="line">                sleep(<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $data = json_decode($data, <span class="literal">true</span>);</span><br><span class="line">            $raven_client= <span class="keyword">new</span> Raven_Client(<span class="string">'http://root:root@127.0.0.1:1234/3'</span>,[</span><br><span class="line">                <span class="string">'extra'</span>=&gt;$data[<span class="string">'extra'</span>],</span><br><span class="line">                <span class="string">'tags'</span>=&gt;[]</span><br><span class="line">            ]);</span><br><span class="line">            $raven_hanlder=<span class="keyword">new</span> RavenHandler($raven_client);</span><br><span class="line"></span><br><span class="line">            $data[<span class="string">'extra'</span>] = [];</span><br><span class="line">            $r=$raven_hanlder-&gt;handle($data);</span><br><span class="line">            $raven_client-&gt;__destruct();</span><br></pre></td></tr></table></figure>
+<h3 id="查看错误日志"><a href="#查看错误日志" class="headerlink" title="查看错误日志"></a>查看错误日志</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//sentry.io/sina-tl/sina/issues/845243592/?query=is%3Aunresolved</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://juejin.im/post/5a992115f265da239f06d0d7" target="_blank" rel="noopener">php sentry</a></p>
+<p><a href="https://blog.ansheng.me/article/docker-sentry-django-email-dingtalk/" target="_blank" rel="noopener">Docker部署Sentry监控Django应用并使用email+钉钉通知</a></p>
+<p><a href="https://docs.sentry.io/clients/php/usage/" target="_blank" rel="noopener">php sentry usage</a></p>
+<p><a href="https://juejin.im/post/5b226cbe51882574d02f9f62" target="_blank" rel="noopener">搭建私有的前端监控服务: sentry</a></p>
+<p><a href="https://laravel-china.org/articles/4235/sentry-automation-exception-alert" target="_blank" rel="noopener">sentry异常提醒</a></p>
+<p><a href="https://laravel-china.org/articles/4295/centos6-install-python-based-on-sentry#reply22542" target="_blank" rel="noopener">CentOS6 基于 Python 安装 Sentry </a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/11/数据分析平台grafana/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1595,7 +1759,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.8k 字
+                  5.9k 字
                 </span>
               
 
@@ -1660,6 +1824,7 @@
 <h3 id="tail-grep"><a href="#tail-grep" class="headerlink" title="tail grep"></a>tail grep</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//itbilu.com/linux/man/H1_dxWhz4.html</span></span><br><span class="line">现有itbilu.log日志文件，查看其后<span class="number">5</span>行：</span><br><span class="line"></span><br><span class="line">$ tail -n <span class="number">-5</span> itbilu.log</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line">$ tail -n <span class="number">5</span> itbilu.log</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line">$ tail <span class="number">-5</span> itbilu.log</span><br><span class="line">查看第<span class="number">100</span>行至文件末尾：</span><br><span class="line"></span><br><span class="line">$ tail -n +<span class="number">100</span> itbilu.log</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line">$ tail +<span class="number">100</span> itbilu.log</span><br><span class="line">配合head命令，实现查看文件的第<span class="number">10</span>到<span class="number">20</span>行：</span><br><span class="line"></span><br><span class="line">$ head <span class="number">-20</span> itbilu.log | tail <span class="number">-10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">实时查看日志</span><br><span class="line"></span><br><span class="line">通过-f参数，我们可以实时查看文件的新增内容：</span><br><span class="line"></span><br><span class="line">$ tail -f itbilu.log</span><br><span class="line">注意：使用-f参数时不会中断文件监视，需要通过ctrl+c手动结束。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">实时日志查看与grep过滤关键字</span><br><span class="line"></span><br><span class="line">通过-f参数，并配合grep命令，可以实现对文件内容的过滤。如：查看前几行、后几行、或前后几行，这时可以通过以下几个参数实现：</span><br><span class="line"></span><br><span class="line">-A &lt;显示行数&gt;            除了显示符合匹配内容的那一行之外，并显示该行之后的内容</span><br><span class="line">-B &lt;显示行数&gt;            在显示符合匹配内容的那一行之外，并显示该行之前的内容</span><br><span class="line">-C &lt;显示行数&gt;或-&lt;显示行数&gt; 除了显示符合匹配内容的那一列之外，并显示该列之前后的内容</span><br><span class="line">监控itbilu.log日志件，并查看含有'foo'关键字的前后5行：</span><br><span class="line"></span><br><span class="line">$ tail -f itbilu.log|grep 'foo' -C 5</span><br><span class="line">// 或</span><br><span class="line">$ tail -f itbilu.log|grep 'foo' -5</span><br><span class="line"></span><br><span class="line">查找/code目录下js文件，显示包括itbilu.com的行。命令如下：</span><br><span class="line"></span><br><span class="line"># find ./code -name '*.js'|xargs grep -n 'itiblu.com'</span><br><span class="line"># expr 10 + 20</span><br><span class="line">30</span><br><span class="line"></span><br><span class="line">用expr命令计算字符串的长度。命令如下：</span><br><span class="line"></span><br><span class="line"># str="hello world"</span><br><span class="line"># expr length "$str"</span><br><span class="line">11</span><br><span class="line"></span><br><span class="line"> $ stat routes.php</span><br><span class="line">  File: `routes.php'</span><br><span class="line">  Size: 24191           Blocks: 48         IO Block: 4096   regular file</span><br><span class="line">Device: 811h/2065d      Inode: 7217947     Links: 1</span><br><span class="line">Access: (0775/-rwxrwxr-x)  Uid: (  611/ UNKNOWN)   Gid: (  612/ UNKNOWN)</span><br><span class="line">Access: 2019-10-12 15:21:30.733152751 +0800</span><br><span class="line">Modify: 2018-12-14 14:23:34.406787125 +0800</span><br><span class="line">Change: 2018-12-14 14:23:34.406787125 +0800</span><br><span class="line">现有file1和file2两个文件，file内容为1121，file2内容为1123。比较file1和file2两个文件的差异，参数如下：</span><br><span class="line"></span><br><span class="line">cmp file1 file2</span><br><span class="line">比较file1和file2两个文件的差异，然后使用diffstat命令对结果进行统计显示。命令如下：</span><br><span class="line"></span><br><span class="line">diff file1 file2 | diffstat</span><br></pre></td></tr></table></figure>
 <h3 id="sudo-command-not-found"><a href="#sudo-command-not-found" class="headerlink" title="sudo command not found"></a>sudo command not found</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在 env_keep 中增加 PATH 字段</span><br><span class="line"></span><br><span class="line">vim /etc/sudoers</span><br><span class="line">Defaults    env_keep += <span class="string">"LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET XAUTHORITY PATH"</span></span><br><span class="line"># 注释掉 secure_path</span><br><span class="line">#Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin</span><br></pre></td></tr></table></figure>
 <h3 id="避免-rm-误操作"><a href="#避免-rm-误操作" class="headerlink" title="避免 rm 误操作"></a>避免 rm 误操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="comment">//github.com/LaiJingli/rmtrash/blob/master/rmtrash.sh</span></span><br><span class="line">mv rmtrash.sh /usr/local/bin #移动到bin目录下</span><br><span class="line">chmod +x /bin/rmtrash.sh #增加可执行权限</span><br><span class="line">vim ~<span class="regexp">/.bashrc</span></span><br><span class="line"><span class="regexp">#增加别名</span></span><br><span class="line"><span class="regexp">alias rm=/</span>bin/rmtrash.sh</span><br><span class="line">rmtrash -h #帮助命令</span><br><span class="line">rmtrash -e #清空回收站</span><br><span class="line">https:<span class="comment">//learnku.com/articles/35041</span></span><br></pre></td></tr></table></figure>
+<h3 id="awk-1"><a href="#awk-1" class="headerlink" title="awk"></a>awk</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">系统突然出现卡顿，常用的排查思路有哪些呢？</span><br><span class="line"></span><br><span class="line">查看内存使用状况：free -g</span><br><span class="line">查看磁盘使用状况：df -h</span><br><span class="line">查看磁盘 I/O 使用：iostat -dx</span><br><span class="line">查看 CPU 使用：top</span><br><span class="line">[release@api_02 ~]$ last -n <span class="number">5</span> | awk <span class="string">'&#123;print $1 "\t lines:" NR "\t columns:"NF&#125;'</span></span><br><span class="line">release  lines:<span class="number">1</span>     columns:<span class="number">10</span></span><br><span class="line">release  lines:<span class="number">2</span>     columns:<span class="number">10</span></span><br><span class="line">release  lines:<span class="number">3</span>     columns:<span class="number">10</span></span><br><span class="line">release  lines:<span class="number">4</span>     columns:<span class="number">10</span></span><br><span class="line">release  lines:<span class="number">5</span>     columns:<span class="number">10</span></span><br></pre></td></tr></table></figure>
 <p>有洁癖的同学可以使用 docker-compose，推荐一下自己构建的（<a href="https://gitee.com/nxs/docker-compose）" target="_blank" rel="noopener">https://gitee.com/nxs/docker-compose）</a>  </p>
 <p><a href="https://learnku.com/articles/28500" target="_blank" rel="noopener">最好的 Linux 桌面版—- Windows 10 安装体验 </a></p>
 <p><a href="https://segmentfault.com/a/1190000016837948" target="_blank" rel="noopener">linux 常用命令top、awk、sed等</a></p>
@@ -2194,6 +2359,7 @@
 <p>写作技巧<a href="https://tingtalk.me/composition-seven-tips/" target="_blank" rel="noopener">https://tingtalk.me/composition-seven-tips/</a></p>
 <p>1024课堂 <a href="https://1024casts.com/topics" target="_blank" rel="noopener">https://1024casts.com/topics</a></p>
 <p>自动采集文章兼发布文章 - 优化推广工具<a href="https://www.lmcjl.com/index/collectarticles/index.html?menu_id=65" target="_blank" rel="noopener">https://www.lmcjl.com/index/collectarticles/index.html?menu_id=65</a></p>
+<p>api 测试工具 RunApi，欢迎使用：<a href="http://runapi.showdoc.cc" target="_blank" rel="noopener">http://runapi.showdoc.cc</a></p>
 
           
         
@@ -2814,236 +2980,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/laravel-swoole/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/10/laravel-swoole/" itemprop="url">laravel swoole</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T15:03:09+08:00">
-                2018-12-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3.4k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  14 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="laravel-响应慢"><a href="#laravel-响应慢" class="headerlink" title="laravel 响应慢"></a>laravel 响应慢</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//laravel-china.org/topics/2550/the-speed-of-laravel-5-is-indeed-a-bit-slow-here-are-the-results-of-the-oneapm-test</span></span><br><span class="line">https:<span class="comment">//laravel-china.org/topics/3583/laravel-performance-has-always-been-difficult-to-let-go-seek-guidance</span></span><br><span class="line">项目的可维护性，是相对更加重要的。用框架损耗一点性能，来换取开发效率、可维护性是值得。至于优化性能，手段很多，一般找到性能瓶颈对其优化即可，而性能瓶颈一般不会是在框架上。</span><br><span class="line">比如：用 Laravel 比用XX框架，框架多消耗了 <span class="number">50</span>ms。但是你发现流量上来后，瓶颈是在 IO 上（比如数据库，服务器硬盘，网络 IO）。假如可能是 mysql 数据库查询就慢了 <span class="number">1</span>s。这时候要引入缓存，就可以解决该阶段的问题。在实施方案时，发现用XX框架加缓存，代码写得乱七八糟，漏洞百出。而用 Laravel，花了很短的时间和精力就上了缓存功能，并且代码优雅，结构清晰，易于维护。</span><br><span class="line">那么，框架的优势就体现了。</span><br><span class="line"></span><br><span class="line">不要轻易、任性、随意添加各种各样的 package ，特别是需要添加 provicder 的那种，捡最需要的来。</span><br><span class="line">模型的 Observer 多的话，确实会影响框架启动速度，当前的项目有二三十个，影响<span class="number">10</span>~<span class="number">40</span>ms的启动速度（服务器配置不一样，影响不一样），这个没办法处理了。</span><br><span class="line">上面这两条是我的项目确实存在的问题，并且确实对哪怕一个 hello world 的简单输出也要有影响，但是很难处理掉的。</span><br><span class="line"></span><br><span class="line">其他的挺好的，laravel 对我们的项目的进度和开发的质量真的相比其它框架提高了很多。并且线上的 <span class="number">8</span>核<span class="number">16</span>G OPCache，影响不太大，项目现在有<span class="number">100</span>多个表，业务密集型的应用，速度满足我们的需要，大部分页面和接口 <span class="number">200</span>ms 以内。</span><br><span class="line"></span><br><span class="line">最后，SQL 一定要处理好，这个可能永远是你们项目性能最大的瓶颈。</span><br><span class="line"></span><br><span class="line">Laravel 的确是一个高效且优雅的框架，作为其重度使用者的我也觉得这个框架已经被神话了。如果你有足够的时间且理解你所开发的项目，真心推荐使用 Laravel 作为项目开发框架。但是，如果，就像我说的，如果你对项目做不到知根知底、PHP 基础不扎实、周期紧张、项目影响大，所有综合因素来判定后，慎重决定。如果你真的很希望使用且愿意为后果买单，像我这样愿意深入学习其优秀特性、思想，仔细阅读文档、源码，做到举一反三甚至能做到任意改造且升级自如，那么，你还会提出这种问题吗？</span><br><span class="line">php7 用了吗</span><br><span class="line">opcache 开了吗</span><br><span class="line">optimaize 了吗</span><br><span class="line">最有用的是 php7 opcache 然后 gzip </span><br><span class="line"></span><br><span class="line">先说内存的事，Java 和 Go 都有成熟的 GC，除非你开着全局变量并且一直往里塞东西，否则泄露不了内存，每个请求的 handler 是个闭包或者函数，只要不故意定义超过函数生命周期的变量，你不玩 off-heap 黑魔法，完全不会泄露内存。</span><br><span class="line"></span><br><span class="line">部署的话，php 和 python 差不多，比起 Java 和 Go 麻烦太多了，Go 最简单，就一个可执行文件，大部分情况下也不依赖什么运行库。Java 比起 go 稍微麻烦一点，就是需要先安装一个 JRE，然后也是一个 jar 包直接运行(现代 javaweb 一般内置了 tomcat 这类 webserver)，复杂一点就是把 war 扔到 tomcat 的 webapps 目录，它会自动重启。</span><br><span class="line"></span><br><span class="line">php 和 python 就麻烦很多了，用 pip/pear 安装扩展的时候经常会遇到 xxx.h 找不到，典型的比如 db 驱动。然后还必须前置一个 nginx 或者 apache，fastcgi 配起来还麻烦，不同框架配置方法不一样，还要提防 cgi 的 fixpath 问题。python 稍微好一些，uwsgi 比较简单，或者直接走 http 协议更简单。Java 和 Go 的最简单，把 <span class="keyword">static</span> 资源外的直接 proxy_pass 走就行了。</span><br><span class="line">PHP 光是把环境搭一遍都很麻烦。</span><br><span class="line"></span><br><span class="line">php7<span class="number">.1</span> 开始内置代码的 cache 了，改 php 文件是没用的，改完文件得重启 fpm 进程才能生效，这个应该是性能增强带来的副作用。在需要重启服务以后，php 的新版本手动部署，已经跟 java 或者 go 没有不同了。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果是关联数组：数组转对象可以直接用(object)()；对象转数组则要用get_object_vars()；</span><br><span class="line"></span><br><span class="line">如果是索引数组：数组转对象可以直接用(object)()；对象转数组直接用(array)()；</span><br><span class="line"></span><br><span class="line">觉得 php 部署简单的，我提个前几年遇到过好几次的场景，看看大家有没有好办法。</span><br><span class="line"></span><br><span class="line">几台服务器，无外网连接，系统有 rhel5 和 rhel6，还有 ubuntu12 和 <span class="number">14</span>，还有 windows <span class="number">32</span> 位和 <span class="number">64</span> 位都有，用到的数据库是 pgsql 和 db2，如何打包 php 程序过去部署？</span><br><span class="line"></span><br><span class="line">当时我的解法是，Java 给每个平台下载一个 JRE，应用打成 jar 包就好了，db 驱动也是 java 实现的，直接打进 jar 包里了，不依赖运行库。php 真的难倒了我，最后，我给每个平台下载了对应版本的 vmware，然后为 php 制作了虚拟机镜像，把兼容性工作交给了 vmware 去做。还好那些机器都有图形界面和 root 帐号，不然还得折腾无 gui 甚至无 root 的情况下怎么安装 vmware。</span><br><span class="line">http:<span class="comment">//php.net/manual/en/intro.opcache.php </span></span><br><span class="line"></span><br><span class="line">Laravel 慢不是什么地方出瓶颈了，而是 Laravel 这个框架本身就是瓶颈。</span><br><span class="line">优化点：</span><br><span class="line"><span class="number">1.</span> 重构 router，特别是你的路由比较多的时候，foreach 之后还要正则就是找不痛快；</span><br><span class="line"><span class="number">2.</span> 用 swoole 服务模式把需要重复初始化的地方抹平，只初始化一次，不过这个会进入普通 php 程序员不熟悉的领域，而且大部分业务逻辑以及第三方组件需要修改以适应服务模式；</span><br><span class="line"><span class="number">3.</span> 放弃 Laravel</span><br><span class="line">我用 lumen + php <span class="number">7.1</span> 测过，Laravel 的 echo time();</span><br><span class="line">在 i5 的机器上，<span class="number">2</span> 个路由的时候，QPS 能跑 <span class="number">5000</span> 左右。</span><br><span class="line">路由数量 <span class="number">100</span> 的时候，QPS 下降到 <span class="number">4000</span> 左右。</span><br><span class="line">路由数量 <span class="number">1000</span> 的时候，QPS 下降到 <span class="number">1100</span>+。</span><br><span class="line">如果用了 <span class="number">1000</span> 个正则做路由，我相信还会更慢。</span><br><span class="line"></span><br><span class="line">当我用 <span class="number">100</span> 路由，再开启 session 的时候，QPS 从 <span class="number">4000</span> 左右跌到了 <span class="number">1500</span>+，腰斩了有没有？随便再引入几条正则路由，再开几个 Middleware，那 QPS 估计就跟楼主那个一样了。</span><br></pre></td></tr></table></figure>
-<h3 id="修改器"><a href="#修改器" class="headerlink" title="修改器"></a>修改器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace App\Models;</span><br><span class="line"></span><br><span class="line">use Illuminate\Database\Eloquent\Model;</span><br><span class="line">use Carbon\Carbon;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Baby</span> <span class="keyword">extends</span> <span class="title">Model</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    protected $table = <span class="string">'baby'</span>;</span><br><span class="line">    protected $appends = [<span class="string">'age'</span>];</span><br><span class="line"></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">getAgeAttribute</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $date = <span class="keyword">new</span> Carbon($<span class="keyword">this</span>-&gt;birthday);</span><br><span class="line">        <span class="keyword">return</span> Carbon::now()-&gt;diffInYears($date);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> $baby-&gt;age;<span class="comment">//得到几岁 https://laravel-china.org/articles/21982</span></span><br></pre></td></tr></table></figure>
-<h3 id="Supervisor-管理-Laravel-队列"><a href="#Supervisor-管理-Laravel-队列" class="headerlink" title="Supervisor 管理 Laravel 队列"></a>Supervisor 管理 Laravel 队列</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install supervisor</span><br><span class="line">echo_supervisord_conf</span><br><span class="line">echo_supervisord_conf &gt; <span class="regexp">/etc/</span>supervisord.conf</span><br><span class="line">默认配置文件中的supervisord.sock、supervisord.log以及supervisord.pid是放在/tmp目录下，这个目录存放的是Linux中的临时文件，一旦被系统删除，就会提示unix:<span class="comment">///tmp/supervisor.sock no such file，所以我们要把这三个文件放到其他目录中保存。</span></span><br><span class="line">sudo chmod <span class="number">777</span> /<span class="keyword">var</span>/run</span><br><span class="line">sudo chmod <span class="number">777</span> /<span class="keyword">var</span>/log/supervisor</span><br><span class="line">supervisord -c /etc/supervisord.conf</span><br><span class="line">pgrep supervisord | xargs ps -u --pid</span><br><span class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</span><br><span class="line">root     <span class="number">13744</span>  <span class="number">0.0</span>  <span class="number">1.7</span> <span class="number">226320</span> <span class="number">17460</span> ?        Ss   <span class="number">1</span>月<span class="number">12</span>   <span class="number">0</span>:<span class="number">08</span> /bin/python /usr/bin/supervisord -c /etc/supervi</span><br><span class="line"></span><br><span class="line">[program:larashop-worker]  ;项目名称</span><br><span class="line">process_name=%(program_name)s_%(process_num)<span class="number">02</span>d</span><br><span class="line">command=php (填入你的artisan路径)/artisan queue:work redis --sleep=<span class="number">3</span> --tries=<span class="number">3</span>  ;需要启动的命令</span><br><span class="line">autostart=<span class="literal">true</span></span><br><span class="line">autorestart=<span class="literal">true</span></span><br><span class="line">user=root ;此处填入你运行WEB应用的用户</span><br><span class="line">numprocs=<span class="number">8</span>  ;进程数</span><br><span class="line">redirect_stderr=<span class="literal">true</span>  ;把 stderr 重定向到 stdout，默认 <span class="literal">false</span></span><br><span class="line">stdout_logfile=<span class="regexp">/var/</span>log/supervisor/larashop-queue.log  ;注意分配好日志文件夹权限</span><br><span class="line">supervisorctl reread  # 读取有更新（增加）的配置文件，不会启动新添加的程序</span><br><span class="line"></span><br><span class="line">supervisorctl update # 重启配置文件修改过的程序</span><br><span class="line"></span><br><span class="line">supervisorctl start larashop-worker:* # 启动 larashop-worker 程序</span><br><span class="line">supervisorctl status # 查看状态 如果在Laravel中修改了队列代码，需要重启Supervisor才能生效</span><br></pre></td></tr></table></figure>
-<h3 id="Swoole-与-Laravel-结合使用"><a href="#Swoole-与-Laravel-结合使用" class="headerlink" title="Swoole 与 Laravel 结合使用"></a>Swoole 与 Laravel 结合使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">修改php.ini，增加swoole.use_namespace=On开启。使用命名空间类名后，旧式的下划线风格类名将不可用。</span><br><span class="line">namespace App\Console\Commands;</span><br><span class="line"></span><br><span class="line">use Illuminate\Console\Command;</span><br><span class="line">use App\Repositories\PushRepository;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Push</span> <span class="keyword">extends</span> <span class="title">Command</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The name and signature of the console command.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @var string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    protected $signature = <span class="string">'push:start'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The console command description.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @var string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    protected $description = <span class="string">'推送服务启动命令'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * push处理推送任务的对象实例</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    protected $_repPush;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Create a new command instance.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @param  DripEmailer  $drip</span></span><br><span class="line"><span class="comment">     * @return void</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params">PushRepository $repPush</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        parent::__construct();</span><br><span class="line">        $<span class="keyword">this</span>-&gt;_repPush = $repPush;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Execute the console command.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @return mixed</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      $<span class="keyword">this</span>-&gt;_repPush-&gt;start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;<span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 消息推送服务</span></span><br><span class="line"><span class="comment">  * @author: KongSeng &lt;643828892@qq.com&gt;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> namespace App\Repositories;</span><br><span class="line"> use \Swoole\Server;</span><br><span class="line"> use Config;</span><br><span class="line"> </span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">PushRepository</span> <span class="keyword">extends</span> <span class="title">BaseRepository</span></span></span><br><span class="line"><span class="class"> </span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Swoole Server 服务</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   private $__serv = <span class="literal">null</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 构造函数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $<span class="keyword">this</span>-&gt;__initSwoole();</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 初始化swoole</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   private <span class="function"><span class="keyword">function</span> <span class="title">__initSwoole</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $host = Config::get(<span class="string">'swoole.host'</span>);</span><br><span class="line">     $port = Config::get(<span class="string">'swoole.port'</span>);</span><br><span class="line">     $setConf = Config::get(<span class="string">'swoole.set'</span>);</span><br><span class="line"> </span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv = <span class="keyword">new</span> Server($host,$port);</span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv-&gt;set($setConf);</span><br><span class="line"> </span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv-&gt;on(<span class="string">'receive'</span>, array($<span class="keyword">this</span>,<span class="string">'onReceive'</span>));</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 数据接收回调</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   public <span class="function"><span class="keyword">function</span> <span class="title">onReceive</span>(<span class="params">$serv, $fd, $from_id, $data</span>)</span>&#123;</span><br><span class="line">     $serv-&gt;send($fd,$data.<span class="string">"\r\n"</span>);</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 开启服务https://laravel-china.org/articles/22712</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   public <span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $<span class="keyword">this</span>-&gt;__serv-&gt;start();</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br><span class="line"> php artisan push:start</span><br></pre></td></tr></table></figure>
-<h3 id="Websocket-服务中使用-Swoole"><a href="#Websocket-服务中使用-Swoole" class="headerlink" title="Websocket 服务中使用 Swoole"></a>Websocket 服务中使用 Swoole</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$server = <span class="keyword">new</span> swoole_websocket_server(<span class="string">'php'</span>, <span class="number">9501</span>);</span><br><span class="line">$server-&gt;on(<span class="string">'start'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"Server has been started!\n"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;on(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server, $request</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"websocket: new connection, id: &#123;$request-&gt;fd&#125;\n"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server, $frame</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"websocket: &#123;$frame-&gt;fd&#125;:&#123;$frame-&gt;data&#125;,opcode:&#123;$frame-&gt;opcode&#125;,fin:&#123;$frame-&gt;finish&#125;\n"</span>;</span><br><span class="line">    $server-&gt;push($frame-&gt;fd, <span class="string">"Replying, you sent "</span> . $frame-&gt;data);</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">swoole_websocket_server $server, $fd</span>) </span>&#123;</span><br><span class="line">    echo <span class="string">"websocket: connection with id &#123;$fd&#125; has been closed\n"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">$server-&gt;start();</span><br></pre></td></tr></table></figure>
-<h3 id="Lumen-5-2-手动补回-artisan-serve-指令"><a href="#Lumen-5-2-手动补回-artisan-serve-指令" class="headerlink" title="Lumen 5.2 手动补回 artisan serve 指令"></a>Lumen 5.2 手动补回 artisan serve 指令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Lumen <span class="number">5.2</span> 版本之前，通过php artisan serve指令即可快速启动调试</span><br><span class="line">https:<span class="comment">//blog.gxxsite.com/lumen-php-artisan-serve-local-debug-solution/</span></span><br><span class="line">Lumen <span class="number">5.2</span> 简化了 artisan，把serve精简掉了，用以下代码可以快速启动：</span><br><span class="line"></span><br><span class="line">php -S localhost:<span class="number">8080</span> -t ./public</span><br><span class="line">但是习惯了还是 serve 顺手吧，补充的方法如下：</span><br><span class="line"></span><br><span class="line">通过composer安装lumen-artisan-serve：</span><br><span class="line"></span><br><span class="line"> composer <span class="built_in">require</span> mlntn/lumen-artisan-serve <span class="string">"~1"</span></span><br><span class="line">修改app/Console/Kernel.php文件扩展artisan命令</span><br><span class="line"></span><br><span class="line"> protected $commands = [</span><br><span class="line">     \Mlntn\Console\Commands\Serve::<span class="class"><span class="keyword">class</span></span></span><br><span class="line"> ];</span><br><span class="line">至此，serve指令又能用了：</span><br><span class="line"></span><br><span class="line">php artisan serve --port=<span class="number">8080</span></span><br></pre></td></tr></table></figure>
-<h3 id="MySQL-频繁出错-Packets-out-of-order-Expected-1-received-111-Packet-size"><a href="#MySQL-频繁出错-Packets-out-of-order-Expected-1-received-111-Packet-size" class="headerlink" title="MySQL 频繁出错 Packets out of order. Expected 1 received 111. Packet size"></a>MySQL 频繁出错 Packets out of order. Expected 1 received 111. Packet size</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在swoole start函数前创建了mysql连接, 那么后续所有的worker以及task多个子进程都是使用一开始主进程的这个数据库连接。如果有多个子进程同时使用该连接与数据库通信(进程切换)，那么就可能因为通信协议时序的不正确导致mysql出现异常。</span><br><span class="line">解决方案:</span><br><span class="line"></span><br><span class="line">在swoole start函数前注销mysql连接, <span class="attr">DB</span>::disconnect();</span><br><span class="line">相关文章:</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>Server中对象的<span class="number">4</span>层生命周期 https:<span class="comment">//wiki.swoole.com/wiki/page/354.html</span></span><br><span class="line"><span class="number">2.</span>是否可以共用<span class="number">1</span>个redis或mysql连接 https:<span class="comment">//wiki.swoole.com/wiki/page/325.html</span></span><br><span class="line">https:<span class="comment">//learnku.com/articles/28953</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/kcloze/swoole-bot" target="_blank" rel="noopener">基于swoole实现的微信机器人</a></p>
-<p><a href="https://learnku.com/articles/28112#topnav" target="_blank" rel="noopener"> swoole 协程之旅</a></p>
-<p><a href="https://github.com/wi1dcard/laravel-deployment" target="_blank" rel="noopener">轻松部署 Laravel 应用</a></p>
-<p><a href="https://github.com/summerblue/laravel-tutorial" target="_blank" rel="noopener">《Laravel 入门教程》</a></p>
-<p><a href="https://learnku.com/laravel/t/22245" target="_blank" rel="noopener">Swoole 是 PHP 中的 Node.js</a></p>
-<p><a href="https://laravel-china.org/articles/19945#a44a83" target="_blank" rel="noopener">-从生命周期看 Dingo API 是如何接管 Laravel 路由的</a></p>
-<p><a href="https://laravel-china.org/articles/22321#e655a4" target="_blank" rel="noopener">配置 Supervisor 管理 Laravel 队列</a></p>
-<p><a href="https://learnku.com/articles/28112" target="_blank" rel="noopener">swoole 协程之旅</a></p>
-<p><a href="https://www.goozp.com/article/64.html" target="_blank" rel="noopener">workerman实现服务间通讯</a></p>
-<p><a href="https://laravel-china.org/articles/7038/laravel-queue-source-analysis-of-message-queue-task-processor#efa8e7" target="_blank" rel="noopener">Laravel Queue——消息队列任务处理器源码剖析</a></p>
-<p><a href="https://laravel-china.org/articles/20802#5db9fd" target="_blank" rel="noopener">Laravel 源码阅读之二：Illuminate\Foundation\Application 类初始化分析</a></p>
-<p><a href="https://laravel-china.org/articles/20281#2020e7" target="_blank" rel="noopener">开源了一个小小的商城</a></p>
-<p><a href="https://github.com/lawoole/lawoole" target="_blank" rel="noopener">Laravel 和 Swoole 的高性能框架</a></p>
-<p><a href="https://laravel-china.org/articles/21358" target="_blank" rel="noopener">基于 swoole 的高性能 PHP 框架</a></p>
-<p><a href="https://laravel-china.org/articles/18801" target="_blank" rel="noopener"> Laravel 应用中的 Swoole 集成</a></p>
-<p><a href="https://github.com/walkor/workerman-chat" target="_blank" rel="noopener">聊天室系统</a></p>
-<p><a href="https://laravel-china.org/topics/17351" target="_blank" rel="noopener">不用三方包 给 Laravel 开启 Swoole</a></p>
-<p><a href="https://laravel-china.org/topics/20181" target="_blank" rel="noopener">基于 Laravel-swoole 开发部署的在线聊天室</a></p>
-<p><a href="https://github.com/blankqwq/stu_x" target="_blank" rel="noopener">一个线上提交作业的平台</a></p>
-<p><a href="https://github.com/louislivi/SMProxy" target="_blank" rel="noopener">使用数据库连接池提高性能</a></p>
-<p><a href="https://github.com/swooletw/laravel-swoole/wiki/4.-Installation" target="_blank" rel="noopener">laravel swoole</a></p>
-<p><a href="https://www.v2ex.com/t/371855" target="_blank" rel="noopener">为什么我不太想用 Laravel </a></p>
-<p><a href="https://www.v2ex.com/t/441162" target="_blank" rel="noopener"> laravel 寫 APP 接口</a></p>
-<p><a href="https://github.com/qianhuihuiji/notebook" target="_blank" rel="noopener">laracast 视频教程系列笔记</a></p>
-<p><a href="https://laravel-china.org/articles/19737" target="_blank" rel="noopener">我独自走进 Laravel5.5 的❤（八）</a></p>
-<p><a href="https://www.v2ex.com/t/478257" target="_blank" rel="noopener">Laravel面试</a></p>
-<p><a href="https://learnku.com/articles/20793#topnav" target="_blank" rel="noopener">Laravel，PHP 如何使用数据库连接池提高性能</a></p>
-<p><a href="https://laravel-china.org/articles/18062" target="_blank" rel="noopener">Swoole 源码分析</a></p>
-<p><a href="https://lvwenhan.com/laravel/432.html" target="_blank" rel="noopener">Laravel 5 系列入门教程</a></p>
-<p><a href="https://lax.v2ex.com/t/420124" target="_blank" rel="noopener">Laravel 到底能慢到什么程度</a></p>
-<p><a href="https://laravel-china.org/articles/18123" target="_blank" rel="noopener">使用 laragon 的 ngrok 功能在本地开发微信公众号</a></p>
-<p><a href="https://github.com/kenjis/php-framework-benchmark/blob/master/README.md" target="_blank" rel="noopener">php框架压测</a></p>
-<p><a href="https://www.v2ex.com/t/272328?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">Laravel 每个控制器都需要写个路由</a></p>
-<p><a href="http://www.dahouduan.com/2018/03/18/laravel-speed-up/" target="_blank" rel="noopener">Laravel 项目加速指南</a></p>
-<p><a href="https://github.com/rlerdorf/opcache-status" target="_blank" rel="noopener">opcache 的统计功能</a></p>
-<p><a href="https://learnku.com/articles/34475" target="_blank" rel="noopener">基于 Swoole 开发的 MySQL 数据库连接池SMProxy </a></p>
-<p><a href="https://www.v2ex.com/t/398902" target="_blank" rel="noopener">laravel 优化</a></p>
-<p><a href="https://lax.v2ex.com/t/357983?p=1" target="_blank" rel="noopener">国内使用 laravel </a></p>
-<p><a href="https://github.com/phwoolcon/phwoolcon/blob/master/README-zh.md" target="_blank" rel="noopener">phwoolcon</a></p>
-<p><a href="https://github.com/ydtg1993/admin" target="_blank" rel="noopener">laravel和Uikit开发的后台管理系统雏形 自带完整oauth授权管理模块</a></p>
-<p><a href="https://laravel-china.org/articles/20450?#reply77440" target="_blank" rel="noopener">Laravel HTML 导出 PDF 方案 -</a></p>
-<p><a href="https://laravel-china.org/articles/21048" target="_blank" rel="noopener">《2018年小米高级 PHP 工程师面试题（模拟考试卷）》答案解析 [ 未指定版本 ]</a></p>
-<p><a href="https://laravel-china.org/articles/21985?#reply77444" target="_blank" rel="noopener">laravel Facades 原理 (代码执行流程分析)</a></p>
-<p><a href="http://mysql.taobao.org/monthly/2017/11/09/" target="_blank" rel="noopener">MySQL · 最佳实践 · 分区表基本类型</a></p>
-<p><a href="https://laravel-china.org/articles/21993" target="_blank" rel="noopener">《2019年小米春季上海 PHP 实习生招聘面试题》部分答案解析 [ 千人千面 ]</a></p>
-<p><a href="https://laravel-china.org/docs/the-laravel-way/5.6" target="_blank" rel="noopener">Laravel 之道</a></p>
-<p><a href="https://github.com/woann/chat" target="_blank" rel="noopener">基于 laravelS 和 layim 的聊天系统</a></p>
-<p><a href="https://laravel-china.org/articles/20714" target="_blank" rel="noopener">PHP 高级工程面试题汇总</a></p>
-<p><a href="https://github.com/xiaohuilam/laravel/wiki" target="_blank" rel="noopener">Laravel 深入浅出指南</a></p>
-<p><a href="https://laravel-china.org/articles/21979" target="_blank" rel="noopener">基于 swoole 协程的 MySQL 连接池</a></p>
-<p><a href="https://laravel-china.org/articles/21966" target="_blank" rel="noopener">swoole 加速 Lumen5.7 Restful API 接口</a></p>
-<p><a href="https://github.com/SakyaVarro/laracasts-translation" target="_blank" rel="noopener">Laracasts 系列教程</a></p>
-<p><a href="https://github.com/kevinyan815/Learning_Laravel_Kernel" target="_blank" rel="noopener">Laravel核心代码学习</a></p>
-<p><a href="https://laravel-china.org/articles/19427" target="_blank" rel="noopener">laravel5.5 支付—— 支付宝</a></p>
-<p><a href="http://doc2.workerman.net/" target="_blank" rel="noopener">GatewayWorker 手册</a></p>
-<p><a href="https://github.com/cxp1539/laravel-core-learn" target="_blank" rel="noopener">Laravel 深入核心系列教程</a></p>
-<p><a href="https://www.v2ex.com/t/401168" target="_blank" rel="noopener">PHP 框架性能测试比较</a></p>
-<p><a href="https://www.v2ex.com/t/428497" target="_blank" rel="noopener">Swoole 加速 Laravel/Lumen</a></p>
-<p><a href="https://doc.swoft.org/master/zh-CN/quickstart/install.html" target="_blank" rel="noopener">swoft</a></p>
-<p><a href="https://learnku.com/articles/23935" target="_blank" rel="noopener">Laravel 源码阅读指南</a></p>
-<p><a href="https://learnku.com/articles/22094" target="_blank" rel="noopener">基于 laravelS 和 layim 的聊天系统</a></p>
-<p><a href="https://github.com/hhxsv5/laravel-s/blob/master/README-CN.md" target="_blank" rel="noopener">快速集成Swoole到Laravel lumen</a></p>
-<p><a href="https://laravel-china.org/articles/20816" target="_blank" rel="noopener">Laravel 源码阅读之一：Composer 自动加载分析</a></p>
-<p><a href="https://github.com/zhuqipeng/alfred-workflow" target="_blank" rel="noopener">Laravel 中文文档检索 Alfred Workflow</a></p>
-<p><a href="https://learnku.com/articles/24742#topnav" target="_blank" rel="noopener">基于 Laravel 框架开发的基础权限后台系统</a></p>
-<p><a href="https://learnku.com/articles/25179" target="_blank" rel="noopener">Laravel 下 Elasticsearch 使用</a></p>
-<p><a href="https://larecipe.binarytorch.com.my/docs/1.3/installation" target="_blank" rel="noopener">markdown文档</a></p>
-<p><a href="https://learnku.com/articles/20539" target="_blank" rel="noopener">基于 Laravel 框架的 rbac 后台管理系统</a></p>
-<p><a href="http://www.luckybird.me/laravel5%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E5%92%8C%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html" target="_blank" rel="noopener">Laravel5配置读写分离和源码分析</a></p>
-<p><a href="https://github.com/shisiying/webim" target="_blank" rel="noopener">Laravel-swoole 开发部署的在线聊天室</a></p>
-<p><a href="https://learnku.com/articles/28607" target="_blank" rel="noopener">PHP 与 Swoole 浅析与学习</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3094,7 +3030,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -3325,7 +3261,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共435.4k字</span>
+  <span class="post-count">博客全站共438.3k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
