@@ -285,6 +285,437 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/我是如何用-Markdown-写公众号文章的/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/06/我是如何用-Markdown-写公众号文章的/" itemprop="url">我是如何用 Markdown 写公众号文章的</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T20:04:21+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>工欲善其事，必先利其器，想快速完美的完成一篇文章，编辑器和排版是很重要的，这里强烈推荐下 Markdown。</p>
+<blockquote>
+<p>Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯（英语：John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档”。</p>
+</blockquote>
+<p>以上介绍来自维基百科 <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Markdown</a></p>
+<p>Markdown 相比普通的文本编辑器有什么优点呢？</p>
+<ul>
+<li>如同编辑 word 一样编辑 Markdown 文件，简单直观。</li>
+<li>轻松插入图片（直接粘贴上传）、表格、链接、列表、流程图、甘特图、时序图、LaTeX 公式等。</li>
+<li>高亮代码块。</li>
+<li>支持实时预览。</li>
+<li>表格编辑。</li>
+</ul>
+<p>使用 Markdown 编辑器写文章，可以让作者只专注于内容，不再操心排版的问题。</p>
+<p>公众号后台是有编辑器的，但比较难用，而且经常停留时间久了（文章写得长）可能需要重新登录，更麻烦的是排版问题，还没法实时预览效果。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e6cf65321c4e9d02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>所以我一直是用markdown编辑器写好文章，然后直接粘贴到公众号编辑器里，本文也是在 markdown 下编辑的。</p>
+<p>下面说说 Markdown 语法 怎么用的，其实很简单，10分钟学会。</p>
+<h3 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h3><h6 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h6><p>语法：<code>#+空格+文本</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<p>效果：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8ac42fd3a6cc261b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以看到三级标题比六级标题字体要大粗。</p>
+<h6 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h6><p>语法：<code>[文字描述](文字链接)</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Markdown中文文档](https://markdown-zh.readthedocs.io/en/latest/)</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">Markdown中文文档</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-afb00ff80acff35f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h6 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h6><p>语法：!<code>[图片描述(图片链接)</code><br>简单点就是直接复制图片后粘贴上传。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Markdown中文文档](https://upload-images.jianshu.io/upload_images/17817191-2cfc5cfb11272656.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2691d0eac427844c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h6 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h6><p>语法： <code>&gt;+空格 +文本</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一段引用</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<blockquote>
+<p>这是一段引用<br>这是另一段引用</p>
+</blockquote>
+<h6 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h6><p>语法如下：</p>
+<p> \<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 这是代码段</span><br><span class="line">\</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">cache</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        $cache = \Cache::get(<span class="string">'app'</span>);</span><br><span class="line">        <span class="keyword">if</span>(!$cache) &#123;</span><br><span class="line">            \Cache::put(<span class="string">'app'</span>, <span class="string">'cache'</span>, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        dump($cache);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="LaTeX公式"><a href="#LaTeX公式" class="headerlink" title="LaTeX公式"></a>LaTeX公式</h6><p>行内公式，使用两个美元符 <code>$$</code> 包裹 <code>LaTeX</code> 格式的数学公式 ，如<br> <code>$$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$</code></p>
+<p>效果：<br>$$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$$<br>或者块级公式<code>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</code>：</p>
+<p>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
+<p>因为公众号不支持公式，所以用图片替代了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bf3e6ecf1d5bb5a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><p>语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 项目        | 价格   |  数量  |</span><br><span class="line">| --------   | -----:  | :----:  |</span><br><span class="line">| 电脑     | \$1600 |   6     |</span><br><span class="line">| 手机        |   \$120   |   8   |</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:right">价格</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电脑</td>
+<td style="text-align:right">\$1600</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td>手机</td>
+<td style="text-align:right">\$120</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<h6 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h6><p>语法： - + 空格  ＋ 文本   <code>或者</code> 数字  +  + 空格 + 文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 列表一</span><br><span class="line">- 列表二</span><br><span class="line">- 列表三</span><br></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+<h6 id="粗体、斜体、删除线"><a href="#粗体、斜体、删除线" class="headerlink" title="粗体、斜体、删除线"></a>粗体、斜体、删除线</h6><p>语法：<code>*文字*</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**粗体**   *斜体*  ~~删除线~~</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><strong>粗体</strong>   <em>斜体</em>  <del>删除线</del></p>
+<h6 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h6><p>如果你想只显示一个 <code>#</code> 号而不是一个标记，可以这样输入<code>\# Markdown</code> 就不会误认为是一个标记了。<br>语法：<code>\#</code></p>
+<p>效果：<br># Markdown</p>
+<p>以上是常用的语法，应该能完全应付写一篇文章，如果想了解更多语法可以到Markdown中文文档<a href="https://markdown-zh.readthedocs.io/en/latest/查看。" target="_blank" rel="noopener">https://markdown-zh.readthedocs.io/en/latest/查看。</a></p>
+<h3 id="在线markdown编辑器"><a href="#在线markdown编辑器" class="headerlink" title="在线markdown编辑器"></a>在线markdown编辑器</h3><p>知道了markdown 语法，实践才是硬道理，学习 markdown 是个很轻松的过程，因为能实时预览，10分钟就能学好，赶紧来试试吧。</p>
+<p>目前很多网站支持 markdown 了，比如简书，简书一个很不错的博客平台，提供富文本编辑器和markdown编辑器，先将markdown编辑器设置为默认。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-950bf4075801b416.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>它能实时预览保存。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-c5a687064664a493.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还能查看文件编辑历史，如果想回到过去某个版本也很简单。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d23bc8581daccb60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不过简书需要注册账号，如果是临时用用推荐作业部落<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="noopener">https://www.zybuluo.com/mdeditor</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-03b3c58bd51da620.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="客户端markdown编辑器"><a href="#客户端markdown编辑器" class="headerlink" title="客户端markdown编辑器"></a>客户端markdown编辑器</h3><p>除了在线的 markdown编辑器，还有客户端版本的markdown编辑器，这样就能本地编辑，不需要联网也能使用markdown，Markdown文件的后缀名是<code>.md</code>。</p>
+<p>首先推荐免费极简编辑器Typora  <a href="https://typora.io/" target="_blank" rel="noopener">https://typora.io/</a> 支持的平台有 Windows、MacOS、Linux。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-55671777537d1f63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图来自简书作者毕小烦"></p>
+<p>另外一个更懂程序员的markdown软件vnote   <a href="https://tamlok.github.io/vnote/zh_cn/#!downloads.md" target="_blank" rel="noopener">https://tamlok.github.io/vnote/zh_cn/#!downloads.md</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-86d443ea9f033e45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vnote"></p>
+<h3 id="公众号编辑器"><a href="#公众号编辑器" class="headerlink" title="公众号编辑器"></a>公众号编辑器</h3><p> 用markdown编辑器写完文章后，如果直接复制到公众号编辑器，因为公众号后台支持markdown不大好，效果可能会很乱。</p>
+<p>所以有人开发了针对公众号后台的markdown编辑器，比如<a href="https://lab.lyric.im/wxformat和http://js8.in/mpeditor，" target="_blank" rel="noopener">https://lab.lyric.im/wxformat和http://js8.in/mpeditor，</a> 这2个是开源的，可以部署到自己服务器。</p>
+<p>不过我常用的是<a href="http://md.aclickall.com/" target="_blank" rel="noopener">http://md.aclickall.com/</a> ，将markdown复制到这然后粘贴到公众号后台就完成了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8c55e4bfa052028a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>更多资源：<br>MarkDown工具<a href="https://www.ifuntools.cn/special/markdown/" target="_blank" rel="noopener">https://www.ifuntools.cn/special/markdown/</a><br>在线脑图工具<a href="https://www.socialwiki.cn/" target="_blank" rel="noopener">https://www.socialwiki.cn/</a><br><a href="https://www.mdeditor.com/" target="_blank" rel="noopener">https://www.mdeditor.com/</a><br><a href="https://help.seafile.com/zh/wiki/markdown_editor.html" target="_blank" rel="noopener">https://help.seafile.com/zh/wiki/markdown_editor.html</a><br><a href="https://mazhuang.org/2018/09/06/markdown-intro/" target="_blank" rel="noopener">https://mazhuang.org/2018/09/06/markdown-intro/</a><br><a href="https://coding.net/help/doc/project/markdown.html" target="_blank" rel="noopener">https://coding.net/help/doc/project/markdown.html</a><br><a href="https://maxiang.io/" target="_blank" rel="noopener">https://maxiang.io/</a><br><a href="https://juejin.im/post/5c1cd16de51d4563d9206173" target="_blank" rel="noopener">https://juejin.im/post/5c1cd16de51d4563d9206173</a><br>基于 git 的笔记软件  <a href="https://www.gitnoteapp.com/" target="_blank" rel="noopener">https://www.gitnoteapp.com/</a><br>有道云笔记<a href="http://note.youdao.com/" target="_blank" rel="noopener">http://note.youdao.com/</a><br><a href="https://github.com/lyricat/wechat-format" target="_blank" rel="noopener">https://github.com/lyricat/wechat-format</a><br><a href="https://www.mdnice.com/" target="_blank" rel="noopener">https://www.mdnice.com/</a></p>
+<p>你平常用的哪个编辑器，可以评论分享下。</p>
+<p>推荐阅读：</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_3AeNahwbs8c3UJ0is1t4A" target="_blank" rel="noopener">如何在电脑上登陆多个微信</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p> <a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/5InOxKmi9eXk33G_8N3byQ" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/如何发一条空白的朋友圈/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/06/如何发一条空白的朋友圈/" itemprop="url">如何发一条空白的朋友圈</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T20:03:27+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  993 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>所谓空白的朋友圈就是一条看起来没有文字的朋友圈，因为发朋友圈的时候不输入文字是没法发送的。不可见字符是有文字内容的，只是人的肉眼看不见，所以相当于空白。</p>
+<h3 id="不可见字符"><a href="#不可见字符" class="headerlink" title="不可见字符"></a>不可见字符</h3><p>不可见字符就是零宽空格，见维基百科解释<a href="https://zh.wikipedia.org/wiki/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC</a><br>：</p>
+<blockquote>
+<p>零宽空格（zero-width space, ZWSP）是一种不可打印的Unicode字符，用于可能需要换行处。</p>
+</blockquote>
+<p><a href="http://www.fileformat.info/info/unicode/category/Mn/list.htm" target="_blank" rel="noopener">http://www.fileformat.info/info/unicode/category/Mn/list.htm</a> 这里列出了许多不可见字符，控制台输入对应的Unicode码就能显示出来。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a5d76abc5cc0f5a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如第一个 <code>\u0300</code> 就是<code>̀</code>这个字符，但是这个字符肉眼是看不见的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-3c2b1e3601144d3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>通过进制转换可以看到它的二进制是<code>00000000</code><br><img src="https://upload-images.jianshu.io/upload_images/17817191-6e7938ce9d6a1364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>在PHP里可以看到它的长度为2<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; strlen(<span class="string">'̀'</span>)</span><br><span class="line">=&gt; <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="空白朋友圈"><a href="#空白朋友圈" class="headerlink" title="空白朋友圈"></a>空白朋友圈</h3><p>将上面copy的不可见字符发到朋友圈 ，效果如下：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-54d98f006b6bfc9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果你也想发条空白的朋友圈，在公众号内回复  朋友圈  获取,当然微博也是可以的<a href="https://weibo.com/2717930601/HDjs3fVkU" target="_blank" rel="noopener">https://weibo.com/2717930601/HDjs3fVkU</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-7f48ac1c43cfb7d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>星球一样：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e5f66ace53a0ffc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="有意思的字符"><a href="#有意思的字符" class="headerlink" title="有意思的字符"></a>有意思的字符</h3><p><a href="https://www.compart.com/en/unicode/category/So" target="_blank" rel="noopener">https://www.compart.com/en/unicode/category/So</a> 和 <a href="https://unicode-table.com/cn/#lao" target="_blank" rel="noopener">https://unicode-table.com/cn/#lao</a> 这里列出了一些有意思的字符。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-0335fa58f90f77b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-36459f0c83042320.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如手表 ⌚ ,版权 ℗ ，商标 ™ ， 箭头 ↱，键盘 ⌨ 等，在控制台输入’\u231a’就是手表。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7db6002f089ecf44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>上面的字符是没法用输入法直接输入的，所以搜狗输入法也提供了一些特殊字符。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f7c61fe3f39d3e72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p> 其中这个<code>é</code>字符，  unicode 是 <code>\u00e9</code>, 而 ‘\u0301’ 是个不可见字符，<br> ‘e’ + ‘\u0301’ 拼在一起就成了这样。<code>e</code>的长度为1，拼接后长度为2，见 <a href="https://www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html。" target="_blank" rel="noopener">https://www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html。</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d50b23e7e32d056c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>多拼几个就成这样了<code>&#39;e&#39;+Array(50).join(&#39;\u0301&#39;)</code>  </p>
+<p>é́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́<br><img src="https://upload-images.jianshu.io/upload_images/17817191-656a4441bdc99862.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>继续拼接字符 <code>&#39;很好玩&#39;+Array(50).join(&#39;\u0310&#39;)+Array(50).join(&#39;\u0598&#39;)+Array(50).join(&#39;\u0e49&#39;);</code></p>
+<p>很好玩้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘</p>
+<h3 id="零长度短网址"><a href="#零长度短网址" class="headerlink" title="零长度短网址"></a>零长度短网址</h3><p> <a href="https://zws.im/" target="_blank" rel="noopener">https://zws.im/</a>  这个网站用不可见字符欺骗你的视觉。<br>输入网易云音乐网址后的地址变成了<code>https://zws.im/​‌​​​‌​​‌‌​​‌​/</code>，看起来不是网易的地址却跳转到了网易。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1b44e1e184bde63f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然这个生成服务在墙外，所以有人开发了国内版 <a href="https://ml.mk/" target="_blank" rel="noopener">https://ml.mk/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-4db642a7bd31f999.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>网易云音乐的短网址就是 <code>https://ml.mk/‌‌‌‌‌‌‌‌​‌​​​‌​‌/</code>，如果是某个不可描述网站生成这样的短网址，然后你在办公室打开就尴尬了，所以说不要随意打开这些不认识域名的网站。</p>
+<p>另外有人还做了个零宽字符隐藏加密网站 <a href="http://morse.rovelast.com/，原理是利用零宽字符这种在文本中不显示的特殊字符，对加密文本进行转码，嵌入到普通文本当中，从而隐藏加密内容；表面看起来是一段普通文本，复制粘贴不会丢失。" target="_blank" rel="noopener">http://morse.rovelast.com/，原理是利用零宽字符这种在文本中不显示的特殊字符，对加密文本进行转码，嵌入到普通文本当中，从而隐藏加密内容；表面看起来是一段普通文本，复制粘贴不会丢失。</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d348856dcba4ed70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>参考： </p>
+<p>  <a href="http://www.asciim.com/ascii/265.html" target="_blank" rel="noopener">http://www.asciim.com/ascii/265.html</a><br><a href="https://www.utf8-chartable.de/unicode-utf8-table.pl" target="_blank" rel="noopener">UTF-8 encoding table and Unicode characters</a><br><a href="https://unicode-table.com/cn/#control-character" target="_blank" rel="noopener">字符百科</a><br><a href="https://mengkang.net/740.html" target="_blank" rel="noopener">去掉不可见字符</a><br><a href="http://ctf.ssleye.com/jinzhi.html" target="_blank" rel="noopener">进制转换</a><br><a href="http://www.fileformat.info/info/unicode/category/Mn/list.htm" target="_blank" rel="noopener">Unicode Characters in the ‘Mark, Nonspacing’ Category</a><br><a href="https://www.playpi.org/2018090601.html" target="_blank" rel="noopener">踩坑特殊字符之硬空格</a><br><a href="http://www.asciim.com/ascii/265.html" target="_blank" rel="noopener">过滤ASCII码中的不可见字符</a><br><a href="https://linux.cn/article-2137-1.html" target="_blank" rel="noopener">Linux终端：用cat命令查看不可见字符</a><br><a href="https://www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html#!comments" target="_blank" rel="noopener">奇葩字符 “a๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎” 的简单分析</a><br><a href="https://github.com/rover95/morse-encrypt" target="_blank" rel="noopener">使用零宽字符，隐藏存储加密信息</a><br><a href="https://github.com/asiacny/zero-width-qrcode-sqlite-shortener" target="_blank" rel="noopener">可生成零宽度地址与二维码的PHP短网址程序</a></p>
+<p>推荐阅读：</p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p> <a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483979&amp;idx=1&amp;sn=0735daa1d805b66d346ed0e8e60a841f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483983&amp;idx=1&amp;sn=f0e1d9a8e22caf609d6c21431a530186&amp;chksm=e827a5aedf502cb8b72f2036054753fcfd9c20c28b9fbccdeae619a254a80e1024f18ba06523&amp;token=457023358&amp;lang=zh_CN#rd" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/2018-那些事儿/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2220,351 +2651,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/命令行录制工具-asciinema/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/09/命令行录制工具-asciinema/" itemprop="url">命令行录制工具 asciinema</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T19:59:26+08:00">
-                2019-07-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>平常出bug求助的时候有时候贴代码或者截图往往不直观，如果能重现给对方看就好了，这里推荐 2 个命令行的录制工具。</p>
-<h3 id="asciinema"><a href="#asciinema" class="headerlink" title="asciinema"></a>asciinema</h3><p>网站<code>https://asciinema.org/</code>，github主页<a href="https://github.com/asciinema" target="_blank" rel="noopener">https://github.com/asciinema</a><br>直接使用 <code>pip install asciinema</code>来安装。<br> 执行<code>asciinema rec</code> 开始录制,录制完成后  exit 退出，可以保存到本地或者上传到 <code>https://asciinema.org</code>  。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_14_centos ~]# asciinema rec</span><br><span class="line">asciinema: recording asciicast to /tmp/tmp1ua5a2rx-ascii.cast</span><br><span class="line">asciinema: press &lt;ctrl-d&gt; or type <span class="string">"exit"</span> when you<span class="string">'re done</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos ~]# pwd</span></span><br><span class="line"><span class="string">/root</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos ~]# cd /usr/share/nginx/html/</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos html]# pip install asciinema</span></span><br><span class="line"><span class="string">DEPRECATION: Python 3.4 support has been deprecated. pip 19.1 will be the last one supporting it. Please upgrade your Python as Python 3.4 won'</span>t be maintained after March <span class="number">2019</span> (cf PEP <span class="number">429</span>).</span><br><span class="line">Looking <span class="keyword">in</span> indexes: http:<span class="comment">//mirrors.tencentyun.com/pypi/simple</span></span><br><span class="line">Requirement already satisfied: asciinema <span class="keyword">in</span> /usr/lib/python3<span class="number">.4</span>/site-packages (<span class="number">2.0</span><span class="number">.2</span>)</span><br><span class="line">You are using pip version <span class="number">19.0</span><span class="number">.3</span>, however version <span class="number">19.1</span><span class="number">.1</span> is available.</span><br><span class="line">You should consider upgrading via the <span class="string">'pip install --upgrade pip'</span> command.</span><br><span class="line">[root@VM_0_14_centos html]# pip list |grep ascii</span><br><span class="line">DEPRECATION: Python <span class="number">3.4</span> support has been deprecated. pip <span class="number">19.1</span> will be the last one supporting it. Please upgrade your Python <span class="keyword">as</span> Python <span class="number">3.4</span> won<span class="string">'t be maintained after March 2019 (cf PEP 429).</span></span><br><span class="line"><span class="string">asciinema              2.0.2</span></span><br><span class="line"><span class="string">You are using pip version 19.0.3, however version 19.1.1 is available.</span></span><br><span class="line"><span class="string">You should consider upgrading via the '</span>pip install --upgrade pip<span class="string">' command.</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos html]# exit</span></span><br><span class="line"><span class="string">exit</span></span><br><span class="line"><span class="string">asciinema: recording finished</span></span><br><span class="line"><span class="string">asciinema: press &lt;enter&gt; to upload to asciinema.org, &lt;ctrl-c&gt; to save locally</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">View the recording at:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    https://asciinema.org/a/AdnqMX0QfOg5c7USOtwHZ4Hz1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This installation of asciinema recorder hasn'</span>t been linked to any asciinema.org</span><br><span class="line">account. All unclaimed recordings (<span class="keyword">from</span> unknown installations like <span class="keyword">this</span> one)</span><br><span class="line">are automatically archived <span class="number">7</span> days after upload.</span><br><span class="line"></span><br><span class="line">If you want to preserve all recordings made on <span class="keyword">this</span> machine, connect <span class="keyword">this</span></span><br><span class="line">installation <span class="keyword">with</span> asciinema.org account by opening the following link:</span><br><span class="line"></span><br><span class="line">    https:<span class="comment">//asciinema.org/connect/01fb0f0e-c56a-450f-80ac-4020188dd957</span></span><br></pre></td></tr></table></figure></p>
-<p> 录制过程在<a href="https://asciinema.org/a/AdnqMX0QfOg5c7USOtwHZ4Hz1" target="_blank" rel="noopener">https://asciinema.org/a/AdnqMX0QfOg5c7USOtwHZ4Hz1</a> 可以看到了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2c63f9c98c78d4ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br> 如果分享给他人可以用邮箱注册，它不需要密码就可以注册。我注册后的主页<a href="https://asciinema.org/~susheng" target="_blank" rel="noopener">https://asciinema.org/~susheng</a><br>然后打开这个链接 <a href="https://asciinema.org/connect/01fb0f0e-c56a-450f-80ac-4020188dd957" target="_blank" rel="noopener">https://asciinema.org/connect/01fb0f0e-c56a-450f-80ac-4020188dd957</a> 就会保存到你账号下。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f7c40ae5768692a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>设置为public 后可生成公开链接，可分享给他人观看，还可以嵌入到自己的网站。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b5912fb223a74a81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-af4bf33fde51c8cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>视频链接后加 .png 是视频截图 <a href="https://asciinema.org/a/254348.png" target="_blank" rel="noopener">https://asciinema.org/a/254348.png</a> ，而链接后加 .js 就可以直接嵌入网站了。<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"https://asciinema.org/a/254348"</span> target=<span class="string">"_blank"</span>&gt;&lt;img src="https://asciinema.org/a/254348.svg" /&gt;&lt;/a&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://asciinema.org/a/254348.js"</span> id=<span class="string">"asciicast-254348"</span> <span class="keyword">async</span> data-autoplay=<span class="string">"true"</span> data-size=<span class="string">"big"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="TermRecord"><a href="#TermRecord" class="headerlink" title="TermRecord"></a>TermRecord</h3><p>TermRecord也是用 pip 安装 <code>pip install TermRecord</code>, 直接开始录制 <code>TermRecord -o termrecord.html</code>输入 exit 结束录制 。这个 termrecord.html 就是录制生成的文件，可以直接用浏览器打开。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_14_centos html]# TermRecord -o termrecord.html</span><br><span class="line">Script started, file is /tmp/tmpdekpz_p2</span><br><span class="line">[root@VM_0_14_centos html]# pwd</span><br><span class="line">/usr/share/nginx/html</span><br><span class="line">[root@VM_0_14_centos html]# whoami</span><br><span class="line">root</span><br><span class="line">[root@VM_0_14_centos html]# pip install TermRecord</span><br><span class="line">DEPRECATION: Python <span class="number">3.4</span> support has been deprecated. pip <span class="number">19.1</span> will be the last one supporting it. Please upgrade your Python <span class="keyword">as</span> Python <span class="number">3.4</span> won<span class="string">'t be maintained after March 2019 (cf PEP 429).</span></span><br><span class="line"><span class="string">Looking in indexes: http://mirrors.tencentyun.com/pypi/simple</span></span><br><span class="line"><span class="string">Requirement already satisfied: TermRecord in /usr/lib/python3.4/site-packages (1.2.5)</span></span><br><span class="line"><span class="string">Requirement already satisfied: Jinja2&gt;=2.6 in /usr/lib64/python3.4/site-packages (from TermRecord) (2.10.1)</span></span><br><span class="line"><span class="string">Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/lib64/python3.4/site-packages (from Jinja2&gt;=2.6-&gt;TermRecord) (1.1.1)</span></span><br><span class="line"><span class="string">You are using pip version 19.0.3, however version 19.1.1 is available.</span></span><br><span class="line"><span class="string">You should consider upgrading via the '</span>pip install --upgrade pip<span class="string">' command.</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos html]# pip list|grep Term</span></span><br><span class="line"><span class="string">DEPRECATION: Python 3.4 support has been deprecated. pip 19.1 will be the last one supporting it. Please upgrade your Python as Python 3.4 won'</span>t be maintained after March <span class="number">2019</span> (cf PEP <span class="number">429</span>).</span><br><span class="line">TermRecord             <span class="number">1.2</span><span class="number">.5</span></span><br><span class="line">You are using pip version <span class="number">19.0</span><span class="number">.3</span>, however version <span class="number">19.1</span><span class="number">.1</span> is available.</span><br><span class="line">You should consider upgrading via the <span class="string">'pip install --upgrade pip'</span> command.</span><br><span class="line">[root@VM_0_14_centos html]# exit</span><br><span class="line">exit</span><br><span class="line">Script done, file is /tmp/tmpdekpz_p2</span><br></pre></td></tr></table></figure></p>
-<p>然后打开文件就可以看到录制过程了 <a href="http://118.24.158.116:8888/termrecord.html" target="_blank" rel="noopener">http://118.24.158.116:8888/termrecord.html</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-70fe211b10dbc15c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>另外还有个基于ruby的showterm和termtosvg就不演示了 <a href="http://showterm.io/" target="_blank" rel="noopener">http://showterm.io/</a>  <a href="https://github.com/nbedos/termtosvg" target="_blank" rel="noopener">https://github.com/nbedos/termtosvg</a></p>
-<p>推荐阅读：</p>
-<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
-<p> <a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483979&amp;idx=1&amp;sn=0735daa1d805b66d346ed0e8e60a841f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483983&amp;idx=1&amp;sn=f0e1d9a8e22caf609d6c21431a530186&amp;chksm=e827a5aedf502cb8b72f2036054753fcfd9c20c28b9fbccdeae619a254a80e1024f18ba06523&amp;token=457023358&amp;lang=zh_CN#rd" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/那些你可能不知道的-ocr-图片文字识别工具/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/08/那些你可能不知道的-ocr-图片文字识别工具/" itemprop="url">那些你可能不知道的 ocr 图片文字识别工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T20:20:18+08:00">
-                2019-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  714 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>有时候网上看到一张图片，比如电影截图，里面有台词，想把台词复制出来，这时候你可能会照着图片中的文字，手动打出来，但如果文字太多或者一篇文章，这样你会崩溃的，这时候你就需要ocr了。</p>
-<p>ocr是种光学字符识别技术，可以识别软件将图像中的文字转换成文本格式，这里推荐几种好用的ocr软件。</p>
-<p>这里以电影《不能说的秘密》这张图片为例子，ps：如果想看这部电影公众号回复  不能说的秘密 获取。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-34f592d8a0c85481.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>图中的文字为：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我能遇见你已经是很不可思议了</span><br><span class="line">Being able to meet you has been incredible</span><br></pre></td></tr></table></figure></p>
-<h3 id="天若OCR"><a href="#天若OCR" class="headerlink" title="天若OCR"></a>天若OCR</h3><p><a href="https://tianruoocr.cn/" target="_blank" rel="noopener">https://tianruoocr.cn/</a> 打开软件，双击截取需要识别的区域就好了，速度很快，效果可以。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d1132550027726e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>软件下载地址 公众号回复 ocr 获取。</p>
-<h3 id="黑洞OCR"><a href="#黑洞OCR" class="headerlink" title="黑洞OCR"></a>黑洞OCR</h3><p>打开软件，很小巧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-56c2ea83c04729c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击选取需要截图的区域，它会默认打开一个文件显示识别的内容。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2191d1a13dac0064.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>软件下载地址 公众号回复 ocr 获取。</p>
-<p>另外一款跨平台的树洞  OCR 小工具 <a href="https://github.com/AnyListen/tools-ocr" target="_blank" rel="noopener">https://github.com/AnyListen/tools-ocr</a> </p>
-<h3 id="白描"><a href="#白描" class="headerlink" title="白描"></a>白描</h3><p>白描，像猫一样灵动的ocr扫描识别神器。具备高准确度的文字识别、表格识别转Excel、批量识别、识别后翻译、文件扫描等功能。<br>网站<a href="https://baimiao.uzero.cn/" target="_blank" rel="noopener">https://baimiao.uzero.cn/</a> 这是个APP，我是不喜欢用APP的，有兴趣自己安装试试。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6424e738119891a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="在线识别"><a href="#在线识别" class="headerlink" title="在线识别"></a>在线识别</h3><p>网站 <a href="https://gongpeione.github.io/quick-js-ocr/example/" target="_blank" rel="noopener">https://gongpeione.github.io/quick-js-ocr/example/</a><br>打开网站直接上传图片或者粘贴图片等待一会就好，效果非常不错，没有一个错字。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-0bc393728d3e8498.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>类似的网站还有<a href="http://www.gkocr.com/web/index.html" target="_blank" rel="noopener">http://www.gkocr.com/web/index.html</a>  <a href="https://github.com/naptha/tesseract.js" target="_blank" rel="noopener">https://github.com/naptha/tesseract.js</a>   <a href="https://ocr.wdku.net/" target="_blank" rel="noopener">https://ocr.wdku.net/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-b8b0604eccd6bbb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="取字"><a href="#取字" class="headerlink" title="取字"></a>取字</h3><p>这是一个Chrome扩展 <a href="http://willingstudio.com/#install" target="_blank" rel="noopener">http://willingstudio.com/#install</a>  还是开源的 <a href="https://github.com/willing-Studio/willing-studio.github.io/" target="_blank" rel="noopener">https://github.com/willing-Studio/willing-studio.github.io/</a>  </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c673bec22cb54d32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>经常刷微博可以看到这种长图，直接右键选择取字，真的方便。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-687f9defa1d9f5f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h3><p>微软 ai 识图，支持拍照识别，上传图片，或者直接从微信聊天记录查找图片来识别，效果如下。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7bd59b41d1e980d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>其他类似的小程序还有 以图识字 ，讯飞快读，腾讯翻译君 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-02f5103196c448a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小程序"></p>
-<p>推荐阅读：</p>
-<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
-<p> <a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483979&amp;idx=1&amp;sn=0735daa1d805b66d346ed0e8e60a841f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483983&amp;idx=1&amp;sn=f0e1d9a8e22caf609d6c21431a530186&amp;chksm=e827a5aedf502cb8b72f2036054753fcfd9c20c28b9fbccdeae619a254a80e1024f18ba06523&amp;token=457023358&amp;lang=zh_CN#rd" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2615,7 +2701,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">134</span>
+                  <span class="site-state-item-count">136</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2846,7 +2932,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共441.6k字</span>
+  <span class="post-count">博客全站共449.1k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");

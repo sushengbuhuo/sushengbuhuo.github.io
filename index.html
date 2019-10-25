@@ -285,6 +285,368 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/25/Python-词云分析周杰伦新歌《说好不哭》/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/25/Python-词云分析周杰伦新歌《说好不哭》/" itemprop="url">Python 词云分析周杰伦新歌《说好不哭》</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-25T20:41:54+08:00">
+                2019-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>周杰伦难得出新歌 ，最近终于推出了单曲《说好不哭》，然后直接把QQ音乐服务器干崩了，天王的实力可见一斑，QQ音乐还把这个当作 <a href="https://mp.weixin.qq.com/s/cwsdeO-lg7d6-SQqUeGgJQ" target="_blank" rel="noopener">今天过年</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-a3acef95897a43f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>看我公众号头像就知道是杰伦粉了 ，高中的时候开始喜欢上了他的歌，一晃都这么多年了，我整理了他所有的歌曲和部分电影/演唱会视频，可以在公众号回复 <code>周杰伦</code> 获取，2个多小时的2004 无与伦比演唱会看了n遍。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1c35373d6f32ae41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还做了个杰伦的个人PPT <a href="https://sushengbuhuo.gitee.io/blog/jay/#/start" target="_blank" rel="noopener">https://sushengbuhuo.gitee.io/blog/jay/#/start</a>，文末点击原文查看，在pc上使用空格或者方向键来查看PPT。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fd07473690d7fd74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-11434a00bdef47f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>下面开始用词云来分析杰伦这首歌都写的什么内容。</p>
+<h3 id="词云"><a href="#词云" class="headerlink" title="词云"></a>词云</h3><p> 词云，又称文字云，由词汇组成类似云的彩色图形，用于展示大量文本数据，就是对网络文本中出现频率较高的“关键词”予以视觉上的突出，形成“关键词云层”，从而过滤掉大量的文本信息，使浏览者只要一眼扫过文本就可以领略文本的主旨。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7e644dad8f0f8023.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="歌词"><a href="#歌词" class="headerlink" title="歌词"></a>歌词</h3><p>先看看这首歌的歌词，在QQ 音乐上可以找到<a href="https://y.qq.com/n/yqq/song/001qvvgF38HVc4.html" target="_blank" rel="noopener">https://y.qq.com/n/yqq/song/001qvvgF38HVc4.html</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">没有了联络 后来的生活</span><br><span class="line">我都是听别人说</span><br><span class="line">说你怎么了 说你怎么过</span><br><span class="line">放不下的人是我</span><br><span class="line">人多的时候 就待在角落</span><br><span class="line">就怕别人问起我</span><br><span class="line">你们怎么了 你低着头</span><br><span class="line">护着我连抱怨都没有</span><br><span class="line">电话开始躲 从不对我说</span><br><span class="line">不习惯一个人生活</span><br><span class="line">离开我以后 要我好好过</span><br><span class="line">怕打扰想自由的我</span><br><span class="line">都这个时候 你还在意着</span><br><span class="line">别人是怎么怎么看我的</span><br><span class="line">拼命解释着</span><br><span class="line">不是我的错 是你要走</span><br><span class="line">眼看着你难过</span><br><span class="line">挽留的话却没有说</span><br><span class="line">你会微笑放手</span><br><span class="line">说好不哭让我走</span><br><span class="line">电话开始躲 从不对我说</span><br><span class="line">不习惯一个人生活</span><br><span class="line">离开我以后 要我好好过</span><br><span class="line">怕打扰想自由的我</span><br><span class="line">都这个时候 你还在意着</span><br><span class="line">别人是怎么怎么看我的</span><br><span class="line">拼命解释着</span><br><span class="line">不是我的错 是你要走</span><br><span class="line">眼看着你难过</span><br><span class="line">挽留的话却没有说</span><br><span class="line">你会微笑放手</span><br><span class="line">说好不哭让我走</span><br><span class="line">你什么都没有</span><br><span class="line">却还为我的梦加油</span><br><span class="line">心疼过了多久</span><br><span class="line">过了多久</span><br><span class="line">还在找理由等我</span><br></pre></td></tr></table></figure></p>
+<p>先把歌词保存到文件 no_cry.txt ，然后用Python的wordcloud来分析 。</p>
+<h3 id="wordcloud"><a href="#wordcloud" class="headerlink" title="wordcloud"></a>wordcloud</h3><p>wordcloud 是Python的一个扩展包，直接使用pip install wordcloud来安装。<br><a href="https://github.com/amueller/word_cloud" target="_blank" rel="noopener">https://github.com/amueller/word_cloud</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, STOPWORDS, ImageColorGenerator</span><br><span class="line"><span class="keyword">import</span> jieba,wordcloud</span><br><span class="line"><span class="keyword">from</span> snownlp <span class="keyword">import</span> SnowNLP</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'no_cry.txt'</span>, <span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">     data = f.read()</span><br><span class="line">mytext = <span class="string">" "</span>.join(jieba.cut(data))</span><br><span class="line">wordlist = jieba.analyse.extract_tags(mytext, topK=10)   # 分词，取前10</span><br><span class="line">[<span class="string">'怎么'</span>, <span class="string">'别人'</span>, <span class="string">'挽留'</span>, <span class="string">'打扰'</span>, <span class="string">'放手'</span>, <span class="string">'说好'</span>, <span class="string">'在意'</span>, <span class="string">'没有'</span>, <span class="string">'从不'</span>, <span class="string">'拼命'</span>]</span><br><span class="line">#c = Counter(mytext)</span><br><span class="line">#c = c.most_common(10)</span><br><span class="line">wordcloud = WordCloud(font_path=<span class="string">"c:\windows\fonts\simhei.ttf"</span>).generate(mytext)</span><br><span class="line">plt.imshow(wordcloud, interpolation=<span class="string">'bilinear'</span>)</span><br><span class="line">plt.axis(<span class="string">"off"</span>)</span><br><span class="line">plt.show()</span><br><span class="line">wordcloud.to_file(<span class="string">'no_cry.jpg'</span>)</span><br></pre></td></tr></table></figure>
+<p>保存到本地的文件 no_cry.jpg图片效果：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-cfe03be22411b0ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>改变下尺寸效果<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d1d6b182b1225de3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>接着看看这首歌的主要关键词</p>
+<p>接着用SnowNLP对每个句子分析，先<code>pip install SnowNLP</code>安装，sentiments 返回值为正面情绪的概率，越接近1表示正面情绪，越接近0表示负面情绪。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">s = SnowNLP(mytext)</span><br><span class="line"># for sentence in s.sentences:</span><br><span class="line"># 	print(sentence)</span><br><span class="line"># 	sentc = SnowNLP(sentence)</span><br><span class="line"># 	print(sentc.sentiments)</span><br><span class="line">&gt;&gt;&gt; s.sentiments</span><br><span class="line"><span class="number">0.9875230187654408</span></span><br><span class="line">说明这首歌是偏正面的。</span><br><span class="line">sentimentslist = []</span><br><span class="line">    s = SnowNLP(data)</span><br><span class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> s.sentences:</span><br><span class="line">        s = SnowNLP(sentence)</span><br><span class="line">        sentimentslist.append(s.sentiments)</span><br><span class="line">    plt.hist(sentimentslist, bins = np.arange(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.01</span>), facecolor = <span class="string">'g'</span>)</span><br><span class="line">    plt.xlabel(<span class="string">'Sentiments Probability'</span>)</span><br><span class="line">    plt.ylabel(<span class="string">'Quantity'</span>)</span><br><span class="line">    plt.title(<span class="string">'Analysis of Sentiments'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">&gt;&gt;&gt; s.summary(limit=<span class="number">10</span>) 摘要 </span><br><span class="line">[<span class="string">'我都是听别人说'</span>, <span class="string">'不习惯一个人生活'</span>, <span class="string">'不习惯一个人生活'</span>, <span class="string">'说好不哭让我走'</span>, <span class="string">'说好不哭让我走'</span>, <span class="string">'都这个</span></span><br><span class="line"><span class="string">时候 你还在意着'</span>, <span class="string">'都这个时候 你还在意着'</span>, <span class="string">'电话开始躲 从不对我说'</span>, <span class="string">'电话开始躲 从不对我说'</span>, <span class="string">'挽留的话却没有说'</span>]</span><br><span class="line">&gt;&gt;&gt; s.keywords(limit=<span class="number">10</span>)</span><br><span class="line">[<span class="string">'说'</span>, <span class="string">'不'</span>, <span class="string">'还'</span>, <span class="string">'人'</span>, <span class="string">'都'</span>, <span class="string">'别人'</span>, <span class="string">'生活'</span>, <span class="string">'却'</span>, <span class="string">'走'</span>, <span class="string">'一个'</span>]</span><br></pre></td></tr></table></figure></p>
+<h3 id="wordcloud-cli"><a href="#wordcloud-cli" class="headerlink" title="wordcloud_cli"></a>wordcloud_cli</h3><p>如果你不想写代码 ，可以直接用命令行工具wordcloud_cli  ， <a href="https://amueller.github.io/word_cloud/cli.html" target="_blank" rel="noopener">https://amueller.github.io/word_cloud/cli.html</a>  可以看看命令行参数</p>
+<p>直接执行 <code>wordcloud_cli --text no_cry.txt --imagefile no_cry.jpg --mask ye.jpg  --fontfile c:\windos\fonts\simhei.ttf</code>，生成图片效果<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8649fb90f35d59b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后加个白色背景<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">def handle(textfile, stopword):</span><br><span class="line">    <span class="keyword">with</span> open(textfile, <span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">       data = f.read()</span><br><span class="line">    wordlist = jieba.analyse.extract_tags(data, topK=100)   # 分词，取前100</span><br><span class="line">    wordStr = <span class="string">" "</span>.join(wordlist)</span><br><span class="line">    # print (wordStr)</span><br><span class="line">    #怎么 别人 挽留 打扰 放手 说好 在意 没有 从不 拼命 难过 多久 眼看 生活 微笑 好好 时候 习惯 自由 电话 解释 离开 的话 护着 放不下 加油 以后 问起 人多 角落 心疼 低着头 抱怨 开始 不是 联络 这个 理由 一个 后来 你们 什么</span><br><span class="line">    hand = np.array(Image.open('img/no_cry.jpeg'))    # 打开一张图片，词语以图片形状为背景分布</span><br><span class="line">    my_cloudword = WordCloud(</span><br><span class="line">        # wordcloud参数配置</span><br><span class="line">        width=<span class="number">1024</span>,</span><br><span class="line">        height=<span class="number">768</span>,</span><br><span class="line">        background_color = 'white',   # 背景颜色</span><br><span class="line">        #mask = hand,                  # 背景图</span><br><span class="line">        max_words = 100,              # 最大显示字数</span><br><span class="line">        stopwords = stopword,         # 干扰词</span><br><span class="line">        max_font_size = 100,           # 字体最大值</span><br><span class="line">        font_path='c:\windows\fonts\simhei.ttf',  # 中文字体</span><br><span class="line">        random_state=3,  # 设置有多少种随机生成状态，即有多少种配色方案</span><br><span class="line">    )</span><br><span class="line">    my_cloudword.generate(wordStr)          # 生成图片</span><br><span class="line">    my_cloudword.to_file('res.jpg')    # 保存</span><br><span class="line">    plt.axis('off')  # 是否显示x轴、y轴下标</span><br><span class="line">    ax = plt.imshow(my_cloudword)  # 显示词云图</span><br><span class="line">    fig = ax.figure</span><br><span class="line">    fig.set_size_inches(25,20)                  # 可调节图片紧密 尺寸程度    </span><br><span class="line">    plt.show()  # 显示</span><br><span class="line"></span><br><span class="line">stopwords = set(STOPWORDS)</span><br><span class="line">handle(<span class="string">'jay.txt'</span>, stopwords)</span><br></pre></td></tr></table></figure></p>
+<p>效果图<br><img src="https://upload-images.jianshu.io/upload_images/17817191-dc3f0813800bb145.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>一首歌可能还看不出效果，下面以周杰伦于2003年发行的专辑《叶惠美》为例，共收录了11首歌曲 <img src="https://upload-images.jianshu.io/upload_images/17817191-f9cdccd1194f37d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>百科地址<a href="https://baike.baidu.com/item/%E5%8F%B6%E6%83%A0%E7%BE%8E/893" target="_blank" rel="noopener">https://baike.baidu.com/item/%E5%8F%B6%E6%83%A0%E7%BE%8E/893</a><br>近600行歌词，保存到文件 jay.txt<br><img src="https://upload-images.jianshu.io/upload_images/17817191-008a8c3cf6d75b7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>效果图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-86c1f472e5259795.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1db93ac9c8554ed2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>前50<br><img src="https://upload-images.jianshu.io/upload_images/17817191-cd0ebe0cbb625f8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>前100<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bdb19b4c059c9999.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这张专辑的主要关键词<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'微笑 东风破 乒乓 弹奏 我们 骄傲 睫毛 不想 一曲 好难 得到 走过 琵琶 一天 天空 多强 画面 嘴角 到底 一直</span></span><br><span class="line"><span class="string"> 粉嫩 偏偏 二班 回忆 永远 看不见 故事 不到 为什么 不用 沉默 外表 请原谅 从前 可不可以 孤独 水蜜桃 没有</span></span><br><span class="line"><span class="string">双刀 唇膏 怎么 知道 国度 刻着 一点 多汁 离开 渐渐 坠入 小孩 原地打转 仁慈 还要 清秀 自负 亮丽 受伤 没人</span></span><br><span class="line"><span class="string">能 我试 过握 大到 训导处 荒烟漫草 先对 我戒 那鲁湾 裁判 唐装 自己 依赖 第一名 答案 示好 石板路 专辑 喊</span></span><br><span class="line"><span class="string">叫 香味 枫叶 一股 舍不得 那年 温柔 放晴 自信 洋溢 雨淋 距离 俯瞰 看不惯 古道 刮风 篱笆 不要 天台 剥落</span></span><br><span class="line"><span class="string">琴声 纪录片 幽幽 预兆 还是'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>如果你不会代码怎么生成词云呢，有许多对应的网站。</p>
+<h3 id="wordart"><a href="#wordart" class="headerlink" title="wordart"></a>wordart</h3><p>一个在线生成词云的网站<a href="https://wordart.com/create" target="_blank" rel="noopener">https://wordart.com/create</a> 将文字导入进去<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5d0d27096d88c7a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>上传中文字体，否则乱码，效果如图：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d111d57c62551e41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>国内也有对应的 <a href="http://cloud.niucodata.com/，将歌词复制进去。" target="_blank" rel="noopener">http://cloud.niucodata.com/，将歌词复制进去。</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-521df179d0aef377.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击下方的导出图片，效果如下<br><img src="https://upload-images.jianshu.io/upload_images/17817191-209f40fff4f62dc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="公众号词云"><a href="#公众号词云" class="headerlink" title="公众号词云"></a>公众号词云</h3><p>这是新榜针对公众号文章的词云分析工具，可以免费使用<a href="https://data.newrank.cn/wordCloud.html" target="_blank" rel="noopener">https://data.newrank.cn/wordCloud.html</a> ，比如我的公众号文章词云图<br><img src="https://upload-images.jianshu.io/upload_images/17817191-cd677d0c45414ddf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><p>$ pdftotext mydocument.pdf - | wordcloud_cli –imagefile wordcloud.png<br><a href="http://duososo.com/index.php" target="_blank" rel="noopener">http://duososo.com/index.php</a><br>自然语言处理库之snowNLP<a href="https://www.jianshu.com/p/4692d1b5364d" target="_blank" rel="noopener">https://www.jianshu.com/p/4692d1b5364d</a><br><a href="https://mp.weixin.qq.com/s/cGcl-9dNb8AIAmeatTLvhg" target="_blank" rel="noopener">超简单：3分钟制作惊艳的词云图</a><br><a href="https://worditout.com/" target="_blank" rel="noopener">https://worditout.com/</a><br><a href="https://www.weiciyun.com/create.html" target="_blank" rel="noopener">https://www.weiciyun.com/create.html</a><br><a href="https://wordart.com/" target="_blank" rel="noopener">https://wordart.com/</a><br>js版 <a href="https://wordcloud2-js.timdream.org/#love" target="_blank" rel="noopener">https://wordcloud2-js.timdream.org/#love</a>  <a href="https://github.com/timdream/wordcloud" target="_blank" rel="noopener">https://github.com/timdream/wordcloud</a><br>评论爬虫及情感分析<a href="https://www.itcodemonkey.com/article/10706.html" target="_blank" rel="noopener">https://www.itcodemonkey.com/article/10706.html</a><br>基于SnowNLP的豆瓣评论情感分析<a href="https://blog.csdn.net/Eastmount/article/details/85118818" target="_blank" rel="noopener">https://blog.csdn.net/Eastmount/article/details/85118818</a><br><a href="https://bosonnlp.com/dev/resource" target="_blank" rel="noopener">https://bosonnlp.com/dev/resource</a><br>在线词云<a href="http://ictclas.nlpir.org/nlpir/" target="_blank" rel="noopener">http://ictclas.nlpir.org/nlpir/</a><br>情感分析库比较<a href="https://www.ctolib.com/article/compares/1874" target="_blank" rel="noopener">https://www.ctolib.com/article/compares/1874</a><br>词云<a href="https://github.com/mukund109/word-mesh" target="_blank" rel="noopener">https://github.com/mukund109/word-mesh</a><br>将公众号所有文章出现最多的关键词并生成词云图 <a href="https://mp.weixin.qq.com/s/HF1f2DNd3u49vUM1b13DAw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/HF1f2DNd3u49vUM1b13DAw</a><br><a href="https://github.com/isnowfy/snownlp" target="_blank" rel="noopener">https://github.com/isnowfy/snownlp</a><br><a href="https://www.zhihu.com/question/24658552" target="_blank" rel="noopener">https://www.zhihu.com/question/24658552</a><br><a href="https://zhuanlan.zhihu.com/p/21635987" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21635987</a><br><a href="https://minitagcloud.cn/create.html#/" target="_blank" rel="noopener">https://minitagcloud.cn/create.html#/</a><br> <a href="https://www.jianshu.com/p/4fb27471295f" target="_blank" rel="noopener">https://www.jianshu.com/p/4fb27471295f</a><br><a href="http://yciyun.com/" target="_blank" rel="noopener">http://yciyun.com/</a><br> <a href="http://www.pullword.com/" target="_blank" rel="noopener">http://www.pullword.com/</a><br> <a href="https://minitagcloud.cn/" target="_blank" rel="noopener">https://minitagcloud.cn/</a><br><a href="http://cloud.niucodata.com/" target="_blank" rel="noopener">http://cloud.niucodata.com/</a><br><a href="https://web.geekji.cn/web/minitagcloud.html" target="_blank" rel="noopener">https://web.geekji.cn/web/minitagcloud.html</a><br>10行python代码的词云  <a href="http://python.jobbole.com/87496/" target="_blank" rel="noopener">http://python.jobbole.com/87496/</a><br><a href="https://amueller.github.io/word_cloud/" target="_blank" rel="noopener">https://amueller.github.io/word_cloud/</a><br>黑科技 <a href="https://magnet.chongbuluo.com/forum-47-1.html" target="_blank" rel="noopener">https://magnet.chongbuluo.com/forum-47-1.html</a><br> 词云<a href="https://me.bdp.cn/home.html" target="_blank" rel="noopener">https://me.bdp.cn/home.html</a><br> <a href="http://www.picdata.cn" target="_blank" rel="noopener">http://www.picdata.cn</a><br> <a href="http://www.tocloud.com" target="_blank" rel="noopener">http://www.tocloud.com</a><br>WordArt.com<br>Tagxedo.com<br>WordItOut.com<br> Wordle.net<br> <a href="https://www.bilibili.com/video/av53917673" target="_blank" rel="noopener">https://www.bilibili.com/video/av53917673</a><br><a href="http://codewithzhangyi.com/2018/09/03/NLP%E7%AC%94%E8%AE%B0-Word-Tokenization-wordcloud/" target="_blank" rel="noopener">http://codewithzhangyi.com/2018/09/03/NLP%E7%AC%94%E8%AE%B0-Word-Tokenization-wordcloud/</a><br><a href="http://codewithzhangyi.com/2019/03/11/sentiment-analysis/" target="_blank" rel="noopener">http://codewithzhangyi.com/2019/03/11/sentiment-analysis/</a><br>文本分析朱自清写《匆匆》的情感状态 <a href="https://mp.weixin.qq.com/s/dOpKU0i65c5KJaxsiFWoCg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/dOpKU0i65c5KJaxsiFWoCg</a><br>Python 词云分析周杰伦《晴天》<a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483695&amp;idx=1&amp;sn=a04f03641ce7b73f130d2a3f134824c5&amp;scene=19" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483695&amp;idx=1&amp;sn=a04f03641ce7b73f130d2a3f134824c5&amp;scene=19</a><br>词云可视化：四行Python代码轻松上手到精通 <a href="https://github.com/TommyZihao/zihaowordcloud" target="_blank" rel="noopener">https://github.com/TommyZihao/zihaowordcloud</a><br><a href="https://1315402725.github.io/python%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%E8%AF%8D%E4%BA%91.html" target="_blank" rel="noopener">https://1315402725.github.io/python%E6%96%97%E7%BD%97%E5%A4%A7%E9%99%86%E8%AF%8D%E4%BA%91.html</a><br>周杰伦《说好不哭》新歌MV隐藏彩蛋 你发现了吗 <a href="https://www.onefm.com.my/%E5%91%A8%E6%9D%B0%E4%BC%A6%E3%80%8A%E8%AF%B4%E5%A5%BD%E4%B8%8D%E5%93%AD%E3%80%8B%E6%96%B0%E6%AD%8Cmv%E9%9A%90%E8%97%8F%E5%BD%A9%E8%9B%8B-%E4%BD%A0%E5%8F%91%E7%8E%B0%E4%BA%86%E5%90%97%EF%BC%9F/" target="_blank" rel="noopener">https://www.onefm.com.my/%E5%91%A8%E6%9D%B0%E4%BC%A6%E3%80%8A%E8%AF%B4%E5%A5%BD%E4%B8%8D%E5%93%AD%E3%80%8B%E6%96%B0%E6%AD%8Cmv%E9%9A%90%E8%97%8F%E5%BD%A9%E8%9B%8B-%E4%BD%A0%E5%8F%91%E7%8E%B0%E4%BA%86%E5%90%97%EF%BC%9F/</a><br>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/iL6WyI-TChtjZMuu5G5W8A" target="_blank" rel="noopener">公众号苏生不惑原创文章整理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/25/不会写Python代码如何抓取豆瓣电影-Top-250/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/25/不会写Python代码如何抓取豆瓣电影-Top-250/" itemprop="url">不会写Python代码如何抓取豆瓣电影 Top 250</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-25T20:40:56+08:00">
+                2019-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>说到爬虫，大多数人会想到用Python来做，毕竟简单好用，比如想抓取豆瓣电影top250 的所有电影数据。ps: 我收藏了部分top 250 的电影，可以回复对应<code>电影名</code>试试。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-643993ba0c3fcc65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>简单的代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://movie.douban.com/top250'</span></span><br><span class="line">headers = &#123;<span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'</span>&#125;</span><br><span class="line">s = BeautifulSoup(requests.get(url, headers=headers).text, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> s.find_all(<span class="string">'span'</span>, class_=<span class="string">'title'</span>):</span><br><span class="line">    print(link.text)</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以输出第一页的所有电影标题，第二页的数据还需要代码处理。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e3e7b853f0ad6c83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>但对于非程序员还是有难度的，有没有不用写代码就能抓取数据的爬虫工具呢，下面介绍几个非常实用的爬虫工具，这里还是以爬取豆瓣电影top250为例。</p>
+<h3 id="爬山虎采集器"><a href="#爬山虎采集器" class="headerlink" title="爬山虎采集器"></a>爬山虎采集器</h3><p>爬山虎采集器是一款简单易用的网页数据采集工具，通过智能算法+可视化界面，随心所欲抓取自己想到的数据。先在官网 <a href="http://www.51pashanhu.com/download" target="_blank" rel="noopener">http://www.51pashanhu.com/download</a>  下载软件，现在我下载的版本是 v2.4.7.0 ，它已经内置了几个采集设置了，比如百度搜索，淘宝商品等。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-30b89e7606d9d82f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>先输入要采集的网址<a href="https://movie.douban.com/top250" target="_blank" rel="noopener">https://movie.douban.com/top250</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-cca7ce4b6ee97dd6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点下一步，因为有10页，因此要选择 <code>自动识别分页</code><br><img src="https://upload-images.jianshu.io/upload_images/17817191-f8e2bf10988ff2aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后保存并采集<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8d1515eb2c73c222.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>采集结果：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5ff579bab310cd60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>默认只能导出到txt，需要升级会员才能导出其他格式。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a4b4718e7cac97a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>成功导出250条数据。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-903712556730ba1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>txt文件内容<br> <img src="https://upload-images.jianshu.io/upload_images/17817191-7d9ab8e462bf233f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="后羿采集器"><a href="#后羿采集器" class="headerlink" title="后羿采集器"></a>后羿采集器</h3><p>后羿采集器是一款面向零基础用户的，不限制采集和导出采集结果数量，免费不要积分的采集器，只需要输入网址就能智能识别采集结果，简直小白神器！在官网 <a href="http://www.houyicaiji.com/" target="_blank" rel="noopener">http://www.houyicaiji.com/</a> 下载好软件<br><img src="https://upload-images.jianshu.io/upload_images/17817191-72e9251f885605fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入网址<a href="https://movie.douban.com/top250" target="_blank" rel="noopener">https://movie.douban.com/top250</a>，它会自动分页加载。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a6c08c18cf1b584d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击开始采集<br><img src="https://upload-images.jianshu.io/upload_images/17817191-866a28ace3ab9b0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a0a22c1758e2e576.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>采集完成<br><img src="https://upload-images.jianshu.io/upload_images/17817191-4f3b1fa0257f1aaf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-278b33388d9bbbef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这个相比上面的爬山虎采集器可以导出 excel csv text 等格式。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-dca0ceb1c28de2a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>我这里导出到excel，所有电影标题，链接，封面图片，导演，评价人数都抓取下来了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-741aa1f11f1bb43d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="八爪鱼采集器"><a href="#八爪鱼采集器" class="headerlink" title="八爪鱼采集器"></a>八爪鱼采集器</h3><p>八爪鱼数据采集器是一款使用简单、功能强大的网络爬虫工具，完全可视化操作，无需编写代码，内置海量模板，支持任意网络数据抓取，简易采集模式内置上百种主流网站数据源，如京东、天猫、大众点评等热门采集网站，只需参照模板简单设置参数，就可以快速获取网站公开数据。软件下载地址 <a href="https://www.bazhuayu.com/download" target="_blank" rel="noopener">https://www.bazhuayu.com/download</a> ，这个我就不演示了，另外它还有英文版 <a href="https://www.octoparse.com/download" target="_blank" rel="noopener">https://www.octoparse.com/download</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-47a658ea735eb155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="集搜客"><a href="#集搜客" class="headerlink" title="集搜客"></a>集搜客</h3><p>号称把互联网装进表格和数据库 ，网址 <a href="https://www.gooseeker.com/" target="_blank" rel="noopener">https://www.gooseeker.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-b5e81b0ca680a4b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Web-Scraper"><a href="#Web-Scraper" class="headerlink" title="Web Scraper"></a>Web Scraper</h3><p>Web Scraper 是一款免费的、适用于任何人（没有任何编程基础）的爬虫工具。操作简单，只需鼠标点击和简单的配置，就能快速的爬取 Web 端的数据。网址 <a href="https://webscraper.io，需要先下载Chrome扩展" target="_blank" rel="noopener">https://webscraper.io，需要先下载Chrome扩展</a> <a href="https://chrome.google.com/webstore/detail/web-scraper/jnhgnonknehpejjnehehllkliplmbmhn" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/web-scraper/jnhgnonknehpejjnehehllkliplmbmhn</a> 如果上不了谷歌在公众号回复 <code>谷歌</code>获取扩展。</p>
+<p>具体使用教程可以参考明白大佬的文章<a href="https://www.jianshu.com/p/cd5124ac0871" target="_blank" rel="noopener">https://www.jianshu.com/p/cd5124ac0871</a>，作者还专门开了一门课程《不用写代码的爬虫课》。</p>
+<p>有了上面这些工具，不会代码的你也能轻松抓取你想要的公开数据。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="http://www.iwebscraper.com/" target="_blank" rel="noopener">webscraper中文网</a><br>点点鼠标：即可抓取网页数据  <a href="http://mhtclub.com/post/29" target="_blank" rel="noopener">http://mhtclub.com/post/29</a><br>Web Scraper 官方文档中文版.pdf文档 百度链接: <a href="https://pan.baidu.com/s/1fYRi8B4irtMqvlgV0Ix5Jg" target="_blank" rel="noopener">https://pan.baidu.com/s/1fYRi8B4irtMqvlgV0Ix5Jg</a> 提取码: cv43<br>网页正文抽取工具<a href="https://github.com/chrislinan/cx-extractor-python#ChineseVersion" target="_blank" rel="noopener">https://github.com/chrislinan/cx-extractor-python#ChineseVersion</a><br>火车采集器<a href="http://www.locoy.com/" target="_blank" rel="noopener">http://www.locoy.com/</a><br>爬虫工具 <a href="https://mp.weixin.qq.com/s/_YKN9KN5WenRLYn_qDe6Hg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/_YKN9KN5WenRLYn_qDe6Hg</a><br><a href="https://blog.csdn.net/hezheqiang/article/details/79310713" target="_blank" rel="noopener">https://blog.csdn.net/hezheqiang/article/details/79310713</a><br><a href="https://cloud.tencent.com/developer/article/1420944" target="_blank" rel="noopener">介绍一些比较方便好用的爬虫工具和服务</a><br> python爬虫工具集合 <a href="https://lartpang.github.io/spyder_tool/" target="_blank" rel="noopener">https://lartpang.github.io/spyder_tool/</a><br>造数：轻便而强大的爬虫工具 <a href="http://growthbox.net/growthhack/631/" target="_blank" rel="noopener">http://growthbox.net/growthhack/631/</a><br><a href="https://www.zaoshu.io/" target="_blank" rel="noopener">https://www.zaoshu.io/</a><br>那我们只能给你推荐另一款懒人专用的工具了：<a href="http://growthbox.net/growthhack/tag/import-io/" title="浏览关于“import.io”的文章" target="_blank" rel="noopener">import.io</a>。它的采集功能更丰富，操作更简便，还嵌入了机器学习系统，自动优化采集流程，让你的数据采集更加精准！你甚至可以实时监控亚马逊店铺的产品销量！<br>这个工具的服务器在国外，采集国外的网站更方便。另外，它能够自动切换IP，轻松突破网站的封锁机制，万军之中取上将首级！<br><a href="https://www.shenjian.io/" target="_blank" rel="noopener">神箭云</a><br>import.io<br>链接：<a href="https://juejin.im/post/5d5a571151882556ee6dd975" target="_blank" rel="noopener">https://juejin.im/post/5d5a571151882556ee6dd975</a><br>Python爬虫Scrapy爬取妹子图网站图片抓取 - 在线Scrapy爬虫生成测试 <a href="http://www.toolzl.com/dev/Scrapy/a26bec7f2e7ae4491837451f1283ed4d.html" target="_blank" rel="noopener">http://www.toolzl.com/dev/Scrapy/a26bec7f2e7ae4491837451f1283ed4d.html</a><br>排名前20的网络爬虫工具<a href="https://zhuanlan.zhihu.com/p/38832759" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/38832759</a><br>你都会用八爪鱼了，你可以去试试Octoparse， <a href="https://www.octoparse.com/download" target="_blank" rel="noopener">https://www.octoparse.com/download</a><br> 八爪鱼6.X稳定版英文化<br><a href="https://webscraper.io/" target="_blank" rel="noopener">https://webscraper.io/</a><br> 微博采集工具箱 <a href="https://www.gooseeker.com/land/weibo.html" target="_blank" rel="noopener">https://www.gooseeker.com/land/weibo.html</a><br>后羿优于爬山虎：后羿不用注册就可以试用，且没有采集、导出限制；爬山虎免费版只能导出为TXT。<br>八爪鱼由于集搜客：虽然集搜客不能批量提取已知网址，但八爪鱼经常提取失败。<br>火车优于其余：火车是老字号了，而且界面也好看一点点。<br>Python爬虫 [<a href="http://www.testclass.net/crawler/get_zhihu]" target="_blank" rel="noopener">http://www.testclass.net/crawler/get_zhihu]</a><br>(<a href="http://www.testclass.net/crawler/get_zhihu" target="_blank" rel="noopener">http://www.testclass.net/crawler/get_zhihu</a>)<br>  <a href="https://www.kawabangga.com/posts/2277" title="Permalink to 如何成为一名爬虫工程师" target="_blank" rel="noopener">如何成为一名爬虫工程师</a><br>一个国人编写的强大的网络爬虫系统并带有强大的WebUI。采用Python语言编写，分布式架构，支持多种数据库后端，强大的WebUI支持脚本编辑器，任务监视器，项目管理器以及结果查看器。<a href="http://www.pyspider.cn/" target="_blank" rel="noopener">http://www.pyspider.cn/</a><br>Spyder简体中文语言包及一键安装脚本 <a href="http://www.lizenghai.com/" target="_blank" rel="noopener">http://www.lizenghai.com</a><br><a href="https://github.com/kingmo888/Spyder_Simplified_Chinese" target="_blank" rel="noopener">https://github.com/kingmo888/Spyder_Simplified_Chinese</a></p>
+<p>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/iL6WyI-TChtjZMuu5G5W8A" target="_blank" rel="noopener">公众号苏生不惑原创文章整理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/22/那些你可能需要的图片处理工具/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -722,7 +1084,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k 字
+                  4.4k 字
                 </span>
               
 
@@ -738,7 +1100,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  13 分钟
+                  21 分钟
                 </span>
               
             </div>
@@ -773,6 +1135,21 @@
 <h3 id="JSON-encode-小数位丢失"><a href="#JSON-encode-小数位丢失" class="headerlink" title="JSON_encode 小数位丢失"></a>JSON_encode 小数位丢失</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$a = <span class="string">'&#123;"orderAmt":500.00&#125;'</span>;</span><br><span class="line">$a_json_decode = json_decode($a,<span class="literal">true</span>);</span><br><span class="line">[                      </span><br><span class="line">  <span class="string">"orderAmt"</span> =&gt; <span class="number">500.0</span>, </span><br><span class="line">]                      </span><br><span class="line">$a_json_encode = json_encode($a_json_decode);</span><br><span class="line"><span class="string">"&#123;"</span>orderAmt<span class="string">":500&#125;"</span></span><br><span class="line">使用字符串类型的 <span class="number">500.00</span>，或使用字符串拼接 <span class="built_in">JSON</span> </span><br><span class="line">json_encode($a_json_decode, JSON_PRESERVE_ZERO_FRACTION)</span><br><span class="line">=&gt; <span class="string">"&#123;"</span>orderAmt<span class="string">":500.0&#125;"</span></span><br><span class="line"></span><br><span class="line">https:<span class="comment">//learnku.com/laravel/t/35311</span></span><br><span class="line"></span><br><span class="line"> 从 PHP <span class="number">5.6</span><span class="number">.6</span>+ 开始，json_encode 支持使用 JSON_PRESERVE_ZERO_FRACTION 选项以告知引擎确保浮点数始终编码为浮点数，但对于形如 <span class="number">500.00</span> （值为 <span class="number">500</span>，精确到小数点后两位的浮点数）仅能保证最终输出 <span class="number">500.0</span></span><br><span class="line"> </span><br><span class="line"> 即使临时配置 serialize_precision 为 <span class="number">10</span>，在初始化数组时使用 number_format 函数格式化小数位数，最后在 json_encode 时填入选项 JSON_PRESERVE_ZERO_FRACTION | JSON_NUMERIC_CHECK 也仅能输出 <span class="number">500.0</span>。</span><br></pre></td></tr></table></figure>
 <h3 id="支付宝公钥证书-PHP-版本-SDK"><a href="#支付宝公钥证书-PHP-版本-SDK" class="headerlink" title="支付宝公钥证书 PHP 版本 SDK"></a>支付宝公钥证书 PHP 版本 SDK</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRootCertSN</span>(<span class="params">$str</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// return '687b59193f3f462dd5336e5abf83c5d8_02941eef3187dddf3d3b83462e1dfcf6';</span></span><br><span class="line">        $arr = preg_split(<span class="string">'/(?=-----BEGIN)/'</span>, $str, <span class="number">-1</span>, PREG_SPLIT_NO_EMPTY);</span><br><span class="line">        $str = <span class="literal">null</span>;</span><br><span class="line">        foreach ($arr <span class="keyword">as</span> $e) &#123;</span><br><span class="line">            $sn = getCertSN($e, <span class="literal">true</span>);</span><br><span class="line">            <span class="keyword">if</span> (!$sn) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> ($str === <span class="literal">null</span>) &#123;</span><br><span class="line">                $str = $sn;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                $str .= <span class="string">"_"</span> . $sn;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $str;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getCertSN</span>(<span class="params">$str, $matchAlgo = false</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        根据java SDK源码：AntCertificationUtil::getRootCertSN</span></span><br><span class="line"><span class="comment">        对证书链中RSA的项目进行过滤（猜测是gm国密算法java抛错搞不定，故意略去）</span></span><br><span class="line"><span class="comment">        java源码为：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        if(c.getSigAlgOID().startsWith("1.2.840.113549.1.1"))</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        根据 https://www.alvestrand.no/objectid/1.2.840.113549.1.1.html</span></span><br><span class="line"><span class="comment">        该OID为RSA算法系。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">if</span> ($matchAlgo) &#123;</span><br><span class="line">            openssl_x509_export($str, $out, <span class="literal">false</span>);</span><br><span class="line">            <span class="keyword">if</span> (!preg_match(<span class="string">'/Signature Algorithm:.*?RSA/im'</span>, $out, $m)) &#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        $a = openssl_x509_parse($str);</span><br><span class="line">        $issuer = <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 注意：根据java代码输出，需要倒着排列 CN,OU,O</span></span><br><span class="line">        foreach ($a[<span class="string">"issuer"</span>] <span class="keyword">as</span> $k =&gt; $v) &#123;</span><br><span class="line">            <span class="keyword">if</span> ($issuer === <span class="literal">null</span>) &#123;</span><br><span class="line">                $issuer = <span class="string">"$k=$v"</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                $issuer = <span class="string">"$k=$v,"</span> . $issuer;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        #    echo($issuer . $a["serialNumber"] . "\n");</span><br><span class="line">        $serialNumberHex = decimalNotation($a[<span class="string">'serialNumberHex'</span>]);</span><br><span class="line">        $sn = md5($issuer . $serialNumberHex);</span><br><span class="line">        <span class="keyword">return</span> $sn;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">decimalNotation</span>(<span class="params">$hex</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $dec = <span class="number">0</span>;</span><br><span class="line">        $len = strlen($hex);</span><br><span class="line">        <span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= $len; $i++) &#123;</span><br><span class="line">            $dec = bcadd($dec, bcmul(strval(hexdec($hex[$i - <span class="number">1</span>])), bcpow(<span class="string">'16'</span>, strval($len - $i))));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $dec;</span><br><span class="line">    &#125;</span><br><span class="line">https:<span class="comment">//learnku.com/articles/35315</span></span><br></pre></td></tr></table></figure>
 <h3 id="字符串表达式计算"><a href="#字符串表达式计算" class="headerlink" title="字符串表达式计算"></a>字符串表达式计算</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$a = <span class="number">10</span>;</span><br><span class="line">var_dump(<span class="built_in">eval</span>(<span class="string">'return $a &gt; 5;'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出:</span></span><br><span class="line"><span class="comment">// bool(true)</span></span><br><span class="line">system(<span class="string">'php -r "echo 1 + 2;"'</span>);</span><br><span class="line"></span><br><span class="line">echo exec(<span class="string">'php -r "echo 1 + 2;"'</span>);</span><br><span class="line">https:<span class="comment">//shockerli.net/post/php-expression-string/</span></span><br></pre></td></tr></table></figure>
+<h3 id="用户登录密码改为-md5"><a href="#用户登录密码改为-md5" class="headerlink" title="用户登录密码改为 md5"></a>用户登录密码改为 md5</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">新建一个文件 Libraries，在 Libraries 目录下新建一个 MD5.php 文件</span><br><span class="line"></span><br><span class="line">namespace App\Libraries; </span><br><span class="line"></span><br><span class="line">use Illuminate\Contracts\Hashing\Hasher; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MD5</span> <span class="title">implements</span> <span class="title">Hasher</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * Hash the given value. </span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @param string $value </span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @return array  $options </span></span><br><span class="line"><span class="comment">     * @return string </span></span><br><span class="line"><span class="comment">     */</span> </span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params">$value, array $options = []</span>) </span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> md5($value); </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * Check the given plain value against a hash. </span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @param string $value </span></span><br><span class="line"><span class="comment">     * @param string $hashedValue </span></span><br><span class="line"><span class="comment">     * @param array $options </span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @return bool </span></span><br><span class="line"><span class="comment">     */</span> </span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">$value, $hashedValue, array $options = []</span>) </span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">if</span>(empty($hashedValue))&#123; </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> $<span class="keyword">this</span>-&gt;make($value) === $hashedValue; </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * Check if the given hash has been hashed using the given options. </span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @param string $hashedValue </span></span><br><span class="line"><span class="comment">     * @param array $options </span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * @return bool </span></span><br><span class="line"><span class="comment">     */</span> </span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">needsRehash</span>(<span class="params">$hashedValue, array $options = []</span>) </span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"> Providers 文件下面新建一个文件 MD5ServiceProvider.php</span><br><span class="line"> namespace App\Providers; </span><br><span class="line"> </span><br><span class="line"> use Illuminate\Auth\EloquentUserProvider; </span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">MD5ServiceProvider</span> <span class="keyword">extends</span> <span class="title">EloquentUserProvider</span> </span></span><br><span class="line"><span class="class"> </span>&#123; </span><br><span class="line"> </span><br><span class="line">     <span class="comment">//继承EloquentUserProvider类，调用父类的构造函数 </span></span><br><span class="line">     public <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params">$hasher, $model</span>) </span></span><br><span class="line"><span class="function">     </span>&#123; </span><br><span class="line">         parent::__construct($hasher, $model); </span><br><span class="line">     &#125; </span><br><span class="line"> </span><br><span class="line">     <span class="comment">/** </span></span><br><span class="line"><span class="comment">      * Bootstrap the application services. </span></span><br><span class="line"><span class="comment">      * </span></span><br><span class="line"><span class="comment">      * @return void </span></span><br><span class="line"><span class="comment">      */</span> </span><br><span class="line">     public <span class="function"><span class="keyword">function</span> <span class="title">boot</span>(<span class="params"></span>) </span></span><br><span class="line"><span class="function">     </span>&#123; </span><br><span class="line">         <span class="comment">// </span></span><br><span class="line">     &#125; </span><br><span class="line"> </span><br><span class="line">     <span class="comment">/** </span></span><br><span class="line"><span class="comment">      * Register the application services. </span></span><br><span class="line"><span class="comment">      * </span></span><br><span class="line"><span class="comment">      * @return void </span></span><br><span class="line"><span class="comment">      */</span> </span><br><span class="line">     public <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>) </span></span><br><span class="line"><span class="function">     </span>&#123; </span><br><span class="line">         <span class="comment">// </span></span><br><span class="line">     &#125; </span><br><span class="line"> &#125; </span><br><span class="line">  AuthServiceProvider.php 文件里 boot 方法里添加如下代码</span><br><span class="line"> </span><br><span class="line">         Auth::provider(<span class="string">'MD5'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$app</span>) </span>&#123; </span><br><span class="line">             $model = config(<span class="string">'auth.providers.users.model'</span>); </span><br><span class="line">             <span class="keyword">return</span> <span class="keyword">new</span> MD5ServiceProvider(<span class="keyword">new</span> MD5, $model); </span><br><span class="line">         &#125;); </span><br><span class="line">修改 config/auth.php 里的 providers</span><br><span class="line"><span class="string">'providers'</span> =&gt; [</span><br><span class="line">        <span class="string">'users'</span> =&gt; [</span><br><span class="line">            <span class="string">'driver'</span> =&gt; <span class="string">'MD5'</span>,<span class="comment">//'driver' =&gt; 'eloquent',//eloquent默认加密码方式</span></span><br><span class="line">            <span class="string">'model'</span> =&gt; App\User::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'admins'</span> =&gt; [</span><br><span class="line">            <span class="string">'driver'</span> =&gt; <span class="string">'eloquent'</span>,</span><br><span class="line">            <span class="string">'model'</span> =&gt; App\Admin::<span class="class"><span class="keyword">class</span>,</span></span><br><span class="line">        ],</span><br><span class="line">        修改 app/Http/Controllers/Auth/RegisterController.php 里的 create，修改代码如下</span><br><span class="line">        </span><br><span class="line">            protected <span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params">array $data</span>)</span></span><br><span class="line"><span class="function">            </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> User::create([</span><br><span class="line">                    <span class="string">'name'</span> =&gt; $data[<span class="string">'name'</span>],</span><br><span class="line">                    <span class="string">'email'</span> =&gt; $data[<span class="string">'email'</span>],</span><br><span class="line">                    <span class="string">'password'</span> =&gt; md5($data[<span class="string">'password'</span>]),</span><br><span class="line">                ]);</span><br><span class="line">            &#125;</span><br><span class="line">            https:<span class="comment">//learnku.com/articles/35407</span></span><br></pre></td></tr></table></figure>
+<h3 id="Laravel跨库跨连接的事务操作"><a href="#Laravel跨库跨连接的事务操作" class="headerlink" title="Laravel跨库跨连接的事务操作"></a>Laravel跨库跨连接的事务操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Laravel 下的跨库事务操作是基于连接的 当执行 DB::beginTransaction(); 的时候 其实是和默认的数据库配置建立了连接 后面的操作 commit 或者 rollback 都是操作的这个默认数据库 如果在这中间操作了其他的数据库 对他是不生效的</span><br><span class="line">同时 commit 和 rollback 都 指定连接</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//开启默认数据库的事务</span></span><br><span class="line">    DB::beginTransaction();</span><br><span class="line">    <span class="comment">//开启test数据库的事务</span></span><br><span class="line">    DB::connection(<span class="string">'test'</span>)-&gt;beginTransaction();</span><br><span class="line">    <span class="comment">//中间各种数据库操作</span></span><br><span class="line">    Table1::xxxxxx();</span><br><span class="line">    Table2::xxxxxx();</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">//一起提交</span></span><br><span class="line">        DB::commit();</span><br><span class="line">        DB::connection(<span class="string">'test'</span>)-&gt;commit();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//一起回滚</span></span><br><span class="line">        DB::rollback();</span><br><span class="line">        DB::connection(<span class="string">'test'</span>)-&gt;rollback();</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (\Exception $exception) &#123;</span><br><span class="line">    echo <span class="string">"catch some errors:"</span>.$exception-&gt;getMessage();</span><br><span class="line">&#125;</span><br><span class="line">https:<span class="comment">//caihongtengxu.github.io/2018/20181009/index.html</span></span><br></pre></td></tr></table></figure>
+<h3 id="array-splice无法自定义键值"><a href="#array-splice无法自定义键值" class="headerlink" title="array_splice无法自定义键值"></a>array_splice无法自定义键值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_insert</span> (<span class="params">&amp;$array, $position, $insert_array</span>) </span>&#123;</span><br><span class="line">            $first_array = array_splice ($array, <span class="number">0</span>, $position);</span><br><span class="line">            $array = array_merge ($first_array, $insert_array, $array);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        $arr = array(</span><br><span class="line">            <span class="string">'tt'</span> =&gt; <span class="number">1333</span>,</span><br><span class="line">            <span class="string">'cc'</span> =&gt; <span class="number">333</span>,</span><br><span class="line">            <span class="string">'aaz'</span> =&gt; <span class="number">2333</span>,</span><br><span class="line">            <span class="string">'ee'</span> =&gt; <span class="number">78</span>,</span><br><span class="line">        );</span><br><span class="line">        $temp[<span class="string">"bb"</span>] = <span class="number">33</span>;</span><br><span class="line">        array_insert($arr,<span class="number">1</span>,$temp);</span><br><span class="line">&gt;&gt;&gt; $arr</span><br><span class="line">=&gt; [</span><br><span class="line">     <span class="string">"tt"</span> =&gt; <span class="number">1333</span>,</span><br><span class="line">     <span class="string">"bb"</span> =&gt; <span class="number">33</span>,</span><br><span class="line">     <span class="string">"cc"</span> =&gt; <span class="number">333</span>,</span><br><span class="line">     <span class="string">"aaz"</span> =&gt; <span class="number">2333</span>,</span><br><span class="line">     <span class="string">"ee"</span> =&gt; <span class="number">78</span>,</span><br><span class="line">   ]</span><br></pre></td></tr></table></figure>
+<h3 id="数字转度量"><a href="#数字转度量" class="headerlink" title="数字转度量"></a>数字转度量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 数字转度量</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param int $num 数字</span></span><br><span class="line"><span class="comment"> * @return string|int</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">num2metric</span>(<span class="params">$num, $precision = <span class="number">0</span></span>) </span>&#123;</span><br><span class="line">    $unitList = [</span><br><span class="line">        <span class="string">'P'</span> =&gt; <span class="number">15</span>,</span><br><span class="line">        <span class="string">'T'</span> =&gt; <span class="number">12</span>,</span><br><span class="line">        <span class="string">'G'</span> =&gt; <span class="number">9</span>,</span><br><span class="line">        <span class="string">'M'</span> =&gt; <span class="number">6</span>,</span><br><span class="line">        <span class="string">'W'</span> =&gt; <span class="number">4</span>,</span><br><span class="line">        <span class="string">'K'</span> =&gt; <span class="number">3</span>,</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    $num = (int) $num;</span><br><span class="line"></span><br><span class="line">    foreach($unitList <span class="keyword">as</span> $name =&gt; $pow) &#123;</span><br><span class="line">        $size = pow(<span class="number">10</span>, $pow);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>($num &gt;= $size) &#123;</span><br><span class="line">            <span class="keyword">return</span> round($num / $size * <span class="number">100</span>, $precision) / <span class="number">100</span> . $name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $num;</span><br><span class="line">&#125;</span><br><span class="line">https:<span class="comment">//www.hongfs.cn/2018/10/php/php-metric-prefix/</span></span><br><span class="line">num2metric(<span class="number">1000</span>) <span class="comment">// 1K</span></span><br><span class="line">num2metric(<span class="string">'10000'</span>) <span class="comment">// 1W</span></span><br><span class="line">num2metric(<span class="string">'A'</span>) <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取两个坐标之间距离"><a href="#获取两个坐标之间距离" class="headerlink" title="获取两个坐标之间距离"></a>获取两个坐标之间距离</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取两个坐标之间距离</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param int|float $lat1 第一个坐标纬度</span></span><br><span class="line"><span class="comment"> * @param int|float $lon1 第一个坐标经度</span></span><br><span class="line"><span class="comment"> * @param int|float $lat2 第一个坐标纬度</span></span><br><span class="line"><span class="comment"> * @param int|float $lon2 第二个坐标经度</span></span><br><span class="line"><span class="comment"> * @param string $unit 距离单位 M 法定英里 K 公里 N 海里</span></span><br><span class="line"><span class="comment"> * @return int|float</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDistanceBetweenPoints</span>(<span class="params">$lat1, $lon1, $lat2, $lon2, $unit = <span class="string">'K'</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (($lat1 == $lat2) &amp;&amp; ($lon1 == $lon2)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $theta = $lon1 - $lon2;</span><br><span class="line">    $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));</span><br><span class="line">    $dist = acos($dist);</span><br><span class="line">    $dist = rad2deg($dist);</span><br><span class="line">    $miles = $dist * <span class="number">60</span> * <span class="number">1.1515</span>;</span><br><span class="line">    $unit = strtoupper($unit);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ($unit === <span class="string">'K'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> $miles * <span class="number">1.609344</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> ($unit === <span class="string">'N'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> $miles * <span class="number">0.8684</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> $miles;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;https:<span class="comment">//www.hongfs.cn/2019/06/php/php-get-distance-between-points/</span></span><br><span class="line">getDistanceBetweenPoints(<span class="number">113.276885</span>, <span class="number">23.090654</span>, <span class="number">113.320331</span>, <span class="number">23.096197</span>);</span><br><span class="line"><span class="comment">// PHP: 4.8368890520256 公里</span></span><br><span class="line"><span class="comment">// 高德地图: 4491 米</span></span><br><span class="line"><span class="comment">//restapi.amap.com/v3/distance？key-您的key&amp;origins=113.276885，23.090654&amp;destination=113.320331，23.096197&amp;type=e</span></span><br></pre></td></tr></table></figure>
+<h3 id="Laravel-上传图片"><a href="#Laravel-上传图片" class="headerlink" title="Laravel 上传图片"></a>Laravel 上传图片</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 后缀名验证</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param  string  $extension  后缀名</span></span><br><span class="line"><span class="comment"> * @return bool</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">protected <span class="function"><span class="keyword">function</span> <span class="title">has_extension</span>(<span class="params">string $extension</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> in_array($extension, [<span class="string">'jpg'</span>, <span class="string">'jpeg'</span>, <span class="string">'png'</span>, <span class="string">'gif'</span>, <span class="string">'bmp'</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 图片上传</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param  \Illuminate\Http\Request  $request</span></span><br><span class="line"><span class="comment"> * @return \Illuminate\Http\Response</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params">Request $request</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 获取上传键值</span></span><br><span class="line">    $name = $request-&gt;input(<span class="string">'name'</span>, <span class="string">'file'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>($request-&gt;hasFile($name)) &#123;</span><br><span class="line">        <span class="comment">// 文件格式上传</span></span><br><span class="line"></span><br><span class="line">        $file = $request-&gt;file($name);</span><br><span class="line">        $extension = $file-&gt;extension();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!$<span class="keyword">this</span>-&gt;has_extension($extension)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'格式错误'</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $filename = $file-&gt;store();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(preg_match(<span class="string">'/^(data:\s*image\/(\w+);base64,)/'</span>, $request-&gt;input($name), $matches)) &#123;</span><br><span class="line">        <span class="comment">// base64 上传</span></span><br><span class="line"></span><br><span class="line">        $extension = $matches[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!$<span class="keyword">this</span>-&gt;has_extension($extension)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'格式错误'</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $file = $request-&gt;input($name);</span><br><span class="line">        $file = preg_replace(<span class="string">'/^(data:\s*image\/(\w+);base64,)/'</span>, <span class="string">''</span>, $file);</span><br><span class="line">        $file = str_replace(<span class="string">' '</span>, <span class="string">'+'</span>, $file);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 生成保存文件名</span></span><br><span class="line">        $filename = str_random(<span class="number">40</span>) . <span class="string">'.'</span> . $extension;</span><br><span class="line">        Storage::put($filename, base64_decode($file));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'格式错误'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">'上传成功['</span> . $filename . <span class="string">']'</span>;</span><br><span class="line">&#125;https:<span class="comment">//www.hongfs.cn/2019/06/php/laravel/laravel-upload-image/</span></span><br></pre></td></tr></table></figure>
+<h3 id="拼音排序"><a href="#拼音排序" class="headerlink" title="拼音排序"></a>拼音排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">$ composer <span class="built_in">require</span> <span class="string">"overtrue/pinyin:~4.0"</span></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 地区列表 - 拼音排序</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * @return \Illuminate\Http\Response</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    public <span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $list_tmp = DB::table(<span class="string">'area'</span>)</span><br><span class="line">                        -&gt;select(<span class="string">'code'</span>, <span class="string">'name'</span>)</span><br><span class="line">                        -&gt;orderBy(DB::raw(<span class="string">'convert(name using gbk)'</span>))</span><br><span class="line">                        -&gt;get();</span><br><span class="line"></span><br><span class="line">        $pinyin = <span class="keyword">new</span> Pinyin();</span><br><span class="line"></span><br><span class="line">        $list = [];</span><br><span class="line"></span><br><span class="line">        $list_tmp-&gt;map(<span class="function"><span class="keyword">function</span>(<span class="params">$item</span>) <span class="title">use</span>(<span class="params">&amp;$list, $pinyin</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 去除城市名最后面的市字</span></span><br><span class="line">            <span class="comment">// if(substr($item-&gt;name, -3) === '市') &#123;</span></span><br><span class="line">            <span class="comment">//     $item-&gt;name = substr($item-&gt;name, 0, -3);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 获取城市名第一个字</span></span><br><span class="line">            $name_first = substr($item-&gt;name, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 获取拼音</span></span><br><span class="line">            $name_pinyin = $pinyin-&gt;convert($name_first)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 获取第一个字母并且转换为大写</span></span><br><span class="line">            $name_pinyin = strtoupper(substr($name_pinyin, <span class="number">0</span>, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(!isset($list[$name_pinyin])) &#123;</span><br><span class="line">                $list[$name_pinyin] = [];</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            $list[$name_pinyin][] = (array) $item;</span><br><span class="line">        &#125;);</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"code"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"data"</span>: &#123;</span><br><span class="line">                <span class="string">"G"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"code"</span>: <span class="number">5108</span>,</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"广元市"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"code"</span>: <span class="number">4401</span>,</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"广州市"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"S"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"code"</span>: <span class="number">4403</span>,</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"深圳市"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">https:<span class="comment">//www.hongfs.cn/2019/09/php/laravel/laravel-area-list-pinyin-sort/</span></span><br></pre></td></tr></table></figure>
+<h3 id="PHP读取微信客户端数据库"><a href="#PHP读取微信客户端数据库" class="headerlink" title="PHP读取微信客户端数据库"></a>PHP读取微信客户端数据库</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">MyDB</span> <span class="keyword">extends</span> <span class="title">SQLite3</span></span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">      <span class="comment">//根据sqlite提供的open接口，输入密钥key，</span></span><br><span class="line">      <span class="comment">//$this-&gt;open('EnMicroMsg.db',SQLITE3_OPEN_READWRITE,'71ca1d4');</span></span><br><span class="line">         $<span class="keyword">this</span>-&gt;open(<span class="string">'test.db'</span>);<span class="comment">//test.db存在就链接，不存在就创建</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   $db = <span class="keyword">new</span> MyDB();</span><br><span class="line">   <span class="keyword">if</span>(!$db)&#123;</span><br><span class="line">      echo $db-&gt;lastErrorMsg();</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      echo <span class="string">"Opened database successfully\n"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   $sql =&lt;&lt;&lt;EOF</span><br><span class="line">      SELECT * from COMPANY;</span><br><span class="line">EOF;</span><br><span class="line"></span><br><span class="line">   $ret = $db-&gt;query($sql);</span><br><span class="line">   while($row = $ret-&gt;fetchArray(SQLITE3_ASSOC) )&#123;</span><br><span class="line">      echo "ID = ". $row['ID'] . "\n";</span><br><span class="line">      echo "NAME = ". $row['NAME'] ."\n";</span><br><span class="line">      echo "ADDRESS = ". $row['ADDRESS'] ."\n";</span><br><span class="line">      echo "SALARY =  ".$row['SALARY'] ."\n\n";</span><br><span class="line">   &#125;</span><br><span class="line">   echo "Operation done successfully\n";</span><br><span class="line">   $db-&gt;close();</span><br><span class="line">https://learnku.com/laravel/t/35478</span><br></pre></td></tr></table></figure>
+<p><a href="https://learnku.com/laravel/t/35561" target="_blank" rel="noopener">附近的店铺</a></p>
+<p><a href="https://github.com/snower/forsun-laravel" target="_blank" rel="noopener">高性能的定时调度服务Forsun的Laravel组件</a></p>
+<p><a href="https://www.hongfs.cn/2019/06/php/laravel/laravel-query-nearby-data/" target="_blank" rel="noopener">Laravel 查询附近的数据</a></p>
+<p><a href="https://github.com/medcl/elasticsearch-rtf" target="_blank" rel="noopener">elasticsearch中文发行版</a></p>
+<p><a href="https://www.hongfs.cn/2018/12/php/laravel/laravel-multi-level-linkage/" target="_blank" rel="noopener">多级联动</a></p>
+<p><a href="https://learnku.com/articles/30812" target="_blank" rel="noopener">Laravel 下 Elasticsearch/Algolia 全文搜索</a></p>
+<p><a href="https://learnku.com/articles/35377" target="_blank" rel="noopener">Phpstorm 开启 Laravel 代码提示</a></p>
 <p><a href="https://github.com/shockerli/php-awesome" target="_blank" rel="noopener">PHP 最优秀资源的整理汇集</a></p>
 <p><a href="https://learnku.com/articles/35348" target="_blank" rel="noopener">腾讯地图搜索</a></p>
 <p><a href="https://learnku.com/articles/34959" target="_blank" rel="noopener">Laravel 框架 5.1 升级到 5.5</a></p>
@@ -1758,368 +2135,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/30/那些你可能不知道的百度产品/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/30/那些你可能不知道的百度产品/" itemprop="url">那些你可能不知道的百度产品</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-30T20:22:36+08:00">
-                2019-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>百度家的产品可谓不少，搜索就不说了，<a href="https://www.baidu.com/more/" target="_blank" rel="noopener">https://www.baidu.com/more/</a>  这里还有很多，估计很多你也没用过。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-00ec3f328470f0e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>除了搜索，这里推荐几个百度出品的良心产品。</p>
-<h3 id="百度脑图"><a href="#百度脑图" class="headerlink" title="百度脑图"></a>百度脑图</h3><p>思维导图又叫心智图，因为它直观、形象、易于理解和梳理而受欢迎，百度脑图类似网页版的 Office，可以直接在浏览器上制作思维导图。<a href="https://naotu.baidu.com/" target="_blank" rel="noopener">https://naotu.baidu.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-695365c12eceffe3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>需要登录百度账号使用。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-ffd022a9a195a165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>另外还有桌面版，在没有互联网的情况下，依然可以使用这款免费的思维导图工具，跨平台支持 Windows/Linux/Mac OS ，下载地址<a href="https://github.com/NaoTu/DesktopNaotu/releases" target="_blank" rel="noopener">https://github.com/NaoTu/DesktopNaotu/releases</a></p>
-<h3 id="百度取证"><a href="#百度取证" class="headerlink" title="百度取证"></a>百度取证</h3><p>百度取证是百度联合司法鉴定中心、公证机构，共同推出的电子数据固定及保全系统，可为用户提供取证、存证、出证的一站式在线服务，如果原创作品或知识产权被侵犯了可以试试这个。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8ca5fd7f6f84af50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="百度网盘"><a href="#百度网盘" class="headerlink" title="百度网盘"></a>百度网盘</h3><p>随着360云盘，新浪微盘等关闭个人存储服务，现在只剩下百度网盘这个良心产品了,现在我的网盘保存了不少文件和电影，分享文件也用的百度网盘，之前写过文章 <a href="https://mp.weixin.qq.com/s/MUIPj4OgSxAeRl5Hk-2tuw" target="_blank" rel="noopener">没有提取码怎么获取百度网盘资源？</a></p>
-<p>如果嫌百度网盘下载限速很慢，可以考虑使用第三方客户端 <a href="https://pan-light.peterq.cn" target="_blank" rel="noopener">https://pan-light.peterq.cn</a> ，当然更推荐你购买会员支持下百度 <a href="https://pan.baidu.com/buy/center#/svip" target="_blank" rel="noopener">https://pan.baidu.com/buy/center#/svip</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-14de8d17cc82b0fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="百度图说"><a href="#百度图说" class="headerlink" title="百度图说"></a>百度图说</h3><p><a href="https://tushuo.baidu.com/" target="_blank" rel="noopener">https://tushuo.baidu.com/</a> 向粗糙图表 Say Goodbye! 百度图说是基于Echarts一个傻瓜式图表工具，无需代码基础就可以做出屌炸天的动态图表！<a href="https://tushuo.baidu.com/prod/viewProd?prodId=dta8kgu4v3g3ick8s&amp;cli=win" target="_blank" rel="noopener">https://tushuo.baidu.com/prod/viewProd?prodId=dta8kgu4v3g3ick8s&amp;cli=win</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-81fd606d7a3fe19a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>登录百度账号就能很方便在线制作一个图表了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a0dd079af4d0d298.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>百度的其他可视化产品在<a href="https://vis.baidu.com/" target="_blank" rel="noopener">https://vis.baidu.com/</a></p>
-<h3 id="百度识图"><a href="#百度识图" class="headerlink" title="百度识图"></a>百度识图</h3><p>直接输入图片地址或上传图片可以搜到图片信息。<a href="http://image.baidu.com/?fr=shitu" target="_blank" rel="noopener">http://image.baidu.com/?fr=shitu</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-27f81f6ec1079f6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-aad33d13ae3d40e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="百度短网址"><a href="#百度短网址" class="headerlink" title="百度短网址"></a>百度短网址</h3><p>有时候网址太长很难看，比如公众号的pc文章链接 <a href="http://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247484127&amp;idx=1&amp;sn=dca59ac8530476cd8fef626da81d5aff&amp;chksm=e827a53edf502c286ecea267989f9c39576d7ce9c3f605015470f709c0cd1bbb4320d9bf5b63&amp;token=743146443&amp;lang=zh_CN#rd" target="_blank" rel="noopener">http://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247484127&amp;idx=1&amp;sn=dca59ac8530476cd8fef626da81d5aff&amp;chksm=e827a53edf502c286ecea267989f9c39576d7ce9c3f605015470f709c0cd1bbb4320d9bf5b63&amp;token=743146443&amp;lang=zh_CN#rd</a> ，将链接在 <a href="https://dwz.cn/" target="_blank" rel="noopener">https://dwz.cn/</a> 转换下就能生成短链接 <a href="https://dwz.cn/jFnZD9Xp" target="_blank" rel="noopener">https://dwz.cn/jFnZD9Xp</a>  ,这个和微博的t.cn类似。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bbbce45f8dee817c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="百度文库"><a href="#百度文库" class="headerlink" title="百度文库"></a>百度文库</h3><p><a href="https://wenku.baidu.com/" target="_blank" rel="noopener">https://wenku.baidu.com/</a> 关于百度文库之前写过文章 <a href="https://mp.weixin.qq.com/s/H8VPSGt62-tblpgWkleQoQ" target="_blank" rel="noopener">那些你可能不知道的百度文库/网盘快速下载工具</a> 免费下载文库在公众号回复 <code>文库</code> 获取下载工具。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a25677374058a973.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="百度字体"><a href="#百度字体" class="headerlink" title="百度字体"></a>百度字体</h3><p><a href="http://fontstore.baidu.com/static/editor/index.html" target="_blank" rel="noopener">http://fontstore.baidu.com/static/editor/index.html</a> 害怕使用的字体侵权可以自己设计个字体。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5f31b61701beaf8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然如果自己没有设计能力可以使用免费的商用字体 <a href="https://100font.com" target="_blank" rel="noopener">https://100font.com</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-fdca2c2ef983f478.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="简单搜索"><a href="#简单搜索" class="headerlink" title="简单搜索"></a>简单搜索</h3><p><a href="http://www.searchcraft.cn/" target="_blank" rel="noopener">http://www.searchcraft.cn/</a><a href="http://secr.baidu.com/" target="_blank" rel="noopener">http://secr.baidu.com/</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-89550374f4f20763.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最后说个百度的搜索特效，可能很多人没见过，比如搜索黑洞<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e686e722f478461b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜索表白，之前也写过<a href="https://mp.weixin.qq.com/s/y8BrtwH4vlXlHKWQ9OMhdw" target="_blank" rel="noopener">听说你想 520 表白</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-715f2467623de738.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>还有很多这样的关键词彩蛋，比如 抖动， duang，旋转等，可以自己搜索体验下，第一次看到的时候还有点惊艳。更多搜索技巧看之前的文章 <a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>氢小说(H2 Book)是我们定义的一种对话体、类剧本式的开放图书格式。它采用对话和场景来展现故事、描述事实，又非常接近于我们平时使用的聊天软件，所以读起来更为轻松。<a href="https://github.com/easychen/h2reader-host" target="_blank" rel="noopener">https://github.com/easychen/h2reader-host</a> <a href="https://qing.ftqq.com/#/" target="_blank" rel="noopener">https://qing.ftqq.com/#/</a></p>
-<p>【网易见外】为视频自动生成字幕、音频转文字等等 <a href="https://jianwai.netease.com/" target="_blank" rel="noopener">https://jianwai.netease.com/</a><br><a href="https://cn.v2ex.com/t/592533#reply12" target="_blank" rel="noopener">百度识图可以用来当免费的图床，还不防盗链</a><br>不限速 的百度网盘客户端 <a href="https://github.com/peterq/pan-light" target="_blank" rel="noopener">https://github.com/peterq/pan-light</a><br>输入网盘链接和提取码<a href="https://labs.nazo.moe/netdisk.html" target="_blank" rel="noopener">https://labs.nazo.moe/netdisk.html</a> NetDisk Downloader<br>百度<a href="http://cnm.buhuibaidu.me" target="_blank" rel="noopener">http://cnm.buhuibaidu.me</a><br><a href="https://www.echartsjs.com/zh/index.html" target="_blank" rel="noopener">https://www.echartsjs.com/zh/index.html</a><br><a href="https://www.zhihu.com/question/20512556" target="_blank" rel="noopener">https://www.zhihu.com/question/20512556</a><br> <a href="https://www.zhihu.com/question/39567389" target="_blank" rel="noopener">https://www.zhihu.com/question/39567389</a><br><a href="https://www.zhihu.com/question/39371134" target="_blank" rel="noopener">https://www.zhihu.com/question/39371134</a><br>BAT出品的PPT神器<a href="https://zhuanlan.zhihu.com/p/28686098" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28686098</a><br><a href="https://www.baiduyun.wiki/" target="_blank" rel="noopener">百度网盘直链下载助手</a><br><a href="https://www.bilibili.com/read/cv2705594/" target="_blank" rel="noopener">手把手教你满速下载百度网盘文件</a><br> 2019 百度云不限速下载教程 <a href="https://cn.v2ex.com/t/600571#reply32" target="_blank" rel="noopener">https://cn.v2ex.com/t/600571#reply32</a><br>当然要用 chrome 的 aria2 插件啦 <a href="https://github.com/acgotaku/BaiduExporter" target="_blank" rel="noopener">https://github.com/acgotaku/BaiduExporter</a><br>免费在线思维导图软件 <a href="https://gitmind.cn/" target="_blank" rel="noopener">https://gitmind.cn/</a> 腾讯8分钟<a href="https://app.gitmind.cn/doc/5054448" target="_blank" rel="noopener">https://app.gitmind.cn/doc/5054448</a><br>在线协作编辑器 <a href="http://we.woshifyz.com/" target="_blank" rel="noopener">http://we.woshifyz.com/</a></p>
-<p><code>如果文章对你有帮助还望不吝点个在看支持下，感谢。</code></p>
-<p>推荐阅读:</p>
-<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
-<p><a href="https://mp.weixin.qq.com/s/1omFkK5PPyeJEzUTagj9qg" target="_blank" rel="noopener">免费在线听周杰伦歌曲</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
-<p><a href="https://mp.weixin.qq.com/s/qNfuWjH54WHJtx4sEE5xwA" target="_blank" rel="noopener">10%+10% 不等于 0.2？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/30/上班工作压力太大-来玩个游戏解压下/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/30/上班工作压力太大-来玩个游戏解压下/" itemprop="url">上班工作压力太大?来玩个游戏解压下</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-30T20:21:41+08:00">
-                2019-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  942 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> 996工作压力太大，下班或者周末来玩几个解压的小游戏缓解下。</p>
-<h3 id="毒鸡汤"><a href="#毒鸡汤" class="headerlink" title="毒鸡汤"></a>毒鸡汤</h3><p>先来碗毒鸡汤 <a href="http://nows.fun/" target="_blank" rel="noopener">http://nows.fun/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-2a26f5e53a052852.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c4cfe23ec919c270.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="太鼓达人"><a href="#太鼓达人" class="headerlink" title="太鼓达人"></a>太鼓达人</h3><p>这个解压小游戏源自日本网站 <a href="https://aidn.jp/mikuwarp/" target="_blank" rel="noopener">https://aidn.jp/mikuwarp/</a> 一个基于初音未来创作的减压神器，点击屏幕即可生成一段音乐，他还有其他游戏在<a href="https://aidn.jp/contents/" target="_blank" rel="noopener">https://aidn.jp/contents/</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-ddd8ecc9d52ddd2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="还有"></p>
-<p>因为访问速度的原因有人开发了国内版本 <a href="https://static.hfi.me/mikutap/，而且还开源了" target="_blank" rel="noopener">https://static.hfi.me/mikutap/，而且还开源了</a><br> <a href="https://github.com/HFIProgramming/mikutap" target="_blank" rel="noopener">https://github.com/HFIProgramming/mikutap</a> ，它是通过点击屏幕来让Miku发出可爱的声音，这个游戏非常简单，靠指尖触碰就可以自己创作一首歌曲。 </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-8c36390c0d52a182.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>电脑上可以疯狂敲键盘或者鼠标，手机上可以疯狂点击屏幕。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-441437543e17460a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>生成的音乐可以用 ScreenToGif   等软件录下来。</p>
-<p>微博上不少人玩过<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5e880964ffcf9cca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>对应的还有安卓版 <a href="https://www.coolapk.com/apk/at.rbq.mikutap" target="_blank" rel="noopener">https://www.coolapk.com/apk/at.rbq.mikutap</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-2fc3dfee726f1bc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="小霸王"><a href="#小霸王" class="headerlink" title="小霸王"></a>小霸王</h3><p>超级玛丽和魂斗罗等游戏很多人小时候玩过，这是网页版的小霸王 <a href="https://www.yikm.net/" target="_blank" rel="noopener">https://www.yikm.net/</a>  可以让你重温童年的乐趣。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6b4a9c389559fcc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-98b3766b8116429f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-398241be3e05e139.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>PC 端 w s a d 分别是上下左右，j k 分别是攻击和跳，b 是选择，回车是开始。你要不来试试？<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e7a822cc8cd605dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="手鼓猫"><a href="#手鼓猫" class="headerlink" title="手鼓猫"></a>手鼓猫</h3><p>一只可爱的小猫在桌子上敲手鼓，玩法：A&amp;D 键位可以敲鼓，C 键敲锣，Q&amp;W…&amp;O&amp;P键位可以弹竖琴，数字键弹钢琴，空格键用来发出喵叫，适合放松下手指，在线试玩：<a href="https://bongo.cat/" target="_blank" rel="noopener">https://bongo.cat/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-943730a48f85899b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如敲以下数字是一首生日快乐歌。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">3</span> <span class="number">1</span> <span class="number">6</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">3</span> <span class="number">1</span> <span class="number">8</span> <span class="number">6</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-f499c149d5519e7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="滑雪撬"><a href="#滑雪撬" class="headerlink" title="滑雪撬"></a>滑雪撬</h3><p>一个小游戏，用笔画出一条线，小人就沿着线滑雪撬，可以翻跟头，下滑，倒退，如果你画出一个满意的线路，还可以保存成视频，在线试玩：<a href="https://www.linerider.com/" target="_blank" rel="noopener">https://www.linerider.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c6b405d8939f3685.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>玩了一个上午Mikutap之后，我理解了它走红的原因<a href="https://www.qdaily.com/articles/56872.html" target="_blank" rel="noopener">https://www.qdaily.com/articles/56872.html</a><br>   <a href="https://segmentfault.com/a/1190000016791939" target="_blank" rel="noopener">基于canvas和web audio实现低配版MikuTap</a><br><a href="https://github.com/zzuzsj/ZsaiMiku.git" target="_blank" rel="noopener">https://github.com/zzuzsj/ZsaiMiku.git</a><br>分享一个超带感有趣的网站mikutap <a href="https://www.qtbox.cn/share/miku.html" target="_blank" rel="noopener">https://www.qtbox.cn/share/miku.html</a>  <a href="https://www.qtbox.cn/miku/" target="_blank" rel="noopener">https://www.qtbox.cn/miku/</a><br><a href="https://www.v2ex.com/t/558899?p=1" target="_blank" rel="noopener">https://www.v2ex.com/t/558899?p=1</a><br>一款有趣的音乐解压游戏 <a href="https://www.cocosec.com/archives/74.html" target="_blank" rel="noopener">https://www.cocosec.com/archives/74.html</a><br> 小霸王：<a href="https://www.yikm.net" target="_blank" rel="noopener">https://www.yikm.net</a> <a href="https://www.v2ex.com/t/403054" target="_blank" rel="noopener">https://www.v2ex.com/t/403054</a><br>在线 dos 游戏：<a href="https://dos.zczc.cz/" target="_blank" rel="noopener">https://dos.zczc.cz/</a><br>Bongo Cat 手鼓猫：A&amp;D 键位可以敲鼓，C 键敲锣，Q&amp;W…&amp;O&amp;P键位可以弹竖琴，数字键弹钢琴，空格键用来发出喵叫，适合放松下手指摸个鱼，在线试玩：<a href="https://bongo.cat/" target="_blank" rel="noopener">https://bongo.cat/</a>  <a href="https://github.com/Externalizable/bongo.cat" target="_blank" rel="noopener">https://github.com/Externalizable/bongo.cat</a><br>magickeyboard：一个摸鱼解压网站，会将你输入的字符从屏幕下方弹起，并伴有清脆的敲击声。在线访问：<a href="http://magickeyboard.io/" target="_blank" rel="noopener">http://magickeyboard.io/</a>  <a href="https://github.com/feross/magickeyboard.io" target="_blank" rel="noopener">https://github.com/feross/magickeyboard.io</a><br>撘楼分享个摸鱼网站： <a href="https://tophub.fun" target="_blank" rel="noopener">https://tophub.fun</a>  全平台支持 <a href="https://www.printf520.com/hot.html" target="_blank" rel="noopener">https://www.printf520.com/hot.html</a><br>主要功能是对整个文档进行翻译，100多种不同语言文档可任意转换，无需注册<a href="https://www.onlinedoctranslator.com/" target="_blank" rel="noopener">https://www.onlinedoctranslator.com/</a><br>塔防：<a href="https://yorg.io/" target="_blank" rel="noopener">https://yorg.io/</a><br>linerider：一个小游戏，用笔画出一条线，小人就沿着线滑雪撬，可以翻跟头可以下滑可以倒退，N种不同的结果全在你的掌握，如果你画出一个满意的线路，还可以保存成视频~在线试玩：<a href="https://www.linerider.com/" target="_blank" rel="noopener">https://www.linerider.com/</a><br>游戏合集：<a href="http://iogames.space/" target="_blank" rel="noopener">http://iogames.space/</a> </p>
-<p>推荐阅读:</p>
-<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
-<p><a href="https://mp.weixin.qq.com/s/1omFkK5PPyeJEzUTagj9qg" target="_blank" rel="noopener">免费在线听周杰伦歌曲</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
-<p><a href="https://mp.weixin.qq.com/s/qNfuWjH54WHJtx4sEE5xwA" target="_blank" rel="noopener">10%+10% 不等于 0.2？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2170,7 +2185,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">134</span>
+                  <span class="site-state-item-count">136</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2401,7 +2416,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共441.6k字</span>
+  <span class="post-count">博客全站共449.1k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
