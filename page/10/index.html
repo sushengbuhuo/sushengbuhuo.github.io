@@ -285,6 +285,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/5-分钟使用-hugo-搭建一个自己的博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/22/5-分钟使用-hugo-搭建一个自己的博客/" itemprop="url">5 分钟使用 hugo 搭建一个自己的博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T11:52:14+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  436 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Hugo是由Go语言实现的静态网站生成器。相比hexo更简单、易用、高效、易扩展、快速部署。</p>
+<h2 id="安装Hugo"><a href="#安装Hugo" class="headerlink" title="安装Hugo"></a>安装Hugo</h2><h3 id="下载二进制"><a href="#下载二进制" class="headerlink" title="下载二进制"></a>下载二进制</h3><p>进入<a href="https://github.com/spf13/hugo/releases" target="_blank" rel="noopener">github下载地址</a>，选择对应系统的二进制文件，比如我的电脑windows 64位就下载 <a href="https://github.com/gohugoio/hugo/releases/download/v0.55.5/hugo_0.55.5_Windows-64bit.zip" target="_blank" rel="noopener">hugo_0.55.5_Windows-64bit.zip
+</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1f741ffef692cbf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>解压出来就是一个EXE文件，加入到环境变量即可</p>
+<h3 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h3><p>先安装go，git，设置GOPATH<br>命令行执行 go get -u -v github.com/spf13/hugo，成功后会生成二进制文件</p>
+<h2 id="生成站点"><a href="#生成站点" class="headerlink" title="生成站点"></a>生成站点</h2><p>打开命令行，我使用的是cmder，当然自带的cmd也行。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br><span class="line">hugo <span class="keyword">new</span> site .</span><br></pre></td></tr></table></figure></p>
+<p>目录结构为<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8b8cafcfc1076ac4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="编写正文"><a href="#编写正文" class="headerlink" title="编写正文"></a>编写正文</h2><p>使用md语法编辑文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hugo <span class="keyword">new</span> hello.md</span><br><span class="line">vi hello.md</span><br></pre></td></tr></table></figure></p>
+<h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes</span><br><span class="line">git clone https:<span class="comment">//github.com/spf13/hyde.git</span></span><br></pre></td></tr></table></figure>
+<h2 id="运行Hugo"><a href="#运行Hugo" class="headerlink" title="运行Hugo"></a>运行Hugo</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">hugo server --theme=hyde --buildDrafts</span><br><span class="line">Building sites …</span><br><span class="line">                   | EN</span><br><span class="line">+------------------+----+</span><br><span class="line">  Pages            | <span class="number">11</span></span><br><span class="line">  Paginator pages  |  <span class="number">0</span></span><br><span class="line">  Non-page files   |  <span class="number">0</span></span><br><span class="line">  Static files     |  <span class="number">6</span></span><br><span class="line">  Processed images |  <span class="number">0</span></span><br><span class="line">  Aliases          |  <span class="number">0</span></span><br><span class="line">  Sitemaps         |  <span class="number">1</span></span><br><span class="line">  Cleaned          |  <span class="number">0</span></span><br><span class="line"></span><br><span class="line">Total <span class="keyword">in</span> <span class="number">335</span> ms</span><br><span class="line">Watching <span class="keyword">for</span> changes <span class="keyword">in</span> d:\blog\&#123;content,data,layouts,<span class="keyword">static</span>,themes&#125;</span><br><span class="line">Watching <span class="keyword">for</span> config changes <span class="keyword">in</span> d:\blog\config.toml</span><br><span class="line">Environment: <span class="string">"development"</span></span><br><span class="line">Serving pages <span class="keyword">from</span> memory</span><br><span class="line">Running <span class="keyword">in</span> Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender</span><br><span class="line">Web Server is available at http:<span class="comment">//localhost:1313/ (bind address 127.0.0.1)</span></span><br><span class="line">Press Ctrl+C to stop</span><br></pre></td></tr></table></figure>
+<p>浏览器里打开： <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-5bda2e6978db9dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><p>在github建立一个repo，比如username.github.io，注意username为自己的用户名，不能为其他的。<br><code>hugo --theme=hyde --baseUrl=&quot;http://xxx.github.io/&quot;</code><br>这样静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的Repo的 master 分支就可以了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> cd public</span><br><span class="line"> git init</span><br><span class="line">git remote add origin https:<span class="comment">//github.com/xxx/xxx.github.io.git</span></span><br><span class="line"> git add .</span><br><span class="line"> git commit -m <span class="string">"hugo"</span></span><br><span class="line"> git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p>打开浏览器访问：<a href="http://xxx.github.io/" target="_blank" rel="noopener">http://xxx.github.io/</a></p>
+<p>好了，你的博客搭建成功了，开始你的博客之旅吧。<br>公众号：苏生不惑<br> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/命令行工具之-speedtest-测试网速/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1938,202 +2104,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/百度网盘资源/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/09/百度网盘资源/" itemprop="url">百度网盘资源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T19:24:41+08:00">
-                2019-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.5k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="公开分享"><a href="#公开分享" class="headerlink" title="公开分享"></a>公开分享</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">百度网盘 – 选择文件分享 – 分享框弹出 – 打开浏览器开发者工具进入控制台（按F12 或者右键打开） – 粘贴以下代码！</span><br><span class="line">$(<span class="string">".share-method-line"</span>).parent().append(<span class="string">'&lt;div class="share-method-line"&gt;&lt;input type="radio" id="share-method-public" name="share-method" value="public" checked=""&gt;&lt;span class="icon radio-icon icon-radio-non"&gt;&lt;/span&gt;&lt;label for="share-method-public"&gt;&lt;b&gt;公开分享&lt;/b&gt;&lt;span&gt;无需提取码,任何人都可直接访问下载！&lt;/span&gt; &lt;/label&gt;&lt;/div&gt;'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="百度网盘备份"><a href="#百度网盘备份" class="headerlink" title="百度网盘备份"></a>百度网盘备份</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//github.com/houtianze/bypy</span></span><br><span class="line">sudo pip install requests</span><br><span class="line"></span><br><span class="line">git clone https:<span class="comment">//github.com/houtianze/bypy.git</span></span><br><span class="line">./bypy.py info</span><br><span class="line">./bypy.py upload ./requirements.txt test/requirements.txt</span><br><span class="line">vim backup.sh</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">SCRIPT_DIR="/root" #这个改成你存放刚刚下载下来的bypy的文件夹位置</span><br><span class="line">DROPBOX_DIR="/backup" #这个改成你的备份文件想要放在百度网盘下面的文件夹名称，如果不存在，脚本会自动创建</span><br><span class="line">BACKUP_SRC="/home/wwwroot /usr/local/nginx/conf" #这个是你想要备份的本地VPS上的文件，不同的目录用空格分开</span><br><span class="line">BACKUP_DST="/tmp" #这个是你暂时存放备份压缩文件的地方，一般用/tmp即可</span><br><span class="line">MYSQL_SERVER="localhost" #这个是你mysql服务器的地址，一般填这个本地地址即可</span><br><span class="line">MYSQL_USER="mysqluser" #这个是你mysql的用户名名称，比如root或admin之类的</span><br><span class="line">MYSQL_PASS="password" #这个是你mysql用户的密码</span><br><span class="line"># 下面的一般不用改了</span><br><span class="line">NOW=$(date +<span class="string">"%Y.%m.%d"</span>)</span><br><span class="line">DESTFILE=<span class="string">"$BACKUP_DST/$NOW.tar.gz"</span></span><br><span class="line"># 备份mysql数据库并和其它备份文件一起压缩成一个文件</span><br><span class="line">mysqldump -u $MYSQL_USER -h $MYSQL_SERVER -p$MYSQL_PASS --all-databases &gt; <span class="string">"$NOW-Databases.sql"</span></span><br><span class="line">echo <span class="string">"数据库备份完成，打包网站数据中..."</span></span><br><span class="line">tar cfzP <span class="string">"$DESTFILE"</span> $BACKUP_SRC <span class="string">"$NOW-Databases.sql"</span></span><br><span class="line">echo <span class="string">"所有数据打包完成，准备上传..."</span></span><br><span class="line"># 用脚本上传到百度网盘</span><br><span class="line">$SCRIPT_DIR/bypy/bypy.py upload <span class="string">"$DESTFILE"</span> <span class="string">"$DROPBOX_DIR/$NOW.tar.gz"</span></span><br><span class="line"><span class="keyword">if</span> [ $? -eq <span class="number">0</span> ];then</span><br><span class="line">     echo <span class="string">"上传完成"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">     echo <span class="string">"上传失败，重新尝试"</span></span><br><span class="line">fi</span><br><span class="line"># 删除本地的临时文件</span><br><span class="line">rm -f <span class="string">"$NOW-Databases.sql"</span> <span class="string">"$DESTFILE"</span></span><br><span class="line">然后改为可执行文件：</span><br><span class="line">chmod +x backup.sh #赋予权限</span><br><span class="line">运行的时候就输入下面的代码即可：</span><br><span class="line">./backup.sh</span><br><span class="line">然后通过 cron 来设置定时运行脚本：</span><br><span class="line">crontab -e</span><br><span class="line">加入以下代码，:wq 保存</span><br><span class="line"><span class="number">0</span> <span class="number">5</span> * * * <span class="regexp">/bin/</span>bash /root/backup.sh</span><br><span class="line">https:<span class="comment">//blog.fazero.me/2016/10/13/backup-vps-to-by/</span></span><br></pre></td></tr></table></figure>
-<p>至尊搜索神器</p>
-<p>百度网盘下载链接：<a href="https://pan.baidu.com/s/18f2uN4i-HmxcePwkM0W0gA" target="_blank" rel="noopener">https://pan.baidu.com/s/18f2uN4i-HmxcePwkM0W0gA</a> 提取码：tjvd </p>
-<p>蓝奏云下载链接 <a href="https://www.lanzous.com/i4ernha" target="_blank" rel="noopener">https://www.lanzous.com/i4ernha</a></p>
-<p><a href="https://pan.baidu.com/share/init?surl=ZZSLs9wmqkKmdTXlskMKdA" target="_blank" rel="noopener">文案写作 密码b50k</a></p>
-<p><a href="https://pan.baidu.com/s/1AxvDnEd0SGliwrckc4yJkA" target="_blank" rel="noopener">张小龙饭否电子书 密码07wb</a></p>
-<p><a href="https://pan.baidu.com/s/1FpneAwcGyCnlpOIuagHlug" target="_blank" rel="noopener">效率工具 密码2b5y</a></p>
-<p><a href="https://pan.baidu.com/s/1PClifEIeuLqnBtx2OGVCVQ" target="_blank" rel="noopener">一键下载网页图片插件 密码7haa</a></p>
-<p><a href="https://pan.baidu.com/s/1R38ldHhmCCivTrGCcBP4uA" target="_blank" rel="noopener">公众号排版 密码5058</a></p>
-<p><a href="https://pan.baidu.com/wap/init?surl=BkjhJPr2ZuAJla-A_I85LQ&amp;adapt=pc&amp;fr=ftw" target="_blank" rel="noopener">编程资源 密码wanr</a></p>
-<p><a href="https://pan.baidu.com/s/1yQ9dJyzSVh6nBxL_Y4yQUQ" target="_blank" rel="noopener">公众号谭某人技术分享</a></p>
-<p><a href="http://www.pipiys.xyz/" target="_blank" rel="noopener">电影</a></p>
-<p><a href="https://wn.run/cn/" target="_blank" rel="noopener">万能命令工具</a></p>
-<p><a href="https://github.com/peterq/pan-light" target="_blank" rel="noopener">不限速的百度网盘客户端</a></p>
-<p> <a href="https://shimo.im/docs/AMVhpDJ4NJYMsktr/read" target="_blank" rel="noopener">影视剧</a></p>
-<p> <a href="http://www.coupling.pw/77320/06/21.LjLXXH" target="_blank" rel="noopener">银河补习班电影</a><br>ABBYYFineReader 是一款OCR图片文字识别软件，可以快速、方便地将扫描纸质文件、PDF格式及数字或移动电话图像转换成可编辑格式——Microsoft、 Word、Excel、PowerPoint、PDF、HTML等。99.8%的识别准确率即刻识别文本，复制和粘贴，搜索或编辑。轻松扫描纸质文件或PDF转换为可编辑文本，支持多国语言，保留原来的布局和格式。<br>链接: <a href="https://pan.baidu.com/s/1TUrmsaqiJrySbmr6IGBIsQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1TUrmsaqiJrySbmr6IGBIsQ</a> 提取码: 78zv  </p>
-<p>新媒体运营干货，自媒体，各行业研究报告， 超多资料</p>
-<p>新媒体运营干货<br>链接:<a href="https://pan.baidu.com/s/1gNyK8LdhXtWg0cO7RxE9nQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1gNyK8LdhXtWg0cO7RxE9nQ</a> 密码:p3w4</p>
-<p>新媒体课堂<br>链接:<a href="https://pan.baidu.com/s/1E5ctTySIrmc_RTglnHao3Q" target="_blank" rel="noopener">https://pan.baidu.com/s/1E5ctTySIrmc_RTglnHao3Q</a> 密码:ahp3<br>新媒体课堂排版与文案<br>链接:<a href="https://pan.baidu.com/s/1qzfVeBk2Yz-h4uKe_bIHgA" target="_blank" rel="noopener">https://pan.baidu.com/s/1qzfVeBk2Yz-h4uKe_bIHgA</a> 密码:nix9<br>新媒体营销技巧，涨粉<br>链接:<a href="https://pan.baidu.com/s/1etOhGHAYc0hYPAqDUcTMnw" target="_blank" rel="noopener">https://pan.baidu.com/s/1etOhGHAYc0hYPAqDUcTMnw</a> 密码:qyl1<br>6000份营销策划资料<br>链接:<a href="https://pan.baidu.com/s/1Heybav_FPXAbZX3hgHpR0A" target="_blank" rel="noopener">https://pan.baidu.com/s/1Heybav_FPXAbZX3hgHpR0A</a> 密码:7gcy<br>ppt模板<br>链接:<a href="https://pan.baidu.com/s/1FVtJ08BSwtftgfkSzC5EXA" target="_blank" rel="noopener">https://pan.baidu.com/s/1FVtJ08BSwtftgfkSzC5EXA</a> 密码:rfxc<br>各行业商业计划书<br>链接:<a href="https://pan.baidu.com/s/1IYsUS0niz-BsO3XAUtl6lA" target="_blank" rel="noopener">https://pan.baidu.com/s/1IYsUS0niz-BsO3XAUtl6lA</a> 密码:g7n8<br>31套互联网商业创业计划书<br>链接:<a href="https://pan.baidu.com/s/1huRn7UmbaHmVteNxW5hYgQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1huRn7UmbaHmVteNxW5hYgQ</a> 密码:gn80<br>师北辰写作课<br>链接:<a href="https://pan.baidu.com/s/1YJZ8CpF0uq7y3dycRjaUPg" target="_blank" rel="noopener">https://pan.baidu.com/s/1YJZ8CpF0uq7y3dycRjaUPg</a> 密码:ner0</p>
-<p>170个知乎live付费课程<br>链接:<a href="https://pan.baidu.com/s/1v3tfTXsxrppJFZbZZIwtxA" target="_blank" rel="noopener">https://pan.baidu.com/s/1v3tfTXsxrppJFZbZZIwtxA</a> 密码:5ujb<br>广告人的书店<br>链接:<a href="https://pan.baidu.com/s/1fULLIBk1UV8xTMe6yFnIgw" target="_blank" rel="noopener">https://pan.baidu.com/s/1fULLIBk1UV8xTMe6yFnIgw</a> 密码:q9pl<br>几百本书<br>链接:<a href="https://pan.baidu.com/s/1u3widW7MYdPkAVSCcRevXQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1u3widW7MYdPkAVSCcRevXQ</a> 密码:g5il<br>笔试资料链接: <a href="https://pan.baidu.com/s/1L0gVd620Lny_JNsx4smPCw" target="_blank" rel="noopener">https://pan.baidu.com/s/1L0gVd620Lny_JNsx4smPCw</a> 提取码: gwwf  </p>
-<p>Python数据分析与机器学习实战资料<br>链接：<a href="https://pan.baidu.com/s/1gPLYDra0nsGPj0dia0RzSg" target="_blank" rel="noopener">https://pan.baidu.com/s/1gPLYDra0nsGPj0dia0RzSg</a><br>提取码：18l6</p>
-<p>还是分享课程吧 python人工智能  链接：<a href="https://pan.baidu.com/s/1Z5ctN75EHqPUHLXOYrs6Tw" target="_blank" rel="noopener">https://pan.baidu.com/s/1Z5ctN75EHqPUHLXOYrs6Tw</a><br>提取码：jpil</p>
-<p>1-1、价值2980元自媒体内部培训珍贵视频教程<br>链接：<a href="https://pan.baidu.com/s/1fPyJcwO89c1VQ5KBN7GcWA" target="_blank" rel="noopener">https://pan.baidu.com/s/1fPyJcwO89c1VQ5KBN7GcWA</a><br>提取码：ikd6 </p>
-<p>2、百家号运营教程<br>链接：<a href="https://pan.baidu.com/s/1paxngap2tvGXRByM0h7ivw" target="_blank" rel="noopener">https://pan.baidu.com/s/1paxngap2tvGXRByM0h7ivw</a><br>提取码：6j3i </p>
-<p>3、公众号暴利涨粉教程 </p>
-<p>链接：<a href="https://pan.baidu.com/s/1c_FWchNKlu-d5NkrZRPi0A" target="_blank" rel="noopener">https://pan.baidu.com/s/1c_FWchNKlu-d5NkrZRPi0A</a><br>提取码：hgcc </p>
-<p>4、微博运营黑科技教程 </p>
-<p>链接：<a href="https://pan.baidu.com/s/1LVpsrqKoSlwMcnBNrF543g" target="_blank" rel="noopener">https://pan.baidu.com/s/1LVpsrqKoSlwMcnBNrF543g</a><br>提取码：wrbz </p>
-<p>5、短视频自媒体运营入门教程<br>链接：<a href="https://pan.baidu.com/s/1d5t_xIiYJM-sy1H2cUeodg" target="_blank" rel="noopener">https://pan.baidu.com/s/1d5t_xIiYJM-sy1H2cUeodg</a><br>提取码：4hb0 </p>
-<p>1、自媒体入门全套教程<br>链接：<a href="https://pan.baidu.com/s/19i_52IPkaXAAwCptEKAiOg" target="_blank" rel="noopener">https://pan.baidu.com/s/19i_52IPkaXAAwCptEKAiOg</a><br>提取码：uv1f</p>
-<p>Flutter从入门到进阶实战携程网App无密 链接: <a href="https://pan.baidu.com/s/1XbPVYo0qk2U3ExbxNvTEnw" target="_blank" rel="noopener">https://pan.baidu.com/s/1XbPVYo0qk2U3ExbxNvTEnw</a> 提取码: r672</p>
-<p> <a href="http://pandownload.com/index.html" target="_blank" rel="noopener">http://pandownload.com/index.html</a><br><a href="http://www.wenkuwenku.com/" target="_blank" rel="noopener">http://www.wenkuwenku.com/</a></p>
-<p>百度搜索 周杰伦专辑 百度云</p>
-<p><a href="https://mp.weixin.qq.com/s/Sobuvc8J56dryQ5jeLfyMw" target="_blank" rel="noopener">教你下载被迅雷&amp;百度云屏蔽的资源</a></p>
-<p> 工具大合集点这里：<a href="https://pan.baidu.com/s/1hhd7C0kQx1ASsDGmf3LCPQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1hhd7C0kQx1ASsDGmf3LCPQ</a> 提取码：cs6r<br>冰点文库下载器<a href="https://pan.baidu.com/s/1YApVf32Ww7mCFSm5ECYBog" target="_blank" rel="noopener">https://pan.baidu.com/s/1YApVf32Ww7mCFSm5ECYBog</a><br>会声会影视频编辑软件注册机汉化版<br><a href="https://pan.baidu.com/s/1XYiSLVmhaHvmr-Q_JHcBkQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1XYiSLVmhaHvmr-Q_JHcBkQ</a><br>提取码：bcr4 </p>
-<p>推荐一下几本书《图解 TCP/IP》《图解 HTTP》《图解算法》《Laravel 框架关键技术解析》《现代操作系统 4》</p>
-<p>分享一个PHP课程 助你加薪   链接: <a href="https://pan.baidu.com/s/1lH4r6Tb-E-8w8nXLCbimTA" target="_blank" rel="noopener">https://pan.baidu.com/s/1lH4r6Tb-E-8w8nXLCbimTA</a> 提取码: jhsx<br><a href="https://pan.baidu.com/mbox/homepage?short=n3xq7w9" target="_blank" rel="noopener">课程收集</a></p>
-<p><a href="https://learnku.com/articles/32189" target="_blank" rel="noopener">程序员经典书籍推荐</a></p>
-<p><a href="https://github.com/high-speed-downloader/high-speed-downloader" target="_blank" rel="noopener">百度网盘不限速下载器</a></p>
-<p><a href="http://www.meinigui.com/movie/index.html" target="_blank" rel="noopener">电影网站</a></p>
-<p><a href="https://pan.baidu.com/share/init?surl=ASNYXmci4RRbyhxtYeYDGA" target="_blank" rel="noopener">公众号视频 提取码：pvek</a> </p>
-<p><a href="https://github.com/ganlvtech/down_52pojie_cn" target="_blank" rel="noopener">吾爱破解论坛 爱盘 down.52pojie.cn</a></p>
-<p><a href="http://yyeer.com/%E8%AF%BB%E4%B9%A6/2017/12/18/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E5%BE%AE%E4%BF%A1%E8%BF%90%E8%90%A5-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener">《从零开始学微信运营》读书笔记</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2184,7 +2154,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">136</span>
+                  <span class="site-state-item-count">137</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2415,7 +2385,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共449.1k字</span>
+  <span class="post-count">博客全站共450.5k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
