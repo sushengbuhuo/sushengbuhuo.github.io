@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2019/10/31/%E8%B7%9F%E9%9A%8F%E6%97%B6%E5%85%89%E6%9C%BA%E5%9B%9E%E5%88%B0%E8%BF%87%E5%8E%BB%E7%9C%8B%E7%9C%8B-2005-%E5%B9%B4%E7%9A%84%E7%99%BE%E5%BA%A6-%E8%85%BE%E8%AE%AF-%E6%B7%98%E5%AE%9D-%E8%B0%B7%E6%AD%8C/</loc>
+    <loc>http://yoursite.com/2019/04/26/linux-%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2019-10-31T12:01:22.818Z</lastmod>
+    <lastmod>2019-11-01T12:07:48.219Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/26/python%E4%BB%A3%E7%A0%81%E6%AE%B5%E6%94%B6%E9%9B%86/</loc>
+    
+    <lastmod>2019-11-01T09:49:51.116Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2019/10/16/laravel-%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2019-10-31T11:56:23.187Z</lastmod>
+    <lastmod>2019-11-01T08:50:30.303Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/10/31/%E8%B7%9F%E9%9A%8F%E6%97%B6%E5%85%89%E6%9C%BA%E5%9B%9E%E5%88%B0%E8%BF%87%E5%8E%BB%E7%9C%8B%E7%9C%8B-2005-%E5%B9%B4%E7%9A%84%E7%99%BE%E5%BA%A6-%E8%85%BE%E8%AE%AF-%E6%B7%98%E5%AE%9D-%E8%B0%B7%E6%AD%8C/</loc>
+    
+    <lastmod>2019-10-31T12:01:22.818Z</lastmod>
     
   </url>
   
@@ -33,13 +47,6 @@
     <loc>http://yoursite.com/2019/03/26/redis-%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2019-10-30T12:28:41.848Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/04/26/linux-%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2019-10-29T11:30:12.540Z</lastmod>
     
   </url>
   
@@ -75,13 +82,6 @@
     <loc>http://yoursite.com/2019/01/08/git-%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2019-10-24T11:25:00.616Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/02/26/python%E4%BB%A3%E7%A0%81%E6%AE%B5%E6%94%B6%E9%9B%86/</loc>
-    
-    <lastmod>2019-10-24T02:27:45.382Z</lastmod>
     
   </url>
   
