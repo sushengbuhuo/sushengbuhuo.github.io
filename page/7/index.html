@@ -285,6 +285,339 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/北京的雨/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/北京的雨/" itemprop="url">北京的雨</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:06:34+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。<br>又一次成了落汤鸡，不记得第几次了。</p>
+<p>今天早上出门的时候还天空一片晴朗，我戴着耳机，听网易云音乐里 许巍 唱着：</p>
+<blockquote>
+<p>我那总沉默的朋友</p>
+<p>你让我感觉到力量</p>
+<p>曾在我心中的伤口</p>
+<p>如过眼的云烟</p>
+<p>初次 感觉</p>
+<p>心就像天空般晴朗</p>
+<p>初次 感觉</p>
+<p>心就像天空般晴朗</p>
+<p>啦……啦……啦……</p>
+</blockquote>
+<p>本来今天没什么事，最近也没什么事，每天 10 点前到公司，打开电脑，输入密码，我的电脑平常都不关机的，主要每次开机要启动服务器，打开好几个浏览器，打开编辑器，PHPstorm，连 vpn ，命令行等等，好麻烦，所以就每周五下班关机一次。</p>
+<p>上午基本没什么事干，刷刷微博，看看 QQ 群，聊聊微信群，看看公众号，基本快到 11 点半了，出去走动下，到 11 点 50 准备吃饭了。吃完饭睡一个小时，下午 2 点正式开始工作了，今天就统计了些数据，导出excel，发邮件和短信。导出用的 <a href="https://packagist.org/packages/maatwebsite/excel" target="_blank" rel="noopener">https://packagist.org/packages/maatwebsite/excel</a> 这个 laravel composer 包，使用挺方便的，看代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// http://www.maatwebsite.nl/laravel-excel/docs/export`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`$data = array(`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`array('data1',  'data2'),`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`array('data3',  'data4')`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`);`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`Excel::create('Filename',  function($excel) use($data)  &#123;`</span></span><br><span class="line"></span><br><span class="line">  <span class="string">`$excel-&gt;sheet('Sheetname',  function($sheet) use($data)  &#123;`</span></span><br><span class="line"></span><br><span class="line">  <span class="string">`$sheet-&gt;fromArray($data);`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`&#125;);`</span></span><br><span class="line"></span><br><span class="line"> <span class="string">`&#125;)-&gt;store('xls', storage_path('excel/exports'))-&gt;export('xls');`</span></span><br></pre></td></tr></table></figure>
+<p>然后到 6 点半准备去吃饭的时候 pm 说要改个东西。他以为挺简单的，结果我一看，卧槽，简单你妹啊（我没有说出来，如果他看我的眼神应该会明白的），公司的代码涉及几个项目，好几个代码仓库，需要改动其他同事负责的代码，那是公司观看直播的核心代码，一个方法几千行，没错，几千行代码，那一个个if else 一个个 foreach，看得我头大，我真不敢动，生怕改出问题，然后问了下同事（本来想让他帮忙改，人家有孩子了，这个点了得回去带孩子，好吧），需要改哪些地方，逻辑怎么处理，然后就整到 9 点了，我也是服了pm，麻烦下次有事提前说行不。</p>
+<p>出地铁的时候就发现暴雨了，记得上次也是这样，看看当时的微博。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4717cc2c741dc3de?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>一堆人挤在地铁口，都没带伞，叫车也不好叫，而且我住的地方离地铁也不远，就是有点绕，好不容易等到雨小了，赶紧冲出去一路小跑，这里我不得不吐槽北京那破排水系统，每次暴雨，路上的积水都可以划船了，然后不小心一脚下去，鞋子湿了，好吧，到家再换吧，结果路上一辆车飞过，路边的水飞溅，这下全身湿了，真忍不住爆出口，光顾着自己，开车也没素质，如同地铁里那些不戴耳机看电影电视剧的， fuck 。</p>
+<p>回到家发现早上出门忘记关阳台的门了，经过暴雨洗礼都进水了，还好电脑没事，这一天真让人无 fuck 可说。</p>
+<p>记得 2012 年刚来北京那会，住在北京大学附近的颐和园路东口的城中村，那里虽然靠着地铁 4 号线，圆明园，北大，清华，然而我同 8 个人住在一个屋子里，有一次也是暴雨，没带伞，身上没钱，那会也没有微信支付宝，然后一个人就这样淋着雨走回去，走着走着都分不清眼泪和雨水了。</p>
+<p>北京待了这么多年了，我真的越来越不喜欢这个城市了。</p>
+<p>就在我写这篇文章的时候四川又地震了（08 年大地震过去近 10 年了），相比而言今天这点破事根本不值一提，祝福四川平安。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7cb55043512d0c76?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>好了，快零点了，听首歌睡觉吧。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/周杰伦出道16年精选/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/周杰伦出道16年精选/" itemprop="url">周杰伦出道16年精选</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:04:22+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  765 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。<br>偶然在微博看到周杰伦出道16年精选73首歌的视频，地址<a href="http://weibo.com/tv/v/EcAmx4z11?from=music" target="_blank" rel="noopener">http://weibo.com/tv/v/EcAmx4z11?from=music</a>  顿时让无数人开始怀旧，那是一代人的青春啊，如果要在那么多经典歌曲里找一首配今天的文，那便是《晴天》了。那条微博转发已过万，里面73首歌我几乎可以从头唱到尾，我曾经也是追星一族，哈哈。</p>
+<p>看完视频后我就想下载到电脑，可以时不时拿来怀旧下，视频是由秒拍录制的，播放的是一个swf文件，地址<a href="http://wscdn.miaopai.com/splayer2.2.0.swf?scid=GcezAtC7sRC6~1S3GXxLkA__&amp;token=&amp;autopause=false&amp;fromweibo=false" target="_blank" rel="noopener">http://wscdn.miaopai.com/splayer2.2.0.swf?scid=GcezAtC7sRC6~1S3GXxLkA__&amp;token=&amp;autopause=false&amp;fromweibo=false</a> ，于是开始用python下载视频，源代码：<a href="https://gist.github.com/zhiyue/f49c8e951d5339b9b0c763f0ce8e1a6e" target="_blank" rel="noopener">https://gist.github.com/zhiyue/f49c8e951d5339b9b0c763f0ce8e1a6e</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers = &#123;    </span><br><span class="line"><span class="string">"Accept"</span>: <span class="string">"*/*"</span>,    </span><br><span class="line"><span class="string">"Accept-Encoding"</span>: <span class="string">"gzip, deflate, sdch"</span>,   </span><br><span class="line"> <span class="string">"Accept-Language"</span>: <span class="string">"zh-CN,zh;q=0.8,en;q=0.6"</span>,    </span><br><span class="line"> <span class="string">"Connection"</span>: <span class="string">"keep-alive"</span>,    </span><br><span class="line"> <span class="string">"Host"</span>: <span class="string">"api.miaopai.com"</span>,    </span><br><span class="line"> <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"</span></span><br><span class="line">                  <span class="string">" Chrome/50.0.2661.102 Safari/537.36"</span>,   </span><br><span class="line">  <span class="string">"X-Requested-With"</span>: <span class="string">"ShockwaveFlash/23.0.0.166"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def get_mp4_addr(base_url):</span><br><span class="line">    api_url = <span class="string">'http://api.miaopai.com/m/v2_channel.json'</span></span><br><span class="line">    rs = urllib.parse.urlparse(base_url)</span><br><span class="line">    q = urllib.parse.parse_qs(rs.query)</span><br><span class="line">    scid = q[<span class="string">'scid'</span>][<span class="number">0</span>]</span><br><span class="line">    params = &#123;        </span><br><span class="line">      <span class="string">'fillType'</span>: <span class="string">'259'</span>,       </span><br><span class="line">       <span class="string">'scid'</span>: scid,        </span><br><span class="line">       <span class="string">'vend'</span>: <span class="string">'miaopai'</span></span><br><span class="line">    &#125;</span><br><span class="line">    headers[<span class="string">'Referer'</span>] = base_url</span><br><span class="line">    r = requests.get(api_url, params=params, headers=headers)   </span><br><span class="line">    #获取到的json结构为</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">    'status': 200,</span></span><br><span class="line"><span class="string">    'msg': 'OK',</span></span><br><span class="line"><span class="string">    'result': &#123;</span></span><br><span class="line"><span class="string">        'category_info': [</span></span><br><span class="line"><span class="string">            </span></span><br><span class="line"><span class="string">        ],</span></span><br><span class="line"><span class="string">        'liveStatus': 0,</span></span><br><span class="line"><span class="string">        'otherinfo': &#123;</span></span><br><span class="line"><span class="string">            'othertype': 3,</span></span><br><span class="line"><span class="string">            'weiboId': '2709577332',</span></span><br><span class="line"><span class="string">            'url': 'http: //weibo.com/2709577332',</span></span><br><span class="line"><span class="string">            'weiboNick': 'Happy张江',</span></span><br><span class="line"><span class="string">            'mark1': '@Happy张江',</span></span><br><span class="line"><span class="string">            'mark2': 'weibo.com/2709577332',</span></span><br><span class="line"><span class="string">            'vend': 'miaopai'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'ext': &#123;</span></span><br><span class="line"><span class="string">            'h': 358,</span></span><br><span class="line"><span class="string">            'lengthNice': '29: 11',</span></span><br><span class="line"><span class="string">            'location': '',</span></span><br><span class="line"><span class="string">            'owner': &#123;</span></span><br><span class="line"><span class="string">                'icon': 'http: //tp1.sinaimg.cn/2709577332/180/40022299983/0',</span></span><br><span class="line"><span class="string">                'loginName': 'paike_ex1p1ji8gr',</span></span><br><span class="line"><span class="string">                'signed_info': '',</span></span><br><span class="line"><span class="string">                'status': 1086,</span></span><br><span class="line"><span class="string">                'top_num': 0,</span></span><br><span class="line"><span class="string">                'suid': 'P7Z0CNbUcrTke~V0',</span></span><br><span class="line"><span class="string">                'v': True,</span></span><br><span class="line"><span class="string">                'info': '',</span></span><br><span class="line"><span class="string">                'nick': 'Happy张江',</span></span><br><span class="line"><span class="string">                'gold': 0,</span></span><br><span class="line"><span class="string">                'talent_signed': 0,</span></span><br><span class="line"><span class="string">                'talent_v': 1,</span></span><br><span class="line"><span class="string">                'oldIcon': 'http: //tp1.sinaimg.cn/2709577332/180/40022299983/0',</span></span><br><span class="line"><span class="string">                'org_v': 0,</span></span><br><span class="line"><span class="string">                'talent_name': '知名博主'</span></span><br><span class="line"><span class="string">            &#125;,</span></span><br><span class="line"><span class="string">            'finishTime': 1476280433842,</span></span><br><span class="line"><span class="string">            'length': 1751,</span></span><br><span class="line"><span class="string">            'finishTimeNice': '10-12',</span></span><br><span class="line"><span class="string">            'ft': '#周杰伦#出道16年精选73首歌，从青涩的小男生到幸福的爸爸，音乐风格也有很多创新，你是否从第一首开始可以跟着哼到最后！',</span></span><br><span class="line"><span class="string">            'status': 30,</span></span><br><span class="line"><span class="string">            't': '#周杰伦#出道16年精选73首歌，从青涩的小男生到幸福的爸爸，音乐风格也有很多创新，你是否从第一首开始可以跟着哼到最后！',</span></span><br><span class="line"><span class="string">            'w': 640</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'pic': &#123;</span></span><br><span class="line"><span class="string">            'm': '_m.jpg',</span></span><br><span class="line"><span class="string">            's': '_s.jpg',</span></span><br><span class="line"><span class="string">            'base': 'http: //dlqncdn.miaopai.com/stream/GcezAtC7sRC6~1S3GXxLkA__'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'type': 16,</span></span><br><span class="line"><span class="string">        'ad': &#123;</span></span><br><span class="line"><span class="string">            'video': '',</span></span><br><span class="line"><span class="string">            'url': '',</span></span><br><span class="line"><span class="string">            'pic': ''</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'stream': &#123;</span></span><br><span class="line"><span class="string">            'ver': 'miaopai',</span></span><br><span class="line"><span class="string">            'sign': 'ssig=6d6e2196b6d1e33d196e5744fa90979b&amp;time_stamp=1476532658459',</span></span><br><span class="line"><span class="string">            'ios': 'mp4miaopai',</span></span><br><span class="line"><span class="string">            'base': 'http: //gslb.miaopai.com/stream/GcezAtC7sRC6~1S3GXxLkA__.mp4?vend=miaopai&amp;',</span></span><br><span class="line"><span class="string">            'vend': 'miaopai',</span></span><br><span class="line"><span class="string">            'and': 'mp4'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'place_top': 0,</span></span><br><span class="line"><span class="string">        'scid': 'GcezAtC7sRC6~1S3GXxLkA__',</span></span><br><span class="line"><span class="string">        'ext2': &#123;</span></span><br><span class="line"><span class="string">            'isPub': 2,</span></span><br><span class="line"><span class="string">            'length': 1751,</span></span><br><span class="line"><span class="string">            'createTimeNice': '10-12',</span></span><br><span class="line"><span class="string">            'createTime': 1476279232807,</span></span><br><span class="line"><span class="string">            'guid': 0,</span></span><br><span class="line"><span class="string">            'vend': 'miaopai'</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        'topicinfo': [</span></span><br><span class="line"><span class="string">            '周杰伦'</span></span><br><span class="line"><span class="string">        ]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    msg = r.json()[<span class="string">'msg'</span>]</span><br><span class="line">    result = r.json()[<span class="string">'result'</span>]</span><br><span class="line">    file_name = result[<span class="string">'ext'</span>][<span class="string">'ft'</span>]    </span><br><span class="line">    <span class="keyword">if</span> msg == <span class="string">'OK'</span>:</span><br><span class="line">        stream_type = result[<span class="string">'stream'</span>][<span class="string">'and'</span>]</span><br><span class="line">        base = result[<span class="string">'stream'</span>][<span class="string">'base'</span>]</span><br><span class="line">        sign_str = result[<span class="string">'stream'</span>][<span class="string">'sign'</span>]</span><br><span class="line">        mp4_addr = <span class="string">'%s?%s&amp;f=/%s.%s'</span> % (base, sign_str, scid, stream_type)        </span><br><span class="line">        <span class="keyword">return</span> mp4_addr, <span class="string">'%s.%s'</span> % (file_name, stream_type)</span><br><span class="line"></span><br><span class="line">def download_video(mp4_addr, file_name):</span><br><span class="line">    r = requests.get(mp4_addr, stream=True)    </span><br><span class="line">    <span class="keyword">if</span> r.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">with</span> open(file_name, <span class="string">'wb'</span>) <span class="keyword">as</span> f:            </span><br><span class="line">           <span class="keyword">for</span> chunk <span class="keyword">in</span> r.iter_content(chunk_size=<span class="number">4096</span>):               </span><br><span class="line">               <span class="keyword">if</span> chunk:</span><br><span class="line">                    f.write(chunk)</span><br><span class="line">               </span><br><span class="line">    <span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:   </span><br><span class="line">        #如果想下载其他视频，只要替换这个链接即可</span><br><span class="line">        url = <span class="string">'http://wscdn.miaopai.com/splayer2.2.0.swf?scid=GcezAtC7sRC6~1S3GXxLkA__&amp;token=&amp;autopause=false&amp;fromweibo=false'</span></span><br><span class="line">        mp4_addr, file_name = get_mp4_addr(url)</span><br><span class="line">        download_video(mp4_addr, file_name)</span><br></pre></td></tr></table></figure></p>
+<p>最后我把视频上传到百度网盘了，想要的小伙伴自己下载吧，地址<a href="http://pan.baidu.com/s/1eRAllJk" target="_blank" rel="noopener">http://pan.baidu.com/s/1eRAllJk</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/我的2016年/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1872,421 +2205,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/如何发一条空白的朋友圈/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/06/如何发一条空白的朋友圈/" itemprop="url">如何发一条空白的朋友圈</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T20:03:27+08:00">
-                2019-08-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  993 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>所谓空白的朋友圈就是一条看起来没有文字的朋友圈，因为发朋友圈的时候不输入文字是没法发送的。不可见字符是有文字内容的，只是人的肉眼看不见，所以相当于空白。</p>
-<h3 id="不可见字符"><a href="#不可见字符" class="headerlink" title="不可见字符"></a>不可见字符</h3><p>不可见字符就是零宽空格，见维基百科解释<a href="https://zh.wikipedia.org/wiki/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC</a><br>：</p>
-<blockquote>
-<p>零宽空格（zero-width space, ZWSP）是一种不可打印的Unicode字符，用于可能需要换行处。</p>
-</blockquote>
-<p><a href="http://www.fileformat.info/info/unicode/category/Mn/list.htm" target="_blank" rel="noopener">http://www.fileformat.info/info/unicode/category/Mn/list.htm</a> 这里列出了许多不可见字符，控制台输入对应的Unicode码就能显示出来。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a5d76abc5cc0f5a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如第一个 <code>\u0300</code> 就是<code>̀</code>这个字符，但是这个字符肉眼是看不见的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-3c2b1e3601144d3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>通过进制转换可以看到它的二进制是<code>00000000</code><br><img src="https://upload-images.jianshu.io/upload_images/17817191-6e7938ce9d6a1364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>在PHP里可以看到它的长度为2<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; strlen(<span class="string">'̀'</span>)</span><br><span class="line">=&gt; <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="空白朋友圈"><a href="#空白朋友圈" class="headerlink" title="空白朋友圈"></a>空白朋友圈</h3><p>将上面copy的不可见字符发到朋友圈 ，效果如下：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-54d98f006b6bfc9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果你也想发条空白的朋友圈，在公众号内回复  朋友圈  获取,当然微博也是可以的<a href="https://weibo.com/2717930601/HDjs3fVkU" target="_blank" rel="noopener">https://weibo.com/2717930601/HDjs3fVkU</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-7f48ac1c43cfb7d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>星球一样：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e5f66ace53a0ffc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="有意思的字符"><a href="#有意思的字符" class="headerlink" title="有意思的字符"></a>有意思的字符</h3><p><a href="https://www.compart.com/en/unicode/category/So" target="_blank" rel="noopener">https://www.compart.com/en/unicode/category/So</a> 和 <a href="https://unicode-table.com/cn/#lao" target="_blank" rel="noopener">https://unicode-table.com/cn/#lao</a> 这里列出了一些有意思的字符。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-0335fa58f90f77b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-36459f0c83042320.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如手表 ⌚ ,版权 ℗ ，商标 ™ ， 箭头 ↱，键盘 ⌨ 等，在控制台输入’\u231a’就是手表。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7db6002f089ecf44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>上面的字符是没法用输入法直接输入的，所以搜狗输入法也提供了一些特殊字符。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f7c61fe3f39d3e72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> 其中这个<code>é</code>字符，  unicode 是 <code>\u00e9</code>, 而 ‘\u0301’ 是个不可见字符，<br> ‘e’ + ‘\u0301’ 拼在一起就成了这样。<code>e</code>的长度为1，拼接后长度为2，见 <a href="https://www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html。" target="_blank" rel="noopener">https://www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html。</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d50b23e7e32d056c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>多拼几个就成这样了<code>&#39;e&#39;+Array(50).join(&#39;\u0301&#39;)</code>  </p>
-<p>é́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́́<br><img src="https://upload-images.jianshu.io/upload_images/17817191-656a4441bdc99862.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>继续拼接字符 <code>&#39;很好玩&#39;+Array(50).join(&#39;\u0310&#39;)+Array(50).join(&#39;\u0598&#39;)+Array(50).join(&#39;\u0e49&#39;);</code></p>
-<p>很好玩้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘</p>
-<h3 id="零长度短网址"><a href="#零长度短网址" class="headerlink" title="零长度短网址"></a>零长度短网址</h3><p> <a href="https://zws.im/" target="_blank" rel="noopener">https://zws.im/</a>  这个网站用不可见字符欺骗你的视觉。<br>输入网易云音乐网址后的地址变成了<code>https://zws.im/​‌​​​‌​​‌‌​​‌​/</code>，看起来不是网易的地址却跳转到了网易。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1b44e1e184bde63f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然这个生成服务在墙外，所以有人开发了国内版 <a href="https://ml.mk/" target="_blank" rel="noopener">https://ml.mk/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-4db642a7bd31f999.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>网易云音乐的短网址就是 <code>https://ml.mk/‌‌‌‌‌‌‌‌​‌​​​‌​‌/</code>，如果是某个不可描述网站生成这样的短网址，然后你在办公室打开就尴尬了，所以说不要随意打开这些不认识域名的网站。</p>
-<p>另外有人还做了个零宽字符隐藏加密网站 <a href="http://morse.rovelast.com/，原理是利用零宽字符这种在文本中不显示的特殊字符，对加密文本进行转码，嵌入到普通文本当中，从而隐藏加密内容；表面看起来是一段普通文本，复制粘贴不会丢失。" target="_blank" rel="noopener">http://morse.rovelast.com/，原理是利用零宽字符这种在文本中不显示的特殊字符，对加密文本进行转码，嵌入到普通文本当中，从而隐藏加密内容；表面看起来是一段普通文本，复制粘贴不会丢失。</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d348856dcba4ed70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>参考： </p>
-<p>  <a href="http://www.asciim.com/ascii/265.html" target="_blank" rel="noopener">http://www.asciim.com/ascii/265.html</a><br><a href="https://www.utf8-chartable.de/unicode-utf8-table.pl" target="_blank" rel="noopener">UTF-8 encoding table and Unicode characters</a><br><a href="https://unicode-table.com/cn/#control-character" target="_blank" rel="noopener">字符百科</a><br><a href="https://mengkang.net/740.html" target="_blank" rel="noopener">去掉不可见字符</a><br><a href="http://ctf.ssleye.com/jinzhi.html" target="_blank" rel="noopener">进制转换</a><br><a href="http://www.fileformat.info/info/unicode/category/Mn/list.htm" target="_blank" rel="noopener">Unicode Characters in the ‘Mark, Nonspacing’ Category</a><br><a href="https://www.playpi.org/2018090601.html" target="_blank" rel="noopener">踩坑特殊字符之硬空格</a><br><a href="http://www.asciim.com/ascii/265.html" target="_blank" rel="noopener">过滤ASCII码中的不可见字符</a><br><a href="https://linux.cn/article-2137-1.html" target="_blank" rel="noopener">Linux终端：用cat命令查看不可见字符</a><br><a href="https://www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html#!comments" target="_blank" rel="noopener">奇葩字符 “a๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎” 的简单分析</a><br><a href="https://github.com/rover95/morse-encrypt" target="_blank" rel="noopener">使用零宽字符，隐藏存储加密信息</a><br><a href="https://github.com/asiacny/zero-width-qrcode-sqlite-shortener" target="_blank" rel="noopener">可生成零宽度地址与二维码的PHP短网址程序</a></p>
-<p>推荐阅读：</p>
-<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
-<p> <a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483979&amp;idx=1&amp;sn=0735daa1d805b66d346ed0e8e60a841f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483983&amp;idx=1&amp;sn=f0e1d9a8e22caf609d6c21431a530186&amp;chksm=e827a5aedf502cb8b72f2036054753fcfd9c20c28b9fbccdeae619a254a80e1024f18ba06523&amp;token=457023358&amp;lang=zh_CN#rd" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/2018-那些事儿/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/29/2018-那些事儿/" itemprop="url">2018 那些事儿</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T20:55:03+08:00">
-                2019-07-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近新浪食堂换新的供应商，饭好吃多了。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5d18c916c0e108c4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-dfc5164391f77bfd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-8544abb8f7e4d0f3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7f36f76d1d4d0308?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c3e07bf88f5127df?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>过去一年发生很多事，这里做个总结。</p>
-<p>之前发布了网易，微博，知乎等总结  <a href="http://mp.weixin.qq.com/s?__biz=MjM5ODIzNDExMg==&amp;mid=2257484343&amp;idx=1&amp;sn=f825eb0eb3f30c2e2c2a8519ed352837&amp;chksm=a5b70b5892c0824ee2491de37e55d7b075effd0df9878952d311e9612d965d806cb0c69c1719&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">我的2018年</a></p>
-<p>现在中国移动也来了。 <a href="https://mp.weixin.qq.com/s?__biz=MjM5Nzg1NTQyMQ==&amp;mid=2677710975&amp;idx=1&amp;sn=63277b749a5c7fc025eaeef96a715ed3&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">查看你的2018移动账单‼️最高1GB‼️</a>  平均一个月消费67，几乎都是流量。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e8cd424cdb84dc61?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-33d3a7bd2321c816?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7f2c6b10517c50d3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-fcd5732e61dee9aa?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<pre><code>这个号码是我妈的
-</code></pre><p>今天看到一条微博很有意思，原来微博办公已经实现了，微博的确改变了这个世界。<a href="https://weibo.com/3227812037/HazHWChaH" target="_blank" rel="noopener">https://weibo.com/3227812037/HazHWChaH</a> ： </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-354c9a5c4dd5bf32?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-86503041e5cc85be?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-59f0423920b42548?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-f6f2df980742fc4d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>另外 2018微信数据报告 的70后、80后、90后、00后的人群分析，有、意思  <a href="https://weibo.com/2357213493/Hb7J6gvRB" target="_blank" rel="noopener">https://weibo.com/2357213493/Hb7J6gvRB</a>  <a href="https://support.weixin.qq.com/cgi-bin/mmsupport-bin/getopendays?from=groupmessage&amp;isappinstalled=0" target="_blank" rel="noopener">https://support.weixin.qq.com/cgi-bin/mmsupport-bin/getopendays?from=groupmessage&amp;isappinstalled=0</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c0517ad8bb298fc5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-b38b6d3e46b643a1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e1896747e2143eda?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-711c8ae191684e22?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-ae68c0909a75f454?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-67eba7198bc1734f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>微信8年啦！除了2019 微信公开课张小龙分享的干货外，以下这14条微信“潜规则”你也应该知道！欢迎对号入座 <a href="https://weibo.com/1742566624/HbkVbaj4c" target="_blank" rel="noopener">https://weibo.com/1742566624/HbkVbaj4c</a> </p>
-<p><a href="https://wx2.sinaimg.cn/mw690/a1eface5ly1fz1qti4st3j20u085znpd.jpg" target="_blank" rel="noopener">https://wx2.sinaimg.cn/mw690/a1eface5ly1fz1qti4st3j20u085znpd.jpg</a> </p>
-<p>你置顶了谁，谁又置顶了你？</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2e9e65d988f435b9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>再看新榜的微信公众号总结 <a href="https://mp.weixin.qq.com/s?__biz=MzAwMjE1NjcxMg==&amp;mid=2654672254&amp;idx=1&amp;sn=11a3b97d9d276c9d8fd36b8e5f595abe&amp;chksm=810104b9b6768daf229566e75325d31f1e2f89230b420dc2c7b60cad1409944dbd21be0dca38&amp;mpshare=1&amp;scene=21&amp;srcid=0104OdNC6QFJloP27yW1SXnx&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBXmR4Am5keAJ2ZHgCjmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=5fcjzLZY8nAd7WJTBZ8fvz2Nw5/0yZKtrmwajrNgt%20owE6VuZKJ%201/5W8TjJpHnO&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">公众号的2018</a>  <a href="https://mp.weixin.qq.com/s?__biz=MzAwMjE1NjcxMg==&amp;mid=2654671988&amp;idx=2&amp;sn=aaac75c0bcf1a903062e872436c27e67&amp;chksm=810105b3b6768ca53ff4173eee13019452bee153de726b6f1c0366429a4d9d0f25d0c2929aeb&amp;mpshare=1&amp;scene=21&amp;srcid=1231ilhZNbokYtLAxVkYpXKS&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBXmR4Am5keAJ2ZHgCjmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=vqvwN8A9lT1Cg6kP0OdUDxWILDxc1/pJQeev/k2a5Foxhk6iqLQhTjg95eE45a1U&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">2018，无法撤回</a>  <a href="https://mp.weixin.qq.com/s?__biz=MzAwMjE1NjcxMg==&amp;mid=2654672316&amp;idx=1&amp;sn=8b8350b793a3f8e288b7f55ddd614362&amp;chksm=8101047bb6768d6d229c3c604372cd0467d479f3bbbe33664442aa5483ba361b99a626b3c26b&amp;mpshare=1&amp;scene=21&amp;srcid=0106TFHVnho4LvSWYXJWp6EM&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=27000038&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAGACOXHgBXmR4Am5keAJ2ZHgCjmR4As5keAAAA&amp;lang=zh_CN&amp;pass_ticket=os0oh%20IZdLx%20aDsZPG7o00lQN1g5c4hQqPsbtpOn4Hie5oswKrr7aOHXbRHTMWMP&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">2018年中国微信500强年报</a><a href="https://cu2018.newrank.cn/h5.html?n=2b0039&amp;from=timeline" target="_blank" rel="noopener">https://cu2018.newrank.cn/h5.html?n=2b0039&amp;from=timeline</a> </p>
-<p>今年正好是改革开放40年，人民日报发了40年变化，很形象 <a href="https://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&amp;mid=2666230142&amp;idx=1&amp;sn=edd1abf407e13ac36e22f525dc5a83e2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">幸福长街40号</a>  ，地址  <a href="https://c.h5in.net/people/" target="_blank" rel="noopener">https://c.h5in.net/people/</a> 而且里面居然发现了周杰伦，可见杰伦对华语音乐的贡献。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-0c0f9be4f3428121?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>最后推荐一些朋友的2018总结和好文：</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI2NDA0NDM1MA==&amp;mid=2650106348&amp;idx=1&amp;sn=928ad4610d64a52c49c33aaf96ca1dd0&amp;chksm=f2b363bdc5c4eaabecf7f79cf8abfd6aef7c58cf44bf570ae8a9813827d9db36da1e27563529&amp;mpshare=1&amp;scene=21&amp;srcid=0107JAMU0mMeDHYsB5au26nk&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=27000038&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAGACOXHgBXmR4Am5keAJ2ZHgCjmR4As5keAAAA&amp;lang=zh_CN&amp;pass_ticket=os0oh%20IZdLx%20aDsZPG7o00lQN1g5c4hQqPsbtpOn4Hie5oswKrr7aOHXbRHTMWMP&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">我的2018年个人总结</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5MzgyODQxMQ==&amp;mid=2650369793&amp;idx=1&amp;sn=b5476eea7d98d5b6eecaff1afbc69aa2&amp;chksm=be9cd45589eb5d43c8ba6a7b56410088a9d00e0ef06a7545248b07467d444588145fd9d68fe6&amp;mpshare=1&amp;scene=21&amp;srcid=0110RSRpB0EAfcyD0naKcxah&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=27000038&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAGACOXHgBXmR4Am5keAJ2ZHgCjmR4As5keAAAA&amp;lang=zh_CN&amp;pass_ticket=os0oh%20IZdLx%20aDsZPG7o00lQN1g5c4hQqPsbtpOn4Hie5oswKrr7aOHXbRHTMWMP&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">python之禅公众号文章目录</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5MTQ4NjA3Nw==&amp;mid=2459679291&amp;idx=1&amp;sn=c5062f89f10f12d9cb2bfb3132f3555f&amp;chksm=b1dbc32986ac4a3f67a09e1afd20337c439b84a81df54c34166d8387b7dce6899091f5a5fa52&amp;mpshare=1&amp;scene=21&amp;srcid=0108BeXqtj8pQ4Fjor6Q5x9i&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=27000038&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAGACOXHgBXmR4Am5keAJ2ZHgCjmR4As5keAAAA&amp;lang=zh_CN&amp;pass_ticket=os0oh%20IZdLx%20aDsZPG7o00lQN1g5c4hQqPsbtpOn4Hie5oswKrr7aOHXbRHTMWMP&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">学Python前请你先看看这个文章</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI5NDY1MjQzNA==&amp;mid=2247488585&amp;idx=1&amp;sn=f4bc0735dd8b63b5ebcf44073093bf0f&amp;chksm=ec5ecb34db2942223960b39420fea2e9c77d5b316ed38b7fc9e407a7bad6c90c1682e1fc82e0&amp;mpshare=1&amp;scene=21&amp;srcid=0119gyf3zbxXpcxh4qH55PbI&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=2700003a&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwATABQABQAjlx4AV5keAJuZHgCdmR4As5keAAAA&amp;lang=zh_CN&amp;pass_ticket=6VJzwCwFHVSLN73jjoZKoALLoknS2Jv2Hli6iqoDsj87mAMYCyoyNQyYARS8F6Z2&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">2018年Python爱好者社区历史文章合集</a></p>
-<p><a href="https://2018.juejin.im" target="_blank" rel="noopener">https://2018.juejin.im</a> 2018 掘金年度总结</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI4ODU2ODMxOA==&amp;mid=2247484668&amp;idx=1&amp;sn=b49f637657422b94da9a67d0edc49906&amp;chksm=ec3d226ddb4aab7b8c4658b42b8bbd2b4236da47348864651170bbc243b9d265a40276f1f930&amp;mpshare=1&amp;scene=21&amp;srcid=&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=27000038&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAGACOXHgBXmR4Am5keAJ2ZHgCjmR4As5keAAAA&amp;lang=zh_CN&amp;pass_ticket=os0oh%20IZdLx%20aDsZPG7o00lQN1g5c4hQqPsbtpOn4Hie5oswKrr7aOHXbRHTMWMP&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">老薛星球的 精华摘选</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3MjE3NDI4MQ==&amp;mid=2247484213&amp;idx=1&amp;sn=cd90d280b1bcd7b9a669283963fdb030&amp;chksm=eb37de93dc4057859f80a6dea22341c7f7b2d8ed2cb9d41c6c22ac91113e529b472125a353aa&amp;mpshare=1&amp;scene=21&amp;srcid=0102eiyvKq0emhMkSNXPcjHP&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBXmR4Am5keAJ2ZHgCjmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=5fcjzLZY8nAd7WJTBZ8fvz2Nw5/0yZKtrmwajrNgt%20owE6VuZKJ%201/5W8TjJpHnO&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">2018年：自由这一年</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI5MzE4MTIwMQ==&amp;mid=2247484133&amp;idx=1&amp;sn=9b4fd8319ef13836236bed4755fc59f3&amp;chksm=ec77409bdb00c98d7c5bc9b4907393d05fd33ed016a8aa740e6440d99233db1306f088bf1794&amp;mpshare=1&amp;scene=21&amp;srcid=&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBXmR4Am5keAJ2ZHgCjmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=5fcjzLZY8nAd7WJTBZ8fvz2Nw5/0yZKtrmwajrNgt%20owE6VuZKJ%201/5W8TjJpHnO&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">我所知道的寒江雪</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAwNjYxNzc0OA==&amp;mid=2649543350&amp;idx=1&amp;sn=e45732925f6ac3f64125a2e5ac2ef671&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">罗振宇2018“时间的朋友”跨年演讲精华版全文</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIxODUxMDM5MQ==&amp;mid=2247484442&amp;idx=1&amp;sn=ee5f89e0bec09f052ee241308077b77a&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">分析了10个公众号5600篇文章2000w字</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5NzY2OTE2MQ==&amp;mid=2652220698&amp;idx=1&amp;sn=9d155a261ec08fc7f339c4ee53162105&amp;scene=21&amp;token=1323997581&amp;lang=zh_CN#wechat_redirect" target="_blank" rel="noopener">一年过去，我读过的十佳好文</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NTg0NDQyNQ==&amp;mid=2649631772&amp;idx=1&amp;sn=923fcf50c720506fcf02cdfbf5bb5490&amp;chksm=8770d23ab0075b2c0a6ee38f19a3590c06a1f95221c8846fec3603a767f0c9e67052ce187af2&amp;mpshare=1&amp;scene=21&amp;srcid=1030MVSkowC213yQTGJA5N8H&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=KKTtGpJq6m0Q36OrNuCseleemQf4yIexkofmQsdIU1Mw2mMfi6FpAz1iZxQ%20/L48&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">金庸│人生就是大闹一场，悄然离去</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAwMjE1NjcxMg==&amp;mid=2654670026&amp;idx=1&amp;sn=c226f8767d77ad4d4c18ce0eabbfe2bd&amp;chksm=81011d0db676941beb06cd80df2907c6d341bd2afd95c77b5e3fe116f4b09484894e03f30b00&amp;mpshare=1&amp;scene=21&amp;srcid=1031aAY9dIVBEKuqG9GeTtp5&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=KKTtGpJq6m0Q36OrNuCseleemQf4yIexkofmQsdIU1Mw2mMfi6FpAz1iZxQ%20/L48&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">金庸去世，失去了后台的新媒体人不只六神</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&amp;mid=2651436591&amp;idx=1&amp;sn=df61e9adea4e518bc0d98437ed0f65d4&amp;chksm=8c73aef8bb0427ee6934b90a5fb27a2b12834e266fb266e3e0f70402e4de4f7ffeb34f6391d4&amp;mpshare=1&amp;scene=21&amp;srcid=1108kmXsYRUy3bQWDOXDunmX&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=ChuNMBWo77p5LUxarC1NnMAqWqj5NmSGuAGQgqbhW1nbmAzLj3wPBKoYacd5ecl%20&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">【整理】从零开始学Python系列</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTU0MzI4MQ==&amp;mid=2247486619&amp;idx=1&amp;sn=2a41b045fec5d9e5b7d8c6ef0cf2e459&amp;chksm=eb476005dc30e91391130292d3d56610bea871ddff9aacdfa0641c3d78d9294524c1bf8ddf70&amp;mpshare=1&amp;scene=21&amp;srcid=1105NZWaUxcXjWMAXcloif4q&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=Ju5iyqMLDXiUpdVsRKPR2%20TnV4v7uuDKAYEm3YUFQ/uMea9eJh4lfpJxFkhylJVI&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">离职后，我是这样准备面试的</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxNzI4MTMwMw==&amp;mid=2651632397&amp;idx=1&amp;sn=9255ca9999227feeb8fe62f8acb5fb1a&amp;chksm=801feb75b7686263807f9685723bcfdbd613f21f006e455fcebebd20dadeb961079d7540812e&amp;mpshare=1&amp;scene=21&amp;srcid=1110bCY8elexKjEkGxNZnK8R&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=Ju5iyqMLDXiUpdVsRKPR2%20TnV4v7uuDKAYEm3YUFQ/uMea9eJh4lfpJxFkhylJVI&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">这些年我看到的所谓区块链</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTU0MzI4MQ==&amp;mid=2247486688&amp;idx=1&amp;sn=e8683f8001ca746783f38bbed581e89a&amp;chksm=eb47607edc30e96800d79d23fcdb5a82e4fe664f035d7dd7260ad7dab5c0ff15c22559a0e35b&amp;mpshare=1&amp;scene=21&amp;srcid=1114XgMO7YzWeEGzmKvGTzB5&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=QMX65s4ncz0SEE/lSwY8wD9FidmTX6yVAr0DgTxvyFSQx9KSjtiqLZEjgvn8e2Qk&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">开发了5年android，我开始了go学习之旅</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIwNTc4NTEwOQ==&amp;mid=2247486116&amp;idx=1&amp;sn=e47bbf49bd1a007f2f00631e2e937c38&amp;chksm=972adbdea05d52c8630a53968a71c7b23fc90a5530b0300229bc50c2e1f81ef0dd4d88b3ead5&amp;mpshare=1&amp;scene=21&amp;srcid=1116Z4YDWs2Zt7jAqW49ZsnN&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=QMX65s4ncz0SEE/lSwY8wD9FidmTX6yVAr0DgTxvyFSQx9KSjtiqLZEjgvn8e2Qk&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">【漫话】如何给女朋友解释什么是分布式和集群？</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA5OTAyNzQ2OA==&amp;mid=2649699442&amp;idx=1&amp;sn=dd082101307152e79105d1ae4195cfc1&amp;chksm=88930b11bfe482073f0e8c80146180486aa9189c651e8daa4be6239da3a21449e8b0e83488dc&amp;mpshare=1&amp;scene=21&amp;srcid=1114QSIIYBxQwePbGlne9FrD&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=QMX65s4ncz0SEE/lSwY8wD9FidmTX6yVAr0DgTxvyFSQx9KSjtiqLZEjgvn8e2Qk&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">这可能是最为详细的Docker入门总结</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIwNTc4NTEwOQ==&amp;mid=2247486191&amp;idx=1&amp;sn=5ea5fd098a3e0da834d882cf53529977&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">365篇高质技术文章目录整理，每天一点收获</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI0OTQyNzEzMQ==&amp;mid=2247487964&amp;idx=1&amp;sn=720e3d635a0ea81657e1d0e63496ecf2&amp;chksm=e990f408dee77d1ea58b6aa8905f8ae7cc6d6b6d14217c953d1395e4ddcec8540b8e1bab64d8&amp;mpshare=1&amp;scene=21&amp;srcid=11302t7ZsNkk7OabUzSpKScA&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwASABQABAAjlx4AV5keAJmZHgCgmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=lcnwKa5o8P7LF2gyCnMIG%20P5Jh8lyZQ0nGAwDqyybP/i8fGg7bpvMC0a%203SNc/eH&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">深度好文|面壁人张小龙，我是你的破壁人</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzUyNzE4MDM2MA==&amp;mid=2247491134&amp;idx=2&amp;sn=356a0d9a49f17d3834b485114b5f4638&amp;chksm=fa022919cd75a00f631649ce2711c83d8f65c4ece48974b5fe01e5fc215ad915c0a32dc56890&amp;mpshare=1&amp;scene=21&amp;srcid=1120wWS3zng7tJ0tp5clvf3L&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwANABQABAAjlx4AWZkeAImZHgCLmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=E7nhSzgyUUNUrBpvoGJ41P0KGxAiolcEej7x7/BYUhWIOxh7OstH6ioEJ0NbPjwJ&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">五分钟让你快速看懂区块链</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI1MzY0MzE4Mg==&amp;mid=2247484121&amp;idx=1&amp;sn=a0106977e6acdbb014d4c58d9c02d24d&amp;chksm=e9d01218dea79b0e11e97675e56e2b76e46e4c74091c1cc97de0b2cad9d86f25733942613759&amp;mpshare=1&amp;scene=21&amp;srcid=11304ZvDsXx5XBAH0iXh6kby&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwASABQABAAjlx4AV5keAJmZHgCgmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=lcnwKa5o8P7LF2gyCnMIG%20P5Jh8lyZQ0nGAwDqyybP/i8fGg7bpvMC0a%203SNc/eH&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">公众号历史文章及代码汇总</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3OTI0NzY5Mg==&amp;mid=2650366273&amp;idx=1&amp;sn=20d896fbf6fdf9a1c21921b708078d53&amp;chksm=87bba162b0cc2874a3f79acb8e5272d3d7900677cda2ad653bf93666fcb4783a884cc9753471&amp;mpshare=1&amp;scene=21&amp;srcid=1201IOurFJwySAtnATVktsjY&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BAABAAoACwASABQABAAjlx4AV5keAJmZHgCgmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=lcnwKa5o8P7LF2gyCnMIG%20P5Jh8lyZQ0nGAwDqyybP/i8fGg7bpvMC0a%203SNc/eH&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">如何快速入门新媒体运营</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxNjM2MTk0Ng==&amp;mid=2247485784&amp;idx=1&amp;sn=fcfb686701b156a70a80922c3e5959b8&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">MySQL索引优化看这篇文章就够了</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA5Njg1OTI5Mg==&amp;mid=2651026400&amp;idx=1&amp;sn=3870a685a1dcd8efacd5eeea741d8db1&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">一边制造，一边讲解http状态码502|504|499|500</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI0NjAzNzcyMw==&amp;mid=2650296536&amp;idx=1&amp;sn=96a9d706ebe27db91fba2f35ef282429&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">2018国民年度流行语TOP100出炉了</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTU0MzI4MQ==&amp;mid=2247486799&amp;idx=1&amp;sn=dd61287c1c76d4c43c6fbad6664efe27&amp;chksm=eb4761d1dc30e8c76810a88e78307307ddec6a21b048473f5585c53c88bb4fc64a206491506b&amp;mpshare=1&amp;scene=21&amp;srcid=1211LlQccfMFYrqHJzv3xZUi&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBXmR4AmZkeAJ2ZHgCjmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=pwDj/alFN1GOEUOREOAnniJG4o%201/Yzb/GrZCcrY1yS1udet1%20qstaj4iI9pbmvh&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">这样写简历，offer不给你给谁？</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3MDM3NjE5NQ==&amp;mid=2650837153&amp;idx=1&amp;sn=474d2e34bc97495c082546bd2e70ba37&amp;chksm=84c9fecdb3be77dbd1d1685d44c9e7ae6e386fda1234a3733127b2beb7ec5cca282affdcb81c&amp;mpshare=1&amp;scene=21&amp;srcid=1216hdJRC90jY4w3mgDMyPat&amp;from=timeline&amp;ascene=2&amp;devicetype=android-19&amp;version=26060772&amp;nettype=WIFI&amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBXmR4AmZkeAJ2ZHgCjmR4AAAA=&amp;lang=zh_CN&amp;pass_ticket=pwDj/alFN1GOEUOREOAnniJG4o%201/Yzb/GrZCcrY1yS1udet1%20qstaj4iI9pbmvh&amp;wx_header=1#wechat_redirect" target="_blank" rel="noopener">1988-2018，慢慢听，别哭啊</a></p>
-<p>2018年最热流行语TOP20”榜单 <a href="https://weibo.com/3960037780/H9bJ9074D" target="_blank" rel="noopener">https://weibo.com/3960037780/H9bJ9074D</a></p>
-<p>关于直销和传销的科普 <a href="https://weibo.com/5780974966/H8T0AiPAM" target="_blank" rel="noopener">https://weibo.com/5780974966/H8T0AiPAM</a></p>
-<p>QQ发文回顾2008~2018年，十年间的标志性流行语  <a href="https://weibo.com/2357213493/H8UFAvrqt" target="_blank" rel="noopener">https://weibo.com/2357213493/H8UFAvrqt</a></p>
-<p>网友给出的总结2018年中国的10个汉字，你最认可哪个 <a href="https://weibo.com/2836149552/H898Dspjg" target="_blank" rel="noopener">https://weibo.com/2836149552/H898Dspjg</a> </p>
-<p>微博2018年数据回顾 <a href="https://weibo.com/1560906700/H8fVntJvA" target="_blank" rel="noopener">https://weibo.com/1560906700/H8fVntJvA</a> </p>
-<p>我的时代和我 (2018) <a href="https://weibo.com/1856050627/H7DTKnhF6" target="_blank" rel="noopener">https://weibo.com/1856050627/H7DTKnhF6</a></p>
-<p>一整年的乐儿都在这儿了！郭德纲、于谦、岳云鹏、孙越、张云雷的相声合集<a href="https://weibo.com/1662214194/H9JWf9b1K" target="_blank" rel="noopener">https://weibo.com/1662214194/H9JWf9b1K</a></p>
-<p>网易“娱乐圈画传 <a href="https://ent.163.com/special/entphotos2018/" target="_blank" rel="noopener">https://ent.163.com/special/entphotos2018/</a></p>
-<p>《2018年度热点图鉴》  <a href="https://weibo.com/5901272946/H9vGAhbtK" target="_blank" rel="noopener">https://weibo.com/5901272946/H9vGAhbtK</a></p>
-<p>对于2018年，该说不该说的，鲁迅先生都帮我们说完了…… <a href="https://weibo.com/6421571119/H9vEOBxgb" target="_blank" rel="noopener">https://weibo.com/6421571119/H9vEOBxgb</a></p>
-<p>「2018，我们用什么书写历史？」 <a href="https://weibo.com/2028810631/H9ARHhL3s" target="_blank" rel="noopener">https://weibo.com/2028810631/H9ARHhL3s</a></p>
-<p>《成人世界黑话鉴定指南》  <a href="https://weibo.com/1618993981/H99M39vu0" target="_blank" rel="noopener">https://weibo.com/1618993981/H99M39vu0</a></p>
-<p>豆瓣2018年度音乐榜单，回顾全年好音乐！ <a href="https://weibo.com/1742566624/H9hCs9aRh" target="_blank" rel="noopener">https://weibo.com/1742566624/H9hCs9aRh</a> </p>
-<p>网上有个段子，中国近现代人生22个失误：</p>
-<p>1911年当太监；<br>1916年投奔袁世凯；<br>1924年没去上黄埔军校；<br>1927年与吴佩孚孙传芳搞到一块；<br>1934年不敢冒死参加长征；<br>1937年为抗日参加了国军；<br>1945年入伪军；<br>1949年离开党组织又不敢接受老蒋的免费机票；<br>1948年农村买地；<br>1955年从城市跑去农村；<br>1957年参加会议一激动提了意见；<br>1966年下乡扎根和贫下中农结婚；<br>1976年投靠四人帮；<br>1980年看不起个体户；<br>1991年不敢开办公司；<br>1997年找门路到国企当了工人；<br>2003起年不敢买房子；<br>2012年才用心思把自己弄成贪官；<br>2015年10月结扎；<br>2017年3月从雄县迁出户口，<br>2018年满仓A股，<br>2019年辞职再就业。</p>
-<p>2019年，稳定为主，好好赚钱，好好生活吧。</p>
-<p> 人生就是一场轮回，看完感觉豁达了许多。  <a href="https://weibo.com/1742566624/HaHBKEPV8" target="_blank" rel="noopener">https://weibo.com/1742566624/HaHBKEPV8</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4fe5841823bc0d43?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2337,7 +2255,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">143</span>
+                  <span class="site-state-item-count">145</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2568,7 +2486,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共473.7k字</span>
+  <span class="post-count">博客全站共481.8k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
