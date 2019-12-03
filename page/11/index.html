@@ -285,6 +285,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/win8-安装-Python-命令行报错/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/22/win8-安装-Python-命令行报错/" itemprop="url">win8 安装 Python 命令行报错</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T11:54:37+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  194 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>重装了系统，用的是win8 64位。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e9ba9c8eeb674fb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>进入<a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">官网</a>,下载最新版<a href="https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe" target="_blank" rel="noopener">3.7.3</a><br>安装很顺利，但是进入命令行输入Python却一直提示 没有这个文件api-ms-win-crt-runtimel1-1-0.dll<br><img src="https://upload-images.jianshu.io/upload_images/17817191-733690defe7d582b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>于是开始搜索 win8 api-ms-win-crt-runtimel1-1-0.dll ，找到 <a href="https://blog.csdn.net/csdnwr/article/details/80980335" target="_blank" rel="noopener">这篇文章</a><br>先安装 <a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=48145" target="_blank" rel="noopener">VC redit.exe</a>也安装成功了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8bd469c91adff7bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>再<a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=49093" target="_blank" rel="noopener">安装KB2999226补丁程序</a> 一直提示<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b1a8c8d540d7155b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>真的很无奈，看<a href="https://www.cnblogs.com/zhongtang/p/7448823.html" target="_blank" rel="noopener">这篇文章</a>也是无解，都崩溃了。在官网搜索到<a href="https://answers.microsoft.com/zh-hans/windows/forum/windows8_1-update/windows%E6%9B%B4%E6%96%B0kb2999226%E8%A1%A5/ea2b65f7-efd6-490b-bce7-8f5521e6b5e8" target="_blank" rel="noopener">这个问题</a><br>依然无解<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e8b2ef7209fb4ae4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后实在无奈了，在sf搜索到 <a href="https://segmentfault.com/a/1190000014021333" target="_blank" rel="noopener">Windows64+Python3+selenium3自动化环境的搭建(1)</a></p>
+<p>终于在这个问题 <a href="https://segmentfault.com/q/1010000005021904" target="_blank" rel="noopener">python3.5启动报错api-ms-win-crt-runtime丢失</a>找到答案</p>
+<p>下载了<a href="https://www.python.org/ftp/python/3.4.4/python-3.4.4.amd64.msi" target="_blank" rel="noopener">3.4.4版本</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-b584f0821f8bb87c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>终于成功了！<br><img src="https://upload-images.jianshu.io/upload_images/17817191-45bd5a3218f168d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/Python-词云分析周杰伦《晴天》/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1726,186 +1886,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/前端代码收集/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/21/前端代码收集/" itemprop="url">前端代码收集</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-21T19:17:58+08:00">
-                2019-05-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.4k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  11 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="编辑网页"><a href="#编辑网页" class="headerlink" title="编辑网页"></a>编辑网页</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.designMode = <span class="string">"on"</span></span><br></pre></td></tr></table></figure>
-<h3 id="Console中的技巧"><a href="#Console中的技巧" class="headerlink" title="Console中的技巧"></a>Console中的技巧</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chrome会帮你buffer <span class="number">5</span>个你查看过的DOM对象，你可以直接在Console中用 $<span class="number">0</span>, $<span class="number">1</span>, $<span class="number">2</span>, $<span class="number">3</span>, $<span class="number">4</span>来访问。</span><br><span class="line">你还可以使用像jQuery那样的语法来获得DOM对象，如：$(<span class="string">"#mydiv"</span>)</span><br><span class="line">你还可使用 $$(<span class="string">".class"</span>) 来选择所有满足条件的DOM对象。</span><br><span class="line">你可以使用 getEventListeners($(<span class="string">"selector"</span>)) 来查看某个DOM对象上的事件</span><br><span class="line">还可以使用 monitorEvents($(<span class="string">"selector"</span>)) 来监控相关的事件</span><br></pre></td></tr></table></figure>
-<h3 id="将内容复制到剪贴板"><a href="#将内容复制到剪贴板" class="headerlink" title="将内容复制到剪贴板"></a>将内容复制到剪贴板</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=<span class="string">"demoInput"</span> value=<span class="string">"hello world"</span>&gt;</span><br><span class="line">&lt;button id=<span class="string">"btn"</span>&gt;点我复制&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const btn = document.querySelector('#btn')</span></span><br><span class="line"><span class="regexp">btn.addEventListener('click', () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">  const input = document.querySelector('#demoInput')</span></span><br><span class="line"><span class="regexp">  input.select()</span></span><br><span class="line"><span class="regexp">  if (document.execCommand('copy')) &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制成功')</span></span><br><span class="line"><span class="regexp">  &#125; else &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制失败')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br><span class="line"><span class="regexp">const btn = document.querySelector('#btn')</span></span><br><span class="line"><span class="regexp">btn.addEventListener('click', () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">  const input = document.createElement('input')</span></span><br><span class="line"><span class="regexp">  document.body.appendChild(input)</span></span><br><span class="line"><span class="regexp">  input.setAttribute('value', '复制我')</span></span><br><span class="line"><span class="regexp">  input.select()</span></span><br><span class="line"><span class="regexp">  if (document.execCommand('copy')) &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制成功')</span></span><br><span class="line"><span class="regexp">  &#125; else &#123;</span></span><br><span class="line"><span class="regexp">    console.log('复制失败')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  document.body.removeChild(input)</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">https:/</span><span class="regexp">/blog.mutoe.com/</span><span class="number">2019</span>/copy-content-to-clipboard-<span class="keyword">in</span>-javascript/</span><br></pre></td></tr></table></figure>
-<h3 id="微信分享"><a href="#微信分享" class="headerlink" title="微信分享"></a>微信分享</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shareLinkUlr = location.href.split(<span class="string">"#"</span>)[<span class="number">0</span>]; <span class="comment">// 获取当前的url 去掉 # 之后的部分</span></span><br><span class="line">shareLinkUlr = shareLinkUlr.replace(<span class="regexp">/\&amp;/g</span>, <span class="string">'%26'</span>); <span class="comment">// 将 &amp; 替换成 %26</span></span><br><span class="line"><span class="keyword">var</span> shareImgUrl = <span class="string">'http://www.abc.com/images/logo300.jpg'</span>; <span class="comment">// 分享的图片地址</span></span><br><span class="line"><span class="comment">// 获取 config 的内容</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getjssdkconfig</span>(<span class="params">apis,debug,json,link</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//console.log(apis);</span></span><br><span class="line">    <span class="comment">//console.log(debug);</span></span><br><span class="line">    <span class="comment">//console.log(json);</span></span><br><span class="line">    <span class="comment">//console.log(link);</span></span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    <span class="keyword">var</span> url = <span class="string">'http://www.abc.com/qxj_jssdkconfig'</span>; <span class="comment">// 这个就是easywechat生成的参数</span></span><br><span class="line">    <span class="keyword">var</span> data = <span class="string">"apis="</span>+apis+<span class="string">"&amp;debug="</span>+debug+<span class="string">"&amp;json="</span>+json+<span class="string">"&amp;url="</span>+link; <span class="comment">// 拼接 get 参数</span></span><br><span class="line">    xhr.open(<span class="string">'GET'</span>,url+<span class="string">"?"</span>+data);</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.readyState===<span class="number">4</span> &amp;&amp; (xhr.status &gt;=<span class="number">200</span> &amp;&amp; xhr.status &lt;=<span class="number">300</span>))&#123;</span><br><span class="line">            <span class="comment">// 获取 config 之后，进行一些操作</span></span><br><span class="line">            <span class="comment">// 需要进行 JSON.parse 获取对象</span></span><br><span class="line">            configJsSDKAndDoSomething(<span class="built_in">JSON</span>.parse(xhr.responseText));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.send();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取config 之后进行的操作</span></span><br><span class="line"><span class="comment">// 因为是使用 ajax 进行config内容，这个方法是在上面运行的</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">configJsSDKAndDoSomething</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">    wx.config(config);</span><br><span class="line">    wx.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 其他的一些操作</span></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//不是wifi环境下提示</span></span><br><span class="line">        wx.getNetworkType(&#123;</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> networkType = res.networkType; <span class="comment">// 返回网络类型2g，3g，4g，wifi</span></span><br><span class="line">                <span class="keyword">if</span>(networkType!=<span class="string">"wifi"</span>)&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"当前你网络环境为"</span>+networkType+<span class="string">""</span>);                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.error(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error);</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareTimeline(&#123;</span><br><span class="line">        title: <span class="string">''</span>, <span class="comment">// 分享标题</span></span><br><span class="line">        link: location.href, <span class="comment">// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致</span></span><br><span class="line">        imgUrl:shareImgUrl, <span class="comment">// 分享图标</span></span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">'分享成功'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareAppMessage(&#123;</span><br><span class="line">        title: <span class="string">''</span>, <span class="comment">// 分享标题</span></span><br><span class="line">        desc: <span class="string">''</span>, <span class="comment">// 分享描述</span></span><br><span class="line">        link: location.href, <span class="comment">// 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致</span></span><br><span class="line">        imgUrl: shareImgUrl, <span class="comment">// 分享图标</span></span><br><span class="line">        type: <span class="string">'link'</span>, <span class="comment">// 分享类型,music、video或link，不填默认为link</span></span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line">        cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 页面加载完之后进行操作</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 注意这里的参数</span></span><br><span class="line">    <span class="comment">// apis 使用的参数是 字符串的拼接 这个是和 php 的方法中的处理相对应的</span></span><br><span class="line">    getjssdkconfig(<span class="string">"checkJsApi,onMenuShareTimeline,onMenuShareAppMessage,onMenuShareQQ,onMenuShareWeibo,onMenuShareQZone,hideMenuItems,showMenuItems,hideAllNonBaseMenuItem,showAllNonBaseMenuItem,translateVoice,startRecord,stopRecord,onVoiceRecordEnd,playVoice,onVoicePlayEnd,pauseVoice,stopVoice,uploadVoice,downloadVoice,chooseImage,previewImage,uploadImage,downloadImage,getNetworkType,openLocation,getLocation,hideOptionMenu,showOptionMenu,closeWindow,scanQRCode,chooseWXPay,openProductSpecificView,addCard,chooseCard,openCard"</span>,<span class="literal">false</span>,<span class="literal">false</span>,shareLinkUlr);</span><br><span class="line">&#125;);</span><br><span class="line">https:<span class="comment">//learnku.com/laravel/t/30886</span></span><br></pre></td></tr></table></figure>
-<h3 id="支付宝转账恶搞"><a href="#支付宝转账恶搞" class="headerlink" title="支付宝转账恶搞"></a>支付宝转账恶搞</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">/** 支付宝恶搞 **/</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inc</span>(<span class="params">el</span>) </span>&#123; <span class="comment">// 更新金额数字</span></span><br><span class="line">        el.innerHTML = el.innerHTML.replace(<span class="regexp">/\d+/</span>, <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> +a + rnd(<span class="number">9</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">rnd</span>(<span class="params">n</span>) </span>&#123; <span class="comment">// 1-n 随机数https://www.cnblogs.com/52cik/p/js-alipay-jokes.html</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.random() * n | <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">joke</span>(<span class="params">el</span>) </span>&#123; <span class="comment">// 随机增加</span></span><br><span class="line">        inc(el);</span><br><span class="line">        setTimeout(joke, rnd(<span class="number">1e3</span>), el);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> amount = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"amount"</span>);</span><br><span class="line"></span><br><span class="line">    joke(amount[<span class="number">0</span>]); <span class="comment">// 账户余额 随机增加</span></span><br><span class="line">    joke(amount[<span class="number">1</span>]); <span class="comment">// 余额宝 随机增加</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<h3 id="奇葩字符（不可见字符）"><a href="#奇葩字符（不可见字符）" class="headerlink" title="奇葩字符（不可见字符）"></a>奇葩字符（不可见字符）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> é 字符，他的 unicode 是 \u00e9, 但是也可以用 <span class="string">'e'</span> + <span class="string">'\u0301'</span> 实现 <span class="string">"é"</span> 前者 length 是 <span class="number">1</span>，后者 length 是 <span class="number">2</span>。</span><br><span class="line"><span class="string">'\u0301'</span> 在这里起到了语调符的作用，然后我就丧心病狂的  <span class="string">'e'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0301'</span>);  </span><br><span class="line"></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0310'</span>);  <span class="comment">// "呵呵̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u031D'</span>);             <span class="comment">// "呵呵̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝̝"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0E47'</span>);                          <span class="comment">// "呵呵็็็็็็็็็็็็็็็็็็็"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0e49'</span>);                                       <span class="comment">// "呵呵้้้้้้้้้้้้้้้้้้้"</span></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0598'</span>);        <span class="comment">// "呵呵֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘"</span></span><br><span class="line"></span><br><span class="line">也可以这么玩...</span><br><span class="line"></span><br><span class="line"> <span class="string">'呵呵'</span>+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0310'</span>)+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0598'</span>)+<span class="built_in">Array</span>(<span class="number">20</span>).join(<span class="string">'\u0e49'</span>);  <span class="comment">// "呵呵้้้้้้้้้้้้้้้้้้้̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐̐֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘֘"</span></span><br><span class="line">http:<span class="comment">//www.fileformat.info/info/unicode/category/Mn/list.htm  </span></span><br><span class="line">这里详细的列出了每个编码以及对应的意思，还有图片展现。https:<span class="comment">//www.cnblogs.com/52cik/p/unicode-mark-nonspacing.html#!comments</span></span><br></pre></td></tr></table></figure>
-<h3 id="Chrome-监听-console-打开"><a href="#Chrome-监听-console-打开" class="headerlink" title="Chrome 监听 console 打开"></a>Chrome 监听 console 打开</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/x/</span>;</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(re);</span><br><span class="line"></span><br><span class="line">re.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'第 '</span> + (++i) + <span class="string">' 次打开控制台'</span>;<span class="comment">//https://www.52cik.com/2016/04/27/chrome-console-open.html</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="操作之神奇的-date"><a href="#操作之神奇的-date" class="headerlink" title="操作之神奇的 date"></a>操作之神奇的 date</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取月份天数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMonthDayCount</span>(<span class="params">year, month</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(year, month, <span class="number">0</span>).getDate();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getMonthDayCount(<span class="number">2017</span>, <span class="number">10</span>)); <span class="comment">// 31</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAllMonthDayCount</span>(<span class="params">year</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> days = [<span class="number">31</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(year, <span class="number">2</span>, <span class="number">0</span>).getDate(), <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>];</span><br><span class="line">  <span class="keyword">return</span> days;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getAllMonthDayCount(<span class="number">2016</span>));<span class="comment">// [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLeapYear</span>(<span class="params">year</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (year % <span class="number">4</span> == <span class="number">0</span>) &amp;&amp; (year % <span class="number">100</span> != <span class="number">0</span> || year % <span class="number">400</span> == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isLeapYear</span>(<span class="params">year</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(year, <span class="number">2</span>, <span class="number">0</span>).getDate() === <span class="number">29</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log([</span><br><span class="line">  isLeapYear(<span class="number">2000</span>),</span><br><span class="line">  isLeapYear(<span class="number">2016</span>),</span><br><span class="line">  isLeapYear(<span class="number">2017</span>),</span><br><span class="line">  isLeapYear(<span class="number">2018</span>)</span><br><span class="line">]); <span class="comment">// [ true, true, false, false ]</span></span><br><span class="line"><span class="comment">// 10天后是几月几号</span></span><br><span class="line"><span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2016-12-25'</span>);</span><br><span class="line">dt.setDate(dt.getDate() + <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dt.toLocaleDateString()); <span class="comment">// 2017/1/4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 10天前是几月几号https://www.52cik.com/2017/10/11/js-date-month.html</span></span><br><span class="line"><span class="keyword">var</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2017-01-04'</span>);</span><br><span class="line">dt.setDate(dt.getDate() - <span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dt.toLocaleDateString()); <span class="comment">// 2016/12/25</span></span><br></pre></td></tr></table></figure>
-<h3 id="日期是否是连续"><a href="#日期是否是连续" class="headerlink" title="日期是否是连续"></a>日期是否是连续</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> days = [</span><br><span class="line">  <span class="string">'2016-02-28'</span>,</span><br><span class="line">  <span class="string">'2016-02-29'</span>, <span class="comment">// 闰月</span></span><br><span class="line">  <span class="string">'2016-03-01'</span>, <span class="comment">// 跨月</span></span><br><span class="line">  <span class="string">'2016-03-02'</span>,</span><br><span class="line">  <span class="string">'2016-03-03'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先排序，然后转时间戳</span></span><br><span class="line"><span class="keyword">let</span> _days = days.sort().map(<span class="function">(<span class="params">d, i</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(d)</span><br><span class="line">  dt.setDate(dt.getDate() + <span class="number">4</span> - i) <span class="comment">// 处理为相同日期</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> +dt</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 比较时间戳是否一致</span></span><br><span class="line"><span class="built_in">console</span>.log(</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">1</span>] &amp;&amp;</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">2</span>] &amp;&amp;</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">3</span>] &amp;&amp;</span><br><span class="line">  _days[<span class="number">0</span>] == _days[<span class="number">4</span>]</span><br><span class="line">)</span><br><span class="line"><span class="keyword">let</span> days = [</span><br><span class="line">  <span class="string">'2016-02-28 12:00:00'</span>,</span><br><span class="line">  <span class="string">'2016-02-29 12:00:01'</span>, <span class="comment">// 闰月</span></span><br><span class="line">  <span class="string">'2016-03-01 12:00:02'</span>, <span class="comment">// 跨月</span></span><br><span class="line">  <span class="string">'2016-03-02 12:00:03'</span>,</span><br><span class="line">  <span class="string">'2016-03-03 12:00:04'</span>,</span><br><span class="line">  <span class="string">'2016-03-04 12:00:04'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(continueDays(days))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">continueDays</span>(<span class="params">arr_days</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 先排序，然后转时间戳</span></span><br><span class="line">  <span class="keyword">let</span> days = arr_days.sort().map(<span class="function">(<span class="params">d, i</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dt = <span class="keyword">new</span> <span class="built_in">Date</span>(d)</span><br><span class="line">    dt.setDate(dt.getDate() + <span class="number">4</span> - i) <span class="comment">// 处理为相同日期</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 抹去 时 分 秒 毫秒</span></span><br><span class="line">    dt.setHours(<span class="number">0</span>)</span><br><span class="line">    dt.setMinutes(<span class="number">0</span>)</span><br><span class="line">    dt.setSeconds(<span class="number">0</span>)</span><br><span class="line">    dt.setMilliseconds(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> +dt</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> ret = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  days.forEach(<span class="function"><span class="params">d</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (days[<span class="number">0</span>] !== d) &#123;</span><br><span class="line">      ret = <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ret</span><br><span class="line">&#125;https:<span class="comment">//www.52cik.com/2016/07/10/consecutive-dates.html</span></span><br></pre></td></tr></table></figure>
-<h3 id="跨域代理工具"><a href="#跨域代理工具" class="headerlink" title="跨域代理工具"></a>跨域代理工具</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bing每日分享接口 </span><br><span class="line">http:<span class="comment">//cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1</span></span><br><span class="line">        http:<span class="comment">//www.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;mkt=zh-CN</span></span><br><span class="line">        直接在浏览器打开是如下的json,要拿到的就是url，直接在一个页面用js获取存在跨域问题，可以用代理工具 https:<span class="comment">//jsonp.afeld.me/ 我用的是第二个方法,把上面的api输入，</span></span><br><span class="line">        </span><br><span class="line">        点击go得到一个经过代理后的api，如下</span><br><span class="line">         </span><br><span class="line">        https:<span class="comment">//jsonp.afeld.me/?url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1</span></span><br><span class="line">https:<span class="comment">//codepen.io/fazero/pen/KzooBZ  https://blog.fazero.me/2016/04/14/js-get-bing-photo/</span></span><br></pre></td></tr></table></figure>
-<h3 id="网易云音乐刷听歌量"><a href="#网易云音乐刷听歌量" class="headerlink" title="网易云音乐刷听歌量"></a>网易云音乐刷听歌量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="string">'document.getElementsByClassName("nxt")[0].click();console.log("Play OJBK. Next")'</span>,<span class="number">90000</span>);</span><br><span class="line">https:<span class="comment">//www.mmuaa.com/post/cd44019a0e569d64.html</span></span><br></pre></td></tr></table></figure>
-<h3 id="emoji"><a href="#emoji" class="headerlink" title="emoji"></a>emoji</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript 字符串编码使用 UTF-16 https://gist.github.com/justjavac/a5aa1c0d0d111cf19e852037f4c483db</span></span><br><span class="line"><span class="string">"💩"</span>.length === <span class="number">2</span>;</span><br><span class="line"><span class="string">"💩"</span> === <span class="string">"\u&#123;1F4A9&#125;"</span>;    <span class="comment">// es6</span></span><br><span class="line"><span class="string">"💩"</span> === <span class="string">"\uD83D\uDCA9"</span>; <span class="comment">// es5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 同一个编码可能使用不同的码位</span></span><br><span class="line"><span class="string">"ò"</span> === <span class="string">"ò"</span>;       <span class="comment">// ❎</span></span><br><span class="line"><span class="string">"ò"</span> === <span class="string">"\xF2"</span>;    <span class="comment">// ✅</span></span><br><span class="line"><span class="string">"ò"</span> === <span class="string">"o\u0300"</span>; <span class="comment">// ✅</span></span><br><span class="line"><span class="string">"o\u0300"</span>.normalize(<span class="string">"NFC"</span>) === <span class="string">"\xF2"</span>; <span class="comment">// ✅ es6 提供了 normalize 函数</span></span><br><span class="line"></span><br><span class="line"><span class="string">"👨‍👩‍👧‍👦"</span>.length === <span class="number">11</span>;</span><br><span class="line"><span class="string">"👨‍👩‍👧‍👦"</span> === <span class="string">"\u&#123;1F468&#125;\u200D\u&#123;1F469&#125;\u200D\u&#123;1F467&#125;\u200D\u&#123;1F466&#125;"</span>;</span><br><span class="line"><span class="string">"👨"</span> === <span class="string">"\u&#123;1F468&#125;"</span>;</span><br><span class="line"><span class="string">"👩"</span> === <span class="string">"\u&#123;1F469&#125;"</span>;</span><br><span class="line"><span class="string">"👧"</span> === <span class="string">"\u&#123;1F467&#125;"</span>;</span><br><span class="line"><span class="string">"👦"</span> === <span class="string">"\u&#123;1F466&#125;"</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="本地存储websql"><a href="#本地存储websql" class="headerlink" title="本地存储websql"></a>本地存储websql</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">openDatabase：这个方法使用现有的数据库或者新建的数据库创建一个数据库对象。</span><br><span class="line">transaction：这个方法让我们能够控制一个事务，以及基于这种情况执行提交或者回滚。</span><br><span class="line">executeSql：这个方法用于执行实际的 SQL 查询。</span><br><span class="line">首先要想使用 WebSQL 首先得判断浏览器是否支持</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">window</span>.openDatabase)</span><br><span class="line">&#123;</span><br><span class="line">    alert(<span class="string">'您的浏览器不支持 WebSQL'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">打开数据库</span></span><br><span class="line"><span class="regexp">var db = window.openDatabase(dbname, version, dbdesc, dbsize,function() &#123;&#125;);</span></span><br><span class="line"><span class="regexp">openDatabase 方法中一共包括了 5 个参数,分别为数据库名、版本号、描述、数据库大小、创建回调。其中创建回调可以省略</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">例如创建 王者荣耀数据库</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">var db = openDatabase('wucai', '1.0', '王者荣耀数据库', 1024 * 1024);</span></span><br><span class="line"><span class="regexp">事务操作</span></span><br><span class="line"><span class="regexp">使用 transaction 对事务进行处理、执行提交、回滚操作</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">transaction(callback, errorCallback, successCallback); </span></span><br><span class="line"><span class="regexp">创建数据表</span></span><br><span class="line"><span class="regexp">db.transaction(function (tx) &#123;</span></span><br><span class="line"><span class="regexp">     tx.executeSql('CREATE TABLE IF NOT EXISTS heros (id unique, name, hp_max, mp_max, role_main)');</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">插入数据</span></span><br><span class="line"><span class="regexp">db.transaction(function (tx) &#123;</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10000, "夏侯惇", 7350, 1746, " 坦克 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10001, "钟无艳", 7000, 1760, " 战士 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10002, "张飞", 8341, 100, " 坦克 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10003, "牛魔", 8476, 1926, " 坦克 ")');</span></span><br><span class="line"><span class="regexp">    tx.executeSql('INSERT INTO heros (id, name, hp_max, mp_max, role_main) VALUES (10004, "吕布", 7344, 0, " 战士 ")');</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">查找数据</span></span><br><span class="line"><span class="regexp">db.transaction(function (tx) &#123;</span></span><br><span class="line"><span class="regexp">    tx.executeSql('SELECT * FROM heros', [], function (tx, data) &#123;</span></span><br><span class="line"><span class="regexp">    var len = data.rows.length;</span></span><br><span class="line"><span class="regexp">    console.log('查找到：' +len +'条记录');</span></span><br><span class="line"><span class="regexp">    console.log(data.rows);</span></span><br><span class="line"><span class="regexp">    &#125;);</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br><span class="line"><span class="regexp">https:/</span><span class="regexp">/laravelcode.cn/</span>posts/<span class="number">99</span>/simple-use-<span class="keyword">of</span>-websql</span><br></pre></td></tr></table></figure>
-<p>简单直接的 Javascript 开发环境 <a href="http://lixiaolai.com/2016/07/31/makecs-simplest-js-dev-environment/" target="_blank" rel="noopener">http://lixiaolai.com/2016/07/31/makecs-simplest-js-dev-environment/</a></p>
-<p>前后端都开源的h5快速制作平台，类似于开源版本的易企秀、人人秀，可以通过拖拽的形式，快速生成H5，前端和后端都已经开源了，而且在持续迭代中 <a href="https://github.com/ly525/luban-h5" target="_blank" rel="noopener">https://github.com/ly525/luban-h5</a></p>
-<p> alert xss <a href="https://alf.nu/alert1" target="_blank" rel="noopener">https://alf.nu/alert1</a></p>
-<p><a href="https://github.com/fising/big-file-uploader" target="_blank" rel="noopener">通过文件分片解决大文件上传</a></p>
-<p><a href="https://learnku.com/articles/31533" target="_blank" rel="noopener">JS 数据结构</a></p>
-<p><a href="https://coolshell.cn/articles/17634.html" target="_blank" rel="noopener">CHROME开发者工具的小技巧</a></p>
-<p><a href="https://juejin.im/post/5af53823f265da0b75282b0f#heading-11" target="_blank" rel="noopener">chrome开发者工具各种骚技巧</a></p>
-<p><a href="https://neuqzxy.github.io/2017/11/16/webpack%E7%AC%94%E8%AE%B0-%E6%9C%8D%E5%8A%A1%E5%8F%8A%E7%83%AD%E6%9B%B4%E6%96%B0/" target="_blank" rel="noopener">webpack笔记-服务及热更新</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/28937831" target="_blank" rel="noopener">JavaScript编程黑科技</a></p>
-<p><a href="https://learnku.com/docs/writing-docs/typography/3957" target="_blank" rel="noopener">中文文案排版规范</a></p>
-<p><a href="https://github.com/pushmetop/30-seconds-for-everyday" target="_blank" rel="noopener">前端每日 30 秒</a></p>
-<p><a href="https://zhangslob.github.io/2018/12/21/Chrome%E6%96%AD%E7%82%B9JS%E5%AF%BB%E6%89%BE%E6%B7%98%E5%AE%9D%E7%AD%BE%E5%90%8Dsign/" target="_blank" rel="noopener">Chrome断点JS寻找淘宝签名sign</a></p>
-<p><a href="https://recordrtc.org/" target="_blank" rel="noopener">HTML 实现采集拍照功能</a></p>
-<p><a href="http://nullpointer.pw/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E8%B8%A9%E5%9D%91%E4%B9%8B%E6%97%85.html" target="_blank" rel="noopener">微信分享踩坑之旅</a></p>
-<p><a href="http://cuihuan.net/2019/05/12/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" target="_blank" rel="noopener">字符编码那些事儿</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1956,7 +1936,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">149</span>
+                  <span class="site-state-item-count">150</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2187,7 +2167,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共494.2k字</span>
+  <span class="post-count">博客全站共498.9k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");

@@ -285,6 +285,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/我的微信公众号机器人/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/我的微信公众号机器人/" itemprop="url">我的微信公众号机器人</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:18:54+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一篇旧文。</p>
+<p>最近北京进入高温天气，最高气温 36 度，太热了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-b241537f08a9982d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>最近一朋友创业开发一棋牌游戏，买了台阿里云服务器，帮他做了个后台，想着不能浪费资源，记得之前用我的个人微信玩过微信机器人，于是想着给公众号也接一个机器人，于是就有了这个公众号的机器人，下面开始说说怎么开发的。</p>
+<p>第一步当然是注册公众号了，这个简单了，就不说了，然后在基本配置里设置服务器地址和 token，需要注意的是服务器需要能在外网访问，80 端口能访问。如果没有自己的外网服务器，也可以使用开源的 ngrok.com ngrok.cc frp 什么的，我没有测试过，你可以尝试下。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a59e60900d1d8f71?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>机器人是基于图灵的，所以再去 <a href="http://www.tuling123.com/" target="_blank" rel="noopener">http://www.tuling123.com/</a> 用手机号注册个账号，申请 key 在 <a href="http://www.tuling123.com/member/center/index.jhtml" target="_blank" rel="noopener">http://www.tuling123.com/member/center/index.jhtml</a> 这个页面可以看到，免费的次数每天 5000，应该够了，功能也比较多全。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-ee2d6fdfc64dea56?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-04a2be68c9cfc55f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-1a8cf6872194ff21?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>下面开始写代码了，我用的是 PHP 比较简单了，才 100 行代码左右，调用也简单。需要注意微信是用 xml 传输的，所以需要转换下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br></pre></td><td class="code"><pre><span class="line">1.  `&lt;?php`</span><br><span class="line"></span><br><span class="line">2.  `define(&quot;TOKEN&quot;,  &quot;mybot&quot;);`</span><br><span class="line"></span><br><span class="line">3.  `$wechatObj =  new wechatCallbackapi();`</span><br><span class="line"></span><br><span class="line">5.  `//验证微信和响应合并`</span><br><span class="line"></span><br><span class="line">6.  `if  (isset($_GET[&apos;echostr&apos;]))  &#123;`</span><br><span class="line"></span><br><span class="line">7.  `$wechatObj-&gt;valid();`</span><br><span class="line"></span><br><span class="line">8.  `&#125;  else  &#123;`</span><br><span class="line"></span><br><span class="line">9.  `$wechatObj-&gt;responseMsg();`</span><br><span class="line"></span><br><span class="line">11.  `&#125;`</span><br><span class="line"></span><br><span class="line">13.  `class wechatCallbackapi&#123;`</span><br><span class="line"></span><br><span class="line">14.  `public  function valid()&#123;`</span><br><span class="line"></span><br><span class="line">15.  `$echoStr = $_GET[&quot;echostr&quot;];`</span><br><span class="line"></span><br><span class="line">16.  `if($this-&gt;checkSignature())&#123;`</span><br><span class="line"></span><br><span class="line">17.  `echo $echoStr;`</span><br><span class="line"></span><br><span class="line">18.  `exit;`</span><br><span class="line"></span><br><span class="line">19.  `&#125;`</span><br><span class="line"></span><br><span class="line">20.  `&#125;`</span><br><span class="line"></span><br><span class="line">21.  `public  function responseMsg()&#123;`</span><br><span class="line"></span><br><span class="line">22.  `//接受微信服务器发过来的数据`</span><br><span class="line"></span><br><span class="line">23.  `//$postStr = $GLOBALS[&quot;HTTP_RAW_POST_DATA&quot;];`</span><br><span class="line"></span><br><span class="line">24.  `$postObj =  [];`</span><br><span class="line"></span><br><span class="line">25.  `$postStr = file_get_contents(&apos;php://input&apos;);`</span><br><span class="line"></span><br><span class="line">26.  `if  (!empty($postStr))&#123;`</span><br><span class="line"></span><br><span class="line">27.  `$postObj =  (array)simplexml_load_string($postStr,  &apos;SimpleXMLElement&apos;, LIBXML_NOCDATA);`</span><br><span class="line"></span><br><span class="line">28.  `&#125;`</span><br><span class="line"></span><br><span class="line">29.  `switch($postObj[&apos;MsgType&apos;])&#123;`</span><br><span class="line"></span><br><span class="line">30.  `case  &quot;text&quot;:`</span><br><span class="line"></span><br><span class="line">31.  `$resultStr = $this-&gt;handleText($postObj,$userinfo_base[&apos;uid&apos;],$link);`</span><br><span class="line"></span><br><span class="line">32.  `break;`</span><br><span class="line"></span><br><span class="line">33.  `default:`</span><br><span class="line"></span><br><span class="line">34.  `$resultStr =  &quot;Unknow msg type&quot;;`</span><br><span class="line"></span><br><span class="line">35.  `break;`</span><br><span class="line"></span><br><span class="line">36.  `&#125;`</span><br><span class="line"></span><br><span class="line">37.  `echo $resultStr;`</span><br><span class="line"></span><br><span class="line">38.  `&#125;`</span><br><span class="line"></span><br><span class="line">40.  `private  function handleText($postObj,$uid,$link)  &#123;`</span><br><span class="line"></span><br><span class="line">41.  `$keyword = trim($postObj[&apos;Content&apos;]);`</span><br><span class="line"></span><br><span class="line">42.  `$res = file_get_contents(&apos;http://www.tuling123.com/openapi/api?key=youkey&amp;info=&apos;.urlencode($keyword));// 这里用自己申请的 key`</span><br><span class="line"></span><br><span class="line">43.  `$contentStr = json_decode($res,  1)[&apos;text&apos;];`</span><br><span class="line"></span><br><span class="line">44.  `$resultStr = $this-&gt;responseText($postObj,$contentStr);`</span><br><span class="line"></span><br><span class="line">45.  `return $resultStr;`</span><br><span class="line"></span><br><span class="line">46.  `&#125;`</span><br><span class="line"></span><br><span class="line">48.  `//回复文字信息`</span><br><span class="line"></span><br><span class="line">49.  `private  function responseText($postObj,$contentStr)  &#123;`</span><br><span class="line"></span><br><span class="line">50.  `$toUsername = $postObj[&apos;ToUserName&apos;];`</span><br><span class="line"></span><br><span class="line">51.  `$textTpl =  &quot;&lt;xml&gt;`</span><br><span class="line"></span><br><span class="line">52.  `&lt;ToUserName&gt;&lt;![CDATA[%s]]&gt;&lt;/ToUserName&gt;`</span><br><span class="line"></span><br><span class="line">53.  `&lt;FromUserName&gt;&lt;![CDATA[%s]]&gt;&lt;/FromUserName&gt;`</span><br><span class="line"></span><br><span class="line">54.  `&lt;CreateTime&gt;%s&lt;/CreateTime&gt;`</span><br><span class="line"></span><br><span class="line">55.  `&lt;MsgType&gt;&lt;![CDATA[%s]]&gt;&lt;/MsgType&gt;`</span><br><span class="line"></span><br><span class="line">56.  `&lt;Content&gt;&lt;![CDATA[%s]]&gt;&lt;/Content&gt;`</span><br><span class="line"></span><br><span class="line">57.  `&lt;/xml&gt;&quot;;`</span><br><span class="line"></span><br><span class="line">58.  `$resultStr = sprintf($textTpl,FROMUSERNAME,$toUsername,time(),&apos;text&apos;,$contentStr);`</span><br><span class="line"></span><br><span class="line">59.  `return $resultStr;`</span><br><span class="line"></span><br><span class="line">60.  `&#125;`</span><br><span class="line"></span><br><span class="line">62.  `//回复图文信息 这里没有用到`</span><br><span class="line"></span><br><span class="line">63.  `private  function responseNews($postObj,$contentStr)  &#123;`</span><br><span class="line"></span><br><span class="line">64.  `$toUsername = $postObj[&apos;ToUserName&apos;];`</span><br><span class="line"></span><br><span class="line">65.  `$news=&quot;&lt;xml&gt;`</span><br><span class="line"></span><br><span class="line">66.  `&lt;ToUserName&gt;&lt;![CDATA[%s]]&gt;&lt;/ToUserName&gt;`</span><br><span class="line"></span><br><span class="line">67.  `&lt;FromUserName&gt;&lt;![CDATA[%s]]&gt;&lt;/FromUserName&gt;`</span><br><span class="line"></span><br><span class="line">68.  `&lt;CreateTime&gt;%s&lt;/CreateTime&gt;`</span><br><span class="line"></span><br><span class="line">69.  `&lt;MsgType&gt;&lt;![CDATA[%s]]&gt;&lt;/MsgType&gt;` </span><br><span class="line"></span><br><span class="line">70.  `&lt;ArticleCount&gt;%d&lt;/ArticleCount&gt;`</span><br><span class="line"></span><br><span class="line">71.  `&lt;Articles&gt;%s&lt;/Articles&gt;`</span><br><span class="line"></span><br><span class="line">72.  `&lt;/xml&gt;&quot;;`</span><br><span class="line"></span><br><span class="line">73.  `$itemTpl =  &apos;&lt;item&gt;`</span><br><span class="line"></span><br><span class="line">74.  `&lt;Title&gt;&lt;![CDATA[%s]]&gt;&lt;/Title&gt;`</span><br><span class="line"></span><br><span class="line">75.  `&lt;Discription&gt;&lt;![CDATA[%s]]&gt;&lt;/Discription&gt;`</span><br><span class="line"></span><br><span class="line">76.  `&lt;PicUrl&gt;&lt;![CDATA[%s]]&gt;&lt;/PicUrl&gt;`</span><br><span class="line"></span><br><span class="line">77.  `&lt;Url&gt;&lt;![CDATA[%s]]&gt;&lt;/Url&gt;`</span><br><span class="line"></span><br><span class="line">78.  `&lt;/item&gt;&apos;;`</span><br><span class="line"></span><br><span class="line">79.  `$items =  &apos;&apos;;`</span><br><span class="line"></span><br><span class="line">80.  `foreach ($contentStr as $v)  &#123;`</span><br><span class="line"></span><br><span class="line">81.  `if(is_array($v))&#123;`</span><br><span class="line"></span><br><span class="line">82.  `//多图文`</span><br><span class="line"></span><br><span class="line">83.  `$items .= sprintf($itemTpl, $v[&apos;Title&apos;], $v[&apos;Discription&apos;], $v[&apos;PicUrl&apos;], $v[&apos;Url&apos;]);`</span><br><span class="line"></span><br><span class="line">84.  `$num = count($contentStr);`</span><br><span class="line"></span><br><span class="line">85.  `&#125;else  &#123;`</span><br><span class="line"></span><br><span class="line">86.  `//单图文`</span><br><span class="line"></span><br><span class="line">87.  `$items= sprintf($itemTpl, $contentStr[&apos;Title&apos;], $contentStr[&apos;Discription&apos;], $contentStr[&apos;PicUrl&apos;], $contentStr[&apos;Url&apos;]);`</span><br><span class="line"></span><br><span class="line">88.  `$num =  1;`</span><br><span class="line"></span><br><span class="line">89.  `&#125;`</span><br><span class="line"></span><br><span class="line">90.  `&#125;`</span><br><span class="line"></span><br><span class="line">91.  `$resultStr = sprintf($news, FROMUSERNAME, $toUsername, time(),  &apos;news&apos;, $num,$items);`</span><br><span class="line"></span><br><span class="line">92.  `return $resultStr;`</span><br><span class="line"></span><br><span class="line">93.  `&#125;`</span><br><span class="line"></span><br><span class="line">94.  `//微信验证`</span><br><span class="line"></span><br><span class="line">95.  `private  function checkSignature()&#123;`</span><br><span class="line"></span><br><span class="line">96.  `$signature = $_GET[&quot;signature&quot;];`</span><br><span class="line"></span><br><span class="line">97.  `$timestamp = $_GET[&quot;timestamp&quot;];`</span><br><span class="line"></span><br><span class="line">98.  `$nonce = $_GET[&quot;nonce&quot;];` </span><br><span class="line"></span><br><span class="line">99.  `$token = TOKEN;`</span><br><span class="line"></span><br><span class="line">100.  `$tmpArr = array($token, $timestamp, $nonce);`</span><br><span class="line"></span><br><span class="line">101.  `sort($tmpArr);`</span><br><span class="line"></span><br><span class="line">102.  `$tmpStr = implode($tmpArr);`</span><br><span class="line"></span><br><span class="line">103.  `$tmpStr = sha1($tmpStr);`</span><br><span class="line"></span><br><span class="line">104.  `if($tmpStr == $signature)&#123;`</span><br><span class="line"></span><br><span class="line">105.  `return  true;`</span><br><span class="line"></span><br><span class="line">106.  `&#125;`</span><br><span class="line"></span><br><span class="line">107.  `return  false;`</span><br><span class="line"></span><br><span class="line">108.  `&#125;`</span><br><span class="line"></span><br><span class="line">109.  `&#125;`</span><br></pre></td></tr></table></figure>
+<p>看看效果吧，常用关键字：笑话，天气，故事，段子，成语接龙，菜谱，更多玩法开始关注我的公众号玩吧，再也不用担心一个人无聊了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2b6cd6b2c7eb2039?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-bb258205e04588c4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>太热了，要去洗澡了，bye。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/程序员式表白/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1911,184 +2079,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/博客推荐/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/23/博客推荐/" itemprop="url">博客推荐</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-23T17:01:47+08:00">
-                2019-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  225 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><a href="https://alpha2016.github.io/about/" target="_blank" rel="noopener">何晓东PHP开发工程师</a></p>
-<p><a href="http://cuihuan.net/" target="_blank" rel="noopener">靠谱崔小拽</a></p>
-<p><a href="https://lbjheiheihei.xyz/about.html" target="_blank" rel="noopener">伪君子</a></p>
-<p><a href="https://www.yoby123.cn/" target="_blank" rel="noopener">小白的分享</a></p>
-<p><a href="https://www.cnblogs.com/52fhy/" target="_blank" rel="noopener">飞鸿影的博客</a></p>
-<p>   <a href="https://tingtalk.me/" target="_blank" rel="noopener">庭说</a> </p>
-<p><a href="https://blog.nightteam.cn/" target="_blank" rel="noopener">夜幕</a></p>
-<p><a href="http://blog.xiayf.cn/archives.html" target="_blank" rel="noopener">黑白</a></p>
-<p><a href="https://post.zz173.com/detail/hfu17Yn_YpMY9TlVNTqv8w.html" target="_blank" rel="noopener">青枫浦</a></p>
-<p><a href="https://lbjheiheihei.xyz/archives.html" target="_blank" rel="noopener">伪君子的梦呓</a></p>
-<p><a href="https://me.jinchuang.org/archives/301.html" target="_blank" rel="noopener">靳闯博客</a></p>
-<p><a href="https://93nv.com/archives/category/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7" target="_blank" rel="noopener">痴海日报</a></p>
-<p><a href="http://www.golang365.com/#/" target="_blank" rel="noopener">天行九歌</a></p>
-<p><a href="http://einverne.github.io/post/2019/01/html-to-pdf.html" target="_blank" rel="noopener">每天学习一个命令</a></p>
-<p><a href="https://haoruijie.art/archives/page/3/" target="_blank" rel="noopener">彩虹马厩laravel</a></p>
-<p><a href="https://godruoyi.com/posts/About-godruoyi" target="_blank" rel="noopener">godruoyi php</a></p>
-<p><a href="https://www.awaimai.com/about" target="_blank" rel="noopener">歪麦博客</a></p>
-<p><a href="https://hoxis.github.io/archives/" target="_blank" rel="noopener">不正经程序员</a></p>
-<p><a href="http://www.54php.cn/default/about" target="_blank" rel="noopener">编程浪子</a></p>
-<p><a href="https://tianyong90.com/" target="_blank" rel="noopener">larvel田写</a></p>
-<p><a href="http://efonfighting.imwork.net/" target="_blank" rel="noopener">一番码客 </a></p>
-<p><a href="https://93nv.com/" target="_blank" rel="noopener">痴海</a></p>
-<p><a href="https://www.qqdeveloper.com/about/" target="_blank" rel="noopener">php qqdeveloper</a></p>
-<p><a href="https://oicebot.github.io/titles" target="_blank" rel="noopener">python数据科学分析</a></p>
-<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>plaidCTF两道web题目writeup <a href="http://blog.wonderkun.cc/2019/04/15/plaidCTF%E4%B8%A4%E9%81%93web%E9%A2%98%E7%9B%AEwriteup/" target="_blank" rel="noopener">http://blog.wonderkun.cc/2019/04/15/plaidCTF%E4%B8%A4%E9%81%93web%E9%A2%98%E7%9B%AEwriteup/</a><br>ctf <a href="https://www.yof3ng.xyz/" target="_blank" rel="noopener">https://www.yof3ng.xyz/</a><br>PHP中的危险函数和伪协议<a href="https://anemone.top/php-PHP%E4%B8%AD%E7%9A%84%E5%8D%B1%E9%99%A9%E5%87%BD%E6%95%B0%E5%92%8C%E4%BC%AA%E5%8D%8F%E8%AE%AE/" target="_blank" rel="noopener">https://anemone.top/php-PHP%E4%B8%AD%E7%9A%84%E5%8D%B1%E9%99%A9%E5%87%BD%E6%95%B0%E5%92%8C%E4%BC%AA%E5%8D%8F%E8%AE%AE/</a><br>基于 electron-vue 开发了一个美图搜罗器<a href="https://github.com/Licoy/girls-reptile/releases" target="_blank" rel="noopener">https://github.com/Licoy/girls-reptile/releases</a></p>
-<p>拍片哥-红色导航网站网址-福利导航 <a href="https://bbs.918dxs.com/topics/3772/lan-se-dao-hang" target="_blank" rel="noopener">https://bbs.918dxs.com/topics/3772/lan-se-dao-hang</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2139,7 +2129,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">149</span>
+                  <span class="site-state-item-count">150</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2370,7 +2360,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共494.2k字</span>
+  <span class="post-count">博客全站共498.9k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
