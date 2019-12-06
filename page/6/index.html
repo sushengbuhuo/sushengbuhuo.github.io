@@ -285,6 +285,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/28/微信跳一跳后又来直播答题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/28/微信跳一跳后又来直播答题/" itemprop="url">微信跳一跳后又来直播答题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-28T20:10:49+08:00">
+                2019-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这周王菲发布了最新歌曲《无问西东》，封面依然和之前的《清风徐来》类似，天后发新歌似乎如同发自拍。</p>
+<p>微信2 周前发布的跳一跳在朋友圈刷屏，不少人玩的不亦乐乎，当然为了弄个好排行大家也是蛮忙的。以下整理的各种方法帮你提高排名，当然可能有些已经失效了。</p>
+<p>1， python 自动跳脚本 <a href="https://github.com/wangshub/wechat_jump_game" target="_blank" rel="noopener">https://github.com/wangshub/wechat_jump_game</a></p>
+<p>安装 py 库和 adb 通过脚本自动跳 </p>
+<p>$ python wechat_jump_auto.py<br>Load config file from \wechat_jump_game/config/1280x720/config.<br>json<br>请确保手机打开了 ADB 并连接了电脑，然后打开跳一跳并【开始游戏】后再用本程序，确<br>定开始？ y/n [y]: y<br>程序版本号：1.1.1</p>
+<hr>
+<p>Screen: Physical size: 720x1280<br>Density: Physical density: 320<br>DeviceType: CHM-TL00H<br>OS: win32<br>Python: 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:01:18) [MSC v.1900 32 bit (I<br>ntel)]</p>
+<hr>
+<p>采用方式 1 获取截图<br>scan_start_y: 426<br>1514910173 225 739 525.5 566<br>adb shell input swipe 330 1059 330 1059 727<br>scan_start_y: 426<br>1514910177 555 747 203.0 554<br>adb shell input swipe 374 1050 374 1050 842<br>scan_start_y: 426<br>1514910182 540 747 169.5 534<br>adb shell input swipe 346 1053 346 1053 897<br>scan_start_y: 426  </p>
+<p>当然这个对不懂技术的有点难度，作者还提供了安装包，下载点击就可以用 <a href="https://github.com/wangshub/wechat_jump_game/releases" target="_blank" rel="noopener">https://github.com/wangshub/wechat_jump_game/releases</a></p>
+<p>2，通过 post session_id 直接修改</p>
+<p> charlesproxy 里抓包的请求,wxagame/wxagame_init url 的请求，请求 json 里包含 session_id <a href="https://gist.github.com/feix/6dd1f62a54c5efa10f1e1c24f8efc417#file-wx_t1t_hack-jshttps://gist.github.com/mysteriouss/01d7f18cdef47acc0781e8f484f2d2d0" target="_blank" rel="noopener">https://gist.github.com/feix/6dd1f62a54c5efa10f1e1c24f8efc417#file-wx_t1t_hack-jshttps://gist.github.com/mysteriouss/01d7f18cdef47acc0781e8f484f2d2d0</a> 具体方法如下：</p>
+<p>下载最新 charlesproxy<br>启动 charlesproxy<br>配置代理： 设置 &gt; 无线局域网 &gt; 配置代理 &gt; 手动 &gt; IP：电脑 ip，端口： 8888<br>导入 https 证书： 浏览器访问 <a href="http://chls.pro/ssl" target="_blank" rel="noopener">http://chls.pro/ssl</a> 下载安装证书<br>启动跳一跳小程序<br>去 charlesproxy 里查看抓到的请求, wxagame/wxagame_init 路径的请求，请求体里就包含 session_id<br>或者手机下载 surge<br>设置 - 通用 - 关于本机 - 证书信任设置 - 打开Charles Proxy CA 开关<br>右键 mp.weixin.qq.com 找到 Enable SSL Proxying<br>npm install crypto-js request-promise request<br>node wx_t1t_hack.js </p>
+<p>如果嫌执行脚本麻烦，可以直接这个网站<a href="http://tyt.zhaoxuyang.com/WxTyT/" target="_blank" rel="noopener">http://tyt.zhaoxuyang.com/WxTyT/</a>  提交修改。</p>
+<p>其他：</p>
+<p>PHP 玩微信跳一跳 <a href="https://github.com/metowolf/JumpJumpHelper" target="_blank" rel="noopener">https://github.com/metowolf/JumpJumpHelper</a> </p>
+<p>Kotlin 完成 微信跳一跳 的自动找点 <a href="https://github.com/uglyer/wechat_jump_ai_kotlin" target="_blank" rel="noopener">https://github.com/uglyer/wechat_jump_ai_kotlin</a></p>
+<p>微信跳一跳外挂 Android 版 <a href="https://pan.baidu.com/s/1eSAPEjo" target="_blank" rel="noopener">https://pan.baidu.com/s/1eSAPEjo</a><br>Node 版本的玩微信跳一跳 <a href="https://github.com/wotermelon/toJump" target="_blank" rel="noopener">https://github.com/wotermelon/toJump</a><br><a href="https://github.com/easyworld/PlayJumpJumpWithMouse" target="_blank" rel="noopener">https://github.com/easyworld/PlayJumpJumpWithMouse</a></p>
+<p>node 玩跳一跳 <a href="https://github.com/aOrz/wx_jump_game" target="_blank" rel="noopener">https://github.com/aOrz/wx_jump_game</a><br>微信跳一跳 “AI” 外挂 Golang 版本 <a href="https://github.com/wangshub/wechat_jump_game" target="_blank" rel="noopener">https://github.com/wangshub/wechat_jump_game</a><br><a href="https://github.com/faceair/youjumpijump" target="_blank" rel="noopener">https://github.com/faceair/youjumpijump</a> <a href="https://github.com/junbaor/wechat-jump-jump" target="_blank" rel="noopener">https://github.com/junbaor/wechat-jump-jump</a> <a href="https://github.com/Chaaang/wechat_jumpandjump" target="_blank" rel="noopener">https://github.com/Chaaang/wechat_jumpandjump</a></p>
+<p>用鼠标玩微信跳一跳 <a href="https://github.com/easyworld/PlayJumpJumpWithMouse" target="_blank" rel="noopener">https://github.com/easyworld/PlayJumpJumpWithMouse</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5Njk5NzM4Mw==&amp;mid=2649963535&amp;idx=1&amp;sn=f5821849180e6a4a5cd5ce7d81c40b1a&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Python 玩微信“跳一跳”</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3NTMxMTQ1Mw==&amp;mid=2247483927&amp;idx=1&amp;sn=98ff765cd2fb48bdf5c15f15f66109fc&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">JS写小游戏「跳一跳」外挂之Canvas图像识别</a></p>
+<p>视频教程 <a href="http://www.bilibili.com/video/av17973476/" target="_blank" rel="noopener">http://www.bilibili.com/video/av17973476/</a></p>
+<p>微信跳一跳iOS AI实现版 <a href="https://github.com/michaelfeng/wechat_jump_ai" target="_blank" rel="noopener">https://github.com/michaelfeng/wechat_jump_ai</a></p>
+<p>微信跳一跳外挂 <a href="https://github.com/faceair/youjumpijump" target="_blank" rel="noopener">https://github.com/faceair/youjumpijump</a></p>
+<p><a href="http://www.charlesproxy.com/getssl/" target="_blank" rel="noopener">http://www.charlesproxy.com/getssl/</a> </p>
+<p>ARKit 版微信跳一跳游戏 <a href="https://github.com/songkuixi/ARBottleJump" target="_blank" rel="noopener">https://github.com/songkuixi/ARBottleJump</a></p>
+<p>Charles 从入门到精通 <a href="http://blog.devtang.com/2015/11/14/charles-introduction/" target="_blank" rel="noopener">http://blog.devtang.com/2015/11/14/charles-introduction/</a></p>
+<p>微信《跳一跳》自动玩 <a href="https://github.com/GameTerminator/AutoJump" target="_blank" rel="noopener">https://github.com/GameTerminator/AutoJump</a> </p>
+<p><a href="http://www.autojs.org/topic/262/%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E8%87%AA%E5%8A%A8-%E5%8A%A0%E9%80%9F%E7%89%88%E6%9C%AC-%E5%AE%89%E5%8D%936-0%E4%B9%9F%E5%8F%AF%E4%BB%A5" target="_blank" rel="noopener">http://www.autojs.org/topic/262/%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E8%87%AA%E5%8A%A8-%E5%8A%A0%E9%80%9F%E7%89%88%E6%9C%AC-%E5%AE%89%E5%8D%936-0%E4%B9%9F%E5%8F%AF%E4%BB%A5</a> </p>
+<p>微信小游戏跳一跳作弊器 <a href="https://github.com/ksky521/wechat-jump-game-hack" target="_blank" rel="noopener">https://github.com/ksky521/wechat-jump-game-hack</a></p>
+<p>过去 2周，朋友圈已经没多少人玩跳一跳了，因为这周大家都在玩直播答题，冲顶大会，百万英雄，回答对 12 题分百万奖金，据说一个大学女生一人分得 103 万，简直一夜暴富，刺激。所谓技术是第一生产力，于是有了  <a href="https://github.com/Skyexu/TopSup" target="_blank" rel="noopener">https://github.com/Skyexu/TopSup</a> <a href="https://livc.io/blog/204" target="_blank" rel="noopener">https://livc.io/blog/204</a> 还是基于 python ocr 识别图片然后打开浏览器搜索。还有 支持多开的百万英雄/芝士超人/冲顶大会答题助手 <a href="https://github.com/rrdssfgcs/wenda-helper" target="_blank" rel="noopener">https://github.com/rrdssfgcs/wenda-helper</a>  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-435d7822968aa24a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-f789a2e7f1a32fef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>以上都属于外挂，可能有人会鄙视，但是火车票也是要抢的，如果有更好更快的方式为什么不尝试呢。</p>
+<p>ps：最近发现一个公众号文章网站，类似微信搜狗 <a href="http://chuansong.com/" target="_blank" rel="noopener">http://chuansong.com/</a> </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-412cc94931b4839e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/28/如何在区块链上表白/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2189,184 +2378,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/公众号开通原创功能了/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/26/公众号开通原创功能了/" itemprop="url">公众号开通原创功能了</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T20:20:23+08:00">
-                2019-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  845 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这是一篇旧文。</p>
-<p>很喜欢张靓颖的这首《终于等到你》，网易云音乐链接 <a href="http://music.163.com/#/song?id=27836179" target="_blank" rel="noopener">http://music.163.com/#/song?id=27836179</a></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1.  `作曲  :  董冬冬`</span><br><span class="line"></span><br><span class="line">2.  `作词  :  陈曦`</span><br><span class="line"></span><br><span class="line">3.  `到了某个年纪你就会知道`</span><br><span class="line"></span><br><span class="line">4.  `一个人的日子真的难熬`</span><br><span class="line"></span><br><span class="line">5.  `渐渐开始尝到孤单的味道`</span><br><span class="line"></span><br><span class="line">6.  `时间在敲打着你的骄傲`</span><br><span class="line"></span><br><span class="line">7.  `过了某个路口你就会感到`</span><br><span class="line"></span><br><span class="line">8.  `彻夜陪你聊天的越来越少`</span><br><span class="line"></span><br><span class="line">9.  `厌倦了被寂寞追着跑`</span><br><span class="line"></span><br><span class="line">10.  `找个爱你的人就想托付终老`</span><br><span class="line"></span><br><span class="line">11.  `能陪我走一程的人有多少`</span><br><span class="line"></span><br><span class="line">12.  `愿意走完一生的更是寥寥`</span><br><span class="line"></span><br><span class="line">13.  `是否刻骨铭心并没那么重要`</span><br><span class="line"></span><br><span class="line">14.  `只想在平淡中体会爱的味道`</span><br><span class="line"></span><br><span class="line">15.  `终于等到你  还好我没放弃`</span><br><span class="line"></span><br><span class="line">16.  `幸福来得好不容易`</span><br><span class="line"></span><br><span class="line">17.  `才会让人更加珍惜`</span><br><span class="line"></span><br><span class="line">18.  `终于等到你  差点要错过你`</span><br><span class="line"></span><br><span class="line">19.  `在最好的年纪遇到你`</span><br><span class="line"></span><br><span class="line">20.  `才算没有辜负自己`</span><br><span class="line"></span><br><span class="line">21.  `终于等到你`</span><br><span class="line"></span><br><span class="line">22.  `能陪我走一程的人有多少`</span><br><span class="line"></span><br><span class="line">23.  `愿意走完一生的更是寥寥`</span><br><span class="line"></span><br><span class="line">24.  `是否刻骨铭心并没那么重要`</span><br><span class="line"></span><br><span class="line">25.  `只想在平淡中体会爱的味道`</span><br><span class="line"></span><br><span class="line">26.  `终于等到你  还好我没放弃`</span><br><span class="line"></span><br><span class="line">27.  `幸福来得好不容易`</span><br><span class="line"></span><br><span class="line">28.  `才会让人更加珍惜`</span><br><span class="line"></span><br><span class="line">29.  `终于等到你  差点要错过你`</span><br><span class="line"></span><br><span class="line">30.  `在最好的年纪遇到你`</span><br><span class="line"></span><br><span class="line">31.  `才算没有辜负自己`</span><br><span class="line"></span><br><span class="line">32.  `终于等到你`</span><br><span class="line"></span><br><span class="line">33.  `终于等到你  还好我没放弃`</span><br><span class="line"></span><br><span class="line">34.  `幸福来得好不容易`</span><br><span class="line"></span><br><span class="line">35.  `才会让人更加珍惜`</span><br><span class="line"></span><br><span class="line">36.  `终于等到你  差点要错过你`</span><br><span class="line"></span><br><span class="line">37.  `在最好的年纪遇到你`</span><br><span class="line"></span><br><span class="line">38.  `才算没有辜负自己`</span><br><span class="line"></span><br><span class="line">39.  `终于等到你`</span><br></pre></td></tr></table></figure>
-<p>今天登陆公众号发现微信居然邀请我开通原创功能了，终于等到你，真是太开心了， 记得是从 2016 年 9 月 8 号开始推送公众号的，一晃快一年了， 总共推送 58 次，更新频率比较慢。</p>
-<p>开通这个号纯粹是兴趣，相比微博的吐槽，公众号更适合记录生活和技术。平常也是周末更新，每次更新大概要一个多小时，用的 markdown 排版（<a href="http://md.barretlee.com/），虽然不那么精美，但很省心，真佩服那些每天坚持推送的原创公众号。关于" target="_blank" rel="noopener">http://md.barretlee.com/），虽然不那么精美，但很省心，真佩服那些每天坚持推送的原创公众号。关于</a> markdown 简直写作神器，下次好好介绍一番。</p>
-<p>本公众号大多数文章偏技术方向 （所以开通了另外一个号专门更新技术类文章），今后会更新些更生活更有趣的文章，欢迎持续关注。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c7551533be0f2104?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>其中这篇文章阅读量最高<a href="https://mp.weixin.qq.com/s?__biz=MjM5ODIzNDExMg==&amp;mid=2257483679&amp;idx=1&amp;sn=1e8187e6533ad4bcb91358c75e2de73e&amp;chksm=a5b706f092c08fe667180375d45121171253ca843c6040c867eea7fc3d8081a2abe6c25b1026&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">python 下载全民k歌歌曲</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-75c834b97b2c6cac?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>这篇点赞最高<a href="https://mp.weixin.qq.com/s?__biz=MjM5ODIzNDExMg==&amp;mid=2257483745&amp;idx=1&amp;sn=fb9ed12acb7b00b3a176fdd6ed813f20&amp;chksm=a5b7068e92c08f98fc70324b60326846ddf887f0cbeefc230bcaeb2c62944075762d23d669d1&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">我的 2016 年</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-82f89947b1b93ba2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>下面就开始开通原创功能了。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-f8146ac8fe37886c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-247e33ec4eeb4803?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-3851e06459341c4d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-8b31f9ce0fabe1c5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-516040090898069e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>微信审核速度还真快，大周末的，赞一个。</p>
-<p>记得之前一位朋友说等我的公众号开通留言要来吐槽，现在开始公众号可以留言了， 不知道她还记得吗？小伙伴们，今后对我的公众号有任何意见欢迎留言吐槽哈，如果觉得无聊可以调戏下机器人<a href="http://mp.weixin.qq.com/s?__biz=MjM5ODIzNDExMg==&amp;mid=2257483922&amp;idx=1&amp;sn=536b41f7005b1dbbd3aafa9e47847717&amp;chksm=a5b709fd92c080ebe20f9214e2bef58bc61b28e9b263f702e7d03c23f59a8db93affd98ce464&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">我的公众号机器人</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-52c93638029acb8d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>最后发福利了，关注本公众号发送 红包 直接领取支付宝红包，来晚就没啦。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2412,7 +2428,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">150</span>
+                  <span class="site-state-item-count">151</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2643,7 +2659,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共498.9k字</span>
+  <span class="post-count">博客全站共503.4k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
