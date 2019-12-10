@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="公众号,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这两天有个微博话题 #微信发原图可泄露位置信息#   网传用微信发送照片原图，会泄露位置信息。专家表示确实如此，不过需同时满足3个条件：①手机GPS定位已打开；②拍照设置保存了地理位置；③发送原图。  然后【腾讯微信团队】对此回应：无论用微信、邮件或是其他传输工具发原图，都会附带位置、时间、拍摄机型等Exif信息。但朋友圈发的照片都经过系统自动压缩，不带位置等信息。若担心，可关闭定位或P图再发ht">
+<meta name="keywords" content="公众号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何清除手机拍照的图片 exif 防止泄露你的隐私">
+<meta property="og:url" content="http://yoursite.com/2019/12/09/如何清除手机拍照的图片-exif-防止泄露你的隐私/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="这两天有个微博话题 #微信发原图可泄露位置信息#   网传用微信发送照片原图，会泄露位置信息。专家表示确实如此，不过需同时满足3个条件：①手机GPS定位已打开；②拍照设置保存了地理位置；③发送原图。  然后【腾讯微信团队】对此回应：无论用微信、邮件或是其他传输工具发原图，都会附带位置、时间、拍摄机型等Exif信息。但朋友圈发的照片都经过系统自动压缩，不带位置等信息。若担心，可关闭定位或P图再发ht">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-fa6ac52cedb439a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-e37311b7aa776392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-bcf1a43d866f20a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-ea4743ef226833c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-1648c973cbdfccf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-0df03e7fc92d7fc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-2156e4c6829545a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-f833838b35f9cdd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-1894ec73bfd21f4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-9e7023fa1c7daf92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-fe4518a06f0ac838.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-fccf4538c2942cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-18ca137a25062227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-b772aff09e4182d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-b4c8b162461f9343.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-125fa4e6bc0e724a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-a65076a837b339be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-d21b354503206505.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-3cb2c66e9276bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-d09afae7de4eef29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-12-09T12:28:59.836Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何清除手机拍照的图片 exif 防止泄露你的隐私">
+<meta name="twitter:description" content="这两天有个微博话题 #微信发原图可泄露位置信息#   网传用微信发送照片原图，会泄露位置信息。专家表示确实如此，不过需同时满足3个条件：①手机GPS定位已打开；②拍照设置保存了地理位置；③发送原图。  然后【腾讯微信团队】对此回应：无论用微信、邮件或是其他传输工具发原图，都会附带位置、时间、拍摄机型等Exif信息。但朋友圈发的照片都经过系统自动压缩，不带位置等信息。若担心，可关闭定位或P图再发ht">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/17817191-fa6ac52cedb439a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/09/如何清除手机拍照的图片-exif-防止泄露你的隐私/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>如何清除手机拍照的图片 exif 防止泄露你的隐私 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/09/如何清除手机拍照的图片-exif-防止泄露你的隐私/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何清除手机拍照的图片 exif 防止泄露你的隐私</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-09T20:27:57+08:00">
+                2019-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这两天有个微博话题 #微信发原图可泄露位置信息# </p>
+<blockquote>
+<p>网传用微信发送照片原图，会泄露位置信息。专家表示确实如此，不过需同时满足3个条件：①手机GPS定位已打开；②拍照设置保存了地理位置；③发送原图。</p>
+</blockquote>
+<p>然后【腾讯微信团队】对此回应：无论用微信、邮件或是其他传输工具发原图，都会附带位置、时间、拍摄机型等Exif信息。但朋友圈发的照片都经过系统自动压缩，不带位置等信息。若担心，可关闭定位或P图再发<a href="https://weibo.com/1930378853/IiLlCpuJW?refer_flag=1001030103" target="_blank" rel="noopener">https://weibo.com/1930378853/IiLlCpuJW?refer_flag=1001030103</a>_<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fa6ac52cedb439a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="exif"><a href="#exif" class="headerlink" title="exif"></a>exif</h3><p>这里说的exif是什么呢？</p>
+<blockquote>
+<p>可交换图像文件格式（英语：Exchangeable image file format，官方简称Exif），是专门为数码相机的照片设定的，可以记录数码照片的属性信息和拍摄数据。</p>
+</blockquote>
+<blockquote>
+<p>Exif可以附加于JPEG、TIFF、RIFF等文件之中，为其增加有关数码相机拍摄信息的内容和索引图或图像处理软件的版本信息。<br>Windows 7操作系统具备对Exif的原生支持，通过鼠标右键点击图片打开菜单，点击属性并切换到详细信息标签下即可直接查看Exif信息。<br>Exif信息是可以被任意编辑的，因此只有参考的功能。</p>
+</blockquote>
+<p>以上来自维基百科 <a href="https://zh.wikipedia.org/wiki/EXIF" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/EXIF</a></p>
+<p>只有使用设备（如相机、手机、摄像头等）拍摄的照片才有 EXIF 数据（截图没有），可以获取到拍照方向、相机设备型号、拍摄时间、ISO 感光度、GPS 地理位置等数据 ，简单地说，exif=jpeg+拍摄参数。 </p>
+<p>比如我之前在公司用手机拍的这张图片。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e37311b7aa776392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="exif属性"><a href="#exif属性" class="headerlink" title="exif属性"></a>exif属性</h3><p>在Windows上右键图片可以看到详细信息，包含相机型号，焦距，拍摄日期等。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bcf1a43d866f20a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-ea4743ef226833c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有经纬度<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1648c973cbdfccf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>当然也可以使用专业的magicexif 来看  <a href="http://www.magicexif.com/" target="_blank" rel="noopener">http://www.magicexif.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-0df03e7fc92d7fc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2156e4c6829545a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>也可以使用一些在线工具查看exif，比如 <a href="https://yijiangaitu.com/exif" target="_blank" rel="noopener">https://yijiangaitu.com/exif</a> 但不知道这些工具是否会将你的原图保存在他们服务器，是个隐患，不过有个方法可以简单测试下是否上传了原图：断开网络，如果仍能正常使用说明不是后端程序处理，原图没有上传。</p>
+<p>所以还是推荐使用开源的，比如<br> <a href="https://github.com/FeeiCN/EXIF" target="_blank" rel="noopener">https://github.com/FeeiCN/EXIF</a> ，我用这个搭建了个在线查看exif工具<a href="http://122.51.155.172:5000/" target="_blank" rel="noopener">http://122.51.155.172:5000/</a>  ，上传图片后获取的信息如下：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f833838b35f9cdd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后在谷歌地图输入经纬度  40.0419444444,116.279166667  可以定位到新浪的位置（我在公司拍的）。<br><a href="https://www.google.com/maps/place/40%C2%B002&#39;31.0%22N+116%C2%B016&#39;45.0%22E/@40.0421532,116.2787023,18.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d40.0419444!4d116.2791667" target="_blank" rel="noopener">https://www.google.com/maps/place/40%C2%B002&#39;31.0%22N+116%C2%B016&#39;45.0%22E/@40.0421532,116.2787023,18.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d40.0419444!4d116.2791667</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1894ec73bfd21f4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>谷歌地球更直观点<a href="https://earth.google.com/web/@40.0419444,116.2791667,49.21370311a,786.12898499d,35y,0h,45t,0r/data=CjwaOhIyCgAZCyAhb14FREAhdqgB3t0RXUAqHDQwwrAwMiczMS4wIk4gMTE2wrAxNic0NS4wIkUYAiABKAIoAg" target="_blank" rel="noopener">https://earth.google.com/web/@40.0419444,116.2791667,49.21370311a,786.12898499d,35y,0h,45t,0r/data=CjwaOhIyCgAZCyAhb14FREAhdqgB3t0RXUAqHDQwwrAwMiczMS4wIk4gMTE2wrAxNic0NS4wIkUYAiABKAIoAg</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-9e7023fa1c7daf92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信发原图"><a href="#微信发原图" class="headerlink" title="微信发原图"></a>微信发原图</h3><p>上面那个话题说微信发原图可泄露位置信息，我测试了下，微信发送图片的时候有默认是不带原图的，这样发出去的图片EXIF/GPS信息也会被抹去，如果要发原图需要选中按钮，这样发出去图片中的EXIF信息将会被保存。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fe4518a06f0ac838.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br> 发原图的照片通过在电脑上可以看到exif信息，所以默认直接发送图片不用担心泄露你的位置信息。</p>
+<p>但如果你用的某些APP或网站，不确认他们是否会直接发送并显示原图，最好关闭手机拍照的定位功能，删除图片的exif信息再分享出去。</p>
+<h3 id="清除exif"><a href="#清除exif" class="headerlink" title="清除exif"></a>清除exif</h3><p>Windows上有个选项可以删除exif<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fccf4538c2942cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>但不知道为什么我这删除失败了，大家可以试试自己的电脑。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-18ca137a25062227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>所以我用了命令行工具exiftool  <a href="https://sno.phy.queensu.ca/~phil/exiftool/" target="_blank" rel="noopener">https://sno.phy.queensu.ca/~phil/exiftool/</a> </p>
+<p>用exiftool 再看上面那张图片的详情，非常详细<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b772aff09e4182d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>一行命令清除图片所有exif信息。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ exiftool -all= sina.jpg</span><br><span class="line">    <span class="number">1</span> image files updated</span><br></pre></td></tr></table></figure></p>
+<p>还可以修改图片的作者。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exiftool -artist=susheng sina.jpg</span><br><span class="line">    <span class="number">1</span> image files updated</span><br></pre></td></tr></table></figure></p>
+<p>其他常用命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> exiftool -gps:all= sina.jpg  #删除gps信息</span><br><span class="line"> exiftool -all= sina.jpg  #删除所有信息</span><br><span class="line"> exiftool -all= --exif:all sina.jpg  #删除EXIF以外的所有信息</span><br><span class="line"> exiftool -artist=标签名称 sina.jpg            #写入艺术家标签</span><br><span class="line">exiftool -artist=标签名称 a.jpg b.jpg c.jpg   #写多个文件</span><br><span class="line"> exiftool -artist=标签名称  /exiftoolTest      #所有文件 exiftoolTest为文件夹</span><br></pre></td></tr></table></figure></p>
+<p>清除exif后的图片再看拍摄日期和地理位置信息已经没了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b4c8b162461f9343.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-125fa4e6bc0e724a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果嫌命令行麻烦可以使用这个软件，公众号内回复 <code>exif</code> 获取。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a65076a837b339be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>除了小心手机照片的exif泄露你的隐私，网上晒图也有风险，之前在微博上看到一个妹子晒图被人找到具体位置， 我只截了几张图，有兴趣去微博看，微博地址<a href="https://weibo.com/1627825392/IdCbBpaWv" target="_blank" rel="noopener">https://weibo.com/1627825392/IdCbBpaWv</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d21b354503206505.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-3cb2c66e9276bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d09afae7de4eef29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/XTn8wPEyThacR3GLHyzBLA" target="_blank" rel="noopener">2019年11月最新使用油猴加速百度网盘下载方法</a></p>
+<p><a href="https://mp.weixin.qq.com/s/K5-1y2RRcgAu9sRsxKfZpQ" target="_blank" rel="noopener">用 Markdown 写简历和 PPT</a></p>
+<p><a href="https://mp.weixin.qq.com/s/ThUw9i43paFhXfPxF8mvyQ" target="_blank" rel="noopener">那些有趣的网站</a></p>
+<p><a href="https://mp.weixin.qq.com/s/f36fXJbMYgWMTSTaGMeFCg" target="_blank" rel="noopener">比谷歌更有意思的知识提取搜索引擎 magi</a></p>
+<p><a href="https://mp.weixin.qq.com/s/I6Cd01c9fDx3MFeE3pGauw" target="_blank" rel="noopener">有了内网穿透神器 ngrok ，个人电脑也能做服务器</a><br> <img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>EXIF信息在线删除工具<a href="https://coding.tools/cn/exif-remover" target="_blank" rel="noopener">https://coding.tools/cn/exif-remover</a>  <a href="http://www.exiferaser.com/" target="_blank" rel="noopener">http://www.exiferaser.com/</a><br>有没有技术可以判断一张图片是否被PS过<a href="https://www.zhihu.com/question/19720234" target="_blank" rel="noopener">https://www.zhihu.com/question/19720234</a><br>隐藏在图片中的重要信息 <a href="https://feei.cn/exif/" target="_blank" rel="noopener">https://feei.cn/exif/</a><br>Python 来删除照片的 Exif 信息 <a href="https://www.dreamxu.com/protection-of-privacy-the-image-exif-information/" target="_blank" rel="noopener">https://www.dreamxu.com/protection-of-privacy-the-image-exif-information/</a><br>如何保护自己的隐私，工具删除图片的Exif 信息<a href="https://zhuanlan.zhihu.com/p/60332142" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60332142</a><br>Convert PDF to Images with Pdftoppm <a href="https://jdhao.github.io/2019/11/14/convert_pdf_to_images_pdftoppm/" target="_blank" rel="noopener">https://jdhao.github.io/2019/11/14/convert_pdf_to_images_pdftoppm/</a><br><a href="http://www.nicetool.net/app/exif.html" target="_blank" rel="noopener">http://www.nicetool.net/app/exif.html</a><br><a href="http://www.atoolbox.net/Tool.php?Id=721" target="_blank" rel="noopener">http://www.atoolbox.net/Tool.php?Id=721</a><br><a href="https://www.dute.org/exif" target="_blank" rel="noopener">https://www.dute.org/exif</a><br>使用Python获取照片Exif信息 <a href="https://www.biaodianfu.com/exif-python.html" target="_blank" rel="noopener">https://www.biaodianfu.com/exif-python.html</a><br>一键获取图片 exif 信息，图片在线获取 exif 信息<a href="https://yijiangaitu.com/exif" target="_blank" rel="noopener">https://yijiangaitu.com/exif</a><br>照片EXIF元数据科普 <a href="https://www.sankengriji.com/article/58.html" target="_blank" rel="noopener">https://www.sankengriji.com/article/58.html</a><br>教你通过照片的EXIF信息来确定拍照的实际地理位置<a href="http://ons.me/460.html" target="_blank" rel="noopener">http://ons.me/460.html</a><br>PHP如何读取照片的Exif信息<a href="https://www.qttc.net/278_php_read_exif_from_photo.html" target="_blank" rel="noopener">https://www.qttc.net/278_php_read_exif_from_photo.html</a><br>浅谈互联网那些防不胜防的人肉搜索技巧 <a href="https://mp.weixin.qq.com/s/fHUQUSjBXWY151h0l9RsXw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/fHUQUSjBXWY151h0l9RsXw</a><br>ip定位 <a href="http://www.ipplus360.com" target="_blank" rel="noopener">www.ipplus360.com</a><br>经纬度查询map.yanue.net<br>通过法院执行信息，我猜出了王思聪身份证号码 <a href="https://mp.weixin.qq.com/s/ePY52C4HnJJ0-efUxXxRrA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ePY52C4HnJJ0-efUxXxRrA</a><br> 注册了哪些网站<a href="https://www.reg007.com/" target="_blank" rel="noopener">https://www.reg007.com/</a><br>如何防止自己被人肉搜索到 <a href="https://www.zhihu.com/question/48691691#answer-40338211" target="_blank" rel="noopener">https://www.zhihu.com/question/48691691#answer-40338211</a> <a href="https://cn.v2ex.com/t/624217#reply83" target="_blank" rel="noopener">https://cn.v2ex.com/t/624217#reply83</a><br> 我人肉了一个用果照威胁女孩的变态 <a href="https://paper.seebug.org/810/" target="_blank" rel="noopener">https://paper.seebug.org/810/</a>  <a href="https://cn.v2ex.com/t/535557" target="_blank" rel="noopener">https://cn.v2ex.com/t/535557</a><br>成功地报复了一个骗子，网络诈骗的。这一定是我做过的最骚的操作。 <a href="https://www.zhihu.com/question/293315890/answer/523802607" target="_blank" rel="noopener">https://www.zhihu.com/question/293315890/answer/523802607</a><br>别惹程序员系列之《老婆沉迷赌博输了一套房，我顺藤摸瓜端了澳门赌场》<br>有课代表做了总结：<br>1、站长之家查 whois<br>2、站长之家的Ping功能查询了一下有没有加CDN<br>3、同IP网站查询的功能进行搜索<br>4、通过QQ空间发现其他QQ信息<br>5、利用QQ的忘记密码功能，查询了一下这两个QQ绑定的手机号<br>6、利用贴吧的高级搜索功能查询到网名为y的QQ<br>7、社工库里面尝试了一下能不能查询到这个QQ的老密<br>8、查到的密码用MD5进行加密了，我们到MD5的解密网站去进行解密<br>9、查询到的密码试着登录（很多人都喜欢把自己的ID/姓名/手机号放到自己的密码里面）<br>10、谷歌搜索他的ID，找到有用的信息，例如生活 QQ、身份证号码<br>11、QQ邮箱尝试能不能搜索出支付宝<br>12、利用支付宝转账功能的姓名验证获取到了他的全名<br>13、身份证号+姓名就可以查询出身份证上的照片<br>14、用Telegram的社工库查询接口对他的生活进行查询<br>15、通过他的生活QQ进行域名Whois反查<br>16、通过MagicEXIF定位到了他的家庭地址<br>收集完他的基本信息后，开始谈判、最后报警 <a href="https://mp.weixin.qq.com/s/gL0pCFnJsOhrkNsVUi6GWQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/gL0pCFnJsOhrkNsVUi6GWQ</a><br>查看exif  <a href="https://www.sojson.com/image/exif.html" target="_blank" rel="noopener">https://www.sojson.com/image/exif.html</a><br>EXIF查询 <a href="https://exif.tuchong.com/" target="_blank" rel="noopener">https://exif.tuchong.com/</a><br>图片exif查看器 <a href="https://www.toolnb.com/tools/getexif.html" target="_blank" rel="noopener">https://www.toolnb.com/tools/getexif.html</a><br>在线查看数码照片Exif信息 <a href="https://www.gaitubao.com/exif" target="_blank" rel="noopener">https://www.gaitubao.com/exif</a><br>2年前微信派就发过文章<a href="https://mp.weixin.qq.com/s/bFbU2Q8yWcI3rr-HYptY3A" target="_blank" rel="noopener">关于发送原图，这些事你得知道</a><br>自己用的修改图片EXIF信息软件<a href="https://www.52pojie.cn/thread-203604-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-203604-1-1.html</a><br>exiftool(-k -r -charset filename= -all= -overwrite_original).exe<br>ExifTagRemove <a href="https://www.lanzous.com/i3ja7ba" target="_blank" rel="noopener">https://www.lanzous.com/i3ja7ba</a>   <a href="https://www.lanzous.com/i3ja83i" target="_blank" rel="noopener">https://www.lanzous.com/i3ja83i</a><br>删除EXIF信息的软件 <a href="https://www.52pojie.cn/thread-919176-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-919176-1-1.html</a><br><a href="https://mlog.club/user/616" target="_blank" rel="noopener">https://mlog.club/user/616</a><br><a href="https://wemp.app/posts/e6ebf85a-25eb-41e4-81f2-49f84b1f22e3" target="_blank" rel="noopener">https://wemp.app/posts/e6ebf85a-25eb-41e4-81f2-49f84b1f22e3</a><br><a href="http://www.python88.com/topic/50750" target="_blank" rel="noopener">http://www.python88.com/topic/50750</a><br><a href="http://www.exiferaser.com/ver/1.1" target="_blank" rel="noopener">http://www.exiferaser.com/ver/1.1</a><br>ip查询 <a href="https://github.com.ipaddress.com/" target="_blank" rel="noopener">https://github.com.ipaddress.com/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/公众号/" rel="tag"># 公众号</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/05/那些有趣的网站/" rel="next" title="那些有趣的网站">
+                <i class="fa fa-chevron-left"></i> 那些有趣的网站
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/09/那些实用的-chrome-扩展神器/" rel="prev" title="那些实用的 chrome 扩展神器">
+                那些实用的 chrome 扩展神器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">153</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#exif"><span class="nav-number">1.</span> <span class="nav-text">exif</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exif属性"><span class="nav-number">2.</span> <span class="nav-text">exif属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信发原图"><span class="nav-number">3.</span> <span class="nav-text">微信发原图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除exif"><span class="nav-number">4.</span> <span class="nav-text">清除exif</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公众号：苏生不惑"><span class="nav-number">5.</span> <span class="nav-text">公众号：苏生不惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共507.3k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>
