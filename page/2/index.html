@@ -285,6 +285,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/09/如何清除手机拍照的图片-exif-防止泄露你的隐私/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/09/如何清除手机拍照的图片-exif-防止泄露你的隐私/" itemprop="url">如何清除手机拍照的图片 exif 防止泄露你的隐私</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-09T20:27:57+08:00">
+                2019-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这两天有个微博话题 #微信发原图可泄露位置信息# </p>
+<blockquote>
+<p>网传用微信发送照片原图，会泄露位置信息。专家表示确实如此，不过需同时满足3个条件：①手机GPS定位已打开；②拍照设置保存了地理位置；③发送原图。</p>
+</blockquote>
+<p>然后【腾讯微信团队】对此回应：无论用微信、邮件或是其他传输工具发原图，都会附带位置、时间、拍摄机型等Exif信息。但朋友圈发的照片都经过系统自动压缩，不带位置等信息。若担心，可关闭定位或P图再发<a href="https://weibo.com/1930378853/IiLlCpuJW?refer_flag=1001030103" target="_blank" rel="noopener">https://weibo.com/1930378853/IiLlCpuJW?refer_flag=1001030103</a>_<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fa6ac52cedb439a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="exif"><a href="#exif" class="headerlink" title="exif"></a>exif</h3><p>这里说的exif是什么呢？</p>
+<blockquote>
+<p>可交换图像文件格式（英语：Exchangeable image file format，官方简称Exif），是专门为数码相机的照片设定的，可以记录数码照片的属性信息和拍摄数据。</p>
+</blockquote>
+<blockquote>
+<p>Exif可以附加于JPEG、TIFF、RIFF等文件之中，为其增加有关数码相机拍摄信息的内容和索引图或图像处理软件的版本信息。<br>Windows 7操作系统具备对Exif的原生支持，通过鼠标右键点击图片打开菜单，点击属性并切换到详细信息标签下即可直接查看Exif信息。<br>Exif信息是可以被任意编辑的，因此只有参考的功能。</p>
+</blockquote>
+<p>以上来自维基百科 <a href="https://zh.wikipedia.org/wiki/EXIF" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/EXIF</a></p>
+<p>只有使用设备（如相机、手机、摄像头等）拍摄的照片才有 EXIF 数据（截图没有），可以获取到拍照方向、相机设备型号、拍摄时间、ISO 感光度、GPS 地理位置等数据 ，简单地说，exif=jpeg+拍摄参数。 </p>
+<p>比如我之前在公司用手机拍的这张图片。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e37311b7aa776392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="exif属性"><a href="#exif属性" class="headerlink" title="exif属性"></a>exif属性</h3><p>在Windows上右键图片可以看到详细信息，包含相机型号，焦距，拍摄日期等。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bcf1a43d866f20a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-ea4743ef226833c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有经纬度<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1648c973cbdfccf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>当然也可以使用专业的magicexif 来看  <a href="http://www.magicexif.com/" target="_blank" rel="noopener">http://www.magicexif.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-0df03e7fc92d7fc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2156e4c6829545a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>也可以使用一些在线工具查看exif，比如 <a href="https://yijiangaitu.com/exif" target="_blank" rel="noopener">https://yijiangaitu.com/exif</a> 但不知道这些工具是否会将你的原图保存在他们服务器，是个隐患，不过有个方法可以简单测试下是否上传了原图：断开网络，如果仍能正常使用说明不是后端程序处理，原图没有上传。</p>
+<p>所以还是推荐使用开源的，比如<br> <a href="https://github.com/FeeiCN/EXIF" target="_blank" rel="noopener">https://github.com/FeeiCN/EXIF</a> ，我用这个搭建了个在线查看exif工具<a href="http://122.51.155.172:5000/" target="_blank" rel="noopener">http://122.51.155.172:5000/</a>  ，上传图片后获取的信息如下：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f833838b35f9cdd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后在谷歌地图输入经纬度  40.0419444444,116.279166667  可以定位到新浪的位置（我在公司拍的）。<br><a href="https://www.google.com/maps/place/40%C2%B002&#39;31.0%22N+116%C2%B016&#39;45.0%22E/@40.0421532,116.2787023,18.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d40.0419444!4d116.2791667" target="_blank" rel="noopener">https://www.google.com/maps/place/40%C2%B002&#39;31.0%22N+116%C2%B016&#39;45.0%22E/@40.0421532,116.2787023,18.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d40.0419444!4d116.2791667</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1894ec73bfd21f4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>谷歌地球更直观点<a href="https://earth.google.com/web/@40.0419444,116.2791667,49.21370311a,786.12898499d,35y,0h,45t,0r/data=CjwaOhIyCgAZCyAhb14FREAhdqgB3t0RXUAqHDQwwrAwMiczMS4wIk4gMTE2wrAxNic0NS4wIkUYAiABKAIoAg" target="_blank" rel="noopener">https://earth.google.com/web/@40.0419444,116.2791667,49.21370311a,786.12898499d,35y,0h,45t,0r/data=CjwaOhIyCgAZCyAhb14FREAhdqgB3t0RXUAqHDQwwrAwMiczMS4wIk4gMTE2wrAxNic0NS4wIkUYAiABKAIoAg</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-9e7023fa1c7daf92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信发原图"><a href="#微信发原图" class="headerlink" title="微信发原图"></a>微信发原图</h3><p>上面那个话题说微信发原图可泄露位置信息，我测试了下，微信发送图片的时候有默认是不带原图的，这样发出去的图片EXIF/GPS信息也会被抹去，如果要发原图需要选中按钮，这样发出去图片中的EXIF信息将会被保存。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fe4518a06f0ac838.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br> 发原图的照片通过在电脑上可以看到exif信息，所以默认直接发送图片不用担心泄露你的位置信息。</p>
+<p>但如果你用的某些APP或网站，不确认他们是否会直接发送并显示原图，最好关闭手机拍照的定位功能，删除图片的exif信息再分享出去。</p>
+<h3 id="清除exif"><a href="#清除exif" class="headerlink" title="清除exif"></a>清除exif</h3><p>Windows上有个选项可以删除exif<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fccf4538c2942cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>但不知道为什么我这删除失败了，大家可以试试自己的电脑。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-18ca137a25062227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>所以我用了命令行工具exiftool  <a href="https://sno.phy.queensu.ca/~phil/exiftool/" target="_blank" rel="noopener">https://sno.phy.queensu.ca/~phil/exiftool/</a> </p>
+<p>用exiftool 再看上面那张图片的详情，非常详细<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b772aff09e4182d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>一行命令清除图片所有exif信息。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ exiftool -all= sina.jpg</span><br><span class="line">    <span class="number">1</span> image files updated</span><br></pre></td></tr></table></figure></p>
+<p>还可以修改图片的作者。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exiftool -artist=susheng sina.jpg</span><br><span class="line">    <span class="number">1</span> image files updated</span><br></pre></td></tr></table></figure></p>
+<p>其他常用命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> exiftool -gps:all= sina.jpg  #删除gps信息</span><br><span class="line"> exiftool -all= sina.jpg  #删除所有信息</span><br><span class="line"> exiftool -all= --exif:all sina.jpg  #删除EXIF以外的所有信息</span><br><span class="line"> exiftool -artist=标签名称 sina.jpg            #写入艺术家标签</span><br><span class="line">exiftool -artist=标签名称 a.jpg b.jpg c.jpg   #写多个文件</span><br><span class="line"> exiftool -artist=标签名称  /exiftoolTest      #所有文件 exiftoolTest为文件夹</span><br></pre></td></tr></table></figure></p>
+<p>清除exif后的图片再看拍摄日期和地理位置信息已经没了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b4c8b162461f9343.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-125fa4e6bc0e724a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果嫌命令行麻烦可以使用这个软件，公众号内回复 <code>exif</code> 获取。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a65076a837b339be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>除了小心手机照片的exif泄露你的隐私，网上晒图也有风险，之前在微博上看到一个妹子晒图被人找到具体位置， 我只截了几张图，有兴趣去微博看，微博地址<a href="https://weibo.com/1627825392/IdCbBpaWv" target="_blank" rel="noopener">https://weibo.com/1627825392/IdCbBpaWv</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d21b354503206505.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-3cb2c66e9276bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d09afae7de4eef29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/XTn8wPEyThacR3GLHyzBLA" target="_blank" rel="noopener">2019年11月最新使用油猴加速百度网盘下载方法</a></p>
+<p><a href="https://mp.weixin.qq.com/s/K5-1y2RRcgAu9sRsxKfZpQ" target="_blank" rel="noopener">用 Markdown 写简历和 PPT</a></p>
+<p><a href="https://mp.weixin.qq.com/s/ThUw9i43paFhXfPxF8mvyQ" target="_blank" rel="noopener">那些有趣的网站</a></p>
+<p><a href="https://mp.weixin.qq.com/s/f36fXJbMYgWMTSTaGMeFCg" target="_blank" rel="noopener">比谷歌更有意思的知识提取搜索引擎 magi</a></p>
+<p><a href="https://mp.weixin.qq.com/s/I6Cd01c9fDx3MFeE3pGauw" target="_blank" rel="noopener">有了内网穿透神器 ngrok ，个人电脑也能做服务器</a><br> <img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>EXIF信息在线删除工具<a href="https://coding.tools/cn/exif-remover" target="_blank" rel="noopener">https://coding.tools/cn/exif-remover</a>  <a href="http://www.exiferaser.com/" target="_blank" rel="noopener">http://www.exiferaser.com/</a><br>有没有技术可以判断一张图片是否被PS过<a href="https://www.zhihu.com/question/19720234" target="_blank" rel="noopener">https://www.zhihu.com/question/19720234</a><br>隐藏在图片中的重要信息 <a href="https://feei.cn/exif/" target="_blank" rel="noopener">https://feei.cn/exif/</a><br>Python 来删除照片的 Exif 信息 <a href="https://www.dreamxu.com/protection-of-privacy-the-image-exif-information/" target="_blank" rel="noopener">https://www.dreamxu.com/protection-of-privacy-the-image-exif-information/</a><br>如何保护自己的隐私，工具删除图片的Exif 信息<a href="https://zhuanlan.zhihu.com/p/60332142" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60332142</a><br>Convert PDF to Images with Pdftoppm <a href="https://jdhao.github.io/2019/11/14/convert_pdf_to_images_pdftoppm/" target="_blank" rel="noopener">https://jdhao.github.io/2019/11/14/convert_pdf_to_images_pdftoppm/</a><br><a href="http://www.nicetool.net/app/exif.html" target="_blank" rel="noopener">http://www.nicetool.net/app/exif.html</a><br><a href="http://www.atoolbox.net/Tool.php?Id=721" target="_blank" rel="noopener">http://www.atoolbox.net/Tool.php?Id=721</a><br><a href="https://www.dute.org/exif" target="_blank" rel="noopener">https://www.dute.org/exif</a><br>使用Python获取照片Exif信息 <a href="https://www.biaodianfu.com/exif-python.html" target="_blank" rel="noopener">https://www.biaodianfu.com/exif-python.html</a><br>一键获取图片 exif 信息，图片在线获取 exif 信息<a href="https://yijiangaitu.com/exif" target="_blank" rel="noopener">https://yijiangaitu.com/exif</a><br>照片EXIF元数据科普 <a href="https://www.sankengriji.com/article/58.html" target="_blank" rel="noopener">https://www.sankengriji.com/article/58.html</a><br>教你通过照片的EXIF信息来确定拍照的实际地理位置<a href="http://ons.me/460.html" target="_blank" rel="noopener">http://ons.me/460.html</a><br>PHP如何读取照片的Exif信息<a href="https://www.qttc.net/278_php_read_exif_from_photo.html" target="_blank" rel="noopener">https://www.qttc.net/278_php_read_exif_from_photo.html</a><br>浅谈互联网那些防不胜防的人肉搜索技巧 <a href="https://mp.weixin.qq.com/s/fHUQUSjBXWY151h0l9RsXw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/fHUQUSjBXWY151h0l9RsXw</a><br>ip定位 <a href="http://www.ipplus360.com" target="_blank" rel="noopener">www.ipplus360.com</a><br>经纬度查询map.yanue.net<br>通过法院执行信息，我猜出了王思聪身份证号码 <a href="https://mp.weixin.qq.com/s/ePY52C4HnJJ0-efUxXxRrA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ePY52C4HnJJ0-efUxXxRrA</a><br> 注册了哪些网站<a href="https://www.reg007.com/" target="_blank" rel="noopener">https://www.reg007.com/</a><br>如何防止自己被人肉搜索到 <a href="https://www.zhihu.com/question/48691691#answer-40338211" target="_blank" rel="noopener">https://www.zhihu.com/question/48691691#answer-40338211</a> <a href="https://cn.v2ex.com/t/624217#reply83" target="_blank" rel="noopener">https://cn.v2ex.com/t/624217#reply83</a><br> 我人肉了一个用果照威胁女孩的变态 <a href="https://paper.seebug.org/810/" target="_blank" rel="noopener">https://paper.seebug.org/810/</a>  <a href="https://cn.v2ex.com/t/535557" target="_blank" rel="noopener">https://cn.v2ex.com/t/535557</a><br>成功地报复了一个骗子，网络诈骗的。这一定是我做过的最骚的操作。 <a href="https://www.zhihu.com/question/293315890/answer/523802607" target="_blank" rel="noopener">https://www.zhihu.com/question/293315890/answer/523802607</a><br>别惹程序员系列之《老婆沉迷赌博输了一套房，我顺藤摸瓜端了澳门赌场》<br>有课代表做了总结：<br>1、站长之家查 whois<br>2、站长之家的Ping功能查询了一下有没有加CDN<br>3、同IP网站查询的功能进行搜索<br>4、通过QQ空间发现其他QQ信息<br>5、利用QQ的忘记密码功能，查询了一下这两个QQ绑定的手机号<br>6、利用贴吧的高级搜索功能查询到网名为y的QQ<br>7、社工库里面尝试了一下能不能查询到这个QQ的老密<br>8、查到的密码用MD5进行加密了，我们到MD5的解密网站去进行解密<br>9、查询到的密码试着登录（很多人都喜欢把自己的ID/姓名/手机号放到自己的密码里面）<br>10、谷歌搜索他的ID，找到有用的信息，例如生活 QQ、身份证号码<br>11、QQ邮箱尝试能不能搜索出支付宝<br>12、利用支付宝转账功能的姓名验证获取到了他的全名<br>13、身份证号+姓名就可以查询出身份证上的照片<br>14、用Telegram的社工库查询接口对他的生活进行查询<br>15、通过他的生活QQ进行域名Whois反查<br>16、通过MagicEXIF定位到了他的家庭地址<br>收集完他的基本信息后，开始谈判、最后报警 <a href="https://mp.weixin.qq.com/s/gL0pCFnJsOhrkNsVUi6GWQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/gL0pCFnJsOhrkNsVUi6GWQ</a><br>查看exif  <a href="https://www.sojson.com/image/exif.html" target="_blank" rel="noopener">https://www.sojson.com/image/exif.html</a><br>EXIF查询 <a href="https://exif.tuchong.com/" target="_blank" rel="noopener">https://exif.tuchong.com/</a><br>图片exif查看器 <a href="https://www.toolnb.com/tools/getexif.html" target="_blank" rel="noopener">https://www.toolnb.com/tools/getexif.html</a><br>在线查看数码照片Exif信息 <a href="https://www.gaitubao.com/exif" target="_blank" rel="noopener">https://www.gaitubao.com/exif</a><br>2年前微信派就发过文章<a href="https://mp.weixin.qq.com/s/bFbU2Q8yWcI3rr-HYptY3A" target="_blank" rel="noopener">关于发送原图，这些事你得知道</a><br>自己用的修改图片EXIF信息软件<a href="https://www.52pojie.cn/thread-203604-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-203604-1-1.html</a><br>exiftool(-k -r -charset filename= -all= -overwrite_original).exe<br>ExifTagRemove <a href="https://www.lanzous.com/i3ja7ba" target="_blank" rel="noopener">https://www.lanzous.com/i3ja7ba</a>   <a href="https://www.lanzous.com/i3ja83i" target="_blank" rel="noopener">https://www.lanzous.com/i3ja83i</a><br>删除EXIF信息的软件 <a href="https://www.52pojie.cn/thread-919176-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-919176-1-1.html</a><br><a href="https://mlog.club/user/616" target="_blank" rel="noopener">https://mlog.club/user/616</a><br><a href="https://wemp.app/posts/e6ebf85a-25eb-41e4-81f2-49f84b1f22e3" target="_blank" rel="noopener">https://wemp.app/posts/e6ebf85a-25eb-41e4-81f2-49f84b1f22e3</a><br><a href="http://www.python88.com/topic/50750" target="_blank" rel="noopener">http://www.python88.com/topic/50750</a><br><a href="http://www.exiferaser.com/ver/1.1" target="_blank" rel="noopener">http://www.exiferaser.com/ver/1.1</a><br>ip查询 <a href="https://github.com.ipaddress.com/" target="_blank" rel="noopener">https://github.com.ipaddress.com/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/那些有趣的网站/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1592,7 +1786,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  11.3k 字
+                  13k 字
                 </span>
               
 
@@ -1608,7 +1802,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  53 分钟
+                  61 分钟
                 </span>
               
             </div>
@@ -1671,6 +1865,12 @@
 <h3 id="this、self、static-的区别"><a href="#this、self、static-的区别" class="headerlink" title="this、self、static 的区别"></a>this、self、static 的区别</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$<span class="keyword">this</span> 调用类实例</span><br><span class="line"></span><br><span class="line">self 类自身</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> 调用类</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         echo <span class="string">'A-foo&lt;br&gt;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        A::foo();  <span class="comment">// 结果：A-foo</span></span><br><span class="line">        <span class="keyword">static</span>::foo(); <span class="comment">// 结果：C-foo</span></span><br><span class="line">        self::foo(); <span class="comment">// 结果：B-foo</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        echo <span class="string">'B-foo&lt;br&gt;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> <span class="keyword">extends</span> <span class="title">B</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    public <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        echo <span class="string">'C-foo&lt;br&gt;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">https:<span class="comment">//learnku.com/articles/38406</span></span><br><span class="line">C::test();</span><br></pre></td></tr></table></figure>
 <h3 id="零宽空格"><a href="#零宽空格" class="headerlink" title="零宽空格"></a>零宽空格</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正常的优惠券</span></span><br><span class="line">b4c44af562</span><br><span class="line"></span><br><span class="line"><span class="comment">// urlencode() 之后</span></span><br><span class="line">b4c44af562</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 有问题的优惠券</span></span><br><span class="line">b4c44af562​​​​​​​​​​​​​​</span><br><span class="line"></span><br><span class="line"><span class="comment">// urlencode() 之后</span></span><br><span class="line">b4c44af562%e2%<span class="number">80</span>%<span class="number">8</span>b%e2%<span class="number">80</span>%<span class="number">8</span>b%e2%<span class="number">80</span>%<span class="number">8</span>b%e2%<span class="number">80</span></span><br><span class="line">谷歌了下，这个东西叫做 零宽空格。一般的空格是有宽度的，使用光标可以将它选中。但零宽空格没有宽度，看不见，也难以选中，就像不存在一样。</span><br><span class="line">https:<span class="comment">//zh.wikipedia.org/wiki/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC</span></span><br><span class="line">http:<span class="comment">//sakyavarro.cn/post/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC</span></span><br><span class="line">控制台 </span><br><span class="line">copy(<span class="built_in">decodeURI</span>(<span class="string">'%E2%80%8B'</span>))</span><br></pre></td></tr></table></figure>
 <h3 id="数组转utf-8"><a href="#数组转utf-8" class="headerlink" title="数组转utf-8"></a>数组转utf-8</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组转utf-8</span></span><br><span class="line"><span class="comment">     * @param string $data</span></span><br><span class="line"><span class="comment">     * @return array</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">gbk_to_utf8</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(is_array($data))&#123;</span><br><span class="line">            foreach($data <span class="keyword">as</span> $key =&gt; $value)&#123;</span><br><span class="line">                $data[$key]=call_user_func(__FUNCTION__,$value);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> $data;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> iconv(<span class="string">"gbk"</span>,<span class="string">"utf-8"</span>,$data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">echo  date(<span class="string">'Y/m/d'</span>, strtotime(<span class="string">'last day of -1 month'</span>));</span><br><span class="line">echo  date(<span class="string">'Y/m/d'</span>, strtotime(<span class="string">'-1 month'</span>, strtotime(<span class="string">'2019/03/31'</span>)));</span><br><span class="line">today()-&gt;subMonthNoOverflow()</span><br></pre></td></tr></table></figure>
+<h3 id="阿拉伯数字和中文数字的相互转换"><a href="#阿拉伯数字和中文数字的相互转换" class="headerlink" title="阿拉伯数字和中文数字的相互转换"></a>阿拉伯数字和中文数字的相互转换</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">numToWord</span>(<span class="params">$num</span>)</span>&#123;</span><br><span class="line">    $chiNum = array(<span class="string">'零'</span>, <span class="string">'一'</span>, <span class="string">'二'</span>, <span class="string">'三'</span>, <span class="string">'四'</span>, <span class="string">'五'</span>, <span class="string">'六'</span>, <span class="string">'七'</span>, <span class="string">'八'</span>, <span class="string">'九'</span>);</span><br><span class="line">    $chiUni = array(<span class="string">''</span>,<span class="string">'十'</span>, <span class="string">'百'</span>, <span class="string">'千'</span>, <span class="string">'万'</span>, <span class="string">'十'</span>, <span class="string">'百'</span>, <span class="string">'千'</span>, <span class="string">'亿'</span>);</span><br><span class="line">    $chiStr = <span class="string">''</span>;</span><br><span class="line">    $num_str = (string)$num;</span><br><span class="line">    $count = strlen($num_str);</span><br><span class="line">    $last_flag = <span class="literal">true</span>; <span class="comment">//上一个 是否为0</span></span><br><span class="line">    $zero_flag = <span class="literal">true</span>; <span class="comment">//是否第一个</span></span><br><span class="line">    $temp_num = <span class="literal">null</span>; <span class="comment">//临时数字</span></span><br><span class="line">    $chiStr = <span class="string">''</span>;<span class="comment">//拼接结果</span></span><br><span class="line">    <span class="keyword">if</span> ($count == <span class="number">2</span>) &#123;<span class="comment">//两位数</span></span><br><span class="line">        $temp_num = $num_str[<span class="number">0</span>];</span><br><span class="line">        $chiStr = $temp_num == <span class="number">1</span> ? $chiUni[<span class="number">1</span>] : $chiNum[$temp_num].$chiUni[<span class="number">1</span>];</span><br><span class="line">        $temp_num = $num_str[<span class="number">1</span>];</span><br><span class="line">        $chiStr .= $temp_num == <span class="number">0</span> ? <span class="string">''</span> : $chiNum[$temp_num]; </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>($count &gt; <span class="number">2</span>)&#123;</span><br><span class="line">        $index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> ($i=$count<span class="number">-1</span>; $i &gt;= <span class="number">0</span> ; $i--) &#123; </span><br><span class="line">                $temp_num = $num_str[$i];</span><br><span class="line">                <span class="keyword">if</span> ($temp_num == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!$zero_flag &amp;&amp; !$last_flag ) &#123;</span><br><span class="line">                        $chiStr = $chiNum[$temp_num]. $chiStr;</span><br><span class="line">                        $last_flag = <span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span>($index == <span class="number">4</span> &amp;&amp; $temp_num == <span class="number">0</span>)&#123;</span><br><span class="line">                        $chiStr = <span class="string">"万"</span>.$chiStr;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>($i == <span class="number">0</span> &amp;&amp; $temp_num == <span class="number">1</span> &amp;&amp; $index == <span class="number">1</span> &amp;&amp; $index == <span class="number">5</span>)&#123;</span><br><span class="line">                        $chiStr = $chiUni[$index%<span class="number">9</span>] .$chiStr;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        $chiStr = $chiNum[$temp_num].$chiUni[$index%<span class="number">9</span>] .$chiStr;</span><br><span class="line">                    &#125;</span><br><span class="line">                    $zero_flag = <span class="literal">false</span>;</span><br><span class="line">                    $last_flag = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                $index ++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $chiStr = $chiNum[$num_str[<span class="number">0</span>]]; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $chiStr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cn2num</span>(<span class="params">$string</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(is_numeric($string))&#123;</span><br><span class="line">        <span class="keyword">return</span> $string;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// '仟' =&gt; '千','佰' =&gt; '百','拾' =&gt; '十',</span></span><br><span class="line">    $string = str_replace(<span class="string">'仟'</span>, <span class="string">'千'</span>, $string);</span><br><span class="line">    $string = str_replace(<span class="string">'佰'</span>, <span class="string">'百'</span>, $string);</span><br><span class="line">    $string = str_replace(<span class="string">'拾'</span>, <span class="string">'十'</span>, $string);</span><br><span class="line">    $num = <span class="number">0</span>;</span><br><span class="line">    $wan = explode(<span class="string">'万'</span>, $string);</span><br><span class="line">    <span class="keyword">if</span> (count($wan) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        $num += cn2num($wan[<span class="number">0</span>]) * <span class="number">10000</span>;</span><br><span class="line">        $string = $wan[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $qian = explode(<span class="string">'千'</span>, $string);</span><br><span class="line">    <span class="keyword">if</span> (count($qian) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        $num += cn2num($qian[<span class="number">0</span>]) * <span class="number">1000</span>;</span><br><span class="line">        $string = $qian[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $bai = explode(<span class="string">'百'</span>, $string);</span><br><span class="line">    <span class="keyword">if</span> (count($bai) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        $num += cn2num($bai[<span class="number">0</span>]) * <span class="number">100</span>;</span><br><span class="line">        $string = $bai[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $shi = explode(<span class="string">'十'</span>, $string);</span><br><span class="line">    <span class="keyword">if</span> (count($shi) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        $num += cn2num($shi[<span class="number">0</span>] ? $shi[<span class="number">0</span>] : <span class="string">'一'</span>) * <span class="number">10</span>;</span><br><span class="line">        $string = $shi[<span class="number">1</span>] ? $shi[<span class="number">1</span>] : <span class="string">'零'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $ling = explode(<span class="string">'零'</span>, $string);</span><br><span class="line">    <span class="keyword">if</span> (count($ling) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        $string = $ling[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    $d = array(</span><br><span class="line">        <span class="string">'一'</span> =&gt; <span class="string">'1'</span>,<span class="string">'二'</span> =&gt; <span class="string">'2'</span>,<span class="string">'三'</span> =&gt; <span class="string">'3'</span>,<span class="string">'四'</span> =&gt; <span class="string">'4'</span>,<span class="string">'五'</span> =&gt; <span class="string">'5'</span>,<span class="string">'六'</span> =&gt; <span class="string">'6'</span>,<span class="string">'七'</span> =&gt; <span class="string">'7'</span>,<span class="string">'八'</span> =&gt; <span class="string">'8'</span>,<span class="string">'九'</span> =&gt; <span class="string">'9'</span>,</span><br><span class="line">        <span class="string">'壹'</span> =&gt; <span class="string">'1'</span>,<span class="string">'贰'</span> =&gt; <span class="string">'2'</span>,<span class="string">'叁'</span> =&gt; <span class="string">'3'</span>,<span class="string">'肆'</span> =&gt; <span class="string">'4'</span>,<span class="string">'伍'</span> =&gt; <span class="string">'5'</span>,<span class="string">'陆'</span> =&gt; <span class="string">'6'</span>,<span class="string">'柒'</span> =&gt; <span class="string">'7'</span>,<span class="string">'捌'</span> =&gt; <span class="string">'8'</span>,<span class="string">'玖'</span> =&gt; <span class="string">'9'</span>,</span><br><span class="line">        <span class="string">'零'</span> =&gt; <span class="number">0</span>, <span class="string">'0'</span> =&gt; <span class="number">0</span>, <span class="string">'O'</span> =&gt; <span class="number">0</span>, <span class="string">'o'</span> =&gt; <span class="number">0</span>,</span><br><span class="line">        <span class="string">'两'</span> =&gt; <span class="number">2</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">return</span> $num + @$d[$string];</span><br><span class="line">&#125;https:<span class="comment">//learnku.com/articles/39405</span></span><br></pre></td></tr></table></figure>
+<h3 id="excel大数据导出"><a href="#excel大数据导出" class="headerlink" title="excel大数据导出"></a>excel大数据导出</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://github.com/Maatwebsite/Laravel-Excel</span></span><br><span class="line"><span class="comment">//不限制执行时间</span></span><br><span class="line">set_time_limit(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//最大内存</span></span><br><span class="line">ini_set(<span class="string">'memory_limit'</span>, <span class="string">'-1'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出txt逻辑</span></span><br><span class="line">$file_path = $file_name.<span class="string">".txt"</span>;</span><br><span class="line">$str = <span class="string">""</span>;<span class="comment">//拼接表头字符</span></span><br><span class="line">Storage::disk(<span class="string">'local'</span>)-&gt;put($file_path, $str);</span><br><span class="line"></span><br><span class="line"><span class="comment">//以二进制的方式追加读写</span></span><br><span class="line">$file = fopen(storage_path().$file_path, <span class="string">"a+b"</span>);</span><br><span class="line"></span><br><span class="line">$str = <span class="string">""</span>;</span><br><span class="line">$rows = [];<span class="comment">//数据源</span></span><br><span class="line">foreach ($rows <span class="keyword">as</span>  $row) &#123;</span><br><span class="line">    <span class="comment">//耗时处理操作得到$str</span></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">//每处理1条数据就写入一次，数据量大时，建议批量写入</span></span><br><span class="line">    fwrite($file, $str.<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fclose($file);</span><br><span class="line">https:<span class="comment">//learnku.com/articles/38828#reply125534</span></span><br></pre></td></tr></table></figure>
+<h3 id="bcadd-的精度"><a href="#bcadd-的精度" class="headerlink" title="bcadd 的精度"></a>bcadd 的精度</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、数值</span><br><span class="line"><span class="number">1</span>) <span class="number">4</span>位小数，且前<span class="number">4</span>位为<span class="number">0</span>的</span><br><span class="line">\Log::info(<span class="string">'bcadd:'</span> . bcadd(<span class="number">0.00002200</span>, <span class="number">0</span>, <span class="number">8</span>));</span><br><span class="line"><span class="comment">// 结果：bcadd:0.00000000</span></span><br><span class="line"><span class="number">2</span>) <span class="number">5</span>位小数，且前<span class="number">4</span>位有大于<span class="number">0</span>的</span><br><span class="line">\Log::info(<span class="string">'bcadd:'</span> . bcadd(<span class="number">0.00012200</span>, <span class="number">0</span>, <span class="number">8</span>));</span><br><span class="line"><span class="comment">// 结果：bcadd:0.00012200</span></span><br><span class="line"><span class="number">2</span>、字符串</span><br><span class="line">\Log::info(<span class="string">'bcadd:'</span> . bcadd(<span class="string">'0.00002200'</span>, <span class="number">0</span>, <span class="number">8</span>));</span><br><span class="line"><span class="comment">// 等同于 \Log::info('bcadd:' . bcadd((string)0.00012200, 0, 8)); </span></span><br><span class="line"><span class="comment">// 结果：bcadd:0.00002200</span></span><br><span class="line"><span class="number">3</span>、科学记数法</span><br><span class="line"><span class="number">1</span>) <span class="number">5</span>位小数，且前<span class="number">4</span>位有大于<span class="number">0</span>的</span><br><span class="line">\Log::info(<span class="string">'bcadd:'</span> . bcadd(<span class="number">2.2E-4</span>, <span class="number">0</span>, <span class="number">8</span>));</span><br><span class="line"><span class="comment">// 结果：bcadd:0.00022000</span></span><br><span class="line"><span class="number">2</span>) <span class="number">5</span>位小数，且第<span class="number">4</span>位等于<span class="number">0</span></span><br><span class="line">\Log::info(<span class="string">'bcadd:'</span> . bcadd(<span class="number">2.2E-5</span>, <span class="number">0</span>, <span class="number">8</span>));</span><br><span class="line"><span class="comment">// 结果：bcadd:0.00000000</span></span><br><span class="line"><span class="number">3</span>) <span class="number">5</span>为小数，第<span class="number">4</span>位大于<span class="number">0</span></span><br><span class="line">\Log::info(<span class="string">'bcadd:'</span> . bcadd(<span class="number">12.2E-5</span>, <span class="number">0</span>, <span class="number">8</span>));</span><br><span class="line"><span class="comment">// 结果：bcadd:0.00012200</span></span><br><span class="line">结论是超过 <span class="number">4</span> 位小数，且前 <span class="number">4</span> 位都为 <span class="number">0</span> 时，如不转为字符串进行 bcadd 计算，那么精度会有问题，结果会按 <span class="number">0</span> 来计算；高精度计算，建议先转为字符串再进行计算。</span><br><span class="line"></span><br><span class="line">根据需要，提前转为精度+<span class="number">1</span>的字符串类型参与计算，如需保留<span class="number">6</span>位，就取<span class="number">7</span>位出来</span><br><span class="line">$value = <span class="number">0.000011</span>;</span><br><span class="line">$value = sprintf(<span class="string">'%.7f'</span>, $value);</span><br><span class="line">保存数据时，可转再转为<span class="number">6</span>位</span><br><span class="line">$model-&gt;value = bcadd($value, <span class="number">0</span>, <span class="number">6</span>);</span><br><span class="line">$model-&gt;save();</span><br><span class="line">https:<span class="comment">//learnku.com/articles/39459</span></span><br></pre></td></tr></table></figure>
+<h3 id="mysql-并发锁"><a href="#mysql-并发锁" class="headerlink" title="mysql 并发锁"></a>mysql 并发锁</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"> $process_num = <span class="number">50</span>; <span class="comment">//开50个进程，模拟50个用户</span></span><br><span class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $process_num; $i++) &#123;</span><br><span class="line">            MultiProcessHelper::instance($process_num)-&gt;multiProcessTask(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) <span class="title">use</span> (<span class="params">$i</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;value(<span class="string">'count'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    $res = Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;setDec(<span class="string">'count'</span>);</span><br><span class="line">                    <span class="keyword">if</span> ($res) &#123;</span><br><span class="line">                        dump(<span class="string">'获取到更新资源权限：'</span> . $i);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">这就是高并发带来的问题，同一时刻有多个进程读取同一条数据，同一时刻有多个进程更新同一条数据</span><br><span class="line">mysql 提供的行级锁 select ... lock <span class="keyword">in</span> share mode（阻塞写），select ... for update（阻塞读写，悲观锁），所以 <span class="keyword">for</span> update 机制能满足我们的原子要求。编辑代码如下：</span><br><span class="line">        $process_num = <span class="number">50</span>; <span class="comment">//开50个进程，模拟50个用户</span></span><br><span class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $process_num; $i++) &#123;</span><br><span class="line">            MultiProcessHelper::instance($process_num)-&gt;multiProcessTask(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) <span class="title">use</span> (<span class="params">$i</span>) </span>&#123;</span><br><span class="line">                Db::startTrans(); <span class="comment">//行级锁必须在事务中才能生效</span></span><br><span class="line">                <span class="comment">//设置for update，进程会阻塞在这里，只能允许一个进程获取到行锁，其他等待获取</span></span><br><span class="line">                <span class="keyword">if</span> (Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;lock(<span class="string">'for update'</span>)-&gt;value(<span class="string">'count'</span>) &gt; <span class="number">0</span>) &#123; </span><br><span class="line">                    $res = Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;setDec(<span class="string">'count'</span>);</span><br><span class="line">                    <span class="keyword">if</span> ($res) &#123;</span><br><span class="line">                        dump(<span class="string">'获取到更新资源权限：'</span> . $i);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                Db::commit();</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        update</span><br><span class="line">   $process_num = <span class="number">50</span>; <span class="comment">//开50个进程，模拟50个用户</span></span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $process_num; $i++) &#123;</span><br><span class="line">        MultiProcessHelper::instance($process_num)-&gt;multiProcessTask(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) <span class="title">use</span> (<span class="params">$i</span>) </span>&#123;</span><br><span class="line">                <span class="comment">//合并两条语句为一条更新语句</span></span><br><span class="line">                $res = Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;where(<span class="string">'count'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>)-&gt;setDec(<span class="string">'count'</span>);</span><br><span class="line">                <span class="keyword">if</span> ($res) &#123;</span><br><span class="line">                    dump(<span class="string">'获取到更新资源权限：'</span> . $i);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">文件锁</span><br><span class="line">  $process_num = <span class="number">50</span>; <span class="comment">//开50个进程，模拟50个用户</span></span><br><span class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $process_num; $i++) &#123;</span><br><span class="line">            MultiProcessHelper::instance($process_num)-&gt;multiProcessTask(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) <span class="title">use</span> (<span class="params">$i</span>) </span>&#123;</span><br><span class="line">                $filename = app()-&gt;getRootPath() . <span class="string">'runtime/lock'</span>;</span><br><span class="line">                $file = fopen($filename, <span class="string">'w'</span>); <span class="comment">//打开文件</span></span><br><span class="line">                $lock = flock($file, LOCK_EX);</span><br><span class="line">                <span class="comment">// $lock=flock($handle, LOCK_EX|LOCK_NB); （异步非阻塞，所有进程如果出现获取不到锁，不等待跳过，加锁失败）</span></span><br><span class="line">                <span class="comment">//获取文件排他锁:LOCK_EX（异步阻塞，只有一个进程获得锁，其他竞争进程等待）</span></span><br><span class="line">                <span class="comment">//还有一种共享锁:LOCK_SH（所有进程都可以获取共享锁，读取文件，当且只有一个锁时，才允许写操作，否则操作失败，容易出现死锁问题）</span></span><br><span class="line">                <span class="keyword">if</span> ($lock) &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;lock(<span class="string">'for update'</span>)-&gt;value(<span class="string">'count'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                            $res = Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;setDec(<span class="string">'count'</span>);</span><br><span class="line">                            <span class="keyword">if</span> ($res) &#123;</span><br><span class="line">                                dump(<span class="string">'获取到更新资源权限：'</span> . $i);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (\Exception $e) &#123;</span><br><span class="line">                        dump($e-&gt;getMessage());</span><br><span class="line">                    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                        flock($file, LOCK_UN); <span class="comment">//无论如何都要释放锁</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                fclose($file); <span class="comment">//关闭文件句柄</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">  在集群架构、分布式等多机联网结构中就是掩耳盗铃了，所以适应性更好地锁机制还是要使用分布式锁，分布式锁最常用和最易用就是 redis 的 setnx 锁了。</span><br><span class="line">  编辑代码如下：</span><br><span class="line">  </span><br><span class="line">          $process_num = <span class="number">50</span>; <span class="comment">//开50个进程，模拟50个用户</span></span><br><span class="line">          <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $process_num; $i++) &#123;</span><br><span class="line">              MultiProcessHelper::instance($process_num)-&gt;multiProcessTask(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) <span class="title">use</span> (<span class="params">$i</span>) </span>&#123;</span><br><span class="line">                  <span class="comment">//获取redis锁</span></span><br><span class="line">                  <span class="comment">//关于CacheHelper::getRedisLock是怎样获取锁的，注意几个点就行：1.如何避免死锁；2.如何设置过期时间；3.如何设置抢占条件；4.如何循环等待判断。这些不在本文讨论范围，可自行研究，以后有空我也可以写一篇博文</span></span><br><span class="line">                  $lock = CacheHelper::getRedisLock(<span class="string">'redis_lock'</span>);</span><br><span class="line">                  <span class="keyword">if</span> ($lock) &#123;</span><br><span class="line">                      <span class="keyword">try</span> &#123;</span><br><span class="line">                          <span class="keyword">if</span> (Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;lock(<span class="string">'for update'</span>)-&gt;value(<span class="string">'count'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                              $res = Db::name(<span class="string">'product'</span>)-&gt;where(<span class="string">'id'</span>, <span class="number">1</span>)-&gt;setDec(<span class="string">'count'</span>);</span><br><span class="line">                              <span class="keyword">if</span> ($res) &#123;</span><br><span class="line">                                  dump(<span class="string">'获取到更新资源权限：'</span> . $i);</span><br><span class="line">                              &#125;</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125; <span class="keyword">catch</span> (\Exception $e) &#123;</span><br><span class="line">                          dump($e-&gt;getMessage());</span><br><span class="line">                      &#125;</span><br><span class="line">                  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">//                    dump('获取redis锁失败');</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;      </span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span>  https:<span class="comment">//learnku.com/articles/39244</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/thirdgerb/chatbot" target="_blank" rel="noopener">对话机器人框架 CommuneChatbot</a></p>
+<p><a href="https://github.com/buqiu/arr" target="_blank" rel="noopener">数组增强组件</a></p>
 <p><a href="https://github.com/mylxsw/wizard" target="_blank" rel="noopener">开源文档管理系统 Wizard</a></p>
 <p><a href="https://learnku.com/articles/38855" target="_blank" rel="noopener">PhpStorm 中使用 PHP Inspections 进行代码静态分析</a></p>
 <p><a href="https://cdn.learnku.com/uploads/images/201912/27/31440/JXuXebxK55.png!large" target="_blank" rel="noopener">php开发技术栈导图</a></p>
@@ -1925,180 +2125,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/比谷歌更有意思的知识提取搜索引擎-magi/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/11/比谷歌更有意思的知识提取搜索引擎-magi/" itemprop="url">比谷歌更有意思的知识提取搜索引擎 magi</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-11T20:28:51+08:00">
-                2019-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  896 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>关于搜索引擎之前写过<br><a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a><br> <a href="https://mp.weixin.qq.com/s/P2BTgqGwsA4YAq4jve-2Cg" target="_blank" rel="noopener">那些除百度以外你可能不知道的小众搜索引擎</a><br><a href="https://mp.weixin.qq.com/s/7v9LHJX05Ybv39BzrMD0Uw" target="_blank" rel="noopener">那些你可能不知道的百度产品</a><br><a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
-<h3 id="doge搜索"><a href="#doge搜索" class="headerlink" title="doge搜索"></a>doge搜索</h3><p>之前提到的doge搜索还是不错的，如果用不了谷歌可以推荐使用这个（想用谷歌在公众号回复 谷歌），另外还有人开发了个油猴脚本<a href="https://greasyfork.org/zh-CN/scripts/391784，给百度、360、搜狗、必应等搜索引擎的结果页加入多吉搜索按钮，一键跳转到多吉搜索进行相同关键词的检索。" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/391784，给百度、360、搜狗、必应等搜索引擎的结果页加入多吉搜索按钮，一键跳转到多吉搜索进行相同关键词的检索。</a></p>
-<p>比如搜最近大热的电影《小丑》（可以在公众号回复 <code>小丑</code> 获取电影），右侧可以看到doge搜索按钮 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-624f943e150e8e67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击跳转到doge<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8ba2e87d4c5c6bea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="magi"><a href="#magi" class="headerlink" title="magi"></a>magi</h3><p>不过最近发现的一个搜索引擎magi  <a href="http://magi.com" target="_blank" rel="noopener">http://magi.com</a> 很有意思，它用AI 梳理互联网的知识引擎，通过机器学习将互联网上的海量信息构建成可解析、可检索、可溯源的结构化知识体系。由微博博主@peakji开发，微博地址 <a href="https://www.weibo.com/1811148004/If71blQWC" target="_blank" rel="noopener">https://www.weibo.com/1811148004/If71blQWC</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e3f6e1130298221d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>界面是这样的，看起来没什么不一样。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f851f99582bed9b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>其实magi几年前就有了，36kr在2015年还报道过<a href="https://36kr.com/p/220307" target="_blank" rel="noopener">https://36kr.com/p/220307</a> ，不知道为什么今年才上线。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-93ea9135755f5638.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>不过和谷歌不一样的是它的搜索结果是以结构化知识呈现，按照可靠程度标记颜色为绿色（较为可靠）、黄色（一般）、红色（尚不足以验证可靠性），类似于 Wolfram Alpha <a href="http://www.wolframalpha.com/" target="_blank" rel="noopener">http://www.wolframalpha.com/</a> ，而且（暂时）没有广告。</p>
-<p>比如搜 微信 直接展示出这是个国民应用 ，是一种生活方式，用户超10亿，创始人张小龙，2011年出品，一眼就了解清楚搜索的这个词。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-bb9bf3ccfb53123f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>往下翻的结果就类似谷歌了，给出了链接地址，不过没有分页（不方便），而要一直点加载更多。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1935a8e55166f4fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜一下电影名字，很快能了解这部电影的基本信息。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-14c4bb6d9971fda1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下面这个搜索结果不知道会不会被公关掉。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-3d9153fb39210e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>pgone 这个搜索结果有亮点<br><img src="https://upload-images.jianshu.io/upload_images/17817191-20f51d36d9347a52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>搜 <code>世界上最美的女人</code> 结果是妈妈，没毛病。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-beaaec904c069058.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>当然它也是有缺陷的，比如搜 北京时间 展示结果很奇怪。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f6436c58f97d2850.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不如谷歌直接，像这种词还是用谷歌吧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-548eebc852f96157.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜双十一销售额不对。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7fc27ef0c7ea0c04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>其他更多使用方法见官网 <a href="https://www.peak-labs.com/docs/zh/magi/help" target="_blank" rel="noopener">https://www.peak-labs.com/docs/zh/magi/help</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-864cf0536308c74f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最后建议<code>magi</code>起个中文名，方便传播，还有ui配色改改，总之magi还是挺有意思的，你也可以搜索试试。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>这个来自中国的知识提取引擎，看起来比百度还好用一丢丢 <a href="https://www.huxiu.com/article/325126.html" target="_blank" rel="noopener">https://www.huxiu.com/article/325126.html</a><br><a href="https://www.zhihu.com/question/354059866" target="_blank" rel="noopener">如何评价 Peak Labs 出品的 2019 版 Magi 搜索引擎</a><br>MAGI名字是取自EVA里的超级电脑吗？<a href="https://cn.v2ex.com/t/616918?p=1" target="_blank" rel="noopener">https://cn.v2ex.com/t/616918?p=1</a></p>
-<p>推荐阅读:</p>
-<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
-<p><a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
-<p><a href="https://mp.weixin.qq.com/s/iL6WyI-TChtjZMuu5G5W8A" target="_blank" rel="noopener">公众号苏生不惑原创文章整理</a></p>
-<p><a href="https://mp.weixin.qq.com/s/RWxn4_Qg_Z3bL4wKusndKA" target="_blank" rel="noopener">不会写Python代码如何抓取豆瓣电影 Top 250</a></p>
-<p><a href="https://mp.weixin.qq.com/s/whcZis69KnIzEUVMtrjdmA" target="_blank" rel="noopener">Python 词云分析周杰伦新歌《说好不哭》</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LKDGKWi62J5Zyzh3rB-IiQ" target="_blank" rel="noopener">跟随时光机回到过去看看 2005 年的百度/腾讯/淘宝/谷歌</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2149,7 +2175,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">161</span>
+                  <span class="site-state-item-count">162</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2380,7 +2406,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共529.1k字</span>
+  <span class="post-count">博客全站共534.6k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
