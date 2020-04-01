@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="公众号,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="苏生不惑第114 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于百度网盘之前写过了 2019年11月最新使用油猴加速百度网盘下载方法 2019 年 12 月最新加速百度网盘下载方法 那些你可能不知道的百度文库/网盘快速下载工具 没有提取码怎么获取百度网盘资源？ 之前的文章可能不够完善，还是有不少小伙伴在问，于是这里再做个整理。ps:如果你有什么问题，最好选一篇文章在文末留言，因为后">
+<meta name="keywords" content="公众号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020 年 3 月最新加速下载百度网盘文件方法">
+<meta property="og:url" content="http://yoursite.com/2020/04/01/2020-年-3-月最新加速下载百度网盘文件方法/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="苏生不惑第114 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于百度网盘之前写过了 2019年11月最新使用油猴加速百度网盘下载方法 2019 年 12 月最新加速百度网盘下载方法 那些你可能不知道的百度文库/网盘快速下载工具 没有提取码怎么获取百度网盘资源？ 之前的文章可能不够完善，还是有不少小伙伴在问，于是这里再做个整理。ps:如果你有什么问题，最好选一篇文章在文末留言，因为后">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-a674ca8fdbb1e736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-850cb332cabd8489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-d105ea61e13ed4e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-74516f5d5ed10bf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-bb49892976f36a58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-5f832f7568a9c9bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-9397b1ea806dbcdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-00d1c716db56cb2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-b543cd3199f4e3cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-5f8cf0c226264ed9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-c007156ba5f49f23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-a180ed8ce0469766.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-60b795eeaf499a6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-2f1d5d2097376772.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-6cd0decf4d7fbf17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-46e462c513eb6907.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-da3c86f105868933.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-1a33970ae6d636a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-9c3930c1c4982ccd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-08b10f62a0f842b9.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-4be319223e90e0d8.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-fef4b16fa5cb5068.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-091cdba95dcb6a63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-6ddde24aa83ff3f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-d47b1548bfa8d593.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-d397664601048873.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-74e9618b9d9cf662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-faca24254d7a4c70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-e7d6c74e3ad6b4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-804f2b18971436ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-afa0747ec2c9eee3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-76201606d034ff41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-b99151158b9cdc8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-fa0f2482415234b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-4f7bc7e1fa15ae2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-0740c97fbd0daa4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-17dd0f60095c93c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-937d2aa93682f3da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-7cb78181ee74ee00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-f93b7da61f873ea5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2020-04-01T11:44:58.155Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2020 年 3 月最新加速下载百度网盘文件方法">
+<meta name="twitter:description" content="苏生不惑第114 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于百度网盘之前写过了 2019年11月最新使用油猴加速百度网盘下载方法 2019 年 12 月最新加速百度网盘下载方法 那些你可能不知道的百度文库/网盘快速下载工具 没有提取码怎么获取百度网盘资源？ 之前的文章可能不够完善，还是有不少小伙伴在问，于是这里再做个整理。ps:如果你有什么问题，最好选一篇文章在文末留言，因为后">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/17817191-a674ca8fdbb1e736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/01/2020-年-3-月最新加速下载百度网盘文件方法/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>2020 年 3 月最新加速下载百度网盘文件方法 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/2020-年-3-月最新加速下载百度网盘文件方法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2020 年 3 月最新加速下载百度网盘文件方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-01T19:44:23+08:00">
+                2020-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>苏生不惑第<code>114</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>关于百度网盘之前写过了</p>
+<p><a href="https://mp.weixin.qq.com/s/XTn8wPEyThacR3GLHyzBLA" target="_blank" rel="noopener">2019年11月最新使用油猴加速百度网盘下载方法</a></p>
+<p><a href="https://mp.weixin.qq.com/s/kQ5wmslVdXUfzhDjZutLDw" target="_blank" rel="noopener">2019 年 12 月最新加速百度网盘下载方法</a></p>
+<p><a href="https://mp.weixin.qq.com/s/H8VPSGt62-tblpgWkleQoQ" target="_blank" rel="noopener">那些你可能不知道的百度文库/网盘快速下载工具</a></p>
+<p><a href="https://mp.weixin.qq.com/s/MUIPj4OgSxAeRl5Hk-2tuw" target="_blank" rel="noopener">没有提取码怎么获取百度网盘资源？</a></p>
+<p>之前的文章可能不够完善，还是有不少小伙伴在问，于是这里再做个整理。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a674ca8fdbb1e736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>ps:如果你有什么问题，最好选一篇文章在文末留言，因为后台消息过了2天就不能回复了，如果我没及时看到你的消息就是想回也回不了了，有必要也可以在公众号加我微信。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-850cb332cabd8489.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="油猴扩展"><a href="#油猴扩展" class="headerlink" title="油猴扩展"></a>油猴扩展</h3><p>如果你的浏览器没有安装油猴那真是浪费了，有了油猴你会发现原来浏览器还有这么多功能，比如去广告，看VIP视频，下载视频等，安装油猴扩展见我之前的文章<a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a>  和 <a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d105ea61e13ed4e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-74516f5d5ed10bf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>安装后在扩展程序 chrome://extensions/  可以看到<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bb49892976f36a58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>ps:如果想搜索电影资源推荐脚本 豆瓣资源下载大师  <a href="https://greasyfork.org/zh-CN/scripts/329484，具体看之前的文章[搜不到你想看的书/音乐/电影？一个油猴脚本帮你搞定](https://mp.weixin.qq.com/s/leF2Dn9XW6sIp1SkPBFthw)" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/329484，具体看之前的文章[搜不到你想看的书/音乐/电影？一个油猴脚本帮你搞定](https://mp.weixin.qq.com/s/leF2Dn9XW6sIp1SkPBFthw)</a></p>
+<h3 id="网盘助手脚本"><a href="#网盘助手脚本" class="headerlink" title="网盘助手脚本"></a>网盘助手脚本</h3><p>安装完上面的油猴扩展，再到<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 这里安装你想要的脚本，开始享受油猴带给你的惊喜吧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5f832f7568a9c9bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这里选择<a href="https://greasyfork.org/zh-CN/scripts/378301" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/378301</a> 这个网盘助手脚本。</p>
+<blockquote>
+<p>[1]百度网盘、腾讯微云、蓝奏云万能钥匙<br> [2]百度网盘生成并展示下载链接<br>[3]百度网盘分享时自定义提取码</p>
+</blockquote>
+<p>直接点击安装，因为我已经安装过了，所以显示重新安装。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-9397b1ea806dbcdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-00d1c716db56cb2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>安装过的脚本可以在管理面板管理。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b543cd3199f4e3cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这个脚本不但能加速下载百度网盘文件，还能自定义提取码，默认百度网盘是不能自定义提取码的，它会随机生成一个4位数的提取码。</p>
+<p>这里给《纵横四海》这部电影生成一个带自定义提取码的分享链接 <a href="https://pan.baidu.com/s/1MDv3mdhjRF65_sp20dhAnQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1MDv3mdhjRF65_sp20dhAnQ</a> 提取码: 8866。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5f8cf0c226264ed9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>他人分享的文件即使你不知道提取码也可以通过这个脚本来提取，它会自动帮你填写提取码，当然这个不是百分之百能提取成功。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c007156ba5f49f23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有登录百度网盘状态下，别人分享的视频不用保存到自己网盘也能看完，不再受只能看一分钟的限制，赶紧试试吧。</p>
+<h3 id="idm"><a href="#idm" class="headerlink" title="idm"></a>idm</h3><p>idm就不多说了，一款Windows下多线程下载神器，mac系统推荐ndm <a href="http://www.neatdownloadmanager.com/，安装idm软件后会给你的默认浏览器安装上Chrome扩展。谷歌浏览器打开" target="_blank" rel="noopener">http://www.neatdownloadmanager.com/，安装idm软件后会给你的默认浏览器安装上Chrome扩展。谷歌浏览器打开</a> chrome://extensions/ 就能看到，如果没有的话在谷歌商店地址 <a href="https://chrome.google.com/webstore/detail/idm-integration-module/ngpampappnmepgilojfohadhhmbhlaek" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/idm-integration-module/ngpampappnmepgilojfohadhhmbhlaek</a> 手动安装（公众号内回复 <code>谷歌</code> 获取上谷歌商店安装扩展方法）。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a180ed8ce0469766.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>有了 idm 扩展右键菜单多了个 <code>使用idm下载</code>。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-60b795eeaf499a6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>用idm下载网页上的视频也方便了，详情看之前的文章<a href="https://mp.weixin.qq.com/s/3rB23e9L55hDBaPLDu6WMg" target="_blank" rel="noopener">如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-2f1d5d2097376772.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>安装完上面的油猴扩展和网盘助手脚本及idm软件后就开始下载百度网盘文件吧。</p>
+<h3 id="下载百度网盘文件"><a href="#下载百度网盘文件" class="headerlink" title="下载百度网盘文件"></a>下载百度网盘文件</h3><p>首先打开自己的网盘主页 <a href="https://pan.baidu.com/disk/home" target="_blank" rel="noopener">https://pan.baidu.com/disk/home</a> ，如果是他人分享的文件先保存到自己网盘。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6cd0decf4d7fbf17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>之后<code>选中</code>你要下载的文件，可以看到上面有个<code>生成链接</code>按钮，这个就是网盘助手脚本生成的。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-46e462c513eb6907.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后点击生成链接会有个弹窗，右键链接点击<code>使用idm下载</code>。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-da3c86f105868933.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>自动会调出idm软件，看到要下载文件的信息后点击开始下载吧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1a33970ae6d636a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9c3930c1c4982ccd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>我这里用录频器 ocam 录制了一个GIF动图，看得更清晰。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-08b10f62a0f842b9.gif?imageMogr2/auto-orient/strip" alt="idm_baidu.gif"><br>再录最后几秒。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-4be319223e90e0d8.gif?imageMogr2/auto-orient/strip" alt="idm_baidu2.gif"></p>
+<p>很快下载完了，平均速度能达到2MB/s左右，相比百度网盘客户端的100 k左右快多了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fef4b16fa5cb5068.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果慢的话可以调整idm的最大链接数为32。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-091cdba95dcb6a63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果出现400，403等错误先确认下是否在你的网盘主页下载的，而不是分享页，还不行可以更改应用id 为 265486、309847，266719或者778750 ，还有压缩文件不能超过300M，不能下载文件夹 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6ddde24aa83ff3f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d47b1548bfa8d593.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果还不行，试试下面的。</p>
+<h3 id="亿寻"><a href="#亿寻" class="headerlink" title="亿寻"></a>亿寻</h3><p>这也是个Windows下的软件，打开软件使用cookie登录。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d397664601048873.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-74e9618b9d9cf662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>怎么获取cookie呢？打开登录的百度网盘网页版，按F12打开控制台，选择application里的cookies，右边的budss就是了，直接复制它。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-faca24254d7a4c70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>登录后可以看到你的百度网盘文件。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e7d6c74e3ad6b4e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜索 我网盘里的武林外传全集<br><img src="https://upload-images.jianshu.io/upload_images/17817191-804f2b18971436ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这里下载81集，直接右键 快捷下载。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-afa0747ec2c9eee3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>弹出命令行窗口开始下载。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-76201606d034ff41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>很快下载完了，可以看到平均速度1.2MB/s，还算可以，虽然比用idm稍微慢点。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b99151158b9cdc8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="BaiduPCS-Go"><a href="#BaiduPCS-Go" class="headerlink" title="BaiduPCS-Go"></a>BaiduPCS-Go</h3><p>这个支持Windows和Mac系统，这里打开BaiduPCS-Go .exe会弹出命令行窗口，然后浏览器会访问 <a href="http://localhost:5299/#/login" target="_blank" rel="noopener">http://localhost:5299/#/login</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-fa0f2482415234b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>同样用百度网盘网页的cookie登录。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-4f7bc7e1fa15ae2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>登录成功后可以看到你的网盘文件。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-0740c97fbd0daa4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>开始下载吧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-17dd0f60095c93c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-937d2aa93682f3da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br> 看这速度跟百度网盘客户端差不多了。。。，不知道是不不稳定，你可以自己试试。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7cb78181ee74ee00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后分享一个倍速播放百度网盘分享的视频 插件 Video Speed Controller  <a href="https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk</a> ，当然不限制百度网盘，任何网页视频都可以加速播放。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f93b7da61f873ea5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>以上所有工具在公众号内回复 <code>百度网盘</code> 获取，推荐使用idm+油猴脚本来下载，终于写完了，这篇文章编辑加测试截图花了至少4个小时，点个在看支持下吧， 有什么问题文章末尾留言。</p>
+<p>推荐历史文章:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Lm4l_aPCSXymUGcqO_Yf3g" target="_blank" rel="noopener">2019 年公众号 苏生不惑 近百篇原创文章整理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/dXZhN3GbqQslg7-YHcRL3A" target="_blank" rel="noopener">那些有意思的谷歌/百度搜索彩蛋</a></p>
+<p><a href="https://mp.weixin.qq.com/s/bIE23HBq_sqvLkV18_BlbQ" target="_blank" rel="noopener">如何备份可能被删的公众号文章和网页 </a></p>
+<p><a href="https://mp.weixin.qq.com/s/I3LR8ikHoX80WjaMCoMVlw" target="_blank" rel="noopener">bilibili(b站)升级到BV号了，还想用av号怎么办</a></p>
+<p><a href="https://mp.weixin.qq.com/s/mPpRYbjfgpVqKcpFwnPYtA" target="_blank" rel="noopener">那些好玩的生成器网站</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-p-RZLh8ovNiCYv6YQkbrw" target="_blank" rel="noopener">那些你可能不知道的网络冷知识奇技淫巧</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/公众号/" rel="tag"># 公众号</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/01/bilibili-b站-升级到BV号了，还想用av号怎么办？/" rel="next" title="bilibili(b站)升级到BV号了，还想用av号怎么办？">
+                <i class="fa fa-chevron-left"></i> bilibili(b站)升级到BV号了，还想用av号怎么办？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/01/如何优雅的对网页截取长图/" rel="prev" title="如何优雅的对网页截取长图">
+                如何优雅的对网页截取长图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">191</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#油猴扩展"><span class="nav-number">1.</span> <span class="nav-text">油猴扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网盘助手脚本"><span class="nav-number">2.</span> <span class="nav-text">网盘助手脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#idm"><span class="nav-number">3.</span> <span class="nav-text">idm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载百度网盘文件"><span class="nav-number">4.</span> <span class="nav-text">下载百度网盘文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#亿寻"><span class="nav-number">5.</span> <span class="nav-text">亿寻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BaiduPCS-Go"><span class="nav-number">6.</span> <span class="nav-text">BaiduPCS-Go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公众号-苏生不惑"><span class="nav-number">7.</span> <span class="nav-text">公众号 苏生不惑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共572.6k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>
