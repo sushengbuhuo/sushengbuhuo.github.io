@@ -285,6 +285,375 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/09/如何清除手机拍照的图片-exif-防止泄露你的隐私/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/09/如何清除手机拍照的图片-exif-防止泄露你的隐私/" itemprop="url">如何清除手机拍照的图片 exif 防止泄露你的隐私</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-09T20:27:57+08:00">
+                2019-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这两天有个微博话题 #微信发原图可泄露位置信息# </p>
+<blockquote>
+<p>网传用微信发送照片原图，会泄露位置信息。专家表示确实如此，不过需同时满足3个条件：①手机GPS定位已打开；②拍照设置保存了地理位置；③发送原图。</p>
+</blockquote>
+<p>然后【腾讯微信团队】对此回应：无论用微信、邮件或是其他传输工具发原图，都会附带位置、时间、拍摄机型等Exif信息。但朋友圈发的照片都经过系统自动压缩，不带位置等信息。若担心，可关闭定位或P图再发<a href="https://weibo.com/1930378853/IiLlCpuJW?refer_flag=1001030103" target="_blank" rel="noopener">https://weibo.com/1930378853/IiLlCpuJW?refer_flag=1001030103</a>_<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fa6ac52cedb439a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="exif"><a href="#exif" class="headerlink" title="exif"></a>exif</h3><p>这里说的exif是什么呢？</p>
+<blockquote>
+<p>可交换图像文件格式（英语：Exchangeable image file format，官方简称Exif），是专门为数码相机的照片设定的，可以记录数码照片的属性信息和拍摄数据。</p>
+</blockquote>
+<blockquote>
+<p>Exif可以附加于JPEG、TIFF、RIFF等文件之中，为其增加有关数码相机拍摄信息的内容和索引图或图像处理软件的版本信息。<br>Windows 7操作系统具备对Exif的原生支持，通过鼠标右键点击图片打开菜单，点击属性并切换到详细信息标签下即可直接查看Exif信息。<br>Exif信息是可以被任意编辑的，因此只有参考的功能。</p>
+</blockquote>
+<p>以上来自维基百科 <a href="https://zh.wikipedia.org/wiki/EXIF" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/EXIF</a></p>
+<p>只有使用设备（如相机、手机、摄像头等）拍摄的照片才有 EXIF 数据（截图没有），可以获取到拍照方向、相机设备型号、拍摄时间、ISO 感光度、GPS 地理位置等数据 ，简单地说，exif=jpeg+拍摄参数。 </p>
+<p>比如我之前在公司用手机拍的这张图片。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e37311b7aa776392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="exif属性"><a href="#exif属性" class="headerlink" title="exif属性"></a>exif属性</h3><p>在Windows上右键图片可以看到详细信息，包含相机型号，焦距，拍摄日期等。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bcf1a43d866f20a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-ea4743ef226833c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有经纬度<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1648c973cbdfccf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>当然也可以使用专业的magicexif 来看  <a href="http://www.magicexif.com/" target="_blank" rel="noopener">http://www.magicexif.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-0df03e7fc92d7fc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2156e4c6829545a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>也可以使用一些在线工具查看exif，比如 <a href="https://yijiangaitu.com/exif" target="_blank" rel="noopener">https://yijiangaitu.com/exif</a> 但不知道这些工具是否会将你的原图保存在他们服务器，是个隐患，不过有个方法可以简单测试下是否上传了原图：断开网络，如果仍能正常使用说明不是后端程序处理，原图没有上传。</p>
+<p>所以还是推荐使用开源的，比如<br> <a href="https://github.com/FeeiCN/EXIF" target="_blank" rel="noopener">https://github.com/FeeiCN/EXIF</a> ，我用这个搭建了个在线查看exif工具<a href="http://122.51.155.172:5000/" target="_blank" rel="noopener">http://122.51.155.172:5000/</a>  ，上传图片后获取的信息如下：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f833838b35f9cdd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后在谷歌地图输入经纬度  40.0419444444,116.279166667  可以定位到新浪的位置（我在公司拍的）。<br><a href="https://www.google.com/maps/place/40%C2%B002&#39;31.0%22N+116%C2%B016&#39;45.0%22E/@40.0421532,116.2787023,18.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d40.0419444!4d116.2791667" target="_blank" rel="noopener">https://www.google.com/maps/place/40%C2%B002&#39;31.0%22N+116%C2%B016&#39;45.0%22E/@40.0421532,116.2787023,18.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d40.0419444!4d116.2791667</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1894ec73bfd21f4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>谷歌地球更直观点<a href="https://earth.google.com/web/@40.0419444,116.2791667,49.21370311a,786.12898499d,35y,0h,45t,0r/data=CjwaOhIyCgAZCyAhb14FREAhdqgB3t0RXUAqHDQwwrAwMiczMS4wIk4gMTE2wrAxNic0NS4wIkUYAiABKAIoAg" target="_blank" rel="noopener">https://earth.google.com/web/@40.0419444,116.2791667,49.21370311a,786.12898499d,35y,0h,45t,0r/data=CjwaOhIyCgAZCyAhb14FREAhdqgB3t0RXUAqHDQwwrAwMiczMS4wIk4gMTE2wrAxNic0NS4wIkUYAiABKAIoAg</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-9e7023fa1c7daf92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信发原图"><a href="#微信发原图" class="headerlink" title="微信发原图"></a>微信发原图</h3><p>上面那个话题说微信发原图可泄露位置信息，我测试了下，微信发送图片的时候有默认是不带原图的，这样发出去的图片EXIF/GPS信息也会被抹去，如果要发原图需要选中按钮，这样发出去图片中的EXIF信息将会被保存。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fe4518a06f0ac838.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br> 发原图的照片通过在电脑上可以看到exif信息，所以默认直接发送图片不用担心泄露你的位置信息。</p>
+<p>但如果你用的某些APP或网站，不确认他们是否会直接发送并显示原图，最好关闭手机拍照的定位功能，删除图片的exif信息再分享出去。</p>
+<h3 id="清除exif"><a href="#清除exif" class="headerlink" title="清除exif"></a>清除exif</h3><p>Windows上有个选项可以删除exif<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fccf4538c2942cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>但不知道为什么我这删除失败了，大家可以试试自己的电脑。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-18ca137a25062227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>所以我用了命令行工具exiftool  <a href="https://sno.phy.queensu.ca/~phil/exiftool/" target="_blank" rel="noopener">https://sno.phy.queensu.ca/~phil/exiftool/</a> </p>
+<p>用exiftool 再看上面那张图片的详情，非常详细<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b772aff09e4182d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>一行命令清除图片所有exif信息。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ exiftool -all= sina.jpg</span><br><span class="line">    <span class="number">1</span> image files updated</span><br></pre></td></tr></table></figure></p>
+<p>还可以修改图片的作者。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exiftool -artist=susheng sina.jpg</span><br><span class="line">    <span class="number">1</span> image files updated</span><br></pre></td></tr></table></figure></p>
+<p>其他常用命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> exiftool -gps:all= sina.jpg  #删除gps信息</span><br><span class="line"> exiftool -all= sina.jpg  #删除所有信息</span><br><span class="line"> exiftool -all= --exif:all sina.jpg  #删除EXIF以外的所有信息</span><br><span class="line"> exiftool -artist=标签名称 sina.jpg            #写入艺术家标签</span><br><span class="line">exiftool -artist=标签名称 a.jpg b.jpg c.jpg   #写多个文件</span><br><span class="line"> exiftool -artist=标签名称  /exiftoolTest      #所有文件 exiftoolTest为文件夹</span><br></pre></td></tr></table></figure></p>
+<p>清除exif后的图片再看拍摄日期和地理位置信息已经没了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b4c8b162461f9343.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-125fa4e6bc0e724a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果嫌命令行麻烦可以使用这个软件，公众号内回复 <code>exif</code> 获取。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a65076a837b339be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>除了小心手机照片的exif泄露你的隐私，网上晒图也有风险，之前在微博上看到一个妹子晒图被人找到具体位置， 我只截了几张图，有兴趣去微博看，微博地址<a href="https://weibo.com/1627825392/IdCbBpaWv" target="_blank" rel="noopener">https://weibo.com/1627825392/IdCbBpaWv</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d21b354503206505.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-3cb2c66e9276bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d09afae7de4eef29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/XTn8wPEyThacR3GLHyzBLA" target="_blank" rel="noopener">2019年11月最新使用油猴加速百度网盘下载方法</a></p>
+<p><a href="https://mp.weixin.qq.com/s/K5-1y2RRcgAu9sRsxKfZpQ" target="_blank" rel="noopener">用 Markdown 写简历和 PPT</a></p>
+<p><a href="https://mp.weixin.qq.com/s/ThUw9i43paFhXfPxF8mvyQ" target="_blank" rel="noopener">那些有趣的网站</a></p>
+<p><a href="https://mp.weixin.qq.com/s/f36fXJbMYgWMTSTaGMeFCg" target="_blank" rel="noopener">比谷歌更有意思的知识提取搜索引擎 magi</a></p>
+<p><a href="https://mp.weixin.qq.com/s/I6Cd01c9fDx3MFeE3pGauw" target="_blank" rel="noopener">有了内网穿透神器 ngrok ，个人电脑也能做服务器</a><br> <img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>EXIF信息在线删除工具<a href="https://coding.tools/cn/exif-remover" target="_blank" rel="noopener">https://coding.tools/cn/exif-remover</a>  <a href="http://www.exiferaser.com/" target="_blank" rel="noopener">http://www.exiferaser.com/</a><br>有没有技术可以判断一张图片是否被PS过<a href="https://www.zhihu.com/question/19720234" target="_blank" rel="noopener">https://www.zhihu.com/question/19720234</a><br>隐藏在图片中的重要信息 <a href="https://feei.cn/exif/" target="_blank" rel="noopener">https://feei.cn/exif/</a><br>Python 来删除照片的 Exif 信息 <a href="https://www.dreamxu.com/protection-of-privacy-the-image-exif-information/" target="_blank" rel="noopener">https://www.dreamxu.com/protection-of-privacy-the-image-exif-information/</a><br>如何保护自己的隐私，工具删除图片的Exif 信息<a href="https://zhuanlan.zhihu.com/p/60332142" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60332142</a><br>Convert PDF to Images with Pdftoppm <a href="https://jdhao.github.io/2019/11/14/convert_pdf_to_images_pdftoppm/" target="_blank" rel="noopener">https://jdhao.github.io/2019/11/14/convert_pdf_to_images_pdftoppm/</a><br><a href="http://www.nicetool.net/app/exif.html" target="_blank" rel="noopener">http://www.nicetool.net/app/exif.html</a><br><a href="http://www.atoolbox.net/Tool.php?Id=721" target="_blank" rel="noopener">http://www.atoolbox.net/Tool.php?Id=721</a><br><a href="https://www.dute.org/exif" target="_blank" rel="noopener">https://www.dute.org/exif</a><br>使用Python获取照片Exif信息 <a href="https://www.biaodianfu.com/exif-python.html" target="_blank" rel="noopener">https://www.biaodianfu.com/exif-python.html</a><br>一键获取图片 exif 信息，图片在线获取 exif 信息<a href="https://yijiangaitu.com/exif" target="_blank" rel="noopener">https://yijiangaitu.com/exif</a><br>照片EXIF元数据科普 <a href="https://www.sankengriji.com/article/58.html" target="_blank" rel="noopener">https://www.sankengriji.com/article/58.html</a><br>教你通过照片的EXIF信息来确定拍照的实际地理位置<a href="http://ons.me/460.html" target="_blank" rel="noopener">http://ons.me/460.html</a><br>PHP如何读取照片的Exif信息<a href="https://www.qttc.net/278_php_read_exif_from_photo.html" target="_blank" rel="noopener">https://www.qttc.net/278_php_read_exif_from_photo.html</a><br>浅谈互联网那些防不胜防的人肉搜索技巧 <a href="https://mp.weixin.qq.com/s/fHUQUSjBXWY151h0l9RsXw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/fHUQUSjBXWY151h0l9RsXw</a><br>ip定位 <a href="http://www.ipplus360.com" target="_blank" rel="noopener">www.ipplus360.com</a><br>经纬度查询map.yanue.net<br>通过法院执行信息，我猜出了王思聪身份证号码 <a href="https://mp.weixin.qq.com/s/ePY52C4HnJJ0-efUxXxRrA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/ePY52C4HnJJ0-efUxXxRrA</a><br> 注册了哪些网站<a href="https://www.reg007.com/" target="_blank" rel="noopener">https://www.reg007.com/</a><br>如何防止自己被人肉搜索到 <a href="https://www.zhihu.com/question/48691691#answer-40338211" target="_blank" rel="noopener">https://www.zhihu.com/question/48691691#answer-40338211</a> <a href="https://cn.v2ex.com/t/624217#reply83" target="_blank" rel="noopener">https://cn.v2ex.com/t/624217#reply83</a><br> 我人肉了一个用果照威胁女孩的变态 <a href="https://paper.seebug.org/810/" target="_blank" rel="noopener">https://paper.seebug.org/810/</a>  <a href="https://cn.v2ex.com/t/535557" target="_blank" rel="noopener">https://cn.v2ex.com/t/535557</a><br>成功地报复了一个骗子，网络诈骗的。这一定是我做过的最骚的操作。 <a href="https://www.zhihu.com/question/293315890/answer/523802607" target="_blank" rel="noopener">https://www.zhihu.com/question/293315890/answer/523802607</a><br>别惹程序员系列之《老婆沉迷赌博输了一套房，我顺藤摸瓜端了澳门赌场》<br>有课代表做了总结：<br>1、站长之家查 whois<br>2、站长之家的Ping功能查询了一下有没有加CDN<br>3、同IP网站查询的功能进行搜索<br>4、通过QQ空间发现其他QQ信息<br>5、利用QQ的忘记密码功能，查询了一下这两个QQ绑定的手机号<br>6、利用贴吧的高级搜索功能查询到网名为y的QQ<br>7、社工库里面尝试了一下能不能查询到这个QQ的老密<br>8、查到的密码用MD5进行加密了，我们到MD5的解密网站去进行解密<br>9、查询到的密码试着登录（很多人都喜欢把自己的ID/姓名/手机号放到自己的密码里面）<br>10、谷歌搜索他的ID，找到有用的信息，例如生活 QQ、身份证号码<br>11、QQ邮箱尝试能不能搜索出支付宝<br>12、利用支付宝转账功能的姓名验证获取到了他的全名<br>13、身份证号+姓名就可以查询出身份证上的照片<br>14、用Telegram的社工库查询接口对他的生活进行查询<br>15、通过他的生活QQ进行域名Whois反查<br>16、通过MagicEXIF定位到了他的家庭地址<br>收集完他的基本信息后，开始谈判、最后报警 <a href="https://mp.weixin.qq.com/s/gL0pCFnJsOhrkNsVUi6GWQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/gL0pCFnJsOhrkNsVUi6GWQ</a><br>查看exif  <a href="https://www.sojson.com/image/exif.html" target="_blank" rel="noopener">https://www.sojson.com/image/exif.html</a><br>EXIF查询 <a href="https://exif.tuchong.com/" target="_blank" rel="noopener">https://exif.tuchong.com/</a><br>图片exif查看器 <a href="https://www.toolnb.com/tools/getexif.html" target="_blank" rel="noopener">https://www.toolnb.com/tools/getexif.html</a><br>在线查看数码照片Exif信息 <a href="https://www.gaitubao.com/exif" target="_blank" rel="noopener">https://www.gaitubao.com/exif</a><br>2年前微信派就发过文章<a href="https://mp.weixin.qq.com/s/bFbU2Q8yWcI3rr-HYptY3A" target="_blank" rel="noopener">关于发送原图，这些事你得知道</a><br>自己用的修改图片EXIF信息软件<a href="https://www.52pojie.cn/thread-203604-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-203604-1-1.html</a><br>exiftool(-k -r -charset filename= -all= -overwrite_original).exe<br>ExifTagRemove <a href="https://www.lanzous.com/i3ja7ba" target="_blank" rel="noopener">https://www.lanzous.com/i3ja7ba</a>   <a href="https://www.lanzous.com/i3ja83i" target="_blank" rel="noopener">https://www.lanzous.com/i3ja83i</a><br>删除EXIF信息的软件 <a href="https://www.52pojie.cn/thread-919176-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-919176-1-1.html</a><br><a href="https://mlog.club/user/616" target="_blank" rel="noopener">https://mlog.club/user/616</a><br><a href="https://wemp.app/posts/e6ebf85a-25eb-41e4-81f2-49f84b1f22e3" target="_blank" rel="noopener">https://wemp.app/posts/e6ebf85a-25eb-41e4-81f2-49f84b1f22e3</a><br><a href="http://www.python88.com/topic/50750" target="_blank" rel="noopener">http://www.python88.com/topic/50750</a><br><a href="http://www.exiferaser.com/ver/1.1" target="_blank" rel="noopener">http://www.exiferaser.com/ver/1.1</a><br>ip查询 <a href="https://github.com.ipaddress.com/" target="_blank" rel="noopener">https://github.com.ipaddress.com/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/那些有趣的网站/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/05/那些有趣的网站/" itemprop="url">那些有趣的网站</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T20:47:20+08:00">
+                2019-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  739 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前分享过<a href="https://mp.weixin.qq.com/s/11w7ulUxtRoSuZztMGR_qw" target="_blank" rel="noopener">那些有意思的网站</a> ，这里继续分享一波，也许你用得上。</p>
+<h3 id="福利单词"><a href="#福利单词" class="headerlink" title="福利单词"></a>福利单词</h3><p>一边背单词一边看妹子的网站，用电脑打开，配合ctrl+w 关闭新窗口，不知不觉就背了百来个词了 <a href="https://easychen.gitee.io/foxdict/" target="_blank" rel="noopener">https://easychen.gitee.io/foxdict/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-dbcaff8a58971bd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="工资计算器"><a href="#工资计算器" class="headerlink" title="工资计算器"></a>工资计算器</h3><p>简单、精准、免费的 五险一金及税后工资计算器 周边计算服务 <a href="https://hizdm.cn/bonus/" target="_blank" rel="noopener">https://hizdm.cn/bonus/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1c92d79c1772e06a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>北京为例，月薪5万，税后只有36832.24 元。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-41214aba3f11915f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>你可以选择自己的城市<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5ed56e1fd0ad2486.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Logo-生成器"><a href="#Logo-生成器" class="headerlink" title="Logo 生成器"></a>Logo 生成器</h3><p>这是一个简单的 Logo 生成器，可以让你快速制作 Pornhub、YouTube 风格的 Logo <a href="https://www.zerobbs.net/pornhub/" target="_blank" rel="noopener">https://www.zerobbs.net/pornhub/</a>  <a href="https://www.zerobbs.net/youtube/" target="_blank" rel="noopener">https://www.zerobbs.net/youtube/</a> <a href="https://github.com/kasuganosoras/logo-maker" target="_blank" rel="noopener">https://github.com/kasuganosoras/logo-maker</a> <a href="https://github.com/bestony/logoly" target="_blank" rel="noopener">https://github.com/bestony/logoly</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-b4f5731e29b76ccf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如生成一个 苏生不惑 ，用这个做公众号头像怎么样？<br><img src="https://upload-images.jianshu.io/upload_images/17817191-3f2b25b672a13036.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="你好污啊"><a href="#你好污啊" class="headerlink" title="你好污啊"></a>你好污啊</h3><p>全网最污的人都在这里了 <a href="https://nihaowua.90so.net/" target="_blank" rel="noopener">https://nihaowua.90so.net/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-f2835a07ce3da010.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-3a54234755b950d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="在线扫雷"><a href="#在线扫雷" class="headerlink" title="在线扫雷"></a>在线扫雷</h3><p>扫雷经典游戏，应该很多人在Windows下玩过，现在可以在线玩了<a href="https://www.saolei.org.cn/" target="_blank" rel="noopener">https://www.saolei.org.cn/</a> ，有兴趣还可以玩玩五子棋，坦克。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-ba262cce21a5e748.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微博热搜历史"><a href="#微博热搜历史" class="headerlink" title="微博热搜历史"></a>微博热搜历史</h3><p>这里可以查看微博的热搜历史，生成热点词云图。<a href="https://www.enlightent.cn/research/rank/weiboSearchRank" target="_blank" rel="noopener">https://www.enlightent.cn/research/rank/weiboSearchRank</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-621240cc7eae82df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>选择历史11月1号的微博热搜<br><img src="https://upload-images.jianshu.io/upload_images/17817191-827f5052ffcf50ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>话题第一是杨超越致歉。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-ec54c07f6a9c10c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="中国历史时间轴"><a href="#中国历史时间轴" class="headerlink" title="中国历史时间轴"></a>中国历史时间轴</h3><p><a href="http://www.lishiju.net/timeline.html" target="_blank" rel="noopener">http://www.lishiju.net/timeline.html</a>  从公元前2070年到今天，让你清晰的了解中国上下5千年历史。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-134edf2e759c2d3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-9c65775408431dd5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="虚假截图助手"><a href="#虚假截图助手" class="headerlink" title="虚假截图助手"></a>虚假截图助手</h3><p>这是一个可以“伪造”微博、知乎、豆瓣、简书等网站界面截图的网站，看看鲁迅的微博又说什么了。<a href="https://fakes.netlify.com/#/sina/simple" target="_blank" rel="noopener">https://fakes.netlify.com/#/sina/simple</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1e8ab2216b20232a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>之前还有人伪造王思聪的微博发支付宝红包，其他那个数字是自己的，也不知道薅了多少支付宝羊毛，厉害。<br>总之，不要轻信截图。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f0fba24614716ee0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="关键词找-电影"><a href="#关键词找-电影" class="headerlink" title="关键词找 电影"></a>关键词找 电影</h3><p><a href="https://www.whatismymovie.com/" target="_blank" rel="noopener">https://www.whatismymovie.com/</a>  搜索<code>freedom</code>可以找到在电影《勇敢的心》1小时54分出现。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-40c2fc29fc579a88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d06db205210a39b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="知识提取搜索引擎"><a href="#知识提取搜索引擎" class="headerlink" title="知识提取搜索引擎"></a>知识提取搜索引擎</h3><p><a href="http://magi.com/" target="_blank" rel="noopener">http://magi.com/</a> 这个不同于百度谷歌， 搜索 pgone 有亮点。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-917640abeeb79463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="马云模拟器"><a href="#马云模拟器" class="headerlink" title="马云模拟器"></a>马云模拟器</h3><p><a href="https://lemonjing.com/" target="_blank" rel="noopener">https://lemonjing.com/</a> 在马云模拟器，你可以体验花光马云的2700多亿是什么感觉，买起来吧 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-72d12a0b25ece51a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1e93d9c368e24aa0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="举牌小人"><a href="#举牌小人" class="headerlink" title="举牌小人"></a>举牌小人</h3><p>举牌小人来自一个台湾插画家设计，<a href="http://upuptoyou.com/" target="_blank" rel="noopener">http://upuptoyou.com/</a> 提供生成这种图片服务。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b1554a9c3008e286.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果比较慢，可以使用国内的 <a href="http://1.hus.tcapps.twocola.com/" target="_blank" rel="noopener">http://1.hus.tcapps.twocola.com/</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-50c6bb956d230458.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/952eqef1Rm3HpH5DYbTjZg" target="_blank" rel="noopener">那些我关注的 b 站 up 主</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Y8wlutMFZymzCAKM3fp8SA" target="_blank" rel="noopener">那些我常听的中文播客节目</a></p>
+<p><a href="https://mp.weixin.qq.com/s/XTn8wPEyThacR3GLHyzBLA" target="_blank" rel="noopener">2019年11月最新使用油猴加速百度网盘下载方法</a></p>
+<p><a href="https://mp.weixin.qq.com/s/f36fXJbMYgWMTSTaGMeFCg" target="_blank" rel="noopener">比谷歌更有意思的知识提取搜索引擎 magi</a></p>
+<p><a href="https://mp.weixin.qq.com/s/I6Cd01c9fDx3MFeE3pGauw" target="_blank" rel="noopener">有了内网穿透神器 ngrok ，个人电脑也能做服务器</a><br> <img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/用-Markdown-来写简历和-PPT/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1772,372 +2141,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/比谷歌更有意思的知识提取搜索引擎-magi/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/11/比谷歌更有意思的知识提取搜索引擎-magi/" itemprop="url">比谷歌更有意思的知识提取搜索引擎 magi</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-11T20:28:51+08:00">
-                2019-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  896 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>关于搜索引擎之前写过<br><a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a><br> <a href="https://mp.weixin.qq.com/s/P2BTgqGwsA4YAq4jve-2Cg" target="_blank" rel="noopener">那些除百度以外你可能不知道的小众搜索引擎</a><br><a href="https://mp.weixin.qq.com/s/7v9LHJX05Ybv39BzrMD0Uw" target="_blank" rel="noopener">那些你可能不知道的百度产品</a><br><a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
-<h3 id="doge搜索"><a href="#doge搜索" class="headerlink" title="doge搜索"></a>doge搜索</h3><p>之前提到的doge搜索还是不错的，如果用不了谷歌可以推荐使用这个（想用谷歌在公众号回复 谷歌），另外还有人开发了个油猴脚本<a href="https://greasyfork.org/zh-CN/scripts/391784，给百度、360、搜狗、必应等搜索引擎的结果页加入多吉搜索按钮，一键跳转到多吉搜索进行相同关键词的检索。" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/391784，给百度、360、搜狗、必应等搜索引擎的结果页加入多吉搜索按钮，一键跳转到多吉搜索进行相同关键词的检索。</a></p>
-<p>比如搜最近大热的电影《小丑》（可以在公众号回复 <code>小丑</code> 获取电影），右侧可以看到doge搜索按钮 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-624f943e150e8e67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击跳转到doge<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8ba2e87d4c5c6bea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="magi"><a href="#magi" class="headerlink" title="magi"></a>magi</h3><p>不过最近发现的一个搜索引擎magi  <a href="http://magi.com" target="_blank" rel="noopener">http://magi.com</a> 很有意思，它用AI 梳理互联网的知识引擎，通过机器学习将互联网上的海量信息构建成可解析、可检索、可溯源的结构化知识体系。由微博博主@peakji开发，微博地址 <a href="https://www.weibo.com/1811148004/If71blQWC" target="_blank" rel="noopener">https://www.weibo.com/1811148004/If71blQWC</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e3f6e1130298221d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>界面是这样的，看起来没什么不一样。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f851f99582bed9b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>其实magi几年前就有了，36kr在2015年还报道过<a href="https://36kr.com/p/220307" target="_blank" rel="noopener">https://36kr.com/p/220307</a> ，不知道为什么今年才上线。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-93ea9135755f5638.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>不过和谷歌不一样的是它的搜索结果是以结构化知识呈现，按照可靠程度标记颜色为绿色（较为可靠）、黄色（一般）、红色（尚不足以验证可靠性），类似于 Wolfram Alpha <a href="http://www.wolframalpha.com/" target="_blank" rel="noopener">http://www.wolframalpha.com/</a> ，而且（暂时）没有广告。</p>
-<p>比如搜 微信 直接展示出这是个国民应用 ，是一种生活方式，用户超10亿，创始人张小龙，2011年出品，一眼就了解清楚搜索的这个词。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-bb9bf3ccfb53123f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>往下翻的结果就类似谷歌了，给出了链接地址，不过没有分页（不方便），而要一直点加载更多。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1935a8e55166f4fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜一下电影名字，很快能了解这部电影的基本信息。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-14c4bb6d9971fda1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下面这个搜索结果不知道会不会被公关掉。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-3d9153fb39210e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>pgone 这个搜索结果有亮点<br><img src="https://upload-images.jianshu.io/upload_images/17817191-20f51d36d9347a52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>搜 <code>世界上最美的女人</code> 结果是妈妈，没毛病。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-beaaec904c069058.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>当然它也是有缺陷的，比如搜 北京时间 展示结果很奇怪。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f6436c58f97d2850.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不如谷歌直接，像这种词还是用谷歌吧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-548eebc852f96157.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜双十一销售额不对。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7fc27ef0c7ea0c04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>其他更多使用方法见官网 <a href="https://www.peak-labs.com/docs/zh/magi/help" target="_blank" rel="noopener">https://www.peak-labs.com/docs/zh/magi/help</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-864cf0536308c74f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最后建议<code>magi</code>起个中文名，方便传播，还有ui配色改改，总之magi还是挺有意思的，你也可以搜索试试。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>这个来自中国的知识提取引擎，看起来比百度还好用一丢丢 <a href="https://www.huxiu.com/article/325126.html" target="_blank" rel="noopener">https://www.huxiu.com/article/325126.html</a><br><a href="https://www.zhihu.com/question/354059866" target="_blank" rel="noopener">如何评价 Peak Labs 出品的 2019 版 Magi 搜索引擎</a><br>MAGI名字是取自EVA里的超级电脑吗？<a href="https://cn.v2ex.com/t/616918?p=1" target="_blank" rel="noopener">https://cn.v2ex.com/t/616918?p=1</a></p>
-<p>推荐阅读:</p>
-<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
-<p><a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
-<p><a href="https://mp.weixin.qq.com/s/iL6WyI-TChtjZMuu5G5W8A" target="_blank" rel="noopener">公众号苏生不惑原创文章整理</a></p>
-<p><a href="https://mp.weixin.qq.com/s/RWxn4_Qg_Z3bL4wKusndKA" target="_blank" rel="noopener">不会写Python代码如何抓取豆瓣电影 Top 250</a></p>
-<p><a href="https://mp.weixin.qq.com/s/whcZis69KnIzEUVMtrjdmA" target="_blank" rel="noopener">Python 词云分析周杰伦新歌《说好不哭》</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LKDGKWi62J5Zyzh3rB-IiQ" target="_blank" rel="noopener">跟随时光机回到过去看看 2005 年的百度/腾讯/淘宝/谷歌</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/如何快速找到电子书《明朝那些事儿》/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/06/如何快速找到电子书《明朝那些事儿》/" itemprop="url">如何快速找到电子书《明朝那些事儿》</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T19:47:44+08:00">
-                2019-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  10 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>周末在b站看完了纪录片《大明1644》<a href="https://www.bilibili.com/video/av232309/" target="_blank" rel="noopener">https://www.bilibili.com/video/av232309/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-5576a52f431b5674.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
-<p>看完真是感慨万千，孤家寡人崇祯面对东林党那些老油条可真是无奈啊，最后的迁都希望都破灭了（当然也怪他自己，误杀袁崇焕，抓李自成后又放走，逼孙传庭出征，我都怀疑他是满清的卧底），于是大明在1644年挂了，附一段他最后的遗言，相比满清还算有骨气。</p>
-<blockquote>
-<p>朕自登极十七年，逆贼直逼京师。虽朕薄德藐躬，上干天咎，然皆诸臣之误朕也。朕死无面目见祖宗于地下，去朕冠冕，以发覆面，任贼分裂朕尸，勿伤百姓一人。</p>
-</blockquote>
-<p>看完不过瘾，于是想找当年明月的《明朝那些事儿》来看，这本书讲述了从1344年到1644年，明朝三百年间的历史，作品以史料为基础，以年代和具体人物为主线，运用小说的笔法，对明朝十七帝和其他王公权贵和小人物的命运进行全景展示，尤其对官场政治、战争、帝王心术着墨最多。这也是一部明朝政治经济制度、人伦道德的演义。大学的时候看过一部分，非常精彩，于是开始找这本书的电子书，也顺便整理下找电子书的网站/工具。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fd778f13a3c77d7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="谷歌"><a href="#谷歌" class="headerlink" title="谷歌"></a>谷歌</h3><p>第一个自然想到谷歌了，在书名关键词后加上格式如pdf/epub/mobi/azw3/txt等<br><img src="https://upload-images.jianshu.io/upload_images/17817191-78a5b92043dbb1b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>第二个链接直接就能在线预览了<br><a href="http://www.sssch.net/Admin/ckfinder/userfiles/files/shujixiazai/wodeshudan/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%EF%BC%88%E5%85%A8%E9%9B%86%EF%BC%89.pdf" target="_blank" rel="noopener">http://www.sssch.net/Admin/ckfinder/userfiles/files/shujixiazai/wodeshudan/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%EF%BC%88%E5%85%A8%E9%9B%86%EF%BC%89.pdf</a><br>点击下载就行了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-63731467958f1e2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果有些书搜不到，可以看看下面的专业电子书网站。</p>
-<h3 id="epub-转-mobi-格式"><a href="#epub-转-mobi-格式" class="headerlink" title="epub 转 mobi 格式"></a>epub 转 mobi 格式</h3><p>有时候需要将 epub 转换成 mobi 格式，可以使用这个在线工具  <a href="https://ebook.online-convert.com/convert-to-mobi" target="_blank" rel="noopener">https://ebook.online-convert.com/convert-to-mobi</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c1cf6fea37fc36a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>另外分享个电脑上阅读equb格式电子书软件 <a href="https://pan.baidu.com/s/1NFE3ie2yoVnvvjQuca6wtg" target="_blank" rel="noopener">https://pan.baidu.com/s/1NFE3ie2yoVnvvjQuca6wtg</a> 提取码: n2hm<br>对应的还有中文版<a href="http://cn.epubee.com/" target="_blank" rel="noopener">http://cn.epubee.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-107f9232d4c6bf36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="三秋书屋"><a href="#三秋书屋" class="headerlink" title="三秋书屋"></a>三秋书屋</h3><p>一个可免费下载电子书的网站 <a href="https://www.d4j.cn/" target="_blank" rel="noopener">https://www.d4j.cn/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-9889b6fd15f8c156.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>找到《明朝那些事》的地址 <a href="https://www.d4j.cn/8033.html" target="_blank" rel="noopener">https://www.d4j.cn/8033.html</a> ，提供了百度网盘链接<br><img src="https://upload-images.jianshu.io/upload_images/17817191-9d997feee5da2ea2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="鸠摩搜书"><a href="#鸠摩搜书" class="headerlink" title="鸠摩搜书"></a>鸠摩搜书</h3><p><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">https://www.jiumodiary.com/</a> 这个网站比较知名，直接提供网盘链接<a href="https://pan.baidu.com/s/1dF7bmSh，还有各种格式。" target="_blank" rel="noopener">https://pan.baidu.com/s/1dF7bmSh，还有各种格式。</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e07eadc0d597e852.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="虫部落"><a href="#虫部落" class="headerlink" title="虫部落"></a>虫部落</h3><p><a href="https://ebook.chongbuluo.com/" target="_blank" rel="noopener">https://ebook.chongbuluo.com/</a> 左侧集合了很多电子书网站，切换搜索就行，再也不用记那么多网址。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-76853f6a9f5a604b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="豆瓣资源下载大师"><a href="#豆瓣资源下载大师" class="headerlink" title="豆瓣资源下载大师"></a>豆瓣资源下载大师</h3><p> 1 秒搞定豆瓣电影 | 音乐 | 图书下载，这是一个油猴脚本<a href="https://greasyfork.org/zh-CN/scripts/329484" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/329484</a> ，在豆瓣搜索到书的链接 <a href="https://book.douban.com/subject/3674537/" target="_blank" rel="noopener">https://book.douban.com/subject/3674537/</a> 右侧可以看到推荐的搜索结果相当全面，包含在线阅读，图书搜索·，免费图书网站，在线听书，再也不用你一个个找了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6e52b3fd28a55132.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>关于油猴的使用参考之前的文章 <a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
-<p>另外分享个豆瓣图书排行榜<a href="https://alxddh.github.io/apps/douban-book-rank.html" target="_blank" rel="noopener">https://alxddh.github.io/apps/douban-book-rank.html</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-4186aaf75f042e86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果你也对明朝感兴趣推荐一部2007年的电视剧《大明王朝1566》和一部2013年的电影《大明劫》，公众号回复<code>大明劫</code>获取。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>豆瓣爬虫<a href="http://www.yournovel.cn/search?wd=%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B" target="_blank" rel="noopener">http://www.yournovel.cn/search?wd=%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B</a><br>醒客读书<a href="http://www.xkreading.com/" target="_blank" rel="noopener">http://www.xkreading.com/</a><br>免费计算机电子书籍下载网站 <a href="http://www.banshujiang.cn/" target="_blank" rel="noopener">http://www.banshujiang.cn/</a><br>资源搜索导航网站，内容：学术搜索，电子书，图书馆，图片，知识库等<a href="https://scholar.chongbuluo.com" target="_blank" rel="noopener">https://scholar.chongbuluo.com</a><br>一键生成个人微信朋友圈数据电子书<a href="https://github.com/sushengbuhuo/examples-of-web-crawlers" target="_blank" rel="noopener">https://github.com/sushengbuhuo/examples-of-web-crawlers</a><br>会上网就会下载电子书苦瓜<a href="https://www.kgbook.com/" target="_blank" rel="noopener">https://www.kgbook.com/</a><br>去中心化电子书下载。<a href="https://ebook.lorefree.com/" target="_blank" rel="noopener">https://ebook.lorefree.com/</a><br>一个清新简洁并且功能强大的免费电子书下载网站<a href="http://www.xkreading.com/" target="_blank" rel="noopener">http://www.xkreading.com/</a><br>书享家，一个电子书下载导航网站 <a href="http://shuxiangjia.cn/" target="_blank" rel="noopener">http://shuxiangjia.cn/</a><br>鸠摩搜书 <a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">https://www.jiumodiary.com/</a><br>电子书格式转换网站 <a href="http://cn.epubee.com/" target="_blank" rel="noopener">http://cn.epubee.com/</a><br>子午书简 <a href="https://5kindle.com/" target="_blank" rel="noopener">https://5kindle.com/</a><br>周读 <a href="http://www.ireadweek.com/" target="_blank" rel="noopener">http://www.ireadweek.com/</a><br>书语者 <a href="https://iseex.github.io/2019-02/electronic-books/" target="_blank" rel="noopener">https://iseex.github.io/2019-02/electronic-books/</a><br><a href="https://epubw.com/" target="_blank" rel="noopener">https://epubw.com/</a> <a href="https://epubw.xyz/" target="_blank" rel="noopener">https://epubw.xyz/</a><br> 搜索下载原版教材pdf版和视频资料 <a href="http://www.hejizhan.com/html/search" target="_blank" rel="noopener">http://www.hejizhan.com/html/search</a><br><a href="http://www.6soluo.com/?p=641" target="_blank" rel="noopener">解决你的电子书需求问题</a><br><a href="https://hdpdf.blog/" target="_blank" rel="noopener">https://hdpdf.blog/</a><br>超级书库<a href="https://shuayouxi.cn/" target="_blank" rel="noopener">https://shuayouxi.cn/</a><br> 电子书格式的转换，可以在这里<br>书格|<a href="http://www.shuge.org" target="_blank" rel="noopener">www.shuge.org</a><br><a href="https://calibre-ebook.com/download" target="_blank" rel="noopener">https://calibre-ebook.com/download</a><br>安装好此脚本之后，我们在豆瓣上打开书籍，脚本即自动进行搜索<br>电子书搜索 <a href="https://i-book.in/?q=%E6%98%8E%E6%9C%9D" target="_blank" rel="noopener">https://i-book.in/?q=%E6%98%8E%E6%9C%9D</a><br><a href="https://www.enjing.com/" target="_blank" rel="noopener">https://www.enjing.com/</a><br><a href="https://yabook.org/" target="_blank" rel="noopener">https://yabook.org/</a><br><a href="https://kindle.51nazhun.pub/" target="_blank" rel="noopener">https://kindle.51nazhun.pub/</a><br><a href="http://ibooks.org.cn/" target="_blank" rel="noopener">http://ibooks.org.cn/</a><br><a href="https://hdpdf.blog/" target="_blank" rel="noopener">https://hdpdf.blog/</a><br><a href="http://neikuw.com/" target="_blank" rel="noopener">http://neikuw.com/</a><br>免费电子书下载网站推荐 <a href="https://www.zhyong.cn/posts/417d/" target="_blank" rel="noopener">https://www.zhyong.cn/posts/417d/</a><br>电子书阅读软件推荐 <a href="https://www.zhyong.cn/posts/59a8/" target="_blank" rel="noopener">https://www.zhyong.cn/posts/59a8/</a><br>经常喜欢下载一些电子书，电子书常见的格式有.azw3，.epub，.mobi 等，或者更加常见的.pdf 格式。.pdf 格式只需要一款 pdf 阅读器即可打开，但是对于.azw3，.epub，.mobi 等格式，必须要特定的软件才能打开，因此非常需要一款 PC 端的电子书阅读器。这里推荐个人使用的两款电子书阅读软件，体验都很不错<a href="https://github.com/kovidgoyal/calibre" target="_blank" rel="noopener">https://github.com/kovidgoyal/calibre</a><br><a href="http://www.refrelent.com/" target="_blank" rel="noopener">http://www.refrelent.com/</a><br>豆瓣图书排行榜 <a href="https://alxddh.github.io/apps/douban-book-rank.html" target="_blank" rel="noopener">https://alxddh.github.io/apps/douban-book-rank.html</a><br>强大的 PDF 阅读器 Foxit: yaourt foxit<br><a href="https://chrome.google.com/webstore/detail/pdf-viewer/oemmndcbldboiebfnladdacbdfmadadm?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/pdf-viewer/oemmndcbldboiebfnladdacbdfmadadm?hl=zh-CN</a><br>我的小书屋类似的网站   布克书屋 <a href="https://www.bukebook.cn/" target="_blank" rel="noopener">https://www.bukebook.cn/</a><br>文献检索网站，繁简体检索够可以，里边有《四部丛刊》《四库全书》《永乐大典》和佛教道教文献，常用工具里面，还有标点过录和校对软件。最重要的是这个网站是免费的。 ​​​​ <a href="http://www.xueheng.net/" target="_blank" rel="noopener">http://www.xueheng.net/</a><br><a href="http://www.iamtxt.com/" target="_blank" rel="noopener">http://www.iamtxt.com/</a><br> <a href="https://weibo.com/5613051720/IadtIyqyY" target="_blank" rel="noopener">https://weibo.com/5613051720/IadtIyqyY</a><br>我的小书屋类似的网站   布克书屋 <a href="https://www.bukebook.cn/" target="_blank" rel="noopener">https://www.bukebook.cn/</a><br>文献检索网站，繁简体检索够可以，里边有《四部丛刊》《四库全书》《永乐大典》和佛教道教文献，常用工具里面，还有标点过录和校对软件。最重要的是这个网站是免费的。 ​​​​ <a href="http://www.xueheng.net/" target="_blank" rel="noopener">http://www.xueheng.net/</a><br>解决你的电子书需求问题。 <a href="http://www.6soluo.com/?p=641" target="_blank" rel="noopener">http://www.6soluo.com/?p=641</a><br><a href="http://www.hejizhan.com/html/search" target="_blank" rel="noopener">http://www.hejizhan.com/html/search</a> 可以搜索下载原版教材pdf版和视频资料之类的<br>阅读在线书源库 <a href="http://ku.iszoc.com/" target="_blank" rel="noopener">http://ku.iszoc.com/</a><br>解决你的电子书需求问题。 <a href="http://www.6soluo.com/?p=641" target="_blank" rel="noopener">http://www.6soluo.com/?p=641</a><br>一个免费电子书资源下载网站，可直接下载👏<br>格式包含kindle、epub、mobi、azw3、pdf  <a href="https://epubw.com/" target="_blank" rel="noopener">https://epubw.com/</a><br><a href="https://www.tuishujun.com/" target="_blank" rel="noopener">https://www.tuishujun.com/</a><br>功能：<br>1.可自由分享书源。<br>2.多种书源导入方式，网络导入，二维码导入，代码导入，*WEB一键导入（开启WEB服务）！<br>3.提供阅读书源在线批量编辑（开启WEB服务）  源仓库 地址 <a href="http://ku.mumuceo.com" target="_blank" rel="noopener">http://ku.mumuceo.com</a><br>阅读APP下载地址：<br>酷安下载：<a href="https://www.coolapk.com/apk/com.gedoor.monkeybook" target="_blank" rel="noopener">https://www.coolapk.com/apk/com.gedoor.monkeybook</a><br>作者GitHub: <a href="https://github.com/gedoor/MyBookshelf/releases" target="_blank" rel="noopener">https://github.com/gedoor/MyBookshelf/releases</a>  <a href="https://www.52pojie.cn/thread-1040287-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-1040287-1-1.html</a></p>
-<p><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">https://www.jiumodiary.com/</a>  <a href="http://www.ucdrs.superlib.net/" target="_blank" rel="noopener">http://www.ucdrs.superlib.net/</a> <a href="https://b-ok.org/" target="_blank" rel="noopener">https://b-ok.org/</a><br><a href="http://www.pdfzj.com/" target="_blank" rel="noopener">http://www.pdfzj.com/</a>  <a href="https://www.kgbook.com/" target="_blank" rel="noopener">https://www.kgbook.com/</a><br>现在已经叫全球数字图书馆项目了 <a href="https://www.cadal.cn/index/home#page1" target="_blank" rel="noopener">https://www.cadal.cn/index/home#page1</a><br>一个免费电子书资源下载网站，可直接下载👏<br>111个搜书网站小集，能找到 99% 的电子书 <a href="https://weibo.com/3109939781/I2Ej23FRs" target="_blank" rel="noopener">https://weibo.com/3109939781/I2Ej23FRs</a><br>有时候需要将 epub 转换成 mobi 格式，一般我都使用这个在线工具<a href="https://ebook.online-convert.com/convert-to-mobi" target="_blank" rel="noopener">https://ebook.online-convert.com/convert-to-mobi</a><br>苦瓜书盘是一个功能强大的书籍搜索网站，它的书籍分类十分全面。 苦瓜书盘是供网友交流适合电纸书阅读的6寸pdf及mobi格式电子书制作技术的网站，提供电子书分享的平台。<br><a href="https://www.kgbook.com/" target="_blank" rel="noopener">https://www.kgbook.com/</a><br>全民追书神器 V1.3.2.655高级完美版，各种付费小说免费看，告别书荒 <a href="https://www.52pojie.cn/thread-1040231-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-1040231-1-1.html</a><br>格式包含kindle、epub、mobi、azw3、pdf  <a href="https://epubw.com/" target="_blank" rel="noopener">https://epubw.com/</a><br>清华大学图书馆网站真是良心之作，227个数据库，数以万计的图书，论文，视频等学术资源都是免费提供的。<br>看小说神器「阅读」 的书源平台 <a href="https://www.52pojie.cn/thread-1040287-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-1040287-1-1.html</a>  源仓库 地址 <a href="http://ku.mumuceo.com" target="_blank" rel="noopener">http://ku.mumuceo.com</a> <a href="https://github.com/gedoor/MyBookshelf/releases" target="_blank" rel="noopener">https://github.com/gedoor/MyBookshelf/releases</a><br>11个搜书网站小集，能找到 99% 的电子书 <a href="https://weibo.com/3109939781/I2Ej23FRs" target="_blank" rel="noopener">https://weibo.com/3109939781/I2Ej23FRs</a><br><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">https://www.jiumodiary.com/</a>  <a href="http://www.ucdrs.superlib.net/" target="_blank" rel="noopener">http://www.ucdrs.superlib.net/</a> <a href="https://b-ok.org/" target="_blank" rel="noopener">https://b-ok.org/</a><br><a href="http://www.pdfzj.com/" target="_blank" rel="noopener">http://www.pdfzj.com/</a>  <a href="https://www.kgbook.com/" target="_blank" rel="noopener">https://www.kgbook.com/</a><br>现在已经叫全球数字图书馆项目了 <a href="https://www.cadal.cn/index/home#page1" target="_blank" rel="noopener">https://www.cadal.cn/index/home#page1</a></p>
-<p>电子书第一个是周读，网址为：<a href="http://www.ireadweek.com" target="_blank" rel="noopener">http://www.ireadweek.com</a> #每天分享一个有用的 </p>
-<p>Bookset 是一个质量很高的精品电子书籍网站。它提供了丰富的书籍，并且网站的电子书籍的更新频率非常快，网站的电子书籍你也都可以直接下载。 <a href="https://bookset.me/" target="_blank" rel="noopener">https://bookset.me/</a></p>
-<p>电子书 <a href="https://ebook.chongbuluo.com/" target="_blank" rel="noopener">https://ebook.chongbuluo.com/</a><br>电子书搜索导航网站👏，Google，鸠摩，百度搜书，ePUBee，LibGen，书格，数字图书馆等</p>
-<p>其中用Google搜索搜电子书的方法，书名关键词后加上格式（pdf/epub/mobi/azw3/txt）。</p>
-<p>【1】书名 + 格式；例如：巴黎圣母院 pdf。</p>
-<p>【2】书名 + filetype/inurl:格式 ；例如：格林童话 filetype:mobi ; 三个火枪手 inurl:pdf。</p>
-<p>【3】书名 + 提取码 ；例如：三体 提取码。<br>找电子图书与各类资源的必备和利器 <a href="https://weibo.com/ttarticle/p/show?id=2309404375054149412725" target="_blank" rel="noopener">https://weibo.com/ttarticle/p/show?id=2309404375054149412725</a><br>数字图书馆推广工程 是由国家图书馆带头的一个公益性网站。 汇集国内各省市图书馆于一站，主要提供免费的图书、杂志、有声读物在线浏览。分类齐全，资源众多，可随时切换国内任一家图书馆，而且都是免费看。 <a href="http://www.ndlib.cn/" target="_blank" rel="noopener">http://www.ndlib.cn/</a><br>【明史 历史公开课合集】 <a href="https://weibo.com/5888006271/Ie4py8WIc?type=comment#_rnd1572787605522" target="_blank" rel="noopener">https://weibo.com/5888006271/Ie4py8WIc?type=comment#_rnd1572787605522</a><br>推荐阅读:</p>
-<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
-<p><a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
-<p><a href="https://mp.weixin.qq.com/s/iL6WyI-TChtjZMuu5G5W8A" target="_blank" rel="noopener">公众号苏生不惑原创文章整理</a></p>
-<p><a href="https://mp.weixin.qq.com/s/RWxn4_Qg_Z3bL4wKusndKA" target="_blank" rel="noopener">不会写Python代码如何抓取豆瓣电影 Top 250</a></p>
-<p><a href="https://mp.weixin.qq.com/s/whcZis69KnIzEUVMtrjdmA" target="_blank" rel="noopener">Python 词云分析周杰伦新歌《说好不哭》</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LKDGKWi62J5Zyzh3rB-IiQ" target="_blank" rel="noopener">跟随时光机回到过去看看 2005 年的百度/腾讯/淘宝/谷歌</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-8ff6e00de5b0726e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2183,7 +2191,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">200</span>
+                  <span class="site-state-item-count">202</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2414,7 +2422,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共581.8k字</span>
+  <span class="post-count">博客全站共584.9k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
