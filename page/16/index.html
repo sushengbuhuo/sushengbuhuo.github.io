@@ -285,6 +285,526 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/命令行录制工具-asciinema/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/09/命令行录制工具-asciinema/" itemprop="url">命令行录制工具 asciinema</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T19:59:26+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>平常出bug求助的时候有时候贴代码或者截图往往不直观，如果能重现给对方看就好了，这里推荐 2 个命令行的录制工具。</p>
+<h3 id="asciinema"><a href="#asciinema" class="headerlink" title="asciinema"></a>asciinema</h3><p>网站<code>https://asciinema.org/</code>，github主页<a href="https://github.com/asciinema" target="_blank" rel="noopener">https://github.com/asciinema</a><br>直接使用 <code>pip install asciinema</code>来安装。<br> 执行<code>asciinema rec</code> 开始录制,录制完成后  exit 退出，可以保存到本地或者上传到 <code>https://asciinema.org</code>  。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_14_centos ~]# asciinema rec</span><br><span class="line">asciinema: recording asciicast to /tmp/tmp1ua5a2rx-ascii.cast</span><br><span class="line">asciinema: press &lt;ctrl-d&gt; or type <span class="string">"exit"</span> when you<span class="string">'re done</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos ~]# pwd</span></span><br><span class="line"><span class="string">/root</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos ~]# cd /usr/share/nginx/html/</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos html]# pip install asciinema</span></span><br><span class="line"><span class="string">DEPRECATION: Python 3.4 support has been deprecated. pip 19.1 will be the last one supporting it. Please upgrade your Python as Python 3.4 won'</span>t be maintained after March <span class="number">2019</span> (cf PEP <span class="number">429</span>).</span><br><span class="line">Looking <span class="keyword">in</span> indexes: http:<span class="comment">//mirrors.tencentyun.com/pypi/simple</span></span><br><span class="line">Requirement already satisfied: asciinema <span class="keyword">in</span> /usr/lib/python3<span class="number">.4</span>/site-packages (<span class="number">2.0</span><span class="number">.2</span>)</span><br><span class="line">You are using pip version <span class="number">19.0</span><span class="number">.3</span>, however version <span class="number">19.1</span><span class="number">.1</span> is available.</span><br><span class="line">You should consider upgrading via the <span class="string">'pip install --upgrade pip'</span> command.</span><br><span class="line">[root@VM_0_14_centos html]# pip list |grep ascii</span><br><span class="line">DEPRECATION: Python <span class="number">3.4</span> support has been deprecated. pip <span class="number">19.1</span> will be the last one supporting it. Please upgrade your Python <span class="keyword">as</span> Python <span class="number">3.4</span> won<span class="string">'t be maintained after March 2019 (cf PEP 429).</span></span><br><span class="line"><span class="string">asciinema              2.0.2</span></span><br><span class="line"><span class="string">You are using pip version 19.0.3, however version 19.1.1 is available.</span></span><br><span class="line"><span class="string">You should consider upgrading via the '</span>pip install --upgrade pip<span class="string">' command.</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos html]# exit</span></span><br><span class="line"><span class="string">exit</span></span><br><span class="line"><span class="string">asciinema: recording finished</span></span><br><span class="line"><span class="string">asciinema: press &lt;enter&gt; to upload to asciinema.org, &lt;ctrl-c&gt; to save locally</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">View the recording at:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    https://asciinema.org/a/AdnqMX0QfOg5c7USOtwHZ4Hz1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This installation of asciinema recorder hasn'</span>t been linked to any asciinema.org</span><br><span class="line">account. All unclaimed recordings (<span class="keyword">from</span> unknown installations like <span class="keyword">this</span> one)</span><br><span class="line">are automatically archived <span class="number">7</span> days after upload.</span><br><span class="line"></span><br><span class="line">If you want to preserve all recordings made on <span class="keyword">this</span> machine, connect <span class="keyword">this</span></span><br><span class="line">installation <span class="keyword">with</span> asciinema.org account by opening the following link:</span><br><span class="line"></span><br><span class="line">    https:<span class="comment">//asciinema.org/connect/01fb0f0e-c56a-450f-80ac-4020188dd957</span></span><br></pre></td></tr></table></figure></p>
+<p> 录制过程在<a href="https://asciinema.org/a/AdnqMX0QfOg5c7USOtwHZ4Hz1" target="_blank" rel="noopener">https://asciinema.org/a/AdnqMX0QfOg5c7USOtwHZ4Hz1</a> 可以看到了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2c63f9c98c78d4ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br> 如果分享给他人可以用邮箱注册，它不需要密码就可以注册。我注册后的主页<a href="https://asciinema.org/~susheng" target="_blank" rel="noopener">https://asciinema.org/~susheng</a><br>然后打开这个链接 <a href="https://asciinema.org/connect/01fb0f0e-c56a-450f-80ac-4020188dd957" target="_blank" rel="noopener">https://asciinema.org/connect/01fb0f0e-c56a-450f-80ac-4020188dd957</a> 就会保存到你账号下。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f7c40ae5768692a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>设置为public 后可生成公开链接，可分享给他人观看，还可以嵌入到自己的网站。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b5912fb223a74a81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-af4bf33fde51c8cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>视频链接后加 .png 是视频截图 <a href="https://asciinema.org/a/254348.png" target="_blank" rel="noopener">https://asciinema.org/a/254348.png</a> ，而链接后加 .js 就可以直接嵌入网站了。<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"https://asciinema.org/a/254348"</span> target=<span class="string">"_blank"</span>&gt;&lt;img src="https://asciinema.org/a/254348.svg" /&gt;&lt;/a&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://asciinema.org/a/254348.js"</span> id=<span class="string">"asciicast-254348"</span> <span class="keyword">async</span> data-autoplay=<span class="string">"true"</span> data-size=<span class="string">"big"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="TermRecord"><a href="#TermRecord" class="headerlink" title="TermRecord"></a>TermRecord</h3><p>TermRecord也是用 pip 安装 <code>pip install TermRecord</code>, 直接开始录制 <code>TermRecord -o termrecord.html</code>输入 exit 结束录制 。这个 termrecord.html 就是录制生成的文件，可以直接用浏览器打开。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_14_centos html]# TermRecord -o termrecord.html</span><br><span class="line">Script started, file is /tmp/tmpdekpz_p2</span><br><span class="line">[root@VM_0_14_centos html]# pwd</span><br><span class="line">/usr/share/nginx/html</span><br><span class="line">[root@VM_0_14_centos html]# whoami</span><br><span class="line">root</span><br><span class="line">[root@VM_0_14_centos html]# pip install TermRecord</span><br><span class="line">DEPRECATION: Python <span class="number">3.4</span> support has been deprecated. pip <span class="number">19.1</span> will be the last one supporting it. Please upgrade your Python <span class="keyword">as</span> Python <span class="number">3.4</span> won<span class="string">'t be maintained after March 2019 (cf PEP 429).</span></span><br><span class="line"><span class="string">Looking in indexes: http://mirrors.tencentyun.com/pypi/simple</span></span><br><span class="line"><span class="string">Requirement already satisfied: TermRecord in /usr/lib/python3.4/site-packages (1.2.5)</span></span><br><span class="line"><span class="string">Requirement already satisfied: Jinja2&gt;=2.6 in /usr/lib64/python3.4/site-packages (from TermRecord) (2.10.1)</span></span><br><span class="line"><span class="string">Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/lib64/python3.4/site-packages (from Jinja2&gt;=2.6-&gt;TermRecord) (1.1.1)</span></span><br><span class="line"><span class="string">You are using pip version 19.0.3, however version 19.1.1 is available.</span></span><br><span class="line"><span class="string">You should consider upgrading via the '</span>pip install --upgrade pip<span class="string">' command.</span></span><br><span class="line"><span class="string">[root@VM_0_14_centos html]# pip list|grep Term</span></span><br><span class="line"><span class="string">DEPRECATION: Python 3.4 support has been deprecated. pip 19.1 will be the last one supporting it. Please upgrade your Python as Python 3.4 won'</span>t be maintained after March <span class="number">2019</span> (cf PEP <span class="number">429</span>).</span><br><span class="line">TermRecord             <span class="number">1.2</span><span class="number">.5</span></span><br><span class="line">You are using pip version <span class="number">19.0</span><span class="number">.3</span>, however version <span class="number">19.1</span><span class="number">.1</span> is available.</span><br><span class="line">You should consider upgrading via the <span class="string">'pip install --upgrade pip'</span> command.</span><br><span class="line">[root@VM_0_14_centos html]# exit</span><br><span class="line">exit</span><br><span class="line">Script done, file is /tmp/tmpdekpz_p2</span><br></pre></td></tr></table></figure></p>
+<p>然后打开文件就可以看到录制过程了 <a href="http://118.24.158.116:8888/termrecord.html" target="_blank" rel="noopener">http://118.24.158.116:8888/termrecord.html</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-70fe211b10dbc15c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>另外还有个基于ruby的showterm和termtosvg就不演示了 <a href="http://showterm.io/" target="_blank" rel="noopener">http://showterm.io/</a>  <a href="https://github.com/nbedos/termtosvg" target="_blank" rel="noopener">https://github.com/nbedos/termtosvg</a></p>
+<p>推荐阅读：</p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p> <a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483979&amp;idx=1&amp;sn=0735daa1d805b66d346ed0e8e60a841f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483983&amp;idx=1&amp;sn=f0e1d9a8e22caf609d6c21431a530186&amp;chksm=e827a5aedf502cb8b72f2036054753fcfd9c20c28b9fbccdeae619a254a80e1024f18ba06523&amp;token=457023358&amp;lang=zh_CN#rd" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/那些你可能不知道的-ocr-图片文字识别工具/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/08/那些你可能不知道的-ocr-图片文字识别工具/" itemprop="url">那些你可能不知道的 ocr 图片文字识别工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T20:20:18+08:00">
+                2019-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  714 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有时候网上看到一张图片，比如电影截图，里面有台词，想把台词复制出来，这时候你可能会照着图片中的文字，手动打出来，但如果文字太多或者一篇文章，这样你会崩溃的，这时候你就需要ocr了。</p>
+<p>ocr是种光学字符识别技术，可以识别软件将图像中的文字转换成文本格式，这里推荐几种好用的ocr软件。</p>
+<p>这里以电影《不能说的秘密》这张图片为例子，ps：如果想看这部电影公众号回复  不能说的秘密 获取。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-34f592d8a0c85481.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>图中的文字为：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我能遇见你已经是很不可思议了</span><br><span class="line">Being able to meet you has been incredible</span><br></pre></td></tr></table></figure></p>
+<h3 id="天若OCR"><a href="#天若OCR" class="headerlink" title="天若OCR"></a>天若OCR</h3><p><a href="https://tianruoocr.cn/" target="_blank" rel="noopener">https://tianruoocr.cn/</a> 打开软件，双击截取需要识别的区域就好了，速度很快，效果可以。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d1132550027726e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>软件下载地址 公众号回复 ocr 获取。</p>
+<h3 id="黑洞OCR"><a href="#黑洞OCR" class="headerlink" title="黑洞OCR"></a>黑洞OCR</h3><p>打开软件，很小巧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-56c2ea83c04729c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击选取需要截图的区域，它会默认打开一个文件显示识别的内容。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2191d1a13dac0064.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>软件下载地址 公众号回复 ocr 获取。</p>
+<p>另外一款跨平台的树洞  OCR 小工具 <a href="https://github.com/AnyListen/tools-ocr" target="_blank" rel="noopener">https://github.com/AnyListen/tools-ocr</a> </p>
+<h3 id="白描"><a href="#白描" class="headerlink" title="白描"></a>白描</h3><p>白描，像猫一样灵动的ocr扫描识别神器。具备高准确度的文字识别、表格识别转Excel、批量识别、识别后翻译、文件扫描等功能。<br>网站<a href="https://baimiao.uzero.cn/" target="_blank" rel="noopener">https://baimiao.uzero.cn/</a> 这是个APP，我是不喜欢用APP的，有兴趣自己安装试试。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6424e738119891a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="在线识别"><a href="#在线识别" class="headerlink" title="在线识别"></a>在线识别</h3><p>网站 <a href="https://gongpeione.github.io/quick-js-ocr/example/" target="_blank" rel="noopener">https://gongpeione.github.io/quick-js-ocr/example/</a><br>打开网站直接上传图片或者粘贴图片等待一会就好，效果非常不错，没有一个错字。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-0bc393728d3e8498.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>类似的网站还有<a href="http://www.gkocr.com/web/index.html" target="_blank" rel="noopener">http://www.gkocr.com/web/index.html</a>  <a href="https://github.com/naptha/tesseract.js" target="_blank" rel="noopener">https://github.com/naptha/tesseract.js</a>   <a href="https://ocr.wdku.net/" target="_blank" rel="noopener">https://ocr.wdku.net/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-b8b0604eccd6bbb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="取字"><a href="#取字" class="headerlink" title="取字"></a>取字</h3><p>这是一个Chrome扩展 <a href="http://willingstudio.com/#install" target="_blank" rel="noopener">http://willingstudio.com/#install</a>  还是开源的 <a href="https://github.com/willing-Studio/willing-studio.github.io/" target="_blank" rel="noopener">https://github.com/willing-Studio/willing-studio.github.io/</a>  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c673bec22cb54d32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>经常刷微博可以看到这种长图，直接右键选择取字，真的方便。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-687f9defa1d9f5f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h3><p>微软 ai 识图，支持拍照识别，上传图片，或者直接从微信聊天记录查找图片来识别，效果如下。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7bd59b41d1e980d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>其他类似的小程序还有 以图识字 ，讯飞快读，腾讯翻译君 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-02f5103196c448a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小程序"></p>
+<p>推荐阅读：</p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p> <a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483979&amp;idx=1&amp;sn=0735daa1d805b66d346ed0e8e60a841f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483983&amp;idx=1&amp;sn=f0e1d9a8e22caf609d6c21431a530186&amp;chksm=e827a5aedf502cb8b72f2036054753fcfd9c20c28b9fbccdeae619a254a80e1024f18ba06523&amp;token=457023358&amp;lang=zh_CN#rd" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/如何在电脑上登陆多个微信/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/08/如何在电脑上登陆多个微信/" itemprop="url">如何在电脑上登陆多个微信</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T20:19:46+08:00">
+                2019-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  677 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>电脑上习惯登录好几个QQ，像这样的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-ab412be6302eedb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>但pc端的微信软件默认只能登录一个微信，如果有多个微信怎么办呢？</p>
+<h3 id="微信网页版"><a href="#微信网页版" class="headerlink" title="微信网页版"></a>微信网页版</h3><p>微信除了pc端的软件还有个微信网页版，地址是 <a href="https://wx.qq.com/" target="_blank" rel="noopener">https://wx.qq.com/</a> ，打开几个浏览器就能登录几个微信，一个浏览器当然也可以，开启隐身模式，见之前的文章<a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a> 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f68c8590031b7273.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>登录后<br><img src="https://upload-images.jianshu.io/upload_images/17817191-75676b4fc2039cd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还可以查看公众号文章。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-0cabf4ea40a7398e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果你觉得网页版样式不好看，可以安装个Chrome扩展把网页微信伪装成云笔记 <a href="https://github.com/YGYOOO/WeChat-Shelter" target="_blank" rel="noopener">https://github.com/YGYOOO/WeChat-Shelter</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1167b3a7ad4d1103.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>使用后的效果<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8415fb5544afae16.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>微信网页版虽然可以用，但是切换浏览器麻烦，而且不保存聊天记录，关闭后再登录就没有记录了。所以还是用pc端的软件比较好，它能保存所有聊天记录，图片和视频。</p>
+<p>那如何能在pc端登录多个微信呢？</p>
+<p>首先右击桌面的微信快捷方式，找到微信的安装目录，比如我的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-70408f5695555f1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>安装路径为 D:\wechat\WeChat.exe，将路径D:\wechat添加到环境变量。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-94298c8075d7f07b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>打开命令行执行<code>wechat &amp; wechat &amp; wechat</code>就可以打开3个微信了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d91b1e9cf8e0c8ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h3><p>如果觉得这样麻烦新建个批处理文件 <code>wechat.bat</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">start   <span class="string">"D:\wechat\WeChat.exe"</span></span><br><span class="line">start   <span class="string">"D:\wechat\WeChat.exe"</span></span><br></pre></td></tr></table></figure></p>
+<p>先关闭登录的微信，然后双击wechat.bat就可以登录2个微信了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-acd98c7823b55383.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>登录后的效果。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fa204cd566605225.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="win10应用商店"><a href="#win10应用商店" class="headerlink" title="win10应用商店"></a>win10应用商店</h3><p>如果你用的win10，还可以在应用商店安装<code>微信 For Windows</code> 地址 <a href="https://www.microsoft.com/zh-cn/p/%e5%be%ae%e4%bf%a1-for-windows/9nblggh4slx7?activetab=pivot:overviewtab" target="_blank" rel="noopener">https://www.microsoft.com/zh-cn/p/%e5%be%ae%e4%bf%a1-for-windows/9nblggh4slx7?activetab=pivot:overviewtab</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c9379dd28a14f5c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这样有了2个软件就可以登录2个微信了。</p>
+<p>除了上面这些方法还有第三方软件<a href="https://github.com/anhkgg/SuperWeChatPC" target="_blank" rel="noopener">https://github.com/anhkgg/SuperWeChatPC</a> 下载地址 <a href="https://raw.githubusercontent.com/anhkgg/SuperWeChatPC/master/bin/v1.1.3.zip" target="_blank" rel="noopener">https://raw.githubusercontent.com/anhkgg/SuperWeChatPC/master/bin/v1.1.3.zip</a><br>这个支持登录多个微信，还能消息防撤回，语音备份等。<br>mac系统推荐<a href="https://github.com/Sunnyyoung/WeChatTweak-macOS" target="_blank" rel="noopener">https://github.com/Sunnyyoung/WeChatTweak-macOS</a><br>下载源码后sudo make install就好了。<br>推荐阅读：</p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p> <a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483979&amp;idx=1&amp;sn=0735daa1d805b66d346ed0e8e60a841f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjg2ODExMA==&amp;mid=2247483983&amp;idx=1&amp;sn=f0e1d9a8e22caf609d6c21431a530186&amp;chksm=e827a5aedf502cb8b72f2036054753fcfd9c20c28b9fbccdeae619a254a80e1024f18ba06523&amp;token=457023358&amp;lang=zh_CN#rd" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/01/那些你可能不知道的知乎奇技淫巧/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1501,575 +2021,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/17/那些你可能不知道的视频下载奇技淫巧/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/17/那些你可能不知道的视频下载奇技淫巧/" itemprop="url">那些你可能不知道的视频下载奇技淫巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-17T13:51:23+08:00">
-                2019-06-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前已经写过好几篇的奇技淫巧系列了，今天说说怎么快速下载视频。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d5aa2f3408a6a60a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>我平常经常看视频的网站就是爱奇艺，b站，微博，知乎，网易这些。</p>
-<p>这里以微博为例，下载周杰伦的《晴天》，微博地址是 <a href="https://weibo.com/1871765890/HyPPQoaeH" target="_blank" rel="noopener">https://weibo.com/1871765890/HyPPQoaeH</a><br>下面是几种下载方法。</p>
-<h3 id="自力更生"><a href="#自力更生" class="headerlink" title="自力更生"></a>自力更生</h3><p>按<code>F12</code>打开控制台，在<code>network</code>中搜索<code>.mp4</code>找到mp4文件<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b047e9bbdc10b590.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>复制地址就是这个了 ，然后直接另存为保存到电脑。<a href="https://f.us.sinaimg.cn/001grNbNlx07u5gBTJMI01041203mpey0E020.mp4?label=mp4_720p&amp;template=1280x720.20.0&amp;Expires=1560614974&amp;ssig=vp5%2B3ARIGs&amp;KID=unistore,video" target="_blank" rel="noopener">https://f.us.sinaimg.cn/001grNbNlx07u5gBTJMI01041203mpey0E020.mp4?label=mp4_720p&amp;template=1280x720.20.0&amp;Expires=1560614974&amp;ssig=vp5%2B3ARIGs&amp;KID=unistore,video</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e56b85d7174d1b64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1"></p>
-<h3 id="Chrome-扩展"><a href="#Chrome-扩展" class="headerlink" title="Chrome 扩展"></a>Chrome 扩展</h3><p>安装一键视频下载器 <a href="https://chrome.google.com/webstore/detail/one-click-video-downloade/bhepgcoaibmmehlmckhlmbdgcemhidcg?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/one-click-video-downloade/bhepgcoaibmmehlmckhlmbdgcemhidcg?hl=zh-CN</a><br>由于Google域名在国内不可访问，可以使用第三方网站<a href="http://chrome-extension-downloader.com/" target="_blank" rel="noopener">http://chrome-extension-downloader.com/</a><br>或者<a href="http://www.gugeapps.net来下载" target="_blank" rel="noopener">www.gugeapps.net来下载</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-ae4641936e33f564.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击浏览器右上角一键视频下载器按钮，直接点击下载。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-bb39abc378044240.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="22"><br>油猴也有对应的下载脚本，有兴趣可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 找到。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b019cabf6c2ac6bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="浏览器嗅探"><a href="#浏览器嗅探" class="headerlink" title="浏览器嗅探"></a>浏览器嗅探</h3><p>这里用的是遨游浏览器的嗅探功能，播放视频以后直接点击资源嗅探器<br>选中视频直接下载就行了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-be09051e0ef0e8bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-176172f2e469edcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>页面上的图片也可以直接这样下载，可以说很方便了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d43c733f6378ef3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>网易云音乐也可以下载。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-27b71d9734a0915b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="视频解析网站"><a href="#视频解析网站" class="headerlink" title="视频解析网站"></a>视频解析网站</h3><p>视频解析网 <a href="https://www.parsevideo.com/" target="_blank" rel="noopener">https://www.parsevideo.com/</a>   </p>
-<p>输入微博地址，直接获取下载地址。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-6ff0e441a5f27ac9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然还支持b站，优酷，腾讯等视频网站。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-aea34856efc39594.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如下载b站的 周杰伦《晴天》<a href="https://www.bilibili.com/video/av36043614" target="_blank" rel="noopener">https://www.bilibili.com/video/av36043614</a><br>视频素材来自电影《不能说的秘密》，如果想看完整版在公众号回复 <code>不能说的秘密</code> 获取。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-dedad74f37b85d73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-03aa7012756ade04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>对应的视频下载网站还有这些：</p>
-<p>b站视频下载 <a href="http://www.jijidown.com/" target="_blank" rel="noopener">http://www.jijidown.com/</a>   <a href="https://www.ibilibili.com/" target="_blank" rel="noopener">https://www.ibilibili.com/</a> <a href="https://www.kanbilibili.com/" target="_blank" rel="noopener">https://www.kanbilibili.com/</a><br>微信视频下载 <a href="http://www.15um.com/tools/weixin_v.php" target="_blank" rel="noopener">http://www.15um.com/tools/weixin_v.php</a><br>微博视频下载 <a href="http://www.weibodang.cn/dang.php" target="_blank" rel="noopener">http://www.weibodang.cn/dang.php</a> <a href="https://weibomiaopai.com/" target="_blank" rel="noopener">https://weibomiaopai.com/</a><br> 视频在线解析下载 <a href="https://www.videofk.com" target="_blank" rel="noopener">https://www.videofk.com</a><br>媒体工具下载集合 <a href="https://miku.tools/" target="_blank" rel="noopener">https://miku.tools/</a><br>视频鱼<a href="http://www.shipinyu.cn/extractors" target="_blank" rel="noopener">http://www.shipinyu.cn/extractors</a><br>wn万能命令<a href="https://wn.run/cn/" target="_blank" rel="noopener">https://wn.run/cn/</a></p>
-<h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>最好的总留在最后，我平常都用命令行来下载的，主要是方便。<br>you-get是个基于Python的下载工具，直接 pip3 install you-get 来安装，<a href="https://github.com/soimort/you-get" target="_blank" rel="noopener">https://github.com/soimort/you-get</a><br>windows安装见 <a href="https://github.com/soimort/you-get/releases/latest" target="_blank" rel="noopener">https://github.com/soimort/you-get/releases/latest</a> </p>
-<p>具体使用说明 <a href="https://github.com/soimort/you-get/wiki/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">https://github.com/soimort/you-get/wiki/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E</a><br>它支持国内外大多数视频网站，如YouTube ，Twitter，网易云音乐，bilibili ，爱奇艺，优酷，腾讯视频，秒拍等。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-7e26c4f4894d3ea3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>查看视频属性<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">λ you-get -i https:<span class="comment">//www.bilibili.com/video/av36043614</span></span><br><span class="line">site:                Bilibili</span><br><span class="line">title:               一个MV 周杰伦《晴天》</span><br><span class="line">streams:             # Available quality and codecs</span><br><span class="line">    [ DASH ] ____________________________________</span><br><span class="line">    - format:        dash-flv720</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       高清 <span class="number">720</span>P</span><br><span class="line">      size:          <span class="number">80.8</span> MiB (<span class="number">84735780</span> bytes)</span><br><span class="line">    # download-with: you-get --format=dash-flv720 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        dash-flv480</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       清晰 <span class="number">480</span>P</span><br><span class="line">      size:          <span class="number">42.4</span> MiB (<span class="number">44437476</span> bytes)</span><br><span class="line">    # download-with: you-get --format=dash-flv480 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        dash-flv360</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       流畅 <span class="number">360</span>P</span><br><span class="line">      size:          <span class="number">16.3</span> MiB (<span class="number">17131306</span> bytes)</span><br><span class="line">    # download-with: you-get --format=dash-flv360 [URL]</span><br><span class="line"></span><br><span class="line">    [ DEFAULT ] _________________________________</span><br><span class="line">    - format:        flv720</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       高清 <span class="number">720</span>P</span><br><span class="line">      size:          <span class="number">81.0</span> MiB (<span class="number">84952120</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv720 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        flv480</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       清晰 <span class="number">480</span>P</span><br><span class="line">      size:          <span class="number">42.6</span> MiB (<span class="number">44653816</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv480 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        flv360</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       流畅 <span class="number">360</span>P</span><br><span class="line">      size:          <span class="number">16.5</span> MiB (<span class="number">17347646</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv360 [URL]</span><br></pre></td></tr></table></figure></p>
-<p>然后下载高清720P<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">λ you-get --format=flv720 https:<span class="comment">//www.bilibili.com/video/av36043614</span></span><br><span class="line">site:                Bilibili</span><br><span class="line">title:               一个MV 周杰伦《晴天》</span><br><span class="line">stream:</span><br><span class="line">    - format:        flv720</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       高清 <span class="number">720</span>P</span><br><span class="line">      size:          <span class="number">81.0</span> MiB (<span class="number">84952120</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv720 [URL]</span><br><span class="line"></span><br><span class="line">Downloading 一个MV 周杰伦《晴天》.flv ...</span><br><span class="line"> <span class="number">100</span>% ( <span class="number">81.0</span>/ <span class="number">81.0</span>MB) ├████████████████████████████████████████┤[<span class="number">1</span>/<span class="number">1</span>]    <span class="number">8</span> MB/s</span><br><span class="line"></span><br><span class="line">Downloading 一个MV 周杰伦《晴天》.cmt.xml ...</span><br></pre></td></tr></table></figure></p>
-<p>连弹幕都下载了。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-af29be6308b53b30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;&lt;i&gt;&lt;chatserver&gt;chat.bilibili.com&lt;/chatserver&gt;&lt;chatid&gt;63275197&lt;/chatid&gt;&lt;mission&gt;0&lt;/mission&gt;&lt;maxlimit&gt;1000&lt;/maxlimit&gt;&lt;state&gt;0&lt;/state&gt;&lt;real_name&gt;0&lt;/real_name&gt;&lt;source&gt;k-v&lt;/source&gt;</span><br><span class="line">&lt;d p="34.81500,1,25,16777215,1553437709,0,8b234fa4,13786433456177156"&gt;粉了 开口脆&lt;/d&gt;</span><br><span class="line">&lt;d p="62.78200,1,25,16777215,1553961853,0,8f59d6d3,14061235858309120"&gt;周冬雨和这女的像&lt;/d&gt;</span><br><span class="line">&lt;d p="39.79900,1,25,16777215,1556429301,0,93d7a1dd,15354889194438658"&gt;不能说的秘密&lt;/d&gt;</span><br><span class="line">&lt;/i&gt;</span><br></pre></td></tr></table></figure>
-<p>具体下载过程我用<code>TermRecord</code>录制了个命令行下载记录 <a href="http://118.24.158.116:8888/jay.html" target="_blank" rel="noopener">http://118.24.158.116:8888/jay.html</a></p>
-<p>对应的 go 版本也有annie  <a href="https://github.com/iawia002/annie" target="_blank" rel="noopener">https://github.com/iawia002/annie</a><br> 使用 go get github.com/iawia002/annie 安装，也可以直接下载二进制文件 <a href="https://github.com/iawia002/annie/releases" target="_blank" rel="noopener">https://github.com/iawia002/annie/releases</a><br>这里下载流畅版本，只有16M大小。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">λ annie -f <span class="number">16</span> https:<span class="comment">//www.bilibili.com/video/av36043614</span></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     一个MV 周杰伦《晴天》</span><br><span class="line"> Type:      video</span><br><span class="line"> Stream:</span><br><span class="line">     [<span class="number">16</span>]  -------------------</span><br><span class="line">     Quality:         流畅 <span class="number">360</span>P</span><br><span class="line">     Size:            <span class="number">16.54</span> MiB (<span class="number">17347646</span> Bytes)</span><br><span class="line">     # download with: annie -f 16 ...</span><br><span class="line"></span><br><span class="line"> <span class="number">16.54</span> MiB / <span class="number">16.54</span> MiB [=======================================================================] <span class="number">100.00</span>% <span class="number">1.32</span> MiB/s <span class="number">12</span>s</span><br></pre></td></tr></table></figure></p>
-<p>下载上面那个微博视频<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">λ annie -f <span class="number">480</span> https:<span class="comment">//weibo.com/tv/v/HvyNcv6kC?fid=1034:4375218609978642</span></span><br><span class="line"></span><br><span class="line"> Site:      微博 weibo.com</span><br><span class="line"> Title:     #一首青春里的歌#</span><br><span class="line">周杰伦《晴天》超清MV版</span><br><span class="line">从前从前 有个人爱你很久</span><br><span class="line">但偏偏 风渐渐</span><br><span class="line">把距离吹得好远</span><br><span class="line">好不容易 又能再多爱一天</span><br><span class="line">但故事的最后</span><br><span class="line">你好像还是说了 拜拜</span><br><span class="line">有多少人是因为这段喜欢上这首歌的？</span><br><span class="line">《晴天》承载了许多人的青春记忆，它是你青春里的歌吗？</span><br><span class="line"> Type:      video</span><br><span class="line"> Stream:</span><br><span class="line">     [<span class="number">480</span>]  -------------------</span><br><span class="line">     Quality:         <span class="number">480</span></span><br><span class="line">     Size:            <span class="number">26.52</span> MiB (<span class="number">27803497</span> Bytes)</span><br><span class="line">     # download with: annie -f 480 ...</span><br><span class="line"></span><br><span class="line"> <span class="number">26.52</span> MiB / <span class="number">26.52</span> MiB [=======================================================================] <span class="number">100.00</span>% <span class="number">1.52</span> MiB/s <span class="number">17</span>s</span><br></pre></td></tr></table></figure></p>
-<p> 另外说下 ffmpeg ，这是个非常好用的音视频处理工具，下载地址 <a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener">https://ffmpeg.org/download.html</a> 之前写过一篇 ffmpeg 将视频转GIF <a href="https://mp.weixin.qq.com/s/624Hv1krGUboecz1QX8O1g" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/624Hv1krGUboecz1QX8O1g</a><br>有些网站使用的是 m3u8 格式来播放视频，找到m3u8文件地址就可以用ffmpeg来下载了。<br><code>ffmpeg  -i &quot;http://xxx.m3u8&quot; -vcodec copy -acodec copy -absf aac_adtstoasc       下载的视频名称.mp4</code></p>
-<p>好了，有了上面这些方法下载视频再也不用愁了，如果你有更好的下载方式欢迎留言交流。</p>
-<p>推荐阅读：<br><a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/那些你可能不知道的搜索奇技淫巧/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/10/那些你可能不知道的搜索奇技淫巧/" itemprop="url">那些你可能不知道的搜索奇技淫巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T19:59:51+08:00">
-                2019-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>互联网时代每天产生大量的数据，如何快速找到我们需要的信息，这就需要靠搜索引擎了，今天就说说那些你可能每天在用但还不知道的搜索技巧。</p>
-<h3 id="搜索网站"><a href="#搜索网站" class="headerlink" title="搜索网站"></a>搜索网站</h3><p>最常用的自然是 baidu Google bing ，其实还有个搜狗，这个搜索微信公众号和知乎很实用。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2db57b4d9cdac621.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d2e6178cb4e273a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>当然还有些小众的搜索引擎，如</p>
-<p>搜索引擎汇集网站快搜 <a href="https://search.chongbuluo.com/" target="_blank" rel="noopener">https://search.chongbuluo.com/</a><br>一个不追踪你的搜索引擎 秘迹搜<a href="https://mijisou.com/" target="_blank" rel="noopener">https://mijisou.com/</a><br>鸟搜 <a href="http://126kr.com/" target="_blank" rel="noopener">http://126kr.com/</a></p>
-<h3 id="关键字搜索"><a href="#关键字搜索" class="headerlink" title="关键字搜索"></a>关键字搜索</h3><p>这个最常用了，比如直接输入 周杰伦 可以找到关于周杰伦的信息。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-9cb817cff2dc9549.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击旁边的图片可以搜到 jay 的图片<br><img src="https://upload-images.jianshu.io/upload_images/17817191-eb50f9b66b38dd59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有新闻，视频和地图等。</p>
-<p>我常用的还是在 工具 里选择时间，比如想看最近关于周杰伦的消息可以选择过去一个月内，可以看到jay参加了朗朗的婚礼。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-d30f129505a1db65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>多关键词之间空格分割，如 周杰伦 不能说的秘密<br><img src="https://upload-images.jianshu.io/upload_images/17817191-713b793fcd6e5b1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>搜索自然常数 e 可以直接使用计算器了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-25e9ac066fb77e7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-de048a93af1b5abf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>另外百度上搜索 黑洞  抖动 摇一摇 Duang 等关键词会有特效，很酷炫，如果没有看过的话赶紧百度下。</p>
-<h3 id="过滤搜索"><a href="#过滤搜索" class="headerlink" title="过滤搜索"></a>过滤搜索</h3><p>比如不想搜关于 不能说的秘密 的周杰伦信息，可以加上 -<br>搜 周杰伦 -不能说的秘密<br><img src="https://upload-images.jianshu.io/upload_images/17817191-afc15c16c4af63ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="指定网站搜索"><a href="#指定网站搜索" class="headerlink" title="指定网站搜索"></a>指定网站搜索</h3><p>比如想搜索知乎上最近关于周杰伦的讨论，搜索 site:zhihu.com 周杰伦，注意网址不要带http://<br><img src="https://upload-images.jianshu.io/upload_images/17817191-9c7408a599bbd826.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> 当然也可以直接在知乎上搜索，但搜索效果还是有差异的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f8476c5ea361e201.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>另外有些网站没有搜索功能的都可以这样来搜索。</p>
-<h3 id="文档搜索"><a href="#文档搜索" class="headerlink" title="文档搜索"></a>文档搜索</h3><p>比如写关于 5G 的论文，可以搜  filetype:doc 5G<br><img src="https://upload-images.jianshu.io/upload_images/17817191-efee8bf9cd80f6d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>百度上有许多关于5G的文档，比如第一条的 <a href="https://wenku.baidu.com/view/891adcdfa1116c175f0e7cd184254b35effd1a43.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/891adcdfa1116c175f0e7cd184254b35effd1a43.html</a>  但是百度上需要VIP才能下载。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-21a7d47fc7e4c731.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>有个网站提供了文库下载功能，只需要将地址中的baidu改为baiduvvv，地址就成了<br> <a href="https://wenku.baiduvvv.com/view/891adcdfa1116c175f0e7cd184254b35effd1a43.html" target="_blank" rel="noopener">https://wenku.baiduvvv.com/view/891adcdfa1116c175f0e7cd184254b35effd1a43.html</a>  直接点下载即可。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-66c0ea67eef80673.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果嫌麻烦可以使用 冰点文库下载器，无需积分，注册和登录就可以自由下载百度、豆丁等文库的文档，下载的文档可以生成高清晰 pdf 格式。</p>
-<p>公众号内回复 文库下载 获取冰点文库下载器。</p>
-<h3 id="电影-书籍-小说搜索"><a href="#电影-书籍-小说搜索" class="headerlink" title="电影/书籍/小说搜索"></a>电影/书籍/小说搜索</h3><p>比如想看万历十五年这本书，可以加《》 ，搜 《万历十五年》<br><img src="https://upload-images.jianshu.io/upload_images/17817191-35234a9c2e29dfe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>对比下不加《》的效果<br><img src="https://upload-images.jianshu.io/upload_images/17817191-947af4da3c870468.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>电子书搜索可以使用专业的鸠摩搜索 <a href="https://www.jiumodiary.com/，比如搜" target="_blank" rel="noopener">https://www.jiumodiary.com/，比如搜</a> 明朝那些事 可以找到对应的网盘链接。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-59249332a0f44c0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="快照搜索"><a href="#快照搜索" class="headerlink" title="快照搜索"></a>快照搜索</h3><p>可能由于某些不可抗力因素，网上有些信息被删了，这时候就需要快照功能了，它会有存档。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a42c48df9be49478.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>点击网页快照可以看到6月2号存档的结果，当然这只是个例子，这个网页并没有被删除。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8dea16c73fe9df9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>有人还开发了个网页快照网<a href="https://2tool.top/" target="_blank" rel="noopener">https://2tool.top/</a>，在某个网址的域名前面加上his.sh/ ，即可显示该网址在各大搜索引擎的网页快照。</p>
-<h3 id="互联网档案搜索"><a href="#互联网档案搜索" class="headerlink" title="互联网档案搜索"></a>互联网档案搜索</h3><p>互联网上的记录都被记录在 archive.org 和 archive.is 这类网站，它是个网站时光机。<br> <img src="https://upload-images.jianshu.io/upload_images/17817191-836e0eaf3ccbf0be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如可以搜到 03 年的腾讯。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-414c5f6fd4820e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="图片搜索"><a href="#图片搜索" class="headerlink" title="图片搜索"></a>图片搜索</h3><p>这个还有很有用的，有时候看到一张电影海报，但不知是哪部电影，这个时候就需要百度/谷歌识图了，直接上传图片或者图片地址即可搜索出图片的信息。</p>
-<p>比如这张电影海报，左边是张国荣，右边的女星没什么印象。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-0fa5bd7aa0d2db43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这个时候百度识图下 <a href="https://image.baidu.com/?fr=shitu" target="_blank" rel="noopener">https://image.baidu.com/?fr=shitu</a> 就知道是和哥哥一起合作的电影《纵横四海》的钟楚红了。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-d984e0462b99130d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="高级搜索"><a href="#高级搜索" class="headerlink" title="高级搜索"></a>高级搜索</h3><p>如果以上搜索结果还不满意，可以自定义设置搜索。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-b359345a27b5f589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-b0f1ab25459c61ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> <img src="https://upload-images.jianshu.io/upload_images/17817191-229e9dc676471f1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="微信搜索"><a href="#微信搜索" class="headerlink" title="微信搜索"></a>微信搜索</h3><p>微信是最常用的APP了，自带的搜索可以搜朋友圈，文章，公众号，小程序，音乐和表情，比如快端午了，搜出来的表情包可以直接发送微信好友。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-43193a4bc9de90e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以搜朋友分享过的文章，按阅读量排序。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-286431c89b540e52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入自己的微信昵称，点击更多群聊就可以找到自己曾经加过的的所有群（包括没有保存到通讯录的群）！具体见之前的文章<a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-1192ddb9af5d2a5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="微博搜索"><a href="#微博搜索" class="headerlink" title="微博搜索"></a>微博搜索</h3><p>如今微博成了娱乐，社会热点的第一阵地，想第一时间吃瓜去微博就好了。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-247f3934e17b8a6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果端午节想去哪个景点，比如庐山  可以看看网友们在庐山的感受。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-076fe9b98edbcb4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>。</p>
-<h3 id="企业信息搜索"><a href="#企业信息搜索" class="headerlink" title="企业信息搜索"></a>企业信息搜索</h3><p>全国企业信用信息公示系统 <a href="http://bj.gsxt.gov.cn" target="_blank" rel="noopener">http://bj.gsxt.gov.cn</a> 可以查到一家企业的法定代表人、投资人、变更情况等信息，找工作的时候很实用。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-249c3ef977d459f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有个专业的天眼查 <a href="http://www.tianyancha.com/" target="_blank" rel="noopener">http://www.tianyancha.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-506e6970cd8f0715.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-63fcac37a541ddf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="教你谷歌-百度"><a href="#教你谷歌-百度" class="headerlink" title="教你谷歌/百度"></a>教你谷歌/百度</h3><p>可以说你想问的问题，网上大多数人都已经遇到过了，所以掌握这些搜索技巧应该可以应付95%的问题。</p>
-<p>所以如果还有人问你 我电脑上不了网怎么办，Excel 怎么换行 之类的，直接给他个教人用百度/谷歌的网站吧。比如<br> <a href="http://lmgtfy.com/" target="_blank" rel="noopener">http://lmgtfy.com/</a> 意思是 Let Me Google That For You，缩写：LMGTFY ，对应百度是 <a href="http://lmbtfy.cn/" target="_blank" rel="noopener">http://lmbtfy.cn/</a> </p>
-<p>进入网站填写 输入关键字搜索，然后生成短链接 <a href="http://bfy.tw/NwVr" target="_blank" rel="noopener">http://bfy.tw/NwVr</a><br> <img src="https://upload-images.jianshu.io/upload_images/17817191-dbe54e35e6c40fba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> 把这个网址发给对方 <a href="http://bfy.tw/NwVr" target="_blank" rel="noopener">http://bfy.tw/NwVr</a> 会以动画的形式教他搜索。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-35b1afcadf1edc2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>百度也一样的，生成微博短链接 <a href="http://t.cn/Ai9Xb0di" target="_blank" rel="noopener">http://t.cn/Ai9Xb0di</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-715056ff0721330b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> 把地址<a href="http://t.cn/Ai9Xb0di" target="_blank" rel="noopener">http://t.cn/Ai9Xb0di</a> 直接发给对方，要不你试试。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-924575061e802795.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> 好，关于搜索就先说这些了，如果你还有什么更好的搜索技巧，欢迎留言交流。</p>
-<p>推荐阅读：</p>
-<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/那些你可能不知道的网易云音乐奇技淫巧/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/10/那些你可能不知道的网易云音乐奇技淫巧/" itemprop="url">那些你可能不知道的网易云音乐奇技淫巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T19:58:15+08:00">
-                2019-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.5k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>平常听网易云音乐比较多，主要喜欢看看评论，这里就说说网易云音乐。</p>
-<h3 id="找到朋友圈分享的网易云主页地址"><a href="#找到朋友圈分享的网易云主页地址" class="headerlink" title="找到朋友圈分享的网易云主页地址"></a>找到朋友圈分享的网易云主页地址</h3><p>比如我在朋友圈分享了一首许巍的《我的爱》，在朋友圈点击进入复制链接，地址是 <a href="https://music.163.com/m/song?id=1303026566&amp;userid=293753445&amp;from=timeline" target="_blank" rel="noopener">https://music.163.com/m/song?id=1303026566&amp;userid=293753445&amp;from=timeline</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e51d684de85b74eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>其中的293753445就是我的userid，然后打开地址<a href="https://music.163.com/#/user/home?id=293753445" target="_blank" rel="noopener">https://music.163.com/#/user/home?id=293753445</a> 这就是我的主页，有兴趣关注或者看看我的动态。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-dcda8466d4a31537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>所以如果你喜欢的人在朋友圈分享了首网易云歌曲，可以找到他的主页看看他都喜欢些什么歌，找找共同爱好什么的。</p>
-<h3 id="下载音乐"><a href="#下载音乐" class="headerlink" title="下载音乐"></a>下载音乐</h3><p>比如上面那首歌的地址 <a href="https://music.163.com/m/song?id=1303026566&amp;userid=293753445&amp;from=timeline" target="_blank" rel="noopener">https://music.163.com/m/song?id=1303026566&amp;userid=293753445&amp;from=timeline</a> 其中的id 1303026566就是歌曲的唯一标识。</p>
-<p>然后打开这个地址 <a href="https://music.163.com/song/media/outer/url?id=1303026566.mp3，其实就是替换这里的id，打开后另存为就能下载了。" target="_blank" rel="noopener">https://music.163.com/song/media/outer/url?id=1303026566.mp3，其实就是替换这里的id，打开后另存为就能下载了。</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-0f0ef12d4930fecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果嫌麻烦可以使用第三方网站<br><a href="http://www.gequdaquan.net/gqss/" target="_blank" rel="noopener">http://www.gequdaquan.net/gqss/</a><br> <a href="http://tool.liumingye.cn/music/?type=xiami&amp;name=%E9%99%88%E5%A5%95%E8%BF%85" target="_blank" rel="noopener">http://tool.liumingye.cn/music/?type=xiami&amp;name=%E9%99%88%E5%A5%95%E8%BF%85</a><br>  <a href="http://www.fulichaoshi.com/" target="_blank" rel="noopener">http://www.fulichaoshi.com/</a><br> <a href="http://music.wandhi.com/" target="_blank" rel="noopener">http://music.wandhi.com/</a><br><a href="http://moresound.tk/music/teach.html#c" target="_blank" rel="noopener">http://moresound.tk/music/teach.html#c</a><br>搜索歌曲，直接点击下载。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5a6960d12fd1fe07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="下载网易视频"><a href="#下载网易视频" class="headerlink" title="下载网易视频"></a>下载网易视频</h3><p>比如这个视频 超好听的《Something Just Like This》<a href="https://music.163.com/#/video?id=457AF908B0426A0321CEF9F02943DB28" target="_blank" rel="noopener">https://music.163.com/#/video?id=457AF908B0426A0321CEF9F02943DB28</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-19f585805437d2cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>按F12打开控制台<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fb4b8bb981944f79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>复制出地址 hurl=http%3A%2F%2Fvodkgeyttp9.vod.126.net%2Fvodkgeyttp8%2F0J6b5JIi_1396042360_shd.mp4%3FwsSecret%3D96dd1b4e0244bfda57c6fdd960c50dcb%26wsTime%3D1558967505%26ext%3Dnb0MvQeQKPNcsz96aHpBuzRh0rDbAr30FqKl5vr0I%252BsgZVMShOEX3GBbgnTwSg6aco2Iono%252FRKTn6VFQ4YzRv4kfMaaeHRGI2EJ%252BI38ZQkTi9RzE%252BeABsHu2wMaq8Byasv4tM1RYezJr%252BmpM%252Fy8aYK4ZiGH6vlqbZgLxdDo53hBj3eF4PZyek9PZCoF25cWOumUL0dHJwz0%252BGNJQ27akNzjFOr5yrGOBGoNlrAric94cqzdirCuQlmAJEj170IhHGKwUuB26pwXZHBahIkaVSjT6hZbrRH2m92SqU8A4qPJ52Actv%252BQsSyupXoGe72T5u1PbKVec%252FeYoVLFQd2EOuBx%252F1U31SCk6rMELTywziJIequBBoPZyAxRkr%252BJvF%252BX6FaqAsr%252BBavVAghDmSHKu3BUKr%252F4ZHqGiQEYlj%252B41EhCuWfEDBDXfZMzyxnoF1d2MzF4YIqMr1xHys7T92PUrJDYtGmEWpdKYphajwwj%252FoNIENKhTSKwDrlD1zaHseNllgnc6Y3VaT7RynUgcvfAfVd5OoaoRIYeIqqoe1HxLKa0R54ISLaW31spkfVtI97%252F1&amp;murl=http%3A%2F%2Fvodkgeyttp9.vod.126.net%2Fvodkgeyttp8%2FoYGrmcJY_1396042360_hd.mp4%3FwsSecret%3Dfaef4ea063513745ac19beb95ad14cb1%26wsTime%3D1558966708%26ext%3Dnb0MvQeQKPNcsz96aHpBuzRh0rDbAr30FqKl5vr0I%252BsgZVMShOEX3GBbgnTwSg6aco2Iono%252FRKTn6VFQ4YzRv4kfMaaeHRGI2EJ%252BI38ZQkTi9RzE%252BeABsHu2wMaq8Byasv4tM1RYezJr%252BmpM%252Fy8aYK4ZiGH6vlqbZgLxdDo53hBj3eF4PZyek9PZCoF25cWOumUL0dHJwz0%252BGNJQ27akNzjFOr5yrGOBGoNlrAric94cqzdirCuQlmAJEj170IhHGKwUuB26pwXZHBahIkaVSjT6hZbrRH2m92SqU8A4qPJ52Actv%252BQsSyupXoGe72T5u1PbKVec%252FeYoVLFQd2EOuBx%252F1U31SCk6rMELTywziJIequBBoPZyAxRkr%252BJvF%252BX6FaqAsr%252BBavVAghDmSHKu3BUKr%252F4ZHqGiQEYlj%252B41EhCuWfEDBDXfZMzyxnoF1d2MzF4YIqMr1xHys7T92PUrJDYtGmEWpdKYphajwwj%252FoNIENKhTSKwDrlD1zaHseNllgnc6Y3VaT7RynUgcvfAfVe47Q1LKayvR9i65UzSoezlHGDsnDpznlI4KgzdoX6pb&amp;autoPlay=true&amp;trackName=超好听的《Something Just Like This》&amp;artistName=苏生不惑&amp;resourceId=457AF908B0426A0321CEF9F02943DB28&amp;coverImg=<a href="http://p1.music.126.net/9b_c3yrbFNzCEtnIlBJzgA==/109951163249463194.jpg&amp;restrict=false&amp;width=640&amp;height=400" target="_blank" rel="noopener">http://p1.music.126.net/9b_c3yrbFNzCEtnIlBJzgA==/109951163249463194.jpg&amp;restrict=false&amp;width=640&amp;height=400</a></p>
-<p>把前缀hurl= 去掉就是了,但这个地址被编码了，没法直接打开，这时候打开控制台<br>执行decodeURIComponent(地址链接)返回真实的地址<br><a href="http://vodkgeyttp9.vod.126.net/vodkgeyttp8/0J6b5JIi_1396042360_shd.mp4?wsSecret=96dd1b4e0244bfda57c6fdd960c50dcb&amp;wsTime=1558967505&amp;ext=nb0MvQeQKPNcsz96aHpBuzRh0rDbAr30FqKl5vr0I%2BsgZVMShOEX3GBbgnTwSg6aco2Iono%2FRKTn6VFQ4YzRv4kfMaaeHRGI2EJ%2BI38ZQkTi9RzE%2BeABsHu2wMaq8Byasv4tM1RYezJr%2BmpM%2Fy8aYK4ZiGH6vlqbZgLxdDo53hBj3eF4PZyek9PZCoF25cWOumUL0dHJwz0%2BGNJQ27akNzjFOr5yrGOBGoNlrAric94cqzdirCuQlmAJEj170IhHGKwUuB26pwXZHBahIkaVSjT6hZbrRH2m92SqU8A4qPJ52Actv%2BQsSyupXoGe72T5u1PbKVec%2FeYoVLFQd2EOuBx%2F1U31SCk6rMELTywziJIequBBoPZyAxRkr%2BJvF%2BX6FaqAsr%2BBavVAghDmSHKu3BUKr%2F4ZHqGiQEYlj%2B41EhCuWfEDBDXfZMzyxnoF1d2MzF4YIqMr1xHys7T92PUrJDYtGmEWpdKYphajwwj%2FoNIENKhTSKwDrlD1zaHseNllgnc6Y3VaT7RynUgcvfAfVd5OoaoRIYeIqqoe1HxLKa0R54ISLaW31spkfVtI97%2F1&amp;murl=http://vodkgeyttp9.vod.126.net/vodkgeyttp8/oYGrmcJY_1396042360_hd.mp4?wsSecret=faef4ea063513745ac19beb95ad14cb1&amp;wsTime=1558966708&amp;ext=nb0MvQeQKPNcsz96aHpBuzRh0rDbAr30FqKl5vr0I%2BsgZVMShOEX3GBbgnTwSg6aco2Iono%2FRKTn6VFQ4YzRv4kfMaaeHRGI2EJ%2BI38ZQkTi9RzE%2BeABsHu2wMaq8Byasv4tM1RYezJr%2BmpM%2Fy8aYK4ZiGH6vlqbZgLxdDo53hBj3eF4PZyek9PZCoF25cWOumUL0dHJwz0%2BGNJQ27akNzjFOr5yrGOBGoNlrAric94cqzdirCuQlmAJEj170IhHGKwUuB26pwXZHBahIkaVSjT6hZbrRH2m92SqU8A4qPJ52Actv%2BQsSyupXoGe72T5u1PbKVec%2FeYoVLFQd2EOuBx%2F1U31SCk6rMELTywziJIequBBoPZyAxRkr%2BJvF%2BX6FaqAsr%2BBavVAghDmSHKu3BUKr%2F4ZHqGiQEYlj%2B41EhCuWfEDBDXfZMzyxnoF1d2MzF4YIqMr1xHys7T92PUrJDYtGmEWpdKYphajwwj%2FoNIENKhTSKwDrlD1zaHseNllgnc6Y3VaT7RynUgcvfAfVe47Q1LKayvR9i65UzSoezlHGDsnDpznlI4KgzdoX6pb&amp;autoPlay=true&amp;trackName=%E8%B6%85%E5%A5%BD%E5%90%AC%E7%9A%84%E3%80%8ASomething%20Just%20Like%20This%E3%80%8B&amp;artistName=%E8%8B%8F%E7%94%9F%E4%B8%8D%E6%83%91&amp;resourceId=457AF908B0426A0321CEF9F02943DB28&amp;coverImg=http://p1.music.126.net/9b_c3yrbFNzCEtnIlBJzgA==/109951163249463194.jpg&amp;restrict=false&amp;width=640&amp;height=400" target="_blank" rel="noopener">http://vodkgeyttp9.vod.126.net/vodkgeyttp8/0J6b5JIi_1396042360_shd.mp4?wsSecret=96dd1b4e0244bfda57c6fdd960c50dcb&amp;wsTime=1558967505&amp;ext=nb0MvQeQKPNcsz96aHpBuzRh0rDbAr30FqKl5vr0I%2BsgZVMShOEX3GBbgnTwSg6aco2Iono%2FRKTn6VFQ4YzRv4kfMaaeHRGI2EJ%2BI38ZQkTi9RzE%2BeABsHu2wMaq8Byasv4tM1RYezJr%2BmpM%2Fy8aYK4ZiGH6vlqbZgLxdDo53hBj3eF4PZyek9PZCoF25cWOumUL0dHJwz0%2BGNJQ27akNzjFOr5yrGOBGoNlrAric94cqzdirCuQlmAJEj170IhHGKwUuB26pwXZHBahIkaVSjT6hZbrRH2m92SqU8A4qPJ52Actv%2BQsSyupXoGe72T5u1PbKVec%2FeYoVLFQd2EOuBx%2F1U31SCk6rMELTywziJIequBBoPZyAxRkr%2BJvF%2BX6FaqAsr%2BBavVAghDmSHKu3BUKr%2F4ZHqGiQEYlj%2B41EhCuWfEDBDXfZMzyxnoF1d2MzF4YIqMr1xHys7T92PUrJDYtGmEWpdKYphajwwj%2FoNIENKhTSKwDrlD1zaHseNllgnc6Y3VaT7RynUgcvfAfVd5OoaoRIYeIqqoe1HxLKa0R54ISLaW31spkfVtI97%2F1&amp;murl=http://vodkgeyttp9.vod.126.net/vodkgeyttp8/oYGrmcJY_1396042360_hd.mp4?wsSecret=faef4ea063513745ac19beb95ad14cb1&amp;wsTime=1558966708&amp;ext=nb0MvQeQKPNcsz96aHpBuzRh0rDbAr30FqKl5vr0I%2BsgZVMShOEX3GBbgnTwSg6aco2Iono%2FRKTn6VFQ4YzRv4kfMaaeHRGI2EJ%2BI38ZQkTi9RzE%2BeABsHu2wMaq8Byasv4tM1RYezJr%2BmpM%2Fy8aYK4ZiGH6vlqbZgLxdDo53hBj3eF4PZyek9PZCoF25cWOumUL0dHJwz0%2BGNJQ27akNzjFOr5yrGOBGoNlrAric94cqzdirCuQlmAJEj170IhHGKwUuB26pwXZHBahIkaVSjT6hZbrRH2m92SqU8A4qPJ52Actv%2BQsSyupXoGe72T5u1PbKVec%2FeYoVLFQd2EOuBx%2F1U31SCk6rMELTywziJIequBBoPZyAxRkr%2BJvF%2BX6FaqAsr%2BBavVAghDmSHKu3BUKr%2F4ZHqGiQEYlj%2B41EhCuWfEDBDXfZMzyxnoF1d2MzF4YIqMr1xHys7T92PUrJDYtGmEWpdKYphajwwj%2FoNIENKhTSKwDrlD1zaHseNllgnc6Y3VaT7RynUgcvfAfVe47Q1LKayvR9i65UzSoezlHGDsnDpznlI4KgzdoX6pb&amp;autoPlay=true&amp;trackName=%E8%B6%85%E5%A5%BD%E5%90%AC%E7%9A%84%E3%80%8ASomething%20Just%20Like%20This%E3%80%8B&amp;artistName=%E8%8B%8F%E7%94%9F%E4%B8%8D%E6%83%91&amp;resourceId=457AF908B0426A0321CEF9F02943DB28&amp;coverImg=http://p1.music.126.net/9b_c3yrbFNzCEtnIlBJzgA==/109951163249463194.jpg&amp;restrict=false&amp;width=640&amp;height=400</a></p>
-<p>打开后直接另存为即可，注意这个地址有失效时间。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-4c3c2b11a3ddc8ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="命令行下载"><a href="#命令行下载" class="headerlink" title="命令行下载"></a>命令行下载</h3><p>music-dl支持从网易云音乐、QQ音乐、酷狗音乐、百度音乐、虾米音乐等搜索和下载歌曲,地址 <a href="https://github.com/0xHJK/music-dl" target="_blank" rel="noopener">https://github.com/0xHJK/music-dl</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-508a593271c64767.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>使用pip3 install pymusic-dl 安装，这里下载一首赵雷的《南方姑娘》。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">λ music-dl --help</span><br><span class="line">Usage: music-dl [OPTIONS]</span><br><span class="line"></span><br><span class="line">  Search and download music <span class="keyword">from</span> netease, qq, kugou, baidu and xiami.</span><br><span class="line">  Example: music-dl -k <span class="string">"周杰伦"</span></span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  --version            Show the version and exit.</span><br><span class="line">  -k, --keyword TEXT   搜索关键字</span><br><span class="line">  -s, --source TEXT    数据源目前支持qq netease kugou baidu xiami flac</span><br><span class="line">  -c, --count INTEGER  搜索数量限制</span><br><span class="line">  -o, --outdir TEXT    指定输出目录</span><br><span class="line">  -x, --proxy TEXT     指定代理（如http:<span class="comment">//127.0.0.1:1087）</span></span><br><span class="line">  -m, --merge          对搜索结果去重和排序（默认不去重）</span><br><span class="line">  -v, --verbose        详细模式</span><br><span class="line">  --help               Show <span class="keyword">this</span> message and exit.</span><br><span class="line"></span><br><span class="line">λ music-dl -k <span class="string">"赵雷"</span></span><br><span class="line"></span><br><span class="line">正在搜索 赵雷 来自 ... FLAC ... KUGOU ... QQ ... NETEASE ... BAIDU ...</span><br><span class="line">---------------------------</span><br><span class="line"></span><br><span class="line">+------+--------------+------+--------+---------+---------------------+---------+</span><br><span class="line">| 序号 | 歌名         | 歌手 | 大小   | 时长    | 专辑                | 来源    |</span><br><span class="line">+------+--------------+------+--------+---------+---------------------+---------+</span><br><span class="line">| <span class="number">0</span>    | 鼓楼         | 赵雷 | <span class="number">3.22</span>MB | <span class="number">0</span>:<span class="number">04</span>:<span class="number">41</span> | 无法长大            | NETEASE |</span><br><span class="line">| <span class="number">1</span>    | 阿刁         | 赵雷 | <span class="number">5.71</span>MB | <span class="number">0</span>:<span class="number">06</span>:<span class="number">14</span> | 无法长大            | KUGOU   |</span><br><span class="line">| <span class="number">2</span>    | 画           | 赵雷 | <span class="number">3.48</span>MB | <span class="number">0</span>:<span class="number">03</span>:<span class="number">48</span> | 赵小雷              | NETEASE |</span><br><span class="line">| <span class="number">3</span>    | 理想         | 赵雷 | <span class="number">4.79</span>MB | <span class="number">0</span>:<span class="number">05</span>:<span class="number">13</span> | 吉姆餐厅            | QQ      |</span><br><span class="line">| <span class="number">4</span>    | 我们的时光   | 赵雷 | <span class="number">4.13</span>MB | <span class="number">0</span>:<span class="number">04</span>:<span class="number">30</span> | 吉姆餐厅            | QQ      |</span><br><span class="line">| <span class="number">5</span>    | 成都         | 赵雷 | <span class="number">5.01</span>MB | <span class="number">0</span>:<span class="number">05</span>:<span class="number">28</span> | 无法长大            | KUGOU   |</span><br><span class="line">| <span class="number">6</span>    | 彩虹下面     | 赵雷 | <span class="number">4.32</span>MB | <span class="number">0</span>:<span class="number">04</span>:<span class="number">42</span> | 西虹市首富 电影原声 | BAIDU   |</span><br><span class="line">| <span class="number">7</span>    | 南方姑娘     | 赵雷 | <span class="number">5.11</span>MB | <span class="number">0</span>:<span class="number">05</span>:<span class="number">34</span> | 赵小雷              | NETEASE |</span><br><span class="line">| <span class="number">8</span>    | 十九岁       | 赵雷 | <span class="number">3.56</span>MB | <span class="number">0</span>:<span class="number">03</span>:<span class="number">53</span> | 十九岁              | BAIDU   |</span><br><span class="line">| <span class="number">9</span>    | 三十岁的女人 | 赵雷 | <span class="number">5.01</span>MB | <span class="number">0</span>:<span class="number">05</span>:<span class="number">28</span> | 吉姆餐厅            | QQ      |</span><br><span class="line">+------+--------------+------+--------+---------+---------------------+---------+</span><br><span class="line"></span><br><span class="line">---------------------------</span><br><span class="line">请输入下载序号，支持形如 <span class="number">0</span> <span class="number">3</span><span class="number">-5</span> <span class="number">8</span> 的格式，输入 N 跳过下载</span><br><span class="line"> &gt;&gt;: <span class="number">7</span></span><br><span class="line"> [  <span class="number">7</span> ] NETEASE | <span class="number">0</span>:<span class="number">05</span>:<span class="number">34</span> -  <span class="number">5.11</span>MB - 赵雷 - 南方姑娘 - 赵小雷</span><br><span class="line">下载中...  [####################################]  100%</span><br><span class="line">已保存到: d:\code\赵雷 - 南方姑娘.mp3</span><br><span class="line">-------------</span><br><span class="line"></span><br><span class="line">请输入要搜索的歌曲，或Ctrl+C退出</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-b318f95a069efb09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>还有个网易云音乐、QQ音乐一键下载工具 music-get <a href="https://github.com/winterssy/music-get" target="_blank" rel="noopener">https://github.com/winterssy/music-get</a>  支持下载单曲，歌单，专辑。<br> <img src="https://upload-images.jianshu.io/upload_images/17817191-efc9459ffafb785e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>命令行下载网易云视频使用annie<br><code>annie.exe -f default https://music.163.com/video?id=457AF908B0426A0321CEF9F02943DB28</code><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e73075f7bd64cdb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-f692fad7c6838073.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>顺便把mp4用ffmpeg转为mp3格式。</p>
-<p><code>ffmpeg -i &quot;超好听的《Something Just Like This》.mp4&quot; -vn -acodec copy something.mp3</code><br><img src="https://upload-images.jianshu.io/upload_images/17817191-ae49d63790b1f51c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="导出歌单"><a href="#导出歌单" class="headerlink" title="导出歌单"></a>导出歌单</h3><p>可以使用油猴脚本 <a href="https://greasyfork.org/zh-CN/scripts/39807-%E5%AF%BC%E5%87%BA%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/39807-%E5%AF%BC%E5%87%BA%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95</a></p>
-<p>安装有点麻烦，有点怕麻烦可以打开<a href="https://music.163.com/#/playlist?id=408195336" target="_blank" rel="noopener">https://music.163.com/#/playlist?id=408195336</a><br> 然后在控制台执行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy($$(<span class="string">".m-table tbody b"</span>).map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;<span class="keyword">return</span> item.title&#125;))</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-ffad02f2177574dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="听全网音乐"><a href="#听全网音乐" class="headerlink" title="听全网音乐"></a>听全网音乐</h3><p>Listen 1可以搜索和播放来自网易云音乐，虾米，QQ音乐，酷狗音乐，酷我音乐网站的歌曲，让你的曲库更全面。<a href="http://listen1.github.io/listen1/" target="_blank" rel="noopener">http://listen1.github.io/listen1/</a><br>我这里下载的是Chrome插件<br> <img src="https://upload-images.jianshu.io/upload_images/17817191-0f07fe7e7d21611b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>feeluown播放器（支持 YouTube, NeteaseMusic, QQ， Xiami 等音乐平台）<a href="https://github.com/cosven/feeluown" target="_blank" rel="noopener">https://github.com/cosven/feeluown</a><br>Chord 弦<a href="https://github.com/PeterDing/chord" target="_blank" rel="noopener">https://github.com/PeterDing/chord</a></p>
-<p>推荐阅读：</p>
-<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
-<p><a href="https://www.zhyong.cn/posts/3653/" target="_blank" rel="noopener">Python 网易云音乐批量下载</a></p>
-<p><a href="https://github.com/jitwxs/163MusicLyrics" target="_blank" rel="noopener">网易云音乐歌词获取</a></p>
-<p><a href="https://github.com/NoColor2/ncmdump" target="_blank" rel="noopener">将网易云音乐下载的NCM格式转换为MP3格式</a></p>
-<p><a href="http://music.bload.cn/" target="_blank" rel="noopener">音乐搜索器</a></p>
-<p><a href="https://github.com/maicong/music" target="_blank" rel="noopener">2333音乐搜索器</a></p>
-<p><a href="https://www.ncmdump.com/" target="_blank" rel="noopener">ncm格式音乐转换教程</a></p>
-<p><a href="http://moresound.tk/music/tool/" target="_blank" rel="noopener">moresound.tk</a></p>
-<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2120,7 +2071,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">213</span>
+                  <span class="site-state-item-count">216</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2351,7 +2302,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共594k字</span>
+  <span class="post-count">博客全站共596.8k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
