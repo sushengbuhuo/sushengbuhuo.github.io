@@ -359,7 +359,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">245</span>
+                  <span class="site-state-item-count">250</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -372,7 +372,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -590,7 +590,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共632.3k字</span>
+  <span class="post-count">博客全站共640.8k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
@@ -1136,7 +1136,23 @@ document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
 
 </body>
 </html>
-tion (slice) {
+                    var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
                     resultItem += "<a href='" + articleUrl + "'>" +
                       "<p class=\"search-result\">" + highlightKeyword(content, slice) +
                       "...</p>" + "</a>";

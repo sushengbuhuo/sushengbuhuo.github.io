@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="公众号,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="苏生不惑第164 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于b站之前已经写过了下列文章，有兴趣可以点击阅读：  那些我关注的 b 站 up 主 bilibili(b站)升级到BV号了，还想用av号怎么办？ 那些你可能不知道的 bilibili 奇技淫巧 如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？ 如何更优雅地使用 bilibili(b站) 如何找回bilibili(">
+<meta name="keywords" content="公众号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="借助 potplayer 播放器，在本地播放b站视频也能看弹幕了">
+<meta property="og:url" content="http://yoursite.com/2020/08/28/借助-potplayer-播放器，在本地播放b站视频也能看弹幕了/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="苏生不惑第164 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于b站之前已经写过了下列文章，有兴趣可以点击阅读：  那些我关注的 b 站 up 主 bilibili(b站)升级到BV号了，还想用av号怎么办？ 那些你可能不知道的 bilibili 奇技淫巧 如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？ 如何更优雅地使用 bilibili(b站) 如何找回bilibili(">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-20d75126b5af4bb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-2c52e7f8d5ee9920.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-4902047ebd982bf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-edab2834008fc4ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-8ae8cbfaddfc60b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-ac18a40c9748f587.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-2af743751f73cadc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-866fcff88f95e1c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-2e8ef869fe2ba43c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-c9f091b9bffa3ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-a5e2e1c3360ae491.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-f262db4ed639c026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-565bc9f6556352b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-a8cb2a7e4e10c641.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-08e6d7bf75720667.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2020-08-28T11:32:53.672Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="借助 potplayer 播放器，在本地播放b站视频也能看弹幕了">
+<meta name="twitter:description" content="苏生不惑第164 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于b站之前已经写过了下列文章，有兴趣可以点击阅读：  那些我关注的 b 站 up 主 bilibili(b站)升级到BV号了，还想用av号怎么办？ 那些你可能不知道的 bilibili 奇技淫巧 如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？ 如何更优雅地使用 bilibili(b站) 如何找回bilibili(">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/23152173-20d75126b5af4bb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/28/借助-potplayer-播放器，在本地播放b站视频也能看弹幕了/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>借助 potplayer 播放器，在本地播放b站视频也能看弹幕了 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/28/借助-potplayer-播放器，在本地播放b站视频也能看弹幕了/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">借助 potplayer 播放器，在本地播放b站视频也能看弹幕了</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-28T19:30:36+08:00">
+                2020-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>苏生不惑第164 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>关于b站之前已经写过了下列文章，有兴趣可以点击阅读：</p>
+<p> <a href="https://mp.weixin.qq.com/s/952eqef1Rm3HpH5DYbTjZg" target="_blank" rel="noopener">那些我关注的 b 站 up 主</a></p>
+<p><a href="https://mp.weixin.qq.com/s/I3LR8ikHoX80WjaMCoMVlw" target="_blank" rel="noopener">bilibili(b站)升级到BV号了，还想用av号怎么办？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/HpuInXUCjSYT7HLqhoRcCA" target="_blank" rel="noopener">那些你可能不知道的 bilibili 奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/3rB23e9L55hDBaPLDu6WMg" target="_blank" rel="noopener">如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/a_lxHOQVA9RR_dYyzr56Gw" target="_blank" rel="noopener">如何更优雅地使用 bilibili(b站)</a></p>
+<p><a href="https://mp.weixin.qq.com/s/i53iORP49o_4eRGGQEthsg" target="_blank" rel="noopener">如何找回bilibili(b站)收藏夹里失效的视频？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/UtfjurjQOCBFdxNhh-rFSA" target="_blank" rel="noopener">如何免登陆观看b站大会员番剧</a></p>
+<p>b站视频被删后，即使根据 <a href="https://mp.weixin.qq.com/s/i53iORP49o_4eRGGQEthsg" target="_blank" rel="noopener">如何找回bilibili(b站)收藏夹里失效的视频？</a> 这里的方法找回了视频，但曾经的弹幕没有了，为了以防万一可以提前下载视频和弹幕，在本地用potplayer播放器（公众号内回复 <code>播放器</code> 获取软件）播放b站视频就可以看弹幕了，获得和b站一样的观看体验。</p>
+<h3 id="potplayer-播放器"><a href="#potplayer-播放器" class="headerlink" title="potplayer 播放器"></a>potplayer 播放器</h3><p>之前我一直用的QQ影音播放器，自从发现了potplayer，体验简直惊艳， potplayer内置支持多种解码器，无需额外安装就能播放几乎所有视频格式文件。<a href="https://www.potplayer.org/" target="_blank" rel="noopener">https://www.potplayer.org/</a>  <a href="https://www.lanzoux.com/izb4nfjtksb" target="_blank" rel="noopener">https://www.lanzoux.com/izb4nfjtksb</a></p>
+<p>一个比较有用的功能是支持直播源，右键打开链接。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-20d75126b5af4bb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入m3u直播源地址 <a href="http://tv.sason.xyz/new.m3u" target="_blank" rel="noopener">http://tv.sason.xyz/new.m3u</a> ，欢迎分享更多直播源。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2c52e7f8d5ee9920.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>加载直播源后右侧可以看到n多电视台直播源，比如央视6套电影频道，实现了在本地播放器上看电视。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4902047ebd982bf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还有实时字幕翻译功能，这个看英语电影的时候比较实用。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-edab2834008fc4ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>再一个就是可以播放视频的时候看弹幕，只需要弹幕文件名和视频文件名相同即可。</p>
+<p>下面开始体验下在本地用potplayer播放器播放有弹幕的b站视频。</p>
+<h3 id="下载b站视频"><a href="#下载b站视频" class="headerlink" title="下载b站视频"></a>下载b站视频</h3><p>关于下载b站视频之前写过文章 <a href="https://mp.weixin.qq.com/s/3rB23e9L55hDBaPLDu6WMg" target="_blank" rel="noopener">如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？</a> ，推荐使用BiliBili视频下载工具（公众号内回复 <code>b站</code> 获取软件），输入视频地址直接下载 。<a href="https://www.lanzous.com/b0lkrxzg" target="_blank" rel="noopener">https://www.lanzous.com/b0lkrxzg</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-8ae8cbfaddfc60b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不过我还是习惯用命令行来下载。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">annie -f <span class="number">16</span> https:<span class="comment">//www.bilibili.com/video/BV1ip4y1D7iY</span></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     【周杰伦纪录片】第七集：夏日狂想</span><br><span class="line"> Type:      video</span><br><span class="line"> Stream:</span><br><span class="line">     [<span class="number">16</span>]  -------------------</span><br><span class="line">     Quality:         流畅 <span class="number">360</span>P</span><br><span class="line">     Size:            <span class="number">131.72</span> MiB (<span class="number">138122013</span> Bytes)</span><br><span class="line">     # download with: annie -f 16 ...</span><br><span class="line"></span><br><span class="line"> <span class="number">131.72</span> MiB / <span class="number">131.72</span> MiB [=========================================] <span class="number">100.00</span>% <span class="number">139.06</span> KiB/s <span class="number">16</span>m9s</span><br></pre></td></tr></table></figure></p>
+<p>视频下载后开始下载弹幕。</p>
+<h3 id="下载弹幕"><a href="#下载弹幕" class="headerlink" title="下载弹幕"></a>下载弹幕</h3><p>b站提供接口使用av号获取cid ，比如<a href="https://api.bilibili.com/x/player/pagelist?aid=968504505" target="_blank" rel="noopener">https://api.bilibili.com/x/player/pagelist?aid=968504505</a> 获取到cid=205245882<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ac18a40c9748f587.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果觉得这样麻烦可以安装油猴脚本，可以直接显示 视频 av 号、bv 号及弹幕 cid<br> <a href="https://greasyfork.org/zh-CN/scripts/403846-bilibili-display-video-av-bv-number-below-the-title-bar" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/403846-bilibili-display-video-av-bv-number-below-the-title-bar</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-2af743751f73cadc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>之后根据cid获取弹幕文件，弹幕文件采用 xml 格式存储，接口地址 <a href="https://api.bilibili.com/x/v1/dm/list.so?oid=205245882" target="_blank" rel="noopener">https://api.bilibili.com/x/v1/dm/list.so?oid=205245882</a> 或者 <a href="https://comment.bilibili.com/205245882.xml" target="_blank" rel="noopener">https://comment.bilibili.com/205245882.xml</a> ，直接保存到本地即可。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-866fcff88f95e1c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>然后使用 bilibili ASS 弹幕在线转换网站把xml格式转换为ass格式，上传即可转换。<br><a href="https://tiansh.github.io/us-danmaku/bilibili/" target="_blank" rel="noopener">https://tiansh.github.io/us-danmaku/bilibili/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-2e8ef869fe2ba43c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还可以安装 Chrome扩展 哔哩哔哩助手 <a href="https://bilibili-helper.github.io/" target="_blank" rel="noopener">https://bilibili-helper.github.io/</a> ，安装方法见之前文章 <a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-c9f091b9bffa3ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>打开b站视频 <a href="https://www.bilibili.com/video/BV1ip4y1D7iY" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1ip4y1D7iY</a> ，可以看到弹幕列表（还支持搜索），直接提供xml和ass 2种格式弹幕下载。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a5e2e1c3360ae491.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这个和之前介绍的油猴扩展<code>哔哩哔哩增强脚本</code>一样的 <a href="https://greasyfork.org/zh-CN/scripts/373563-bilibili-evolved" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/373563-bilibili-evolved</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f262db4ed639c026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>视频和弹幕文件下载后放同一个目录下，即<code>【周杰伦纪录片】第七集：夏日狂想.flv</code>和 <code>【周杰伦纪录片】第七集：夏日狂想.ass</code>，播放视频的时候字幕也出来了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-565bc9f6556352b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果想关闭弹幕可以在选择字幕里勾选不显示。</p>
+<blockquote>
+<p>分享个小技巧，b站视频的倍速播放最大到2倍，如果想更快（比如2.5倍）可以在控制台执行<code>document.querySelector(&#39;video&#39;).playbackRate = 2.5</code></p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-a8cb2a7e4e10c641.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后分享一个可以用来分享、管理你在b站设置弹幕屏蔽词的网站 <a href="https://harrynull.tech/bilibili/" target="_blank" rel="noopener">https://harrynull.tech/bilibili/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-08e6d7bf75720667.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<blockquote>
+<p>大家的点赞和在看转发对我非常重要，如果文章对你有帮助还请支持下， 感谢各位！</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>公众号后台回复关键词</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微信</td>
+<td>获取你的微信好友头像拼图及查看微信撤回消息</td>
+</tr>
+<tr>
+<td>b站</td>
+<td>获取下载b站视频工具及找回被删b站视频方法</td>
+</tr>
+<tr>
+<td>视频</td>
+<td>获取下载腾讯，优酷，爱奇艺，微博视频工具及去除logo脚本</td>
+</tr>
+<tr>
+<td>百度网盘</td>
+<td>获取加速下载网盘文件方法及查找电影电视剧网站</td>
+</tr>
+<tr>
+<td>朋友圈</td>
+<td>获取发空白朋友圈方法</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>获取备份微博工具及分析微博账号数据</td>
+</tr>
+<tr>
+<td>音乐</td>
+<td>获取下载音乐工具及解锁网易云音乐无版权歌曲</td>
+</tr>
+<tr>
+<td>油猴</td>
+<td>获取油猴脚本</td>
+</tr>
+<tr>
+<td>谷歌</td>
+<td>获取安装Chrome扩展方法</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/公众号/" rel="tag"># 公众号</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/28/一键解锁网易云音乐变灰歌曲，网易云音乐也能听周杰伦了/" rel="next" title="一键解锁网易云音乐变灰歌曲，网易云音乐也能听周杰伦了">
+                <i class="fa fa-chevron-left"></i> 一键解锁网易云音乐变灰歌曲，网易云音乐也能听周杰伦了
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/28/那些有趣的网站系列（四）/" rel="prev" title="那些有趣的网站系列（四）">
+                那些有趣的网站系列（四） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">250</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#potplayer-播放器"><span class="nav-number">1.</span> <span class="nav-text">potplayer 播放器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载b站视频"><span class="nav-number">2.</span> <span class="nav-text">下载b站视频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载弹幕"><span class="nav-number">3.</span> <span class="nav-text">下载弹幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公众号-苏生不惑"><span class="nav-number">4.</span> <span class="nav-text">公众号 苏生不惑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共640.8k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>

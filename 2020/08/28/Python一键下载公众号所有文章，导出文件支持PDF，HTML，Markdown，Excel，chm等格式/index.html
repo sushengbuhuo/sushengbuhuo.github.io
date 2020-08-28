@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,公众号,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="苏生不惑第167 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于备份之前写过以下文章： 再谈备份微博 一键备份微博并导出生成PDF，顺便用Python分析微博账号数据 再谈备份网页和公众号文章 如何备份可能被删的公众号文章和网页 想看的公众号文章被删了怎么办？ 上面写的备份公众号方法都是单篇备份，如果你想备份某个公众号的所有文章，就有点太麻烦了，所以今天分享的是用Python一键备">
+<meta name="keywords" content="python,公众号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式">
+<meta property="og:url" content="http://yoursite.com/2020/08/28/Python一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="苏生不惑第167 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于备份之前写过以下文章： 再谈备份微博 一键备份微博并导出生成PDF，顺便用Python分析微博账号数据 再谈备份网页和公众号文章 如何备份可能被删的公众号文章和网页 想看的公众号文章被删了怎么办？ 上面写的备份公众号方法都是单篇备份，如果你想备份某个公众号的所有文章，就有点太麻烦了，所以今天分享的是用Python一键备">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-91217817ab889f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-d6323050d5a76412.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-f12ade2adea0aaf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-bc7af8b0553b9c8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-834294997521f48b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-f3e04f4805eba9df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-54e029f1ac7012e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-6cdab3313db44bdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-2fac2bea9b8e365e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-0b0b6f20624f493a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-805d067031574009.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-151a8b5944557392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-5b734bbb2713b8a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-91e5fef1f6c2e0a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-cf04c0093d228441.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-8972ab3cade2c4ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-6a7bef5d7bd73ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-fe2c352b8ee985cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-5f060dc53c637f43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-5633948d4f0ecb4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2020-08-28T11:48:33.582Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式">
+<meta name="twitter:description" content="苏生不惑第167 篇原创文章，将本公众号设为星标，第一时间看最新文章。  关于备份之前写过以下文章： 再谈备份微博 一键备份微博并导出生成PDF，顺便用Python分析微博账号数据 再谈备份网页和公众号文章 如何备份可能被删的公众号文章和网页 想看的公众号文章被删了怎么办？ 上面写的备份公众号方法都是单篇备份，如果你想备份某个公众号的所有文章，就有点太麻烦了，所以今天分享的是用Python一键备">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/23152173-91217817ab889f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/28/Python一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>Python一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/28/Python一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-28T19:44:20+08:00">
+                2020-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>苏生不惑第167 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>关于备份之前写过以下文章：</p>
+<p><a href="https://mp.weixin.qq.com/s/AUS5oCukv8hIFZIjO2Drjg" target="_blank" rel="noopener">再谈备份微博</a></p>
+<p><a href="https://mp.weixin.qq.com/s/PlkPDmK2SUdQT59CzOJFMA" target="_blank" rel="noopener">一键备份微博并导出生成PDF，顺便用Python分析微博账号数据</a></p>
+<p><a href="https://mp.weixin.qq.com/s/BddM3RzStg0Qos9cSrQXIw" target="_blank" rel="noopener">再谈备份网页和公众号文章</a></p>
+<p><a href="https://mp.weixin.qq.com/s/bIE23HBq_sqvLkV18_BlbQ" target="_blank" rel="noopener">如何备份可能被删的公众号文章和网页</a></p>
+<p><a href="https://mp.weixin.qq.com/s/l2bQJk1qjb6IzroODBpoOg" target="_blank" rel="noopener">想看的公众号文章被删了怎么办？</a></p>
+<p>上面写的备份公众号方法都是单篇备份，如果你想备份某个公众号的所有文章，就有点太麻烦了，所以今天分享的是用Python一键备份某个公众号的所有文章，这里就以我自己的<code>公众号苏生不惑</code>为例了，原理就是通过抓包抓取微信客户端的接口，用Python请求微信接口获取公众号文章链接再下载。</p>
+<h3 id="charles-抓包"><a href="#charles-抓包" class="headerlink" title="charles 抓包"></a>charles 抓包</h3><p>常见的抓包工具有Fiddler，charles，这里用的charles，先去官网 <a href="https://www.charlesproxy.com/download" target="_blank" rel="noopener">https://www.charlesproxy.com/download</a> 下载软件,然后打开微信客户端找到公众号，进入文章列表可以看到发过的文章。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-91217817ab889f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不过charles没安装证书前获取不到https接口数据，显示unknown。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d6323050d5a76412.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>安装证书后在 proxy-&gt;ssl proxying settings 添加域名和host 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f12ade2adea0aaf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>再次抓取可以看到公众号文章接口数据了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-bc7af8b0553b9c8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>公众号文章的接口地址 <a href="https://mp.weixin.qq.com/mp/profile_ext?action=getmsg&amp;__biz=MjM5ODIzNDEx&amp;f=json&amp;offset=25&amp;count=10&amp;is_ok=1&amp;scene=124&amp;uin=MTU0MTQzNj&amp;key=f57423" target="_blank" rel="noopener">https://mp.weixin.qq.com/mp/profile_ext?action=getmsg&amp;__biz=MjM5ODIzNDEx&amp;f=json&amp;offset=25&amp;count=10&amp;is_ok=1&amp;scene=124&amp;uin=MTU0MTQzNj&amp;key=f57423</a> ，参数比较多，其中有用的参数 __biz 是用户和公众号之间的唯一id，uin是用户的id，这个是不变的，key 是请求的秘钥，一段时间就会失效，offset 是偏移量，count 是每次请求的条数，返回值结构如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"ret"</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="string">"errmsg"</span>: <span class="string">"ok"</span>,</span><br><span class="line">	<span class="string">"msg_count"</span>: <span class="number">10</span>,信息条数</span><br><span class="line">	<span class="string">"can_msg_continue"</span>: <span class="number">1</span>,是否还可以继续获取，<span class="number">1</span>代表可以。<span class="number">0</span>代表不可以，也就是最后一页</span><br><span class="line">	<span class="string">"general_msg_list"</span>: <span class="string">"&#123;\"list\":[&#123;\"comm_msg_info\":&#123;\"id\":1000000182,\"type\":49,\"datetime\":1585702800,\"fakeid\":\"2398234112\",\"status\":2,\"content\":\"\"&#125;,\"app_msg_ext_info\":&#123;\"title\":\"张国荣音乐\/演唱会\/电影全集网盘分享\",\"digest\":\"#17宠爱张国荣#\",\"content\":\"\",\"fileid\":0,\"content_url\":\"http:\/\/mp.weixin.qq.com\/s?__biz=MjM5ODIzNDExMg==&amp;amp;mid=2257484715&amp;amp;idx=1&amp;amp;sn=2fab0a11d62090d5e30e03e334bce636&amp;amp;chksm=a5b70ac492c083d275b6e15f0de85b8baf488ebb76e5429b08f40cdc53ab6e27b0ce5474fb30&amp;amp;scene=27#wechat_redirect\",\"source_url\":\"\",\"cover\":\"http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/pchiblEh3tErdgYu06FFVuvnKr9aAkddJLB7pgNhaiav0aYGQKJI0Dwn0kpT4wnmQkIglGH1Nciam5IThX19ibyEag\/0?wx_fmt=jpeg\",\"subtype\":9,\"is_multi\":0,\"multi_app_msg_item_list\":[],\"author\":\"苏生\",\"copyright_stat\":100,\"duration\":0,\"del_flag\":1,\"item_show_type\":0,\"audio_fileid\":0,\"play_url\":\"\",\"malicious_title_reason_id\":0,\"malicious_content_type\":0&#125;&#125;]&#125;"</span>, </span><br><span class="line">	<span class="string">"next_offset"</span>: <span class="number">37</span>,</span><br><span class="line">	<span class="string">"video_count"</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="string">"use_video_tab"</span>: <span class="number">1</span>,</span><br><span class="line">	<span class="string">"real_type"</span>: <span class="number">0</span>,</span><br><span class="line">	<span class="string">"home_page_list"</span>: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到返回数据包括文章标题titile、摘要digest、文章地址content_url、阅读原文地址source_url、封面图cover、作者author ，只要抓取这些有用的数据就行了。</p>
+<h3 id="python-抓取公众号文章"><a href="#python-抓取公众号文章" class="headerlink" title="python 抓取公众号文章"></a>python 抓取公众号文章</h3><p>上面分析了接口参数和返回数据，开始用Python请求微信接口就是了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests,pdfkit,json,time,datetime,os</span><br><span class="line">biz = 'MzU1OTgyMzQzNw=='#随公众号改变</span><br><span class="line">uin = 'NjQ3OTQwMT'#不变</span><br><span class="line">key = <span class="string">'54ce6b15dc70fa9428deb6f18a00ac92db141f743dfe6d5a800bf2e99d82c2c372af771b204ec1db1f6f769ab66ad7c0294db04862aecbd043c24ab4be675cf55bcb2316b384f5612fb8a73daee911389bf94d6ed0fae9285e5996b831da8ea9f1af341f0314a937fd4c840edc1986fc74961857388588e83567137c42993a80'</span></span><br><span class="line">def parse(offset, biz, uin, key):</span><br><span class="line">    # url前缀</span><br><span class="line">    url = <span class="string">"https://mp.weixin.qq.com/mp/profile_ext"</span></span><br><span class="line">    # 请求头</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36 QBCore/4.0.1301.400 QQBrowser/9.0.2524.400 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 Safari/537.36 NetType/WIFI MicroMessenger/7.0.5 WindowsWechat"</span></span><br><span class="line">    &#125;</span><br><span class="line">    proxies = &#123;</span><br><span class="line">        <span class="string">'https'</span>: None,</span><br><span class="line">        <span class="string">'http'</span>: None,</span><br><span class="line">    &#125;</span><br><span class="line">    # 重要参数https://mp.weixin.qq.com/mp/profile_ext?action=getmsg&amp;__biz=MjM5ODIzNDExMg==&amp;f=json&amp;offset=48&amp;count=10&amp;is_ok=1&amp;scene=124&amp;uin=MTU0MTQzNjQwMw%3D%3D&amp;key=a42654d5f06828b5d9e40deca0ea5f73004fecbf9ae4cfe0d37653465b623e26d82d0948a73d3cdf4fffd5df19bebafed06815f22f05bac0e5679625c86bb429885529cea1973bfb4d9f18481e624a0cea7cd12932fb55e7ed892ccd6dcda141737cf5ed9811d477cd90cdf4d8371a8b1bdd63de15e193787fc75f186cdf41b5&amp;pass_ticket=FjDlSKDCqgdl0E5WNMPJLuBO3eeqP%2FdrlM1Q8%2FzEHxisVbm7ZVemLp6VeXsrLd0i&amp;wxtoken=&amp;appmsg_token=1074_NFjOFA%252FiWPMoGcRLiG7SzMUc-NoJp7QhKSYmYw~~&amp;x5=0&amp;f=json</span><br><span class="line">    param = &#123;</span><br><span class="line">        <span class="string">'action'</span>: <span class="string">'getmsg'</span>,</span><br><span class="line">        <span class="string">'__biz'</span>: biz,</span><br><span class="line">        <span class="string">'f'</span>: <span class="string">'json'</span>,</span><br><span class="line">        <span class="string">'offset'</span>: offset,</span><br><span class="line">        <span class="string">'count'</span>: <span class="string">'10'</span>,</span><br><span class="line">        <span class="string">'is_ok'</span>: <span class="string">'1'</span>,</span><br><span class="line">        <span class="string">'scene'</span>: <span class="string">'124'</span>,</span><br><span class="line">        <span class="string">'uin'</span>: uin,</span><br><span class="line">        <span class="string">'key'</span>: key,</span><br><span class="line">        <span class="string">'wxtoken'</span>: <span class="string">''</span>,</span><br><span class="line">        <span class="string">'x5'</span>: <span class="string">'0'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    # 发送请求，获取响应</span><br><span class="line">    response = requests.get(url, headers=headers, params=param, proxies=proxies)</span><br><span class="line">    response_dict = response.json()</span><br><span class="line">    print(response_dict)</span><br><span class="line">    next_offset = response_dict[<span class="string">'next_offset'</span>]</span><br><span class="line">    can_msg_continue = response_dict[<span class="string">'can_msg_continue'</span>]</span><br><span class="line">    general_msg_list = response_dict[<span class="string">'general_msg_list'</span>]</span><br><span class="line">    data_list = json.loads(general_msg_list)[<span class="string">'list'</span>]</span><br><span class="line">    htmls = []</span><br><span class="line">    # print(data_list)</span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> data_list:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            # 文章发布时间</span><br><span class="line">            date = time.strftime(<span class="string">'%Y-%m-%d'</span>, time.localtime(data[<span class="string">'comm_msg_info'</span>][<span class="string">'datetime'</span>]))</span><br><span class="line">            msg_info = data[<span class="string">'app_msg_ext_info'</span>]</span><br><span class="line">            #原创</span><br><span class="line">            <span class="keyword">if</span> msg_info[<span class="string">'copyright_stat'</span>] == <span class="number">11</span>:</span><br><span class="line">                # 文章标题</span><br><span class="line">                title = msg_info[<span class="string">'title'</span>]</span><br><span class="line">                # 文章链接</span><br><span class="line">                url = msg_info[<span class="string">'content_url'</span>]</span><br><span class="line">                #文章摘要digest</span><br><span class="line">                #文章封面cover</span><br><span class="line"></span><br><span class="line">                res = requests.get(url,proxies=&#123;<span class="string">'http'</span>: None,<span class="string">'https'</span>: None&#125;,verify=False, headers=headers)</span><br><span class="line">                content = res.text.replace(<span class="string">'data-src'</span>, <span class="string">'src'</span>)</span><br><span class="line">                filename=str(int(time.time()))+<span class="string">'.html'</span></span><br><span class="line">                #生成HTML文件</span><br><span class="line">                #htmls.append(filename)</span><br><span class="line">                <span class="keyword">with</span> open(date+<span class="string">'_'</span>+title+<span class="string">'.html'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(content)</span><br><span class="line">                #生成Excel</span><br><span class="line">                #with open('wechat2.csv', 'a+', encoding='gbk') as f:</span><br><span class="line">                #    f.write(title.replace(',', '，')+','+msg_info['digest'].replace(',', '，')+',' + msg_info['cover'].replace(',', '，') + ',' +url.replace(',', '，')+','+str(date)+ '\n')</span><br><span class="line">                #生成markdown</span><br><span class="line">                #with open('wechat.md', 'a+', encoding='utf-8') as f:</span><br><span class="line">                #    f.write('[&#123;&#125;]'.format(title) + '(&#123;&#125;)'.format(url)+ '\n')</span><br><span class="line">                #生成PDF</span><br><span class="line">                #try:</span><br><span class="line">                #    pdfkit.from_string(content,'./' + date + '_' + title.replace(' ', '')+'.pdf')</span><br><span class="line">                #except Exception as err:</span><br><span class="line">                #    print(err)</span><br><span class="line">                # 部分文章标题含特殊字符，不能作为文件名</span><br><span class="line">                    #f = datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.pdf'</span><br><span class="line">                    #pdfkit.from_string(content,f)</span><br><span class="line">                    # 自己定义存储路径（绝对路径）</span><br><span class="line">                #finally:</span><br><span class="line">                #    os.remove(filename)</span><br><span class="line">                #pdfkit.from_url(url, './' + date + title + '.pdf') #图片获取不到</span><br><span class="line">                print(url + title + date + <span class="string">'成功'</span>)</span><br><span class="line">        except Exception <span class="keyword">as</span> err:</span><br><span class="line">            print(err)</span><br><span class="line">    #try:</span><br><span class="line">        #pdfkit.from_file(htmls,'公众号文章备份.pdf')</span><br><span class="line">    #except:</span><br><span class="line">    #    pass</span><br><span class="line">    <span class="keyword">if</span> can_msg_continue == <span class="number">1</span>:</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        parse(next_offset,biz,uin,key)</span><br><span class="line">        <span class="keyword">return</span> True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'爬取完毕'</span>)</span><br><span class="line">        <span class="keyword">return</span> False</span><br><span class="line"></span><br><span class="line">parse(<span class="number">0</span>,biz,uin,key)</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-834294997521f48b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这里只抓取原创文章，我的公众号有160多篇原创，生成HTML文件2分钟就搞定。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f3e04f4805eba9df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>用谷歌浏览器打开就能看。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-54e029f1ac7012e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>生成的HTML文件还可以转成chm格式，需要先安装软件 Easy CHM，这是一款强大的CHM电子书或CHM帮助文件的快速制作工具 <a href="http://www.etextwizard.com/cn/easychm.html" target="_blank" rel="noopener">http://www.etextwizard.com/cn/easychm.html</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-6cdab3313db44bdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>左侧是文章标题，右侧是文章内容，看起来非常方便。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2fac2bea9b8e365e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后编译成一个chm文件，这样直接双击文件就能打开浏览了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0b0b6f20624f493a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-805d067031574009.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还有含有文章标题和链接的 markdown  文件，关于markdown之前文章介绍过 <a href="https://mp.weixin.qq.com/s/K5-1y2RRcgAu9sRsxKfZpQ" target="_blank" rel="noopener">用 Markdown 来写简历和 PPT</a>。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-151a8b5944557392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>excel文件格式也有。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5b734bbb2713b8a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>生成HTML，markdown和Excel都比较快，因为都是文本，下面开始导出PDF。</p>
+<h3 id="导出PDF"><a href="#导出PDF" class="headerlink" title="导出PDF"></a>导出PDF</h3><p>导出PDF用的工具是wkhtmltopdf  ，先到官网<a href="https://wkhtmltopdf.org/downloads.html" target="_blank" rel="noopener">https://wkhtmltopdf.org/downloads.html</a>  下载安装 wkhtmltopdf ， 安装后设置环境变量，之前文章写过 <a href="https://mp.weixin.qq.com/s/y7Xo1BtiGwuij9-ILRWxZg" target="_blank" rel="noopener">那些你可能不知道的 windows 奇技淫巧</a>，然后直接命令行就能生成PDF。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">λ wkhtmltopdf http:<span class="comment">//www.baidu.com baidu.pdf</span></span><br><span class="line">Loading pages (<span class="number">1</span>/<span class="number">6</span>)</span><br><span class="line">Counting pages (<span class="number">2</span>/<span class="number">6</span>)</span><br><span class="line">Resolving links (<span class="number">4</span>/<span class="number">6</span>)</span><br><span class="line">Loading headers and footers (<span class="number">5</span>/<span class="number">6</span>)</span><br><span class="line">Printing pages (<span class="number">6</span>/<span class="number">6</span>)</span><br><span class="line">Done</span><br></pre></td></tr></table></figure></p>
+<p>比如生成百度首页的PDF。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-91e5fef1f6c2e0a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>Python中使用pdfkit 模块来调用wkhtmltopdf ，先用<code>pip install pdfkit -i http://pypi.douban.com/simple --trusted-host pypi.douban.com</code>来安装它。</p>
+<p>再次运行程序，PDF文件也生成了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-cf04c0093d228441.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>PDF也可以用谷歌浏览器打开，比如这篇<a href="https://mp.weixin.qq.com/s/BSfjFnv54EAHmc6eE75T9g" target="_blank" rel="noopener">一键解锁网易云音乐变灰歌曲</a>。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8972ab3cade2c4ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不过由于生成PDF比较慢，文章多的话key参数会失效，需要重新获取，然后修改next_offset继续抓取。<br><code>{&#39;base_resp&#39;: {&#39;ret&#39;: -3, &#39;errmsg&#39;: &#39;no session&#39;, &#39;cookie_count&#39;: 0, &#39;csp_nonce&#39;: 406210942}, &#39;ret&#39;: -3, &#39;errmsg&#39;: &#39;no session&#39;, &#39;cookie_count&#39;: 0}</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-6a7bef5d7bd73ffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这样就完美的把我公众号的所有文章下载到本地了，有HTML，PDF，Excel，markdown，chm 格式（在公众号后台回复 <code>公众号</code> 获取我的所有原创文章，如果你有想下载的公众号可以加我微信免费帮忙下载）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-fe2c352b8ee985cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="风.png"></p>
+<p>目前有个问题是如果公众号有付费文章，下载的也只能看一部分内容。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5f060dc53c637f43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还有文章的评论也是有接口获取的，有空再研究下。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5633948d4f0ecb4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<blockquote>
+<p>大家的点赞和在看转发对我非常重要，如果文章对你有帮助还请支持下， 感谢各位！</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>公众号后台回复关键词</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微信</td>
+<td>获取你的微信好友头像拼图及查看微信撤回消息</td>
+</tr>
+<tr>
+<td>b站</td>
+<td>获取下载b站视频工具及找回被删b站视频方法</td>
+</tr>
+<tr>
+<td>视频</td>
+<td>获取下载腾讯，优酷，爱奇艺，微博视频工具及去除logo脚本</td>
+</tr>
+<tr>
+<td>百度网盘</td>
+<td>获取加速下载网盘文件方法及查找电影电视剧网站</td>
+</tr>
+<tr>
+<td>朋友圈</td>
+<td>获取发空白朋友圈方法</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>获取备份微博工具及分析微博账号数据</td>
+</tr>
+<tr>
+<td>音乐</td>
+<td>获取下载音乐工具及在线听歌网站</td>
+</tr>
+<tr>
+<td>油猴</td>
+<td>获取油猴脚本</td>
+</tr>
+<tr>
+<td>谷歌</td>
+<td>获取安装Chrome扩展方法</td>
+</tr>
+<tr>
+<td>公众号</td>
+<td>一键下载公众号所有文章</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/公众号/" rel="tag"># 公众号</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/28/2020七夕情人节又来了，给女朋友做个动态二维码/" rel="next" title="2020七夕情人节又来了，给女朋友做个动态二维码">
+                <i class="fa fa-chevron-left"></i> 2020七夕情人节又来了，给女朋友做个动态二维码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">250</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#charles-抓包"><span class="nav-number">1.</span> <span class="nav-text">charles 抓包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-抓取公众号文章"><span class="nav-number">2.</span> <span class="nav-text">python 抓取公众号文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导出PDF"><span class="nav-number">3.</span> <span class="nav-text">导出PDF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公众号-苏生不惑"><span class="nav-number">4.</span> <span class="nav-text">公众号 苏生不惑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共640.8k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>
