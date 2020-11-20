@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://google.com"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="公众号,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="苏生不惑第195 篇原创文章，将本公众号设为星标，第一时间看最新文章。  之前分享过不会 Python 没关系，手把手教你用 web scraper 抓取豆瓣电影 top 250 和 b 站排行榜 ，后来我又玩了下，这个插件还是挺有意思的，所以通过抓取知乎和豆瓣再总结分享下。 知乎热榜知乎热榜地址 https://www.zhihu.com/hot  （其实知乎还有个单独的热榜页面https:/">
+<meta name="keywords" content="公众号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不用写代码，Chrome 扩展神器 web scraper 抓取知乎热榜&#x2F;话题&#x2F;回答&#x2F;专栏，豆瓣电影">
+<meta property="og:url" content="http://yoursite.com/2020/11/20/不用写代码，Chrome-扩展神器-web-scraper-抓取知乎热榜-话题-回答-专栏，豆瓣电影/index.html">
+<meta property="og:site_name" content="苏生不惑的博客">
+<meta property="og:description" content="苏生不惑第195 篇原创文章，将本公众号设为星标，第一时间看最新文章。  之前分享过不会 Python 没关系，手把手教你用 web scraper 抓取豆瓣电影 top 250 和 b 站排行榜 ，后来我又玩了下，这个插件还是挺有意思的，所以通过抓取知乎和豆瓣再总结分享下。 知乎热榜知乎热榜地址 https://www.zhihu.com/hot  （其实知乎还有个单独的热榜页面https:/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-18e11ee17b7f2f13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-5af1882718979e0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-24935e13fbd0455b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-cfbf4b54ee671e9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-09010d986c156d33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-acc96121f9326100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-6813b967bbca7647.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-3ab27631a502be51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-5af6a554ed66b5d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-af3c9b14782225a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-0e7d0a63274e249a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-331fa72ff0a9867e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-654a05c6a19f4544.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-9ed9aa216b2e9768.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-a240067de240ef73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-a5ec4444493997fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-ffc6aaf59aa5fe03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-99a6f666ac0e7096.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-f2fc8c835cfeea69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-28429c28ba30a4ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-c4bee952b8316839.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-930df52bd087cb56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-bac91764a2bd27c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-9d8e78ed05fc62a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-af79a3c10e1e4c1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-1ca3b589518541d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/23152173-263856e78477e958.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2020-11-20T10:51:58.791Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="不用写代码，Chrome 扩展神器 web scraper 抓取知乎热榜&#x2F;话题&#x2F;回答&#x2F;专栏，豆瓣电影">
+<meta name="twitter:description" content="苏生不惑第195 篇原创文章，将本公众号设为星标，第一时间看最新文章。  之前分享过不会 Python 没关系，手把手教你用 web scraper 抓取豆瓣电影 top 250 和 b 站排行榜 ，后来我又玩了下，这个插件还是挺有意思的，所以通过抓取知乎和豆瓣再总结分享下。 知乎热榜知乎热榜地址 https://www.zhihu.com/hot  （其实知乎还有个单独的热榜页面https:/">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/23152173-18e11ee17b7f2f13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/11/20/不用写代码，Chrome-扩展神器-web-scraper-抓取知乎热榜-话题-回答-专栏，豆瓣电影/">
+
+
+
+<meta name="referrer" content="never"> ​​​​
+
+
+  <title>不用写代码，Chrome 扩展神器 web scraper 抓取知乎热榜/话题/回答/专栏，豆瓣电影 | 苏生不惑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏生不惑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/20/不用写代码，Chrome-扩展神器-web-scraper-抓取知乎热榜-话题-回答-专栏，豆瓣电影/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">不用写代码，Chrome 扩展神器 web scraper 抓取知乎热榜/话题/回答/专栏，豆瓣电影</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-20T18:49:40+08:00">
+                2020-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>苏生不惑第<code>195</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>之前分享过<a href="https://mp.weixin.qq.com/s/6UrMYkJoQGhNS_JvCZYwWA" target="_blank" rel="noopener">不会 Python 没关系，手把手教你用 web scraper 抓取豆瓣电影 top 250 和 b 站排行榜</a> ，后来我又玩了下，这个插件还是挺有意思的，所以通过抓取知乎和豆瓣再总结分享下。</p>
+<h3 id="知乎热榜"><a href="#知乎热榜" class="headerlink" title="知乎热榜"></a>知乎热榜</h3><p>知乎热榜地址 <a href="https://www.zhihu.com/hot" target="_blank" rel="noopener">https://www.zhihu.com/hot</a>  （其实知乎还有个单独的热榜页面<a href="https://www.zhihu.com/billboard" target="_blank" rel="noopener">https://www.zhihu.com/billboard</a> ），这里新增一个type <code>Element attribute</code> ，因为之前抓取豆瓣链接用的 link，它把文字也抓取了，而我们只要里面的href属性。</p>
+<p>同样的先创建一个element的容器。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-18e11ee17b7f2f13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>里面加4个选择器：知乎排名 ，知乎标题， 知乎链接 ，知乎热度 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5af1882718979e0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>预览下数据没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-24935e13fbd0455b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>开始抓取数据并导出CSV文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-cfbf4b54ee671e9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不过生成的CSV文件排序乱了  。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-09010d986c156d33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>在排序和筛选里按照排名重新排下就好了（如果需要更复杂的排序可以借助Python的pandas），看最后的结果。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-acc96121f9326100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不过有个问题，热榜里的广告 <a href="https://www.zhihu.com/xen/market/ecom-page/1305179157022478336" target="_blank" rel="noopener">https://www.zhihu.com/xen/market/ecom-page/1305179157022478336</a> 没有热度，所以结果为null。<br>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_hot"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://www.zhihu.com/hot"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"知乎排名"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.HotItem-rank"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎标题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">"h2"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">".HotItem-content a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎热度"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.HotItem-metrics"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"内容容器"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElement"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"section"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-6813b967bbca7647.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="知乎回答"><a href="#知乎回答" class="headerlink" title="知乎回答"></a>知乎回答</h3><p>这里以知乎日报的回答为例<br><a href="https://www.zhihu.com/org/zhi-hu-ri-bao-51-41/answers" target="_blank" rel="noopener">https://www.zhihu.com/org/zhi-hu-ri-bao-51-41/answers</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3ab27631a502be51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>需要注意知乎的回答需要点击阅读全文才能完全展示。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5af6a554ed66b5d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>所以这里又增加个type <code>element click</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-af3c9b14782225a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>里面有4个选择器：问题标题，赞同数，阅读全文，回答内容，回答链接。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0e7d0a63274e249a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>看下抓取结果没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-331fa72ff0a9867e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_answer"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://www.zhihu.com/people/san-sheng-ruo-meng/answers"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"回答容器"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElement"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.List-item"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"问题标题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"[itemprop='zhihu:question'] a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"赞同数"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.VoteButton--up"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"阅读全文"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementClick"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>,<span class="string">"clickElementSelector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"clickType"</span>:<span class="string">"clickOnce"</span>,<span class="string">"discardInitialElements"</span>:<span class="string">"do-not-discard"</span>,<span class="string">"clickElementUniquenessType"</span>:<span class="string">"uniqueText"</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"回答内容"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.RichContent-inner"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"回答链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"[itemprop='zhihu:question'] a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="知乎专栏文章"><a href="#知乎专栏文章" class="headerlink" title="知乎专栏文章"></a>知乎专栏文章</h3><p>这里以另一面专栏为例 <a href="https://zhuanlan.zhihu.com/Wisdom" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/Wisdom</a>  ，由于文章是滚动式加载，因此增加type <code>Element scroll down</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-654a05c6a19f4544.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>里面有5个选择器：文章标题，阅读全文，文章内容，文章链接，文章赞数。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9ed9aa216b2e9768.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>抓取后页面会自动滚动加载，并且点击阅读全文展开内容。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a240067de240ef73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用，如果还想导出文章转PDF可以参考这个Python脚本 <a href="https://gitee.com/crossin/snippet/blob/master/get_zhihu/get_zhihu.py" target="_blank" rel="noopener">https://gitee.com/crossin/snippet/blob/master/get_zhihu/get_zhihu.py</a> 。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_zhuanlan"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://zhuanlan.zhihu.com/Wisdom"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"文章容器"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementScroll"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.css-8txec3"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章标题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">".ContentItem-title a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"阅读全文"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementClick"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>,<span class="string">"clickElementSelector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"clickType"</span>:<span class="string">"clickOnce"</span>,<span class="string">"discardInitialElements"</span>:<span class="string">"do-not-discard"</span>,<span class="string">"clickElementUniquenessType"</span>:<span class="string">"uniqueHTMLText"</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章内容"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.RichContent-inner"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">".ContentItem-title a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章赞数"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.VoteButton--up"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="知乎话题"><a href="#知乎话题" class="headerlink" title="知乎话题"></a>知乎话题</h3><p>这里以电影话题为例 <a href="https://www.zhihu.com/topic/19550429/top-answers" target="_blank" rel="noopener">https://www.zhihu.com/topic/19550429/top-answers</a> ，由于这个话题下回答太多，我们只取前50条，因此在元素后增加<code>-n+50</code> nth-of-type(-n+50) ，同样是滚动加载 <code>Element scroll down</code> 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a5ec4444493997fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>里面有3个选择器 ：知乎问题，回答人，赞同数 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ffc6aaf59aa5fe03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>需要注意title 不能直接用<code>[itemprop=&#39;zhihu:question&#39;] a</code> ，有些标题没有这个类，可以点击两次 P 键，匹配到标题的父标签 h2 或者 h2.ContentItem-title。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-99a6f666ac0e7096.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>看下抓取结果没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f2fc8c835cfeea69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_topic"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://www.zhihu.com/topic/19550429/top-answers"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"topic"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementScroll"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.List-item:nth-of-type(-n+100)"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎问题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"topic"</span>],<span class="string">"selector"</span>:<span class="string">"h2"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"回答人"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"topic"</span>],<span class="string">"selector"</span>:<span class="string">".AuthorInfo-name div.Popover"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"赞同数"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"topic"</span>],<span class="string">"selector"</span>:<span class="string">"button.VoteButton--up"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="微博转发"><a href="#微博转发" class="headerlink" title="微博转发"></a>微博转发</h3><p>这里以李健的这条微博转发为例 <a href="https://weibo.com/1744395855/JpvzPo9Rx?type=repost" target="_blank" rel="noopener">https://weibo.com/1744395855/JpvzPo9Rx?type=repost</a> ，翻页的type为 <code>element click</code> ，这种翻页页面不会刷新。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-28429c28ba30a4ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p> 里面有3个选择器：微博昵称，微博评论，评论时间。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c4bee952b8316839.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>看下抓取结果没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-930df52bd087cb56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-bac91764a2bd27c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"weibo"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://weibo.com/1744395855/JpvzPo9Rx?type=repost"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"content"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementClick"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.list_li"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>,<span class="string">"clickElementSelector"</span>:<span class="string">"a.page[action-data]"</span>,<span class="string">"clickType"</span>:<span class="string">"clickOnce"</span>,<span class="string">"discardInitialElements"</span>:<span class="string">"do-not-discard"</span>,<span class="string">"clickElementUniquenessType"</span>:<span class="string">"uniqueText"</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"微博昵称"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"content"</span>],<span class="string">"selector"</span>:<span class="string">".WB_text a[usercard]"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"微博评论"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"content"</span>],<span class="string">"selector"</span>:<span class="string">".WB_text span"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"评论时间"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"content"</span>],<span class="string">"selector"</span>:<span class="string">".WB_from a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="豆瓣电影"><a href="#豆瓣电影" class="headerlink" title="豆瓣电影"></a>豆瓣电影</h3><p>之前文章抓取豆瓣电影是通过URL分页来抓取 <a href="https://movie.douban.com/top250?start=[0-250:25]&amp;filter=" target="_blank" rel="noopener">https://movie.douban.com/top250?start=[0-250:25]&amp;filter=</a>  ，这里通过点击下一页来抓取，新增type 为 <code>link</code> ，它有两个父节点：_root 和自己（按 shift 可以多选）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9d8e78ed05fc62a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>结构图如下：<br><img src="https://upload-images.jianshu.io/upload_images/23152173-af79a3c10e1e4c1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>电影元素里有5个选择器：电影名称，电影排名，电影简介，豆瓣评分，豆瓣链接。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1ca3b589518541d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>抓取结果也很完美。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-263856e78477e958.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"douban_movies"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://movie.douban.com/top250?start=0&amp;filter="</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"下一页"</span>,<span class="string">"type"</span>:<span class="string">"SelectorLink"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>,<span class="string">"下一页"</span>],<span class="string">"selector"</span>:<span class="string">".next a"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影元素"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElement"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>,<span class="string">"下一页"</span>],<span class="string">"selector"</span>:<span class="string">".grid_view li"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影名称"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"span.title:nth-of-type(1)"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影排名"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"em"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影简介"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"span.inq"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"豆瓣评分"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"span.rating_num"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"豆瓣链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"div.hd a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过这次新增的几个type ：<code>Element attribute</code> ， <code>element click</code> ，<code>Element scroll down</code>， <code>link</code>，以及 nth-of-type(-n+50) 应该可以完成大部分网站的数据抓取。</p>
+<p>最近文章：</p>
+<p><a href="https://mp.weixin.qq.com/s/n9ddxx6Zu5hC7cqEXRnMOg" target="_blank" rel="noopener">视频下载神器：支持腾讯/优酷/爱奇艺/b站/微博等全网视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j88qrbHF9k-h7zrgfD87iw" target="_blank" rel="noopener">良心整理：PDF工具合集</a></p>
+<p><a href="https://mp.weixin.qq.com/s/pt0hCthceThMZVU0Ht89AA" target="_blank" rel="noopener">2020 最全电子书搜索网站，找电子书不再愁</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Agh5EAgkd6__jq3J6CCNlA" target="_blank" rel="noopener">b 站账号快速升级到 Lv6：每天自动签到，观看，分享，投币视频 </a></p>
+<p><a href="https://mp.weixin.qq.com/s/Zjhap47PGpIhQi79gkekCg" target="_blank" rel="noopener">集赞生成器：朋友圈集赞不求人</a></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/公众号/" rel="tag"># 公众号</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/11/20/视频下载神器：支持腾讯-优酷-爱奇艺-b站-微博等全网视频/" rel="next" title="视频下载神器：支持腾讯/优酷/爱奇艺/b站/微博等全网视频">
+                <i class="fa fa-chevron-left"></i> 视频下载神器：支持腾讯/优酷/爱奇艺/b站/微博等全网视频
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+          <div class="comments" id="comments">
+             <div id="gitment-container"></div>
+         </div>
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苏生不惑</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">281</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sushengbuhuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mysusheng@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/mysusheng" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://v2ex.com/" title="v2ex" target="_blank">v2ex</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.fanhaobai.com/" title="fanhaobai" target="_blank">fanhaobai</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="yuanxuxu" target="_blank">yuanxuxu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.snail-c.cn/article" title="snail-c" target="_blank">snail-c</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://showcj.com/archives" title="showcj" target="_blank">showcj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://vultr.aicnm.com/%E6%9C%80%E6%96%B0Vultr%E6%B3%A8%E5%86%8C%E5%8F%8AVPS%E8%B4%AD%E4%B9%B0%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/" title="vultr" target="_blank">vultr</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lucissfer.com/" title="lucissfer" target="_blank">lucissfer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/fdipzone/article/details/79352685" title="傲雪星枫" target="_blank">傲雪星枫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yoby123.cn/index.php/category/default/" title="小白的分享" target="_blank">小白的分享</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/p/5819995.html" title="PHP攻城狮" target="_blank">PHP攻城狮</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jiaojie.site/" title="php" target="_blank">php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sphard.com/archives/" title="sphard" target="_blank">sphard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuanxuxu.com/archives/" title="LNMP技术栈笔记" target="_blank">LNMP技术栈笔记</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.coding10.com/" title="学习 Laravel" target="_blank">学习 Laravel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://shuwoom.com/?page_id=929" title="区块链学习指南" target="_blank">区块链学习指南</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://greenlightt.github.io/archives/" title="greenlightt" target="_blank">greenlightt</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0php.net/archives/" title="0php" target="_blank">0php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fordba.com/category/mysql" title="mysql" target="_blank">mysql</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.itcodemonkey.com/" title="程序员" target="_blank">程序员</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yanshuo.me/r/v2ex" title="言说" target="_blank">言说</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.timiguo.com/archive.html" title="提米果的博客" target="_blank">提米果的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://phpartisan.cn/news/112.html" title="phpartisan" target="_blank">phpartisan</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/52fhy/" title="飞鸿影" target="_blank">飞鸿影</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.54php.cn/" title="54php" target="_blank">54php</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.lazyman.vip/" title="营销" target="_blank">营销</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.njphper.com/archives/" title="做人呢最重要的就是开心" target="_blank">做人呢最重要的就是开心</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.h57.pw/" title="php 初心者" target="_blank">php 初心者</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#知乎热榜"><span class="nav-number">1.</span> <span class="nav-text">知乎热榜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知乎回答"><span class="nav-number">2.</span> <span class="nav-text">知乎回答</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知乎专栏文章"><span class="nav-number">3.</span> <span class="nav-text">知乎专栏文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知乎话题"><span class="nav-number">4.</span> <span class="nav-text">知乎话题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微博转发"><span class="nav-number">5.</span> <span class="nav-text">微博转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#豆瓣电影"><span class="nav-number">6.</span> <span class="nav-text">豆瓣电影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公众号-苏生不惑"><span class="nav-number">7.</span> <span class="nav-text">公众号 苏生不惑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏生不惑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+<span id="showDays"></span>
+
+</div>
+
+<span id="busuanzi_container_site_pv">
+   总访问量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共680.1k字</span>
+</div>
+<script>
+var birthDay = new Date("11/20/2018");
+var now = new Date();
+var duration = now.getTime() - birthDay.getTime();
+var total= Math.floor(duration / (1000 * 60 * 60 * 24));
+document.getElementById("showDays").innerHTML = "本站已运行 "+total+" 天";
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        // 匿名函数，防止污染全局变量
+        var utterances = document.createElement('script');
+        utterances.type = 'text/javascript';
+        utterances.async = true;
+        utterances.setAttribute('issue-term','0')
+        utterances.setAttribute('theme','')
+        utterances.setAttribute('repo','sushengbuhuo/laravel_ioc_demo')
+        utterances.crossorigin = 'anonymous';
+        utterances.src = 'https://utteranc.es/client.js';
+        // content 是要插入评论的地方
+        document.getElementById('gitment-container').appendChild(utterances);
+    })();
+</script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'sushengbuhuo-chat/mychat'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+</html>
