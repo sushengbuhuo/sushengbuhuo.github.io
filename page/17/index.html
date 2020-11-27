@@ -285,6 +285,590 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/Python-抓取知识星球内容生成-PDF/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/16/Python-抓取知识星球内容生成-PDF/" itemprop="url">Python 抓取知识星球内容生成 PDF</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T20:29:10+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  21 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>知识星球是什么?</p>
+<blockquote>
+<p>知识星球是创作者连接铁杆粉丝，做出高品质社群，实现知识变现的工具。创作者可以用知识星球连接铁杆粉丝，做出高品质社群，实现知识变现。<br>知识星球解决的核心问题是社群收费管理难问题和内容不能沉淀问题。微信公众号、微博和行业专家——这些有粉丝的创作者是知识星球的核心用户，都可以用知识星球运营社群，知识变现。</p>
+</blockquote>
+<p>以上来自知识星球官网的介绍 <a href="https://help.zsxq.com/" target="_blank" rel="noopener">https://help.zsxq.com/</a> 口号是连接1000位铁杆粉丝。</p>
+<h3 id="为什么用星球"><a href="#为什么用星球" class="headerlink" title="为什么用星球"></a>为什么用星球</h3><p>我没做过社群，也不是什么行业专家，毕竟不是什么大v，为什么要用知识星球呢？主要是现在获取的资讯太多了，想沉淀记录些东西，方便自己，也方便他人找，为什么不用微博呢？微博用了很多年，每天都在更新，目前已经8万多条微博了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-840f9df6851655c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>微博上有很多mark党，不断转发微博，但几乎没再去看过，不知道你是否也这样，以为收藏就看过了，其实只是种心里安慰。</p>
+<p>而且微博上转发的东西经常被删，微博太多管理起来也麻烦，于是6月份的时候建立了一个免费的星球，就是这个了<a href="https://wx.zsxq.com/dweb2/index/group/141281112142" target="_blank" rel="noopener">https://wx.zsxq.com/dweb2/index/group/141281112142</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-935a32b13ae6980f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"><br>星球还可以上传文件，和微博一样加标签方便分类，还提供网页版，比微信方便多了。</p>
+<h3 id="导出星球"><a href="#导出星球" class="headerlink" title="导出星球"></a>导出星球</h3><p>过去3个月更新几百条信息了，也都加好标签。现在有200多个小伙伴了，你有兴趣也加入吧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-c78802c9c772446f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-0bc2f593ae8857eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如工具这个标签列表的内容<a href="https://wx.zsxq.com/dweb2/index/tags/%E5%B7%A5%E5%85%B7/828821151512" target="_blank" rel="noopener">https://wx.zsxq.com/dweb2/index/tags/%E5%B7%A5%E5%85%B7/828821151512</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-2a3fe75088709eb8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>但内容多了以后翻起来也麻烦，于是想着下载下来看，最好能导出PDF，于是准备研究下，搜索下发现有人已经做过了 <a href="https://github.com/wbsabc/zsxq-spider" target="_blank" rel="noopener">https://github.com/wbsabc/zsxq-spider</a> <a href="https://github.com/96chh/crawl-zsxq" target="_blank" rel="noopener">https://github.com/96chh/crawl-zsxq</a><br>思路为抓取网页版的接口<a href="https://api.zsxq.com/v1.10/groups/141281112142/topics?scope=all&amp;count=20" target="_blank" rel="noopener">https://api.zsxq.com/v1.10/groups/141281112142/topics?scope=all&amp;count=20</a> 每次加载20条，每次的最后一条的create_time为下次的开始时间，如果没有20条说明加载完了。不过他的代码还有些问题，需要改动下，于是开始动手了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pdfkit</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line"><span class="keyword">import</span> re,jieba,pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud, STOPWORDS, ImageColorGenerator</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery</span><br><span class="line">ZSXQ_ACCESS_TOKEN = '2B9BA4A2-8CAB-3A7C-32E7-' # 登录后Cookie中的Token</span><br><span class="line">GROUP_ID = '142452821282'                                  # 知识星球中的小组ID 141281112142  每日分享554228114224</span><br><span class="line">PDF_FILE_NAME = '知识星球_斜杠星球.pdf'                               # 生成PDF文件的名字</span><br><span class="line">DOWLOAD_PICS = False                                        # 是否下载图片 True | False 下载会导致程序变慢</span><br><span class="line">DOWLOAD_COMMENTS = False                                    # 是否下载评论</span><br><span class="line">ONLY_DIGESTS = False                                       # True-只精华 | False-全部</span><br><span class="line">FROM_DATE_TO_DATE = False                                  # 按时间区间下载</span><br><span class="line">EARLY_DATE = '2017-05-25T00:00:00.000+0800'                # 最早时间 当FROM_DATE_TO_DATE=True时生效 为空表示不限制 形如'2017-05-25T00:00:00.000+0800'</span><br><span class="line">LATE_DATE = '2019-09-25T00:00:00.000+0800'                 # 最晚时间 当FROM_DATE_TO_DATE=True时生效 为空表示不限制 形如'2017-05-25T00:00:00.000+0800'</span><br><span class="line">DELETE_PICS_WHEN_DONE = True                               # 运行完毕后是否删除下载的图片</span><br><span class="line">DELETE_HTML_WHEN_DONE = True                               # 运行完毕后是否删除生成的HTML</span><br><span class="line">COUNTS_PER_TIME = 30                                       # 每次请求加载几个主题 最大可设置为30</span><br><span class="line">DEBUG = False                                              # DEBUG开关</span><br><span class="line">DEBUG_NUM = 120                                            # DEBUG时 跑多少条数据后停止 需与COUNTS_PER_TIME结合考虑</span><br><span class="line"></span><br><span class="line">html_template = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">&lt;html lang="</span>en<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;head&gt;</span></span><br><span class="line"><span class="string">    &lt;meta charset="</span>UTF<span class="number">-8</span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">&lt;h1&gt;&#123;title&#125;&lt;/h1&gt;</span></span><br><span class="line"><span class="string">&lt;br&gt;&#123;author&#125; - &#123;cretime&#125;&lt;br&gt;</span></span><br><span class="line"><span class="string">&lt;p&gt;&#123;text&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">htmls = []</span><br><span class="line">num = <span class="number">0</span></span><br><span class="line">def headers_to_dict(headers):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    将字符串</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"><span class="string">    Host: mp.weixin.qq.com</span></span><br><span class="line"><span class="string">    Connection: keep-alive</span></span><br><span class="line"><span class="string">    Cache-Control: max-age=</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"><span class="string">    转换成字典类型</span></span><br><span class="line"><span class="string">    :param headers: str</span></span><br><span class="line"><span class="string">    :return: dict</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    headers = headers.split(<span class="string">"\n"</span>)</span><br><span class="line">    d_headers = dict()</span><br><span class="line">    <span class="keyword">for</span> h <span class="keyword">in</span> headers:</span><br><span class="line">        h = h.strip()</span><br><span class="line">        <span class="keyword">if</span> h:</span><br><span class="line">            k, v = h.split(<span class="string">":"</span>, <span class="number">1</span>)</span><br><span class="line">            d_headers[k] = v.strip()</span><br><span class="line">    <span class="keyword">return</span> d_headers</span><br><span class="line">def get_data(url):</span><br><span class="line"></span><br><span class="line">    OVER_DATE_BREAK = False</span><br><span class="line"></span><br><span class="line">    global htmls, num</span><br><span class="line">        </span><br><span class="line">   </span><br><span class="line">    header = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">Accept:application/json, text/plain, */*</span></span><br><span class="line"><span class="string">Accept-Encoding:gzip, deflate, br</span></span><br><span class="line"><span class="string">Accept-Language:zh-CN</span></span><br><span class="line"><span class="string">Connection:keep-alive</span></span><br><span class="line"><span class="string">Cookie:sensorsdata2015jssdkcross=%7B%22dis ; zsxq_access_token=BA53 6025A</span></span><br><span class="line"><span class="string">DNT:1</span></span><br><span class="line"><span class="string">Host:api.zsxq.com</span></span><br><span class="line"><span class="string">Origin:https://wx.zsxq.com</span></span><br><span class="line"><span class="string">Referer:https://wx.zsxq.com/dweb2/index/group/224445125221</span></span><br><span class="line"><span class="string">User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36 Maxthon/5.2.7.5000</span></span><br><span class="line"><span class="string">X-Request-Id:fcf935489-5997-674e-9db2-a02ea9b389f</span></span><br><span class="line"><span class="string">X-Signature:81b69d88df26231776893554ec8d733448743908</span></span><br><span class="line"><span class="string">X-Timestamp:1567682270</span></span><br><span class="line"><span class="string">X-Version:1.10.17</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    headers = headers_to_dict(header)</span><br><span class="line">    t = []</span><br><span class="line">    </span><br><span class="line">    rsp = requests.get(url, headers=headers)</span><br><span class="line">    print(url,headers,rsp.json())</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    cat temp.json</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">      "</span>succeeded<span class="string">": true,</span></span><br><span class="line"><span class="string">      "</span>resp_data<span class="string">": &#123;</span></span><br><span class="line"><span class="string">        "</span>topics<span class="string">": []</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    cat temp.css</span></span><br><span class="line"><span class="string">    h1 &#123;font-size:40px; color:red; text-align:center;&#125;</span></span><br><span class="line"><span class="string">    p &#123;font-size:30px;&#125;</span></span><br><span class="line"><span class="string">    img&#123;</span></span><br><span class="line"><span class="string">    	max-width:100%;</span></span><br><span class="line"><span class="string">    	margin:20px auto;</span></span><br><span class="line"><span class="string">    	height:auto;</span></span><br><span class="line"><span class="string">    	border:0;</span></span><br><span class="line"><span class="string">    	outline:0</span></span><br><span class="line"><span class="string">    	-webkit-box-shadow: 1px 4px 16px 8px #5CA2BE;</span></span><br><span class="line"><span class="string">        -moz-box-shadow: 1px 4px 16px 8px #5CA2BE;</span></span><br><span class="line"><span class="string">        box-shadow: 1px 4px 16px 8px #5CA2BE;</span></span><br><span class="line"><span class="string">        /*set the images aligned*/</span></span><br><span class="line"><span class="string">        display: block;</span></span><br><span class="line"><span class="string">        margin-left: auto;</span></span><br><span class="line"><span class="string">        margin-right: auto;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    with open('temp.json', 'w', encoding='utf-8') as f: # 将返回数据写入temp.json方便查看</span><br><span class="line">        f.write(json.dumps(rsp.json(), indent=<span class="number">2</span>, ensure_ascii=False))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'temp.json'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f, open(<span class="string">'contents2.txt'</span>, <span class="string">'a+'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f2:</span><br><span class="line">        <span class="keyword">for</span> topic <span class="keyword">in</span> json.loads(f.read()).get(<span class="string">'resp_data'</span>).get(<span class="string">'topics'</span>):</span><br><span class="line">            <span class="keyword">if</span> FROM_DATE_TO_DATE and EARLY_DATE.strip():</span><br><span class="line">                <span class="keyword">if</span> topic.get(<span class="string">'create_time'</span>) &lt; EARLY_DATE.strip():</span><br><span class="line">                    OVER_DATE_BREAK = True</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">            content = topic.get(<span class="string">'question'</span>, topic.get(<span class="string">'talk'</span>, topic.get(<span class="string">'task'</span>, topic.get(<span class="string">'solution'</span>))))</span><br><span class="line"></span><br><span class="line">            anonymous = content.get(<span class="string">'anonymous'</span>)</span><br><span class="line">            <span class="keyword">if</span> anonymous:</span><br><span class="line">                author = <span class="string">'匿名用户'</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                author = content.get(<span class="string">'owner'</span>).get(<span class="string">'name'</span>)</span><br><span class="line"></span><br><span class="line">            cretime = (topic.get(<span class="string">'create_time'</span>)[:<span class="number">23</span>]).replace(<span class="string">'T'</span>, <span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">            text = content.get(<span class="string">'text'</span>, <span class="string">''</span>)</span><br><span class="line">            f2.write(text)</span><br><span class="line"></span><br><span class="line">            text = handle_link(text)</span><br><span class="line">            #f2.write(PyQuery(text).text())</span><br><span class="line">            t.append(text)</span><br><span class="line">            title = str(num) + <span class="string">'_'</span> + cretime[:<span class="number">16</span>]</span><br><span class="line">            num += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> topic.get(<span class="string">'digested'</span>) == True:</span><br><span class="line">                title += <span class="string">'_精华'</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> DOWLOAD_PICS and content.get(<span class="string">'images'</span>):</span><br><span class="line">                soup = BeautifulSoup(html_template, <span class="string">'html.parser'</span>)</span><br><span class="line">                images_index = <span class="number">0</span></span><br><span class="line">                <span class="keyword">for</span> img <span class="keyword">in</span> content.get(<span class="string">'images'</span>):</span><br><span class="line">                    url = img.get(<span class="string">'large'</span>).get(<span class="string">'url'</span>)</span><br><span class="line">                    local_url = <span class="string">'./images/'</span> + str(num - <span class="number">1</span>) + <span class="string">'_'</span> + str(images_index) + <span class="string">'.jpg'</span></span><br><span class="line">                    images_index += <span class="number">1</span></span><br><span class="line">                    urllib.request.urlretrieve(url, local_url)</span><br><span class="line">                    img_tag = soup.new_tag(<span class="string">'img'</span>, src=local_url)</span><br><span class="line">                    soup.body.append(img_tag)</span><br><span class="line">                html_img = str(soup)</span><br><span class="line">                html = html_img.format(title=title, text=text, author=author, cretime=cretime)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                html = html_template.format(title=title, text=text, author=author, cretime=cretime)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> topic.get(<span class="string">'question'</span>):</span><br><span class="line">                answer_author = topic.get(<span class="string">'answer'</span>).get(<span class="string">'owner'</span>).get(<span class="string">'name'</span>, <span class="string">''</span>)</span><br><span class="line">                answer = topic.get(<span class="string">'answer'</span>).get(<span class="string">'text'</span>, <span class="string">""</span>)</span><br><span class="line">                answer = handle_link(answer)</span><br><span class="line"></span><br><span class="line">                soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">                answer_tag = soup.new_tag(<span class="string">'p'</span>)</span><br><span class="line"></span><br><span class="line">                answer = <span class="string">'【'</span> + answer_author + <span class="string">'】 回答：&lt;br&gt;'</span> + answer</span><br><span class="line">                soup_temp = BeautifulSoup(answer, <span class="string">'html.parser'</span>)</span><br><span class="line">                answer_tag.append(soup_temp)</span><br><span class="line"></span><br><span class="line">                soup.body.append(answer_tag)</span><br><span class="line">                html = str(soup) </span><br><span class="line">			</span><br><span class="line">            files = content.get(<span class="string">'files'</span>)</span><br><span class="line">            <span class="keyword">if</span> files:</span><br><span class="line">                files_content = <span class="string">'&lt;i&gt;文件列表(需访问网站下载) :&lt;br&gt;'</span></span><br><span class="line">                <span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">                    files_content += f.get(<span class="string">'name'</span>) + <span class="string">'&lt;br&gt;'</span></span><br><span class="line">                files_content += <span class="string">'&lt;/i&gt;'</span></span><br><span class="line">                soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">                files_tag = soup.new_tag(<span class="string">'p'</span>)</span><br><span class="line">                soup_temp = BeautifulSoup(files_content, <span class="string">'html.parser'</span>)</span><br><span class="line">                files_tag.append(soup_temp)</span><br><span class="line">                soup.body.append(files_tag)</span><br><span class="line">                html = str(soup)</span><br><span class="line"></span><br><span class="line">            comments = topic.get(<span class="string">'show_comments'</span>)</span><br><span class="line">            <span class="keyword">if</span> DOWLOAD_COMMENTS and comments:</span><br><span class="line">                soup = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">                hr_tag = soup.new_tag(<span class="string">'hr'</span>)</span><br><span class="line">                soup.body.append(hr_tag)</span><br><span class="line">                <span class="keyword">for</span> comment <span class="keyword">in</span> comments:</span><br><span class="line">                    comment_str = <span class="string">''</span></span><br><span class="line">                    <span class="keyword">if</span> comment.get(<span class="string">'repliee'</span>):</span><br><span class="line">                        comment_str = <span class="string">'['</span> + comment.get(<span class="string">'owner'</span>).get(<span class="string">'name'</span>) + <span class="string">' 回复 '</span> + comment.get(<span class="string">'repliee'</span>).get(<span class="string">'name'</span>) + <span class="string">'] : '</span> + handle_link(comment.get(<span class="string">'text'</span>))</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        comment_str = <span class="string">'['</span> + comment.get(<span class="string">'owner'</span>).get(<span class="string">'name'</span>) + <span class="string">'] : '</span> + handle_link(comment.get(<span class="string">'text'</span>))</span><br><span class="line"></span><br><span class="line">                    comment_tag = soup.new_tag(<span class="string">'p'</span>)</span><br><span class="line">                    soup_temp = BeautifulSoup(comment_str, <span class="string">'html.parser'</span>)</span><br><span class="line">                    comment_tag.append(soup_temp)</span><br><span class="line">                    soup.body.append(comment_tag)</span><br><span class="line">                html = str(soup)</span><br><span class="line"></span><br><span class="line">            htmls.append(html)</span><br><span class="line"></span><br><span class="line">    # DEBUG 仅导出部分数据时使用</span><br><span class="line">    <span class="keyword">if</span> DEBUG and num &gt;= DEBUG_NUM:</span><br><span class="line">       <span class="keyword">return</span> htmls</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> OVER_DATE_BREAK:</span><br><span class="line">        <span class="keyword">return</span> htmls</span><br><span class="line"></span><br><span class="line">    next_page = rsp.json().get(<span class="string">'resp_data'</span>).get(<span class="string">'topics'</span>)</span><br><span class="line">    <span class="keyword">if</span> next_page:</span><br><span class="line">        create_time = next_page[<span class="number">-1</span>].get(<span class="string">'create_time'</span>)</span><br><span class="line">        <span class="keyword">if</span> create_time[<span class="number">20</span>:<span class="number">23</span>] == <span class="string">"000"</span>:</span><br><span class="line">            end_time = create_time[:<span class="number">20</span>]+<span class="string">"999"</span>+create_time[<span class="number">23</span>:]</span><br><span class="line">            str_date_time = end_time[:<span class="number">19</span>]</span><br><span class="line">            delta = datetime.timedelta(seconds=<span class="number">1</span>)</span><br><span class="line">            date_time = datetime.datetime.strptime(str_date_time, <span class="string">'%Y-%m-%dT%H:%M:%S'</span>)</span><br><span class="line">            date_time = date_time - delta</span><br><span class="line">            str_date_time = date_time.strftime(<span class="string">'%Y-%m-%dT%H:%M:%S'</span>)</span><br><span class="line">            end_time = str_date_time + end_time[<span class="number">19</span>:]</span><br><span class="line">        <span class="keyword">else</span> :</span><br><span class="line">            res = int(create_time[<span class="number">20</span>:<span class="number">23</span>])<span class="number">-1</span></span><br><span class="line">            end_time = create_time[:20]+str(res).zfill(3)+create_time[23:] # zfill 函数补足结果前面的零，始终为3位数</span><br><span class="line">        end_time = quote(end_time)</span><br><span class="line">        <span class="keyword">if</span> len(end_time) == <span class="number">33</span>:</span><br><span class="line">            end_time = end_time[:<span class="number">24</span>] + <span class="string">'0'</span> + end_time[<span class="number">24</span>:]</span><br><span class="line">        next_url = start_url + <span class="string">'&amp;end_time='</span> + end_time</span><br><span class="line">        print(next_url)</span><br><span class="line">        get_data(next_url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> htmls,t</span><br><span class="line"></span><br><span class="line">def handle_link(text):</span><br><span class="line">    soup = BeautifulSoup(text, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">    mention = soup.find_all(<span class="string">'e'</span>, attrs=&#123;<span class="string">'type'</span> : <span class="string">'mention'</span>&#125;)</span><br><span class="line">    <span class="keyword">if</span> len(mention):</span><br><span class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> mention:</span><br><span class="line">            mention_name = m.attrs[<span class="string">'title'</span>]</span><br><span class="line">            new_tag = soup.new_tag(<span class="string">'span'</span>)</span><br><span class="line">            new_tag.string = mention_name</span><br><span class="line">            m.replace_with(new_tag)</span><br><span class="line"></span><br><span class="line">    hashtag = soup.find_all(<span class="string">'e'</span>, attrs=&#123;<span class="string">'type'</span> : <span class="string">'hashtag'</span>&#125;)</span><br><span class="line">    <span class="keyword">if</span> len(hashtag):</span><br><span class="line">        <span class="keyword">for</span> tag <span class="keyword">in</span> hashtag:</span><br><span class="line">            tag_name = unquote(tag.attrs[<span class="string">'title'</span>])</span><br><span class="line">            new_tag = soup.new_tag(<span class="string">'span'</span>)</span><br><span class="line">            new_tag.string = tag_name</span><br><span class="line">            tag.replace_with(new_tag)</span><br><span class="line"></span><br><span class="line">    links = soup.find_all(<span class="string">'e'</span>, attrs=&#123;<span class="string">'type'</span> : <span class="string">'web'</span>&#125;)</span><br><span class="line">    <span class="keyword">if</span> len(links):</span><br><span class="line">        <span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">            title = unquote(link.attrs[<span class="string">'title'</span>])</span><br><span class="line">            href = unquote(link.attrs[<span class="string">'href'</span>])</span><br><span class="line">            new_a_tag = soup.new_tag(<span class="string">'a'</span>, href=href)</span><br><span class="line">            new_a_tag.string = title</span><br><span class="line">            link.replace_with(new_a_tag)</span><br><span class="line"></span><br><span class="line">    text = str(soup)</span><br><span class="line">    text = re.sub(r<span class="string">'&lt;e[^&gt;]*&gt;'</span>, <span class="string">''</span>, text).strip()</span><br><span class="line">    text = text.replace(<span class="string">'\n'</span>, <span class="string">'&lt;br&gt;'</span>)</span><br><span class="line">    <span class="keyword">return</span> text</span><br><span class="line"></span><br><span class="line">def make_pdf(htmls):</span><br><span class="line">    html_files = []</span><br><span class="line">    <span class="keyword">for</span> index, html <span class="keyword">in</span> enumerate(htmls):</span><br><span class="line">        file = str(index) + <span class="string">".html"</span></span><br><span class="line">        html_files.append(file)</span><br><span class="line">        <span class="keyword">with</span> open(file, <span class="string">"w"</span>, encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(html)</span><br><span class="line"></span><br><span class="line">    options = &#123;</span><br><span class="line">        <span class="string">"user-style-sheet"</span>: <span class="string">"temp.css"</span>,</span><br><span class="line">        <span class="string">"page-size"</span>: <span class="string">"Letter"</span>,</span><br><span class="line">        <span class="string">"margin-top"</span>: <span class="string">"0.75in"</span>,</span><br><span class="line">        <span class="string">"margin-right"</span>: <span class="string">"0.75in"</span>,</span><br><span class="line">        <span class="string">"margin-bottom"</span>: <span class="string">"0.75in"</span>,</span><br><span class="line">        <span class="string">"margin-left"</span>: <span class="string">"0.75in"</span>,</span><br><span class="line">        <span class="string">"encoding"</span>: <span class="string">"UTF-8"</span>,</span><br><span class="line">        <span class="string">"custom-header"</span>: [(<span class="string">"Accept-Encoding"</span>, <span class="string">"gzip"</span>)],</span><br><span class="line">        <span class="string">"cookie"</span>: [</span><br><span class="line">            (<span class="string">"cookie-name1"</span>, <span class="string">"cookie-value1"</span>), (<span class="string">"cookie-name2"</span>, <span class="string">"cookie-value2"</span>)</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"outline-depth"</span>: <span class="number">10</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        pdfkit.from_file(html_files, PDF_FILE_NAME, options=options)</span><br><span class="line">    except Exception <span class="keyword">as</span> e:</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> DELETE_HTML_WHEN_DONE:</span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> html_files:</span><br><span class="line">            os.remove(file)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"电子书生成成功！"</span>)</span><br><span class="line">def wordimage(content):</span><br><span class="line">    comments = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(len(content)):</span><br><span class="line">        comments = comments + (str(content[k])).strip()</span><br><span class="line">    doc = PyQuery(comments)</span><br><span class="line">    #使用正则表达式去除标点符号</span><br><span class="line">    #pattern = re.compile(r'[\u4e00-\u9fa5]+')</span><br><span class="line">    #filterdata = re.findall(pattern, comments)</span><br><span class="line">    #cleaned_comments = ''.join(filterdata)</span><br><span class="line">    cleaned_comments = <span class="string">''</span>.join(jieba.cut(doc.text()))</span><br><span class="line">    print(cleaned_comments)</span><br><span class="line">    #使用结巴分词进行中文分词</span><br><span class="line">    segment = jieba.lcut(cleaned_comments)</span><br><span class="line">    words_df=pd.DataFrame(&#123;<span class="string">'segment'</span>:segment&#125;)</span><br><span class="line">    #去掉停用词，先下载https://github.com/wendy1990/short_text_classification/blob/master/conf/stopwords.txt</span><br><span class="line">    stopwords=pd.read_csv("stopwords.txt",index_col=False,quoting=3,sep="\t",names=['stopword'], encoding='utf-8')#quoting=3全不引用words_df=words_df[~words_df.segment.isin(stopwords.stopword)]</span><br><span class="line">    #统计词频 看看哪些词出现概率高</span><br><span class="line">    words_stat=words_df.groupby(by=[<span class="string">'segment'</span>])[<span class="string">'segment'</span>].agg(&#123;<span class="string">"计数"</span>:np.size&#125;)</span><br><span class="line">    words_stat=words_stat.reset_index().sort_values(by=[<span class="string">"计数"</span>],ascending=False)</span><br><span class="line">    #print(words_stat.head(1000).values)</span><br><span class="line">    stopwords = set(STOPWORDS)</span><br><span class="line">    #用词云进行显示</span><br><span class="line">    wordcloud=WordCloud(font_path=<span class="string">"c:\windos\fonts\simhei.ttf"</span>,background_color=<span class="string">"white"</span>,max_font_size=<span class="number">80</span>,stopwords=STOPWORDS.add(<span class="string">"said"</span>)).generate(cleaned_comments)</span><br><span class="line">    #word_frequence = &#123;x[0]:x[1] for x in words_stat.head(1000).values&#125;</span><br><span class="line">    #word_frequence_list = []</span><br><span class="line">    #for key in word_frequence:</span><br><span class="line">    #    temp = (key,word_frequence[key])</span><br><span class="line">    #    word_frequence_list.append(temp)</span><br><span class="line">    #wordcloud=wordcloud.fit_words(word_frequence_list)</span><br><span class="line">    #plt.imshow(wordcloud)</span><br><span class="line">    #plt.show()</span><br><span class="line">    plt.imshow(wordcloud, interpolation=<span class="string">"bilinear"</span>)</span><br><span class="line">    plt.axis(<span class="string">"off"</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">    wordcloud.to_file(<span class="string">'zsxq_tool.jpg'</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    images_path = r<span class="string">'./images'</span></span><br><span class="line">    <span class="keyword">if</span> DOWLOAD_PICS:</span><br><span class="line">        <span class="keyword">if</span> os.path.exists(images_path):</span><br><span class="line">            shutil.rmtree(images_path)</span><br><span class="line">        os.mkdir(images_path)</span><br><span class="line"></span><br><span class="line">    # 仅精华</span><br><span class="line">    #start_url = 'https://api.zsxq.com/v1.10/groups/481818518558/topics?scope=digests&amp;count=30'</span><br><span class="line">    # 全部</span><br><span class="line">    #start_url = 'https://api.zsxq.com/v1.10/groups/481818518558/topics?count=30'</span><br><span class="line">    start_url = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> ONLY_DIGESTS:</span><br><span class="line">        start_url = <span class="string">'https://api.zsxq.com/v1.10/groups/'</span> + GROUP_ID + <span class="string">'/topics?scope=digests&amp;count='</span> + str(COUNTS_PER_TIME)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        start_url = <span class="string">'https://api.zsxq.com/v1.10/groups/'</span> + GROUP_ID + <span class="string">'/topics?scope=all&amp;count='</span> + str(COUNTS_PER_TIME)</span><br><span class="line"></span><br><span class="line">    url = start_url</span><br><span class="line">    <span class="keyword">if</span> FROM_DATE_TO_DATE and LATE_DATE.strip():</span><br><span class="line">        url = start_url + <span class="string">'&amp;end_time='</span> + quote(LATE_DATE.strip())</span><br><span class="line">    data = get_data(url)</span><br><span class="line">    #print(data[1])</span><br><span class="line">    #wordimage(data[1])</span><br><span class="line">    #make_pdf(data[0])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> DOWLOAD_PICS and DELETE_PICS_WHEN_DONE:</span><br><span class="line">        shutil.rmtree(images_path)</span><br></pre></td></tr></table></figure>
+<p>执行效果见图<br><img src="https://upload-images.jianshu.io/upload_images/17817191-07b0a8ce1442ea8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>生成的PDF文件有点大，565页 ，50多M，主要是评论和图片都下载了，不下载的话5M差不多。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-87020a336d8967cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了验证付费星球也能下载，我还建了个付费星球<a href="https://wx.zsxq.com/dweb2/index/group/224445125221，以后也会经常更新。" target="_blank" rel="noopener">https://wx.zsxq.com/dweb2/index/group/224445125221，以后也会经常更新。</a><br> <img src="https://upload-images.jianshu.io/upload_images/17817191-5f36737e35dbbff9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-aeca99f305f23d61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>评论和回复也下载了<br><img src="https://upload-images.jianshu.io/upload_images/17817191-dc036a80532a5ce1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-70a44013887caa7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>2019.6.19创建的星球<br><img src="https://upload-images.jianshu.io/upload_images/17817191-1818e57b45d5027b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>Python生成的词云效果不大好，还没过滤好无用的词。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-1a497d8234026372.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>文字版也导出到TXT了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-a86943499b797fd1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在词云网站 <a href="http://cloud.niucodata.com/" target="_blank" rel="noopener">http://cloud.niucodata.com/</a>  将下载的文字放进去就能看到词频统计和词云图。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-aace6c380516b87f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-ec6b0234c3353915.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果你想看下载这个PDF，公众号回复 <code>星球</code> 获取PDF和文字版。<br><a href="https://pan.baidu.com/s/1pJ-nLiLLMlK08_vwoE0ZuA" target="_blank" rel="noopener">https://pan.baidu.com/s/1pJ-nLiLLMlK08_vwoE0ZuA</a><br><a href="https://pan.baidu.com/s/1TcYpM4x5td2GLjkltHJhBQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1TcYpM4x5td2GLjkltHJhBQ</a></p>
+<h3 id="wkhtmltopdf"><a href="#wkhtmltopdf" class="headerlink" title="wkhtmltopdf"></a>wkhtmltopdf</h3><p>使用过程中发现wkhtmltopdf这个工具很好用 <a href="https://wkhtmltopdf.org/" target="_blank" rel="noopener">https://wkhtmltopdf.org/</a> 这个软件很方便在命令行生成图片和PDF，<br>执行 <code>wkhtmltoimage www.qq.com qq.png</code>，就会在当前目录下生成了一张png图片。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ wkhtmltoimage www.qq.com qq.png</span><br><span class="line">Loading page (<span class="number">1</span>/<span class="number">2</span>)</span><br><span class="line">QFont::setPixelSize: Pixel size &lt;= <span class="number">0</span> (<span class="number">0</span>)                     ] <span class="number">44</span>%</span><br><span class="line">libpng warning: iCCP: known incorrect sRGB profile           ] <span class="number">64</span>%</span><br><span class="line">Rendering (<span class="number">2</span>/<span class="number">2</span>)</span><br><span class="line">Done</span><br><span class="line"></span><br><span class="line"> $ wkhtmltopdf www.qq.com qq.pdf</span><br><span class="line">Loading pages (<span class="number">1</span>/<span class="number">6</span>)</span><br><span class="line">QFont::setPixelSize: Pixel size &lt;= <span class="number">0</span> (<span class="number">0</span>)                     ] <span class="number">44</span>%</span><br><span class="line">libpng warning: iCCP: known incorrect sRGB profile===&gt;       ] <span class="number">87</span>%</span><br><span class="line">Counting pages (<span class="number">2</span>/<span class="number">6</span>)</span><br><span class="line">QFont::setPixelSize: Pixel size &lt;= <span class="number">0</span> (<span class="number">0</span>)=====================] <span class="built_in">Object</span> <span class="number">1</span> <span class="keyword">of</span> <span class="number">1</span></span><br><span class="line">Resolving links (<span class="number">4</span>/<span class="number">6</span>)</span><br><span class="line">Loading headers and footers (<span class="number">5</span>/<span class="number">6</span>)</span><br><span class="line">Printing pages (<span class="number">6</span>/<span class="number">6</span>)</span><br><span class="line">Done</span><br><span class="line">Warning: Received createRequest signal on a disposed ResourceObject<span class="string">'s NetworkAccessManager. This might be an indication of an iframe taking too long to load.</span></span><br><span class="line"><span class="string">Warning: Received createRequest signal on a disposed ResourceObject'</span>s NetworkAccessManager. This might be an indication <span class="keyword">of</span> an iframe taking too long to load.</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-b20148873f1dc5a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这个命令还可以增加一些参数，比如常用的设置宽高，图片质量等参数<br>执行<code>wkhtmltoimage --crop-w 410 --width 410 --quality 50 www.bing.com bing2.png</code>看看<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">--crop-w <span class="number">410</span>：截图宽度<span class="number">410</span>px</span><br><span class="line"></span><br><span class="line">--width <span class="number">410</span>：浏览器模拟宽度<span class="number">410</span>px</span><br><span class="line"></span><br><span class="line">--quality <span class="number">50</span>：图片质量(这个值越大，图片质量越高，当然文件也会比较大)</span><br><span class="line"></span><br><span class="line">还有更多参数用法，请 wkhtmltoimage -h查看。</span><br><span class="line">HTML转pdf同理，wkhtmltopdf -h</span><br><span class="line">wkhtmltopdf -v</span><br><span class="line">--collate             当输出多个副本时进行校验（这是默认设置）</span><br><span class="line">    --no-collate          当输出多个副本时不进行校验</span><br><span class="line">    --cookie-jar &lt;path&gt;   从提供的 JAR 文件中读写 cookie 数据</span><br><span class="line">    --copies &lt;number&gt;     设置输出副本的数量（默认主 <span class="number">1</span>)，其实为 <span class="number">1</span> 就够了</span><br><span class="line">-d, --dpi &lt;dpi&gt;           指定一个要分辨率（这在 X11 系统中并没有什么卵用）</span><br><span class="line">-H, --extended-help       相对 -h 参数，显示更详细的说明文档</span><br><span class="line">-g, --grayscale           指定以灰度图生成 PDF 文档。占用的空间更小</span><br><span class="line">-h, --help                显示帮助信息</span><br><span class="line">    --htmldoc             输出程序的 html 帮助文档</span><br><span class="line">    --image-dpi &lt;integer&gt; 当页面中有内嵌的图片时，</span><br><span class="line">                          会下载此命令行参数指定尺寸的图片（默认值是 <span class="number">600</span>)</span><br><span class="line">    --image-quality &lt;interger&gt; 当使用 jpeg 算法压缩图片时使用这个参数指定的质量（默认为 <span class="number">94</span>)</span><br><span class="line">    --license             输出授权信息并退出</span><br><span class="line">-l, --lowquality          生成低质量的 PDF/PS , 能够很好的节约最终生成文档所占存储空间</span><br><span class="line">    --manpage             输出程序的手册页</span><br><span class="line">-B, --margin-bottom &lt;unitreal&gt; 设置页面的 底边距</span><br><span class="line">-L, --margin-left &lt;unitreal&gt;   设置页面的 左边距 （默认是 <span class="number">10</span>mm)</span><br><span class="line">-R, --margin-right &lt;unitreal&gt;  设置页面的 右边距 （默认是 <span class="number">10</span>mm)</span><br><span class="line">-T, --margin-top &lt;unitreal&gt;    设置页面的 上边距</span><br><span class="line">-O, --orientation &lt;orientation&gt; 设置为“风景 (Landscape)”或“肖像 (Portrait)”模式，</span><br><span class="line">                                默认是肖像模块 (Portrait)</span><br><span class="line">    --page-height &lt;unitreal&gt;   页面高度</span><br><span class="line">-s, --page-size &lt;Size&gt;         设置页面的尺寸，如：A4,Letter 等，默认是：A4</span><br><span class="line">    --page-width &lt;unitreal&gt;    页面宽度</span><br><span class="line">    --no-pdf-compression       不对 PDF 对象使用丢失少量信息的压缩算法，不建议使用些参数，</span><br><span class="line">                               因为生成的 PDF 文件会非常大。</span><br><span class="line">-q, --quiet                    静态模式，不在标准输出中打印任何信息</span><br><span class="line">    --read-args-<span class="keyword">from</span>-stdin     从标准输入中读取命令行参数，后续会有针对此指令的详细介绍，</span><br><span class="line">                               请参见 **从标准输入获取参数**</span><br><span class="line">    --readme                   输出程序的 readme 文档</span><br><span class="line">    --title &lt;text&gt;             生成的 PDF 文档的标题，如果不指定则使用第一个文档的标题</span><br><span class="line">-V, --version                  输出版本信息后退出</span><br></pre></td></tr></table></figure></p>
+<p>wkhtmltopdf “/home/wang/test.html” /home/wang/test.pdf</p>
+<p>wkhtmltopdf “<a href="https://www.jd.com&quot;" target="_blank" rel="noopener">https://www.jd.com&quot;</a> /home/wang/jj.pdf</p>
+<h3 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h3><p>如果你是在 linux 上执行脚本可能会出现中文乱码，解决方法就是从windows拷贝宋体字体文件 <code>c:\windos\fonts\simhei.ttf</code>到<code>/usr/share/fonts/</code>下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/fonts/</span><br><span class="line">cp simhei.ttf .</span><br><span class="line">mkfontscale</span><br><span class="line">mkfontdir</span><br><span class="line">fc-cache</span><br></pre></td></tr></table></figure></p>
+<p>再次执行fc-list可以看到已经安装的字体了。</p>
+<h3 id="phantomjs"><a href="#phantomjs" class="headerlink" title="phantomjs"></a>phantomjs</h3><p>除了wkhtmltopdf生成PDF还有phantomjs 的功能也很强大，做爬虫应用，抓取网页数据、网页截屏、页面访问自动化等。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">set_time_limit(<span class="number">0</span>);</span><br><span class="line">$path = <span class="string">'/bin/phantomjs'</span>;		<span class="comment">//phantomjs路径</span></span><br><span class="line"><span class="comment">//$jsPath = '/home/test/phantomjs/examples/test.js';	</span></span><br><span class="line">$url = <span class="string">'https://baidu.com/'</span>;		<span class="comment">//要抓取的网页</span></span><br><span class="line">$out = <span class="string">'baidu.png'</span>;			<span class="comment">//图片保存路径</span></span><br><span class="line">$cmd = <span class="string">"$path --output-encoding=utf-8 $jsPath $url $out"</span>;</span><br><span class="line">echo $cmd;</span><br><span class="line">system($cmd);</span><br><span class="line"></span><br><span class="line">创建test.js</span><br><span class="line"><span class="string">``</span><span class="string">`js</span></span><br><span class="line"><span class="string">var page = require('webpage').create();</span></span><br><span class="line"><span class="string">var args = require('system').args;</span></span><br><span class="line"><span class="string">var url = args[1];</span></span><br><span class="line"><span class="string">var filename = args[2];</span></span><br><span class="line"><span class="string">page.open(url, function () &#123;</span></span><br><span class="line"><span class="string">    page.render(filename);</span></span><br><span class="line"><span class="string">    phantom.exit();</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure></p>
+<p>执行 /home/test/phantomjs/bin/phantomjs  test.js   <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>   baidu.png</p>
+<h3 id="puppeteer"><a href="#puppeteer" class="headerlink" title="puppeteer"></a>puppeteer</h3><p>puppeteer 是 chrome 提供的一个无头浏览器，它是替代 phantomjs 的一个替代品，多用于实现自动化测试。官方仓库地址：<a href="https://github.com/GoogleChrome/puppeteer,Puppeteer" target="_blank" rel="noopener">https://github.com/GoogleChrome/puppeteer,Puppeteer</a> 能用来干啥，有哪些功能：<br>生成页面的截图和 PDF<br>爬取网站内容<br>模拟登陆、自动提交表单，UI 测试，键盘输入等<br>使用最新的 JavaScript 和浏览器功能，直接在最新版本的 Chrome 中运行测试。<br>捕获网站的时间线跟踪，以帮助诊断性能问题<br>测试 Chrome 扩展<br>screenshoteer是基于Puppeteer 的命令行工具<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm i -g screenshoteer</span><br><span class="line">screenshoteer --url https:<span class="comment">//nicelinks.site/</span></span><br><span class="line">λ screenshoteer --url http:<span class="comment">//qq.com</span></span><br><span class="line">http:<span class="comment">//qq.com</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line">腾讯首页</span><br></pre></td></tr></table></figure></p>
+<h3 id="pdfkit"><a href="#pdfkit" class="headerlink" title="pdfkit"></a>pdfkit</h3><p>这是个Python生成PDF的库<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="keyword">import</span> pdfkit</span><br><span class="line">&gt;&gt;&gt; config = pdfkit.configuration(wkhtmltopdf=r<span class="string">'d:\wkhtmltopdf\bin\wkhtmltopdf.exe'</span>)</span><br><span class="line">&gt;&gt;&gt; pdfkit.from_url(<span class="string">'https://sogou.com'</span>, <span class="string">'sogou.pdf'</span>, configuration=config)</span><br><span class="line">Loading pages (<span class="number">1</span>/<span class="number">6</span>)</span><br><span class="line">Counting pages (<span class="number">2</span>/<span class="number">6</span>)</span><br><span class="line">Resolving links (<span class="number">4</span>/<span class="number">6</span>)</span><br><span class="line">Loading headers and footers (<span class="number">5</span>/<span class="number">6</span>)</span><br><span class="line">Printing pages (<span class="number">6</span>/<span class="number">6</span>)</span><br><span class="line">Done</span><br><span class="line">True</span><br></pre></td></tr></table></figure></p>
+<p>也可以将本地文件生成PDF<br> pdfkit.from_file(‘test.html’, r’D:\test’ + id + ‘.pdf’, configuration=config)</p>
+<h3 id="popple"><a href="#popple" class="headerlink" title="popple"></a>popple</h3><p>pdf软件 poppler  <a href="https://github.com/freedesktop/poppler" target="_blank" rel="noopener">https://github.com/freedesktop/poppler</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ pdfinfo   知识星球_苏生不惑.pdf</span><br><span class="line">Title:</span><br><span class="line">Creator:        wkhtmltopdf <span class="number">0.12</span><span class="number">.5</span></span><br><span class="line">Producer:       Qt <span class="number">4.8</span><span class="number">.7</span></span><br><span class="line">CreationDate:   <span class="number">09</span>/<span class="number">04</span>/<span class="number">19</span> <span class="number">21</span>:<span class="number">02</span>:<span class="number">59</span> </span><br><span class="line">Tagged:         no</span><br><span class="line">UserProperties: no</span><br><span class="line">Suspects:       no</span><br><span class="line">Form:           none</span><br><span class="line">JavaScript:     no</span><br><span class="line">Pages:          <span class="number">565</span></span><br><span class="line">Encrypted:      no</span><br><span class="line">Page size:      <span class="number">612</span> x <span class="number">792</span> pts (letter)</span><br><span class="line">Page rot:       <span class="number">0</span></span><br><span class="line">File size:      <span class="number">0</span> bytes</span><br><span class="line">Optimized:      no</span><br><span class="line">PDF version:    <span class="number">1.4</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">λ pdf</span><br><span class="line">pdfdetach.exe    pdfimages.exe    pdfseparate.exe  pdftohtml.exe    pdftops.exe      pdfunite.exe</span><br><span class="line">pdffonts.exe     pdfinfo.exe      pdftocairo.exe   pdftoppm.exe     pdftotext.exe</span><br></pre></td></tr></table></figure></p>
+<h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><p>pdf合并工具pdftk <a href="https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/" target="_blank" rel="noopener">https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/</a><br>  <a href="https://segmentfault.com/a/1190000018765575" target="_blank" rel="noopener">初识wkhtmltopdf</a><br>中文字体<a href="https://github.com/sonatype/maven-guide-zh/raw/master/content-zh/src/main/resources/fonts/simsun.ttc" target="_blank" rel="noopener">https://github.com/sonatype/maven-guide-zh/raw/master/content-zh/src/main/resources/fonts/simsun.ttc</a><br><a href="http://einverne.github.io/post/2019/01/html-to-pdf.html" target="_blank" rel="noopener">http://einverne.github.io/post/2019/01/html-to-pdf.html</a><br><a href="https://hacpai.com/article/1544237764458" target="_blank" rel="noopener"> Web 屏幕截图工具</a><br>使用 Laravel-snappy 生成 PDF 踩坑记录<a href="https://learnku.com/articles/25922" target="_blank" rel="noopener">https://learnku.com/articles/25922</a><br> <a href="https://github.com/Kozea/WeasyPrint" target="_blank" rel="noopener">https://github.com/Kozea/WeasyPrint</a><br>基于前端技术生成PDF方案<a href="https://juejin.im/post/5d036a78f265da1bce3dcd40" target="_blank" rel="noopener">https://juejin.im/post/5d036a78f265da1bce3dcd40</a><br> <a href="https://segmentfault.com/a/1190000018701596" target="_blank" rel="noopener">HTML转成PDF的4个方案及实现</a><br>js导出图片与pdf的方案<a href="https://www.jianshu.com/p/408748cfa76e" target="_blank" rel="noopener">https://www.jianshu.com/p/408748cfa76e</a><br> <a href="https://brianshen1990.github.io/HTML_To_PDF_Solutions.html" title="Permalink to HTML To PDF Solutions / HTML 转换 PDF 解决方案" target="_blank" rel="noopener">HTML 转换 PDF 解决方案</a><br>抓取网页生成 PDF <a href="http://jartto.wang/2018/10/13/nodejs-pdf/" target="_blank" rel="noopener">http://jartto.wang/2018/10/13/nodejs-pdf/</a></p>
+<h3 id="星球导航网站"><a href="#星球导航网站" class="headerlink" title="星球导航网站"></a>星球导航网站</h3><p><a href="https://tooltowin.com/zsxq/1124/" target="_blank" rel="noopener">https://tooltowin.com/zsxq/1124/</a><br><a href="https://www.101ker.com/p/2284" target="_blank" rel="noopener">https://www.101ker.com/p/2284</a><br> <a href="https://xiaogenhua.com/2019/05/20/caozsay/" target="_blank" rel="noopener">https://xiaogenhua.com/2019/05/20/caozsay/</a><br><a href="https://www.kindkp.com/" target="_blank" rel="noopener">https://www.kindkp.com/</a> </p>
+<h3 id="推荐星球"><a href="#推荐星球" class="headerlink" title="推荐星球"></a>推荐星球</h3><p>这段时间也加入了不少星球，推荐一个我几乎每天看的星球，为什么每天看呢，因为星主每天分享，太勤快了，星球名叫 <code>风巢套利日享（限免）</code>，免费的<a href="https://wx.zsxq.com/dweb2/index/group/554228114224" target="_blank" rel="noopener">https://wx.zsxq.com/dweb2/index/group/554228114224</a><br>这是这个星球的词云，看到这些关键词，你心动了吗？点击阅读原文或扫码加入星球。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2211005aef836d43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-5d2c9bc76a82c136.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>路人甲<br><img src="https://upload-images.jianshu.io/upload_images/17817191-410eb89d1155c975.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不安分的<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2b1906c35e8a37da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>大门口<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5bd614a2d0559d20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后如果你也想导出哪个星球，拉我进去帮你导出来。</p>
+<p>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/MUIPj4OgSxAeRl5Hk-2tuw" target="_blank" rel="noopener">没有提取码怎么获取百度网盘资源？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_3AeNahwbs8c3UJ0is1t4A" target="_blank" rel="noopener">如何在电脑上登陆多个微信</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qyFvOgHf1mXwPKO0tQwUyg" target="_blank" rel="noopener">如何提取公积金 9 天到账</a></p>
+<p><a href="https://mp.weixin.qq.com/s/1omFkK5PPyeJEzUTagj9qg" target="_blank" rel="noopener">免费在线听周杰伦歌曲</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sng3uK9Nge1OD2gc5DDuZg" target="_blank" rel="noopener">那些你可能用得上的简历写作工具</a></p>
+<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
+<p><a href="https://mp.weixin.qq.com/s/mI5kubVY2t5jwJ9ub7A1iA" target="_blank" rel="noopener">我的新浪工作日常</a></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/那些你可能不知道的-bilibili-奇技淫巧/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/16/那些你可能不知道的-bilibili-奇技淫巧/" itemprop="url">那些你可能不知道的 bilibili 奇技淫巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T20:28:12+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是奇技淫巧系列第9篇文章了。</p>
+<p><a href="https://mp.weixin.qq.com/s/-cSjrvkibYGp5Fx8gCTFuw" target="_blank" rel="noopener">那些你可能不知道的浏览器奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/sqRgMh4rxFBt5YxNtaa6dw" target="_blank" rel="noopener">那些你可能不知道的知乎奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j7VhoZXmUTnOWC5C_B8jlQ" target="_blank" rel="noopener">那些你可能不知道的微博奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-5tZWfeWWa_E8jRCH0T_Cw" target="_blank" rel="noopener">那些你可能不知道的搜索奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/5InOxKmi9eXk33G_8N3byQ" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R3x-xZwqLIVwPjlgikDQ9A" target="_blank" rel="noopener">那些你可能不知道的免费观看 VIP 视频奇技淫巧</a></p>
+<p>b站在国内视频网站是一股清流，一个看视频不用等60s广告的网站，今天就说说这个二次元网站的一些实用工具/技巧。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-734c02d1fb334e94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="哔哩哔哩助手"><a href="#哔哩哔哩助手" class="headerlink" title="哔哩哔哩助手"></a>哔哩哔哩助手</h3><p><a href="https://github.com/bilibili-helper/bilibili-helper" target="_blank" rel="noopener">https://github.com/bilibili-helper/bilibili-helper</a>  这是一个b站 辅助工具 <a href="https://bilibili-helper.github.io/" target="_blank" rel="noopener">https://bilibili-helper.github.io/</a> ，可以替换播放器、去广告、推送通知并进行一些快捷操作。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41b316c481ade0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>Chrome扩展下载链接 <a href="https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh</a></p>
+<p>比如这个视频 <a href="https://www.bilibili.com/video/av10914119" target="_blank" rel="noopener">https://www.bilibili.com/video/av10914119</a> ，安装扩展登录b站后右侧有个助手按钮，可以直接下载当前播放的视频和弹幕。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5224a2893e01864b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>更多功能可以自己设置<br><img src="https://upload-images.jianshu.io/upload_images/17817191-fd158e3deba3e186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="观看港澳台番剧"><a href="#观看港澳台番剧" class="headerlink" title="观看港澳台番剧"></a>观看港澳台番剧</h3><p>有些番剧限制了港澳台才能看，比如 <a href="https://www.bilibili.com/bangumi/play/ss28049" target="_blank" rel="noopener">https://www.bilibili.com/bangumi/play/ss28049</a> 这个会提示无法观看。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f724ce76cb2b423e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这时候就需要使用油猴了，之前写过怎么安装油猴 <a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
+<p> 安装这个脚本 <a href="https://greasyfork.org/zh-CN/scripts/25718" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/25718</a> ，有问题查看这里 <a href="https://github.com/ipcjs/bilibili-helper/blob/user.js/bilibili_bangumi_area_limit_hack.md" target="_blank" rel="noopener">https://github.com/ipcjs/bilibili-helper/blob/user.js/bilibili_bangumi_area_limit_hack.md</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-aa112a8acd69bc1a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>安装脚本后就可以愉快的看这个视频了，页面上有些文字也成繁体了。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-c6319b994ddf2110.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>ps:如果你是用的Windowns 10 ，可以在window应用市场里下载UWP版本的bilibili，就可以直接看了。</p>
+<h3 id="视频下载"><a href="#视频下载" class="headerlink" title="视频下载"></a>视频下载</h3><p>可以直接在<a href="https://www.ibilibili.com/" target="_blank" rel="noopener">https://www.ibilibili.com/</a> 输入播放地址，或者直接改为 <a href="https://www.ibilibili.com/video/av10914119" target="_blank" rel="noopener">https://www.ibilibili.com/video/av10914119</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-a18c42aa8088286f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>对应的还有 <a href="https://www.jijidown.com/video/av10914119" target="_blank" rel="noopener">https://www.jijidown.com/video/av10914119</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-72a34be095d56285.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还有人开发了客户端版本下载工具，公众号回复 <code>b站</code>获取。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f46337e0be7de8d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>当然我更推荐使用命令行来下载<a href="https://mp.weixin.qq.com/s/5InOxKmi9eXk33G_8N3byQ" target="_blank" rel="noopener">那些你可能不知道的视频下载奇技淫巧</a><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"> you-get -i https:<span class="comment">//www.bilibili.com/video/av36043614</span></span><br><span class="line">site:                Bilibili</span><br><span class="line">title:               一个MV 周杰伦《晴天》</span><br><span class="line">streams:             # Available quality and codecs</span><br><span class="line">    [ DASH ] ____________________________________</span><br><span class="line">    - format:        dash-flv720</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       高清 <span class="number">720</span>P</span><br><span class="line">      size:          <span class="number">80.8</span> MiB (<span class="number">84735780</span> bytes)</span><br><span class="line">    # download-with: you-get --format=dash-flv720 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        dash-flv480</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       清晰 <span class="number">480</span>P</span><br><span class="line">      size:          <span class="number">42.4</span> MiB (<span class="number">44437476</span> bytes)</span><br><span class="line">    # download-with: you-get --format=dash-flv480 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        dash-flv360</span><br><span class="line">      container:     mp4</span><br><span class="line">      quality:       流畅 <span class="number">360</span>P</span><br><span class="line">      size:          <span class="number">16.3</span> MiB (<span class="number">17131306</span> bytes)</span><br><span class="line">    # download-with: you-get --format=dash-flv360 [URL]</span><br><span class="line"></span><br><span class="line">    [ DEFAULT ] _________________________________</span><br><span class="line">    - format:        flv720</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       高清 <span class="number">720</span>P</span><br><span class="line">      size:          <span class="number">81.0</span> MiB (<span class="number">84952120</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv720 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        flv480</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       清晰 <span class="number">480</span>P</span><br><span class="line">      size:          <span class="number">42.6</span> MiB (<span class="number">44653816</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv480 [URL]</span><br><span class="line"></span><br><span class="line">    - format:        flv360</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       流畅 <span class="number">360</span>P</span><br><span class="line">      size:          <span class="number">16.5</span> MiB (<span class="number">17347646</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv360 [URL]</span><br></pre></td></tr></table></figure></p>
+<h3 id="B站封面提取"><a href="#B站封面提取" class="headerlink" title="B站封面提取"></a>B站封面提取</h3><p>每个视频都有封面图片，可以在 <a href="http://www.galmoe.com/" target="_blank" rel="noopener">http://www.galmoe.com/</a> 输入 id号获取，比如 <a href="https://www.bilibili.com/video/av10914119" target="_blank" rel="noopener">https://www.bilibili.com/video/av10914119</a> 这个视频，输入 av10914119  获取到封面<a href="https://i2.hdslb.com/bfs/archive/6ca1b6647b4b97221ef82fec7148eee4920db8fe.png" target="_blank" rel="noopener">https://i2.hdslb.com/bfs/archive/6ca1b6647b4b97221ef82fec7148eee4920db8fe.png</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-5425a1f8e7af8d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-2e10710fd0835bec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>除了网站还有对应的Chrome扩展 <a href="https://github.com/jsososo/bilibili-hand-in-the-cover" target="_blank" rel="noopener">https://github.com/jsososo/bilibili-hand-in-the-cover</a></p>
+<h3 id="TOP-100-UP-主"><a href="#TOP-100-UP-主" class="headerlink" title="TOP 100 UP 主"></a>TOP 100 UP 主</h3><p><a href="http://rank.python666.cn/" target="_blank" rel="noopener">http://rank.python666.cn/</a> 这里可以看到UP 主粉丝 TOP 100 榜单，papi酱 我偶尔也看看。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-acc896ef999f6191.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="kanbilibili"><a href="#kanbilibili" class="headerlink" title="kanbilibili"></a>kanbilibili</h3><p>这是一个基于b站的第三方网站，bilibili 网址前面加上 kan <a href="https://www.kanbilibili.com/" target="_blank" rel="noopener">https://www.kanbilibili.com/</a>  ，会定期发布 日报、周刊、月刊、bilibili总榜、Up主排行榜 等数据统计报告，视频详情页提供 历史数据查看、B站视频下载、B站视频封面下载 等功能。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-02e73bf57b2fa7ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>比如上面的视频在这里的地址就是<a href="https://www.kanbilibili.com/video/av10914119" target="_blank" rel="noopener">https://www.kanbilibili.com/video/av10914119</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d209b214dbb0cb88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>可以看到UP主排行榜，每周五更新  <a href="https://www.kanbilibili.com/rank/ups/fans" target="_blank" rel="noopener">https://www.kanbilibili.com/rank/ups/fans</a> ，我关注的papi酱有537万粉丝，播放数有3个多亿。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-20c8e617fe3b74d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还有视频转mp3功能，不过还是建议使用 ffmpeg 在命令行转换，可以看我之前的文章<a href="https://mp.weixin.qq.com/s/624Hv1krGUboecz1QX8O1g" target="_blank" rel="noopener">ffmpeg 将视频转GIF</a></p>
+<h3 id="粉丝在线统计"><a href="#粉丝在线统计" class="headerlink" title="粉丝在线统计"></a>粉丝在线统计</h3><p>比如输入papi酱 <a href="https://space.bilibili.com/1532165/" target="_blank" rel="noopener">https://space.bilibili.com/1532165/</a> 的ID 1532165 可以看到具体的粉丝数，而不是b站上的538万。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-9e9442e75f600a5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-ad6adabe77a3fe2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="b站观测者"><a href="#b站观测者" class="headerlink" title="b站观测者"></a>b站观测者</h3><p><a href="https://www.biliob.com" target="_blank" rel="noopener">https://www.biliob.com</a> 这个网站的目的是搜集并观测B站的UP主、视频或番剧等数据。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-acc0e717aec72ca9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="直播录制工具"><a href="#直播录制工具" class="headerlink" title="直播录制工具"></a>直播录制工具</h3><p>B站录播姬直接下载直播流，经过处理后保存到硬盘。支持自动根据文件大小或录制时长切割视频文件，支持只保存即时回放剪辑<a href="https://rec.danmuji.org/" target="_blank" rel="noopener">https://rec.danmuji.org/</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9f9fa0c5d8977f75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>对应的还有直播弹幕工具 <a href="https://www.danmuji.org/" target="_blank" rel="noopener">https://www.danmuji.org/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-9ca30e82ca954bff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="增强脚本"><a href="#增强脚本" class="headerlink" title="增强脚本"></a>增强脚本</h3><p>强大的哔哩哔哩增强脚本: 下载视频, 音乐, 封面, 弹幕 / 自定义播放器画质, 模式, 布局 / 自定义顶栏, 删除广告, 夜间模式 / 触屏设备支持<a href="https://github.com/the1812/Bilibili-Evolved，需要浏览器安装Tampermonkey插件。" target="_blank" rel="noopener">https://github.com/the1812/Bilibili-Evolved，需要浏览器安装Tampermonkey插件。</a></p>
+<p>各种视频相关功能有：<br><img src="https://upload-images.jianshu.io/upload_images/17817191-4bfc9707d0b480e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-27d745f8a7745def.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="bilibili视频编辑器"><a href="#bilibili视频编辑器" class="headerlink" title="bilibili视频编辑器"></a>bilibili视频编辑器</h3><p>bilibili视频编辑器是一款线上视频编辑工具，无需下载，直接在网页浏览器中进行操作 ，具体使用见<a href="https://www.bilibili.com/blackboard/help.html#bilibili%E8%A7%86%E9%A2%91%E7%BC%96%E8%BE%91%E5%99%A8?id=c4b1536079b04e5cbeb5a35606ea5137" target="_blank" rel="noopener">https://www.bilibili.com/blackboard/help.html#bilibili%E8%A7%86%E9%A2%91%E7%BC%96%E8%BE%91%E5%99%A8?id=c4b1536079b04e5cbeb5a35606ea5137</a><br>下载地址 <a href="https://bilibili.clipchamp.com/" target="_blank" rel="noopener">https://bilibili.clipchamp.com/</a>，需要使用b站账号登录 ，只支持Chrome浏览器。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-e5bf0fee5d4cd234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-ca8ca972f1acd552.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><code>如果文章对你有帮助，还望不吝点个在看支持下我写下去的动力。</code></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>小丸工具箱<a href="https://maruko.appinn.me/" target="_blank" rel="noopener">https://maruko.appinn.me/</a><br>视频下载<a href="https://toutiao.iiilab.com/" target="_blank" rel="noopener">https://toutiao.iiilab.com/</a><br>油猴脚本 解析各大视频网站VIP视频<a href="https://github.com/syhyz1990/media/" target="_blank" rel="noopener">https://github.com/syhyz1990/media/</a><br><a href="https://www.biliplus.com/" target="_blank" rel="noopener">https://www.biliplus.com/</a><br> <a href="https://go2think.com/bilibili-nolimit/" target="_blank" rel="noopener">如何解除B站</a><br>观看港澳台番剧 <a href="https://zhaoolee.com/ChromeAppHeroes/page/016_jie_chu_b_zhan_qu_yu_xian_zhi.html" target="_blank" rel="noopener">https://zhaoolee.com/ChromeAppHeroes/page/016_jie_chu_b_zhan_qu_yu_xian_zhi.html</a><br>助手<a href="https://zhaoolee.com/ChromeAppHeroes/page/021_bi_li_bi_li_zhu_shou.html" target="_blank" rel="noopener">https://zhaoolee.com/ChromeAppHeroes/page/021_bi_li_bi_li_zhu_shou.html</a><br>bilibili 视频下载 油猴插件<a href="https://github.com/evgo2017/bilibili_video_download" target="_blank" rel="noopener">https://github.com/evgo2017/bilibili_video_download</a><br>强大的哔哩哔哩增强脚本<a href="https://github.com/the1812/Bilibili-Evolved" target="_blank" rel="noopener">https://github.com/the1812/Bilibili-Evolved</a><br><a href="https://b23.tv/av58983681" target="_blank" rel="noopener">https://b23.tv/av58983681</a><br>B站2000万用户分析<a href="https://zhuanlan.zhihu.com/p/24434456" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24434456</a><br>Bilibili 用户爬虫<a href="https://github.com/airingursb/bilibili-user" target="_blank" rel="noopener">https://github.com/airingursb/bilibili-user</a> <a href="http://ursb.me/bilibili-report/" target="_blank" rel="noopener">http://ursb.me/bilibili-report/</a><br>抓取了BiliBili能获取哪些数据？<a href="https://www.jianshu.com/p/1c263f39e68a" target="_blank" rel="noopener">https://www.jianshu.com/p/1c263f39e68a</a><br>Bilibili 数据接口整理<a href="https://juejin.im/entry/58636c58128fe1006bc5588b" target="_blank" rel="noopener">https://juejin.im/entry/58636c58128fe1006bc5588b</a><br>Python爬取bilibili全站用户信息<a href="https://juejin.im/post/5b8fe524e51d450e531c3dcd" target="_blank" rel="noopener">https://juejin.im/post/5b8fe524e51d450e531c3dcd</a><br>b站视频数据播报 <a href="https://sharecuts.cn/shortcut/1068" target="_blank" rel="noopener">https://sharecuts.cn/shortcut/1068</a><br>B站视频数据分析报告<a href="http://z_plus.coding.me/" target="_blank" rel="noopener">http://z_plus.coding.me/</a><br>b站指数<a href="http://www.gsdata.cn/rank/morerank?v_type=bilibili" target="_blank" rel="noopener">http://www.gsdata.cn/rank/morerank?v_type=bilibili</a><br><a href="https://wuyin.io/2018/03/31/bilibili-live-crawler-and-auto-edit-recording/" target="_blank" rel="noopener">https://wuyin.io/2018/03/31/bilibili-live-crawler-and-auto-edit-recording/</a><br>如何免费采集哔哩哔哩视频数据<a href="http://www.houyicaiji.com/?type=post&amp;pid=3812" target="_blank" rel="noopener">http://www.houyicaiji.com/?type=post&amp;pid=3812</a><br><a href="https://github.com/AInoob/bzhua" target="_blank" rel="noopener">https://github.com/AInoob/bzhua</a><br><a href="http://www.bilijk.tk/" target="_blank" rel="noopener">http://www.bilijk.tk/</a><br> A站B站数据分析实战<a href="http://www.woshipm.com/data-analysis/1622826.html" target="_blank" rel="noopener">http://www.woshipm.com/data-analysis/1622826.html</a><br>bilibili哔哩哔哩下载助手<a href="https://chrome.google.com/webstore/detail/bilibili%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B/bfcbfobhcjbkilcbehlnlchiinokiijp?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/bilibili%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B/bfcbfobhcjbkilcbehlnlchiinokiijp?hl=zh-CN</a><br>B站下载助手<a href="https://docs.qq.com/doc/DQ2lhaWRpS0tubVVF" target="_blank" rel="noopener">https://docs.qq.com/doc/DQ2lhaWRpS0tubVVF</a><br>  <a href="https://esu.wiki/Bilibili" target="_blank" rel="noopener">https://esu.wiki/Bilibili</a><br>哔哩哔哩动画第三方客户端<a href="https://github.com/DaweiX/bilibili" target="_blank" rel="noopener">https://github.com/DaweiX/bilibili</a><br>第三方哔哩哔哩API提供平台<a href="https://9bl.bakayun.cn/" target="_blank" rel="noopener">https://9bl.bakayun.cn/</a><br>一个可以观看斗鱼/虎牙/熊猫/B站/全民等直播平台的第三方客户端<a href="https://www.moerats.com/archives/531/" target="_blank" rel="noopener">https://www.moerats.com/archives/531/</a><br>B 站自动领瓜子、直播挂机脚本 <a href="https://github.com/metowolf/BilibiliHelper" target="_blank" rel="noopener">https://github.com/metowolf/BilibiliHelper</a><br><a href="https://docs.rsshub.app/anime.html#_005-tv" target="_blank" rel="noopener">https://docs.rsshub.app/anime.html#_005-tv</a><br>扒视频、视频合并、视频转码<br> <a href="https://media.weibo.cn/article?object_id=1022%3A2309404296500149639994&amp;extparam=lmid--4296500152985262&amp;luicode=10000011&amp;lfid=1076033928669301&amp;id=2309404296500149639994&amp;sudaref=www.google.com.hk&amp;display=0&amp;retcode=6102" target="_blank" rel="noopener">https://media.weibo.cn/article?object_id=1022%3A2309404296500149639994&amp;extparam=lmid–4296500152985262&amp;luicode=10000011&amp;lfid=1076033928669301&amp;id=2309404296500149639994&amp;sudaref=www.google.com.hk&amp;display=0&amp;retcode=6102</a><br>  如何在YouTube和bilibili(哔哩哔哩B站)上评论图片<br><a href="https://sphard.com/%E5%A6%82%E4%BD%95%E5%9C%A8YouTube%E5%92%8Cbilibili(%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9B%E7%AB%99)%E4%B8%8A%E8%AF%84%E8%AE%BA%E5%9B%BE%E7%89%87%EF%BC%8C%E5%9C%A8%E8%AF%84%E8%AE%BA%E9%87%8C%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87.html" target="_blank" rel="noopener">https://sphard.com/%E5%A6%82%E4%BD%95%E5%9C%A8YouTube%E5%92%8Cbilibili(%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9B%E7%AB%99)%E4%B8%8A%E8%AF%84%E8%AE%BA%E5%9B%BE%E7%89%87%EF%BC%8C%E5%9C%A8%E8%AF%84%E8%AE%BA%E9%87%8C%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87.html</a><br>B站视频下载   <a href="https://github.com/evgo2017/bilibili_video_download" target="_blank" rel="noopener">https://github.com/evgo2017/bilibili_video_download</a><br>B 站排行<a href="https://netobs.top/" target="_blank" rel="noopener">https://netobs.top/</a><br>B 站用户数据收集 <a href="https://github.com/cwjokaka/bilibili_member_crawler" target="_blank" rel="noopener">https://github.com/cwjokaka/bilibili_member_crawler</a><br>B站最近推出了一个在线视频编辑工具，试了下，意外好用！最高可输出1080P！但目前仅支持Chrome浏览器。<a href="https://bilibili.clipchamp.com/editor" target="_blank" rel="noopener">https://bilibili.clipchamp.com/editor</a><br>b 站的倍速油猴脚本，可自定义播放速度，刷新不丢失 <a href="https://greasyfork.org/en/scripts/388225" target="_blank" rel="noopener">https://greasyfork.org/en/scripts/388225</a><br>用python爬虫追踪知乎/B站大V排行 <a href="https://mp.weixin.qq.com/s/unxNMlG-TNMRbG2W1ws6sw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/unxNMlG-TNMRbG2W1ws6sw</a><br><a href="https://greasyfork.org/en/scripts/381176" target="_blank" rel="noopener">youtube播放视频倍速自定义</a><br>b 站视频封面获取 <a href="https://github.com/jsososo/bilibili-hand-in-the-cover" target="_blank" rel="noopener">https://github.com/jsososo/bilibili-hand-in-the-cover</a><br>自动搬运B博动态至微博的机器人<a href="https://github.com/smilecc/weibo-porter" target="_blank" rel="noopener">https://github.com/smilecc/weibo-porter</a></p>
+<p>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/1omFkK5PPyeJEzUTagj9qg" target="_blank" rel="noopener">免费在线听周杰伦歌曲</a></p>
+<p><a href="https://mp.weixin.qq.com/s/l2bQJk1qjb6IzroODBpoOg" target="_blank" rel="noopener">想看的公众号文章被删了怎么办？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qNfuWjH54WHJtx4sEE5xwA" target="_blank" rel="noopener">10%+10% 不等于 0.2？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/hbzmqep2JMICL6WogE9TCQ" target="_blank" rel="noopener">有意思的举牌告白小人</a></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/那些你可能不知道的-PDF-工具/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/16/那些你可能不知道的-PDF-工具/" itemprop="url">那些你可能不知道的 PDF 工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T20:27:10+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>从网上下载了PDF文件，想转换为文字或者图片怎么办，这里分享些常用的PDF制作工具。</p>
+<h3 id="smallpdf"><a href="#smallpdf" class="headerlink" title="smallpdf"></a>smallpdf</h3><p>功能一应俱全、简单好用的线上 PDF 工具 <a href="https://smallpdf.com/cn/" target="_blank" rel="noopener">https://smallpdf.com/cn/</a> ppt PDF互转，pdf Excel互转什么的都有。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8a61a3fe1ed8802a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>它还提供了Chrome扩展 <a href="https://zhaoolee.com/ChromeAppHeroes/page/032_smallpdf.html" target="_blank" rel="noopener">https://zhaoolee.com/ChromeAppHeroes/page/032_smallpdf.html</a></p>
+<h3 id="pdf24"><a href="#pdf24" class="headerlink" title="pdf24"></a>pdf24</h3><p>免费且易于使用的在线PDF工具 <a href="https://tools.pdf24.org/zh/" target="_blank" rel="noopener">https://tools.pdf24.org/zh/</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-493ca9080245e8a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>PDF压缩合并编辑转换都有。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-3bc5f9e7349eb89c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="ilovepdf"><a href="#ilovepdf" class="headerlink" title="ilovepdf"></a>ilovepdf</h3><p> 完全免费的PDF文件在线管理工具，其功能包括：合并PDF文件、拆分PDF文件、压缩PDF文件、Office文件转换为PDF文件、PDF文件转换为JPG图片、JPG图片转换为PDF文件，无需安装。<a href="https://www.ilovepdf.com/zh-cn，对应的还有图片处理的https://www.iloveimg.com/" target="_blank" rel="noopener">https://www.ilovepdf.com/zh-cn，对应的还有图片处理的https://www.iloveimg.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e8666325f8bfba77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-73bb3373e94988f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="docsmall"><a href="#docsmall" class="headerlink" title="docsmall"></a>docsmall</h3><p>由 INTERVAL DESIGN 设计开发的在线文件处理工具，无需下载软件，通过云端服务<br>上传、处理、下载简单三步即可完成操作，目前已上线图片压缩、PDF压缩、PDF合并、PDF分割功能<a href="https://docsmall.com/" target="_blank" rel="noopener">https://docsmall.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-73617344f82289c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="alltoall"><a href="#alltoall" class="headerlink" title="alltoall"></a>alltoall</h3><p>免费的在线格式转换工具,支持200+格式的文件在线转换，且完全免费。<a href="http://www.alltoall.net/document-pdf/" target="_blank" rel="noopener">http://www.alltoall.net/document-pdf/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-39d0c48c7cc1a7f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###PickFrom<br>一应俱全，简单便捷的在线工具 <a href="https://zh.pickfrom.net/" target="_blank" rel="noopener">https://zh.pickfrom.net/</a><br> <img src="https://upload-images.jianshu.io/upload_images/17817191-a9c485ee8228b1e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>将公众号文章转PDF，预览效果 <a href="https://zh.pickfrom.net/weixin2pdf" target="_blank" rel="noopener">https://zh.pickfrom.net/weixin2pdf</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-132f872813af6057.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###hipdf<br>一站式在线PDF解决方案<a href="https://www.hipdf.cn/" target="_blank" rel="noopener">https://www.hipdf.cn/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-a6ef8985d0b904a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="pdf-io"><a href="#pdf-io" class="headerlink" title="pdf.io"></a>pdf.io</h3><p><a href="https://pdf.io/tw/" target="_blank" rel="noopener">https://pdf.io/tw/</a> 这个界面只有繁体中文，不过功能一样的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-500f085edafd072b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="PDF派"><a href="#PDF派" class="headerlink" title="PDF派"></a>PDF派</h3><p>好用的PDF在线工具，完全免费<a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-af8010e4878fe6e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c75a005fd904fd68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="第三方网站"><a href="#第三方网站" class="headerlink" title="第三方网站"></a>第三方网站</h3><p>有些第三方网站集成了这些工具，比如 <a href="http://www.nicetool.net/" target="_blank" rel="noopener">http://www.nicetool.net/</a> 搜索pdf<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8db0fbefb0678fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>第一个PDF转图片 <a href="http://www.nicetool.net/app/pdf2image.html" target="_blank" rel="noopener">http://www.nicetool.net/app/pdf2image.html</a> 每张PPT转为一张图片，效果如图。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-3f321d355c09e3a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>类似的还有<a href="http://www.gjw123.com/search.html?query=pdf" target="_blank" rel="noopener">http://www.gjw123.com/search.html?query=pdf</a> <a href="https://www.toolnb.com/" target="_blank" rel="noopener">https://www.toolnb.com/</a>  我试了下效果不错。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-c3b14b58e640bb28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Office2PDF"><a href="#Office2PDF" class="headerlink" title="Office2PDF"></a>Office2PDF</h3><p>转换选定目录下所有doc/docx/ppt/pptx到PDF, 需要安装有Office 2010或Office2013, 直接运行Office2PDF.ahk即可, 会保留原始目录结构。<br>下载地址<a href="https://github.com/icylogic/Office2PDF/releases/download/0.1/Office2PDF.exe" target="_blank" rel="noopener">https://github.com/icylogic/Office2PDF/releases/download/0.1/Office2PDF.exe</a><br> 类似的还有<a href="https://github.com/cxgreat2014/VBScript_DOC2PDF" target="_blank" rel="noopener">https://github.com/cxgreat2014/VBScript_DOC2PDF</a> <a href="https://github.com/JasonKhew96/Docs2Pdf" target="_blank" rel="noopener">https://github.com/JasonKhew96/Docs2Pdf</a></p>
+<h3 id="wkhtmltopdf"><a href="#wkhtmltopdf" class="headerlink" title="wkhtmltopdf"></a>wkhtmltopdf</h3><p>这是一个非常好用的HTML转PDF的命令行工具，之前的文章<a href="https://mp.weixin.qq.com/s/ly4KnTCvBLlyqFBbBleFCQ" target="_blank" rel="noopener">Python 抓取知识星球内容生成词云和 PDF</a> 就是用的这个。<a href="https://wkhtmltopdf.org/downloads.html" target="_blank" rel="noopener">https://wkhtmltopdf.org/downloads.html</a><br>命令行执行 <code>wkhtmltopdf http://google.com google.pdf</code>就能将Google的网页生成PDF<br>python 有基于wkhtmltopdf的模块pdfkit，很方便在程序中转换HTML为PDF。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="keyword">import</span> pdfkit</span><br><span class="line">&gt;&gt;&gt; config=pdfkit.configuration(wkhtmltopdf=r<span class="string">'d:\wkhtmltopdf\bin\wkhtmltopdf.exe'</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; pdfkit.from_url(<span class="string">'http://qq.com'</span>,<span class="string">'qq.pdf'</span>,configuration=config)</span><br><span class="line">Loading pages (<span class="number">1</span>/<span class="number">6</span>)</span><br><span class="line">QFont::setPixelSize: Pixel size &lt;= <span class="number">0</span> (<span class="number">0</span>)                     ] <span class="number">43</span>%</span><br><span class="line">Counting pages (<span class="number">2</span>/<span class="number">6</span>)</span><br><span class="line">QFont::setPixelSize: Pixel size &lt;= <span class="number">0</span> (<span class="number">0</span>)=====================] <span class="built_in">Object</span> <span class="number">1</span> <span class="keyword">of</span> <span class="number">1</span></span><br><span class="line">Resolving links (<span class="number">4</span>/<span class="number">6</span>)</span><br><span class="line">Loading headers and footers (<span class="number">5</span>/<span class="number">6</span>)</span><br><span class="line">Printing pages (<span class="number">6</span>/<span class="number">6</span>)</span><br><span class="line">Done</span><br><span class="line">Warning: Received createRequest signal on a disposed ResourceObject<span class="string">'s NetworkAccessManager. This might be an indication of an iframe taking too long to load.</span></span><br><span class="line"><span class="string">Warning: Received createRequest signal on a disposed ResourceObject'</span>s NetworkAccessManager. This might be an indication <span class="keyword">of</span> an iframe taking too long to load.</span><br><span class="line">Warning: Received createRequest signal on a disposed ResourceObject<span class="string">'s NetworkAccessManager. This might be an indication of an iframe taking too long to load.</span></span><br><span class="line"><span class="string">True</span></span><br></pre></td></tr></table></figure></p>
+<pre><code>如果文章对你有所帮助，还望不吝在看分享，感谢。
+</code></pre><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>PDF水印清理专家 <a href="http://www.liyusoft.com/pdfwr" target="_blank" rel="noopener">http://www.liyusoft.com/pdfwr</a></p>
+<p> 一款免费的线上PDF转换器<a href="https://www.pdfyeah.com/" target="_blank" rel="noopener">https://www.pdfyeah.com/</a><br>累死累活干不过做 PPT 的 <a href="https://github.com/ksky521/nodeppt" target="_blank" rel="noopener">https://github.com/ksky521/nodeppt</a> <a href="https://nodeppt.js.org/#slide=5" target="_blank" rel="noopener">https://nodeppt.js.org/#slide=5</a><br><a href="https://pdf2doc.com/zh/" target="_blank" rel="noopener">https://pdf2doc.com/zh/</a><br>吾爱破解论坛 爱盘 down.52pojie.cn 页面的源代码 <a href="https://github.com/ganlvtech/down_52pojie_cn" target="_blank" rel="noopener">https://github.com/ganlvtech/down_52pojie_cn</a><br><a href="https://github.com/icylogic/Office2PDF" target="_blank" rel="noopener">https://github.com/icylogic/Office2PDF</a><br>Laravel HTML 导出 PDF 方案 —– wkhtmltopdf Laravel-snappy<a href="https://laravel-china.org/articles/20450" target="_blank" rel="noopener">https://laravel-china.org/articles/20450</a><br><a href="http://www.pdfdo.com/" target="_blank" rel="noopener">http://www.pdfdo.com/</a><br><a href="http://www.pdfbao.com/" target="_blank" rel="noopener">http://www.pdfbao.com/</a><br><a href="https://pdf.io/tw/" target="_blank" rel="noopener">https://pdf.io/tw/</a><br> <a href="https://zhuanlan.zhihu.com/p/21538584" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21538584</a><br>得力PDF转换器 <a href="http://www.pdf2word.cn/" target="_blank" rel="noopener">http://www.pdf2word.cn/</a><br> 十七款PDF在线处理转换器<a href="https://m.weibo.cn/status/4395383201418956" target="_blank" rel="noopener">https://m.weibo.cn/status/4395383201418956</a><br>初识wkhtmltopdf <a href="https://segmentfault.com/a/1190000018765575" target="_blank" rel="noopener">https://segmentfault.com/a/1190000018765575</a><br>将您的图片转换成多种图片格式。<br>JPG, PNG, GIF, BMP, TIFF, ICO, SVG和更多图片格式 <a href="https://jinaconvert.com/cn/" target="_blank" rel="noopener">https://jinaconvert.com/cn/</a><br>pdf 转 word 工具 <a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a><br><a href="https://www.aconvert.com/cn/pdf/" target="_blank" rel="noopener">https://www.aconvert.com/cn/pdf/</a><br><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a><br>命令行就可以把网页保存成 PDF 文件 <a href="https://github.com/danburzo/percollate" target="_blank" rel="noopener">https://github.com/danburzo/percollate</a><br><a href="https://www.extractpdf.com/一个可以将" target="_blank" rel="noopener">https://www.extractpdf.com/一个可以将</a> pdf 中的图片全部提取出来并打包下载的一个工具，还可以看到文档中纯文字部分<br>一个能完美的将网页导出到PDF的在线服务，可使用其提供的API，在你的在线简历页面添加一个PDF导出按钮。地址<a href="https://www.sejda.com/html-to-pdf" target="_blank" rel="noopener">https://www.sejda.com/html-to-pdf</a><br><a href="http://tools.bugscaner.com/webmaster/" target="_blank" rel="noopener">http://tools.bugscaner.com/webmaster/</a><br><a href="https://www.extractpdf.com/一个可以将" target="_blank" rel="noopener">https://www.extractpdf.com/一个可以将</a> pdf 中的图片全部提取出来并打包下载的一个工具，还可以看到文档中纯文字部分<br>一个能完美的将网页导出到PDF的在线服务，可使用其提供的API，在你的在线简历页面添加一个PDF导出按钮。地址<a href="https://www.sejda.com/html-to-pdf" target="_blank" rel="noopener">https://www.sejda.com/html-to-pdf</a><br>  <a href="https://github.com/Nihiue/ilovepdf-node" target="_blank" rel="noopener">https://github.com/Nihiue/ilovepdf-node</a> <a href="https://github.com/Nihiue/libreoffice-portal" target="_blank" rel="noopener">https://github.com/Nihiue/libreoffice-portal</a><br> pdf to ppt <a href="https://github.com/TomAnthony/pdf-to-powerpoint" target="_blank" rel="noopener">https://github.com/TomAnthony/pdf-to-powerpoint</a><br>需要安装 <a href="http://blog.alivate.com.au/poppler-windows/" target="_blank" rel="noopener">http://blog.alivate.com.au/poppler-windows/</a> 加入环境变量  pdftotext file.pdf - | grep string<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ python convert.py wechat_article.pdf</span><br><span class="line"></span><br><span class="line">Converting file: wechat_article.pdf</span><br><span class="line"></span><br><span class="line">Starting conversion...</span><br><span class="line">...complete.</span><br><span class="line"></span><br><span class="line">Saving slide: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">Saving file: wechat_article.pptx</span><br><span class="line">Conversion complete. :)</span><br><span class="line">$ pdfinfo.exe  wechat_article.pdf</span><br><span class="line">Title:</span><br><span class="line">Creator:        wkhtmltopdf <span class="number">0.12</span><span class="number">.5</span></span><br><span class="line">Producer:       Qt <span class="number">4.8</span><span class="number">.7</span></span><br><span class="line">CreationDate:   <span class="number">07</span>/<span class="number">01</span>/<span class="number">19</span> <span class="number">20</span>:<span class="number">22</span>:<span class="number">41</span> ▒й▒▒▒׼ʱ▒▒</span><br><span class="line">Tagged:         no</span><br><span class="line">UserProperties: no</span><br><span class="line">Suspects:       no</span><br><span class="line">Form:           none</span><br><span class="line">JavaScript:     no</span><br><span class="line">Pages:          <span class="number">5</span></span><br><span class="line">Encrypted:      no</span><br><span class="line">Page size:      <span class="number">595</span> x <span class="number">842</span> pts (A4)</span><br><span class="line">Page rot:       <span class="number">0</span></span><br><span class="line">File size:      <span class="number">117566</span> bytes</span><br><span class="line">Optimized:      no</span><br><span class="line">PDF version:    <span class="number">1.4</span></span><br><span class="line">https:<span class="comment">//github.com/ernestyao/PPT2PDF http://blog.51yip.com/other/1934.html</span></span><br><span class="line">https:<span class="comment">//wkhtmltopdf.org/downloads.html</span></span><br></pre></td></tr></table></figure></p>
+<p>推荐阅读:</p>
+<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_3AeNahwbs8c3UJ0is1t4A" target="_blank" rel="noopener">如何在电脑上登陆多个微信</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qyFvOgHf1mXwPKO0tQwUyg" target="_blank" rel="noopener">如何提取公积金 9 天到账</a></p>
+<p><a href="https://mp.weixin.qq.com/s/1omFkK5PPyeJEzUTagj9qg" target="_blank" rel="noopener">免费在线听周杰伦歌曲</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eGDO0Y8el_dsEyriCoAgog" target="_blank" rel="noopener">那些你可能不知道的微信奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/k5lBwiDzGgSU3fh2v2Rw9A" target="_blank" rel="noopener">如何在豆瓣租房小组快速找到满意的房子</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qNfuWjH54WHJtx4sEE5xwA" target="_blank" rel="noopener">10%+10% 不等于 0.2？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
+<p><a href="https://mp.weixin.qq.com/s/mI5kubVY2t5jwJ9ub7A1iA" target="_blank" rel="noopener">我的新浪工作日常</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-393b26173c148690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费星球"></p>
+<h3 id="公众号：苏生不惑"><a href="#公众号：苏生不惑" class="headerlink" title="公众号：苏生不惑"></a>公众号：苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/没有提取码怎么获取百度网盘资源？/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1609,539 +2193,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/微博十年了，你还玩吗/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/03/微博十年了，你还玩吗/" itemprop="url">微博十年了，你还玩吗?</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T11:16:43+08:00">
-                2019-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  233 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>微博09年诞生，一晃10年过去了，记得我第一条微博是2012年4月23 <a href="https://weibo.com/2717930601/yfTTlFGr8" target="_blank" rel="noopener">https://weibo.com/2717930601/yfTTlFGr8</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4fffe89bcaf991d9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-25b818577c4d062f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>7年时间微博发了8万多条，我也是佩服自己。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-369c42d228a6c163?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>这周（8月28号）微博举行十周年活动，微博小秘书创建了微博十年的话题。<a href="https://weibo.com/aj/static/tenyears.html" target="_blank" rel="noopener">https://weibo.com/aj/static/tenyears.html</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4bd5e7cd141377e5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>微博转发300多万。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-ead6d2bc5c947b5d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>玩微博这么久，挺后悔的一件事就是没有好好运营，没有成为某方面的大v，粉丝目前还没破万。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-83a1f862f4bf24bb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>下面是我在公司拍的一些照片。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9ba91d0d1b662cd3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2eef766525e98b2b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-0f15d477ebfec028?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-80f70891605bd30d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p> <img src="https://upload-images.jianshu.io/upload_images/17817191-2ea133afd9197aa3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-46cc8ab128284104?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-3e9c8dca1b4c1c57?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7c32c3bf6a925e8d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5f889cac54052a12?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p> 还拍了个微博视频，地址<a href="https://weibo.com/2717930601/I4kyJE8E4" target="_blank" rel="noopener">https://weibo.com/2717930601/I4kyJE8E4</a> </p>
-<p><a href="https://weibo.com/1642909335/I4gCrzR72" target="_blank" rel="noopener">https://weibo.com/1642909335/I4gCrzR72</a> </p>
-<p>还上了个假的热搜。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-dadc1b54efc7ff4e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-72bd26c9b40a78ec?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><strong>媒体总结的近十年的35部爆款剧，你看过多少？</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-724edeec66dcf67d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>下面的图片来自微博 </p>
-<p><a href="https://weibo.com/6046360157/I4ilE6GL3" target="_blank" rel="noopener">https://weibo.com/6046360157/I4ilE6GL3</a> </p>
-<p><a href="https://weibo.com/3031969212/I4iFCwLMM" target="_blank" rel="noopener">https://weibo.com/3031969212/I4iFCwLMM</a></p>
-<p><a href="https://weibo.com/1385892075/I4jsF6AYU" target="_blank" rel="noopener">https://weibo.com/1385892075/I4jsF6AYU</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-376f8c95b07af5bf?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-e6dbfda915f61edd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-19572ec22fb1a2fe?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-be99a00b4769614e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c9079a647da4a65b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-635cfa89c8b91d93?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-5814306eaa57d2f1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p> 苹果我还没领。。。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-65113eeee15cbac9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-eacb9fe49a0d7ede?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2b82ac0dcbf182da?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>最后祝福微博，下个十年更精彩。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/知识星球精华/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/02/知识星球精华/" itemprop="url">知识星球精华</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-02T11:14:52+08:00">
-                2019-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  30 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/ChrisLinn/greyhame-2017" target="_blank" rel="noopener">知识星球黑客漏洞挖掘”灰袍技能” 2017 精华</a></p>
-<p><a href="https://github.com/wbsabc/zsxq-spider" target="_blank" rel="noopener">爬取知识星球，并制作 PDF 电子书</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/28/2017国庆回家之旅/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/28/2017国庆回家之旅/" itemprop="url">2017国庆回家之旅</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-28T20:26:00+08:00">
-                2019-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.4k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天一上班就收到同事送的喜糖，还是 2 个，祝福他们。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-7822d1067757549c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>国庆中秋 8 天假就过去了，坐着熟悉的 z133，经过艰难的 14 个小时，昨天下午一点到北京，一下火车就下雨，天气也凉了许多，北京西站那叫一个人多。地铁都进不去，排着长长的队，还要安检，马上要 19 大了，到处是警察。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-bb7bed67620172b2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-aa3ab33435fcfece?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>这次回家好好的休息了几天，家里这会的天气真好，又在小县城逛了逛，车水马龙的，感觉家里生活也挺好的。<a href="https://mp.weixin.qq.com/s?__biz=MjM5MTQyMTM0MA==&amp;mid=2650452709&amp;idx=1&amp;sn=1b3e4ee27230ba34d1cec544d4035b74&amp;chksm=bebbd41689cc5d006c5f94b237818946e30f06941fab9f0376eda68022d35756802c21d7c4c3&amp;mpshare=1&amp;scene=1&amp;srcid=0908aC5cxjeMSAdtSSxBpiO4&amp;pass_ticket=J%2Bzd9hqWgVd3tTh61DiWM44zFI6Idb%2BTJEf6KMxjsfP9zfY7LwJo41DnNMSb7%2B%2BK#rd" target="_blank" rel="noopener">真的别再拦我了！我要去吉安县了</a></p>
-<p>爸妈，姐姐，妹妹都在家，还有 5 个外甥，都是男孩子，好调皮，姐姐家的两个跟他大伯去了北京旅游，正好赶上我回家了，不然也可以带他们转转，说实在的，他大伯对大外甥那叫一个好，每年暑假都带去南昌玩，各种好吃好玩的，记得我第一次到南昌去他那玩，还是 06 年刚上大学那会，一晃十年了，那时姐姐刚结婚。前年姐姐在敦厚买房，姐夫他哥哥就拿出 30 万帮他们买了，现在姐姐和姐夫在开发区附近开了个餐馆，妈妈也常去帮忙，餐馆不大，但生意不错，因为附近是工业区，不少公司和厂房，客流不少，开了有 2 年，去年赚了 20 万，今年应该可以到 30 万，在小县城算不错的了，就是比较辛苦，我去那帮忙了一天，光打盒饭就累死我了，还有洗菜，切菜，收拾桌子，中午要忙到 2 点才吃饭，晚上要到 11 点，也是不容易。</p>
-<p>2014 年买了现在的房子（价格 3800,106 平米），自去年国庆装修好搬过来以后都在这边住着，小区位置还好，楼下还有幼儿园，小外甥就在那，晚上就睡在家里，也方便，想起我上小学那会（都没有幼儿园），每天走好远的路，自己带盒饭去学校吃，现在的小孩真幸福。听爸妈说小区的房子都卖完了，还涨价了，都 5000 了，看到一个公众号关于吉安的房价<a href="https://mp.weixin.qq.com/s?__biz=MjM5MTQyMTM0MA==&amp;mid=2650453131&amp;idx=1&amp;sn=777e144c61fa4669b16aaec46c9192ff&amp;chksm=bebbd27889cc5b6e1673bf74c5a2cf82b0abd4359f78a298c48dbde7a6fd21d56057bedf1049&amp;mpshare=1&amp;scene=1&amp;srcid=0928rEJvyC0sA9M8EvVvrZwA&amp;pass_ticket=J%2Bzd9hqWgVd3tTh61DiWM44zFI6Idb%2BTJEf6KMxjsfP9zfY7LwJo41DnNMSb7%2B%2BK#rd" target="_blank" rel="noopener">吉安9月份最新房价出炉</a>，都在涨价，为什么房子到处都在涨价，小地方工资水平明显没那么高。</p>
-<p>给家里拍了个视频，详见<a href="http://weibo.com/2717930601/FppR70GcE" target="_blank" rel="noopener">http://weibo.com/2717930601/FppR70GcE</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-3849d35d846d8ee5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>关于移动支付，现在小县城都可以不用带零钱出门了，这次回家我还取了 1000 现金准备用，结果一分没花，现在想在路边捡钱比较难了。超市，饭馆，路边摊各种消费，微信/支付宝都可以满足，不过明显使用微信的更多，如今微信已成国民应用，爸妈也都用上微信了，交流起来方便多了，在这里推荐一个微信小程序《微信使用小助手》，有详细的视频讲解如何使用微信。</p>
-<p>这次回家又是各种催婚，我也理解，也快 30 ，不小了，大外甥都 10 岁了，时间过得可真快，高中同学里也就剩下没几个还单着的，我现在都不好意思在微信群里说话，好多同学的孩子都上幼儿园了，大学同学也差不多。其实家里条件还好，算不上大富大贵，房子有了，结婚用的被子，床，要花的钱都备好了，老家还在征地，原来用来种水稻的地都准备用来建开发区，已经征了一部分，到时候钱是按人头分，每个人至少 10 几万吧，于是好多人赶着结婚，生小孩，多个人就多份钱，也是服气。</p>
-<p>这次回家还见了个高中好友，记得当时和他同桌，每天一起上课，吃饭，睡觉，上大学的时候来南昌找过我玩，这一晃就 8 年了，他现在老家一个派出所，大学毕业后考的公务员，一辆别克车，房子在吉安市，儿子刚出生不久，成家立业，简直人生赢家，老婆孩子热炕头，令人羡慕。</p>
-<p>今天在掘金上看到这篇文章<a href="https://juejin.im/entry/59dae591f265da064844865f" target="_blank" rel="noopener">https://juejin.im/entry/59dae591f265da064844865f</a> ，关于北漂的经历，感同身受，最近已经不少前同事离开北京了，记得 5 年前来北京的时候想着要在这里扎根，然而现实是残酷的，北京如同铁打的银盘，一批又一批的年轻人如同流水的兵，所以北京才显得年轻。我们这些北漂，何处是归途，我也想过要离开北京，年初就想了，是时候准备走了。</p>
-<p>最后附几张图片</p>
-<p>跟老同学在 KTV，好久没唱歌，开心。<img src="https://upload-images.jianshu.io/upload_images/17817191-b2dd4369694537b4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>小县城电影院看开心麻花的《羞羞的铁拳》</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-a52d3a1a7a698e79?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>陪爸妈看电视剧《我的三妈两爸》，关于知青的，拍得挺感人，片尾曲《木兰开》挺好听。<a href="http://weibo.com/5863878501/FnqP1rUKp" target="_blank" rel="noopener">http://weibo.com/5863878501/FnqP1rUKp</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-4513ff05417dcdc7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>小区的女神像</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-b9eb142dc0b64e3a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>小外甥上学的幼儿园</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-2273b532f525916c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>小县城晚上最热闹的龙湖广场<a href="http://weibo.com/2717930601/FoQR010w8" target="_blank" rel="noopener">http://weibo.com/2717930601/FoQR010w8</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-96ade85709f3292f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>自己做的菜 牛肉炒辣椒<a href="http://weibo.com/2717930601/FpqJRk8eM" target="_blank" rel="noopener">http://weibo.com/2717930601/FpqJRk8eM</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-995cfb884f8b7089?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>姐姐的餐馆打包外卖<a href="http://weibo.com/2717930601/Fp653BYAF" target="_blank" rel="noopener">http://weibo.com/2717930601/Fp653BYAF</a>?</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-33870e6840a830f6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<p>ps：朋友圈看到的一篇《山东男孩过节回乡指南》<a href="http://weibo.com/ttarticle/p/show?id=2309404158123681178037" target="_blank" rel="noopener">http://weibo.com/ttarticle/p/show?id=2309404158123681178037</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2192,7 +2243,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">281</span>
+                  <span class="site-state-item-count">284</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2423,7 +2474,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共680.1k字</span>
+  <span class="post-count">博客全站共682.9k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
