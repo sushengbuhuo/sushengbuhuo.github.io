@@ -285,6 +285,632 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/网易云音乐账号等级快速升级：每天自动打卡听歌300首/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/06/网易云音乐账号等级快速升级：每天自动打卡听歌300首/" itemprop="url">网易云音乐账号等级快速升级：每天自动打卡听歌300首</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-06T20:00:26+08:00">
+                2020-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第148 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>关于网易云音乐之前写过：</p>
+<p><a href="https://mp.weixin.qq.com/s/LtI2piwAIDXA590NEsXvuw" target="_blank" rel="noopener">那些你可能不知道的网易云音乐奇技淫巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/WSSddtoCJkW9kJVwkGh0nQ" target="_blank" rel="noopener">不想下载那么多音乐软件？全网音乐在线听和下载</a></p>
+<p><a href="https://mp.weixin.qq.com/s/3rB23e9L55hDBaPLDu6WMg" target="_blank" rel="noopener">如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？</a></p>
+<p>今天分享的是每天自动在网易云音乐刷完300首歌，让你的账号快速升级（等级数据每天下午2点更新），关于等级特权 这里有介绍 <a href="https://music.163.com/#/level/details" target="_blank" rel="noopener">https://music.163.com/#/level/details</a> ，最高级lv10有100G音乐云盘免费容量。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c3498d6b7ce23f93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>一个账号平均耗时为1分钟左右，放在服务器上运行即可，不需要人工干预，每天自动听歌做任务，然后向你的微信发送任务通知，支持无服务器的云函数部署。</p>
+<p>使用方式分为手动执行Python脚本，腾讯云云函数自动执行和在线打卡。</p>
+<h3 id="手动执行Python脚本"><a href="#手动执行Python脚本" class="headerlink" title="手动执行Python脚本"></a>手动执行Python脚本</h3><p>先从 <a href="https://github.com/ZainCheung/netease-cloud" target="_blank" rel="noopener">https://github.com/ZainCheung/netease-cloud</a>  下载代码到本地。</p>
+<p>修改配置文件init.config，把自己的网易云音乐账号（邮箱或者手机号）和 md5 加密（用类似<a href="http://www.md5.cz/" target="_blank" rel="noopener">http://www.md5.cz/</a> 这样的网站加密下就好）后的密码填好。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account = <span class="number">188</span>xxxxxx</span><br><span class="line">password = ed1481xxxx</span><br><span class="line">peopleSwitch = <span class="literal">false</span><span class="comment">//如果需要测试多个账号改为true，并修改配置文件account.json</span></span><br></pre></td></tr></table></figure></p>
+<p>打开网易云音乐主页，看到目前累计累积听歌20首。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-df9346d108084703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>然后直接执行脚本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">λ python main.py</span><br><span class="line">配置文件读取完毕</span><br><span class="line">api测试正常</span><br><span class="line">账号: <span class="number">188</span>xxxxx  开始执行</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">53</span>:<span class="number">14</span>   登陆成功</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">53</span>:<span class="number">18</span>   签到成功</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">53</span>:<span class="number">23</span>   获取用户详情成功</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">53</span>:<span class="number">33</span>   &#123;<span class="string">"code"</span>:<span class="number">200</span>,<span class="string">"count"</span>:<span class="number">310</span>&#125;</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">53</span>:<span class="number">33</span>   用户:我们都爱听老歌  第<span class="number">1</span>次打卡成功,即将休眠<span class="number">30</span>秒</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">54</span>:<span class="number">22</span>   &#123;<span class="string">"code"</span>:<span class="number">200</span>,<span class="string">"count"</span>:<span class="number">310</span>&#125;</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">54</span>:<span class="number">22</span>   用户:我们都爱听老歌  第<span class="number">2</span>次打卡成功,即将休眠<span class="number">30</span>秒</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">55</span>:<span class="number">15</span>   &#123;<span class="string">"code"</span>:<span class="number">200</span>,<span class="string">"count"</span>:<span class="number">310</span>&#125;</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">55</span>:<span class="number">15</span>   用户:我们都爱听老歌  第<span class="number">3</span>次打卡成功,即将休眠<span class="number">30</span>秒</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">55</span>:<span class="number">46</span>   用户:我们都爱听老歌  Server酱推送成功</span><br><span class="line"><span class="number">2020.07</span><span class="number">.01</span><span class="number">-19</span>:<span class="number">55</span>:<span class="number">46</span>   用户:我们都爱听老歌  今日任务已完成</span><br></pre></td></tr></table></figure></p>
+<p>可以看到累积听歌320首了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4cccc0782ed88ee9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果你想通知微信，需要设置Server酱的key <a href="http://sc.ftqq.com/，它可以直接将消息发到你关注的公众号。" target="_blank" rel="noopener">http://sc.ftqq.com/，它可以直接将消息发到你关注的公众号。</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-5f56c0433c20956e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>测试发条消息。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-47f7d07efacce8c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>修改配置文件init.config的 <code>sckey</code>，再次执行脚本微信收到通知。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bb4fdf8a7b8a2c76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果你本地没有安装 Python，而且每次执行很麻烦，可以使用腾讯云的云函数每天帮你自动执行脚本，这样你就不会忘了。</p>
+<h3 id="腾讯云云函数"><a href="#腾讯云云函数" class="headerlink" title="腾讯云云函数"></a>腾讯云云函数</h3><p>什么是云函数？就是可以让你没有服务器、本地电脑不用下载Python也可以运行脚本。</p>
+<p>先用微信登陆腾讯云，然后打开 <a href="https://console.cloud.tencent.com/scf/list-create?rid=1&amp;ns=default" target="_blank" rel="noopener">https://console.cloud.tencent.com/scf/list-create?rid=1&amp;ns=default</a> 新建一个函数，名字随意起，运行环境选择Python3.6，运行方式为空白函数。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-6f5944b31e33e4d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>进入下一步，描述随意写，执行方法为index.main，提交方法为本地上传文件夹。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f80cc5c846db35b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>将刚才下载的代码文件夹上传上去，点开高级设置，内存64MB，超时时间900.<br> <img src="https://upload-images.jianshu.io/upload_images/23152173-231e0ea394f38536.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>修改配置文件init.config，跟上面一样的填写账号和密码。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-849f2cb38c21b6bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>注意api需要改下，因为作者的api地址用的人很多，会提示403错误，可以自己免费在 <a href="https://glitch.com/" target="_blank" rel="noopener">https://glitch.com/</a> 建一个。 </p>
+<p> 首先fork 这个仓库代码 <a href="https://github.com/ZainCheung/netease-cloud-api，之后用" target="_blank" rel="noopener">https://github.com/ZainCheung/netease-cloud-api，之后用</a> GitHub登录后导入你的项目，再修改项目名，我的是 <a href="http://sushengbuhuo.glitch.me" target="_blank" rel="noopener">http://sushengbuhuo.glitch.me</a> ，将这个地址填写到配置文件init.config的api里。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-69984ab8b99de5c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>修改配置文件后保存，测试，可以看到运行结果日志。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-dbd1ac60fde81aa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>可以看到现在累积听歌620首了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-04eff9f51c8b9679.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>同时收到微信通知。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9204142d5581cce1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>接着在触发管理里设置定时任务，每天早上8点20（也就是我每天发公众号文章的时间）执行脚本，这样就可以每天自动打卡升级了，而这一切都是免费的。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bb5011d65d940c4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果你不想折腾，也想快速升级你的网易账号，把登录账号和md5加密后的密码（我是不知道你原密码的）发给我，我配置在腾讯云云函数里，每天早上8点20听300首歌给你的账号打卡升级。</p>
+<p>其实它的实现原理就是模拟登陆网易云音乐网页版听歌打卡，就是执行<br><a href="https://github.com/ZainCheung/netease-cloud-api" target="_blank" rel="noopener">https://github.com/ZainCheung/netease-cloud-api</a> 里 index.php的代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$api= <span class="keyword">new</span> API();</span><br><span class="line">$api-&gt;follow();</span><br><span class="line"><span class="comment">//test();</span></span><br><span class="line"><span class="keyword">if</span>($_REQUEST[<span class="string">"do"</span>]==<span class="string">"login"</span>)&#123;</span><br><span class="line">echo $api-&gt;login($_REQUEST[<span class="string">"uin"</span>],$_REQUEST[<span class="string">"pwd"</span>]);&#125;</span><br><span class="line">elseif($_REQUEST[<span class="string">"do"</span>]==<span class="string">"email"</span>)&#123;echo $api-&gt;loginByEmail($_REQUEST[<span class="string">"uin"</span>],$_REQUEST[<span class="string">"pwd"</span>]);&#125;</span><br><span class="line">elseif($_REQUEST[<span class="string">"do"</span>]==<span class="string">"sign"</span>)&#123;echo $api-&gt;sign();&#125;</span><br><span class="line">elseif($_REQUEST[<span class="string">"do"</span>]==<span class="string">"daka"</span>)&#123;echo $api-&gt;daka_new();&#125;</span><br><span class="line">elseif($_REQUEST[<span class="string">"do"</span>]==<span class="string">"check"</span>)&#123;echo $api-&gt;follow();&#125;</span><br><span class="line">elseif($_REQUEST[<span class="string">"do"</span>]==<span class="string">"detail"</span>)&#123;echo $api-&gt;detail($_REQUEST[<span class="string">"uid"</span>]);&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;echo $api-&gt;index();&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="在线打卡"><a href="#在线打卡" class="headerlink" title="在线打卡"></a>在线打卡</h3><p>如果你觉得下载代码，还要登录腾讯云建云函数还是麻烦，那直接用搭建好的在线打卡服务（公众号后台回复  <code>音乐</code> 获取网址）。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-60905ca0cd727327.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入网易云音乐账号和密码，点击打卡，成功听歌310首。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-29e88a36e57401dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>ps：今天有小伙伴加我（公众号后台回复 <code>微信</code> 加我），还是关于去除优酷/爱奇艺和腾讯视频上的logo，我之前有写过文章<a href="https://mp.weixin.qq.com/s/ksElusubk3s7dKtAqI4HKg" target="_blank" rel="noopener">如何更优雅地看电影/刷剧</a>，不过安装油猴脚本什么的还是麻烦。<br> <img src="https://upload-images.jianshu.io/upload_images/23152173-2ee17eb6d1f2f9fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>你可以直接打开控制台输入代码运行即可。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.querySelectorAll(<span class="string">".iqp-logo-top"</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,arr</span>)</span>&#123;item.style.display=<span class="string">'none'</span>;&#125;);<span class="comment">//爱奇艺</span></span><br><span class="line"> <span class="built_in">document</span>.querySelectorAll(<span class="string">".txp_waterMark_pic"</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,arr</span>)</span>&#123;item.style.display=<span class="string">'none'</span>;&#125;);<span class="comment">//腾讯</span></span><br><span class="line">    <span class="built_in">document</span>.querySelectorAll(<span class="string">".logo-new"</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,arr</span>)</span>&#123;item.style.display=<span class="string">'none'</span>;&#125;);<span class="comment">//优酷</span></span><br><span class="line">&#125;, <span class="number">100</span>);</span><br></pre></td></tr></table></figure></p>
+<p>右上角的爱奇艺logo不见了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-ecb58c61d932952c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>| 公众号后台回复关键词    |  用途   |<br>| — | — |<br>| 微信    | 获取你的微信好友头像拼图及查看微信撤回消息    |<br>|  b站   |  获取下载b站视频工具及找回被删b站视频方法   |<br>|  视频   |  获取下载腾讯，优酷，爱奇艺，微博视频工具及去除logo脚本   |<br>|  百度网盘   | 获取加速下载网盘文件方法及查找电影电视剧网站    |<br>|   朋友圈  |  获取发空白朋友圈方法   |<br>|  微博   |  获取备份微博工具及分析微博账号数据   |<br>|  音乐   |   获取下载音乐工具及在线听歌网站  |<br>|  油猴   |   获取油猴脚本  |<br>|谷歌|获取安装Chrome扩展方法|</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/再谈备份网页和公众号文章/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/06/再谈备份网页和公众号文章/" itemprop="url">再谈备份网页和公众号文章</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-06T19:59:42+08:00">
+                2020-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第147 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>关于备份网页之前写过了<a href="https://mp.weixin.qq.com/s/bIE23HBq_sqvLkV18_BlbQ" target="_blank" rel="noopener">如何备份可能被删的公众号文章和网页</a>，这里再细说下。</p>
+<p>不知道为什么现在公众号文章底部我的印象笔记去掉了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b619d97ec3c1ae89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>现在只能手动给公众号我的印象笔记发文章链接来保存了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f4885cfdc45f8e53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了防止文章被删后看不了，我又整理了几个实用的备份方案。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-eb0b6c5a3b91d303.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-c17b06ee6591a398.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="SingleFile"><a href="#SingleFile" class="headerlink" title="SingleFile"></a>SingleFile</h3><p>这是个Chrome扩展<a href="https://chrome.google.com/extensions/detail/mpiodijhokgodhhofbcjdecpffjipkle" target="_blank" rel="noopener">https://chrome.google.com/extensions/detail/mpiodijhokgodhhofbcjdecpffjipkle</a> ，关于如何安装Chrome扩展参考之前文章<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a> ,它可以将一个完整的页面保存到单个 HTML 文件中。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-3231f9a60ff640ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>以这篇文章<a href="https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA" target="_blank" rel="noopener">如何导出你的微信语音</a> 为例,直接右键使用SingleFile保存。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e371ba196f1db5b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后生成一个 1.2MB的html单文件，外部 css 、js 、image 会转为 base64 （根据需要）嵌入到 html 中，方便保存。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-aa82510f1a20a224.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>用浏览器打开这个文件，图片和样式都还在。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-41b863dd9f0e03dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果用Ctrl+s直接保存网页，图片都丢失了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d2e48abe726cd496.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-19a4ca562fedc5c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>另外还有Chrome扩展SingleFileZ <a href="https://chrome.google.com/webstore/detail/singlefilez/offkdfbbigofcgdokjemgjpdockaafjg" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/singlefilez/offkdfbbigofcgdokjemgjpdockaafjg</a> ，它是SingleFile的增强版，虽然生成的是单个 html，但实际是个 zip 文件，推荐使用二管家来管理Chrome扩展，可以方便的看扩展更新通知并记录扩展历史，自动开启/关闭拓展  <a href="https://ainoob.com/zh/project/nooboss" target="_blank" rel="noopener">https://ainoob.com/zh/project/nooboss</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-5e0a79cbf5a4e4b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-52a3d763e177fb05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p>使用 Github Action 来备份豆瓣日记， 微博文章， 公众号文章， 知乎专栏等。 使用起来很简单，在 <a href="https://archives.duty-machine.now.sh/" target="_blank" rel="noopener">https://archives.duty-machine.now.sh/</a> 直接提交文章链接 <a href="https://mp.weixin.qq.com/s/4qN1rjaGWaap91Ootgp-MQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/4qN1rjaGWaap91Ootgp-MQ</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d8a5c706df38b206.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>一会就生成一个备份后的链接 <a href="https://github.com/duty-machine/duty-machine/issues/358" target="_blank" rel="noopener">https://github.com/duty-machine/duty-machine/issues/358</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-840b656c1d35fc5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>它直接将公众号文章原文抓取过来了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c63b4fe311b0da2b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>当然这个仓库是公用的，有很多别人备份的文章，你可以自己建个仓库专门存储备份文章，新建一个action即可。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">on:</span><br><span class="line">  issues:</span><br><span class="line">    types: [opened]</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line">    steps:</span><br><span class="line">      - uses: duty-machine/duty-machine-action@master</span><br><span class="line">        env:</span><br><span class="line">          TOKEN: $&#123;&#123; github.token &#125;&#125;</span><br><span class="line">          REPOSITORY: $&#123;&#123; github.repository &#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我想备份的文章都通过GitHub保存起来。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-41d60ff6de27f135.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果想备份的文章被删了，只能尝试用搜索引擎快照找下。</p>
+<h3 id="谷歌-百度快照"><a href="#谷歌-百度快照" class="headerlink" title="谷歌/百度快照"></a>谷歌/百度快照</h3><p>比如知乎文章被删了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5b377b488572119a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入文章链接，进入网页快照<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1b96e59dc938e6c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>可以看到这篇文章被删前5月23号的快照，然后使用上面的SingleFile保存全文到本地。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-73cf69c2c974a121.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>想看其他搜索引擎的快照可以看看网页快照网 <a href="https://2tool.top/" target="_blank" rel="noopener">https://2tool.top/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-0cea79c30ae63d4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入链接查看。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-852aae5d81f4d6fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果想备份除了公众号，知乎的任意网页推荐互联网档案馆 archive。</p>
+<h3 id="互联网档案馆"><a href="#互联网档案馆" class="headerlink" title="互联网档案馆"></a>互联网档案馆</h3><p>关于这个档案馆 <a href="https://archive.org/web，之前写过文章[跟随时光机回到过去看看" target="_blank" rel="noopener">https://archive.org/web，之前写过文章[跟随时光机回到过去看看</a> 2005 年的百度/腾讯/淘宝/谷歌](<a href="https://mp.weixin.qq.com/s/LKDGKWi62J5Zyzh3rB-IiQ)，我还保存过一篇文章" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/LKDGKWi62J5Zyzh3rB-IiQ)，我还保存过一篇文章</a> ，生成了个永久链接 <a href="https://web.archive.org/web/20191027081838/https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">https://web.archive.org/web/20191027081838/https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ</a> ，现在还能打开。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-416f327d5475e69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不过这个网站在墙外，怎么上去这里就不说了。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-e0cb3e031e1dba48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>为了方便使用archive，可以安装Chrome扩展Archiveror  <a href="https://chrome.google.com/webstore/detail/archiveror/cpjdnekhgjdecpmjglkcegchhiijadpb" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/archiveror/cpjdnekhgjdecpmjglkcegchhiijadpb</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-1f51fccc7426aaff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>也可以直接右键选择 archive.is， archive.org， perma.cc。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a1b7c35d5355cb8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>之后跳转 <a href="https://web.archive.org/save/https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA" target="_blank" rel="noopener">https://web.archive.org/save/https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA</a> 生成一个永久链接 <a href="https://web.archive.org/web/20200630144008/https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA" target="_blank" rel="noopener">https://web.archive.org/web/20200630144008/https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-4fa0c83b13cb1601.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>现在公众号文章末尾增加了点赞功能，来帮忙点个赞支持下我继续更新文章吧，感谢。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-cc19a929117f36f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<table>
+<thead>
+<tr>
+<th>后台回复关键词</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微信</td>
+<td>获取你的微信好友头像拼图及查看微信撤回消息</td>
+</tr>
+<tr>
+<td>b站</td>
+<td>获取下载b站视频工具及找回被删b站视频方法</td>
+</tr>
+<tr>
+<td>视频</td>
+<td>获取下载腾讯，优酷，爱奇艺，微博视频工具及去除logo脚本</td>
+</tr>
+<tr>
+<td>百度网盘</td>
+<td>获取加速下载网盘文件方法及查找电影电视剧网站</td>
+</tr>
+<tr>
+<td>朋友圈</td>
+<td>获取发空白朋友圈方法</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>获取备份微博工具及分析微博账号数据</td>
+</tr>
+<tr>
+<td>音乐</td>
+<td>获取下载音乐工具及在线听歌网站</td>
+</tr>
+<tr>
+<td>油猴</td>
+<td>获取油猴脚本</td>
+</tr>
+<tr>
+<td>谷歌</td>
+<td>获取安装Chrome扩展方法</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/那些有趣的网站系列（三）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/06/那些有趣的网站系列（三）/" itemprop="url">那些有趣的网站系列（三）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-06T19:58:16+08:00">
+                2020-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  876 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第146篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>之前分享过 <a href="https://mp.weixin.qq.com/s/ThUw9i43paFhXfPxF8mvyQ" target="_blank" rel="noopener">那些有趣的网站</a> ，<a href="https://mp.weixin.qq.com/s/wTgYpovJrJh8_Zj1h6EbzA" target="_blank" rel="noopener">那些有趣的网站（二）</a>，这是第3篇，其他有意思的网站在文章开头的专辑里。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bfd98547e8f1f844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="烂片排行榜"><a href="#烂片排行榜" class="headerlink" title="烂片排行榜"></a>烂片排行榜</h3><p>华语影坛历史上的第一个“烂片排行榜” <a href="https://datamuse.guokr.com/wmu" target="_blank" rel="noopener">https://datamuse.guokr.com/wmu</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-0d2d8ba46bec39e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以搜索明星拍过的烂片<br><img src="https://upload-images.jianshu.io/upload_images/23152173-af0a9f3b5a921411.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="明星缩写查询"><a href="#明星缩写查询" class="headerlink" title="明星缩写查询"></a>明星缩写查询</h3><p>经常在微博看到各种拼音缩写，不知道为什么现在的网络变成这样，来这里查下明星的缩写，还有明星八卦什么的   <a href="http://www.iseecs.com/" target="_blank" rel="noopener">http://www.iseecs.com/</a> 比如xz 可能代表  肖战 邢舟 徐峥 弦子 馨子 向佐 贤真<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1759b8968ea43bd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这个有点类似之前介绍的 能不能好好说话 <a href="https://lab.magiconch.com/nbnhhsh/" target="_blank" rel="noopener">https://lab.magiconch.com/nbnhhsh/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-2631fdd497f2c1d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="简悦在线版"><a href="#简悦在线版" class="headerlink" title="简悦在线版"></a>简悦在线版</h3><p>关于简悦在之前文章介绍过，如果你不想安装Chrome扩展，可以直接使用网站<br><a href="https://simp.red/" target="_blank" rel="noopener">https://simp.red/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-489d94a97acb6347.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>直接把链接放在URL参数<a href="https://simp.red/trans?url=https://www.bilibili.com/read/cv6533660" target="_blank" rel="noopener">https://simp.red/trans?url=https://www.bilibili.com/read/cv6533660</a> ，它将 标题 描述 正文 提取出来重新进行排版，更适合长时间阅读的一种功能，间接去除了广告和方便直接复制文字。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-259b1209df4793f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>嫌麻烦可以添加为书签 <code>javascript:(function(){window.open(&#39;https://simp.red/trans?url=&#39;+decodeURIComponent(document.location.href))})();</code> ，详情见 <a href="https://www.notion.so/c8386288be1642c6bee7a29cb46fb7a8" target="_blank" rel="noopener">https://www.notion.so/c8386288be1642c6bee7a29cb46fb7a8</a></p>
+<h3 id="在线-Windowsxp"><a href="#在线-Windowsxp" class="headerlink" title="在线 Windowsxp"></a>在线 Windowsxp</h3><p>Windowsxp系统尽管已经被win7和win10替代了，但应该是很多人的回忆，还可以玩玩扫雷游戏什么的  <a href="https://geekprank.com/" target="_blank" rel="noopener">https://geekprank.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-963acdb306976c97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>经典的win7更新 <a href="https://geekprank.com/win7-update/" target="_blank" rel="noopener">https://geekprank.com/win7-update/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-5bcbca556240363c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="人工智能诗歌写作"><a href="#人工智能诗歌写作" class="headerlink" title="人工智能诗歌写作"></a>人工智能诗歌写作</h3><p>支持创作绝句，藏头诗，词等 <a href="http://jiuge.thunlp.org/，用苏生不惑生成的结果：吾道本无事，于今我亦稀，未能逃世俗，何必解人归" target="_blank" rel="noopener">http://jiuge.thunlp.org/，用苏生不惑生成的结果：吾道本无事，于今我亦稀，未能逃世俗，何必解人归</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-6ae4e8be10873b22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果想查相似词使用 <a href="https://tool.mingdawoo.com/lang/nearby_word" target="_blank" rel="noopener">https://tool.mingdawoo.com/lang/nearby_word</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-a806df3cce7b3dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="泥石流海报"><a href="#泥石流海报" class="headerlink" title="泥石流海报"></a>泥石流海报</h3><p>用来生成二维码分享图 <a href="https://graph.readhub.cn/" target="_blank" rel="noopener">https://graph.readhub.cn/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f25b7eadcef0a4eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>之前文章<a href="https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA" target="_blank" rel="noopener">如何导出你的微信语音</a> 生成效果<br><img src="https://upload-images.jianshu.io/upload_images/23152173-3c164b4954860dae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="在线学方言"><a href="#在线学方言" class="headerlink" title="在线学方言"></a>在线学方言</h3><p>支持粤语，客家话，上海话，四川话等方言 <a href="http://www.fyan8.com/" target="_blank" rel="noopener">http://www.fyan8.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-6a66012d3795aeb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以跟着mp3来学。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-fa61dc8ea303699c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信拍一拍文案生成器"><a href="#微信拍一拍文案生成器" class="headerlink" title="微信拍一拍文案生成器"></a>微信拍一拍文案生成器</h3><p>大家应该都玩过拍一拍了，来试试这个生成器 <a href="http://chuangzaoshi.com/plp/" target="_blank" rel="noopener">http://chuangzaoshi.com/plp/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-a2b9f0882776d2f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="网页录音"><a href="#网页录音" class="headerlink" title="网页录音"></a>网页录音</h3><p> 通过网页录音，自动提取 PPT 文案分句，然后按句子录音，自动重放对比。</p>
+<p>这里以周杰伦《晴天》歌词为例写入个 txt 文件，每行一句，然后点右边的打开就可以录音了。录音完后点打包会把录音下载为一个 zip 文件，并生成一个音频对应的描述文件 <a href="https://recpage.applinzi.com/" target="_blank" rel="noopener">https://recpage.applinzi.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-84f95861dc2bdde2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="装b生成器"><a href="#装b生成器" class="headerlink" title="装b生成器"></a>装b生成器</h3><p>各种好玩的生成器 <a href="https://cc.bjadjty.com/" target="_blank" rel="noopener">https://cc.bjadjty.com/</a>  <a href="http://g.g.adccd.com/" target="_blank" rel="noopener">http://g.g.adccd.com/</a>  <a href="http://zb.yuanrenbang.com/" target="_blank" rel="noopener">http://zb.yuanrenbang.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f4f833892598dadc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<table>
+<thead>
+<tr>
+<th>回复关键词</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微信</td>
+<td>获取你的微信好友头像拼图及查看微信撤回消息</td>
+</tr>
+<tr>
+<td>b站</td>
+<td>获取下载b站视频工具及找回被删b站视频方法</td>
+</tr>
+<tr>
+<td>视频</td>
+<td>获取下载腾讯，优酷，爱奇艺，微博视频工具及去除logo脚本</td>
+</tr>
+<tr>
+<td>百度网盘</td>
+<td>获取加速下载网盘文件方法及查找电影电视剧网站</td>
+</tr>
+<tr>
+<td>朋友圈</td>
+<td>获取发空白朋友圈方法</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>获取备份微博工具及分析微博账号数据</td>
+</tr>
+<tr>
+<td>音乐</td>
+<td>获取下载音乐工具及在线听歌网站</td>
+</tr>
+<tr>
+<td>油猴</td>
+<td>获取油猴脚本</td>
+</tr>
+<tr>
+<td>谷歌</td>
+<td>获取安装Chrome扩展方法</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/24/如何导出你的微信语音/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1645,595 +2271,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/关于公众号搜索和专辑/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/05/关于公众号搜索和专辑/" itemprop="url">关于公众号搜索和专辑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-05T19:22:00+08:00">
-                2020-06-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第138 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>每天都有小伙伴在公众号后台回复关键词，比如 <code>百度网盘</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-dc7e774c6013a7fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-e16048a6977887c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>根据关键词回复的内容一般都能解决你的问题，不过由于后台可设置的关键词数量有限，如果输入没有设置的关键词（比如网页去logo）会回复这个。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-85bd037e6d983dd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="xxx.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-34ab6a4f3e212906.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>这个时候可以打开公众号右上角的搜索按钮。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f3fdb4581c457c2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入 <code>去logo</code> 就能找到这篇文章<a href="https://mp.weixin.qq.com/s/ksElusubk3s7dKtAqI4HKg" target="_blank" rel="noopener">如何更优雅地看电影/刷剧</a> ，里面有详细说明如何去除腾讯优酷和爱奇艺视频上方的logo。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f506225fefda4e4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>想查其他关键词也一样的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-5a62b5797a2de90d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果文章里也没搜到，可以在点击这个菜单或者回复 <code>微信</code> 加我微信交流。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-ba06398e376942ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>当然我看到后也会回复你的（可能不及时，因为白天要上班）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8d3c44e57aa12fd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>在文章下的评论也是一样的。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d8d30dc490d9f29a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>另外文章开头也有个搜索。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-aa84bc3ed0a3a588.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击以后也会进入搜索界面，它会列出我设置的4个搜索词，可以直接点击列出的词搜索，或者自己输入关键词后搜索。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d1aed21628a44e1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>再说下新出的专辑，专辑就是一系列文章的集合，在每篇文章开头展示。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c5d6df521a313f29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点进去就是这个专辑下的文章列表，可以的话点个在看或者将专辑分享给其他小伙伴。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-7025c457d3bc5dbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>目前设置了7个专辑，可以点击下面文字进入查看。</p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;album_id=1319703220939456512&amp;__biz=MzIyMjg2ODExMA==#wechat_redirect" target="_blank" rel="noopener">玩转微信系列</a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;album_id=1319695030503931905&amp;__biz=MzIyMjg2ODExMA==#wechat_redirect" target="_blank" rel="noopener">实用工具系列</a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;album_id=1319689299658604545&amp;__biz=MzIyMjg2ODExMA==#wechat_redirect" target="_blank" rel="noopener">百度网盘系列</a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;album_id=1319680810974511105&amp;__biz=MzIyMjg2ODExMA==#wechat_redirect" target="_blank" rel="noopener">黑科技系列</a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;album_id=1319685403368292353&amp;__biz=MzIyMjg2ODExMA==#wechat_redirect" target="_blank" rel="noopener">Chrome扩展神器系列</a></p>
-<p> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;album_id=1319683982690418688&amp;__biz=MzIyMjg2ODExMA==#wechat_redirect" target="_blank" rel="noopener">这些网站有意思系列</a> </p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;album_id=1319700560609869824&amp;__biz=MzIyMjg2ODExMA==#wechat_redirect" target="_blank" rel="noopener">生活系列</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-1e2a5ff5e0ff3538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>另外在公众号菜单里的<code>历史文章</code>可以浏览我发过的所有文章。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-efa574eb9fde7bea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>历史文章里几乎都是都是我原创写的文章（有原创标志，目前原创137篇，还在持续更新），都是我一个个字敲出来的，然后配图校对，一篇文章至少花费2-3个小时，比如之前这篇<a href="https://mp.weixin.qq.com/s/4lumhFRxedfmnq2KLRkggA" target="_blank" rel="noopener">2020 年 3 月最新加速下载百度网盘文件方法</a> 周末就花了4个小时，可以的话帮忙转发下。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-8b8d8155072a1c39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>不像有些公众号经常转载他人的文章，可以每天更新，而我平常上班忙，精力有限，只能周末抽空写文章，所以每周只能更新2-3篇原创，一般是早上8点20发，没有标题党，但愿没有浪费你时间，还能给你带来一点价值，对你有所帮助。</p>
-<p>之前我分类整理过<a href="https://mp.weixin.qq.com/s/Lm4l_aPCSXymUGcqO_Yf3g" target="_blank" rel="noopener">2019 年公众号 苏生不惑 近百篇原创文章整理</a>，还有<a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMjg2ODExMA==&amp;hid=1&amp;sn=e7478e21fb95dd2d2b39b7d00c344da8&amp;scene=18#wechat_redirect" target="_blank" rel="noopener">精选文章</a>，这里再整理下今年发过的原创文章：</p>
-<p><a href="https://mp.weixin.qq.com/s/MgzuHp-5f8gkIZ_ui4LQNQ" target="_blank" rel="noopener">请停用以开发者模式运行的扩展程序？搞定谷歌浏览器插件弹窗</a></p>
-<p><a href="https://mp.weixin.qq.com/s/wTgYpovJrJh8_Zj1h6EbzA" target="_blank" rel="noopener">那些有趣的网站（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/0uOyrcz0KP-qZhCNNCELhw" target="_blank" rel="noopener">2020 最全百度网盘搜索，找电影资源不再愁</a></p>
-<p><a href="https://mp.weixin.qq.com/s/PTRAREoFRfOJqOUlMCWhbQ" target="_blank" rel="noopener">微信撤回的消息也能看到！</a></p>
-<p><a href="https://mp.weixin.qq.com/s/i53iORP49o_4eRGGQEthsg" target="_blank" rel="noopener">如何找回bilibili(b站)收藏夹里失效的视频？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/r1rMqhzwHqkeb9T85BmeAg" target="_blank" rel="noopener">听说 520 你还没对象，来这里看看</a></p>
-<p><a href="https://mp.weixin.qq.com/s/0AJUFviGMYOMirdn1KDonA" target="_blank" rel="noopener">一个骚操作，公众号粉丝破10万！</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sGToO710n2h5avFk8aRQEw" target="_blank" rel="noopener">想方便快捷的分享/收藏图片？试试免费好用的微博/b站图床</a></p>
-<p><a href="https://mp.weixin.qq.com/s/4K5TrXNPGAuOdFN3Ipcz9A" target="_blank" rel="noopener">那些好用的 GIF 录制工具</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sbDKRfht3xVw7uFZ47Sjnw" target="_blank" rel="noopener">那些好用的无版权免费图片网站</a></p>
-<p><a href="https://mp.weixin.qq.com/s/ksElusubk3s7dKtAqI4HKg" target="_blank" rel="noopener">如何更优雅地看电影/刷剧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/34eF5BqI9Ig8FAYZjK6GBw" target="_blank" rel="noopener">那些好玩的网站（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/a_lxHOQVA9RR_dYyzr56Gw" target="_blank" rel="noopener">如何更优雅地使用 bilibili(b站)</a></p>
-<p><a href="https://mp.weixin.qq.com/s/yCinlN4D7C-4117FIDxZCQ" target="_blank" rel="noopener">网址太长了难看？生成个短网址吧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/GQ6OUbPHqNJco0Gv_SiRgg" target="_blank" rel="noopener">手把手教你申报2019个人所得税（已退税1800）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/PxMeiGuSli1v9TzznpMM4A" target="_blank" rel="noopener">那些好玩的网站</a></p>
-<p><a href="https://mp.weixin.qq.com/s/miyrPlKG015GIWvkfpMSkA" target="_blank" rel="noopener">如何搞定某些网站不让复制文字</a></p>
-<p><a href="https://mp.weixin.qq.com/s/ptskCvg_snSNTNQO3XRluA" target="_blank" rel="noopener">2020 年 4 月使用 Aria2 加速下载百度网盘文件</a></p>
-<p><a href="https://mp.weixin.qq.com/s/nX0KtON_0ORGFAxw0m3g3g" target="_blank" rel="noopener">关于 苏生不惑 公众号</a></p>
-<p><a href="https://mp.weixin.qq.com/s/cFQ3hHqrNLdPhZodHOSSPQ" target="_blank" rel="noopener">2019 年我在知识星球上都发了些什么</a></p>
-<p><a href="https://mp.weixin.qq.com/s/dXZhN3GbqQslg7-YHcRL3A" target="_blank" rel="noopener">那些有意思的谷歌/百度搜索彩蛋</a></p>
-<p><a href="https://mp.weixin.qq.com/s/lnwP6_EYB1NE6F1uPNRZWg" target="_blank" rel="noopener">那些有意思的网站彩蛋</a></p>
-<p><a href="https://mp.weixin.qq.com/s/O3mkW2hBNLkVfj3HDQGsyw" target="_blank" rel="noopener">2019 各大 APP 年度报告整理</a></p>
-<p><a href="https://mp.weixin.qq.com/s/OhRMSWYcxojsuhgOgGyiRg" target="_blank" rel="noopener">微软全新浏览器 Microsoft Edge 比 谷歌 Chrome 好用吗？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/fMQenTVYUygUY1H1H8kM-g" target="_blank" rel="noopener">2020 新年福利，直接现金红包抽奖</a></p>
-<p><a href="https://mp.weixin.qq.com/s/lADbo6bd-69iBmtn6783hQ" target="_blank" rel="noopener">快速了解新型肺炎疫情最新动态</a></p>
-<p><a href="https://mp.weixin.qq.com/s/P_qZIoEeL0_1kKOVrPHBDA" target="_blank" rel="noopener">10 秒钟给你的微信头像添加口罩</a></p>
-<p><a href="https://mp.weixin.qq.com/s/zAYcuNUemG2Hg7FBEXqSOw" target="_blank" rel="noopener">关注腾讯较真和微博辟谣，拒绝新型肺炎谣言</a></p>
-<p><a href="https://mp.weixin.qq.com/s/TCtJTkil1_erP_asWuw_EA" target="_blank" rel="noopener">春节假期在家无聊？来这里看看</a></p>
-<p><a href="https://mp.weixin.qq.com/s/s9fzlscCv3vez4y1r8571g" target="_blank" rel="noopener">用知识抗击疫情，机械工业/电子工业/清华大学等出版社免费开放电子书阅读</a></p>
-<p><a href="https://mp.weixin.qq.com/s/h4aQmzn62ZeNgdj8eUvIYw" target="_blank" rel="noopener">来看看你所在小区附近是否有新型肺炎疫情</a></p>
-<p><a href="https://mp.weixin.qq.com/s/FBjnGTQTLO3YbHvFvvvIqw" target="_blank" rel="noopener">那些有意思的网站（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/yYuS5_2obt50kH4yrLg1Jw" target="_blank" rel="noopener">身份证号码的秘密</a></p>
-<p><a href="https://mp.weixin.qq.com/s/jFCWs-3BPmaKKXa2DZPSog" target="_blank" rel="noopener">那些实用的 Chrome 扩展神器（三）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/bIE23HBq_sqvLkV18_BlbQ" target="_blank" rel="noopener">如何备份可能被删的公众号文章和网页</a></p>
-<p><a href="https://mp.weixin.qq.com/s/bGcMIz0dOoDe3quo5G0-Ug" target="_blank" rel="noopener">如何将视频轻松转换为 GIF</a></p>
-<p><a href="https://mp.weixin.qq.com/s/klBMLhsQXOEzsWA5a_rpIQ" target="_blank" rel="noopener">如何轻松的将文字转语音</a></p>
-<p><a href="https://mp.weixin.qq.com/s/c5QX2P_4sjl8TISzvsFtkg" target="_blank" rel="noopener">分析你的浏览器历史记录，看看你喜欢访问哪些网站</a></p>
-<p><a href="https://mp.weixin.qq.com/s/OCdvP4G4a2gauDUeRUKJyw" target="_blank" rel="noopener">你还没买到口罩吗？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/mPpRYbjfgpVqKcpFwnPYtA" target="_blank" rel="noopener">那些好玩的生成器网站（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/leF2Dn9XW6sIp1SkPBFthw" target="_blank" rel="noopener">搜不到你想看的书/音乐/电影？一个油猴脚本帮你搞定</a></p>
-<p><a href="https://mp.weixin.qq.com/s/VWPHowug-cFUgLLjzTzrmA" target="_blank" rel="noopener">–..—.–..-.-/-..–…-….–./——.-.-…-./-.-..–…..-.-</a></p>
-<p><a href="https://mp.weixin.qq.com/s/3rB23e9L55hDBaPLDu6WMg" target="_blank" rel="noopener">如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/-p-RZLh8ovNiCYv6YQkbrw" target="_blank" rel="noopener">那些你可能不知道的网络冷知识奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/svhB61sdvgt-epeC9MMFTw" target="_blank" rel="noopener">那些你可能用得上的在线办公神器</a></p>
-<p><a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/esUbhii_ZeruoYp06UMDiQ" target="_blank" rel="noopener">那些你可能用得上的在线办公神器（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/I3LR8ikHoX80WjaMCoMVlw" target="_blank" rel="noopener">bilibili(b站)升级到BV号了，还想用av号怎么办？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/4lumhFRxedfmnq2KLRkggA" target="_blank" rel="noopener">2020 年 3 月最新加速下载百度网盘文件方法</a></p>
-<p><a href="https://mp.weixin.qq.com/s/v9oHGz5GPoD0GLYaa80Hcg" target="_blank" rel="noopener">如何优雅的对网页截取长图</a></p>
-<p><a href="https://mp.weixin.qq.com/s/3av6Zq0S1youGtwL9jLoiQ" target="_blank" rel="noopener">2020 年 4 月 4 日,互联网集体变灰</a></p>
-<p><a href="https://mp.weixin.qq.com/s/WSSddtoCJkW9kJVwkGh0nQ" target="_blank" rel="noopener">不想下载那么多音乐软件？全网音乐在线听和下载</a></p>
-<p><a href="https://mp.weixin.qq.com/s/GCTF8ZJwoWHM919gDoblmg" target="_blank" rel="noopener">疫情下的新浪工作日常</a></p>
-<p>ps:由于现在公众号信息流乱序了，已经不按时间倒序来展示你关注的公众号更新，如果不想错过我的文章，麻烦将本公众号设置为星标，这样就不用在你关注的那么多公众号里翻了 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-83ad87d68fc63092.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新，欢迎加入"></p>
-<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/php-Elasticsearch记录/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/05/php-Elasticsearch记录/" itemprop="url">php Elasticsearch记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-05T15:11:33+08:00">
-                2020-06-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  311 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="built_in">require</span> <span class="string">"elasticsearch/elasticsearch:~5.0"</span></span><br><span class="line">根据安装的版本来安装 https:<span class="comment">//packagist.org/packages/elasticsearch/elasticsearch</span></span><br><span class="line">use Elasticsearch\ClientBuilder;</span><br><span class="line">$host = xxx;</span><br><span class="line">        $port = xxx;</span><br><span class="line">        $hosts  = [$host.<span class="string">':'</span>.$port];</span><br><span class="line">        $client = ClientBuilder::create()           <span class="comment">// 实例化 ClientBuilder</span></span><br><span class="line">        -&gt;setHosts($hosts)      <span class="comment">// 设置主机信息</span></span><br><span class="line">        -&gt;build();</span><br><span class="line">$params = [</span><br><span class="line">            <span class="string">'index'</span> =&gt; xxx,</span><br><span class="line">            <span class="string">'type'</span> =&gt; xxx,</span><br><span class="line">            <span class="string">'body'</span> =&gt; [</span><br><span class="line">                <span class="string">'query'</span> =&gt; [</span><br><span class="line">                    <span class="string">'bool'</span> =&gt; [</span><br><span class="line">                        <span class="string">'must'</span> =&gt; [</span><br><span class="line">                            <span class="comment">//['match'=&gt;['id'=&gt;274100]],</span></span><br><span class="line">                        ],</span><br><span class="line">                    ]</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">'sort'</span>=&gt; [<span class="string">'time'</span> =&gt; <span class="string">'desc'</span>],</span><br><span class="line">            ],</span><br><span class="line"></span><br><span class="line">            <span class="string">'size'</span>=&gt;<span class="number">100</span></span><br><span class="line">        ];</span><br><span class="line">查询所有</span><br><span class="line">$response = $client-&gt;search($params);</span><br><span class="line">took: <span class="number">2</span>,</span><br><span class="line">timed_out: <span class="literal">false</span>,</span><br><span class="line">_shards:- &#123;</span><br><span class="line">total: <span class="number">6</span>,</span><br><span class="line">successful: <span class="number">6</span>,</span><br><span class="line">failed: <span class="number">0</span></span><br><span class="line">&#125;,</span><br><span class="line">hits:- &#123;</span><br><span class="line">total: <span class="number">280015</span>,</span><br><span class="line">max_score: <span class="literal">null</span>,</span><br><span class="line">hits:- [</span><br><span class="line">-&#123;</span><br><span class="line">_index: <span class="string">"weibo"</span>,</span><br><span class="line">_type: <span class="string">"wb"</span>,</span><br><span class="line">_id: <span class="string">"2800"</span>,</span><br><span class="line">_score: <span class="literal">null</span>,</span><br><span class="line">_source:- &#123;</span><br><span class="line">id: <span class="number">2800</span>,</span><br><span class="line">mid: <span class="string">"451247565335367"</span>,</span><br><span class="line">is_top: <span class="number">0</span>,</span><br><span class="line">tags:[],</span><br><span class="line">time: <span class="string">"2020-06-05 15:18:16"</span></span><br><span class="line">&#125;,</span><br><span class="line">sort:- [</span><br><span class="line"><span class="number">1591370296000</span></span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line">$match = [];</span><br><span class="line">        $not = [];</span><br><span class="line">        <span class="keyword">if</span> ($params[<span class="string">'is_top'</span>])&#123;</span><br><span class="line">            $match[] = [<span class="string">'term'</span>=&gt;[<span class="string">'is_top'</span>=&gt;$params[<span class="string">'is_top'</span>]]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ($params[<span class="string">'tag'</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">                    $match[] = [<span class="string">'exists'</span>=&gt;[<span class="string">'field'</span>=&gt;<span class="string">'tags'</span>]];<span class="comment">//tags不为空</span></span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">if</span> ($params[<span class="string">'start_time'</span>] &amp;&amp; $params[<span class="string">'end_time'</span>] &amp;&amp; $params[<span class="string">'end_time'</span>] &gt; $params[<span class="string">'start_time'</span>])&#123;</span><br><span class="line">                    $match[] = [<span class="string">'range'</span>=&gt;[<span class="string">'wb_time'</span> =&gt; [<span class="string">'gte'</span>=&gt;$params[<span class="string">'start_time'</span>], <span class="string">'lte'</span>=&gt; $params[<span class="string">'end_time'</span>]]]];</span><br><span class="line">                &#125;</span><br><span class="line"><span class="keyword">if</span> ($params[<span class="string">'tag'</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">            $not[] = [<span class="string">'exists'</span>=&gt;[<span class="string">'field'</span>=&gt;<span class="string">'tags'</span>]];<span class="comment">//tags为空</span></span><br><span class="line">        &#125;</span><br><span class="line"> $must = [[<span class="string">'terms'</span>=&gt;[<span class="string">'is_top'</span>=&gt;<span class="number">1</span>]]];</span><br><span class="line">         <span class="keyword">if</span> ($match)&#123;</span><br><span class="line">             $must = array_merge($must,$match);</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span> ($params[<span class="string">'tags'</span>])&#123;</span><br><span class="line">             $must[] = [<span class="string">'query_string'</span>=&gt;[<span class="string">'fields'</span>=&gt;[<span class="string">'tags'</span>],<span class="string">'query'</span>=&gt;<span class="string">'*微博*'</span>]];<span class="comment">//like</span></span><br><span class="line">         &#125;</span><br><span class="line">         $search = [</span><br><span class="line">             <span class="string">'index'</span> =&gt; xxx,</span><br><span class="line">             <span class="string">'type'</span> =&gt; xxx,</span><br><span class="line">             <span class="string">'body'</span> =&gt; [</span><br><span class="line">                 <span class="string">'query'</span> =&gt; [</span><br><span class="line">                     <span class="string">'bool'</span> =&gt; [</span><br><span class="line">                        <span class="string">'must'</span> =&gt; $must,</span><br><span class="line">                         <span class="string">'must_not'</span>=&gt;$not,</span><br><span class="line">                     ],</span><br><span class="line">                 ],</span><br><span class="line">                 <span class="string">'sort'</span>=&gt; [<span class="string">'time'</span> =&gt; <span class="string">'desc'</span>]</span><br><span class="line">             ],</span><br><span class="line">             <span class="string">'from'</span>                          =&gt; <span class="number">1</span>,</span><br><span class="line">             <span class="string">'size'</span>                          =&gt; <span class="number">10</span>,</span><br><span class="line">         ];</span><br><span class="line">         $response = $client-&gt;search($search);</span><br></pre></td></tr></table></figure>
-<p><a href="https://learnku.com/articles/36224" target="_blank" rel="noopener">笔记二十：Query &amp; Filtering 与 多字符串多字段查询</a></p>
-<p><a href="http://doc.codingdict.com/elasticsearch/" target="_blank" rel="noopener">中文文档</a></p>
-<p><a href="https://flc.io/elasticsearch/simple/builder/#script" target="_blank" rel="noopener">PHP DSL 查修构造器扩展</a></p>
-<p><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/bulk.html" target="_blank" rel="noopener">Elasticsearch: 权威指南</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/请停用以开发者模式运行的扩展程序？搞定谷歌浏览器插件弹窗/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/29/请停用以开发者模式运行的扩展程序？搞定谷歌浏览器插件弹窗/" itemprop="url">请停用以开发者模式运行的扩展程序？搞定谷歌浏览器插件弹窗</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-29T19:58:46+08:00">
-                2020-05-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.1k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第137篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>关于谷歌浏览器之前写过很多实用扩展：</p>
-<p><a href="https://mp.weixin.qq.com/s/9XEABuraTAipZ_uZPDbQdQ" target="_blank" rel="noopener">那些我常用的 Chrome 扩展</a></p>
-<p><a href="https://mp.weixin.qq.com/s/PGAdM0sS9dHstkbP0tOq8g" target="_blank" rel="noopener">那些我常用的 Chrome 扩展（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/MXz_b5_81hH7o-TI4ud-gw" target="_blank" rel="noopener">那些我常用的 Chrome 扩展（三）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sUiNfFnen3Jx3HCKoqa0PQ" target="_blank" rel="noopener">那些实用的 Chrome 扩展神器</a></p>
-<p><a href="https://mp.weixin.qq.com/s/BN4TubzevMHTG2YAa2LzYA" target="_blank" rel="noopener">那些实用的 Chrome 扩展神器（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
-<p><a href="https://mp.weixin.qq.com/s/iluJYFYgT8bpMhrsxf0b5A" target="_blank" rel="noopener">Chrome 浏览器扩展神器暴力猴</a></p>
-<p><a href="https://mp.weixin.qq.com/s/KIXUAI_Zkz_jwJ9FgUMUoQ" target="_blank" rel="noopener">如何用 Chrome 扩展备份你的 QQ 空间相册</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sGToO710n2h5avFk8aRQEw" target="_blank" rel="noopener">想方便快捷的分享/收藏图片？试试免费好用的微博/b站图床</a></p>
-<p>也可以进入文章开头的专辑查看。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5924a55616db765c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>为什么我一直推荐使用谷歌浏览器呢，某些浏览器会自作主张封杀某些域名，还经常弹各种广告，当然更主要的是方便我使用谷歌搜索。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-22c1b33c4bd5b954.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>而且谷歌浏览器可以直接在 <a href="https://www.google.cn/chrome/" target="_blank" rel="noopener">https://www.google.cn/chrome/</a> 下载，还有很多谷歌产品在国内都可以直接打开，可以看看我之前的文章<a href="https://mp.weixin.qq.com/s/NYrs5cluZgjvm85MXmiaKA" target="_blank" rel="noopener">那些在国内还能使用的谷歌产品</a></p>
-<p>最新版<code>83.0.4103.61</code>还上线了标签页分组功能，如果你经常开很多标签不好找的话可以试试这个功能，可以将相同类型的标签放在同一标签组内，通过颜色名称来区分标签栏。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-fd5cf74f023f4885.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>起个名字叫谷歌。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-68e33f8df3554af8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果你升级到最新版还没这个功能，打开 chrome://flags/#tab-groups  更改为enabled，然后重启浏览器。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-504881d08f6d0b3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果你习惯用微软的浏览器，推荐使用最新版的 Microsoft Edge ，之前写过文章介绍  <a href="https://mp.weixin.qq.com/s/OhRMSWYcxojsuhgOgGyiRg" target="_blank" rel="noopener">微软全新浏览器 Microsoft Edge 比 谷歌 Chrome 好用吗？</a> ，现在它也学谷歌开发了在线游戏，直接打开 edge://surf/ 开始玩。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-50b3bcc1221cfc6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果你上不了谷歌，手动安装了扩展（参考之前的文章<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a>），每次打开浏览器都会有个弹窗，得手动关闭这个提示，很是烦人。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8f7d6c4936c9c2f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3d4977b064cb853e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>这里分享2个方法解决这个问题。</p>
-<h3 id="替换-chrome-dll"><a href="#替换-chrome-dll" class="headerlink" title="替换 chrome.dll"></a>替换 chrome.dll</h3><p>首先打开 chrome://settings/help 将谷歌浏览器升级到最新版 83.0.4103.61<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e73fb830c3994003.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>升级完需要重启浏览器。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-188376c3fff6a8d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>右键谷歌浏览器图标找到安装位置。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-27f874eab769667c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>进入目录 <code>C:\Program Files (x86)\Google\Chrome\Application\83.0.4103.61</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-23903cb0a6605507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>替换谷歌浏览器安装目录下的chrome.dll（公众号内回复 <code>谷歌</code> 获取）<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d17238e783dadfd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击继续，再次重启浏览器后就不再出现烦人的<code>请停用以开发者模式运行的扩展程序</code> 这个弹窗了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-7f04bfcf0f492965.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="弹窗广告拦截器"><a href="#弹窗广告拦截器" class="headerlink" title="弹窗广告拦截器"></a>弹窗广告拦截器</h3><p>如果你用的不是最新版谷歌浏览器，也不想升级，推荐这个可以媲美火绒的弹窗拦截工具<a href="http://www.360drm.com/files/adkiller.zip（公众号内回复" target="_blank" rel="noopener">www.360drm.com/files/adkiller.zip（公众号内回复</a> <code>谷歌</code> 获取 ），不用安装直接运行使用。<a href="https://www.zhihu.com/question/24265718/answer/27226434" target="_blank" rel="noopener">https://www.zhihu.com/question/24265718/answer/27226434</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-8fd1777efc97f0cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">。</p>
-<p>软件自带了一些弹窗广告拦截，都记录在文件 PublicData.txt<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">160707</span></span><br><span class="line">更新QQ手机版|TXGuiFoundation|<span class="number">333</span>*<span class="number">229</span>||<span class="number">0</span>|<span class="number">0</span>|<span class="number">12</span>|<span class="number">12</span></span><br><span class="line">百度商桥|bdim_skinedwnd|<span class="number">180</span>*<span class="number">115</span>||<span class="number">0</span>|<span class="number">0</span>|<span class="number">12</span>|<span class="number">12</span></span><br><span class="line">WPS 热点|#32770|1920*1080|wpscenter.exe|1|0|12|12</span><br><span class="line">WPS 通知|#32770|1920*1080|wpsnotify.exe|1|0|12|12</span><br></pre></td></tr></table></figure></p>
-<p>这里手动添加一个拦截。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-56234bb3b0285ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>点击拖动到谷歌浏览器弹窗的地方，软件会自动捕获信息上传。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-2f453718af7b22eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-17c5e3be08960fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>内容都自动填好了，确定即可。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-927cec9b60f8881d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后会在本地生成文件 PrivateData.txt<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">200527</span></span><br><span class="line">请停用以开发者模式运行的扩展程序|Chrome_WidgetWin_2|<span class="number">322</span>*<span class="number">172</span>|chrome.exe|<span class="number">1</span>|<span class="number">0</span>|<span class="number">12</span>|<span class="number">12</span></span><br></pre></td></tr></table></figure></p>
-<p>再次打开Chrome浏览器，可以看到那个弹窗被拦截了，再也看不见那个烦人的弹窗了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9e89f32d628d6296.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>推荐历史文章:</p>
-<p><a href="https://mp.weixin.qq.com/s/Xz1m-mqtCcBF_4hmGCpkUQ" target="_blank" rel="noopener">如何发一条空白的朋友圈</a></p>
-<p><a href="https://mp.weixin.qq.com/s/Lm4l_aPCSXymUGcqO_Yf3g" target="_blank" rel="noopener">2019 年公众号 苏生不惑 近百篇原创文章整理</a></p>
-<p><a href="https://mp.weixin.qq.com/s/0AJUFviGMYOMirdn1KDonA" target="_blank" rel="noopener">一个骚操作，公众号粉丝破10万！</a></p>
-<p><a href="https://mp.weixin.qq.com/s/PTRAREoFRfOJqOUlMCWhbQ" target="_blank" rel="noopener">微信撤回的消息也能看到！</a></p>
-<p><a href="https://mp.weixin.qq.com/s/i53iORP49o_4eRGGQEthsg" target="_blank" rel="noopener">如何找回bilibili(b站)收藏夹里失效的视频？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/a_lxHOQVA9RR_dYyzr56Gw" target="_blank" rel="noopener">如何更优雅地使用 bilibili(b站)</a></p>
-<p><a href="https://mp.weixin.qq.com/s/ksElusubk3s7dKtAqI4HKg" target="_blank" rel="noopener">如何更优雅地看电影/刷剧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/-p-RZLh8ovNiCYv6YQkbrw" target="_blank" rel="noopener">那些你可能不知道的网络冷知识奇技淫巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/0uOyrcz0KP-qZhCNNCELhw" target="_blank" rel="noopener">2020 最全百度网盘搜索，找电影资源不再愁</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
-<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2279,7 +2321,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">298</span>
+                  <span class="site-state-item-count">301</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2510,7 +2552,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共700.5k字</span>
+  <span class="post-count">博客全站共703k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");

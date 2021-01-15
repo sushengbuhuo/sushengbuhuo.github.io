@@ -285,6 +285,549 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/20/不用写代码，Chrome-扩展神器-web-scraper-抓取知乎热榜-话题-回答-专栏，豆瓣电影/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/20/不用写代码，Chrome-扩展神器-web-scraper-抓取知乎热榜-话题-回答-专栏，豆瓣电影/" itemprop="url">不用写代码，Chrome 扩展神器 web scraper 抓取知乎热榜/话题/回答/专栏，豆瓣电影</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-20T18:49:40+08:00">
+                2020-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第<code>195</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>之前分享过<a href="https://mp.weixin.qq.com/s/6UrMYkJoQGhNS_JvCZYwWA" target="_blank" rel="noopener">不会 Python 没关系，手把手教你用 web scraper 抓取豆瓣电影 top 250 和 b 站排行榜</a> ，后来我又玩了下，这个插件还是挺有意思的，所以通过抓取知乎和豆瓣再总结分享下。</p>
+<h3 id="知乎热榜"><a href="#知乎热榜" class="headerlink" title="知乎热榜"></a>知乎热榜</h3><p>知乎热榜地址 <a href="https://www.zhihu.com/hot" target="_blank" rel="noopener">https://www.zhihu.com/hot</a>  （其实知乎还有个单独的热榜页面<a href="https://www.zhihu.com/billboard" target="_blank" rel="noopener">https://www.zhihu.com/billboard</a> ），这里新增一个type <code>Element attribute</code> ，因为之前抓取豆瓣链接用的 link，它把文字也抓取了，而我们只要里面的href属性。</p>
+<p>同样的先创建一个element的容器。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-18e11ee17b7f2f13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>里面加4个选择器：知乎排名 ，知乎标题， 知乎链接 ，知乎热度 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5af1882718979e0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>预览下数据没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-24935e13fbd0455b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>开始抓取数据并导出CSV文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-cfbf4b54ee671e9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不过生成的CSV文件排序乱了  。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-09010d986c156d33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>在排序和筛选里按照排名重新排下就好了（如果需要更复杂的排序可以借助Python的pandas），看最后的结果。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-acc96121f9326100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不过有个问题，热榜里的广告 <a href="https://www.zhihu.com/xen/market/ecom-page/1305179157022478336" target="_blank" rel="noopener">https://www.zhihu.com/xen/market/ecom-page/1305179157022478336</a> 没有热度，所以结果为null。<br>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_hot"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://www.zhihu.com/hot"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"知乎排名"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.HotItem-rank"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎标题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">"h2"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">".HotItem-content a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎热度"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"内容容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.HotItem-metrics"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"内容容器"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElement"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"section"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-6813b967bbca7647.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="知乎回答"><a href="#知乎回答" class="headerlink" title="知乎回答"></a>知乎回答</h3><p>这里以知乎日报的回答为例<br><a href="https://www.zhihu.com/org/zhi-hu-ri-bao-51-41/answers" target="_blank" rel="noopener">https://www.zhihu.com/org/zhi-hu-ri-bao-51-41/answers</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3ab27631a502be51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>需要注意知乎的回答需要点击阅读全文才能完全展示。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5af6a554ed66b5d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>所以这里又增加个type <code>element click</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-af3c9b14782225a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>里面有4个选择器：问题标题，赞同数，阅读全文，回答内容，回答链接。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0e7d0a63274e249a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>看下抓取结果没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-331fa72ff0a9867e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_answer"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://www.zhihu.com/people/san-sheng-ruo-meng/answers"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"回答容器"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElement"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.List-item"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"问题标题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"[itemprop='zhihu:question'] a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"赞同数"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.VoteButton--up"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"阅读全文"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementClick"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>,<span class="string">"clickElementSelector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"clickType"</span>:<span class="string">"clickOnce"</span>,<span class="string">"discardInitialElements"</span>:<span class="string">"do-not-discard"</span>,<span class="string">"clickElementUniquenessType"</span>:<span class="string">"uniqueText"</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"回答内容"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.RichContent-inner"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"回答链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"回答容器"</span>],<span class="string">"selector"</span>:<span class="string">"[itemprop='zhihu:question'] a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="知乎专栏文章"><a href="#知乎专栏文章" class="headerlink" title="知乎专栏文章"></a>知乎专栏文章</h3><p>这里以另一面专栏为例 <a href="https://zhuanlan.zhihu.com/Wisdom" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/Wisdom</a>  ，由于文章是滚动式加载，因此增加type <code>Element scroll down</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-654a05c6a19f4544.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>里面有5个选择器：文章标题，阅读全文，文章内容，文章链接，文章赞数。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9ed9aa216b2e9768.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>抓取后页面会自动滚动加载，并且点击阅读全文展开内容。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a240067de240ef73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用，如果还想导出文章转PDF可以参考这个Python脚本 <a href="https://gitee.com/crossin/snippet/blob/master/get_zhihu/get_zhihu.py" target="_blank" rel="noopener">https://gitee.com/crossin/snippet/blob/master/get_zhihu/get_zhihu.py</a> 。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_zhuanlan"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://zhuanlan.zhihu.com/Wisdom"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"文章容器"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementScroll"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.css-8txec3"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章标题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">".ContentItem-title a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"阅读全文"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementClick"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>,<span class="string">"clickElementSelector"</span>:<span class="string">"button.ContentItem-more"</span>,<span class="string">"clickType"</span>:<span class="string">"clickOnce"</span>,<span class="string">"discardInitialElements"</span>:<span class="string">"do-not-discard"</span>,<span class="string">"clickElementUniquenessType"</span>:<span class="string">"uniqueHTMLText"</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章内容"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">"div.RichContent-inner"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">".ContentItem-title a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"文章赞数"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"文章容器"</span>],<span class="string">"selector"</span>:<span class="string">"button.VoteButton--up"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="知乎话题"><a href="#知乎话题" class="headerlink" title="知乎话题"></a>知乎话题</h3><p>这里以电影话题为例 <a href="https://www.zhihu.com/topic/19550429/top-answers" target="_blank" rel="noopener">https://www.zhihu.com/topic/19550429/top-answers</a> ，由于这个话题下回答太多，我们只取前50条，因此在元素后增加<code>-n+50</code> nth-of-type(-n+50) ，同样是滚动加载 <code>Element scroll down</code> 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a5ec4444493997fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>里面有3个选择器 ：知乎问题，回答人，赞同数 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ffc6aaf59aa5fe03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>需要注意title 不能直接用<code>[itemprop=&#39;zhihu:question&#39;] a</code> ，有些标题没有这个类，可以点击两次 P 键，匹配到标题的父标签 h2 或者 h2.ContentItem-title。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-99a6f666ac0e7096.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>看下抓取结果没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f2fc8c835cfeea69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"zhihu_topic"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://www.zhihu.com/topic/19550429/top-answers"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"topic"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementScroll"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.List-item:nth-of-type(-n+100)"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"知乎问题"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"topic"</span>],<span class="string">"selector"</span>:<span class="string">"h2"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"回答人"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"topic"</span>],<span class="string">"selector"</span>:<span class="string">".AuthorInfo-name div.Popover"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"赞同数"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"topic"</span>],<span class="string">"selector"</span>:<span class="string">"button.VoteButton--up"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="微博转发"><a href="#微博转发" class="headerlink" title="微博转发"></a>微博转发</h3><p>这里以李健的这条微博转发为例 <a href="https://weibo.com/1744395855/JpvzPo9Rx?type=repost" target="_blank" rel="noopener">https://weibo.com/1744395855/JpvzPo9Rx?type=repost</a> ，翻页的type为 <code>element click</code> ，这种翻页页面不会刷新。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-28429c28ba30a4ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p> 里面有3个选择器：微博昵称，微博评论，评论时间。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c4bee952b8316839.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>看下抓取结果没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-930df52bd087cb56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-bac91764a2bd27c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"weibo"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://weibo.com/1744395855/JpvzPo9Rx?type=repost"</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"content"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementClick"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>],<span class="string">"selector"</span>:<span class="string">"div.list_li"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">2000</span>,<span class="string">"clickElementSelector"</span>:<span class="string">"a.page[action-data]"</span>,<span class="string">"clickType"</span>:<span class="string">"clickOnce"</span>,<span class="string">"discardInitialElements"</span>:<span class="string">"do-not-discard"</span>,<span class="string">"clickElementUniquenessType"</span>:<span class="string">"uniqueText"</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"微博昵称"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"content"</span>],<span class="string">"selector"</span>:<span class="string">".WB_text a[usercard]"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"微博评论"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"content"</span>],<span class="string">"selector"</span>:<span class="string">".WB_text span"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"评论时间"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"content"</span>],<span class="string">"selector"</span>:<span class="string">".WB_from a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="豆瓣电影"><a href="#豆瓣电影" class="headerlink" title="豆瓣电影"></a>豆瓣电影</h3><p>之前文章抓取豆瓣电影是通过URL分页来抓取 <a href="https://movie.douban.com/top250?start=[0-250:25]&amp;filter=" target="_blank" rel="noopener">https://movie.douban.com/top250?start=[0-250:25]&amp;filter=</a>  ，这里通过点击下一页来抓取，新增type 为 <code>link</code> ，它有两个父节点：_root 和自己（按 shift 可以多选）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9d8e78ed05fc62a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>结构图如下：<br><img src="https://upload-images.jianshu.io/upload_images/23152173-af79a3c10e1e4c1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>电影元素里有5个选择器：电影名称，电影排名，电影简介，豆瓣评分，豆瓣链接。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1ca3b589518541d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>抓取结果也很完美。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-263856e78477e958.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>为了方便大家学习抓取，我导出了sitemap，你可以直接导入使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"_id"</span>:<span class="string">"douban_movies"</span>,<span class="string">"startUrl"</span>:[<span class="string">"https://movie.douban.com/top250?start=0&amp;filter="</span>],<span class="string">"selectors"</span>:[&#123;<span class="string">"id"</span>:<span class="string">"下一页"</span>,<span class="string">"type"</span>:<span class="string">"SelectorLink"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>,<span class="string">"下一页"</span>],<span class="string">"selector"</span>:<span class="string">".next a"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影元素"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElement"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"_root"</span>,<span class="string">"下一页"</span>],<span class="string">"selector"</span>:<span class="string">".grid_view li"</span>,<span class="string">"multiple"</span>:<span class="literal">true</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影名称"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"span.title:nth-of-type(1)"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影排名"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"em"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"电影简介"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"span.inq"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"豆瓣评分"</span>,<span class="string">"type"</span>:<span class="string">"SelectorText"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"span.rating_num"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"regex"</span>:<span class="string">""</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;,&#123;<span class="string">"id"</span>:<span class="string">"豆瓣链接"</span>,<span class="string">"type"</span>:<span class="string">"SelectorElementAttribute"</span>,<span class="string">"parentSelectors"</span>:[<span class="string">"电影元素"</span>],<span class="string">"selector"</span>:<span class="string">"div.hd a"</span>,<span class="string">"multiple"</span>:<span class="literal">false</span>,<span class="string">"extractAttribute"</span>:<span class="string">"href"</span>,<span class="string">"delay"</span>:<span class="number">0</span>&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过这次新增的几个type ：<code>Element attribute</code> ， <code>element click</code> ，<code>Element scroll down</code>， <code>link</code>，以及 nth-of-type(-n+50) 应该可以完成大部分网站的数据抓取。</p>
+<p>最近文章：</p>
+<p><a href="https://mp.weixin.qq.com/s/n9ddxx6Zu5hC7cqEXRnMOg" target="_blank" rel="noopener">视频下载神器：支持腾讯/优酷/爱奇艺/b站/微博等全网视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j88qrbHF9k-h7zrgfD87iw" target="_blank" rel="noopener">良心整理：PDF工具合集</a></p>
+<p><a href="https://mp.weixin.qq.com/s/pt0hCthceThMZVU0Ht89AA" target="_blank" rel="noopener">2020 最全电子书搜索网站，找电子书不再愁</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Agh5EAgkd6__jq3J6CCNlA" target="_blank" rel="noopener">b 站账号快速升级到 Lv6：每天自动签到，观看，分享，投币视频 </a></p>
+<p><a href="https://mp.weixin.qq.com/s/Zjhap47PGpIhQi79gkekCg" target="_blank" rel="noopener">集赞生成器：朋友圈集赞不求人</a></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/20/视频下载神器：支持腾讯-优酷-爱奇艺-b站-微博等全网视频/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/20/视频下载神器：支持腾讯-优酷-爱奇艺-b站-微博等全网视频/" itemprop="url">视频下载神器：支持腾讯/优酷/爱奇艺/b站/微博等全网视频</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-20T18:45:32+08:00">
+                2020-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第<code>194</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>虽然大部分视频网站都提供视频下载/缓存功能，但有些下载的视频只能用指定播放器来播放，而且为了下载视频都要安装他们的工具太麻烦了，如果有一个通用下载工具就方便了，这里推荐几个视频下载神器，支持腾讯/优酷/爱奇艺/b站/微博等全网视频。</p>
+<h3 id="命令行下载工具"><a href="#命令行下载工具" class="headerlink" title="命令行下载工具"></a>命令行下载工具</h3><p>命令行下载工具有 youtube-dl，you-get ，ykdl ，annie  4个。</p>
+<p>youtube-dl 是一款基于Python的网络视频命令行下载工具 <a href="https://github.com/ytdl-org/youtube-dl" target="_blank" rel="noopener">https://github.com/ytdl-org/youtube-dl</a> ，最初旨在从Youtube上下载视频，现在也支持其它网站了，先安装好Python再命令行中用<code>pip install -U youtube-dl</code>来安装它 ，我用的命令行工具是cmder。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">λ  pip install -U youtube-dl</span><br><span class="line">Collecting youtube-dl</span><br><span class="line">  Downloading https:<span class="comment">//files.pythonhosted.org/packages/89/5e/78523cb106c93370941b5fdd7e6dab58d66d762a1d7fd914eeff8ba2fb03/youtube_dl-2020.11.1.1-py2.py3-none-any.whl (1.8MB)</span></span><br><span class="line">     |████████████████████████████████| <span class="number">1.8</span>MB <span class="number">1.3</span>MB/s</span><br><span class="line">Installing collected packages: youtube-dl</span><br><span class="line">  Found existing installation: youtube-dl <span class="number">2018.10</span><span class="number">.5</span></span><br><span class="line">    Uninstalling youtube-dl<span class="number">-2018.10</span><span class="number">.5</span>:</span><br><span class="line">      Successfully uninstalled youtube-dl<span class="number">-2018.10</span><span class="number">.5</span></span><br><span class="line">Successfully installed youtube-dl<span class="number">-2020.11</span><span class="number">.1</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+<p>前段时间由于某些原因被下架了，于是有了镜像工具 youtube-dlc <a href="https://github.com/blackjack4494/yt-dlc" target="_blank" rel="noopener">https://github.com/blackjack4494/yt-dlc</a> ，还好现在恢复了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">λ pip install --upgrade youtube-dlc</span><br><span class="line">Collecting youtube-dlc</span><br><span class="line">  Downloading https:<span class="comment">//files.pythonhosted.org/packages/3c/a7/6b6b681766b3786273f0c52f34fb2537c0eae51d817476a7bee18d0f3bc4/youtube_dlc-2020.11.7-py2.py3-none-any.whl (1.8MB)</span></span><br><span class="line">     |████████████████████████████████| <span class="number">1.8</span>MB <span class="number">364</span>kB/s</span><br><span class="line">Installing collected packages: youtube-dlc</span><br><span class="line">Successfully installed youtube-dlc<span class="number">-2020.11</span><span class="number">.7</span></span><br><span class="line"></span><br><span class="line">λ youtube-dlc   https:<span class="comment">//www.bilibili.com/video/BV1dD4y197fH</span></span><br><span class="line">[BiliBili] <span class="number">1</span>dD4y197fH: Downloading webpage</span><br><span class="line">[BiliBili] <span class="number">1</span>dD4y197fH: Downloading video info page</span><br><span class="line">[download] Destination: 活动作品十一月听什么？当然是《十一月的嚣张》！<span class="number">-1</span>dD4y197fH.flv</span><br><span class="line">[download] <span class="number">100</span>% <span class="keyword">of</span> <span class="number">171.93</span>MiB <span class="keyword">in</span> <span class="number">03</span>:<span class="number">36</span></span><br></pre></td></tr></table></figure></p>
+<p><code>youtube-dlc   https://www.bilibili.com/video/BV1dD4y197fH</code>很快就下载好了一个b站视频 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-cfc97daff9399c27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>用QQ影音播放器就能播放。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1ef3fbe468005f4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>you-get 也是基于Python的命令行工具 <a href="https://github.com/soimort/you-get" target="_blank" rel="noopener">https://github.com/soimort/you-get</a>  ，直接使用 <code>pip install you-get</code> 来安装。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-043c59988597f0ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>使用 <code>you-get --format=flv360 https://www.bilibili.com/video/BV1dD4y197fH</code>下载 360p格式的视频。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">λ you-get --format=flv360 https:<span class="comment">//www.bilibili.com/video/BV1dD4y197fH</span></span><br><span class="line">site:                Bilibili</span><br><span class="line">title:               十一月听什么？当然是《十一月的嚣张》！</span><br><span class="line">stream:</span><br><span class="line">    - format:        flv360</span><br><span class="line">      container:     flv</span><br><span class="line">      quality:       流畅 <span class="number">360</span>P</span><br><span class="line">      size:          <span class="number">27.4</span> MiB (<span class="number">28742996</span> bytes)</span><br><span class="line">    # download-with: you-get --format=flv360 [URL]</span><br><span class="line"></span><br><span class="line">Downloading 十一月听什么？当然是《十一月的嚣张》！.flv ...</span><br><span class="line"> <span class="number">100</span>% ( <span class="number">27.4</span>/ <span class="number">27.4</span>MB) ├████████████████████████████████████████┤[<span class="number">1</span>/<span class="number">1</span>]  <span class="number">166</span> kB/s</span><br><span class="line"></span><br><span class="line">Downloading 十一月听什么？当然是《十一月的嚣张》！.cmt.xml ...</span><br></pre></td></tr></table></figure></p>
+<p>连弹幕也下载好了，可以用文本编辑器打开。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b5c6c368a65267b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>ykdl是基于you-get的命令行下载工具，支持Python2和更多国内视频网站  <a href="https://github.com/zhangn1985/ykdl，" target="_blank" rel="noopener">https://github.com/zhangn1985/ykdl，</a> 使用<code>pip install ykdl</code>安装它。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a7bee1b258c54f79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>使用<code>ykdl --format=SD https://www.bilibili.com/video/BV1dD4y197fH</code> 下载360p格式视频。<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">λ ykdl --format=SD https:<span class="comment">//www.bilibili.com/video/BV1dD4y197fH</span></span><br><span class="line">site:                哔哩哔哩 (Bilibili)</span><br><span class="line">title:               十一月听什么？当然是《十一月的嚣张》！ - 十一月的肖邦十五周年-muxed</span><br><span class="line">artist:              zyl2012</span><br><span class="line">streams:</span><br><span class="line">    - format:        SD</span><br><span class="line">      container:     mp4</span><br><span class="line">      video-profile: 流畅 <span class="number">360</span>P</span><br><span class="line">      size:          <span class="number">27.4</span> MiB (<span class="number">28742996</span> bytes)</span><br><span class="line">    # download-with: ykdl --format=SD [URL]</span><br><span class="line">Download: 十一月听什么？当然是《十一月的嚣张》！ - 十一月的肖邦十五周年-muxed_SD</span><br><span class="line"> <span class="number">100</span>%</span><br></pre></td></tr></table></figure></p>
+<p>最后一个是 annie   <a href="https://github.com/iawia002/annie" target="_blank" rel="noopener">https://github.com/iawia002/annie</a> ，它是基于golang开发的命令行工具，使用 <code>go get github.com/iawia002/annie</code> 来安装它，如果没有go环境可以下载提供的可执行文件 <a href="https://wwx.lanzoux.com/iIB1Rgf90uf" target="_blank" rel="noopener">https://wwx.lanzoux.com/iIB1Rgf90uf</a> ，然后配置下环境变量。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6deab4cb1a5627ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>它支持的视频网站有抖音，b站，优酷，YouTube，爱奇艺，芒果，微博，腾讯视频，网易云音乐，好看视频等。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ec4c8eeb142f9e24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p> <code>annie -i https://v.youku.com/v_show/id_XMjg5MDQxOTc2MA==.html</code>查看优酷视频信息。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">annie -i https:<span class="comment">//v.youku.com/v_show/id_XMjg5MDQxOTc2MA==.html</span></span><br><span class="line"></span><br><span class="line"> Site:      优酷 youku.com</span><br><span class="line"> Title:     周杰伦电影《不能说的秘密》你看过吗? 是杰迷都会唱这首歌吧</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [flvhd]  -------------------</span><br><span class="line">     Quality:         flvhd <span class="number">640</span>x360</span><br><span class="line">     Size:            <span class="number">9.24</span> MiB (<span class="number">9693070</span> Bytes)</span><br><span class="line">     # download with: annie -f flvhd ...</span><br><span class="line"></span><br><span class="line">     [<span class="number">3</span>gphd]  -------------------</span><br><span class="line">     Quality:         <span class="number">3</span>gphd <span class="number">480</span>x268</span><br><span class="line">     Size:            <span class="number">6.93</span> MiB (<span class="number">7268066</span> Bytes)</span><br><span class="line">     # download with: annie -f 3gphd ...</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-e871a9effb943e95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><code>annie -i https://www.iqiyi.com/w_19rwc42eht.html</code>查看爱奇艺视频信息。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">annie -i https:<span class="comment">//www.iqiyi.com/w_19rwc42eht.html</span></span><br><span class="line"></span><br><span class="line">Site:      爱奇艺 iqiyi.com</span><br><span class="line">Title:     几分钟看完周杰伦巅峰爱情电影《不能说的秘密》-电影-完整版视频在线观看-爱奇艺</span><br><span class="line">Type:      video</span><br><span class="line">Streams:   # All available quality</span><br><span class="line">    [<span class="number">5</span>]  -------------------</span><br><span class="line">    Quality:         <span class="number">1920</span>x1080</span><br><span class="line">    Size:            <span class="number">35.51</span> MiB (<span class="number">37234397</span> Bytes)</span><br><span class="line">    # download with: annie -f 5 ...</span><br><span class="line"></span><br><span class="line">    [<span class="number">4</span>]  -------------------</span><br><span class="line">    Quality:         <span class="number">1920</span>x1080</span><br><span class="line">    Size:            <span class="number">24.04</span> MiB (<span class="number">25207170</span> Bytes)</span><br><span class="line">    # download with: annie -f 4 ...</span><br><span class="line"></span><br><span class="line">    [<span class="number">2</span>]  -------------------</span><br><span class="line">    Quality:         <span class="number">1920</span>x1080</span><br><span class="line">    Size:            <span class="number">16.17</span> MiB (<span class="number">16958163</span> Bytes)</span><br><span class="line">    # download with: annie -f 2 ...</span><br><span class="line"></span><br><span class="line">    [<span class="number">1</span>]  -------------------</span><br><span class="line">    Quality:         <span class="number">1920</span>x1080</span><br><span class="line">    Size:            <span class="number">8.30</span> MiB (<span class="number">8704998</span> Bytes)</span><br><span class="line">    # download with: annie -f 1 ...</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-e4e4dd37b45bec39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><code>annie -i https://v.qq.com/x/cover/mzc00200vvfld1j/q0034sb9eru.html</code>查看腾讯视频信息。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">annie -i https:<span class="comment">//v.qq.com/x/cover/mzc00200vvfld1j/q0034sb9eru.html</span></span><br><span class="line"></span><br><span class="line">Site:      腾讯视频 v.qq.com</span><br><span class="line">Title:     周杰伦《Mojito》MV首播，一起恋上古巴的微醺浪漫</span><br><span class="line">Type:      video</span><br><span class="line">Streams:   # All available quality</span><br><span class="line">    [fhd]  -------------------</span><br><span class="line">    Quality:         蓝光;(<span class="number">1080</span>P)</span><br><span class="line">    Size:            <span class="number">66.57</span> MiB (<span class="number">69801700</span> Bytes)</span><br><span class="line">    # download with: annie -f fhd ...</span><br><span class="line"></span><br><span class="line">    [shd]  -------------------</span><br><span class="line">    Quality:         超清;(<span class="number">720</span>P)</span><br><span class="line">    Size:            <span class="number">43.26</span> MiB (<span class="number">45358921</span> Bytes)</span><br><span class="line">    # download with: annie -f shd ...</span><br><span class="line"></span><br><span class="line">    [hd]  -------------------</span><br><span class="line">    Quality:         高清;(<span class="number">480</span>P)</span><br><span class="line">    Size:            <span class="number">20.86</span> MiB (<span class="number">21873015</span> Bytes)</span><br><span class="line">    # download with: annie -f hd ...</span><br><span class="line"></span><br><span class="line">    [sd]  -------------------</span><br><span class="line">    Quality:         标清;(<span class="number">270</span>P)</span><br><span class="line">    Size:            <span class="number">9.11</span> MiB (<span class="number">9554586</span> Bytes)</span><br><span class="line">    # download with: annie -f sd ...</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-d0f5cfaec0695a7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><code>annie -i https://www.bilibili.com/video/BV1dD4y197fH</code> 查看b站视频信息，其余视频网站就不一一演示了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">annie -i https:<span class="comment">//www.bilibili.com/video/BV1dD4y197fH</span></span><br><span class="line"></span><br><span class="line"> Site:      哔哩哔哩 bilibili.com</span><br><span class="line"> Title:     活动作品十一月听什么？当然是《十一月的嚣张》！</span><br><span class="line"> Type:      video</span><br><span class="line"> Streams:   # All available quality</span><br><span class="line">     [<span class="number">80</span>]  -------------------</span><br><span class="line">     Quality:         高清 <span class="number">1080</span>P</span><br><span class="line">     Size:            <span class="number">159.23</span> MiB (<span class="number">166964530</span> Bytes)</span><br><span class="line">     # download with: annie -f 80 ...</span><br><span class="line"></span><br><span class="line">     [<span class="number">64</span>]  -------------------</span><br><span class="line">     Quality:         高清 <span class="number">720</span>P</span><br><span class="line">     Size:            <span class="number">109.15</span> MiB (<span class="number">114453468</span> Bytes)</span><br><span class="line">     # download with: annie -f 64 ...</span><br><span class="line"></span><br><span class="line">     [<span class="number">32</span>]  -------------------</span><br><span class="line">     Quality:         清晰 <span class="number">480</span>P</span><br><span class="line">     Size:            <span class="number">54.01</span> MiB (<span class="number">56629359</span> Bytes)</span><br><span class="line">     # download with: annie -f 32 ...</span><br><span class="line"></span><br><span class="line">     [<span class="number">16</span>]  -------------------</span><br><span class="line">     Quality:         流畅 <span class="number">360</span>P</span><br><span class="line">     Size:            <span class="number">22.41</span> MiB (<span class="number">23495541</span> Bytes)</span><br><span class="line">     # download with: annie -f 16 ...</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">![image.png](https://upload-images.jianshu.io/upload_images/23152173-114bbd516d0eac87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">使用 `</span> annie -f <span class="number">16</span> https:<span class="comment">//www.bilibili.com/video/BV1dD4y197fH` 下载b站视频，如果需要登录账号权限下载可以加入cookie下载 `annie -c cookies.txt https://www.bilibili.com/video/BV1dD4y197fH` 。</span></span><br><span class="line"><span class="string">``</span><span class="string">`js</span></span><br><span class="line"><span class="string"> annie -f 16 https://www.bilibili.com/video/BV1dD4y197fH</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> Site:      哔哩哔哩 bilibili.com</span></span><br><span class="line"><span class="string"> Title:     活动作品十一月听什么？当然是《十一月的嚣张》！</span></span><br><span class="line"><span class="string"> Type:      video</span></span><br><span class="line"><span class="string"> Stream:</span></span><br><span class="line"><span class="string">     [16]  -------------------</span></span><br><span class="line"><span class="string">     Quality:         流畅 360P</span></span><br><span class="line"><span class="string">     Size:            22.41 MiB (23495541 Bytes)</span></span><br><span class="line"><span class="string">     # download with: annie -f 16 ...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 22.41 MiB / 22.41 MiB [==================================================================] 100.00% 5.21 MiB/s 4s Merging video parts into 活动作品十一月听什么？当然是《十一月的嚣张》！.mp4</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-a307ac5f401648fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>上面4个命令行工具也不用都下载，有人开发了集合 annie/ykdl/youtube-dl/you-get 的组件 AYY-VideoDown 。</p>
+<h3 id="AYY-VideoDown"><a href="#AYY-VideoDown" class="headerlink" title="AYY-VideoDown"></a>AYY-VideoDown</h3><p> 这个工具集合了 annie/ykdl/youtube-dl/you-get 四大网络视频下载工具（公众号后台回复 <code>视频</code> 获取），其中annie 默认安装了可以直接使用，其余3个自行选择安装。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-60a422a786e5715b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果不会用命令行下载还有基于you-get的界面版软件vdl。</p>
+<h3 id="vdl"><a href="#vdl" class="headerlink" title="vdl"></a>vdl</h3><p> vdl是基于you-get的界面版软件<br>， 比如下载腾讯视频周杰伦的《Mojito》  <a href="https://v.qq.com/x/cover/mzc00200vvfld1j/q0034sb9eru.html" target="_blank" rel="noopener">https://v.qq.com/x/cover/mzc00200vvfld1j/q0034sb9eru.html</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-b0534653a0d16abc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>下载爱奇艺视频 <a href="https://www.iqiyi.com/w_19rwc42eht.html" target="_blank" rel="noopener">https://www.iqiyi.com/w_19rwc42eht.html</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-db16e71fb9192b1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>b站视频地址可以选择分p下载。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bdfee9a3274e7277.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-b6e48a8ccf81f2ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>对于不在上面命令行工具支持列表的网站可以使用 idm和 m3u8 工具来下载，比如知乎视频就可以idm直接下载。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-06363a8e49deb848.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>m3u8格式的视频就不能用idm了，推荐这个工具 <a href="https://github.com/nilaoda/N_m3u8DL-CLI" target="_blank" rel="noopener">https://github.com/nilaoda/N_m3u8DL-CLI</a>  <a href="https://wwx.lanzoux.com/ifAYJiitxve" target="_blank" rel="noopener">https://wwx.lanzoux.com/ifAYJiitxve</a></p>
+<p>比如获取腾讯视频 <a href="https://v.qq.com/x/cover/mzc00200vvfld1j/q0034sb9eru.html" target="_blank" rel="noopener">https://v.qq.com/x/cover/mzc00200vvfld1j/q0034sb9eru.html</a> 的 m3u8地址 <a href="https://defaultts.tc.qq.com/defaultts.tc.qq.com/AKXSNi8x6hxiqLy-vm5AhWV9dq_L7hIdRXtTnmcYBkxY/uwMROfz2r5zCIaQXGdGnC2df644Q3LWUuLvyGY4RMhgE_3T2/-rp2e6W0VzJkbiX70R_4tK0WBrq2oF8s0TX0tN7CiYWIdFMYUuoiAmTSKC-jJIFoIORa7HycZryWuVHPDq4OnGJezgtfLIq1e54A2xTzpMqrqV0r0P1Xv_MtU2uqIye8MNTKoggXqUhNZkQlCt0I8a93zk9QUHGLe1x1BqGapxY/q0034sb9eru.321002.ts.m3u8?ver=4" target="_blank" rel="noopener">https://defaultts.tc.qq.com/defaultts.tc.qq.com/AKXSNi8x6hxiqLy-vm5AhWV9dq_L7hIdRXtTnmcYBkxY/uwMROfz2r5zCIaQXGdGnC2df644Q3LWUuLvyGY4RMhgE_3T2/-rp2e6W0VzJkbiX70R_4tK0WBrq2oF8s0TX0tN7CiYWIdFMYUuoiAmTSKC-jJIFoIORa7HycZryWuVHPDq4OnGJezgtfLIq1e54A2xTzpMqrqV0r0P1Xv_MtU2uqIye8MNTKoggXqUhNZkQlCt0I8a93zk9QUHGLe1x1BqGapxY/q0034sb9eru.321002.ts.m3u8?ver=4</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f60378bdfae62307.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入获取的m3u8地址直接下载。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-61f4db78becd685e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>很快下载好了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-abdd076fcfb151c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>另外如果想批量下载b站up主视频推荐这个 b站下载工具 ，之前文章 <a href="https://mp.weixin.qq.com/s/a_lxHOQVA9RR_dYyzr56Gw" target="_blank" rel="noopener">如何更优雅地使用 bilibili(b站)</a> 介绍过，比如输入李永乐老师<a href="https://space.bilibili.com/9458053/" target="_blank" rel="noopener">https://space.bilibili.com/9458053/</a> 的uid，共352个视频。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9805074e4906235d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下载速度还是很快的。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1c8b9d982b2d48b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有下载抖音博主的视频 <a href="https://v.douyin.com/JkaaoTH/" target="_blank" rel="noopener">https://v.douyin.com/JkaaoTH/</a> ，之前文章<a href="https://mp.weixin.qq.com/s/UhLx4cjkfNVsdUyod7te0g" target="_blank" rel="noopener">一键批量下载抖音无水印视频</a> 也介绍过了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b98bcfb40e27c605.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果要下载MOOC大学的视频见之前文章<a href="https://mp.weixin.qq.com/s/jBqtpcGIW40dUjpuGIzDWQ" target="_blank" rel="noopener">一键下载中国大学/网易云课堂/慕课网等课程视频和课件</a></p>
+<p>最后分享个油猴脚本（公众号后台回复 <code>视频</code> 获取），可以去除腾讯，优酷，爱奇艺视频上的logo图标，之前文章 <a href="https://mp.weixin.qq.com/s/ksElusubk3s7dKtAqI4HKg" target="_blank" rel="noopener">如何更优雅地看电影/刷剧</a> 也介绍过，谷歌浏览器安装油猴Chrome扩展 <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN</a> 后直接导入脚本文件。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-8a88feae6b3f43da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>安装脚本前。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b5759ac3cdf02743.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>安装脚本后爱奇艺logo不见了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ecb58c61d932952c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/20/那些有趣的网站系列（七）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/20/那些有趣的网站系列（七）/" itemprop="url">那些有趣的网站系列（七）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-20T18:44:24+08:00">
+                2020-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  663 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第193篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>之前分享过有趣的网站有：</p>
+<p> <a href="https://mp.weixin.qq.com/s/ThUw9i43paFhXfPxF8mvyQ" target="_blank" rel="noopener">那些有趣的网站</a> </p>
+<p><a href="https://mp.weixin.qq.com/s/wTgYpovJrJh8_Zj1h6EbzA" target="_blank" rel="noopener">那些有趣的网站（二）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/GgNmAY0LUHES3z2IB_5QkQ" target="_blank" rel="noopener">那些有趣的网站系列（三）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/seFzUO4MVcNw8kkXTufMtA" target="_blank" rel="noopener">那些有趣的网站系列（四）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qi2tOWHtWeqRjKE6cybLJA" target="_blank" rel="noopener">那些有趣的网站系列（五）</a>  </p>
+<p><a href="https://mp.weixin.qq.com/s/J5WX6Ns9kDECnRyDdJodDw" target="_blank" rel="noopener">那些有趣的网站系列（六）</a></p>
+<p>这是系列第7篇。</p>
+<h3 id="世界语言发音"><a href="#世界语言发音" class="headerlink" title="世界语言发音"></a>世界语言发音</h3><p><a href="https://zh.forvo.com/" target="_blank" rel="noopener">https://zh.forvo.com/</a>  这个网站可以交流世界上各种语言的发音，问某个词怎么发音，而且还有各种方言，沪语粤语胶辽官话，比如听听各地方言怎么说吃饭这个词的。 </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-caaf603ce29e7f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="押韵精灵"><a href="#押韵精灵" class="headerlink" title="押韵精灵"></a>押韵精灵</h3><p> <a href="http://www.cnh5.net/" target="_blank" rel="noopener">http://www.cnh5.net/</a>  在线押韵工具,支持单双三四押,大幅提高文案、诗词、金句、Rap创作效率的押韵神器。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-52f088255eeba849.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>测试下效果<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2755125eb9798fab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>类似的网站有押韵助手<a href="https://yayun.la/" target="_blank" rel="noopener">https://yayun.la/</a> ，如果想查古诗词可以看看这些网站 <a href="https://www.xungushici.com/" target="_blank" rel="noopener">https://www.xungushici.com/</a> ,<a href="https://www.gushiwen.org/" target="_blank" rel="noopener">https://www.gushiwen.org/</a> ,<a href="https://meirishici.com/" target="_blank" rel="noopener">https://meirishici.com/</a> , <a href="http://bsw.unclear.top/" target="_blank" rel="noopener">http://bsw.unclear.top/</a>, <a href="https://1saying.com/" target="_blank" rel="noopener">https://1saying.com/</a></p>
+<h3 id="微博历史热搜"><a href="#微博历史热搜" class="headerlink" title="微博历史热搜"></a>微博历史热搜</h3><p><a href="https://weibo.zhaoyizhe.com/" target="_blank" rel="noopener">https://weibo.zhaoyizhe.com/</a> ，可以根据日期搜索当天的微博热搜。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bd989f2a10a95235.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>ps:微博发布了新版，如果不想开会员使用可以访问接口<a href="https://weibo.com/ajax/changeversion?status=7" target="_blank" rel="noopener">https://weibo.com/ajax/changeversion?status=7</a> ，想回退访问<a href="https://weibo.com/ajax/changeversion?status=6" target="_blank" rel="noopener">https://weibo.com/ajax/changeversion?status=6</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3b264e2e22f5d5e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>另外还有个github项目会自动记录知乎每天的热榜数据 <a href="https://github.com/crosslife/ZhihuHot" target="_blank" rel="noopener">https://github.com/crosslife/ZhihuHot</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-9d825a95fcca0cd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="日历计划表"><a href="#日历计划表" class="headerlink" title="日历计划表"></a>日历计划表</h3><p><a href="https://www.calendarpedia.com/" target="_blank" rel="noopener">https://www.calendarpedia.com/</a> 自己动手做年历、月历、周历或日历计划表，日历款式Word、Excel和 Pdf 三种文件格式可供选择，还有横版和竖版，可以免费下载和打印。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-57fc149c74cd336a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="淘宝评论生成器"><a href="#淘宝评论生成器" class="headerlink" title="淘宝评论生成器"></a>淘宝评论生成器</h3><p><a href="https://haoduck.com/demo/tbpl.html" target="_blank" rel="noopener">https://haoduck.com/demo/tbpl.html</a>  ，比如生成关于电脑的淘宝评论 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-dbf1f83c2db4d864.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="emoji大全"><a href="#emoji大全" class="headerlink" title="emoji大全"></a>emoji大全</h3><p><a href="https://emojidaquan.com/" target="_blank" rel="noopener">https://emojidaquan.com/</a> 一个搜集和整理emoji的网站，可以快速、方便地查找、复制各大平台的emoji表情，同时还可以查看emoji表情的定义、使用方法、使用平台以及一些有趣的玩法。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-7576456b99528818.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>类似的还有<a href="https://emojiwiz.com/zh/" target="_blank" rel="noopener">https://emojiwiz.com/zh/</a>  ，<a href="https://emoji.ohou.ga/" target="_blank" rel="noopener">https://emoji.ohou.ga/</a> </p>
+<h3 id="文件分享"><a href="#文件分享" class="headerlink" title="文件分享"></a>文件分享</h3><p><a href="https://airsend.cn/" target="_blank" rel="noopener">https://airsend.cn/</a> 一个基于 P2P 的文件分享服务 ，允许你在不同网络中的设备之间共享文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6151ab3ea2bb9704.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3e35f567cbe4246c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="生活指南"><a href="#生活指南" class="headerlink" title="生活指南"></a>生活指南</h3><p><a href="https://zh.wikihow.com/" target="_blank" rel="noopener">https://zh.wikihow.com/</a>  一个人人可编辑、教大家做任何事情的百科全书，网站上几乎全是“如何xxx ”的内容，包含生活、工作、金融、技能、旅行、宗教等。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0b489f49104dab58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="照片合成"><a href="#照片合成" class="headerlink" title="照片合成"></a>照片合成</h3><p><a href="https://photofunia.com/" target="_blank" rel="noopener">https://photofunia.com/</a> 把照片 P 在任何场景中，包括海报、墙体广告等，比如把桂纶镁嵌入到书里 <a href="https://photofunia.com/results/5fa7fba8fe31e245438b4589" target="_blank" rel="noopener">https://photofunia.com/results/5fa7fba8fe31e245438b4589</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-83c0a78879a372da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/20/b-站账号快速升级到-Lv6：每天自动签到，观看，分享，投币视频/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1527,577 +2070,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/30/那些有趣-实用的-Chrome-扩展神器/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/30/那些有趣-实用的-Chrome-扩展神器/" itemprop="url">那些有趣/实用的 Chrome 扩展神器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-30T19:12:41+08:00">
-                2020-10-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第186 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>谷歌浏览器一直是我推荐的浏览器，之前也写过几篇文章：</p>
-<p><a href="https://mp.weixin.qq.com/s/KLRcXA0Z8OlnInwV73n2rQ" target="_blank" rel="noopener">如何让你的搜索更高效</a></p>
-<p><a href="https://mp.weixin.qq.com/s/4sCwNc4fz7IxlL8XfY95rQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大</a></p>
-<p><a href="https://mp.weixin.qq.com/s/GyX3X9BTF1N2zaN31UGvwQ" target="_blank" rel="noopener">谷歌浏览器安装的 Chrome 扩展越来越多，怎么管理？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a></p>
-<p><a href="https://mp.weixin.qq.com/s/MgzuHp-5f8gkIZ_ui4LQNQ" target="_blank" rel="noopener">请停用以开发者模式运行的扩展程序？搞定谷歌浏览器插件弹窗</a></p>
-<p><a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/iluJYFYgT8bpMhrsxf0b5A" target="_blank" rel="noopener">Chrome 浏览器扩展神器暴力猴</a></p>
-<p><a href="https://mp.weixin.qq.com/s/J7Ml0NilN8Jd4s9C1gWoHw" target="_blank" rel="noopener">那些你可能不知道的谷歌浏览器实用技巧</a></p>
-<p>最近发现谷歌浏览器地址栏可以显示https前缀了，右键选择总是显示完整网址就行了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-08c6ac808585007a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>网址显示全了 <a href="https://www.google.com.hk" target="_blank" rel="noopener">https://www.google.com.hk</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-fd3284c331c8f2ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p> 这里再推荐几个有趣/实用的 Chrome 扩展神器，都是我经常使用的。</p>
-<h3 id="二管家"><a href="#二管家" class="headerlink" title="二管家"></a>二管家</h3><p>这是一个管理扩展的扩展 ，可以获取扩展更新通知并记录拓展历史，自动开启/关闭拓展，根据当前网站获取二管家社区推荐，Chrome 扩展地址  <a href="https://chrome.google.com/webstore/detail/nooboss/aajodjghehmlpahhboidcpfjcncmcklf" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/nooboss/aajodjghehmlpahhboidcpfjcncmcklf</a>  ，安装Chrome扩展方法见之前文章 <a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a> ，如果你安装了很多扩展浏览器可能会有点卡顿，推荐使用这个扩展管理起来。</p>
-<p>二管家能干什么？ </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-65a517348624a3ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>选项里可以设置主题和开启关闭某些设置。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-09c11c4cda118111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>历史页面可以看到每个扩展的安装、卸载、开启、关闭等记录。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5a89cf501d486b4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有更新通知。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a7ca65a27be2db0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>扩展只在指定网页才启用，比如只有打开百度网盘页面才开启网盘助手扩展。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8a5b0169ac60588a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="识别浏览器播放歌曲"><a href="#识别浏览器播放歌曲" class="headerlink" title="识别浏览器播放歌曲"></a>识别浏览器播放歌曲</h3><p>这首歌是什么？ 在播放音频的页面上只需点击 AHA Music 的图标，它就会自动识别当前正在播放音乐的歌曲名称、艺术家姓名，并给出 Spotify、YouTube、Deezer 等流媒体服务链接，精准识别，准确率高，曲库覆盖全，扩展地址<a href="https://chrome.google.com/webstore/detail/aha-music-song-finder-for/dpacanjfikmhoddligfbehkpomnbgblf" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/aha-music-song-finder-for/dpacanjfikmhoddligfbehkpomnbgblf</a></p>
-<p>比如网易云音乐这首周杰伦的《晴天》<a href="https://music.163.com/#/song?id=186016" target="_blank" rel="noopener">https://music.163.com/#/song?id=186016</a> ，播放后点击图标就能识别出来（想知道为什么我能播放无版权歌曲看看之前文章<a href="https://mp.weixin.qq.com/s/BSfjFnv54EAHmc6eE75T9g" target="_blank" rel="noopener">一键解锁网易云音乐变灰歌曲</a>）<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b8dbfb9f9e7d4972.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击YouTube图标跳转到详情页 <a href="https://www.aha-music.com/%E5%91%A8%E6%9D%B0%E5%80%AB-%E6%99%B4%E5%A4%A9-9649d019f5636c150239c6ffc8866663?utm_source=chrome&amp;utm_medium=extension" target="_blank" rel="noopener">https://www.aha-music.com/%E5%91%A8%E6%9D%B0%E5%80%AB-%E6%99%B4%E5%A4%A9-9649d019f5636c150239c6ffc8866663?utm_source=chrome&amp;utm_medium=extension</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-35ba2c9b81dd3249.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="导出公众号文章链接"><a href="#导出公众号文章链接" class="headerlink" title="导出公众号文章链接"></a>导出公众号文章链接</h3><p>关于导出公众号文章之前写过文章<a href="https://mp.weixin.qq.com/s/sBK_NkSnS3qTOnajl6Y94Q" target="_blank" rel="noopener">一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</a>  ，如果你不会使用Python推荐这个Chrome 插件（由于没有上架谷歌商店，公众号后台回复 <code>公众号</code>获取），支持文章列表导出为 CSV文件。<br> <a href="https://wwx.lanzoux.com/ijSp6hrf3if" target="_blank" rel="noopener">https://wwx.lanzoux.com/ijSp6hrf3if</a></p>
-<p>先在微信客户端开启用浏览器打开网页。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d9f15a2e2cff4d94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>打开一篇文章，然后点击扩展图标会跳转到详情页 <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzIyMjg2ODExMA==&amp;scene=124&amp;#wechat_redirect，点击scroll" target="_blank" rel="noopener">https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzIyMjg2ODExMA==&amp;scene=124&amp;#wechat_redirect，点击scroll</a> start 页面会自动下拉。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6643554aec63b0cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-ca5c62e5b345553e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后点击 export as csv 导出csv文件，不过Windows下会乱码，因为 WPS和 Excel 无法识别 UTF-8 编码的 csv 文件，可以手动把编码由 UTF-8 改为 GBK，或者使用编辑器sublime打开 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-655d9fb596c9dc3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="豆瓣账号备份"><a href="#豆瓣账号备份" class="headerlink" title="豆瓣账号备份"></a>豆瓣账号备份</h3><p>这个扩展用于备份豆瓣的用户数据及图片，并支持将备份数据导出到 Excel，扩展地址 <a href="https://chrome.google.com/webstore/detail/%E8%B1%86%E4%BC%B4%EF%BC%9A%E8%B1%86%E7%93%A3%E8%B4%A6%E5%8F%B7%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7/ghppfgfeoafdcaebjoglabppkfmbcjdd" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/%E8%B1%86%E4%BC%B4%EF%BC%9A%E8%B1%86%E7%93%A3%E8%B4%A6%E5%8F%B7%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7/ghppfgfeoafdcaebjoglabppkfmbcjdd</a> ，功能有<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">• 备份本人或他人的豆瓣账号数据</span><br><span class="line">• 脱机浏览备份数据</span><br><span class="line">• 将备份数据导出为 Excel 文件</span><br><span class="line">• 将备份数据中的图片上传到 Cloudinary 云存储</span><br><span class="line">• 迁移备份数据到当前豆瓣帐号</span><br></pre></td></tr></table></figure></p>
-<p>点击新建任务，选择备份的项目，我这里选的豆邮。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-50ebf142508b74d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-98fc26bc0a57192a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>很快备份完成了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-322554f3f20efd83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后导出Excel文件 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c065a66ba83d7b87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="开启关闭JavaScript"><a href="#开启关闭JavaScript" class="headerlink" title="开启关闭JavaScript"></a>开启关闭JavaScript</h3><p>某些网站禁止了复制功能<a href="http://www.360doc.com/content/20/0527/21/70200776_915020058.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/20/0527/21/70200776_915020058.shtml</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3195e9aa8190c047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这个是前端处理的，所以可以打开控制台 disable javascript 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e4d4bf0394c1e620.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>当然这样有点麻烦，可以使用这个谷歌插件 <a href="https://chrome.google.com/webstore/detail/toggle-javascript/cidlcjdalomndpeagkjpnefhljffbnlo/related" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/toggle-javascript/cidlcjdalomndpeagkjpnefhljffbnlo/related</a> ，它可以禁止运行js文件，这样就可以复制了。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-23bcca0a9011ffa9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="浏览网页时自然学外语"><a href="#浏览网页时自然学外语" class="headerlink" title="浏览网页时自然学外语"></a>浏览网页时自然学外语</h3><p>这是一个可以让日常流量网页的过程中比较舒服地学习外语的插件 <a href="https://chrome.google.com/webstore/detail/%E5%AD%A6%E5%A4%96%E8%AF%AD/aomdloeklfjnepbopeagobbgclmghgng/" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/%E5%AD%A6%E5%A4%96%E8%AF%AD/aomdloeklfjnepbopeagobbgclmghgng/</a> ，通过从网页内容中挑选一些词语翻译成外语，让用户可以根据上下文更好的学习和理解想要学习的外语，可以设定单词难度来学习不同难度的词语，目前支持中文用户学习英语和日语。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-63744963858389ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="外链自由跳转"><a href="#外链自由跳转" class="headerlink" title="外链自由跳转"></a>外链自由跳转</h3><p>现在微博，知乎，简书的非白名单外链是不能自由跳转的，这个插件可以帮你自动跳转<br><a href="https://chrome.google.com/webstore/detail/%E8%87%AA%E7%94%B1%E8%B7%B3%E8%BD%AC/ldfofldbjpkkenoichgpoikbfgplgfdd" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/%E8%87%AA%E7%94%B1%E8%B7%B3%E8%BD%AC/ldfofldbjpkkenoichgpoikbfgplgfdd</a></p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/23152173-8f86f40936e93ab0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然也可以使用这个油猴脚本 <a href="https://greasyfork.org/zh-CN/scripts/412612-open-the-f-king-url-right-now，它支持微博/豆瓣/知乎/简书的外链自动跳转，微信公众号网页版" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/412612-open-the-f-king-url-right-now，它支持微博/豆瓣/知乎/简书的外链自动跳转，微信公众号网页版</a> URL 点击跳转。</p>
-<h3 id="异地同步看视频-聊天"><a href="#异地同步看视频-聊天" class="headerlink" title="异地同步看视频+聊天"></a>异地同步看视频+聊天</h3><p>一个支持远程同步看视频+聊天的 chrome 插件<a href="https://chrome.google.com/webstore/detail/synchime/emjmcfhchipmaflddbmkoojhecpfpjmo/related" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/synchime/emjmcfhchipmaflddbmkoojhecpfpjmo/related</a> ，目前支持 bilibili，youtube，爱奇艺 ，腾讯视频 ，无需注册，双方直接连接，输入对方 ID 后点击连接即可，简直异地恋情侣福音。</p>
-<p> <img src="https://upload-images.jianshu.io/upload_images/23152173-659088d2b73105db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>我这里用谷歌浏览器无痕模式测试的，输入对方id连接后点击请求同步。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-7da85a4a39fb84af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>对方同意后画面就可以同步播放了，还能聊天。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-fc73a0a274c8bb12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>还有个可以同步看视频的播放器 <a href="https://github.com/liyang5945/sync-player" target="_blank" rel="noopener">https://github.com/liyang5945/sync-player</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-9d41aa25edcd25c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="免费知识星球，每天更新"></p>
-<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/23/那些有趣的网站系列（六）/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/23/那些有趣的网站系列（六）/" itemprop="url">那些有趣的网站系列（六）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-23T19:51:02+08:00">
-                2020-10-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  811 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第183篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>之前分享过 </p>
-<p> <a href="https://mp.weixin.qq.com/s/ThUw9i43paFhXfPxF8mvyQ" target="_blank" rel="noopener">那些有趣的网站</a> </p>
-<p><a href="https://mp.weixin.qq.com/s/wTgYpovJrJh8_Zj1h6EbzA" target="_blank" rel="noopener">那些有趣的网站（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/GgNmAY0LUHES3z2IB_5QkQ" target="_blank" rel="noopener">那些有趣的网站系列（三）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/seFzUO4MVcNw8kkXTufMtA" target="_blank" rel="noopener">那些有趣的网站系列（四）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/qi2tOWHtWeqRjKE6cybLJA" target="_blank" rel="noopener">那些有趣的网站系列（五）</a>  </p>
-<p>这是系列第6篇。</p>
-<h3 id="临时邮箱"><a href="#临时邮箱" class="headerlink" title="临时邮箱"></a>临时邮箱</h3><p><a href="https://www.snapmail.cc/" target="_blank" rel="noopener">https://www.snapmail.cc/</a>   每次打开网站会生成一个临时邮箱<a href="https://www.snapmail.cc/#/emailList/pafhuh@snapmail.cc" target="_blank" rel="noopener">https://www.snapmail.cc/#/emailList/pafhuh@snapmail.cc</a> ，使用临时邮箱注册网站，保护个人真实邮箱。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6a024032abd1610e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<blockquote>
-<p>ps:  一个 gmail 多个地址，比如<a href="mailto:abc.123@gmail.com" target="_blank" rel="noopener">abc.123@gmail.com</a> 和 <a href="mailto:abc123@gmail.com" target="_blank" rel="noopener">abc123@gmail.com</a> 是同一个邮箱，域名换成 @googlemail.com，发送到任意一个地址都能收到邮件。</p>
-</blockquote>
-<p>当你需要很多个临时邮箱的时候，推荐使用前缀邮箱，一个前缀邮箱就够了，不需要添加多次。</p>
-<h3 id="食物营养成分查询"><a href="#食物营养成分查询" class="headerlink" title="食物营养成分查询"></a>食物营养成分查询</h3><p>在线查询国内各品牌、各种食物营养成分，比如煮鸡蛋 <a href="https://www.fatsecret.cn/" target="_blank" rel="noopener">https://www.fatsecret.cn/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-98f2a8e37e310130.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="鲁迅语录查询"><a href="#鲁迅语录查询" class="headerlink" title="鲁迅语录查询"></a>鲁迅语录查询</h3><p>北京鲁迅博物馆上线的一个鲁迅著作全编在线检索系统<a href="http://www.luxunmuseum.com.cn/cx/" target="_blank" rel="noopener">http://www.luxunmuseum.com.cn/cx/</a>  ，以后别再想冒充鲁迅了。</p>
-<p>鲁迅的确没说过  我没说过 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-755d00c0c714daca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-d01ecdc618e2c907.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="支付宝到账声音"><a href="#支付宝到账声音" class="headerlink" title="支付宝到账声音"></a>支付宝到账声音</h3><p> <a href="https://mm.cqu.cc/share/zhifubaodaozhang/?money=88.88" target="_blank" rel="noopener">https://mm.cqu.cc/share/zhifubaodaozhang/?money=88.88</a> 修改money后的参数即可生成一个支付宝到账的音乐，数字取值范围0.01~999999999999.99 ，比如<a href="https://mm.cqu.cc/share/zhifubaodaozhang/mp3/88.88.mp3" target="_blank" rel="noopener">https://mm.cqu.cc/share/zhifubaodaozhang/mp3/88.88.mp3</a> ，还可以将mp3文件下载到手机装逼用。</p>
-<h3 id="ASCII-艺术字符图"><a href="#ASCII-艺术字符图" class="headerlink" title="ASCII 艺术字符图"></a>ASCII 艺术字符图</h3><p>上传图片生成ASCII 艺术字符图（右侧字符文字可选择的），可以拖动滑条看效果，还可以下载到本地 <a href="https://ascii-generator.site/" target="_blank" rel="noopener">https://ascii-generator.site/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3f77dad70cec4f8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="互联网从业者薪资查询"><a href="#互联网从业者薪资查询" class="headerlink" title="互联网从业者薪资查询"></a>互联网从业者薪资查询</h3><p>帮助互联网从业者查询薪资、级别（比如阿里腾讯百度等知名企业） <a href="http://www.salaryfly.com/" target="_blank" rel="noopener">http://www.salaryfly.com/</a>  ，有点类似国外的<a href="https://www.levels.fyi/" target="_blank" rel="noopener">https://www.levels.fyi/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-b65249a06489657d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="新闻联播文字版"><a href="#新闻联播文字版" class="headerlink" title="新闻联播文字版"></a>新闻联播文字版</h3><p><a href="https://cn.govopendata.com/xinwenlianbo/" target="_blank" rel="noopener">https://cn.govopendata.com/xinwenlianbo/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-0920cc4b31f9ea1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="书法拼贴生成器"><a href="#书法拼贴生成器" class="headerlink" title="书法拼贴生成器"></a>书法拼贴生成器</h3><p>输入汉字生成书法拼贴图，  每次生成的不一样 <a href="http://z.topurl.cn/z/index.html#/" target="_blank" rel="noopener">http://z.topurl.cn/z/index.html#/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-aaa10a0de067cd75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>效果图<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d309de49ad8c556c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="谷歌公墓"><a href="#谷歌公墓" class="headerlink" title="谷歌公墓"></a>谷歌公墓</h3><p>收录了目前谷歌已下线的产品207个 <a href="https://killedbygoogle.com/" target="_blank" rel="noopener">https://killedbygoogle.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-a96d24aab11efdf8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="自动生成AI笔记"><a href="#自动生成AI笔记" class="headerlink" title="自动生成AI笔记"></a>自动生成AI笔记</h3><p>只要上传视频文件或直接贴上视频链接，会自动识别视频的内容，生成每帧文字截图，并将语音转成文字，还能直接翻译笔记下载文档 <a href="https://videoai.perspectivar.com/" target="_blank" rel="noopener">https://videoai.perspectivar.com/</a></p>
-<p>有150分钟的免费使用额度。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f701cc88e7b1f323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-8b22e31316fb90c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>生成的笔记结果。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8234068d626988a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最后推荐一个轻音乐听歌站 <a href="http://nav.6soluo.com/qing.html" target="_blank" rel="noopener">http://nav.6soluo.com/qing.html</a> ，收录了300首歌，想安静的时候可以听听。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c7af3fc966378288.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最近文章：</p>
-<p><a href="https://mp.weixin.qq.com/s/DwFv-Ry680gdT1yQAJ-u8g" target="_blank" rel="noopener">Python 抓取知乎电影话题下万千网友推荐的电影，这个国庆节不愁没电影看了</a></p>
-<p><a href="https://mp.weixin.qq.com/s/5G4JSV80a50yiD2GruXd5Q" target="_blank" rel="noopener">中秋/国庆节发福利了，小伙伴们来领现金红包</a></p>
-<p><a href="https://mp.weixin.qq.com/s/KLRcXA0Z8OlnInwV73n2rQ" target="_blank" rel="noopener">如何让你的搜索更高效</a></p>
-<p><a href="https://mp.weixin.qq.com/s/pt0hCthceThMZVU0Ht89AA" target="_blank" rel="noopener">2020 最全电子书搜索网站，找电子书不再愁</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sBK_NkSnS3qTOnajl6Y94Q" target="_blank" rel="noopener">一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</a></p>
-<p><a href="https://mp.weixin.qq.com/s/81oiEKyFIJGsa8D8vHosUw" target="_blank" rel="noopener">如何根据台词找到对应电影片段</a></p>
-<p><a href="https://mp.weixin.qq.com/s/8MIGBAa3vXGUd8s5xGzIDA" target="_blank" rel="noopener">如何通过电影截图找到电影</a></p>
-<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/16/以图搜图：如何通过电影截图找到电影/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/16/以图搜图：如何通过电影截图找到电影/" itemprop="url">以图搜图：如何通过电影截图找到电影</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-16T19:53:04+08:00">
-                2020-10-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第182 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>这是公众号的第一篇付费文章（其实很早就开通了付费功能，一直没用），收费1块，保证让你看完觉得值。</p>
-<p>之前分享过如何找电影资源 <a href="https://mp.weixin.qq.com/s/0uOyrcz0KP-qZhCNNCELhw" target="_blank" rel="noopener">2020 最全百度网盘搜索，找电影资源不再愁</a> 和 通过台词找电影<a href="https://mp.weixin.qq.com/s/81oiEKyFIJGsa8D8vHosUw" target="_blank" rel="noopener">如何根据台词找到对应电影片段</a> ，今天分享以图搜图，通过电影截图查找电影电视剧。</p>
-<p>看看这张图，曾经的周杰伦也是小鲜肉。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6d6c9b71249adc6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jay.png"><br>谷歌浏览器右键通过谷歌搜索图片，关于谷歌浏览器更多使用技巧见之前文章<a href="https://mp.weixin.qq.com/s/J7Ml0NilN8Jd4s9C1gWoHw" target="_blank" rel="noopener">那些你可能不知道的谷歌浏览器实用技巧</a>。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b8992f6a37137fd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>很快找到这张图来自周杰伦2005年电影《头文字D》，想看周杰伦所有电影在公众号后台回复 <code>周杰伦</code>。</p>
-<p> <img src="https://upload-images.jianshu.io/upload_images/23152173-65cc26b3075ebe24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>除了谷歌，百度和搜狗等搜索引擎都有识图功能，有的搜索引擎找不到就换其他的，不过这样有点麻烦，推荐使用下面的Chrome扩展和油猴脚本。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-3be1a25bf0178063.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="chrome-扩展"><a href="#chrome-扩展" class="headerlink" title="chrome 扩展"></a>chrome 扩展</h3><p>chrome 扩展 search-by-image 集成Google， Bing， Yandex，Baidu，TinEye等5个以图搜图搜索引擎， 扩展地址<a href="https://chrome.google.com/webstore/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci/related" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci/related</a> ，安装Chrome扩展方法见之前文章<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-8830855529854902.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>安装扩展后右键图片可以选择对应搜索引擎，或者全部搜索引擎查找。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-877274016c381822.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>国内也有类似的二箱， 它集成了Google，Bing，Yandex，Baidu，TinEye 等8个以图搜图搜索引擎。<br><a href="https://chrome.google.com/webstore/detail/noobox/kidibbfcblfbbafhnlanccjjdehoahep?hl=zh-CN" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/noobox/kidibbfcblfbbafhnlanccjjdehoahep?hl=zh-CN</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-907fb057cfde7e73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>同样是右键图片搜索，除了搜图它还有自动刷新网页和HTML5 视频控制功能。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9d3616ac897bc506.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-a8efc8946568f236.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="搜索结果.png"></p>
-<h3 id="油猴脚本"><a href="#油猴脚本" class="headerlink" title="油猴脚本"></a>油猴脚本</h3><p>关于油猴脚本之前写过很多文章了<a href="https://mp.weixin.qq.com/s/4sCwNc4fz7IxlL8XfY95rQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大</a>，Search By Image脚本集合了谷歌，百度，bing，搜狗，360等搜索引擎，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/2998-search-by-image" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/2998-search-by-image</a> ，按住快捷键（默认设置为 Ctrl 键），同时在图片上点击鼠标右键，在菜单中选择欲使用的搜索引擎。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6d6150411aea392d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>新的搜索引擎也可以在设置里添加。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-27d52ad87d455a97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>除了以上通用的搜索引擎还有些专业领域的，比如搜索动漫的 <a href="https://saucenao.com/，" target="_blank" rel="noopener">https://saucenao.com/，</a> <a href="https://trace.moe" target="_blank" rel="noopener">https://trace.moe</a> ，后者是一个存储了大量番剧并对番剧画面进行了逐帧的索引,只要你能给出番剧的截图, 它就可以找到截图对应的番剧,以及截图对应的时间轴。</p>
-<p>它还是开源的 <a href="https://github.com/soruly/trace.moe，提供URL参数即可查找https://trace.moe/?url=xxx" target="_blank" rel="noopener">https://github.com/soruly/trace.moe，提供URL参数即可查找https://trace.moe/?url=xxx</a>  。</p>
-<p>比如这张图 。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-f6f0b73d5265848c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>有8万多搜索结果，可以搜到 辉夜大小姐想让我告白～天才们的恋爱头脑战。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a14a29e50d3672af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还提供YouTube视频源。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a439ca73cea89c6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>当然用谷歌也可以搜到。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ca95ad112ec2a61f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>搜图除了找影视剧之外还可以找无水印图（这样就不用自己找工具去水印了），比如这张含有微博水印的周星驰图片。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bd1327ab4c1a18c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>谷歌可以找到这篇文章<a href="https://k.sina.cn/article_1751106815_685fc4ff00100m9mx.html" target="_blank" rel="noopener">https://k.sina.cn/article_1751106815_685fc4ff00100m9mx.html</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-2d96b0a7aab04537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>无水印图就这样找到了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-3c82c636c069f3dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>更多周星驰图片可以在微博话题#周星驰壁纸#找 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-808bb2977602263d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果是无水印微博图片如何找到微博博主呢？之前文章 <a href="https://mp.weixin.qq.com/s/sGToO710n2h5avFk8aRQEw" target="_blank" rel="noopener">想方便快捷的分享/收藏图片？试试免费好用的微博/b站图床</a> 已经分享过了。</p>
-<p>通过Chrome扩展 微博图片反查 <a href="https://github.com/fei-ke/WeiboImageReverse" target="_blank" rel="noopener">https://github.com/fei-ke/WeiboImageReverse</a> 或者在线工具 <a href="https://gongpeione.github.io/wbimg2wb/，https://toolmao.com/tool/img2weibo/" target="_blank" rel="noopener">https://gongpeione.github.io/wbimg2wb/，https://toolmao.com/tool/img2weibo/</a> ，直接输入微博图片地址获取博主微博。 </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-63f67efdd315c145.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最后分享个最近发现的找电影技巧，由于百度网盘屏蔽了搜索引擎， site:pan.baidu.com 大话西游 这样是搜不到结果的。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a0a109389314afab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>剩下文章通过微信查看 <a href="https://mp.weixin.qq.com/s/8MIGBAa3vXGUd8s5xGzIDA" target="_blank" rel="noopener">如何通过电影截图找到电影</a></p>
-<p>最近文章：</p>
-<p><a href="https://mp.weixin.qq.com/s/DwFv-Ry680gdT1yQAJ-u8g" target="_blank" rel="noopener">Python 抓取知乎电影话题下万千网友推荐的电影，这个国庆节不愁没电影看了</a></p>
-<p><a href="https://mp.weixin.qq.com/s/5G4JSV80a50yiD2GruXd5Q" target="_blank" rel="noopener">中秋/国庆节发福利了，小伙伴们来领现金红包</a></p>
-<p><a href="https://mp.weixin.qq.com/s/KLRcXA0Z8OlnInwV73n2rQ" target="_blank" rel="noopener">如何让你的搜索更高效</a></p>
-<p><a href="https://mp.weixin.qq.com/s/pt0hCthceThMZVU0Ht89AA" target="_blank" rel="noopener">2020 最全电子书搜索网站，找电子书不再愁</a></p>
-<p><a href="https://mp.weixin.qq.com/s/sBK_NkSnS3qTOnajl6Y94Q" target="_blank" rel="noopener">一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</a></p>
-<p><a href="https://mp.weixin.qq.com/s/81oiEKyFIJGsa8D8vHosUw" target="_blank" rel="noopener">如何根据台词找到对应电影片段</a></p>
-<h3 id="公众号-苏生不惑"><a href="#公众号-苏生不惑" class="headerlink" title="公众号 苏生不惑"></a>公众号 苏生不惑</h3><p> <img src="https://upload-images.jianshu.io/upload_images/17817191-6e0079f95d4c0338.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2143,7 +2120,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">298</span>
+                  <span class="site-state-item-count">301</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2374,7 +2351,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共700.5k字</span>
+  <span class="post-count">博客全站共703k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
