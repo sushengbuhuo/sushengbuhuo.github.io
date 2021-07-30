@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/5-分钟带你写个自己的-Chrome-扩展和油猴脚本/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/实用Windows软件系列分享（三）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏生不惑">
@@ -304,7 +304,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/06/11/5-分钟带你写个自己的-Chrome-扩展和油猴脚本/" itemprop="url">5 分钟带你写个自己的 Chrome 扩展和油猴脚本</a></h1>
+                <a class="post-title-link" href="/2021/07/30/实用Windows软件系列分享（三）/" itemprop="url">实用Windows软件系列分享（三）</a></h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:52:41+08:00">
-                2021-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:55:09+08:00">
+                2021-07-30
               </time>
             
 
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k 字
+                  1.1k 字
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -390,36 +390,40 @@
         
           
             <blockquote>
-<p>苏生不惑第<code>258</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+<p>苏生不惑第<code>271</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
 </blockquote>
-<p>前几天分享过文章<a href="https://mp.weixin.qq.com/s/RI_J8NoiARIb5IEXYnW5ZQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大（二）</a>，有人问如何自己写个油猴脚本，今天就来分享如何写个自己的Chrome扩展和油猴脚本。</p>
-<h3 id="Chrome扩展编写"><a href="#Chrome扩展编写" class="headerlink" title="Chrome扩展编写"></a>Chrome扩展编写</h3><blockquote>
-<p>一个 Chrome 扩展其实就是一个配置文件 manifest.json 和一系列 html、css、js文件的集合，只要有一点点前端的基础，写一个简单的 扩展还是很简单的。</p>
-</blockquote>
-<p>这里就带你5分钟写个简单的扩展，功能就是点击链接在新标签页打开，chrome_extension扩展目录结构如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">λ tree</span><br><span class="line">chrome_extension</span><br><span class="line">├── icon.jpg</span><br><span class="line">├── lib</span><br><span class="line">│   └── jquery.min.js</span><br><span class="line">├── manifest.json</span><br><span class="line">└── url.js</span><br></pre></td></tr></table></figure></p>
-<p>一个icon图片文件，lib目录下一个jQuery文件（如果不依赖jQuery库可以不需要），一个配置文件manifest.json以及一个编写代码的文件url.js，就这4个文件行了。</p>
-<p>先来看看manifest.json文件里的内容，主要在content_scripts加载的js文件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"新标签打开网页"</span>,</span><br><span class="line">    <span class="string">"version"</span>:<span class="string">"2"</span>,</span><br><span class="line">    <span class="string">"icons"</span>:&#123;</span><br><span class="line">        <span class="string">"16"</span>:<span class="string">"icon.jpg"</span>,</span><br><span class="line">        <span class="string">"32"</span>:<span class="string">"icon.jpg"</span>,</span><br><span class="line">        <span class="string">"48"</span>:<span class="string">"icon.jpg"</span>,</span><br><span class="line">        <span class="string">"128"</span>:<span class="string">"icon.jpg"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"manifest_version"</span>:<span class="number">2</span>,</span><br><span class="line">    <span class="string">"description"</span>:<span class="string">"新标签打开网页 by苏生不惑"</span>,</span><br><span class="line">    <span class="string">"content_scripts"</span>:[<span class="comment">//执行脚本</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"matches"</span>:[</span><br><span class="line">                <span class="string">"https://*/*"</span><span class="comment">//判断URL是否匹配</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"js"</span>:[<span class="comment">//待执行的脚本</span></span><br><span class="line">                <span class="string">"lib/jquery.min.js"</span>,</span><br><span class="line">                <span class="string">"url.js"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其实要写的代码就是url.js里的3行：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//document.querySelectorAll("a").forEach(function(item,index,arr)&#123;item.target='_blank';&#125;);</span></span><br><span class="line">	$(<span class="string">'a'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">index,item</span>)</span>&#123;$(<span class="keyword">this</span>).attr(<span class="string">'target'</span>,<span class="string">'_blank'</span>);&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>扩展代码写好了就可以安装到谷歌浏览器了，具体如何安装看之前文章<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a>，打开chrome://extensions/，点击加载已解压的扩展程序，就是chrome_extension目录。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-4d75e4955a4b36e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>就这样安装好了，测试下没问题，原来写扩展就是这么简单，5分钟搞定，当然这只是个demo，下面来看看大名鼎鼎的油猴扩展怎么写的， 谷歌浏览器的扩展默认安装目录为 C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Extensions ，xxx为你的Windows用户名 ，先在扩展里找到油猴的id为 dhdgffkkebhmkfjojejmpbldmpobfkfo<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6e030e9fdaf45f40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>找到油猴扩展的源代码目录 C:\Users\xxx\AppData\Local\Google\Chrome\User Data\Default\Extensions\dhdgffkkebhmkfjojejmpbldmpobfkfo\4.13_0 ，这个manifest.json文件写得就复杂多了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-254423c50edb5f39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>顺便提下怎么备份Chrome扩展，这样方便迁移到新电脑使用，这个在之前文章也分享过了<a href="https://mp.weixin.qq.com/s/J7Ml0NilN8Jd4s9C1gWoHw" target="_blank" rel="noopener">那些你可能不知道的谷歌浏览器实用技巧</a>。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2f5cc4844cf20e46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>导出生成的crx文件就可以分享给他人使用了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5416d92a0b9a3905.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-fae31f1f695aff7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>最后如果你想发布扩展到谷歌商店供他人安装 <a href="https://chrome.google.com/webstore/category/extensions" target="_blank" rel="noopener">https://chrome.google.com/webstore/category/extensions</a> ，可以在谷歌管理后台提交你的扩展<a href="https://chrome.google.com/webstore/developer/dashboard，不过需要5美元的费用。" target="_blank" rel="noopener">https://chrome.google.com/webstore/developer/dashboard，不过需要5美元的费用。</a></p>
-<h3 id="油猴脚本编写"><a href="#油猴脚本编写" class="headerlink" title="油猴脚本编写"></a>油猴脚本编写</h3><p>写油猴脚本就更简单了，先安装好油猴扩展，在公众号后台回复<code>油猴</code>手动安装，然后直接新建脚本。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-12a458e3c9f5981a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>脚本内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ==UserScript==</span></span><br><span class="line"><span class="comment">// @name         新标签打开网页</span></span><br><span class="line"><span class="comment">// @namespace    http://tampermonkey.net/</span></span><br><span class="line"><span class="comment">// @version      0.1</span></span><br><span class="line"><span class="comment">// @description  新标签打开网页</span></span><br><span class="line"><span class="comment">// @author       苏生不惑</span></span><br><span class="line"><span class="comment">// @match        *://*/*</span></span><br><span class="line"><span class="comment">// @grant        none</span></span><br><span class="line"><span class="comment">// ==/UserScript==</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">    'use strict'</span>;</span><br><span class="line">    <span class="built_in">document</span>.querySelectorAll(<span class="string">"a"</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,arr</span>)</span>&#123;item.target=<span class="string">'_blank'</span>;&#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
-<p>然后导出你写的脚本文件，这样方便给其他人安装使用，比如我之前分享的去除腾讯优酷爱奇艺视频logo的脚本。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0b4f7a4e4a8c2a68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>同样的也可以在 <a href="https://greasyfork.org/zh-CN/script_versions/new" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/script_versions/new</a> 发布你的脚本<a href="https://greasyfork.org/zh-CN/scripts/427794" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/427794</a> ，方便他人安装使用，比如分享过的油猴脚本<a href="https://mp.weixin.qq.com/s/4sCwNc4fz7IxlL8XfY95rQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-4bbfdb37e8d9dfa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-f54a50a279eb2236.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>除了写Chrome扩展和油猴脚本，让浏览器运行脚本还有个更简单的方法就是书签。</p>
-<h3 id="书签"><a href="#书签" class="headerlink" title="书签"></a>书签</h3><p>先添加一个网页到书签然后修改，复制这段代码到网址里：<br><code>javascript:&quot;use strict&quot;;!(function(){document.querySelectorAll(&quot;a&quot;).forEach(function(item,index,arr){item.target=&#39;_blank&#39;;});})();</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-76caa35cca3097a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>使用的时候点击网页上方的<code>新标签打开网页</code>就行了，比Chrome扩展和油猴麻烦点。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-51dd5f9364240217.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>顺便分享几个书签代码，第一个是显示密码，默认输入密码的地方是星号*<br><code>javascript:&quot;use strict&quot;;!function(){for(var tag=document.getElementsByTagName(&quot;input&quot;),i=0;i&lt;tag.length;i++)&quot;password&quot;===tag[i].getAttribute(&quot;type&quot;)&amp;&amp;tag[i].setAttribute(&quot;type&quot;,&quot;text&quot;)}();</code></p>
-<p>第二个是解除网页限制，复制百度文库就方便了。<br><code>javascript:&quot;use strict&quot;;!function(){var t=function(t){t.stopPropagation(),t.stopImmediatePropagation&amp;&amp;t.stopImmediatePropagation()};[&quot;copy&quot;,&quot;cut&quot;,&quot;contextmenu&quot;,&quot;selectstart&quot;,&quot;mousedown&quot;,&quot;mouseup&quot;,&quot;keydown&quot;,&quot;keypress&quot;,&quot;keyup&quot;].forEach(function(e){document.documentElement.addEventListener(e,t,{capture:!0})}),alert(&quot;解除限制！&quot;)}();</code></p>
-<p>第二个是自由编辑网页。<br><code>javascript:&quot;use strict&quot;;!function(){&quot;true&quot;===document.body.getAttribute(&quot;contenteditable&quot;)?(document.body.setAttribute(&quot;contenteditable&quot;,false),alert(&quot;关闭自由编辑网页了！&quot;)):(document.body.setAttribute(&quot;contenteditable&quot;,true),alert(&quot;可以自由编辑网页了！&quot;))}();</code></p>
+<p>之前分享过<a href="https://mp.weixin.qq.com/s/o_V1kISe-zl9fdcCFZJZPg" target="_blank" rel="noopener">新买了台笔记本电脑，分享些实用的Windows软件</a> 和<a href="https://mp.weixin.qq.com/s/-dZL8i7o-kRARLToCR3lwQ" target="_blank" rel="noopener">实用 Windows 软件系列分享（二）</a>，这里继续分享那些实用的windows软件。</p>
+<h3 id="Calibre"><a href="#Calibre" class="headerlink" title="Calibre"></a>Calibre</h3><p>这个软件之前分享过<a href="https://mp.weixin.qq.com/s/HPAThXlfYECuZhTL6lUYWA" target="_blank" rel="noopener">2021 电子书搜索网站/工具，找电子书不再愁</a>，它不仅是一款阅读器，还是一款电子书管理软件，支持epub，mobi，azw3等各种格式电子书的互相转换  <a href="https://calibre-ebook.com/download" target="_blank" rel="noopener">https://calibre-ebook.com/download</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-82ed87a008b8a29c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-a720112c7ce2ea5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Seer"><a href="#Seer" class="headerlink" title="Seer"></a>Seer</h3><p>这是一款非常强大高效的文件预览软件<a href="https://sourceforge.net/projects/ccseer/，无需打开文件，敲击一下空格键就可以预览文件，节省很多时间，支持文件格式包括：" target="_blank" rel="noopener">https://sourceforge.net/projects/ccseer/，无需打开文件，敲击一下空格键就可以预览文件，节省很多时间，支持文件格式包括：</a> jpg， PSD ，mp3、mp4,ZIP,txt,xml,PDF,Markdown等 ，类似的软件还有<a href="https://github.com/QL-Win/QuickLook" target="_blank" rel="noopener">https://github.com/QL-Win/QuickLook</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-058ada00646c610d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="wgestures"><a href="#wgestures" class="headerlink" title="wgestures"></a>wgestures</h3><p>这是一个简单的鼠标手势软件<a href="https://www.yingdev.com/projects/wgestures" target="_blank" rel="noopener">https://www.yingdev.com/projects/wgestures</a> ，通过鼠标完成很多操作，如果习惯鼠标中键的快速操作推荐<a href="https://getquicker.net/" target="_blank" rel="noopener">https://getquicker.net/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-26528c83dfeb5cee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="honeyview"><a href="#honeyview" class="headerlink" title="honeyview"></a>honeyview</h3><p>这是一款快速的图片查看器<a href="https://cn.bandisoft.com/honeyview/" target="_blank" rel="noopener">https://cn.bandisoft.com/honeyview/</a> ，可以更直观的看GIF图。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-7e6b4ee23a589542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="File-Converter"><a href="#File-Converter" class="headerlink" title="File Converter"></a>File Converter</h3><p>这是一个完全免费好用的文件格式转换软件<a href="https://file-converter.org/" target="_blank" rel="noopener">https://file-converter.org/</a>  ，支持各种文件格式，当然也可以用在线网站<a href="https://www.online-convert.com/" target="_blank" rel="noopener">https://www.online-convert.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-59f36d5128616a9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>一键转换pdf为png文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-997e1bd0b66185f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="桌面日历"><a href="#桌面日历" class="headerlink" title="桌面日历"></a>桌面日历</h3><p>这是一个很实用的桌面日历提醒软件，还提供万年农历、24节气与各种常见的节庆、纪念日等信息 <a href="http://chs.desktopcal.com/chs/，类似的软件还有优效日历http://www.youxiao.cn/" target="_blank" rel="noopener">http://chs.desktopcal.com/chs/，类似的软件还有优效日历http://www.youxiao.cn/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-787ef93e4486e374.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="wox"><a href="#wox" class="headerlink" title="wox"></a>wox</h3><p> 这是一个快速启动的效率神器（快速启动键 为ALT+SPACE），配合everything <a href="https://www.voidtools.com/zh-cn/" target="_blank" rel="noopener">https://www.voidtools.com/zh-cn/</a> 效果更佳 ，还支持各种功能小插件 <a href="http://www.wox.one/plugin" target="_blank" rel="noopener">http://www.wox.one/plugin</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d808989d0e7667ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="foobar2000"><a href="#foobar2000" class="headerlink" title="foobar2000"></a>foobar2000</h3><p>最强音乐播放器，干净无广告<a href="http://www.foobar2000.org/download" target="_blank" rel="noopener">http://www.foobar2000.org/download</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-47ba995fb1dd5b5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Dism"><a href="#Dism" class="headerlink" title="Dism++"></a>Dism++</h3><p>这是一款强大的 Windows 系统优化工具 <a href="https://www.chuyu.me/zh-Hans/" target="_blank" rel="noopener">https://www.chuyu.me/zh-Hans/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-ad5ef9356813956f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Q-Dir"><a href="#Q-Dir" class="headerlink" title="Q-Dir"></a>Q-Dir</h3><p>这是一个很好用的Windows资源管理器插件  <a href="http://www.softwareok.com/?seite=Freeware/Q-Dir" target="_blank" rel="noopener">http://www.softwareok.com/?seite=Freeware/Q-Dir</a>  ，非常适用于频繁在各个目录间操作文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4cf756cd5809642a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以对不同格式文件会自定义标记为不同的颜色，便于区分识别。 </p>
+<h3 id="Diffinity"><a href="#Diffinity" class="headerlink" title="Diffinity"></a>Diffinity</h3><p>这是一个简单好用的文件对比利器<a href="https://truehumandesign.se/s_diffinity.php" target="_blank" rel="noopener">https://truehumandesign.se/s_diffinity.php</a> ，对Python这样的代码文件还支持高亮，如果对比目录可以用<a href="https://meldmerge.org/" target="_blank" rel="noopener">https://meldmerge.org/</a> </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-f678d8eb1f2e0841.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="geek-uninstaller"><a href="#geek-uninstaller" class="headerlink" title="geek uninstaller"></a>geek uninstaller</h3><p>这款软件就是为卸载软件而生，卸载方便且彻底，不会留下一些残留的注册文件<a href="https://geekuninstaller.com/" target="_blank" rel="noopener">https://geekuninstaller.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-b8b97f8985aee57c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Fliqlo"><a href="#Fliqlo" class="headerlink" title="Fliqlo"></a>Fliqlo</h3><p>这是一款翻页时钟屏保护软件，应该在很多地方看到过它<a href="https://fliqlo.com/screensaver/" target="_blank" rel="noopener">https://fliqlo.com/screensaver/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d9a3cdea4b884f0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="MultiCommander"><a href="#MultiCommander" class="headerlink" title="MultiCommander"></a>MultiCommander</h3><p>这是一个免费专业的文件管理器，让你操作文件更方便 <a href="http://multicommander.com/downloads" target="_blank" rel="noopener">http://multicommander.com/downloads</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-340f6aa5d6a118e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Malware-Patch"><a href="#Malware-Patch" class="headerlink" title="Malware-Patch"></a>Malware-Patch</h3><p>这是一个软件屏蔽器，帮你快速屏蔽某些国产全家桶软件<a href="https://github.com/the1812/Malware-Patch" target="_blank" rel="noopener">https://github.com/the1812/Malware-Patch</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f7f010715bd75288.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="charles"><a href="#charles" class="headerlink" title="charles"></a>charles</h3><p>这个一个非常好用的抓包工具<a href="https://www.charlesproxy.com/" target="_blank" rel="noopener">https://www.charlesproxy.com/</a> ，之前的文章也分享过了<a href="https://mp.weixin.qq.com/s/sBK_NkSnS3qTOnajl6Y94Q" target="_blank" rel="noopener">一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</a><br>，有空再写篇如何抓包的文章，这样下载视频不用求人了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c420ff99d8a8a362.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>最近原创文章：</p>
-<p><a href="https://mp.weixin.qq.com/s/yUYiS_jMPH83pGjooIDQ4w" target="_blank" rel="noopener">账号升级攻略：每天自动升级b站和网易云音乐，自动签到天翼云盘和百度贴吧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/FmmJN8U4CkbjuKQbev05Gw" target="_blank" rel="noopener">2021 年身份证过期了会有什么影响？</a></p>
-<p><a href="https://mp.weixin.qq.com/s/jQbWoNFdIUpNH7M6B_zSrQ" target="_blank" rel="noopener">分享几个微信实用小技巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/Z4jRObAZn1QlF3YcmOWvfQ" target="_blank" rel="noopener">玩转谷歌浏览器</a></p>
-<p><a href="https://mp.weixin.qq.com/s/5mZnA65FZUdp2_1zo_H6TQ" target="_blank" rel="noopener">玩转公众号</a></p>
-<p><a href="https://mp.weixin.qq.com/s/qkygGwHyVCVQQPogkRzC3g" target="_blank" rel="noopener">又一音乐神器APP，免费听全网音乐，同时更新解锁网易云音乐变灰歌曲方法</a></p>
-<p><a href="https://mp.weixin.qq.com/s/PQ9DfLjLsGyqjvYiQcsR9w" target="_blank" rel="noopener">2021 年 一键修改微信运动步数</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-wbquQDEg36DRUvw1vMxOw" target="_blank" rel="noopener">分享几个实用的微信小程序</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Yh2xfd2cpL8WbPjsxC3CMg" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大（三）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/LajCXCBUN-V1PKZ40SXmqA" target="_blank" rel="noopener">又一视频下载神器，批量下载腾讯/优酷/爱奇艺/b站/抖音视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/tljcmHeMYRUesX7nuDoX0g" target="_blank" rel="noopener">每天自动签到京东获取京豆，自动升级b站和网易云音乐</a></p>
+<p><a href="https://mp.weixin.qq.com/s/C2ht6VHwAVv76uYEw7mG_A" target="_blank" rel="noopener">微信又更新了，分享几个实用的微信神器</a></p>
+<p><a href="https://mp.weixin.qq.com/s/vDj7kxc-am5ud57cCBvUuQ" target="_blank" rel="noopener">阿里云盘分享来了，告别下载限速的百度网盘</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-dZL8i7o-kRARLToCR3lwQ" target="_blank" rel="noopener">实用 Windows 软件系列分享（二）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/bCWJvS8HtD2fxjcDwiVZlQ" target="_blank" rel="noopener">2021 上半年公众号苏生不惑近百篇原创文章整理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/o_V1kISe-zl9fdcCFZJZPg" target="_blank" rel="noopener">新买了台笔记本电脑，分享些实用的Windows软件</a></p>
+<p><a href="https://mp.weixin.qq.com/s/HPAThXlfYECuZhTL6lUYWA" target="_blank" rel="noopener">2021 电子书搜索网站/工具，找电子书不再愁</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_QvGRwtR4J5o2luMrwATEA" target="_blank" rel="noopener">玩转谷歌/百度搜索</a></p>
+<p><a href="https://mp.weixin.qq.com/s/YLRFPDMZJNl515eAfMSyJw" target="_blank" rel="noopener">找壁纸不用愁了：壁纸网站/APP/工具合集</a></p>
 <blockquote>
 <p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
 </blockquote>
@@ -472,7 +476,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/账号升级攻略：每天自动升级b站和网易云音乐，自动签到天翼云盘和百度贴吧/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/分享几个腾讯出品实用的微信小程序/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏生不惑">
@@ -491,7 +495,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/06/11/账号升级攻略：每天自动升级b站和网易云音乐，自动签到天翼云盘和百度贴吧/" itemprop="url">账号升级攻略：每天自动升级b站和网易云音乐，自动签到天翼云盘和百度贴吧</a></h1>
+                <a class="post-title-link" href="/2021/07/30/分享几个腾讯出品实用的微信小程序/" itemprop="url">分享几个腾讯出品实用的微信小程序</a></h1>
         
 
         <div class="post-meta">
@@ -503,8 +507,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:50:44+08:00">
-                2021-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:53:59+08:00">
+                2021-07-30
               </time>
             
 
@@ -537,7 +541,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  843 字
+                  1.4k 字
                 </span>
               
 
@@ -553,7 +557,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -577,23 +581,42 @@
         
           
             <blockquote>
-<p>苏生不惑第<code>257</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+<p>苏生不惑第<code>270</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
 </blockquote>
-<p>之前分享过<a href="https://mp.weixin.qq.com/s/V5usFXLlIKsx8o0mCYyL3A" target="_blank" rel="noopener">5分钟搞定b站答题成为正式会员，每天自动刷经验值升级账号</a>，不过那个GitHub仓库已经被删了，作者提供了本地版本和腾讯云版本，我测试了下没问题，于是今天再分享下，另外更新下网易云音乐自动升级打卡，天翼云盘自动签到，百度贴吧自动签到。</p>
-<h3 id="b站自动升级"><a href="#b站自动升级" class="headerlink" title="b站自动升级"></a>b站自动升级</h3><p>先说本地手动升级（在公众号后台回复<code>升级</code> 获取软件），<br><a href="https://github.com/RayWangQvQ/BiliBiliTool.Docs/releases/tag/2.0.2" target="_blank" rel="noopener">https://github.com/RayWangQvQ/BiliBiliTool.Docs/releases/tag/2.0.2</a><br>打开b站控制台复制cookie，编辑 appsettings.json 文件，将Cookie 字符串复制到指定位置。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c60ae57d6cbc7be7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>再打开Ray.BiliBiliTool.Console.exe 运行，成功签到完成一次升级。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-78bd6d622a4de004.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下面使用腾讯云函数每天自动升级<a href="https://console.cloud.tencent.com/scf/" target="_blank" rel="noopener">https://console.cloud.tencent.com/scf/</a> ，先自定义创建云函数，运行环境为CustomRuntime ，本地上传zip文件包（在公众号后台回复<code>升级</code> 获取），执行方法为index.main_handler 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f6ea43c3e9fbf14b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>然后进行环境配置：添加2个环境变量，第一个Ray_BiliBiliCookies__1为b站的cookie，第2个Ray_Security__RandomSleepMaxMin为0，这个是为了方便测试，测试完成后再删除这个环境变量，否则会提示异常<code>System.Collections.Generic.KeyNotFoundException: The given key &#39;,&#39; was not present in the dictionary.</code>。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-43f98aa1de1a1d05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>接着勾选启用异步执行和状态追踪，触发时间可以自定义，我选的是早上8点20，也是我公众号推送的时间。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-56ab5f0fd2e150c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>设置完成后进入函数管理测试一下。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-761041d46f706119.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以看到执行日志，说明成功了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-700d25075758df19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>之后就不用管了，云函数会每天早上8点20自动执行脚本升级你的b站账号。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-0613b4551b28c63c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="网易云音乐自动升级"><a href="#网易云音乐自动升级" class="headerlink" title="网易云音乐自动升级"></a>网易云音乐自动升级</h3><p>之前文章已经写得很清楚了<a href="https://mp.weixin.qq.com/s/0EbycloxlbwRQkhViL8sVA" target="_blank" rel="noopener">网易云音乐等级快速升级：每天自动打卡听歌300首</a> ，这里不再赘述了，也可以看文档<a href="https://zaincheung.gitee.io/netease-cloud/" target="_blank" rel="noopener">https://zaincheung.gitee.io/netease-cloud/</a>  ，如果你懒得折腾可以提供账号和md5后的密码给我，用我的腾讯云每天给你的账号打卡升级，话说我的号快6级了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0216cb0d5f93d9f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="天翼云盘自动签到"><a href="#天翼云盘自动签到" class="headerlink" title="天翼云盘自动签到"></a>天翼云盘自动签到</h3><p>首先fork这个仓库 <a href="https://github.com/peng4740/Cloud189Checkin-Actions，设置里添加USER和PWD，就是账号和密码，再开启action，点击Enable" target="_blank" rel="noopener">https://github.com/peng4740/Cloud189Checkin-Actions，设置里添加USER和PWD，就是账号和密码，再开启action，点击Enable</a> workflow。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-fb8f1d1aeea89778.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>手动执行下脚本。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-efdda7f6776c73f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以看到执行日志。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-674ebfe6a66b1f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>打开后可以看到签到详情，默认会每天10:00-10:45之间和22:00-22:45之间各签到一次，如果想改时间修改.github/workflows/run.yml文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4b9cb034efe18b99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="百度贴吧自动签到"><a href="#百度贴吧自动签到" class="headerlink" title="百度贴吧自动签到"></a>百度贴吧自动签到</h3><p>之前分享过文章<a href="https://mp.weixin.qq.com/s/2yB4MsQhUybDWD7NDEzgdw" target="_blank" rel="noopener">签到太麻烦？全自动一键签到网易云音乐，b站，京东，百度贴吧等网站</a>，不过那个仓库也挂了，现在fork<br> <a href="https://github.com/ghosx/tieba这个项目，Settings里添加个变量BDUSS，就是百度贴吧的cookie值BDUSS。" target="_blank" rel="noopener">https://github.com/ghosx/tieba这个项目，Settings里添加个变量BDUSS，就是百度贴吧的cookie值BDUSS。</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-72974d833e45565d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>添加secrets后开启actions，因为它默认是关闭的。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-87461b8a3df964df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>再开启workflow。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ad9448ab359a3b9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>随意修改个文件触发脚本执行。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0dff8d62221299b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>可以看到有执行日志了，成功签到我关注的4个贴吧 ，之后也不用管，脚本会每天自动签到 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d7cfb33e1c22bfc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>文章开始前说下，微信暂停了个人帐号新用户注册，8月初恢复，在腾讯客服公众号可以询问。微信团队还转发微博了<a href="https://m.weibo.cn/u/1930378853" target="_blank" rel="noopener">https://m.weibo.cn/u/1930378853</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-68d39a28ed6843b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>关于微信之前写过很多文章了：</p>
+<p><a href="https://mp.weixin.qq.com/s/SCNqjY6shLARcEe11kIT0A" target="_blank" rel="noopener">要过年了，换个发微信红包新姿势</a></p>
+<p><a href="https://mp.weixin.qq.com/s/HkjDiPFZvTGWyHfy-bQfAg" target="_blank" rel="noopener">用 Python 抓取我常看的几个公众号</a></p>
+<p><a href="https://mp.weixin.qq.com/s/ig_aD0B2n7Vi6CdDeZ11Zg" target="_blank" rel="noopener">2021年4月如何下载微信视频号的视频？简直不要太简单</a></p>
+<p><a href="https://mp.weixin.qq.com/s/PQ9DfLjLsGyqjvYiQcsR9w" target="_blank" rel="noopener">2021 年 5 月一键修改微信运动步数</a></p>
+<p><a href="https://mp.weixin.qq.com/s/jQbWoNFdIUpNH7M6B_zSrQ" target="_blank" rel="noopener">分享几个微信实用小技巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/C2ht6VHwAVv76uYEw7mG_A" target="_blank" rel="noopener">微信又更新了，分享几个实用的微信神器</a></p>
+<p>今天分享几个实用的微信小程序，都是腾讯出品，一般能用小程序的我不会安装APP，而且现在电脑上也可以使用小程序，非常方便。</p>
+<h3 id="腾讯出行服务"><a href="#腾讯出行服务" class="headerlink" title="腾讯出行服务"></a>腾讯出行服务</h3><p>这个小程序可以提供路线规划、实时公交、扫码乘车、周边游、私家车管家等一站式出行服务，最近河南大暴雨，可以在这快速反馈求助信息。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-903d7986b0162578.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-016c71bb98a2ab08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="腾讯电子签"><a href="#腾讯电子签" class="headerlink" title="腾讯电子签"></a>腾讯电子签</h3><p>微信上线借条功能了<a href="https://mp.weixin.qq.com/s/Pae3eyHwu_KKpnn0cJ6UoQ" target="_blank" rel="noopener">腾讯云找我借了1块钱，打了借条</a>，这个小程序给用户提供了电子合同签约和收据证据的保障，租房和借钱都能用上，设置好一个收款时间，到点会提醒对方还钱 ，不过借钱这种事还是借急不借穷，否则伤感情又伤钱。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e1f8b233ee5f259c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微小号"><a href="#微小号" class="headerlink" title="微小号"></a>微小号</h3><p>手机号怕泄露？这个小程序是腾讯联合联通出品的小号服务，可用虚拟手机号拨打电话收发短信，不过价格略贵（10元／月），限联通号使用，貌似不如移动的和多号<a href="https://hdh.10086.cn" target="_blank" rel="noopener">https://hdh.10086.cn</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-65bbd5a932e47204.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信支付有优惠"><a href="#微信支付有优惠" class="headerlink" title="微信支付有优惠"></a>微信支付有优惠</h3><p>微信提现到银行卡是要收手续费的，如果想免费可以用这个小程序领金币兑换免费券。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-9da4e90b9abb0a1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>每次使用微信支付就可以领取金币 ，支付次数越多金币奖励多。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-0c1d10179a163580.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-554b97d9752634e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="腾讯健康"><a href="#腾讯健康" class="headerlink" title="腾讯健康"></a>腾讯健康</h3><p>随身医疗健康助手，为你提供免费咨询、语音咨询、名医专区、医疗资讯等医疗健康服务 ，这个小程序查社保很方便，只要是实名认证过可以直接查询。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-3d6886db9262b683.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信记账本"><a href="#微信记账本" class="headerlink" title="微信记账本"></a>微信记账本</h3><p>这个小程序可以自动同步微信支付账单，每天有微信通知你昨天的消费记录，不用再手动记账了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8bc8a560a4ca3746.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信听书"><a href="#微信听书" class="headerlink" title="微信听书"></a>微信听书</h3><p>之前写过微信读书<a href="https://mp.weixin.qq.com/s/13tErvC_GTnlDt8w0a5oiQ" target="_blank" rel="noopener">玩转微信读书</a>，这个是它的姐妹产品，可以免费收听有声小说、书籍和各类音频节目，还能发布音频成为声音创作者。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-65f409e5132b8f86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信辟谣助手"><a href="#微信辟谣助手" class="headerlink" title="微信辟谣助手"></a>微信辟谣助手</h3><p>不要再相信微信群里发的各种养生谣言了，这个小程序会及时更新最新的谣言，给长辈一个清净的网络环境 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ebeaee88da98b8b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有如果长辈不熟悉使用微信，可以使用小程序<code>微信使用小助手</code>，都是详细的视频场景介绍，手把手教学微信常用的使用问题，比如如何调整微信字体大小、如何收发微信红包等。 </p>
+<h3 id="音乐站"><a href="#音乐站" class="headerlink" title="音乐站"></a>音乐站</h3><p>这个小程序可以看到朋友圈好友和自己最近分享的音乐，也支持听歌。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-91419a6c8b79835a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="腾讯投票"><a href="#腾讯投票" class="headerlink" title="腾讯投票"></a>腾讯投票</h3><p>平时和朋友去哪玩吃饭什么的可以用这个小程序快速简单的创建实时投票。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f5e46b11abcdbba9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="群相册服务"><a href="#群相册服务" class="headerlink" title="群相册服务"></a>群相册服务</h3><p>腾讯相册管家官方出品的小程序，为每个微信群提供群成员之间的照片备份、共享服务，长久保存不过期，不用担心手机内存不够了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c4f7ef0ef8bf7d6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="腾讯文档"><a href="#腾讯文档" class="headerlink" title="腾讯文档"></a>腾讯文档</h3><p>前几天网上一个文档帮助了很多人，腾讯还发过文章<a href="https://mp.weixin.qq.com/s/nxHrvg_mg7e7VRmolW0_Tg" target="_blank" rel="noopener"> 一个救命文档的24小时</a>， 说的就是腾讯文档，它支持文档、表格、PPT、收集表、思维导图、流程图等，还有大量的在线模板使用，网页版也可以同步使用<a href="https://docs.qq.com/" target="_blank" rel="noopener">https://docs.qq.com/</a> 。  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-07d4ba1b69b3a78f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="腾讯文件助手"><a href="#腾讯文件助手" class="headerlink" title="腾讯文件助手"></a>腾讯文件助手</h3><p>是不经常遇到微信文件过期？这个小程序可以对你的微信和 QQ 文件直接进行查看和备份，网页版 <a href="https://file.qq.com/" target="_blank" rel="noopener">https://file.qq.com/</a> 可以方便的在线管理这些文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-138dc8f436ad2428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="腾讯翻译君"><a href="#腾讯翻译君" class="headerlink" title="腾讯翻译君"></a>腾讯翻译君</h3><p>使用AI智能翻译，免费无广告，包含语音翻译、拍照翻译、图片翻译、权威词典等功能，支持中文、英语、日语、韩语、法语等各种语言。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2909e15205760779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="腾讯视频"><a href="#腾讯视频" class="headerlink" title="腾讯视频"></a>腾讯视频</h3><p>不想开会员又受够了几十秒的视频广告？使用腾讯视频的小程序，只有5秒的广告，不过平常我都是在网页上看，使用Chrome扩展和油猴脚本可以直接跳过广告，详情见之前文章<a href="https://mp.weixin.qq.com/s/Yh2xfd2cpL8WbPjsxC3CMg" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大（三）</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3b0e2f3c0d5b79b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="微信转账到QQ"><a href="#微信转账到QQ" class="headerlink" title="微信转账到QQ"></a>微信转账到QQ</h3><p>用这个小程序可以将微信里的钱直接转到QQ了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-32a931775ee47ce9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后分享个腾讯最近出的长鹅教育加速APP <a href="https://m.qq.com/edu/index.html，旨在为学生、科研人员等提供教育网络加速和教育资源查阅服务。" target="_blank" rel="noopener">https://m.qq.com/edu/index.html，旨在为学生、科研人员等提供教育网络加速和教育资源查阅服务。</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-a4b409e82d8b2686.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <blockquote>
 <p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
 </blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
 
           
         
@@ -642,7 +665,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/实用油猴脚本推荐，让你的谷歌浏览器更强大（二）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/实用油猴脚本推荐，让你的谷歌浏览器更强大（三）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏生不惑">
@@ -661,7 +684,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/06/11/实用油猴脚本推荐，让你的谷歌浏览器更强大（二）/" itemprop="url">实用油猴脚本推荐，让你的谷歌浏览器更强大（二）</a></h1>
+                <a class="post-title-link" href="/2021/07/30/实用油猴脚本推荐，让你的谷歌浏览器更强大（三）/" itemprop="url">实用油猴脚本推荐，让你的谷歌浏览器更强大（三）</a></h1>
         
 
         <div class="post-meta">
@@ -673,8 +696,899 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:49:17+08:00">
-                2021-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:52:42+08:00">
+                2021-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第<code>269</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>之前分享过<a href="https://mp.weixin.qq.com/s/4sCwNc4fz7IxlL8XfY95rQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大</a>和<a href="https://mp.weixin.qq.com/s/RI_J8NoiARIb5IEXYnW5ZQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大（二）</a> ，这里再做个整理。 </p>
+<blockquote>
+<p>关于如何安装油猴脚本见之前的文章<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a> 和<a href="https://mp.weixin.qq.com/s/AQNYVEAxb3ByGR15FOOVJg" target="_blank" rel="noopener">微软 edge 浏览器如何安装扩展</a>，这里就不赘述了。</p>
+</blockquote>
+<h3 id="解除B站区域限制"><a href="#解除B站区域限制" class="headerlink" title="解除B站区域限制"></a>解除B站区域限制</h3><p>这个脚本之前分享过文章，不过后来挂了，现在又恢复了，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/25718" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/25718</a> 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6936263cd96b6f26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>先右侧点击设置输入代理服务器，地址来自<a href="https://github.com/yujincheng08/BiliRoaming/wiki/%E5%85%AC%E5%85%B1%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="noopener">https://github.com/yujincheng08/BiliRoaming/wiki/%E5%85%AC%E5%85%B1%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E5%99%A8</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-393b2ca930b7eb57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>比如这个进击的巨人<a href="https://www.bilibili.com/bangumi/play/ep379656，刷新后视频，弹幕和评论都能看到了，手机端使用能安装油猴脚本的浏览器也一样，参考我之前的文章[能安装Chrome扩展和油猴脚本的手机浏览器](https://mp.weixin.qq.com/s/GVHav2__mvRP84Ll0fKs6Q)。" target="_blank" rel="noopener">https://www.bilibili.com/bangumi/play/ep379656，刷新后视频，弹幕和评论都能看到了，手机端使用能安装油猴脚本的浏览器也一样，参考我之前的文章[能安装Chrome扩展和油猴脚本的手机浏览器](https://mp.weixin.qq.com/s/GVHav2__mvRP84Ll0fKs6Q)。</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-261c592db0c34454.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="解除网易云音乐扫码登录限制"><a href="#解除网易云音乐扫码登录限制" class="headerlink" title="解除网易云音乐扫码登录限制"></a>解除网易云音乐扫码登录限制</h3><p>最近网页云音乐居然把网页版的账号登录去了，只能扫码登录，用这个脚本继续使用账号密码登录<a href="https://greasyfork.org/zh-CN/scripts/428493" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/428493</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-ce04e09010d0d841.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>顺便分享这个脚本显示完整歌单<a href="https://greasyfork.org/zh-CN/scripts/406054,它可以解除歌单歌曲展示数量限制" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/406054,它可以解除歌单歌曲展示数量限制</a> &amp; 播放列表 1000 首上限，就是去掉立即下载按钮。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-163e0975c843b811.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="倍速播放"><a href="#倍速播放" class="headerlink" title="倍速播放"></a>倍速播放</h3><p>这个脚本支持倍速播放视频，最高10倍，还可以跳过视频广告，不用忍受60秒的广告了，脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/383265" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/383265</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d0f65383668d162b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="在线看图工具"><a href="#在线看图工具" class="headerlink" title="在线看图工具"></a>在线看图工具</h3><p>这个脚本支持图片翻转、旋转、缩放、弹出大图、批量保存等功能，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/24204-picviewer-ce，看妹子更方便了https://www.zhihu.com/question/374798860" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/24204-picviewer-ce，看妹子更方便了https://www.zhihu.com/question/374798860</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3b1043919c212b81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="去除重定向"><a href="#去除重定向" class="headerlink" title="去除重定向"></a>去除重定向</h3><p>这个脚本可以去除重定向，不用手动点跳转了，支持谷歌/百度/搜狗/360/知乎/贴吧/简书/豆瓣/微博等网站，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/11915" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/11915</a> ，类似的还有<a href="https://greasyfork.org/zh-CN/scripts/412612" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/412612</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d41a0201a6f9c35e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="搜索引擎快捷跳转"><a href="#搜索引擎快捷跳转" class="headerlink" title="搜索引擎快捷跳转"></a>搜索引擎快捷跳转</h3><p>这个脚本可以方便的在各个搜索引擎之间跳转,增加可视化设置菜单,能更友好的自定义设置，不用切换网站搜索了，脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/27752" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/27752</a><br> <img src="https://upload-images.jianshu.io/upload_images/23152173-52c5954a4daad601.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="网页限制解除"><a href="#网页限制解除" class="headerlink" title="网页限制解除"></a>网页限制解除</h3><p>这个脚本可以解除禁止复制、剪切、选择文本、右键菜单的限制,比如百度文库和知乎这样的网站，脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/28497，也可以安装之前分享过的Chrome扩展" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/28497，也可以安装之前分享过的Chrome扩展</a>  simple allow copy  <a href="https://chrome.google.com/webstore/detail/simple-allow-copy/aefehdhdciieocakfobpaaolhipkcpgc" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/simple-allow-copy/aefehdhdciieocakfobpaaolhipkcpgc</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-7dc7ae89a73d43be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="网盘自动填写提取码"><a href="#网盘自动填写提取码" class="headerlink" title="网盘自动填写提取码"></a>网盘自动填写提取码</h3><p>这个脚本支持打开网盘链接时不再需要手动复制密码，还能自动提交密码，当你再次打开该分享文件时，不再需要去找提取码，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/29762" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/29762</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-874f1df70b542996.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>顺便分享下网盘智能识别助手<a href="https://www.baiduyun.wiki/panai.user.js" target="_blank" rel="noopener">https://www.baiduyun.wiki/panai.user.js</a> ，选择网盘链接脚本就能自动识别出来，然后直接打开就行。</p>
+<p>最近原创文章：</p>
+<p><a href="https://mp.weixin.qq.com/s/LajCXCBUN-V1PKZ40SXmqA" target="_blank" rel="noopener">又一视频下载神器，批量下载腾讯/优酷/爱奇艺/b站/抖音视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/tljcmHeMYRUesX7nuDoX0g" target="_blank" rel="noopener">每天自动签到京东获取京豆，自动升级b站和网易云音乐</a></p>
+<p><a href="https://mp.weixin.qq.com/s/C2ht6VHwAVv76uYEw7mG_A" target="_blank" rel="noopener">微信又更新了，分享几个实用的微信神器</a></p>
+<p><a href="https://mp.weixin.qq.com/s/vDj7kxc-am5ud57cCBvUuQ" target="_blank" rel="noopener">阿里云盘分享来了，告别下载限速的百度网盘</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-dZL8i7o-kRARLToCR3lwQ" target="_blank" rel="noopener">实用 Windows 软件系列分享（二）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/bCWJvS8HtD2fxjcDwiVZlQ" target="_blank" rel="noopener">2021 上半年公众号苏生不惑近百篇原创文章整理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/o_V1kISe-zl9fdcCFZJZPg" target="_blank" rel="noopener">新买了台笔记本电脑，分享些实用的Windows软件</a></p>
+<p><a href="https://mp.weixin.qq.com/s/HPAThXlfYECuZhTL6lUYWA" target="_blank" rel="noopener">2021 电子书搜索网站/工具，找电子书不再愁</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_QvGRwtR4J5o2luMrwATEA" target="_blank" rel="noopener">玩转谷歌/百度搜索</a></p>
+<p><a href="https://mp.weixin.qq.com/s/YLRFPDMZJNl515eAfMSyJw" target="_blank" rel="noopener">找壁纸不用愁了：壁纸网站/APP/工具合集</a></p>
+<blockquote>
+<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
+</blockquote>
+<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/又一视频下载神器，批量下载腾讯-优酷-爱奇艺-b站-抖音视频/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/30/又一视频下载神器，批量下载腾讯-优酷-爱奇艺-b站-抖音视频/" itemprop="url">又一视频下载神器，批量下载腾讯/优酷/爱奇艺/b站/抖音视频</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:51:24+08:00">
+                2021-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  991 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第<code>268</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>关于视频下载之前写过一系列文章了，这里再做个整理：</p>
+<p><a href="https://mp.weixin.qq.com/s/ROms3FieXuHTTkHclRQhEg" target="_blank" rel="noopener">又一视频下载神器，一键下载b站收藏夹视频和up主所有视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/3rB23e9L55hDBaPLDu6WMg" target="_blank" rel="noopener">如何轻松下载腾讯/微博/优酷/爱奇艺/b站等全网视频？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j8Py56hLt2pOyU2DRKM8Iw" target="_blank" rel="noopener">刘德华开抖音了，一键下载华仔所有无水印视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/n9ddxx6Zu5hC7cqEXRnMOg" target="_blank" rel="noopener">视频下载神器：支持腾讯/优酷/爱奇艺/b站/微博等全网视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Dh6X0CJlHac5jyEvEIveqA" target="_blank" rel="noopener">如何下载 b 站大会员/腾讯/优酷/爱奇艺 VIP 视频 </a></p>
+<p>话说前段时间抖音出了网页版<a href="https://www.douyin.com/user/MS4wLjABAAAAU7ibxriLF-GSBF5QKa1Op9hxcMAPVmzmXwXqqvMfrhs" target="_blank" rel="noopener">https://www.douyin.com/user/MS4wLjABAAAAU7ibxriLF-GSBF5QKa1Op9hxcMAPVmzmXwXqqvMfrhs</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-2a3733603e819ed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>现在下载刘德华的视频更方便了 ，idm直接就能下载。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ebc654f70d9a40f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不过现在大部分视频网站采用 m3u8 视频格式，因此需要先抓取到m3u8地址下载，比如腾讯视频<a href="https://v.qq.com/x/cover/x0xc94s4x8jdrpm.html" target="_blank" rel="noopener">https://v.qq.com/x/cover/x0xc94s4x8jdrpm.html</a> ，通过 idm或者Chrome扩展HDS / HLS Video Downloader <a href="https://chrome.google.com/webstore/detail/hds-hls-video-downloader/gelfgldejnhgpjcbnfpkglhpelajafao" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/hds-hls-video-downloader/gelfgldejnhgpjcbnfpkglhpelajafao</a> 获取到m3u8地址。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-bde424acb8b10d27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>再使用<code>ffmpeg -i xxx.m3u8 拥抱星星的月亮.mp4</code>或者m3u8下载器下载（在公众号后台回复<code>m3u8</code> 获取工具下载地址）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-496fbae42a0e2832.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下载的就是mp4文件，不用再转什么文件格式了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bcc682799157bef6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>也可以使用这个命令行工具 goannie ，它支持优酷，抖音，腾讯，爱奇艺，西瓜，好看，b站等视频网站。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-7c9ab0e4bc6dd9cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入腾讯视频地址即可直接下载为MP4文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e520a2cf8abae7c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>西瓜视频也一样的 <a href="https://www.ixigua.com/6969205894508708386?logTag=7f692a9d6f24c93a9574" target="_blank" rel="noopener">https://www.ixigua.com/6969205894508708386?logTag=7f692a9d6f24c93a9574</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-88a7ed24feeb3947.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果是微信环境才能打开的视频可以修改浏览器的ua为MicroMessenger，比如这个地址<a href="https://support.weixin.qq.com/cgi-bin/mmsupport-bin/readtemplate?t=page/android_exp__index&amp;wx_header=0" target="_blank" rel="noopener">https://support.weixin.qq.com/cgi-bin/mmsupport-bin/readtemplate?t=page/android_exp__index&amp;wx_header=0</a> 会提示只支持在微信打开。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bcf5d60d63d7227b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>修改ua后就正常了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f86dddef93e3887f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>下载微信小程序里的视频类似，之后可以再写一篇文章，今天主要分享的是这个抖音/快手/b站/acfun/漫画猫下载器happy-crawler  （在公众号后台回复<code>m3u8</code> 获取工具下载地址）。 ，它支持b站（输入视频bv/av号、用户uid、番剧号下载视频），a站（输入ac号、用户uid、番剧号下载视频），抖音（单视频/用户所有视频），快手（单视频/用户所有视频），西瓜视频（单视频/电影/电视剧/用户页下所有视频）， 漫画猫（漫画全本一键下载）。</p>
+<p>这里输入冰冰的b站uid 2026561407，可以全选或者单个下载up主的视频。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0ef086bca5897998.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>单个视频地址也可以<a href="https://www.bilibili.com/video/BV1U64y1z7Mm" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1U64y1z7Mm</a>  ，当然如果需要大会员才能下载，可以填写自己账号 cookie里的sessdata值，这个之前文章介绍过了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2b82f1479bab159a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后分享个类似idm的免费开源视频、文件下载工具DownZemAll <a href="https://github.com/setvisible/DownZemAll" target="_blank" rel="noopener">https://github.com/setvisible/DownZemAll</a> ，也有对应的Chrome扩展<br><a href="https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge</a> ，如何安装Chrome扩展见之前文章<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a></p>
+<p>除了下载网页图片，也可以直接复制b站或者YouTube视频地址即可下载。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-3f9e77cb4158acb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然也支持下载m3u8视频地址。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-459436f024ca9fc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最近原创文章：</p>
+<p><a href="https://mp.weixin.qq.com/s/tljcmHeMYRUesX7nuDoX0g" target="_blank" rel="noopener">每天自动签到京东获取京豆，自动升级b站和网易云音乐</a></p>
+<p><a href="https://mp.weixin.qq.com/s/C2ht6VHwAVv76uYEw7mG_A" target="_blank" rel="noopener">微信又更新了，分享几个实用的微信神器</a></p>
+<p><a href="https://mp.weixin.qq.com/s/vDj7kxc-am5ud57cCBvUuQ" target="_blank" rel="noopener">阿里云盘分享来了，告别下载限速的百度网盘</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-dZL8i7o-kRARLToCR3lwQ" target="_blank" rel="noopener">实用 Windows 软件系列分享（二）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/bCWJvS8HtD2fxjcDwiVZlQ" target="_blank" rel="noopener">2021 上半年公众号苏生不惑近百篇原创文章整理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/o_V1kISe-zl9fdcCFZJZPg" target="_blank" rel="noopener">新买了台笔记本电脑，分享些实用的Windows软件</a></p>
+<p><a href="https://mp.weixin.qq.com/s/HPAThXlfYECuZhTL6lUYWA" target="_blank" rel="noopener">2021 电子书搜索网站/工具，找电子书不再愁</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_QvGRwtR4J5o2luMrwATEA" target="_blank" rel="noopener">玩转谷歌/百度搜索</a></p>
+<p><a href="https://mp.weixin.qq.com/s/YLRFPDMZJNl515eAfMSyJw" target="_blank" rel="noopener">找壁纸不用愁了：壁纸网站/APP/工具合集</a></p>
+<blockquote>
+<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
+</blockquote>
+<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/微信又更新了，分享几个微信实用神器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/30/微信又更新了，分享几个微信实用神器/" itemprop="url">微信又更新了，分享几个微信实用神器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:50:15+08:00">
+                2021-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  904 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第<code>267</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>最近微信更新到8.0.8版本<a href="https://apps.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124" target="_blank" rel="noopener">https://apps.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124</a> ，支持自定义提示音和来电铃声，支持电脑、iPad 同时登陆了 <a href="https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&amp;t=weixin_faq_list&amp;head=true，安卓用户点击文末阅读原文下载更新版本使用。https://support.weixin.qq.com/cgi-bin/mmsupport-bin/readtemplate?t=page/android_exp__index&amp;wx_header=0" target="_blank" rel="noopener">https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&amp;t=weixin_faq_list&amp;head=true，安卓用户点击文末阅读原文下载更新版本使用。https://support.weixin.qq.com/cgi-bin/mmsupport-bin/readtemplate?t=page/android_exp__index&amp;wx_header=0</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-b1d30208a66d19d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>平常工作还是使用微信电脑端比较多，今天主要分享几个微信电脑端的工具，在公众号后台回复 <code>微信</code> 获取下载地址。</p>
+<h3 id="查看撤回消息"><a href="#查看撤回消息" class="headerlink" title="查看撤回消息"></a>查看撤回消息</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/PTRAREoFRfOJqOUlMCWhbQ" target="_blank" rel="noopener">你刚才微信上撤回了什么？我都看到了</a> ，在公众号后台回复 <code>微信</code>获取工具。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-faf5f430a5eb0dcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="修改微信运动步数"><a href="#修改微信运动步数" class="headerlink" title="修改微信运动步数"></a>修改微信运动步数</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/PQ9DfLjLsGyqjvYiQcsR9w" target="_blank" rel="noopener">2021 年 5 月一键修改微信运动步数</a>，现在还能用 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-7fe3abbc584804fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="发九宫格图片朋友圈"><a href="#发九宫格图片朋友圈" class="headerlink" title="发九宫格图片朋友圈"></a>发九宫格图片朋友圈</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/AD7RAJm8p30LMdrgjy1CVw" target="_blank" rel="noopener">如何发一条九宫格图片的朋友圈</a> 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c9d5103a5c7a904f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="下载公众号文章"><a href="#下载公众号文章" class="headerlink" title="下载公众号文章"></a>下载公众号文章</h3><p>这个之前分享过 <a href="https://mp.weixin.qq.com/s/sBK_NkSnS3qTOnajl6Y94Q" target="_blank" rel="noopener">一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</a> ，现在还可以用，如果你有想备份的公众号可以微信联系我，目前已经帮助上百位小伙伴备份了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-cf04c0093d228441.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="查看微信好友拼图等数据"><a href="#查看微信好友拼图等数据" class="headerlink" title="查看微信好友拼图等数据"></a>查看微信好友拼图等数据</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/GK3fp-cUSeByUrqINGFXHg" target="_blank" rel="noopener">微信好友头像拼图</a>和<a href="https://mp.weixin.qq.com/s/V8Aj7ekW3xYaBHj7vQW-rw" target="_blank" rel="noopener">一键生成你的微信社交数据报告</a>，不过前提是你的微信能登录网页版 <a href="https://wx.qq.com/" target="_blank" rel="noopener">https://wx.qq.com/</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17817191-c25135723f16552f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-d252412f9894b988.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="登陆多个微信"><a href="#登陆多个微信" class="headerlink" title="登陆多个微信"></a>登陆多个微信</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/_3AeNahwbs8c3UJ0is1t4A" target="_blank" rel="noopener">如何在电脑上登陆多个微信</a> ，写个简单的bat脚本文件，想开几个微信都行。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start   <span class="string">"D:\wechat\WeChat.exe"</span></span><br><span class="line">start   <span class="string">"D:\wechat\WeChat.exe"</span></span><br><span class="line">start   <span class="string">"D:\wechat\WeChat.exe"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="清理微信数据"><a href="#清理微信数据" class="headerlink" title="清理微信数据"></a>清理微信数据</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/mMrtMRQm2dMWHyv1c_23Dw" target="_blank" rel="noopener">c 盘空间又满了？微信清理神器帮你释放空间</a> ，选择微信的存储路径即可清除。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-fb99f97f86e7d24f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="导出微信语音"><a href="#导出微信语音" class="headerlink" title="导出微信语音"></a>导出微信语音</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA" target="_blank" rel="noopener">如何导出你的微信语音</a> ，选择微信的silk文件转换成mp3 文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e1c872b7130204ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="视频号下载"><a href="#视频号下载" class="headerlink" title="视频号下载"></a>视频号下载</h3><p>这个之前分享过<a href="https://mp.weixin.qq.com/s/ig_aD0B2n7Vi6CdDeZ11Zg" target="_blank" rel="noopener">2021年4月如何下载微信视频号的视频？简直不要太简单</a>，不过现在新版微信去除了查看源代码功能，还好可以用抓包工具fiddler <a href="https://www.telerik.com/download/fiddler" target="_blank" rel="noopener">https://www.telerik.com/download/fiddler</a> ，先在options中设置抓取 https 。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-963e0342d0f65635.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>然后电脑端打开视频号，可以抓到视频播放地址域名channels.weixin.qq.com。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-c904cf20ef7921e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>复制到浏览器打开视频，用idm下载就行了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8b52e17aa5d39ab0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然也可以借助工具,打开软件后点击开始获取，电脑端播放视频后就可以下载了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-59b353e66b4f5855.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="聊天记录备份"><a href="#聊天记录备份" class="headerlink" title="聊天记录备份"></a>聊天记录备份</h3><p>这个工具<a href="http://wxbackup.imxfd.com/" target="_blank" rel="noopener">http://wxbackup.imxfd.com/</a> 支持 Windows 和 Mac系统，可以将微信聊天记录导出生成 HTML 网页，文字、语音、表情、图片、视频就能在电脑上查看了，前提需要一个苹果设备（iPhone 或 iPad）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ebc575ee23b70033.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="图片解密"><a href="#图片解密" class="headerlink" title="图片解密"></a>图片解密</h3><p>微信中接收的图片被加密后保存为 dat 文件（目录为D:\weixin\WeChat Files\xxx\FileStorage\Image），不可直接查看，这个工具可以直接解密成png图片。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-97fbde52171d1ef3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>效果如图：00ac579d04bff93ef8d1eeeba6ad1027.dat转换成00ac579d04bff93ef8d1eeeba6ad1027.png<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1602ba7870dbbd34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>也可以直接输入路径地址，点击dat文件即可查看。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-34868be79b4c61ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还支持批量导出。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f4842f8836f970da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<blockquote>
+<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
+</blockquote>
+<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/每天自动签到京东获取京豆，自动升级b站和网易云音乐/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/30/每天自动签到京东获取京豆，自动升级b站和网易云音乐/" itemprop="url">每天自动签到京东获取京豆，自动升级b站和网易云音乐</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:48:57+08:00">
+                2021-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  588 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第<code>266</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>之前分享过<a href="https://mp.weixin.qq.com/s/2yB4MsQhUybDWD7NDEzgdw" target="_blank" rel="noopener">签到太麻烦？全自动一键签到网易云音乐，b站，京东，百度贴吧等网站</a> 和<a href="https://mp.weixin.qq.com/s/yUYiS_jMPH83pGjooIDQ4w" target="_blank" rel="noopener">账号升级攻略：每天自动升级b站和网易云音乐，自动签到天翼云盘和百度贴吧</a>，网易云音乐听歌300首现在又复活了<a href="https://mp.weixin.qq.com/s/0EbycloxlbwRQkhViL8sVA" target="_blank" rel="noopener">网易云音乐等级快速升级：每天自动打卡听歌300首</a>，而且新增微信推送<a href="https://wxpusher.zjiecode.com/admin/main/message/send" target="_blank" rel="noopener">https://wxpusher.zjiecode.com/admin/main/message/send</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-a025e938941b1267.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>b站签到脚本的cookie有效期过了后要重新更新。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e8bbf1e81c46ac61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>之后用腾讯云函数每天8点20跑脚本升级账号。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b671c014d8eedd11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>今天主要分享这个京东自动签到脚本<a href="https://github.com/forecho/scripts-JD" target="_blank" rel="noopener">https://github.com/forecho/scripts-JD</a> ，功能还不少：<br><img src="https://upload-images.jianshu.io/upload_images/23152173-98c8bcd2e012acec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>自动签到效果：<br><img src="https://upload-images.jianshu.io/upload_images/23152173-abe74482480d834b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>京东公众号每天都有到账通知，虽然钱不多，但积少成多嘛。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2277ee3610000c4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下面说说具体怎么操作，首先登录京东账号<a href="https://home.m.jd.com/myJd/newhome.action?sceneval=2&amp;ufc=&amp;" target="_blank" rel="noopener">https://home.m.jd.com/myJd/newhome.action?sceneval=2&amp;ufc=&amp;</a> ，复制application里pt_key的cookies值。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6f08367749123d15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>然后fork仓库（在公众号后台回复 <code>签到</code>获取仓库地址），Secrets新增JD_COOKIE，填入刚才复制的cookie信息，如果有多个账号使用&amp;或者换行隔开。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0db08da28fcff538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>默认每天0点自动执行脚本，配置文件在 /.github/workflows/jd_bean_sign.yml  ，如果想现在测试修改README.md文件。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-fcce9fc3034032e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>开启GitHub的actions，选择你要执行的脚本，这里选jd_bean_sign，之后点击Enable workflow和Run workflow，测试成功，之后就不用管了，脚本会自动运行。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-55bed517ebc89af1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>除了京东还有另外一个脚本，这里就不一一演示了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-301fdb7784fc0863.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>本地测试网易云音乐签到没问题。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6a6a1b2bdebbe296.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最近原创文章：</p>
+<p><a href="https://mp.weixin.qq.com/s/vDj7kxc-am5ud57cCBvUuQ" target="_blank" rel="noopener">阿里云盘分享来了，告别下载限速的百度网盘</a></p>
+<p><a href="https://mp.weixin.qq.com/s/-dZL8i7o-kRARLToCR3lwQ" target="_blank" rel="noopener">实用 Windows 软件系列分享（二）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/bCWJvS8HtD2fxjcDwiVZlQ" target="_blank" rel="noopener">2021 上半年公众号苏生不惑近百篇原创文章整理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/o_V1kISe-zl9fdcCFZJZPg" target="_blank" rel="noopener">新买了台笔记本电脑，分享些实用的Windows软件</a></p>
+<p><a href="https://mp.weixin.qq.com/s/HPAThXlfYECuZhTL6lUYWA" target="_blank" rel="noopener">2021 电子书搜索网站/工具，找电子书不再愁</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_QvGRwtR4J5o2luMrwATEA" target="_blank" rel="noopener">玩转谷歌/百度搜索</a></p>
+<p><a href="https://mp.weixin.qq.com/s/YLRFPDMZJNl515eAfMSyJw" target="_blank" rel="noopener">找壁纸不用愁了：壁纸网站/APP/工具合集</a></p>
+<blockquote>
+<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
+</blockquote>
+<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/阿里云盘分享来了，告别下载限速的百度网盘/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/30/阿里云盘分享来了，告别下载限速的百度网盘/" itemprop="url">阿里云盘分享来了，告别下载限速的百度网盘</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:47:58+08:00">
+                2021-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  664 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>苏生不惑第<code>265</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+</blockquote>
+<p>之前写过很多百度网盘加速下载方案的文章，不过现在都失效了，随着阿里云盘7月8日推出分享功能<a href="https://www.aliyundrive.com/download" target="_blank" rel="noopener">https://www.aliyundrive.com/download</a> ，之后分享的软件会慢慢从百度网盘和蓝奏云迁移到阿里云盘（目前微信也能打开阿里云盘链接）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ab3b3a2e0a14312a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<blockquote>
+<p>顺便分享几个最新的网盘容量福利码：分享功能来了，不限速就是快，有新的福利码在公众号后台回复 <code>阿里云</code> 获取。  </p>
+</blockquote>
+<p>分享链接功能和百度网盘差不多。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e68b2c146ea40ae2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如生成的这个7天有效分享链接 <a href="https://www.aliyundrive.com/s/xrw5JvC71ZG" target="_blank" rel="noopener">https://www.aliyundrive.com/s/xrw5JvC71ZG</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-911eb35b038e59cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>另外阿里云盘的福利社中有个所有容量延期30天任务 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-de8dcaf7cebcab98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-072f5958bd50d9a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>只要完成每周签到或者上传100个文件即可完成。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-3b2dc523b1b48e2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果嫌上传100个文件麻烦可以用这个阿里上传助手APP（在公众号后台回复 <code>阿里云</code> 获取），自动生成100个文件通过系统分享上传到阿里云盘。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-75e8fb599fa46f20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-cb8f7e7c028251cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>顺便分享个阿里云盘小白羊版 <a href="https://github.com/liupan1890/aliyunpan" target="_blank" rel="noopener">https://github.com/liupan1890/aliyunpan</a> ，这是基于阿里云盘网页版开发的PC客户端，已经实现了阿里云盘官方客户端的基本功能 。</p>
+<p>说完阿里云盘再说说同样不限速的天翼云盘<a href="https://cloud.189.cn/web/main" target="_blank" rel="noopener">https://cloud.189.cn/web/main</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-4036ed3b7352c072.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-e3b05d6e2f18a5d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不过下载文件需要登录账号，而且大文件需要安装客户端下载，推荐个天翼云网盘直链解析网站<a href="http://189.ly93.cc/，或者安装油猴脚本雷利子https://greasyfork.org/scripts/424022" target="_blank" rel="noopener">http://189.ly93.cc/，或者安装油猴脚本雷利子https://greasyfork.org/scripts/424022</a> ，这个脚本主要功能有：突破新版天翼云盘单文件、多文件分享页、个人主页的文件大小下载限制；选中多个文件逐一直接下载，高速高效无需客户端，也可以使用这个不限速的天翼云网盘下载器 <a href="https://github.com/otokaze/189Cloud-Downloader" target="_blank" rel="noopener">https://github.com/otokaze/189Cloud-Downloader</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-a25a8137d5d3a224.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>顺便分享个专门搜集天翼资源合集的网站<a href="https://yun.hei521.cn/，" target="_blank" rel="noopener">https://yun.hei521.cn/，</a> 收录了包括影视、小说、游戏、软件等各种资源，而且天翼云盘支持搜索引擎收录，比如搜索<code>微信site:cloud.189.cn</code><br><img src="https://upload-images.jianshu.io/upload_images/23152173-17383677641f1b6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果想每天自动签到看之前文章 <a href="https://mp.weixin.qq.com/s/yUYiS_jMPH83pGjooIDQ4w" target="_blank" rel="noopener">账号升级攻略：每天自动升级b站和网易云音乐，自动签到天翼云盘和百度贴吧</a> ，</p>
+<blockquote>
+<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
+</blockquote>
+<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/实用Windows软件系列分享（二）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏生不惑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏生不惑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/30/实用Windows软件系列分享（二）/" itemprop="url">实用Windows软件系列分享（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:46:05+08:00">
+                2021-07-30
               </time>
             
 
@@ -747,28 +1661,24 @@
         
           
             <blockquote>
-<p>苏生不惑第<code>256</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+<p>苏生不惑第<code>265</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
 </blockquote>
-<p>之前分享过些油猴脚本，这里再做个整理。 </p>
-<p><a href="https://mp.weixin.qq.com/s/4sCwNc4fz7IxlL8XfY95rQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大</a></p>
-<p><a href="https://mp.weixin.qq.com/s/leF2Dn9XW6sIp1SkPBFthw" target="_blank" rel="noopener">搜不到你想看的书/音乐/电影？一个油猴脚本帮你搞定</a></p>
-<p><a href="https://mp.weixin.qq.com/s/q17hBoWiFX1tct6ep7539A" target="_blank" rel="noopener">解除网页查看限制，自由查看和跳转网站</a></p>
-<p>如何安装油猴脚本见文章<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a> 和<a href="https://mp.weixin.qq.com/s/AQNYVEAxb3ByGR15FOOVJg" target="_blank" rel="noopener">微软 edge 浏览器如何安装扩展</a>，这里就不赘述了。</p>
-<h3 id="屏蔽百度搜索结果"><a href="#屏蔽百度搜索结果" class="headerlink" title="屏蔽百度搜索结果"></a>屏蔽百度搜索结果</h3><p>是否受够了百度搜索里某些垃圾SEO链接，安装这个脚本再也不用看他们了<a href="https://greasyfork.org/scripts/427392" target="_blank" rel="noopener">https://greasyfork.org/scripts/427392</a> ，另外可以再配合这个去广告脚本<a href="https://greasyfork.org/zh-CN/scripts/406336" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/406336</a> ，使用效果对比如图：<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ad4579b3415d9876.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-4d9872ed9b8b53e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果想屏蔽某个网站可以自己编辑代码添加上去。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bc80b10a6753150f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="页面自动拼接"><a href="#页面自动拼接" class="headerlink" title="页面自动拼接"></a>页面自动拼接</h3><p>滚动页面接近底部时自动拼接下一页，适用于谷歌/百度以及其他各类需要手动点击”下一页/下一章/下一篇”按钮的网站  <a href="https://greasyfork.org/zh-CN/scripts/389621" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/389621</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-dc494d19fbd0b74b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="豆瓣增加IMDb评分"><a href="#豆瓣增加IMDb评分" class="headerlink" title="豆瓣增加IMDb评分"></a>豆瓣增加IMDb评分</h3><p>在豆瓣的评分界面中增加IMDb评分<a href="https://greasyfork.org/zh-CN/scripts/7687-moremovieratings" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/7687-moremovieratings</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-134b1239bbceef90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果想找对应影视资源可以安装这个豆瓣资源下载大师 <a href="https://greasyfork.org/zh-CN/scripts/329484" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/329484</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-c7ab0b4cda8348e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="GitHub加速"><a href="#GitHub加速" class="headerlink" title="GitHub加速"></a>GitHub加速</h3><p> 镜像访问GitHub，快速Clone、Release/Raw/Zip代码 <a href="https://greasyfork.org/zh-CN/scripts/397419" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/397419</a> ，效果如图：<br><img src="https://upload-images.jianshu.io/upload_images/23152173-b82059901dddc75d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="超星慕课小工具"><a href="#超星慕课小工具" class="headerlink" title="超星慕课小工具"></a>超星慕课小工具</h3><p>一个超星慕课网课的学习工具,支持油猴脚本，火狐和谷歌扩展，全自动任务,视频倍速秒过,作业考试题库,验证码自动打码 <a href="https://greasyfork.org/zh-CN/scripts/422530" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/422530</a> ，使用详情见网站<a href="https://cx.icodef.com/" target="_blank" rel="noopener">https://cx.icodef.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-2e953c8e4cf14d0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="知乎增强"><a href="#知乎增强" class="headerlink" title="知乎增强"></a>知乎增强</h3><p>移除知乎登录弹窗、一键收起回答、收起当前回答/评论（点击两侧空白处）、快捷回到顶部（右键两侧空白处）、屏蔽指定用户、屏蔽盐选内容、置顶显示时间、显示问题时间、区分问题文章、默认高清原图、默认站外直链<a href="https://greasyfork.org/zh-CN/scripts/419081" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/419081</a>  ，这个脚本太强大了，另外还有个知乎美化<a href="https://greasyfork.org/zh-CN/scripts/412212" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/412212</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-ce18836edd1f20a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="天翼云盘网页版下载"><a href="#天翼云盘网页版下载" class="headerlink" title="天翼云盘网页版下载"></a>天翼云盘网页版下载</h3><p>简单突破天翼云盘网页版文件下载的大小, 多文件, 文件夹限制; 单选、多选、全选文件直接下载; 逐个文件直接下载并根据情况复制目录名称，不过前提要登录账号，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/424022" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/424022</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-ee7f676b15cbe960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="繁体转简体"><a href="#繁体转简体" class="headerlink" title="繁体转简体"></a>繁体转简体</h3><p>看不懂某些繁体字？转换为简体吧，比如香港中文大学<a href="https://www.cuhk.edu.hk/chinese/，脚本地址" target="_blank" rel="noopener">https://www.cuhk.edu.hk/chinese/，脚本地址</a> <a href="https://greasyfork.org/zh-CN/scripts/378243" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/378243</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-7f252bb5c7e49474.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="小说阅读脚本"><a href="#小说阅读脚本" class="headerlink" title="小说阅读脚本"></a>小说阅读脚本</h3><p>统一阅读样式，内容去广告、修正拼音字、段落整理，自动下一页，支持起点中文网、纵横中文网、创世中文网、晋江文学网、潇湘书院、逐浪等大多小说网站，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/292-my-novel-reader" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/292-my-novel-reader</a> 大明挽歌1644  <a href="https://read.qidian.com/chapter/4KvyyfiJvXVY1sEsPcaxkg2/A_M5Me41D9eaGfXRMrUjdw2" target="_blank" rel="noopener">https://read.qidian.com/chapter/4KvyyfiJvXVY1sEsPcaxkg2/A_M5Me41D9eaGfXRMrUjdw2</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-57e5bf6b6f9a0da8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="知网下载助手"><a href="#知网下载助手" class="headerlink" title="知网下载助手"></a>知网下载助手</h3><p> 解析CNKI论文PDF格式下载地址，支持论文搜索、硕博论文、知网空间、在线阅读页面，默认替换原链接为pdf格式下载链接，支持导出目录，支持一键切换caj和pdf格式下载链接 <a href="https://greasyfork.org/zh-CN/scripts/371938" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/371938</a> ，有权限下载 CAJ 格式文献就可以用这个脚本可以直接在下载 PDF 格式文献。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ca79571b5a86a847.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>另外分享个技巧，把知网改成英文或繁体网页 <a href="https://oversea.cnki.net/index/，就可以下载pdf版论文，其实下载的时候把下载链接里面的" target="_blank" rel="noopener">https://oversea.cnki.net/index/，就可以下载pdf版论文，其实下载的时候把下载链接里面的</a> caj 改为 pdf 就可以了。</p>
-<p>最后如果没有你想要的脚本可以参考别人的代码写一个。</p>
+<p>之前分享过<a href="https://mp.weixin.qq.com/s/o_V1kISe-zl9fdcCFZJZPg" target="_blank" rel="noopener">新买了台笔记本电脑，分享些实用的Windows软件</a> ，这几天又折腾了下新电脑，又安装了不少好用的软件，这里再做个整理。</p>
+<h3 id="联想电脑管家"><a href="#联想电脑管家" class="headerlink" title="联想电脑管家"></a>联想电脑管家</h3><p>这个是联想电脑自带的<a href="https://guanjia.lenovo.com.cn/" target="_blank" rel="noopener">https://guanjia.lenovo.com.cn/</a> ，也就不用安装腾讯或者360的管家了 ，拦截功能很赞，比如QQ的弹窗新闻。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-a0553dcc7658328a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不过没想到电脑右下角居然有个新闻，开始我还以为是哪个软件的垃圾广告，没想到是微软带的，还好可以关闭。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e12c901958c73b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="检查电脑配置WhyNotWin11"><a href="#检查电脑配置WhyNotWin11" class="headerlink" title="检查电脑配置WhyNotWin11"></a>检查电脑配置WhyNotWin11</h3><p>最近win11有人更新了吗，来检查下你的电脑是否支持win11系统<a href="https://github.com/rcmaehl/WhyNotWin11" target="_blank" rel="noopener">https://github.com/rcmaehl/WhyNotWin11</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-1c96986934a46bb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="uTools"><a href="#uTools" class="headerlink" title="uTools"></a>uTools</h3><p>这是个极简、插件化的现代桌面软件，可以自由安装各种插件 <a href="https://u.tools/" target="_blank" rel="noopener">https://u.tools/</a> ，上一篇文章评论区有小伙伴推荐这个，我安装使用了下，很不错，跟<a href="https://getquicker.net/" target="_blank" rel="noopener">https://getquicker.net/</a> 差不多。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-aeb2c3cc304ed09d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如安装 markdown 插件就可以使用了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2f21be0716b0733b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="抓包工具fiddler"><a href="#抓包工具fiddler" class="headerlink" title="抓包工具fiddler"></a>抓包工具fiddler</h3><p>除了之前文章<a href="https://mp.weixin.qq.com/s/sBK_NkSnS3qTOnajl6Y94Q" target="_blank" rel="noopener">一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</a>分享的Charles，fiddler也是不错的抓包工具<a href="https://www.telerik.com/fiddler，比如抓取公众号的历史文章链接。" target="_blank" rel="noopener">https://www.telerik.com/fiddler，比如抓取公众号的历史文章链接。</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-c58625505944a466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>抓到的历史文章链接<a href="https://mp.weixin.qq.com/mp/getmasssendmsg?__biz=" target="_blank" rel="noopener">https://mp.weixin.qq.com/mp/getmasssendmsg?__biz=</a> 可以在电脑上看，<br>其实手机上也能复制这个地址<a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzIyMjg2ODExMA==&amp;scene=124&amp;#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzIyMjg2ODExMA==&amp;scene=124&amp;#wechat_redirect</a> ，不过这个链接是临时的，会失效。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4bdc1bc7cb911a1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="卸载工具Hibit"><a href="#卸载工具Hibit" class="headerlink" title="卸载工具Hibit"></a>卸载工具Hibit</h3><p>这是个小巧且功能强大的软件卸载工具，有软件安装跟踪功能、软件强制卸载、批量卸载、拖拽文件形式卸载、应用程序管理、系统更新补丁管理、注册表清理、垃圾文件清理、文件粉碎程序、快捷方式修复、进程管理、启动项管理、系统服务、计划任务、资源管理器菜单项管理等功能 <a href="http://hibitsoft.ir/" target="_blank" rel="noopener">http://hibitsoft.ir/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-c0cf5a8317093c87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="系统清理工具-CCleaner"><a href="#系统清理工具-CCleaner" class="headerlink" title="系统清理工具 CCleaner"></a>系统清理工具 CCleaner</h3><p>这是款电脑端最强清理工具，免费的系统优化和隐私保护工具，体积小、扫描速度快，支持自定义清理历史记录，下载后免安装使用 <a href="https://download.ccleaner.com/" target="_blank" rel="noopener">https://download.ccleaner.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-06f72077792b8ce7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Win10自动更新禁止工具Windows-Update-Blocker"><a href="#Win10自动更新禁止工具Windows-Update-Blocker" class="headerlink" title="Win10自动更新禁止工具Windows Update Blocker"></a>Win10自动更新禁止工具Windows Update Blocker</h3><p>一键禁用或启用Windows系统的自动更新<a href="https://www.sordum.org/9470/windows-update-blocker-v1-6/" target="_blank" rel="noopener">https://www.sordum.org/9470/windows-update-blocker-v1-6/</a>  <a href="https://wwx.lanzoux.com/icv6ehs2mcb" target="_blank" rel="noopener">https://wwx.lanzoux.com/icv6ehs2mcb</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-32acb17bd9fe91dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然也可以修改系统时间为未来的某个时间调整，然后设置电脑暂停更新7天，再调整成正常时间。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-bb3e6ac56831d62c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="文件解锁工具-IObit-Unlocker"><a href="#文件解锁工具-IObit-Unlocker" class="headerlink" title="文件解锁工具 IObit Unlocker"></a>文件解锁工具 IObit Unlocker</h3><p>删除文件提示其他进程在使用？用它强制解锁删除<br><a href="https://cdn.iobit.com/dl/unlocker-setup.exe" target="_blank" rel="noopener">https://cdn.iobit.com/dl/unlocker-setup.exe</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-108f49cc31f51431.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="硬盘分析工具Wiztree"><a href="#硬盘分析工具Wiztree" class="headerlink" title="硬盘分析工具Wiztree"></a>硬盘分析工具Wiztree</h3><p>可媲美SpaceSniffer的硬盘分析工具Wiztree <a href="https://www.diskanalyzer.com/download，方便查看哪些大文件可删除。" target="_blank" rel="noopener">https://www.diskanalyzer.com/download，方便查看哪些大文件可删除。</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-ee8f610677eb10ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>另外推荐FreeMove 把 C 盘已安装的软件转移到其他盘 <a href="https://github.com/imDema/FreeMove" target="_blank" rel="noopener">https://github.com/imDema/FreeMove</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-dd7cb45b07b56491.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="剪贴板记录工具Ditto"><a href="#剪贴板记录工具Ditto" class="headerlink" title="剪贴板记录工具Ditto"></a>剪贴板记录工具Ditto</h3><p>这个工具把你复制的文字和图片都记录下来了  <a href="https://ditto-cp.sourceforge.io/" target="_blank" rel="noopener">https://ditto-cp.sourceforge.io/</a>   <a href="https://github.com/sabrogden/Ditto/" target="_blank" rel="noopener">https://github.com/sabrogden/Ditto/</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-71ae1320eca8d14e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果想共享剪贴板试试<a href="https://www.anl.ink" target="_blank" rel="noopener">https://www.anl.ink</a>  ，直接Ctrl + C和Ctrl + V在手机和电脑之间使用。</p>
+<h3 id="Windows-辅助小工具-PowerToys"><a href="#Windows-辅助小工具-PowerToys" class="headerlink" title="Windows 辅助小工具 PowerToys"></a>Windows 辅助小工具 PowerToys</h3><p>这是微软官方开发的 Windows 辅助小工具，供了一系列的实用小工具让 Windows 变得更加好用 <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener">https://github.com/microsoft/PowerToys</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-300e10f385ca9440.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后分享个python脚本<a href="https://github.com/ZeroSimple/MicrosoftHostsPicker" target="_blank" rel="noopener">https://github.com/ZeroSimple/MicrosoftHostsPicker</a> ，它可以帮你挑选最快的微软网络服务 IP地址，解决 6 大微软网络服务连接缓慢，或者干脆无法连接的问题。目前支持的服务有：Microsoft 账户登录，Microsoft Store，Xbox，OneNote 同步，Windows 下载&amp;更新，Office 下载&amp;更新等。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-edc967ef1bd4480a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <blockquote>
 <p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
 </blockquote>
@@ -821,7 +1731,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/2021年身份证过期了会有什么影响？/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/那些有趣的网站系列（十六）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏生不惑">
@@ -840,7 +1750,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/06/11/2021年身份证过期了会有什么影响？/" itemprop="url">2021年身份证过期了会有什么影响？</a></h1>
+                <a class="post-title-link" href="/2021/07/30/那些有趣的网站系列（十六）/" itemprop="url">那些有趣的网站系列（十六）</a></h1>
         
 
         <div class="post-meta">
@@ -852,8 +1762,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:47:53+08:00">
-                2021-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:45:03+08:00">
+                2021-07-30
               </time>
             
 
@@ -886,7 +1796,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  821 字
+                  831 字
                 </span>
               
 
@@ -902,7 +1812,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -926,189 +1836,7 @@
         
           
             <blockquote>
-<p>苏生不惑第<code>255</code>篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>我的身份证年初就过期了，然后去年国庆回家补办了，但是要3个月后能领新身份证，结果过年的时候突发疫情<a href="https://mp.weixin.qq.com/s/_N83uXdaHnU6QS3n6k-udA" target="_blank" rel="noopener">今年还能回家过年吗？查询下各地出行隔离政策</a> ，过年也没回去，年夜饭还点的外卖，之前文章说过<a href="https://mp.weixin.qq.com/s/82LCzupXtgxv310xUlodBA" target="_blank" rel="noopener">大年初一领红包，恭喜发财，大吉大利</a></p>
-<blockquote>
-<p>关于更换居民身份证可看政府网站<a href="http://www.gov.cn/fuwu/2016-11/24/content_5136860.htm" target="_blank" rel="noopener">http://www.gov.cn/fuwu/2016-11/24/content_5136860.htm</a></p>
-</blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-f61161a2dcde577d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>那么身份证过期了会有什么影响呢？过期后3个月内不影响使用，身份证还能用（比如买火车票，刷身份证进站），不过领微信红包的时候会提示你更新证件。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-5c32b763c50cdffe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>更换了新身份证，重新上传下就好了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-493c19a41bce0f90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d4b714f9419b3e13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>但是过期3个月后身份证绑定的银行卡交易不了了 ，比如提现失败。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-cea5d0032c976ed1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>银行也会发短信通知你。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-70a37e758c0e4dd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>正好周末去银行柜台更新了下， 现在很方便，自助机上就能操作，其实APP上也能操作，不过我一直没用过银行的APP。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1622620867197934.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-68de4099a1267ef7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>银行卡信息更新成功。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0478fd81a69d946a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果出门忘记带身份证可以安装个国门公安APP，这个之前文章已经分享过<a href="https://mp.weixin.qq.com/s/Z92IUaTEfuEoDtJLVl4A4Q" target="_blank" rel="noopener">几个实用的生活服务网站和APP</a>。</p>
-<p>另外分享下我之前关于身份证号码的文章<a href="https://mp.weixin.qq.com/s/yYuS5_2obt50kH4yrLg1Jw" target="_blank" rel="noopener">身份证号码的秘密</a> ，原来身份证上的数字是有来由的。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-2e90be88fcb5693a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>而且一个身份证只能绑定5个实名微信，没有绑定实名信息的微信发不了红包，转不了账，如何查询自己的身份证绑定过多少微信号？在公众号 腾讯客服 中输入名下账户<br><img src="https://upload-images.jianshu.io/upload_images/17817191-4571459d2c31a0d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>然后输入 身份证实名了哪些微信 会自动回复“点这里”，点进去之后输入姓名，身份证号，实名认证后，就会有你身份证名下所有的微信号，如果发现有不是自己的微信号，直接清除。  </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-79c3cd9f5fc4e0ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>最后说个冷知识，韩国的身份证上使用汉字来备注名字，因为韩文中同音字非常多，如果不用汉字备注，就没法确定人名了，就比如我们拼音里的fa sheng 到底是发生还是发声呢？</p>
-<p>而且如果你注意的话韩国古装影视剧里经常能看到汉字，毕竟那时候的朝鲜是我大明的忠实小弟。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4a7f1732768b8c4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最近原创文章：</p>
-<p><a href="https://mp.weixin.qq.com/s/jQbWoNFdIUpNH7M6B_zSrQ" target="_blank" rel="noopener">分享几个微信实用小技巧</a></p>
-<p><a href="https://mp.weixin.qq.com/s/Z4jRObAZn1QlF3YcmOWvfQ" target="_blank" rel="noopener">玩转谷歌浏览器</a></p>
-<p><a href="https://mp.weixin.qq.com/s/5mZnA65FZUdp2_1zo_H6TQ" target="_blank" rel="noopener">玩转公众号</a></p>
-<p><a href="https://mp.weixin.qq.com/s/13tErvC_GTnlDt8w0a5oiQ" target="_blank" rel="noopener">玩转微信读书</a></p>
-<p><a href="https://mp.weixin.qq.com/s/yMz2xsxhniyF0hWHXZjV2Q" target="_blank" rel="noopener">玩转b站：实用的b站工具合集</a></p>
-<p><a href="https://mp.weixin.qq.com/s/7LjE_eXCa75Km932FxrC6Q" target="_blank" rel="noopener">冰点文库和小叶文库下载器挂了后如何下载百度文库/豆丁/道客巴巴文档</a></p>
-<p><a href="https://mp.weixin.qq.com/s/PQ9DfLjLsGyqjvYiQcsR9w" target="_blank" rel="noopener">2021 年 5 月一键修改微信运动步数</a></p>
-<p><a href="https://mp.weixin.qq.com/s/qkygGwHyVCVQQPogkRzC3g" target="_blank" rel="noopener">又一音乐神器APP，免费听全网音乐，同时更新解锁网易云音乐变灰歌曲方法</a></p>
-<blockquote>
-<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
-</blockquote>
-<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/那些有趣的网站系列（十五）/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/11/那些有趣的网站系列（十五）/" itemprop="url">那些有趣的网站系列（十五）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:46:43+08:00">
-                2021-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  779 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第<code>254</code>篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
+<p>苏生不惑第<code>264</code>篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
 </blockquote>
 <p>之前分享过有趣的网站系列：</p>
 <p> <a href="https://mp.weixin.qq.com/s/ThUw9i43paFhXfPxF8mvyQ" target="_blank" rel="noopener">那些有趣的网站</a> </p>
@@ -1125,19 +1853,18 @@
 <p><a href="https://mp.weixin.qq.com/s/CJ9mIph3-h_tILp_M9ba_w" target="_blank" rel="noopener">那些有趣的网站系列（十二）</a></p>
 <p><a href="https://mp.weixin.qq.com/s/tdUtyCaHQ9iVYKBNPyNuIQ" target="_blank" rel="noopener">那些有趣的网站系列（十三）</a></p>
 <p><a href="https://mp.weixin.qq.com/s/28V2GoBPx3cWNPmAdWwi7g" target="_blank" rel="noopener">那些有趣的网站系列（十四）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/lbe3u9Hy0tp8jfCOOeaZug" target="_blank" rel="noopener">那些有趣的网站系列（十五）</a><br>这是系列第15篇。</p>
-<h3 id="在线电视"><a href="#在线电视" class="headerlink" title="在线电视"></a>在线电视</h3><p>还记得小时候坐在电视剧看电视的画面吗？这个网站带你重温下，开关在右下角，双击可换台<br><a href="https://a.sqbot.vip/minitv/5KXDXT6B" target="_blank" rel="noopener">https://a.sqbot.vip/minitv/5KXDXT6B</a>  <a href="http://tvdang.ddns.net:8000/" target="_blank" rel="noopener">http://tvdang.ddns.net:8000/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f8a587485dfb8fd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还有美女看。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-6fb07f99fa2adfec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f3eafdfee3917312.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="在线生成支付宝到账音效"><a href="#在线生成支付宝到账音效" class="headerlink" title="在线生成支付宝到账音效"></a>在线生成支付宝到账音效</h3><p>输入金额生成支付宝到账的声音，还可以下载mp3文件<a href="https://saythemoney.github.io/" target="_blank" rel="noopener">https://saythemoney.github.io/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d52512dd5e3a9212.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="在线屏幕录制"><a href="#在线屏幕录制" class="headerlink" title="在线屏幕录制"></a>在线屏幕录制</h3><p>之前分享过录屏的Chrome扩展<a href="https://mp.weixin.qq.com/s/telMa7WfiVYgPRBdttvz-w" target="_blank" rel="noopener">那些有趣/实用的 Chrome 扩展神器系列（二）</a>，这个网站也可以直接录屏，录制完后直接保存，下载的webm文件可以直接改为mp4用播放器播放 <a href="https://toolwa.com/record/" target="_blank" rel="noopener">https://toolwa.com/record/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-af6a2c66a60d4464.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="在线架子鼓"><a href="#在线架子鼓" class="headerlink" title="在线架子鼓"></a>在线架子鼓</h3><p>点击左侧敲打鼓，声音很带感<a href="http://tool.mkblog.cn/durms/" target="_blank" rel="noopener">http://tool.mkblog.cn/durms/</a> ，这个网站还有在线手鼓猫<a href="http://tool.mkblog.cn/bongocat/" target="_blank" rel="noopener">http://tool.mkblog.cn/bongocat/</a> 以及谷歌电吉他<a href="http://tool.mkblog.cn/guitar/" target="_blank" rel="noopener">http://tool.mkblog.cn/guitar/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-0d150d65189f1042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="植物大战僵尸在线版"><a href="#植物大战僵尸在线版" class="headerlink" title="植物大战僵尸在线版"></a>植物大战僵尸在线版</h3><p>这个游戏应该很多人玩过，现在可以在线玩了<a href="https://pvz.heheda.top/" target="_blank" rel="noopener">https://pvz.heheda.top/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-eb2e6d18d5307bc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>还想玩更多游戏见之前文章<a href="https://mp.weixin.qq.com/s/iotTrZWEdYEqRcHwjFCJug" target="_blank" rel="noopener">找回童年乐趣，在线玩超级玛丽、冒险岛、魂斗罗、坦克大战等经典游戏</a></p>
-<h3 id="莆田医院查询"><a href="#莆田医院查询" class="headerlink" title="莆田医院查询"></a>莆田医院查询</h3><p>查查你所在地的莆田医院 <a href="https://putianxi.github.io/index.html" target="_blank" rel="noopener">https://putianxi.github.io/index.html</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-7818f8128b6162b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="黑白照片上色"><a href="#黑白照片上色" class="headerlink" title="黑白照片上色"></a>黑白照片上色</h3><p>一键给老照片上色<a href="https://deepai.org/machine-learning-model/colorizer，这个网站还提供api，这样就可以用代码批量处理了，可以媲美百度ai" target="_blank" rel="noopener">https://deepai.org/machine-learning-model/colorizer，这个网站还提供api，这样就可以用代码批量处理了，可以媲美百度ai</a> <a href="https://ai.baidu.com/tech/imageprocess/colourize" target="_blank" rel="noopener">https://ai.baidu.com/tech/imageprocess/colourize</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-1dd91ef510a3c30a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果想让老照片动起来看看之前文章<a href="https://mp.weixin.qq.com/s/PO3h62IfL_fohXUvcBx2aA" target="_blank" rel="noopener">好玩，AI 让老照片动起来</a></p>
-<h3 id="在线听周杰伦"><a href="#在线听周杰伦" class="headerlink" title="在线听周杰伦"></a>在线听周杰伦</h3><p>一个只听周杰伦音乐的网站，含live，翻唱近400首歌，不愧天王<a href="https://lvyueyang.github.io/web-music/app/" target="_blank" rel="noopener">https://lvyueyang.github.io/web-music/app/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-d92ac3059759aec4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果想听全网音乐看看之前文章<a href="https://mp.weixin.qq.com/s/qkygGwHyVCVQQPogkRzC3g" target="_blank" rel="noopener">又一音乐神器APP，免费听全网音乐，同时更新解锁网易云音乐变灰歌曲方法</a></p>
-<h3 id="四大名著"><a href="#四大名著" class="headerlink" title="四大名著"></a>四大名著</h3><p>除了提供四大名著电子书在线阅读，这个网站还提供各种有趣的名著地图，比如西游记唐僧取经路线图、三国城池图、水浒108将分布图、红楼梦大观园图等 <a href="http://www.sdmzh.com.cn/" target="_blank" rel="noopener">http://www.sdmzh.com.cn/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-fdd250ce1e99546b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><a href="https://mp.weixin.qq.com/s/lbe3u9Hy0tp8jfCOOeaZug" target="_blank" rel="noopener">那些有趣的网站系列（十五）</a><br>这是系列第16篇。</p>
+<h3 id="鉴别图片是否ps"><a href="#鉴别图片是否ps" class="headerlink" title="鉴别图片是否ps"></a>鉴别图片是否ps</h3><p>之前分享过<a href="https://mp.weixin.qq.com/s/9hoDHBm-tGwtXhGp7s7h7A" target="_blank" rel="noopener">如何清除手机拍照的图片 exif 防止泄露你的隐私</a>， <a href="http://fotoforensics.com/" target="_blank" rel="noopener">http://fotoforensics.com/</a> 这个网站通过ELA 检测（生成噪点图判断是否存在 PS 痕迹，教程见<a href="http://fotoforensics.com/tutorial.php），看这张图就很和谐，没有被p过。" target="_blank" rel="noopener">http://fotoforensics.com/tutorial.php），看这张图就很和谐，没有被p过。</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-eca346169674f34a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这个网站还支持图片搜索。先以图搜图找到原图，再看 Metadata 信息判断有没有修过，最后试试 ELA 检测。</p>
+<h3 id="日文网站翻译"><a href="#日文网站翻译" class="headerlink" title="日文网站翻译"></a>日文网站翻译</h3><p>看不懂日文网站没关系，输入网址然后点击go，网页便会自动加上假名注音 <a href="https://hiragana.jp/index.html" target="_blank" rel="noopener">https://hiragana.jp/index.html</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-86c8a9bbd71a70dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>比如这个网站 <a href="https://www.ghibli.jp/info/013381/" target="_blank" rel="noopener">https://www.ghibli.jp/info/013381/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-cfcf2d12279c78c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>顺便分享个日语语法指南学习网站<a href="http://res.wokanxing.info/jpgramma/index.html" target="_blank" rel="noopener">http://res.wokanxing.info/jpgramma/index.html</a> </p>
+<h3 id="表情包搜索"><a href="#表情包搜索" class="headerlink" title="表情包搜索"></a>表情包搜索</h3><p>之前分享过表情包生成器<a href="https://imgflip.com/memetemplates" target="_blank" rel="noopener">https://imgflip.com/memetemplates</a> ， 这是一个专业的表情包搜索网站<a href="https://www.dbbqb.com/" target="_blank" rel="noopener">https://www.dbbqb.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-7e6411d0ff454807.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>类似的网站还有<a href="https://www.52doutu.cn/，http://www.qutuba.cn/more.php" target="_blank" rel="noopener">https://www.52doutu.cn/，http://www.qutuba.cn/more.php</a></p>
+<h3 id="方言发音查询"><a href="#方言发音查询" class="headerlink" title="方言发音查询"></a>方言发音查询</h3><p>查询汉字的各种方言发音，如广东话、客家话、上海话等<a href="http://cn.voicedic.com/" target="_blank" rel="noopener">http://cn.voicedic.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-f4a1a59b1e56b613.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="几分钟学编程"><a href="#几分钟学编程" class="headerlink" title="几分钟学编程"></a>几分钟学编程</h3><p>花几分钟开始熟悉下Python吧 <a href="https://learnxinyminutes.com/docs/zh-cn/python-cn/" target="_blank" rel="noopener">https://learnxinyminutes.com/docs/zh-cn/python-cn/</a> ，如果想学Python看看之前分享的<a href="https://mp.weixin.qq.com/s/H30uEsRbMCqVuK3vL_Gwuw" target="_blank" rel="noopener">建了个微信交流群，和我一起在 b 站学 Python</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-e5939d9e4c53a8fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="数列大全"><a href="#数列大全" class="headerlink" title="数列大全"></a>数列大全</h3><p>秒解3  4  6  8  12  14  18的数列结果<br><a href="https://oeis.org/search?q=3++4++6++8++12++14++18&amp;language=english&amp;go=Search" target="_blank" rel="noopener">https://oeis.org/search?q=3++4++6++8++12++14++18&amp;language=english&amp;go=Search</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-e700d37de9a74bf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="配色神器"><a href="#配色神器" class="headerlink" title="配色神器"></a>配色神器</h3><p>之前分享过中国色<a href="http://zhongguose.com/" target="_blank" rel="noopener">http://zhongguose.com/</a> ，<a href="https://colorable.jxnblk.com/" target="_blank" rel="noopener">https://colorable.jxnblk.com/</a> 这个网站可以拖动调节文本颜色、背景颜色、色相、饱和度、亮度等进行配色。<a href="https://colorhunt.co/" target="_blank" rel="noopener">https://colorhunt.co/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-79965729fb9fbdfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="LOGO在线设计"><a href="#LOGO在线设计" class="headerlink" title="LOGO在线设计"></a>LOGO在线设计</h3><p>一个免费的LOGO在线设计制作工具<a href="http://www.uugai.com/，输入苏生不惑的效果：" target="_blank" rel="noopener">http://www.uugai.com/，输入苏生不惑的效果：</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/23152173-af7d9e483ad14f76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>logo在线生成器免费版<a href="http://yeelogo.com/#/" target="_blank" rel="noopener">http://yeelogo.com/#/</a>  ，<a href="https://www.canva.cn/" target="_blank" rel="noopener">https://www.canva.cn/</a></p>
+<h3 id="搜索-下载全世界的音乐"><a href="#搜索-下载全世界的音乐" class="headerlink" title="搜索/下载全世界的音乐"></a>搜索/下载全世界的音乐</h3><p>之前分享过可听周杰伦的在线音乐网站<a href="http://tool.liumingye.cn/music" target="_blank" rel="noopener">http://tool.liumingye.cn/music</a> ，这个网站主要搜索和下载国外的音乐<a href="https://myfreemp3music.com/，比如搜索电影《泰坦尼克号》的主题曲`" target="_blank" rel="noopener">https://myfreemp3music.com/，比如搜索电影《泰坦尼克号》的主题曲`</a> My Heart Will Go On`<br><img src="https://upload-images.jianshu.io/upload_images/23152173-810f86649fde1699.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="在线摸鱼小游戏"><a href="#在线摸鱼小游戏" class="headerlink" title="在线摸鱼小游戏"></a>在线摸鱼小游戏</h3><p>之前分享过<a href="https://mp.weixin.qq.com/s/iotTrZWEdYEqRcHwjFCJug" target="_blank" rel="noopener">找回童年乐趣，在线玩超级玛丽、冒险岛、魂斗罗、坦克大战等经典游戏</a>，这个网站有很多有趣的在线游戏<a href="http://wesane.com/index.php/index/index.html" target="_blank" rel="noopener">http://wesane.com/index.php/index/index.html</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-5307ade2c4c7d551.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <blockquote>
 <p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
 </blockquote>
@@ -1190,7 +1917,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/分享几个微信实用小技巧/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/30/2021-上半年公众号苏生不惑近百篇原创文章整理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏生不惑">
@@ -1209,7 +1936,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/06/11/分享几个微信实用小技巧/" itemprop="url">分享几个微信实用小技巧</a></h1>
+                <a class="post-title-link" href="/2021/07/30/2021-上半年公众号苏生不惑近百篇原创文章整理/" itemprop="url">2021 上半年公众号苏生不惑近百篇原创文章整理</a></h1>
         
 
         <div class="post-meta">
@@ -1221,8 +1948,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:43:46+08:00">
-                2021-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-30T19:44:08+08:00">
+                2021-07-30
               </time>
             
 
@@ -1255,7 +1982,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  873 字
+                  1.5k 字
                 </span>
               
 
@@ -1271,7 +1998,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -1294,731 +2021,80 @@
       
         
           
-            <blockquote>
-<p>苏生不惑第<code>253</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>最近微信更新了8.0.6版本<a href="https://weixin.qq.com/" target="_blank" rel="noopener">https://weixin.qq.com/</a> ，有个炸屎特效简直了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-f82bdd12cd8694f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>还不如电脑端刷朋友圈这个功能实用，据说单向检测删除好友功能在开发中，期待下。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-3ce57173cf241bc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>之前分享过<a href="https://mp.weixin.qq.com/s/O1MFJxfmup5tNDcCn12irQ" target="_blank" rel="noopener">不为人知的几个微信实用技巧</a>，今天继续分享几个微信实用技巧。</p>
-<h3 id="语音自动转文字"><a href="#语音自动转文字" class="headerlink" title="语音自动转文字"></a>语音自动转文字</h3><p>上班的时候收到一大段语音，挨个点转换是不很麻烦，现在电脑端可以设置自动转文字了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-51c5c21ef09c31ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果想导出语音见之前文章<a href="https://mp.weixin.qq.com/s/Nu8x-dA2IRXtOcjVJuenKA" target="_blank" rel="noopener">如何导出你的微信语音</a></p>
-<h3 id="转发语音"><a href="#转发语音" class="headerlink" title="转发语音"></a>转发语音</h3><p>先收藏语音，进入我的收藏转为笔记，然后发送给朋友或分享朋友圈。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8091994bf07e2cac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-993487c528f88384.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="聊天记录合并"><a href="#聊天记录合并" class="headerlink" title="聊天记录合并"></a>聊天记录合并</h3><p>电脑端直接复制多条聊天信息，然后粘贴到聊天框即可合并聊天记录。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-64baea1c8bb5e43f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果想看撤回消息见之前文章<a href="https://mp.weixin.qq.com/s/PTRAREoFRfOJqOUlMCWhbQ" target="_blank" rel="noopener">你刚才微信上撤回了什么？我都看到了</a></p>
-<h3 id="取消授权应用"><a href="#取消授权应用" class="headerlink" title="取消授权应用"></a>取消授权应用</h3><p>在微信设置/隐私/授权管理里可以看到你的微信授权了哪些应用APP获取你的微信朋友关系，比如之前我写这篇文章<a href="https://mp.weixin.qq.com/s/13tErvC_GTnlDt8w0a5oiQ" target="_blank" rel="noopener">玩转微信读书</a>授权的微信读书 。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8b906b80a4405c50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>QQ的话可以查看这个QQ互联 <a href="https://connect.qq.com/" target="_blank" rel="noopener">https://connect.qq.com/</a> ，另外<a href="https://id.qq.com/可以查到你" target="_blank" rel="noopener">https://id.qq.com/可以查到你</a> QQ 的使用时间。 </p>
-<h3 id="桌面快捷功能"><a href="#桌面快捷功能" class="headerlink" title="桌面快捷功能"></a>桌面快捷功能</h3><p>安卓版微信新增了桌面快捷功能，长按微信图标会弹出快捷功能菜单，比如我的二维码、收付款和扫一扫，这是我最近才发现的。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-01e2395e7bb6142e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="微信修复工具"><a href="#微信修复工具" class="headerlink" title="微信修复工具"></a>微信修复工具</h3><p>搜索框输入<code>:up</code>进入微信的修复工具，可以修复聊天记录和搜索故障等。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1e6f05d96d7aeba9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="导出表情包"><a href="#导出表情包" class="headerlink" title="导出表情包"></a>导出表情包</h3><p>表情包只能添加到表情，如果想导出来可以使用网页版微信<a href="https://wx.qq.com/" target="_blank" rel="noopener">https://wx.qq.com/</a> ，之前分享的<a href="https://mp.weixin.qq.com/s/V8Aj7ekW3xYaBHj7vQW-rw" target="_blank" rel="noopener">一键生成你的微信社交数据报告</a>也是基于网页版微信，不过现在很多微信号已经不能登录，还好我的还可以用。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-cd57b9da9b829e72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>当然如果你有公众号可以在后台下载，关于公众号更多技巧见之前文章<a href="https://mp.weixin.qq.com/s/5mZnA65FZUdp2_1zo_H6TQ" target="_blank" rel="noopener">玩转公众号</a>。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4afc594351e272cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="视频号下载"><a href="#视频号下载" class="headerlink" title="视频号下载"></a>视频号下载</h3><p>之前分享过<a href="https://mp.weixin.qq.com/s/ig_aD0B2n7Vi6CdDeZ11Zg" target="_blank" rel="noopener">2021年4月如何下载微信视频号的视频？简直不要太简单</a>，不过现在新版微信去除了查看源代码功能，还好可以用抓包工具fiddler <a href="https://www.telerik.com/download/fiddler" target="_blank" rel="noopener">https://www.telerik.com/download/fiddler</a> ，先在options中设置抓取 https 。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-963e0342d0f65635.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>然后电脑端打开视频号，可以抓到视频播放地址域名channels.weixin.qq.com。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-c904cf20ef7921e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br> 复制到浏览器打开视频，用idm下载就行了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8b52e17aa5d39ab0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-98b515e4c7c07ddd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>如果嫌麻烦可以借助这个工具（在公众号后台回复 <code>视频</code> 获取）,打开软件后点击开始获取，电脑端播放视频后就可以下载了。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-59b353e66b4f5855.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="微信聊天记录备份"><a href="#微信聊天记录备份" class="headerlink" title="微信聊天记录备份"></a>微信聊天记录备份</h3><p>这是个很实用的功能，现在有免费工具了 <a href="http://wxbackup.imxfd.com/" target="_blank" rel="noopener">http://wxbackup.imxfd.com/</a> ，它支持 Windows 和 Mac系统，可以将微信聊天记录导出生成 HTML 网页，文字、语音、表情、图片、视频就能在电脑上查看了，前提需要一个苹果设备（iPhone 或 iPad）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ebc575ee23b70033.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<blockquote>
-<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
-</blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/花-2-分钟学习下这个，关键时刻能救命/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/11/花-2-分钟学习下这个，关键时刻能救命/" itemprop="url">花 2 分钟学习下这个，关键时刻能救命</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:41:44+08:00">
-                2021-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  236 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前几天有个微博热搜<code>#多亏平时学急救知识才救了儿子一命#</code><a href="https://weibo.com/2656274875/KfZWezzYJ" target="_blank" rel="noopener">https://weibo.com/2656274875/KfZWezzYJ</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-78feda5e6d341005.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>里面提到的海姆立克急救法，感觉很实用，大家有必要花2分钟学习下，关键时刻能救命。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-c350a2c6ceb9cc54.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>GIF动图看得更明白点：<br><img src="https://upload-images.jianshu.io/upload_images/23152173-8b7f776ff9143dfa.gif?imageMogr2/auto-orient/strip" alt="急救.gif"><br> <img src="https://upload-images.jianshu.io/upload_images/23152173-1e456bd1589e3dd0.gif?imageMogr2/auto-orient/strip" alt="急救2.gif"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-83778ab560e489bb.gif?imageMogr2/auto-orient/strip" alt="急救3.gif"><br>还有海姆立克急救法的视频，点击视频号观看。</p>
-<p>还记得电影《人在囧途》里有个片段，老太太被枣核卡在了喉咙，王宝强就是用海姆立克急救法机智救人的。</p>
-<p>最后分享个APP <code>有来急救百科</code> ，应用商店搜索就能下载，里面都是两三分钟的短视频，介绍各种急救知识 <a href="https://a.app.qq.com/o/simple.jsp?pkgname=cn.youlai.jijiu&amp;channel=0002160650432d595942&amp;fromcase=60001" target="_blank" rel="noopener">https://a.app.qq.com/o/simple.jsp?pkgname=cn.youlai.jijiu&amp;channel=0002160650432d595942&amp;fromcase=60001</a><br> <img src="https://upload-images.jianshu.io/upload_images/23152173-ea832de86719b1b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>有好几个关于海姆立克的视频。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d4bbe5acc17f55ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<blockquote>
-<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
-</blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/找回童年乐趣，在线玩超级玛丽、冒险岛、魂斗罗、坦克大战等经典游戏/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/11/找回童年乐趣，在线玩超级玛丽、冒险岛、魂斗罗、坦克大战等经典游戏/" itemprop="url">找回童年乐趣，在线玩超级玛丽、冒险岛、魂斗罗、坦克大战等经典游戏</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:39:33+08:00">
-                2021-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  642 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第<code>252</code>篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>之前分享过<a href="https://mp.weixin.qq.com/s/Gf3cfonmj9TiFJJUNvSjFg" target="_blank" rel="noopener">那些经典好玩的在线游戏：魂斗罗，超级马里奥，坦克大战</a> ，下周就是六一了，再分享几个能让你找回童年乐趣的在线游戏。</p>
-<h3 id="怀旧游戏机"><a href="#怀旧游戏机" class="headerlink" title="怀旧游戏机"></a>怀旧游戏机</h3><p>在线小霸王游戏机，威力无穷<a href="http://god.fhjo.cn/fc" target="_blank" rel="noopener">http://god.fhjo.cn/fc</a>  ，包含几十款怀旧游戏，点开就能玩！比如超级玛丽、冒险岛、魂斗罗、坦克大战等。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-e80d412c1c66e5c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>玩法按键：上W，下S， 左A，右D，游戏声音一开让你秒回童年。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-36280d209cca8777.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>还有另外一个版本。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-5e41ebd3a0a95f9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-4745c3bb53b3f185.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="红色警戒在线"><a href="#红色警戒在线" class="headerlink" title="红色警戒在线"></a>红色警戒在线</h3><p>1996年出品的红色警戒应该很多人玩过，现在有网页版了<a href="https://game.chronodivide.com/" target="_blank" rel="noopener">https://game.chronodivide.com/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-85bab7796024bb41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="俄罗斯方块"><a href="#俄罗斯方块" class="headerlink" title="俄罗斯方块"></a>俄罗斯方块</h3><p>这是一款由俄罗斯人阿列克谢·帕基特诺夫于1984年6月发明的休闲游戏，现在可以在网页上玩了 <a href="https://chvin.github.io/react-tetris/?lan=zh-cn" target="_blank" rel="noopener">https://chvin.github.io/react-tetris/?lan=zh-cn</a>  <a href="https://tetris.com/play-tetris" target="_blank" rel="noopener">https://tetris.com/play-tetris</a>   </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-b8f1f19c4de36bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="坦克大战"><a href="#坦克大战" class="headerlink" title="坦克大战"></a>坦克大战</h3><p>这是由日本南梦宫Namco游戏公司开发的一款平面射击游戏，于1985年发售，游戏以坦克战斗及保卫基地为主题，属于策略型联机类 <a href="https://battle-city.js.org/#/stage/1" target="_blank" rel="noopener">https://battle-city.js.org/#/stage/1</a>   <a href="https://github.com/shinima/battle-city" target="_blank" rel="noopener">https://github.com/shinima/battle-city</a>  坦克大战复刻版 <a href="http://shinima.pw/battle-city/" target="_blank" rel="noopener">http://shinima.pw/battle-city/</a>  <a href="https://www.tanke.org.cn/" target="_blank" rel="noopener">https://www.tanke.org.cn/</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-3366f00201242dca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>你能玩到几关。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d17f2a42d7686bcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="小霸王"><a href="#小霸王" class="headerlink" title="小霸王"></a>小霸王</h3><p>小霸王，其乐无穷，带你找回失落的童年记忆  <a href="https://www.yikm.net/" target="_blank" rel="noopener">https://www.yikm.net/</a><br><img src="https://upload-images.jianshu.io/upload_images/17817191-6b4a9c389559fcc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/17817191-98b3766b8116429f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>PC 端 w s a d 分别是上下左右，j k 分别是攻击和跳，b 是选择，回车是开始。<br><img src="https://upload-images.jianshu.io/upload_images/17817191-398241be3e05e139.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/17817191-e7a822cc8cd605dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"> </p>
-<p>除了网页版还有电脑版。</p>
-<h3 id="小霸王精选集"><a href="#小霸王精选集" class="headerlink" title="小霸王精选集"></a>小霸王精选集</h3><p>同样包含上面这些游戏在内，在公众号后台回复 <code>游戏</code>获取下载地址，解压就能玩。 </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-602c137d3e887a7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>选中游戏后点击执行所选择的rom开始玩，玩法按键：上W，下S， 左A，右D，发射J，跳跃K，开始1，选择2。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-27cc2e9f96946e2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/23152173-701a0100265ae555.gif?imageMogr2/auto-orient/strip" alt="游戏.gif"></p>
-<h3 id="超级玛丽Flash版"><a href="#超级玛丽Flash版" class="headerlink" title="超级玛丽Flash版"></a>超级玛丽Flash版</h3><p>早期很多游戏是用flash开发的，之前还分享过一个网站<a href="https://flash.zczc.cz/" target="_blank" rel="noopener">https://flash.zczc.cz/</a> <a href="https://mp.weixin.qq.com/s/CJ9mIph3-h_tILp_M9ba_w" target="_blank" rel="noopener">那些有趣的网站系列（十二）</a>，保存了很多flash动画，下载软件后打开里面的Flash播放器，导入swf文件就行了，使用键盘上的上、下、左、右开始玩。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-f798a2326a3886ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>还有更多街机游戏就不一一介绍了，在公众号后台回复 <code>游戏</code> 获取。</p>
-<blockquote>
-<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
-</blockquote>
-<h3 id="公众号苏生不惑"><a href="#公众号苏生不惑" class="headerlink" title="公众号苏生不惑"></a>公众号苏生不惑</h3><p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/玩转谷歌浏览器/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/11/玩转谷歌浏览器/" itemprop="url">玩转谷歌浏览器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:37:37+08:00">
-                2021-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  978 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第<code>251</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>之前写过的玩转系列：</p>
+            <p>时间真快，一晃半年就过去了，之前整理过 <a href="https://mp.weixin.qq.com/s/Lm4l_aPCSXymUGcqO_Yf3g" target="_blank" rel="noopener">2019 年公众号 苏生不惑 近百篇原创文章整理</a> 和<a href="https://mp.weixin.qq.com/s/QwK653UKIz559Wca9I1dUg" target="_blank" rel="noopener">2020 年公众号 苏生不惑 200 多篇原创文章整理</a>，这里再整理下，方便大家收藏，目前原创文章有263篇，几乎一个月12篇左右，只更新原创，不转发，麻烦大家<code>星标置顶下苏生不惑</code>。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-424ca67ae6b277ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这次继续用Python抓取了下文章链接和标题<a href="https://mp.weixin.qq.com/s/sBK_NkSnS3qTOnajl6Y94Q" target="_blank" rel="noopener">一键下载公众号所有文章，导出文件支持PDF，HTML，Markdown，Excel，chm等格式</a>，放在gitee上了<a href="https://gitee.com/sushengbuhuo/wechat/blob/master/%E8%8B%8F%E7%94%9F%E4%B8%8D%E6%83%91%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8.md" target="_blank" rel="noopener">https://gitee.com/sushengbuhuo/wechat/blob/master/%E8%8B%8F%E7%94%9F%E4%B8%8D%E6%83%91%E5%85%AC%E4%BC%97%E5%8F%B7%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8.md</a> ，在文末点击阅读查看，如果你有想下载备份的公众号可以联系我。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-27ac30311dce1087.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
+<p>从2019年开始，不知不觉坚持2年<code>每周更新</code>公众号文章了，应该还能一直坚持下去。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-d8677ea9f8bd5de1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>还导出了份CSV文件，方便按照时间排序看文章。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-dd8e231f80b49443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>顺便用python把文章标题生成了个词云图 （也可以用在线网站<a href="https://cloud.niucodata.com/），效果如图：" target="_blank" rel="noopener">https://cloud.niucodata.com/），效果如图：</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-126724dcdbbbcf1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Chrome扩展-油猴脚本"><a href="#Chrome扩展-油猴脚本" class="headerlink" title="Chrome扩展/油猴脚本"></a>Chrome扩展/油猴脚本</h3><p><a href="https://mp.weixin.qq.com/s/ajUfdUAvxSj1uTHmSFG6ow" target="_blank" rel="noopener">那些有趣/实用的 Chrome 扩展神器系列（三）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/GVHav2__mvRP84Ll0fKs6Q" target="_blank" rel="noopener">能安装Chrome扩展和油猴脚本的手机浏览器</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_V4lraKdwg97PXmK8-Ctng" target="_blank" rel="noopener">那些有趣/实用的 Chrome 扩展神器系列（四）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qgV1mwHthgKxixWFfWpt9Q" target="_blank" rel="noopener">5 分钟带你写个自己的 Chrome 扩展和油猴脚本</a></p>
+<p><a href="https://mp.weixin.qq.com/s/RI_J8NoiARIb5IEXYnW5ZQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大（二）</a></p>
+<h3 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h3><p><a href="https://mp.weixin.qq.com/s/39Bf9bEIfQfx_Jwhi4LbGg" target="_blank" rel="noopener">那些有趣的网站系列（九）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/zrN57ANXeK3FDly9pGe7Xg" target="_blank" rel="noopener">那些有趣的网站系列（十）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/xfC1mbUoceTnaPf5faWYBQ" target="_blank" rel="noopener">那些好玩的生成器网站（三）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/0iIGO__gABCXVbZ8reXnsw" target="_blank" rel="noopener">那些有趣的网站系列（十一）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/CJ9mIph3-h_tILp_M9ba_w" target="_blank" rel="noopener">那些有趣的网站系列（十二）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/tdUtyCaHQ9iVYKBNPyNuIQ" target="_blank" rel="noopener">那些有趣的网站系列（十三）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/28V2GoBPx3cWNPmAdWwi7g" target="_blank" rel="noopener">那些有趣的网站系列（十四）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/lbe3u9Hy0tp8jfCOOeaZug" target="_blank" rel="noopener">那些有趣的网站系列（十五）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Z92IUaTEfuEoDtJLVl4A4Q" target="_blank" rel="noopener">几个实用的生活服务网站和APP</a></p>
+<p><a href="https://mp.weixin.qq.com/s/iotTrZWEdYEqRcHwjFCJug" target="_blank" rel="noopener">找回童年乐趣，在线玩超级玛丽、冒险岛、魂斗罗、坦克大战等经典游戏</a></p>
+<h3 id="玩转系列"><a href="#玩转系列" class="headerlink" title="玩转系列"></a>玩转系列</h3><p><a href="https://mp.weixin.qq.com/s/Z4jRObAZn1QlF3YcmOWvfQ" target="_blank" rel="noopener">玩转谷歌浏览器</a></p>
 <p><a href="https://mp.weixin.qq.com/s/yMz2xsxhniyF0hWHXZjV2Q" target="_blank" rel="noopener">玩转b站：实用的b站工具合集</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_QvGRwtR4J5o2luMrwATEA" target="_blank" rel="noopener">玩转谷歌/百度搜索</a></p>
 <p><a href="https://mp.weixin.qq.com/s/13tErvC_GTnlDt8w0a5oiQ" target="_blank" rel="noopener">玩转微信读书</a></p>
 <p><a href="https://mp.weixin.qq.com/s/5mZnA65FZUdp2_1zo_H6TQ" target="_blank" rel="noopener">玩转公众号</a></p>
-<p>今天继续分享玩转谷歌浏览器，为什么我一直不推荐使用国产浏览器呢，某些国产浏览器的捆绑式安装，还有垃圾广告推送真的烦人，即便你不习惯谷歌浏览器也可以使用微软的edge浏览器<a href="https://www.microsoft.com/zh-cn/edge" target="_blank" rel="noopener">https://www.microsoft.com/zh-cn/edge</a> ，之前也分享过文章<a href="https://mp.weixin.qq.com/s/OhRMSWYcxojsuhgOgGyiRg" target="_blank" rel="noopener">微软全新浏览器 Microsoft Edge 比 谷歌 Chrome 好用吗？</a></p>
-<p>目前谷歌浏览器版本是90，可以直接在 <a href="https://www.google.cn/chrome/" target="_blank" rel="noopener">https://www.google.cn/chrome/</a> 下载，即使不科学上网也是可以更新版本的。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-0448e4f68b35264f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="修改默认搜索引擎"><a href="#修改默认搜索引擎" class="headerlink" title="修改默认搜索引擎"></a>修改默认搜索引擎</h3><p>不过默认的谷歌搜索不能用，可以在 chrome://settings/search 改为百度或者bing，这样方便在浏览器地址栏直接搜索。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-a1714b54b60dc772.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>可以看出谷歌浏览器的设置功能地址都是以chrome开头的，有很多的隐藏功能，比如无聊的时候玩玩游戏chrome://dino/  ，具体可以看我之前的文章<a href="https://mp.weixin.qq.com/s/I7jJ17XKOLrySguWVX_wxg" target="_blank" rel="noopener">谷歌浏览器那些有趣的隐藏功能</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-b07f2b5c60542263.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>另外提个不错的隐藏功能：分享网页中的特定文本内容，在chrome://flags/#copy-link-to-text 打开后，右键多了个复制指向突出显示的内容链接。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-ce1921d5041f217b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>效果就是复制后的链接末尾会加上#:~:text=文字，打开后会高亮刚才复制的文字。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-99529fb243eb0788.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h3><p>关于谷歌浏览器的使用技巧，之前写过文章介绍<a href="https://mp.weixin.qq.com/s/J7Ml0NilN8Jd4s9C1gWoHw" target="_blank" rel="noopener">那些你可能不知道的谷歌浏览器实用技巧</a>，这里说下最新版本的稍后阅读。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-4f0da5c766674cc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>浏览器右侧的阅读清单里会列出你加的未读网页。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-24517be0114b8c13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>以及标签页搜索。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-afc5a3e780e706fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="Chrome-扩展"><a href="#Chrome-扩展" class="headerlink" title="Chrome 扩展"></a>Chrome 扩展</h3><p>所谓没有安装扩展的浏览器是没有灵魂的，之前分享过很多扩展了：</p>
-<p><a href="https://mp.weixin.qq.com/s/zl-7LJeiFG_W15D4IlF1jA" target="_blank" rel="noopener">那些有趣/实用的 Chrome 扩展神器</a></p>
-<p><a href="https://mp.weixin.qq.com/s/telMa7WfiVYgPRBdttvz-w" target="_blank" rel="noopener">那些有趣/实用的 Chrome 扩展神器系列（二）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/ajUfdUAvxSj1uTHmSFG6ow" target="_blank" rel="noopener">那些有趣/实用的 Chrome 扩展神器系列（三）</a></p>
-<p><a href="https://mp.weixin.qq.com/s/_V4lraKdwg97PXmK8-Ctng" target="_blank" rel="noopener">那些有趣/实用的 Chrome 扩展神器系列（四）</a></p>
-<p>关于如何安装Chrome扩展之前分享过<a href="https://mp.weixin.qq.com/s/xC9K_z7zpmAIEzUK6s1x3w" target="_blank" rel="noopener">上不了谷歌如何安装 Chrome 扩展？</a> 和<a href="https://mp.weixin.qq.com/s/AQNYVEAxb3ByGR15FOOVJg" target="_blank" rel="noopener">微软 edge 浏览器如何安装扩展</a> ，这里再说下，在<a href="https://chrome-extension-downloader.com/" target="_blank" rel="noopener">https://chrome-extension-downloader.com/</a> 或者 <a href="https://crxdl.com/" target="_blank" rel="noopener">https://crxdl.com/</a> 这类网站下载Chrome扩展对应的crx文件，修改文件名为rar文件，然后解压到一个目录，打开chrome://extensions/ 开启开发者模式，加载已解压的扩展程序。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-832857856b7b06af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>更方便点就是开启chrome://flags/#extensions-on-chrome-urls 直接拖入下载的 .crx 扩展文件即可安装。</p>
-<p>不过安装的扩展多了会占用资源，可以使用二管家这个扩展管理起来。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-3977525f37322093.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>另外如果想在手机上也使用Chrome扩展，可以看之前文章<a href="https://mp.weixin.qq.com/s/GVHav2__mvRP84Ll0fKs6Q" target="_blank" rel="noopener">能安装Chrome扩展和油猴脚本的手机浏览器</a></p>
-<h3 id="油猴脚本"><a href="#油猴脚本" class="headerlink" title="油猴脚本"></a>油猴脚本</h3><p>说了Chrome扩展，那必须提到油猴神器，之前也分享过<a href="https://mp.weixin.qq.com/s/adJFh_9LH0N-vvvYaiQqXg" target="_blank" rel="noopener">Chrome 浏览器扩展神器油猴</a>  ，在公众号后台回复 <code>油猴</code> 获取crx文件，安装后就可以在<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 搜索安装你要的脚本了，如果想更方便点可以安装暴力猴扩展<a href="https://mp.weixin.qq.com/s/iluJYFYgT8bpMhrsxf0b5A" target="_blank" rel="noopener">Chrome 浏览器扩展神器暴力猴</a> ，方便搜索当前网站的脚本。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-9d1db4a758860fd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>如果没有你要的脚本，可以自己参考着写一个，其实就是段js代码<a href="https://mp.weixin.qq.com/s/4sCwNc4fz7IxlL8XfY95rQ" target="_blank" rel="noopener">实用油猴脚本推荐，让你的谷歌浏览器更强大</a> ，也可以导入别人分享的脚本。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-21cf01ae738f64cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<blockquote>
-<p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
-</blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-61c280d775baf3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="扫描二维码关注或搜索微信susheng_buhuo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/11/又是一年520，给准备恋爱和结婚的小伙伴几个建议/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏生不惑">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏生不惑的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/11/又是一年520，给准备恋爱和结婚的小伙伴几个建议/" itemprop="url">又是一年520，给准备恋爱和结婚的小伙伴几个建议</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-11T17:36:17+08:00">
-                2021-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.1k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>苏生不惑第<code>250</code> 篇原创文章，将本公众号设为<code>星标</code>，第一时间看最新文章。</p>
-</blockquote>
-<p>又到了一年的520，又可以发520块的微信红包了（还有个日子是七夕）。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2b2e7573cc2435d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>可能有些朋友准备在这天告白或者去领证了，寓意永远爱你，不过还是建议你先查下以下几个网站，以防万一。</p>
-<h3 id="执行信息公开网"><a href="#执行信息公开网" class="headerlink" title="执行信息公开网"></a>执行信息公开网</h3><p><a href="http://zxgk.court.gov.cn/" target="_blank" rel="noopener">http://zxgk.court.gov.cn/</a>  查看对方是否为失信人，限制消费人，被执行人等。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-01f737dd1d859779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入名字和身份证查询。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-2fa70908044d11dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="裁判文书网"><a href="#裁判文书网" class="headerlink" title="裁判文书网"></a>裁判文书网</h3><p><a href="https://wenshu.court.gov.cn/" target="_blank" rel="noopener">https://wenshu.court.gov.cn/</a> 查看对方是否有犯罪记录。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-66d6a09fe5871e89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="征信记录"><a href="#征信记录" class="headerlink" title="征信记录"></a>征信记录</h3><p><a href="http://www.pbccrc.org.cn/" target="_blank" rel="noopener">http://www.pbccrc.org.cn/</a> 查看对方是否欠下网贷，这几年网贷横行，还是有必要先查下的，对买房什么的也影响大，除了网站还可以在人民银行服务大厅自助机查询，我之前查过一次，很快就出结果，有很详细的几页纸。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-0ca95ce4257f2ea2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="公司查询"><a href="#公司查询" class="headerlink" title="公司查询"></a>公司查询</h3><p><a href="http://www.gsxt.gov.cn/corp-query-homepage.html" target="_blank" rel="noopener">http://www.gsxt.gov.cn/corp-query-homepage.html</a>  查看对方公司是否正规，正规的公司都能查到一家企业的法定代表人、投资人、变更情况等信息，对找工作的也有帮助，当然也可以使用天眼查这样的第三方网站<a href="https://www.tianyancha.com/" target="_blank" rel="noopener">https://www.tianyancha.com/</a> </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/23152173-8a58c2a07aa4517a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="婚检报告"><a href="#婚检报告" class="headerlink" title="婚检报告"></a>婚检报告</h3><p>婚前体检是很有必要的，万一对方有什么疾病没有告诉你。另外找认识的人打招呼，否则有艾滋病也不会告诉你。</p>
-<h3 id="学历查询"><a href="#学历查询" class="headerlink" title="学历查询"></a>学历查询</h3><p><a href="https://www.chsi.com.cn/xlcx/" target="_blank" rel="noopener">https://www.chsi.com.cn/xlcx/</a> 查对方是否有学历造假，知网<a href="https://www.cnki.net/" target="_blank" rel="noopener">https://www.cnki.net/</a> 还可以查毕业论文是否造假。<br> <img src="https://upload-images.jianshu.io/upload_images/23152173-cd26fae4bc3e17c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="资本市场违法违规失信记录"><a href="#资本市场违法违规失信记录" class="headerlink" title="资本市场违法违规失信记录"></a>资本市场违法违规失信记录</h3><p><a href="http://neris.csrc.gov.cn/shixinchaxun/" target="_blank" rel="noopener">http://neris.csrc.gov.cn/shixinchaxun/</a> 查看对方是否有证券期货市场失信记录。<br> <img src="https://upload-images.jianshu.io/upload_images/23152173-050cbe491851e4d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>顺便分享下国外很著名的婚前15问 <a href="https://www.nytimes.com/2006/12/17/fashion/weddings/17FIELDBOX.html" target="_blank" rel="noopener">https://www.nytimes.com/2006/12/17/fashion/weddings/17FIELDBOX.html</a> ，可以作为借鉴。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-1053a939c910b726.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>1、我们要不要孩子？如果要，主要由谁负责？</p>
-<p>2、我们的赚钱能力及目标是什么？消费观及储蓄观会不会发生冲突？</p>
-<p>3、我们的家庭如何维持？由谁来掌握可能出现的风险？</p>
-<p>4、我们有没有详尽地交换过双方的疾病史？包括精神上的。</p>
-<p>5、我们父母的态度有没有达到我们的预期？会不会给足够的祝福？如果没有，我们如何面对？</p>
-<p>6、我们有没有自然、坦诚地说出自己的性需求、性的偏好及恐惧？</p>
-<p>7、卧室能放电视机吗？</p>
-<p>8、我们真的能倾听对方诉说，并公平对待对方的想法和抱怨吗？</p>
-<p>9、我们清晰地了解对方的精神需求及信仰吗？我们讨论过孩子将来的教育模式和信仰问题吗？</p>
-<p>10、我们喜欢并尊重对方的朋友吗？</p>
-<p>11、我们能不能看重并尊敬对方的父母？我们有没考虑到父母可能会干涉我们的关系？</p>
-<p>12、我的家族最让你心烦的事情是什么？</p>
-<p>13、我们永远不会因为婚姻放弃的东西是什么？</p>
-<p>14、如果我们中的一人需要离开其家族所在地陪同另一人到外地工作，做得到吗？</p>
-<p>15、我们是不是充满信心面对任何挑战使婚姻一直往前走？</p>
-<p>有人可能要问，都要处对象了/结婚了还查这些是否有点不信任对方，真正的爱情，敢于直面这些。</p>
-<p>如果你还没对象看看之前文章<a href="https://mp.weixin.qq.com/s/r1rMqhzwHqkeb9T85BmeAg" target="_blank" rel="noopener">听说 520 你还没对象，来这里看看</a> 分享的网站<a href="https://sushengbuhuo.gitee.io/love/，点击no会一直出提示，直到点击yes，如果有服务器，可以修改源码里的文字后上传到自己服务器发给对方，祝有情人终成眷属。" target="_blank" rel="noopener">https://sushengbuhuo.gitee.io/love/，点击no会一直出提示，直到点击yes，如果有服务器，可以修改源码里的文字后上传到自己服务器发给对方，祝有情人终成眷属。</a><br><img src="https://upload-images.jianshu.io/upload_images/23152173-2f0ef5bc36122f5e.gif?imageMogr2/auto-orient/strip" alt="npy.gif"></p>
-<p>还有这个动态二维码 <a href="https://mp.weixin.qq.com/s/PnGaI1GkMABPCI7UXDRA1A" target="_blank" rel="noopener">七夕又来了，给女朋友做个动态二维码</a> ，在公众号后台回复 <code>520</code> 获取制作工具，可以自己替换图片，微信扫码后的效果就是上面的GIF动图。<br><img src="https://upload-images.jianshu.io/upload_images/23152173-17eaf5419e629077.gif?imageMogr2/auto-orient/strip" alt="lovelove_qrcode.gif"></p>
+<h3 id="视频下载"><a href="#视频下载" class="headerlink" title="视频下载"></a>视频下载</h3><p><a href="https://mp.weixin.qq.com/s/ROms3FieXuHTTkHclRQhEg" target="_blank" rel="noopener">又一视频下载神器，一键下载b站收藏夹视频和up主所有视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/j8Py56hLt2pOyU2DRKM8Iw" target="_blank" rel="noopener">刘德华开抖音了，一键下载华仔所有无水印视频</a></p>
+<p><a href="https://mp.weixin.qq.com/s/ig_aD0B2n7Vi6CdDeZ11Zg" target="_blank" rel="noopener">2021年4月如何下载微信视频号的视频？简直不要太简单</a></p>
+<h3 id="工具-app"><a href="#工具-app" class="headerlink" title="工具/app"></a>工具/app</h3><p><a href="https://mp.weixin.qq.com/s/o_V1kISe-zl9fdcCFZJZPg" target="_blank" rel="noopener">新买了台笔记本电脑，分享些实用的Windows软件</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Z_pk1b-Kg-UJKgBPmI_feA" target="_blank" rel="noopener">没有b站大会员怎么看番剧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/IpZjKX5qPRIr1NZkZkXAwA" target="_blank" rel="noopener">一键跳过 APP 启动广告</a></p>
+<p><a href="https://mp.weixin.qq.com/s/kNl3FyIulJ7yEQpoKaLzPA" target="_blank" rel="noopener">虾米音乐关闭后还有什么好用的音乐软件？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/2yB4MsQhUybDWD7NDEzgdw" target="_blank" rel="noopener">签到太麻烦？全自动一键签到网易云音乐，b站，京东，百度贴吧等网站</a></p>
+<p><a href="https://mp.weixin.qq.com/s/24bAV8O2nP5dSo-Hpix3Ig" target="_blank" rel="noopener">分享几个学英语的好工具</a></p>
+<p><a href="https://mp.weixin.qq.com/s/iTEEWPy4MF_5hcg1-ecA2Q" target="_blank" rel="noopener">图片搜索太模糊？无损放大图片神器来了</a></p>
+<p><a href="https://mp.weixin.qq.com/s/ubeKKWtnq6JVAkMG_WGd5g" target="_blank" rel="noopener">一个可以直接刷 YouTube 视频的神器 APP</a></p>
+<p><a href="https://mp.weixin.qq.com/s/9We-13XFA28Ay11cmKuEww" target="_blank" rel="noopener">上 Instagram 看看周杰伦又更新了什么动态</a></p>
+<p><a href="https://mp.weixin.qq.com/s/eYr4ejBq3TeRqI25zkVK_g" target="_blank" rel="noopener">一键下载QQ空间相册，微博相册，知乎回答图片，豆瓣图片，instagram图片</a></p>
+<p><a href="https://mp.weixin.qq.com/s/9aM8IP6FdiCX4361kQrOYw" target="_blank" rel="noopener">一键去除腾讯/优酷/爱奇艺/b站视频水印</a></p>
+<p><a href="https://mp.weixin.qq.com/s/R5oqsqmFLRiKBGqmDUqznA" target="_blank" rel="noopener">高颜值的网易云音乐第三方客户端，还支持听变灰歌曲</a></p>
+<p><a href="https://mp.weixin.qq.com/s/hSKy5rxCSdh-gI6B00aQFg" target="_blank" rel="noopener">听说你想上 p 站</a></p>
+<p><a href="https://mp.weixin.qq.com/s/YLRFPDMZJNl515eAfMSyJw" target="_blank" rel="noopener">找壁纸不用愁了：壁纸网站/APP/工具合集</a></p>
+<p><a href="https://mp.weixin.qq.com/s/yUYiS_jMPH83pGjooIDQ4w" target="_blank" rel="noopener">账号升级攻略：每天自动升级b站和网易云音乐，自动签到天翼云盘和百度贴吧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/V5usFXLlIKsx8o0mCYyL3A" target="_blank" rel="noopener">5分钟搞定b站答题成为正式会员，每天自动刷经验值升级账号</a></p>
+<p><a href="https://mp.weixin.qq.com/s/PO3h62IfL_fohXUvcBx2aA" target="_blank" rel="noopener">好玩，AI 让老照片动起来（附 APP 软件地址）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/aVF_ntTfCZeDamhOq2tPTA" target="_blank" rel="noopener">2021年4月如何加速下载百度网盘文件，分享个不限速的内部体验版</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qkygGwHyVCVQQPogkRzC3g" target="_blank" rel="noopener">又一音乐神器APP，免费听全网音乐，同时更新解锁网易云音乐变灰歌曲方法</a></p>
+<p><a href="https://mp.weixin.qq.com/s/7LjE_eXCa75Km932FxrC6Q" target="_blank" rel="noopener">冰点文库和小叶文库下载器挂了后如何下载百度文库/豆丁/道客巴巴文档</a></p>
+<p><a href="https://mp.weixin.qq.com/s/tAGJHwxqcTsID-x1S45ssQ" target="_blank" rel="noopener">不限速的阿里云盘预约公测即将截止，快来领取3T容量</a></p>
+<p><a href="https://mp.weixin.qq.com/s/zkX8B9Lbp4q9jXdaDUUfOg" target="_blank" rel="noopener">一键添加和去除图片/视频水印</a></p>
+<p><a href="https://mp.weixin.qq.com/s/czOe9iGLrVyMfNUcK9Xggw" target="_blank" rel="noopener">阿里云盘公测了，可增加容量的福利码来了（长期更新）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/16gDFznIMkG3EieqBQtj-w" target="_blank" rel="noopener">清明小长假不无聊：分享一大波影视网站和APP，轻松看全网视频</a></p>
+<h3 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h3><p><a href="https://mp.weixin.qq.com/s/1pUEB-8JESluVvKYazvCzA" target="_blank" rel="noopener">好玩的微信状态视频合集整理（附无水印视频网盘链接）</a></p>
+<p><a href="https://mp.weixin.qq.com/s/SCNqjY6shLARcEe11kIT0A" target="_blank" rel="noopener">要过年了，换个发微信红包新姿势</a></p>
+<p><a href="https://mp.weixin.qq.com/s/HkjDiPFZvTGWyHfy-bQfAg" target="_blank" rel="noopener">用 Python 抓取我常看的几个公众号</a></p>
+<p><a href="https://mp.weixin.qq.com/s/zzVIpMCKDWGw2NtwIygvYw" target="_blank" rel="noopener">2021 微信运动一键刷步数，让你成功占领封面</a></p>
+<p><a href="https://mp.weixin.qq.com/s/ig_aD0B2n7Vi6CdDeZ11Zg" target="_blank" rel="noopener">2021年4月如何下载微信视频号的视频？简直不要太简单</a></p>
+<p><a href="https://mp.weixin.qq.com/s/PQ9DfLjLsGyqjvYiQcsR9w" target="_blank" rel="noopener">2021 年 5 月一键修改微信运动步数</a></p>
+<p><a href="https://mp.weixin.qq.com/s/jQbWoNFdIUpNH7M6B_zSrQ" target="_blank" rel="noopener">分享几个微信实用小技巧</a></p>
+<p><a href="https://mp.weixin.qq.com/s/26oAKn-lRLRA5jMyadILcg" target="_blank" rel="noopener">这下摸鱼更方便了，Windows 电脑支持刷朋友圈了</a></p>
+<p><a href="https://mp.weixin.qq.com/s/bCWJvS8HtD2fxjcDwiVZlQ" target="_blank" rel="noopener">2021 上半年公众号苏生不惑近百篇原创文章整理</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="https://mp.weixin.qq.com/s/HrWi6_4h5LM1EHhZ4a3q3A" target="_blank" rel="noopener">过年无聊？来b站看豆瓣电影 Top 250</a></p>
+<p><a href="https://mp.weixin.qq.com/s/XPpawfBGjNeRJlSlLNp43Q" target="_blank" rel="noopener">2021 年元旦福利，小伙伴们来领现金红包</a></p>
+<p><a href="https://mp.weixin.qq.com/s/_N83uXdaHnU6QS3n6k-udA" target="_blank" rel="noopener">今年还能回家过年吗？查询下各地出行隔离政策</a></p>
+<p><a href="https://mp.weixin.qq.com/s/zYJTlm1tuSAYkSuSh0pxyQ" target="_blank" rel="noopener">2021 年 2 月福利，小伙伴们来领微信红包</a></p>
+<p><a href="https://mp.weixin.qq.com/s/82LCzupXtgxv310xUlodBA" target="_blank" rel="noopener">大年初一领红包，恭喜发财，大吉大利</a></p>
+<p><a href="https://mp.weixin.qq.com/s/nQRX0jWdC7snXuJyGNHuPw" target="_blank" rel="noopener">2021 年 3 月福利，小伙伴们来领微信红包</a></p>
+<p><a href="https://mp.weixin.qq.com/s/CqzGGU9NBzH8dKSeXYnepw" target="_blank" rel="noopener">来领钱了，手把手教你申报 2020 个人所得税</a></p>
+<p><a href="https://mp.weixin.qq.com/s/H30uEsRbMCqVuK3vL_Gwuw" target="_blank" rel="noopener">建了个微信交流群，和我一起在 b 站学 Python</a></p>
+<p><a href="https://mp.weixin.qq.com/s/AtUUm0WRw0CnswSnqSoMSQ" target="_blank" rel="noopener">比特币突破 6 万美元了，原来我还有点比特币</a></p>
+<p><a href="https://mp.weixin.qq.com/s/oLNppOwfemiTNOwG5GiUXQ" target="_blank" rel="noopener">又是一年 520，给准备恋爱和结婚的小伙伴几个建议</a></p>
+<p><a href="https://mp.weixin.qq.com/s/KnKBtVBYEdmxlrSFm0ifqQ" target="_blank" rel="noopener">花 2 分钟学习下海姆立克急救法，关键时刻能救命</a></p>
+<p><a href="https://mp.weixin.qq.com/s/FmmJN8U4CkbjuKQbev05Gw" target="_blank" rel="noopener">2021 年身份证过期了会有什么影响？</a></p>
+<p><a href="https://mp.weixin.qq.com/s/VD9rWAUm2vz9hgvmI9ICrw" target="_blank" rel="noopener">读者问答第一期（端午节福利）</a></p>
 <blockquote>
 <p> 如果文章对你有帮助还请 <code>点赞/在看/分享</code> 三连支持下， 感谢各位！</p>
 </blockquote>
@@ -2062,7 +2138,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2108,7 +2184,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">356</span>
+                  <span class="site-state-item-count">372</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2339,7 +2415,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共747.1k字</span>
+  <span class="post-count">博客全站共764.4k字</span>
 </div>
 <script>
 var birthDay = new Date("11/20/2018");
